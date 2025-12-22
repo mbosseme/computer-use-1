@@ -2,6 +2,7 @@
 
 ## Background briefing (source of truth)
 - Consult [docs/Local-First Browser Agent Briefing.md](../docs/Local-First%20Browser%20Agent%20Briefing.md) whenever unsure.
+- Consult [docs/PRD.md](../docs/PRD.md) to stay aligned to scope and non-goals.
 - Prefer minimal, safe, reproducible changes.
 
 ## Tooling: Playwright MCP (official)
@@ -29,6 +30,7 @@
 ## Logging policy (durable repo memory)
 - After each meaningful run, write a run note in `notes/agent-runs/` using the template.
 - Keep notes vendor-agnostic; avoid storing secrets, URLs, or personal data.
+- Maintain `docs/AGENT_WORK_LOG.md` as append-only after meaningful repo work (commands run, files changed, decisions, next steps).
 
 ## Skill policy (generalize learnings)
 - After a successful workflow (or after resolving a recurring failure), extract/update a skill in `.github/skills/`.

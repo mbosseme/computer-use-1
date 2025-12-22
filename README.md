@@ -21,6 +21,11 @@ A minimal, local-first workspace for running GitHub Copilot “Agent mode” in 
 
 If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
 
+## Reference docs
+- [docs/Local-First Browser Agent Briefing.md](docs/Local-First%20Browser%20Agent%20Briefing.md)
+- [docs/PRD.md](docs/PRD.md)
+- [docs/AGENT_WORK_LOG.md](docs/AGENT_WORK_LOG.md)
+
 ## Validation prompt
 Use Copilot Agent Mode with Playwright MCP tools enabled:
 
