@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment files (only if ever used)
+.env
+
+# Playwright artifacts
+playwright-report/
+test-results/
+blob-report/
+*.zip
+*.trace
+# (Optional) downloads directory if created by automation
+downloads/
