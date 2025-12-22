@@ -25,6 +25,7 @@ If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@
 - [docs/Local-First Browser Agent Briefing.md](docs/Local-First%20Browser%20Agent%20Briefing.md)
 - [docs/PRD.md](docs/PRD.md)
 - [docs/AGENT_WORK_LOG.md](docs/AGENT_WORK_LOG.md)
+- **Skills Index**: [.github/skills/README.md](.github/skills/README.md) (Skills live in `.github/skills/`)
 
 ## Validation prompt
 Use Copilot Agent Mode with Playwright MCP tools enabled:

@@ -5,9 +5,24 @@
 - Consult [docs/PRD.md](../docs/PRD.md) to stay aligned to scope and non-goals.
 - Prefer minimal, safe, reproducible changes.
 
+## Memory Warmup (Start of EVERY Task)
+1. **Read Context**: Read `docs/PRD.md` (scope + guardrails).
+2. **Read Skills Index**: Read `.github/skills/README.md`.
+3. **Load Skills**: Open 1–3 relevant skill files (e.g., `browser-automation-core/SKILL.md`) to load them into context.
+4. **Execute**: Proceed with the task using the loaded patterns.
+
 ## Tooling: Playwright MCP (official)
 - Use the Playwright MCP server tools for browser actions (navigate, click, fill, screenshot, etc.).
 - Keep workflows deterministic: explicit waits, stable selectors, and clear stop conditions.
+
+## General-Purpose Stance
+- This agent is for **any** browser or terminal task, not just training.
+- Examples:
+  - Timesheet entry / form filling.
+  - Approving/reviewing items.
+  - Online research / data extraction.
+  - Terminal-based automation.
+- **Safety First**: Always apply HITL for auth and irreversible actions (Submit/Approve/Pay).
 
 ## Selector strategy (stability first)
 - Prefer `data-testid` / `data-test` attributes when available.
@@ -32,9 +47,15 @@
 - Keep notes vendor-agnostic; avoid storing secrets, URLs, or personal data.
 - Maintain `docs/AGENT_WORK_LOG.md` as append-only after meaningful repo work (commands run, files changed, decisions, next steps).
 
-## Skill policy (generalize learnings)
-- After a successful workflow (or after resolving a recurring failure), extract/update a skill in `.github/skills/`.
-- Skills should be general and reusable across sites; include HITL points and recovery rules.
+## When Stuck (Escalation Ladder)
+1. **Consult Skills**: Re-read the "Recovery rules" in the relevant skill file.
+2. **Bounded Recovery**: Try 2–3 specific tactics (e.g., dismiss overlay, scroll container, reload with warning).
+3. **Ask User**: If recovery fails, stop and ask for help.
+4. **Update Memory**: If the user provides a workaround, **immediately** update the relevant skill file and add a run note.
+
+## Skill Update Rule
+- **Generalize**: If a workaround is reusable, add it to the skill under "Recovery rules" or "Detection signal".
+- **New Workflows**: If a new recurring workflow emerges (e.g., timesheet entry), create a new skill folder for it.
 
 ## Commit policy (major milestones)
 - Do **not** propose commits for log-only changes (e.g., `docs/AGENT_WORK_LOG.md`) or minor doc tweaks.

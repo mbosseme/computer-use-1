@@ -111,3 +111,17 @@ Running log of actions performed by Copilot Agent in this repo.
 - Next steps:
   - Update skill file with "Certificate of Completion" landmark.
   - Bundle all changes into the major milestone commit.
+
+## Entry
+- Date/time: Mon Dec 22 15:11:57 EST 2025
+- Goal: Generalize agent memory and skills (Core Browser Skill + Skills Index).
+- Files changed:
+  - `.github/skills/README.md` (Created)
+  - `.github/skills/browser-automation-core/SKILL.md` (Created)
+  - `.github/skills/training-navigation/SKILL.md` (Refactored)
+  - `.github/copilot-instructions.md` (Updated workflow)
+  - `README.md` (Updated references)
+- Decisions/notes:
+  - Created a central skills index to improve discovery.
+  - Extracted generic browser automation logic into a core skill to avoid duplication.
+  - Updated instructions to enforce "Memory Warmup" and "Escalation Ladder".
