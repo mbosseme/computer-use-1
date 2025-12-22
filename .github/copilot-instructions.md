@@ -35,3 +35,11 @@
 ## Skill policy (generalize learnings)
 - After a successful workflow (or after resolving a recurring failure), extract/update a skill in `.github/skills/`.
 - Skills should be general and reusable across sites; include HITL points and recovery rules.
+
+## Commit policy (major milestones)
+- Do **not** propose commits for log-only changes (e.g., `docs/AGENT_WORK_LOG.md`) or minor doc tweaks.
+- Propose a commit only when at least one is true:
+	- A new capability is added (e.g., MCP validated + first training workflow + skill enhancements).
+	- A structural repo change occurs (new folders/files that materially change the system).
+	- A bug fix affects core functionality (MCP config changes, workflow logic changes).
+- Target cadence: commit at major milestones (roughly every few hours or after a meaningful end-to-end success).

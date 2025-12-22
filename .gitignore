@@ -13,6 +13,7 @@ __pycache__/
 .env
 
 # Playwright artifacts
+.playwright-mcp/
 playwright-report/
 test-results/
 blob-report/
