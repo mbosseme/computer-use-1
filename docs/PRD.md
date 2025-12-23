@@ -45,6 +45,12 @@ We want a minimal, safe, reproducible workspace where GitHub Copilot Agent Mode 
   - `notes/agent-runs/*`
   - `docs/AGENT_WORK_LOG.md`
 
+### Skills & Instructions Loading Model
+- **Custom instructions** (this repo’s `.github/copilot-instructions.md`) apply every turn.
+- **Skills** are only considered when Copilot opens/references them; they are not automatically loaded each turn.
+- The **Skills Index** exists to keep skill discovery consistent: open `.github/skills/README.md`, then open 1–3 relevant skills.
+- **Persistence model**: repo memory (docs/skills/run logs) persists across sessions; model session memory does not.
+
 Optional later (not v1): memory MCP / retrieval tooling, only if it reduces repeated failures and has clear safety boundaries.
 
 ## 6) Safety requirements

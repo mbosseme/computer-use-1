@@ -27,6 +27,12 @@ If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@
 - [docs/AGENT_WORK_LOG.md](docs/AGENT_WORK_LOG.md)
 - **Skills Index**: [.github/skills/README.md](.github/skills/README.md) (Skills live in `.github/skills/`)
 
+## How repo memory works
+- **Automatic**: `.github/copilot-instructions.md` (custom instructions applied every turn).
+- **On-demand**: Skills in `.github/skills/` are only used when the agent opens them (start with the Skills Index).
+- **Durable logs**: Run notes in `notes/agent-runs/` + work log in `docs/AGENT_WORK_LOG.md`.
+- **Session vs repo**: Chat/session memory is not durable; repo memory is.
+
 ## Validation prompt
 Use Copilot Agent Mode with Playwright MCP tools enabled:
 

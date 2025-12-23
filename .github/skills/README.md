@@ -8,6 +8,12 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 - **[training-navigation](training-navigation/SKILL.md)**: Specialized logic for navigating gated training modules (timers, videos, quizzes).
 - **[browser-automation-core](browser-automation-core/SKILL.md)**: **(Start here for web tasks)** General-purpose browser automation patterns (selectors, waiting, scrolling, overlays, HITL).
 
+## Skill selection heuristic
+- Choose **1 primary** skill + up to **2 supporting** skills.
+- For any web UI task, default the primary skill to **browser-automation-core**.
+- Skills are **on-demand memory**: the agent must open the `SKILL.md` file to load it into context.
+- If a workflow repeats 2+ times and doesn’t fit existing skills, **propose** a new skill folder name/path and ask Matt (do not create it unless asked).
+
 ## How Copilot should use skills
 
 1.  **At task start**:
