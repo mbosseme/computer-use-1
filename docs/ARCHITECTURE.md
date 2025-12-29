@@ -22,7 +22,7 @@ Core principles:
   - Ask immediately before clicks that submit/approve/pay/finish.
   - Prefer stable selectors (`data-testid`, roles + accessible names).
 
-Config lives in `.vscode/mcp.json`.
+Config lives in `.vscode/mcp.json` (this is the only MCP server configured in this repo by default).
 
 ### Deterministic local transforms
 - Prefer scripted, deterministic transforms over manual UI operations.
@@ -30,7 +30,8 @@ Config lives in `.vscode/mcp.json`.
 - One-off scripts and artifacts should be namespaced under `runs/<RUN_ID>/`.
 
 ### Database queries (DB MCP)
-- Optional component when the run requires querying a data warehouse.
+- Optional component when a run requires querying a data warehouse.
+- Not configured in this repo by default; when added, keep exports and temp artifacts namespaced under `RUN_ID`.
 - Prefer exporting results and applying deterministic local transforms.
 
 ## Repository “memory” model
@@ -44,8 +45,8 @@ Config lives in `.vscode/mcp.json`.
 - Skills should be vendor-agnostic and focus on repeatable tactics.
 
 ### Logging
-- Per-run artifacts: `runs/<RUN_ID>/...` (often uncommitted; no secrets/URLs/tokens).
-- Per-session narrative notes: `notes/agent-runs/` (sanitized; durable).
+- Per-run artifacts (run-local): `runs/<RUN_ID>/...` (often uncommitted; no secrets/URLs/tokens).
+- Per-session narrative notes (durable): `notes/agent-runs/` (sanitized).
 - Core repo work log: `docs/CORE_REPO_WORK_LOG.md` (append-only; repo changes only).
 
 ## Data and artifacts

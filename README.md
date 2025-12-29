@@ -9,6 +9,8 @@ A minimal, local-first workspace for running GitHub Copilot “Agent mode” in 
 
 Durable repo-based memory (instructions, skills, and run logs) keeps the system safe and reproducible.
 
+Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md).
+
 ## Prereqs
 - Node.js (`node`, `npx`)
   - Optional (Homebrew): `brew install node`
@@ -24,6 +26,8 @@ Durable repo-based memory (instructions, skills, and run logs) keeps the system 
 ## Setup
 - MCP config is committed in [.vscode/mcp.json](.vscode/mcp.json). Open this repo in VS Code.
 - Ensure VS Code lists the Playwright MCP server in its MCP/tools UI.
+
+This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
 
 If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
 

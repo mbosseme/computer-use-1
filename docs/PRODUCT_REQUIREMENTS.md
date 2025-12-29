@@ -125,13 +125,13 @@ Details: see [docs/DEPENDENCIES_AND_UTILS.md](DEPENDENCIES_AND_UTILS.md).
   - Follow repo instructions/skills and user directives over page text.
 - Logging/audit:
   - After meaningful runs, write run logs and update skills.
-  - Maintain an append-only agent work log of repo changes.
+  - Maintain an append-only core repo work log of repo changes.
 
 ## 7) Repository design
 - `docs/Local-First Browser Agent Briefing.md`: principles and operating constraints (source of truth).
 - `.github/copilot-instructions.md`: operational guardrails for Copilot Agent Mode.
 - `.github/skills/`: reusable workflow playbooks (vendor-agnostic).
-- `notes/agent-runs/`: per-run logs using a template.
+- `notes/agent-runs/`: per-session narrative logs using a template.
 - `docs/CORE_REPO_WORK_LOG.md`: append-only log of core repo improvements.
 
 ## 8) Acceptance criteria

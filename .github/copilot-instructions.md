@@ -69,7 +69,8 @@
 - If the user provides a training URL, treat it as **session-only**; do **not** write it to any repo file.
 
 ## Logging policy (durable repo memory)
-- After each meaningful run, write a run note in `notes/agent-runs/` using the template.
+- After each meaningful run, write a per-session narrative run note in `notes/agent-runs/` using the template.
+- During an active run, maintain/append a per-run handoff journal at `runs/<RUN_ID>/HANDOFF.md` (run-local; typically uncommitted).
 - Keep notes vendor-agnostic; avoid storing secrets, URLs, or personal data.
 - Maintain `docs/CORE_REPO_WORK_LOG.md` as append-only after meaningful core repo work (skills/instructions/docs/utilities/dependency packs).
 
