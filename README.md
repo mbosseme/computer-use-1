@@ -28,17 +28,19 @@ Durable repo-based memory (instructions, skills, and run logs) keeps the system 
 If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
 
 ## Reference docs
+- [AGENTS.md](AGENTS.md)
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [docs/Local-First Browser Agent Briefing.md](docs/Local-First%20Browser%20Agent%20Briefing.md)
-- [docs/PRD.md](docs/PRD.md)
+- [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md)
 - [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
 - [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
-- [docs/AGENT_WORK_LOG.md](docs/AGENT_WORK_LOG.md)
+- [docs/CORE_REPO_WORK_LOG.md](docs/CORE_REPO_WORK_LOG.md)
 - **Skills Index**: [.github/skills/README.md](.github/skills/README.md) (Skills live in `.github/skills/`)
 
 ## How repo memory works
 - **Automatic**: `.github/copilot-instructions.md` (custom instructions applied every turn).
 - **On-demand**: Skills in `.github/skills/` are only used when the agent opens them (start with the Skills Index).
-- **Durable logs**: Run notes in `notes/agent-runs/` + work log in `docs/AGENT_WORK_LOG.md`.
+- **Durable logs**: Run notes in `notes/agent-runs/` + core log in `docs/CORE_REPO_WORK_LOG.md`.
 - **Session vs repo**: Chat/session memory is not durable; repo memory is.
 
 ## Validation prompt

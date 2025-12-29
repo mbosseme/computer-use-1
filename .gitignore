@@ -21,3 +21,7 @@ blob-report/
 *.trace
 # (Optional) downloads directory if created by automation
 downloads/
+
+# Run-local artifacts (keep runs/README.md tracked)
+/runs/*/
+!/runs/README.md
