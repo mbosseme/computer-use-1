@@ -37,9 +37,14 @@ Skills are on-demand memory and only apply when opened.
 ## RUN_ID + run isolation
 Each run must use a unique `RUN_ID` to prevent collisions.
 - Run-local artifacts go under `runs/<RUN_ID>/` (downloads/tmp/exports/scripts)
-- Per-session narrative logs go under `notes/agent-runs/`
+- Default run continuity lives in `runs/<RUN_ID>/HANDOFF.md` (run-local, typically ignored)
+- Optional, intentionally-versioned per-session logs can go under `notes/agent-runs/` (one file per session to avoid conflicts)
 - Never share Playwright profile/user-data-dir or downloads/tmp dirs across runs
 - If running in parallel, prefer a git worktree per run and one VS Code window per worktree
+
+Clean main branch depends on `.gitignore` + conventions (not folder names alone):
+- Ignore `runs/<RUN_ID>/` contents by default (except `runs/README.md`)
+- Optionally ignore `notes/agent-runs/` by default unless you intentionally want those logs committed
 
 ## Safety gates (non-negotiable)
 - **Auth HITL**: stop for login/SSO/MFA/CAPTCHA and wait for the user to complete it
@@ -60,11 +65,12 @@ Each run must use a unique `RUN_ID` to prevent collisions.
 - Prefer git-preserving renames (`git mv`) when restructuring docs
 
 ## Promotion lanes (what gets merged back)
+- Promote-to-core lane includes `.github/`, `docs/`, and `tools/` (if present) for reusable, vendor-agnostic improvements
 - Promote: instructions/skills/docs changes that are vendor-agnostic and reusable
-- Promote: reusable utilities when proven (2+ uses) and reviewed
+- Promote: reusable utilities (e.g., `tools/`) and dependency pack specs when proven (2+ uses) and reviewed
 - Avoid promoting: run artifacts (typically remain run-local) unless explicitly requested
 
 ## Where logs live
-- Per-session narrative logs: `notes/agent-runs/`
-- Per-instantiation handoff journal (run-local): `runs/<RUN_ID>/HANDOFF.md`
+- Per-instantiation handoff journal (run-local, default continuity): `runs/<RUN_ID>/HANDOFF.md`
+- Optional, intentionally-versioned per-session narrative logs: `notes/agent-runs/`
 - Core changes: rely on PR descriptions + git history; an optional core work log may exist at [docs/CORE_REPO_WORK_LOG.md](docs/CORE_REPO_WORK_LOG.md) but should not be updated by default
