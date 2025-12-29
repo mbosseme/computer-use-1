@@ -1,7 +1,13 @@
-# Local-First Browser Agent (Copilot Agent Mode + Playwright MCP)
+# Local-First Computer-Use Agent (Copilot Agent Mode + Playwright MCP)
 
 ## What this is
-A minimal, local-first workspace for running GitHub Copilot “Agent mode” in VS Code to drive a local browser via the official Playwright MCP server, with durable repo-based memory (instructions, skills, and run logs).
+A minimal, local-first workspace for running GitHub Copilot “Agent mode” in VS Code to execute multi-step “computer-use” workflows.
+
+- Browser automation via the official Playwright MCP server
+- Optional database/toolbox MCPs (e.g., queries/exports)
+- Deterministic local transforms (terminal/file ops)
+
+Durable repo-based memory (instructions, skills, and run logs) keeps the system safe and reproducible.
 
 ## Prereqs
 - Node.js (`node`, `npx`)
@@ -24,6 +30,8 @@ If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@
 ## Reference docs
 - [docs/Local-First Browser Agent Briefing.md](docs/Local-First%20Browser%20Agent%20Briefing.md)
 - [docs/PRD.md](docs/PRD.md)
+- [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
+- [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
 - [docs/AGENT_WORK_LOG.md](docs/AGENT_WORK_LOG.md)
 - **Skills Index**: [.github/skills/README.md](.github/skills/README.md) (Skills live in `.github/skills/`)
 
@@ -39,6 +47,25 @@ Use Copilot Agent Mode with Playwright MCP tools enabled:
 - Navigate to `https://example.com`
 - Report the page title
 - Take a screenshot
+
+## Multi-run quickstart (parallel agents)
+Use this when you want multiple agent instances without collisions.
+
+- Pick a unique `RUN_ID` per run (e.g., `2025-12-29_workday-timesheets`)
+- Recommended: create one git worktree per run and open each worktree in a separate VS Code window
+- Ensure each run uses isolated execution state (Playwright profile/user data dir + downloads/tmp dirs)
+- Store run notes in `notes/agent-runs/` and keep any additional per-run artifacts run-local
+
+Details: [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
+
+## Dependencies
+Dependencies are managed in tiers to keep the base reproducible while enabling optional capabilities.
+
+- Tier A (Base): always installed; keep slim
+- Tier B (Optional packs): install on demand
+- Tier C (Run-local): experiments
+
+Details: [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
 
 ## Training run procedure
 1. You paste the training URL into chat as session-only: `<TRAINING_URL>`.

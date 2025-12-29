@@ -1,10 +1,11 @@
-# Local-First Browser Agent Briefing (VS Code + GitHub Copilot Agent Mode + Playwright MCP)
+# Local-First Computer-Use Agent Briefing (VS Code + GitHub Copilot Agent Mode + MCP)
 
 ## Purpose
-This document captures the key learnings and recommended best practices for building a **generalized, local-first browser automation workflow** where **GitHub Copilot Agent Mode in VS Code** drives a **local browser via the official Playwright MCP server** to complete tasks such as:
+This document captures the key learnings and recommended best practices for building a **generalized, local-first “computer-use” workflow** where **GitHub Copilot Agent Mode in VS Code** uses local tools (via MCP) to complete tasks such as:
 - timesheet entry / internal portals
 - authenticated web workflows (SSO/MFA with human handoff)
-- guided browsing and UI exploration
+- guided browsing and UI exploration (Playwright MCP)
+- data + document workflows (DB/MCP queries → deterministic local transforms)
 - repeatable routines (“skills”) extracted from successful runs
 
 The goal is a solution that is:
@@ -31,6 +32,14 @@ The goal is a solution that is:
   - Runs locally (stdio transport) and controls a real local browser.
   - Enables navigation, clicking, form fill, screenshots, and page-state inspection.
 
+- **Other MCP servers / toolboxes (Execution Bodies)**
+  - Database and enterprise tools exposed via MCP (e.g., BigQuery query/export).
+  - Optional capability servers (only when justified; avoid over-engineering).
+
+- **Local deterministic transforms (Terminal / File Ops)**
+  - Small, reviewable scripts for parsing/transforms (e.g., Python + pandas/openpyxl).
+  - Deterministic outputs with minimal dependencies.
+
 ### Why this works
 - **Local-first connectivity**: The agent can reach `localhost`, private IPs, intranet, and VPN sites because the browser runs on your machine.
 - **No inbound ports**: stdio MCP avoids opening network listeners on your laptop.
@@ -47,6 +56,28 @@ The goal is a solution that is:
 4. **Extract**: Agent distills the successful routine into a reusable “Skill.”
 5. **Reuse**: Next time, agent loads the skill and runs the routine faster.
 6. **Log**: Every meaningful run yields a short run note for future reference.
+
+---
+
+## Parallel execution model
+Parallelism matters when you want multiple workflows in flight (or you want to avoid tool/session collisions). The recommendation is to isolate execution state **per run**, while keeping durable knowledge **shared**.
+
+- Use a unique `RUN_ID` per run.
+- Prefer one VS Code window per run, opened on its own git worktree.
+- Prefer one Playwright MCP server per run, with an isolated Playwright profile/user data dir and downloads directory.
+
+Details and a checklist: see [docs/PARALLEL_RUNS.md](PARALLEL_RUNS.md).
+
+---
+
+## Promotion lanes (durable learning beyond skills)
+Not all durable learning is a “skill.” Promote improvements carefully:
+
+- **Skills**: procedural playbooks (steps, landmarks, recovery rules, HITL points).
+- **Utilities**: small reusable scripts/modules for deterministic transforms; promote only once reused and reviewed.
+- **Dependency packs**: add libraries via defined tiers (base vs optional packs vs run-local experiments).
+
+Details: see [docs/DEPENDENCIES_AND_UTILS.md](DEPENDENCIES_AND_UTILS.md).
 
 ### What “generalizable” actually means
 - Generalizable **patterns** (navigation, selectors, approval gates, logging, skill format).
@@ -71,6 +102,13 @@ notes/
 agent-runs/
 YYYY-MM-DD_<task>_<site>.md    # Run summaries and lessons
 known-issues.md                  # Accumulated recurring gotchas (optional)
+
+docs/
+PARALLEL_RUNS.md                  # Worktrees + RUN_ID + isolation model
+DEPENDENCIES_AND_UTILS.md         # Dependency tiers + utilities promotion rules
+
+tools/ (optional)                 # Reusable deterministic utilities (promotable)
+runs/<RUN_ID>/ (optional)         # Conventional per-run state (keep run-local)
 
 ### Why this structure
 - Instructions give Copilot stable “physics” and rules.

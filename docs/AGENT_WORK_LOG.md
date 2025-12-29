@@ -125,3 +125,18 @@ Running log of actions performed by Copilot Agent in this repo.
   - Created a central skills index to improve discovery.
   - Extracted generic browser automation logic into a core skill to avoid duplication.
   - Updated instructions to enforce "Memory Warmup" and "Escalation Ladder".
+
+## Entry
+- Date/time: 2025-12-29
+- Goal: Update docs to match “local-first computer-use agent” design (multi-tool execution, parallel runs, promotion lanes, dependency tiers).
+- Files changed:
+  - `docs/PRD.md` (repositioned to computer-use scope; added parallel runs + promotion + dependency strategy)
+  - `docs/Local-First Browser Agent Briefing.md` (added parallel execution + promotion lanes guidance; expanded repo scaffold)
+  - `README.md` (repositioned to computer-use scope; added multi-run quickstart + dependency section)
+  - `docs/PARALLEL_RUNS.md` (added)
+  - `docs/DEPENDENCIES_AND_UTILS.md` (added)
+- Decisions/notes:
+  - Introduced `RUN_ID` as a required per-run namespace for collision avoidance.
+  - Documented a three-tier dependency model (Base / Optional packs / Run-local).
+  - Clarified a promotion model (core vs run-local) and batch-and-gate safety framing.
+  - Confirmed: no sensitive internal deep links/session URLs/tokens were added; placeholders are used where applicable.
