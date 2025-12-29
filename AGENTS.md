@@ -34,6 +34,12 @@ Skills are on-demand memory and only apply when opened.
 - Open the Skills Index: [.github/skills/README.md](.github/skills/README.md)
 - Open 1–3 relevant skills (max 3) before acting
 
+## Recommended window/worktree usage
+For parallel runs, use a launcher window on `main` to create one branch + worktree per run, then open one VS Code window per worktree.
+
+Source of truth + practical commands:
+- [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md) (includes `RUN_ID` format `YYYY-MM-DD__short-slug`, branch naming, and core-only promotion)
+
 ## RUN_ID + run isolation
 Each run must use a unique `RUN_ID` to prevent collisions.
 - Run-local artifacts go under `runs/<RUN_ID>/` (downloads/tmp/exports/scripts)

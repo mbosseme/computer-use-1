@@ -11,6 +11,12 @@ Core principles:
 
 ## Components
 
+## Operational usage pattern (how this is used in practice)
+- Keep one “launcher” VS Code window opened on `main` for creating run branches + git worktrees.
+- Do the run work in one VS Code window per worktree (one per `RUN_ID`).
+- Treat `run/<RUN_ID>` as the long-lived run journal (runs may last multiple days).
+- Promote only core changes back to `main` (see [docs/PARALLEL_RUNS.md](PARALLEL_RUNS.md)).
+
 ### Agent runtime (Copilot in VS Code)
 - The “agent” is the Copilot chat + tool-using runtime.
 - Operates against the current workspace, and can edit files, run terminal commands, and call MCP tools.
@@ -45,9 +51,9 @@ Config lives in `.vscode/mcp.json` (this is the only MCP server configured in th
 - Skills should be vendor-agnostic and focus on repeatable tactics.
 
 ### Logging
-- Per-run artifacts (run-local): `runs/<RUN_ID>/...` (often uncommitted; no secrets/URLs/tokens).
-- Per-session narrative notes (durable): `notes/agent-runs/` (sanitized).
-- Core repo work log: `docs/CORE_REPO_WORK_LOG.md` (append-only; repo changes only).
+- Per-run continuity and artifacts (run-local): `runs/<RUN_ID>/...` (often uncommitted; no secrets/URLs/tokens).
+- Per-session narrative notes (optional, intentionally-versioned): `notes/agent-runs/` (sanitized).
+- Core repo work log (optional index): `docs/CORE_REPO_WORK_LOG.md` (PRs + git history are canonical).
 
 ## Data and artifacts
 - Downloads: store under `runs/<RUN_ID>/downloads/` when explicitly approved.
@@ -64,8 +70,8 @@ Config lives in `.vscode/mcp.json` (this is the only MCP server configured in th
    - Optional DB queries
 4. Gate irreversible actions and auth steps with HITL.
 5. Record outcome:
-   - Write `notes/agent-runs/<date>_<slug>.md` when meaningful
-   - Update `docs/CORE_REPO_WORK_LOG.md` only if the repo changed
+   - Optionally write `notes/agent-runs/<date>_<slug>.md` when meaningful
+   - Rely on PR descriptions + git history for core changes; optionally update `docs/CORE_REPO_WORK_LOG.md` if you want an index
 
 ## Non-goals
 - Building a generic autonomous agent that runs unsupervised.

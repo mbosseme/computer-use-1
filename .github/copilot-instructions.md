@@ -13,9 +13,9 @@
 
 ## Memory Warmup (Start of EVERY Task)
 0. **Run isolation (required)**:
-  - Set `RUN_ID` (short unique slug).
+  - Set `RUN_ID` in the format `YYYY-MM-DD__short-slug`.
   - Namespace artifacts under `runs/<RUN_ID>/` (downloads/tmp/scripts) and `notes/agent-runs/` (run note).
-  - If running in parallel with other runs, prefer a git worktree and an isolated Playwright profile for this run.
+  - If running in parallel with other runs, prefer a git worktree per run (e.g., `run/<RUN_ID>` at `../wt-<RUN_ID>`) and an isolated Playwright profile for this run.
 1. **Classify the task domain** (pick one): training, general browser automation, research, terminal automation, or a known app/workflow.
 2. **Read Context**: Read `docs/PRODUCT_REQUIREMENTS.md` (scope + guardrails).
 3. **Read Skills Index**: Read `.github/skills/README.md`.
@@ -69,10 +69,10 @@
 - If the user provides a training URL, treat it as **session-only**; do **not** write it to any repo file.
 
 ## Logging policy (durable repo memory)
-- After each meaningful run, write a per-session narrative run note in `notes/agent-runs/` using the template.
+- After each meaningful run, optionally write a per-session narrative run note in `notes/agent-runs/` using the template (when you intentionally want a versioned session summary).
 - During an active run, maintain/append a per-run handoff journal at `runs/<RUN_ID>/HANDOFF.md` (run-local; typically uncommitted).
 - Keep notes vendor-agnostic; avoid storing secrets, URLs, or personal data.
-- Maintain `docs/CORE_REPO_WORK_LOG.md` as append-only after meaningful core repo work (skills/instructions/docs/utilities/dependency packs).
+- Core changes should be clear from PR descriptions + git history; an optional index may exist at `docs/CORE_REPO_WORK_LOG.md` but should not be updated by default.
 
 ## Parallel runs (no collisions)
 - Parallel runs are supported via multiple VS Code windows + git worktrees (recommended).
