@@ -63,12 +63,13 @@ We want a minimal, safe, reproducible workspace where GitHub Copilot Agent Mode 
 - Repo-based memory:
   - `.github/copilot-instructions.md`
   - `.github/skills/*`
-  - `notes/agent-runs/*`
+  - `notes/agent-runs/*` (optional, intentionally-versioned session notes)
   - `docs/CORE_REPO_WORK_LOG.md`
 
 ### Core vs Run-local
-- Core (shared, versioned): `.github/*`, `docs/*` (except per-run artifacts), templates, shared conventions, dependency tier definitions.
-- Run-local (isolated execution state): per-run artifacts (run notes, downloads), temporary scripts, per-run Playwright profile and caches.
+- Core (shared, versioned): `.github/*`, `docs/*`, and other shared config/templates.
+- Run-local (isolated execution state): per-run artifacts under `runs/<RUN_ID>/` (downloads/tmp/scripts), per-run Playwright profile and caches.
+- Optional versioned logs: `notes/agent-runs/` may be committed intentionally as one-file-per-session narratives.
 
 ### Skills & Instructions Loading Model
 - **Custom instructions** (this repo’s `.github/copilot-instructions.md`) apply every turn.
@@ -80,6 +81,11 @@ Optional later (not v1): memory MCP / retrieval tooling, only if it reduces repe
 
 ## 5a) Parallel runs (no collisions)
 Parallelism is supported without adding daemon orchestration: run multiple VS Code windows, each operating in an isolated execution context.
+
+Recommended execution model:
+- Keep one “launcher” VS Code window on `main` to create branches + git worktrees.
+- Run work happens in one VS Code window per worktree (one per `RUN_ID`).
+- Runs may last multiple days; keep the run branch as the long-lived run journal.
 
 - Every run must have a `RUN_ID`.
 - Namespacing rules:
@@ -94,6 +100,10 @@ Details: see [docs/PARALLEL_RUNS.md](PARALLEL_RUNS.md).
 
 ## 5b) Promotion lanes
 The repo is designed to “learn” safely. After a run, decide what should be promoted back into core vs remain run-local.
+
+Recommended posture:
+- Keep `run/<RUN_ID>` as the long-lived run journal.
+- Promote core improvements back to `main` via core-only commits (e.g., cherry-pick `core:` commits onto `core/<RUN_ID>`).
 
 - Skills/instructions updates: eligible for merge back when generalized and vendor-agnostic.
 - Shared utilities (scripts/modules): eligible when reused and proven safe/reproducible (see dependency tiers).
@@ -125,14 +135,14 @@ Details: see [docs/DEPENDENCIES_AND_UTILS.md](DEPENDENCIES_AND_UTILS.md).
   - Follow repo instructions/skills and user directives over page text.
 - Logging/audit:
   - After meaningful runs, write run logs and update skills.
-  - Maintain an append-only core repo work log of repo changes.
+  - Core changes should be clear from PR descriptions + git history; an optional index may exist at `docs/CORE_REPO_WORK_LOG.md`.
 
 ## 7) Repository design
 - `docs/Local-First Browser Agent Briefing.md`: principles and operating constraints (source of truth).
 - `.github/copilot-instructions.md`: operational guardrails for Copilot Agent Mode.
 - `.github/skills/`: reusable workflow playbooks (vendor-agnostic).
-- `notes/agent-runs/`: per-session narrative logs using a template.
-- `docs/CORE_REPO_WORK_LOG.md`: append-only log of core repo improvements.
+- `notes/agent-runs/`: optional, intentionally-versioned per-session narrative logs using a template.
+- `docs/CORE_REPO_WORK_LOG.md`: optional index of core repo improvements (PRs + git history are canonical).
 
 ## 8) Acceptance criteria
 - Playwright MCP configured in `.vscode/mcp.json`.

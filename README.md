@@ -44,7 +44,9 @@ If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@
 ## How repo memory works
 - **Automatic**: `.github/copilot-instructions.md` (custom instructions applied every turn).
 - **On-demand**: Skills in `.github/skills/` are only used when the agent opens them (start with the Skills Index).
-- **Durable logs**: Run notes in `notes/agent-runs/` + core log in `docs/CORE_REPO_WORK_LOG.md`.
+- **Run continuity (default)**: `runs/<RUN_ID>/HANDOFF.md` (run-local; typically not merged to `main`).
+- **Session notes (optional)**: `notes/agent-runs/` (intentionally-versioned, sanitized summaries; one file per session).
+- **Core log (optional index)**: `docs/CORE_REPO_WORK_LOG.md` (optional; PR descriptions + git history are canonical).
 - **Session vs repo**: Chat/session memory is not durable; repo memory is.
 
 ## Validation prompt
@@ -54,13 +56,36 @@ Use Copilot Agent Mode with Playwright MCP tools enabled:
 - Report the page title
 - Take a screenshot
 
-## Multi-run quickstart (parallel agents)
-Use this when you want multiple agent instances without collisions.
+## Recommended workflow (Launcher + Worktrees)
+Use this when you want multiple local agent instances without collisions.
 
-- Pick a unique `RUN_ID` per run (e.g., `2025-12-29_workday-timesheets`)
-- Recommended: create one git worktree per run and open each worktree in a separate VS Code window
-- Ensure each run uses isolated execution state (Playwright profile/user data dir + downloads/tmp dirs)
-- Store run notes in `notes/agent-runs/` and keep any additional per-run artifacts run-local
+Posture:
+- Keep **one “launcher” VS Code window** opened on `main`.
+- Create **one branch + git worktree per run**.
+- Open **one VS Code window per worktree**.
+
+In the launcher window:
+
+```bash
+git switch main
+git pull --ff-only
+
+RUN_ID="YYYY-MM-DD__short-slug"
+git worktree add -b "run/${RUN_ID}" "../wt-${RUN_ID}" main
+code -n "../wt-${RUN_ID}"
+```
+
+Inside the run/worktree window:
+- Follow `.github/prompts/bootstrap_computer_use_agent.prompt.md`.
+- Keep run continuity in `runs/<RUN_ID>/HANDOFF.md`.
+
+**Core vs run-local (short)**
+- Core/shared paths (eligible to merge to `main`): `AGENTS.md`, `README.md`, `.github/**`, `docs/**`, `.vscode/**`, `requirements.txt`.
+- Run-local quarantine (do not merge to `main`): `runs/<RUN_ID>/**` plus ephemeral state (see `.gitignore`).
+
+**Promotion to main (core-only)**
+- Keep `run/<RUN_ID>` as the long-lived run journal (may include run artifacts).
+- Promote only core changes back to `main` (recommended: separate `core:` commits and cherry-pick them onto `core/<RUN_ID>`).
 
 Details: [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
 
@@ -84,5 +109,5 @@ Details: [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
 5. Before the final completion/submission step (Complete/Submit/Attest/Finish), the agent asks for explicit confirmation.
 
 ## After-action
-- Write a run log in [notes/agent-runs/](notes/agent-runs/) using [notes/agent-runs/_TEMPLATE.md](notes/agent-runs/_TEMPLATE.md).
+- Optionally write a session note in [notes/agent-runs/](notes/agent-runs/) using [notes/agent-runs/_TEMPLATE.md](notes/agent-runs/_TEMPLATE.md).
 - Update or extract skills in [.github/skills/](.github/skills/), especially [.github/skills/training-navigation/SKILL.md](.github/skills/training-navigation/SKILL.md), with new recovery rules or landmarks.
