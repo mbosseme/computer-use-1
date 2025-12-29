@@ -1,7 +1,15 @@
-# Local-First Browser Agent (Copilot Agent Mode + Playwright MCP)
+# Local-First Computer-Use Agent (Copilot Agent Mode + Playwright MCP)
 
 ## What this is
-A minimal, local-first workspace for running GitHub Copilot “Agent mode” in VS Code to drive a local browser via the official Playwright MCP server, with durable repo-based memory (instructions, skills, and run logs).
+A minimal, local-first workspace for running GitHub Copilot “Agent mode” in VS Code to execute multi-step “computer-use” workflows.
+
+- Browser automation via the official Playwright MCP server
+- Optional database/toolbox MCPs (e.g., queries/exports)
+- Deterministic local transforms (terminal/file ops)
+
+Durable repo-based memory (instructions, skills, and run logs) keeps the system safe and reproducible.
+
+Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md).
 
 ## Prereqs
 - Node.js (`node`, `npx`)
@@ -19,18 +27,24 @@ A minimal, local-first workspace for running GitHub Copilot “Agent mode” in 
 - MCP config is committed in [.vscode/mcp.json](.vscode/mcp.json). Open this repo in VS Code.
 - Ensure VS Code lists the Playwright MCP server in its MCP/tools UI.
 
+This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
+
 If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
 
 ## Reference docs
+- [AGENTS.md](AGENTS.md)
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [docs/Local-First Browser Agent Briefing.md](docs/Local-First%20Browser%20Agent%20Briefing.md)
-- [docs/PRD.md](docs/PRD.md)
-- [docs/AGENT_WORK_LOG.md](docs/AGENT_WORK_LOG.md)
+- [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md)
+- [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
+- [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
+- [docs/CORE_REPO_WORK_LOG.md](docs/CORE_REPO_WORK_LOG.md)
 - **Skills Index**: [.github/skills/README.md](.github/skills/README.md) (Skills live in `.github/skills/`)
 
 ## How repo memory works
 - **Automatic**: `.github/copilot-instructions.md` (custom instructions applied every turn).
 - **On-demand**: Skills in `.github/skills/` are only used when the agent opens them (start with the Skills Index).
-- **Durable logs**: Run notes in `notes/agent-runs/` + work log in `docs/AGENT_WORK_LOG.md`.
+- **Durable logs**: Run notes in `notes/agent-runs/` + core log in `docs/CORE_REPO_WORK_LOG.md`.
 - **Session vs repo**: Chat/session memory is not durable; repo memory is.
 
 ## Validation prompt
@@ -39,6 +53,25 @@ Use Copilot Agent Mode with Playwright MCP tools enabled:
 - Navigate to `https://example.com`
 - Report the page title
 - Take a screenshot
+
+## Multi-run quickstart (parallel agents)
+Use this when you want multiple agent instances without collisions.
+
+- Pick a unique `RUN_ID` per run (e.g., `2025-12-29_workday-timesheets`)
+- Recommended: create one git worktree per run and open each worktree in a separate VS Code window
+- Ensure each run uses isolated execution state (Playwright profile/user data dir + downloads/tmp dirs)
+- Store run notes in `notes/agent-runs/` and keep any additional per-run artifacts run-local
+
+Details: [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
+
+## Dependencies
+Dependencies are managed in tiers to keep the base reproducible while enabling optional capabilities.
+
+- Tier A (Base): always installed; keep slim
+- Tier B (Optional packs): install on demand
+- Tier C (Run-local): experiments
+
+Details: [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
 
 ## Training run procedure
 1. You paste the training URL into chat as session-only: `<TRAINING_URL>`.

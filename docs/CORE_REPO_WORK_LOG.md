@@ -1,6 +1,10 @@
-# Agent Work Log
+# Core Repo Work Log
 
-Running log of actions performed by Copilot Agent in this repo.
+Append-only index of **core repo improvements** (instructions/skills/docs/utilities/dependency packs).
+
+This is not a per-session scratchpad:
+- Per-session narrative logs live under `notes/agent-runs/`
+- Per-run handoff journals live under `runs/<RUN_ID>/HANDOFF.md` (run-local)
 
 ## Entry
 - Date/time: 2025-12-22 13:44:02 EST
@@ -50,7 +54,7 @@ Running log of actions performed by Copilot Agent in this repo.
   - `notes/agent-runs/2025-12-22_mcp-validation.md`
   - `.gitignore` (ignore `.playwright-mcp/`)
   - `.github/copilot-instructions.md` (commit policy guardrail)
-  - `docs/AGENT_WORK_LOG.md` (this entry)
+  - `docs/CORE_REPO_WORK_LOG.md` (this entry)
 - Decisions/notes:
   - Validation result: title was "Example Domain" and screenshot was produced.
   - Do not commit log-only changes; bundle doc/guardrail tweaks into the next major milestone commit.
@@ -68,7 +72,7 @@ Running log of actions performed by Copilot Agent in this repo.
   - (Playwright MCP) exit: Close -> YES (with explicit user confirmation)
 - Files changed:
   - `notes/agent-runs/2025-12-22_training-run-01.md`
-  - `docs/AGENT_WORK_LOG.md` (this entry)
+  - `docs/CORE_REPO_WORK_LOG.md` (this entry)
 - Decisions/notes:
   - HITL: stopped for login; resumed after user typed “Done”.
   - Safe-click: asked before exiting/finishing the session.
@@ -87,7 +91,7 @@ Running log of actions performed by Copilot Agent in this repo.
 - Files changed:
   - `notes/agent-runs/2025-12-22_training-run-02.md`
   - `.github/skills/training-navigation/SKILL.md` (updated exit confirmation pattern)
-  - `docs/AGENT_WORK_LOG.md` (this entry)
+  - `docs/CORE_REPO_WORK_LOG.md` (this entry)
 - Decisions/notes:
   - Strict Safety: Stopped at the secondary "Exit this course?" dialog to ask for confirmation before clicking "YES".
   - Verified "Completed" status after exit.
@@ -103,7 +107,7 @@ Running log of actions performed by Copilot Agent in this repo.
   - (Playwright MCP) exit: Menu -> Close -> "Exit this course? [YES]"
 - Files changed:
   - `notes/agent-runs/2025-12-22_training-run-03.md`
-  - `docs/AGENT_WORK_LOG.md` (this entry)
+  - `docs/CORE_REPO_WORK_LOG.md` (this entry)
 - Decisions/notes:
   - Quiz handling: Successfully selected correct answers and advanced.
   - Exit path: Used "Close" from the top menu, then handled the secondary confirmation dialog with HITL.
@@ -125,3 +129,18 @@ Running log of actions performed by Copilot Agent in this repo.
   - Created a central skills index to improve discovery.
   - Extracted generic browser automation logic into a core skill to avoid duplication.
   - Updated instructions to enforce "Memory Warmup" and "Escalation Ladder".
+
+## Entry
+- Date/time: 2025-12-29
+- Goal: Update docs to match “local-first computer-use agent” design (multi-tool execution, parallel runs, promotion lanes, dependency tiers).
+- Files changed:
+  - `docs/PRODUCT_REQUIREMENTS.md` (formerly PRD; repositioned to computer-use scope; added parallel runs + promotion + dependency strategy)
+  - `docs/Local-First Browser Agent Briefing.md` (added parallel execution + promotion lanes guidance; expanded repo scaffold)
+  - `README.md` (repositioned to computer-use scope; added multi-run quickstart + dependency section)
+  - `docs/PARALLEL_RUNS.md` (added)
+  - `docs/DEPENDENCIES_AND_UTILS.md` (added)
+- Decisions/notes:
+  - Introduced `RUN_ID` as a required per-run namespace for collision avoidance.
+  - Documented a three-tier dependency model (Base / Optional packs / Run-local).
+  - Clarified a promotion model (core vs run-local) and batch-and-gate safety framing.
+  - Confirmed: no sensitive internal deep links/session URLs/tokens were added; placeholders are used where applicable.
