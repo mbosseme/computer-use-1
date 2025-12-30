@@ -49,6 +49,31 @@ If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@
 - **Core log (optional index)**: `docs/CORE_REPO_WORK_LOG.md` (optional; PR descriptions + git history are canonical).
 - **Session vs repo**: Chat/session memory is not durable; repo memory is.
 
+## Run-local working area (per worktree / per RUN_ID)
+Each run/worktree uses a `RUN_ID` in the format:
+
+- `YYYY-MM-DD__short-slug`
+
+Instance-only materials (briefing docs, raw inputs, exports, one-off scripts) should live under:
+
+- `runs/<RUN_ID>/...` (run-local quarantine; not promoted to `main` by default)
+
+The bootstrap prompt initializes a standard structure for each run:
+
+- `runs/<RUN_ID>/HANDOFF.md` (append-only continuity journal)
+- `runs/<RUN_ID>/briefing/` (briefing materials specific to this run)
+- `runs/<RUN_ID>/inputs/` (raw inputs specific to this run)
+- `runs/<RUN_ID>/exports/` (exports produced during the run)
+- `runs/<RUN_ID>/scripts/` (one-off scripts used only for this run)
+- `runs/<RUN_ID>/tmp/` (scratch)
+- `runs/<RUN_ID>/downloads/` (downloads for this run)
+- `runs/<RUN_ID>/playwright-profile/` (per-run Playwright user-data-dir)
+- `runs/<RUN_ID>/playwright-output/` (per-run Playwright outputs)
+
+Notes:
+- Do not store sensitive URLs/tokens/secrets in any run files; use placeholders like `<TRAINING_URL>`.
+- `notes/**`, `scripts/**`, `requirements.txt`, and `.vscode/**` are treated as non-core by default (see Core vs run-local below).
+
 ## Validation prompt
 Use Copilot Agent Mode with Playwright MCP tools enabled:
 
