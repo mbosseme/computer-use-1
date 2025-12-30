@@ -77,15 +77,16 @@ code -n "../wt-${RUN_ID}"
 
 Inside the run/worktree window:
 - Follow `.github/prompts/bootstrap_computer_use_agent.prompt.md`.
+- Then run `.github/prompts/bootstrap_playwright_run_isolation.prompt.md` to configure per-run Playwright MCP isolation (profile/output dirs) to avoid cross-window collisions.
 - Keep run continuity in `runs/<RUN_ID>/HANDOFF.md`.
 
 **Core vs run-local (short)**
-- Core/shared paths (eligible to merge to `main`): `AGENTS.md`, `README.md`, `.github/**`, `docs/**`, `.vscode/**`, `requirements.txt`.
-- Run-local quarantine (do not merge to `main`): `runs/<RUN_ID>/**` plus ephemeral state (see `.gitignore`).
+- Core/shared paths (eligible to promote to `main`): `AGENTS.md`, `README.md`, `.github/**`, `docs/**`, `tools/**`.
+- Non-core by default (do not promote to `main`): `runs/<RUN_ID>/**`, `notes/**`, `scripts/**`, `requirements.txt`, `.vscode/**`.
 
 **Promotion to main (core-only)**
 - Keep `run/<RUN_ID>` as the long-lived run journal (may include run artifacts).
-- Promote only core changes back to `main` (recommended: separate `core:` commits and cherry-pick them onto `core/<RUN_ID>`).
+- Promote changes back to `main` by copying/merging only the allowlisted core paths (path-based promotion), not by merging the full run branch.
 
 Details: [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
 
