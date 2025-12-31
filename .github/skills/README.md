@@ -7,6 +7,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 - **[_template](_template/SKILL.md)**: Structure for creating new skills. Use when a new recurring workflow emerges.
 - **[training-navigation](training-navigation/SKILL.md)**: Specialized logic for navigating gated training modules (timers, videos, quizzes).
 - **[browser-automation-core](browser-automation-core/SKILL.md)**: **(Start here for web tasks)** General-purpose browser automation patterns (selectors, waiting, scrolling, overlays, HITL).
+- **[research-ladder](research-ladder/SKILL.md)**: Choose the right research depth; escalate Bing → Tavily → Playwright; capture evidence consistently.
 
 ## Skill selection heuristic
 - Choose **1 primary** skill + up to **2 supporting** skills.
