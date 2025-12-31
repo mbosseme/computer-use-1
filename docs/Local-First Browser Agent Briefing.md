@@ -34,6 +34,7 @@ The goal is a solution that is:
 
 - **Other MCP servers / toolboxes (Execution Bodies)**
   - Database and enterprise tools exposed via MCP (e.g., BigQuery query/export).
+  - Optional research MCP servers (e.g., Tavily) for structured web search/extract.
   - Optional capability servers (only when justified; avoid over-engineering).
 
 - **Local deterministic transforms (Terminal / File Ops)**
@@ -121,6 +122,7 @@ runs/<RUN_ID>/ (optional)         # Conventional per-run state (keep run-local)
 
 ### Configuration principles
 - Prefer **workspace-scoped** `.vscode/mcp.json` for reproducibility.
+- Prefer **user-scoped MCP config** for third-party services that require API keys (e.g., Tavily) so secrets aren’t committed into repos; use input prompts rather than plaintext keys.
 - Use **headed mode** when developing/troubleshooting; optionally default headless for routine runs.
 - Avoid excessive automation speed early; slow down when validating flows.
 

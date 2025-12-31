@@ -29,12 +29,19 @@ Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_RE
 
 This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
 
+## Web search (Bing + Tavily)
+- **Bing (native)**: Use for quick lookups and broad discovery. It’s built into Copilot and is policy-controlled (no local MCP server to install).
+- **Tavily (MCP, optional)**: Use for deep research loops where the agent should *search → open → extract* documentation. This is a third-party service and requires an API key.
+
+Setup and prompting guidance: [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
+
 If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
 
 ## Reference docs
 - [AGENTS.md](AGENTS.md)
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [docs/Local-First Browser Agent Briefing.md](docs/Local-First%20Browser%20Agent%20Briefing.md)
+- [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
 - [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md)
 - [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
 - [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
@@ -48,6 +55,31 @@ If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@
 - **Session notes (optional)**: `notes/agent-runs/` (intentionally-versioned, sanitized summaries; one file per session).
 - **Core log (optional index)**: `docs/CORE_REPO_WORK_LOG.md` (optional; PR descriptions + git history are canonical).
 - **Session vs repo**: Chat/session memory is not durable; repo memory is.
+
+## Run-local working area (per worktree / per RUN_ID)
+Each run/worktree uses a `RUN_ID` in the format:
+
+- `YYYY-MM-DD__short-slug`
+
+Instance-only materials (briefing docs, raw inputs, exports, one-off scripts) should live under:
+
+- `runs/<RUN_ID>/...` (run-local quarantine; not promoted to `main` by default)
+
+The bootstrap prompt initializes a standard structure for each run:
+
+- `runs/<RUN_ID>/HANDOFF.md` (append-only continuity journal)
+- `runs/<RUN_ID>/briefing/` (briefing materials specific to this run)
+- `runs/<RUN_ID>/inputs/` (raw inputs specific to this run)
+- `runs/<RUN_ID>/exports/` (exports produced during the run)
+- `runs/<RUN_ID>/scripts/` (one-off scripts used only for this run)
+- `runs/<RUN_ID>/tmp/` (scratch)
+- `runs/<RUN_ID>/downloads/` (downloads for this run)
+- `runs/<RUN_ID>/playwright-profile/` (per-run Playwright user-data-dir)
+- `runs/<RUN_ID>/playwright-output/` (per-run Playwright outputs)
+
+Notes:
+- Do not store sensitive URLs/tokens/secrets in any run files; use placeholders like `<TRAINING_URL>`.
+- `notes/**`, `scripts/**`, `requirements.txt`, and `.vscode/**` are treated as non-core by default (see Core vs run-local below).
 
 ## Validation prompt
 Use Copilot Agent Mode with Playwright MCP tools enabled:
