@@ -34,15 +34,19 @@ STEPS
 
 4) Update the MCP config in this worktree ONLY
 - Edit `.vscode/mcp.json` so the `playwright` server invokes:
-  - `npx -y @playwright/mcp@latest --user-data-dir runs/<RUN_ID>/playwright-profile --output-dir runs/<RUN_ID>/playwright-output`
+  - `npx --yes --package @playwright/mcp@latest mcp-server-playwright --user-data-dir runs/<RUN_ID>/playwright-profile --output-dir runs/<RUN_ID>/playwright-output`
 - Do NOT enable `--shared-browser-context`.
+
+Important (instance-specific binding):
+- Ensure VS Code is actually running the **workspace-scoped** `playwright` MCP server for this window/worktree. If a global/shared Playwright MCP server is running, the agent may bind to that instance and ignore these per-run dirs.
+- If you created a workspace MCP server via UI, confirm the server id/name is `playwright` (so tool calls bind to the correct server).
 
 5) Restart MCP server / reload window
 - In VS Code, restart the MCP server or reload the window so the new args take effect.
 - Then validate isolation quickly:
   - Navigate to `https://example.com`
   - Report the title
-  - Take a screenshot
+  - Take a screenshot (use a simple filename like `mcp-validation.png`)
 
 PRINT (mandatory)
 bootstrap_playwright_isolation=true

@@ -1,8 +1,19 @@
 {
-  "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["-y", "@playwright/mcp@latest"]
-    }
-  }
+	"servers": {
+		"playwright": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"--yes",
+				"--package",
+				"@playwright/mcp@latest",
+				"mcp-server-playwright",
+				"--user-data-dir",
+				"runs/2025-12-29__465-attic-reno/playwright-profile",
+				"--output-dir",
+				"runs/2025-12-29__465-attic-reno/playwright-output"
+			]
+		}
+	},
+	"inputs": []
 }
