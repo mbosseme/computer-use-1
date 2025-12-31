@@ -16,7 +16,9 @@ SESSION BOOTSTRAP (do this first, then print `bootstrapped=True`)
    - ./docs/PRODUCT_REQUIREMENTS.md
 2) Optional (do NOT block if missing):
    - If RUN_ID is already known, try to read: ./runs/<RUN_ID>/HANDOFF.md
+   - If RUN_ID is already known, try to read: ./runs/<RUN_ID>/README.md (run-local binder / organization rules)
    - If RUN_ID is not known, search for the most recent: ./runs/*/HANDOFF.md and load the newest one if present.
+   - If RUN_ID is not known, search for the most recent: ./runs/*/README.md and load the newest one if present.
    - Load the most recent 1–2 run logs under ./notes/agent-runs/ relevant to the current task (if any).
 3) If any REQUIRED file is missing or unreadable, respond exactly:
    BLOCKED: missing_required_files=[...exact paths...]
@@ -62,12 +64,16 @@ run_context_loaded={
   "recent_run_logs_loaded": ["<path1>", "<path2>"]
 }
 
+Notes:
+- Include `./runs/<RUN_ID>/README.md` in `files_loaded` when it exists and was read.
+
 RUN CONTEXT (establish or confirm once, then reuse)
 - If RUN_ID is not set for this workspace/session:
    - Ask the user for RUN_ID in the format: YYYY-MM-DD__<short-slug>
 - Once RUN_ID is confirmed:
   - All run-local artifacts must live under ./runs/<RUN_ID>/ (downloads/tmp/scripts/exports/etc.).
   - Maintain/append a rolling handoff journal at ./runs/<RUN_ID>/HANDOFF.md.
+   - Re-read ./runs/<RUN_ID>/README.md at the start of each new chat/session to keep run-specific organization rules top-of-mind.
   - Never store sensitive URLs/tokens/secrets in any logs; refer to systems generically.
 
 REPO GROUNDING (infer once per session, ≤6 bullets)
