@@ -33,6 +33,9 @@ This repo configures Playwright MCP out of the box; additional MCP servers (e.g.
 - **Bing (native)**: Use for quick lookups and broad discovery. It’s built into Copilot and is policy-controlled (no local MCP server to install).
 - **Tavily (MCP, optional)**: Use for deep research loops where the agent should *search → open → extract* documentation. This is a third-party service and requires an API key.
 
+Parallel runs note:
+- Unlike Playwright, Tavily typically does **not** require per-worktree “isolation” (no browser/profile state). The main parallelism risk is shared **API rate limits/quotas** when multiple windows use the same key.
+
 Setup and prompting guidance: [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
 
 If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
@@ -124,6 +127,8 @@ Inside the run/worktree window:
 - Follow `.github/prompts/bootstrap_computer_use_agent.prompt.md`.
 - Then run `.github/prompts/bootstrap_playwright_run_isolation.prompt.md` to configure per-run Playwright MCP isolation (profile/output dirs) to avoid cross-window collisions.
 - Keep run continuity in `runs/<RUN_ID>/HANDOFF.md`.
+
+Note: Playwright isolation is critical for parallel runs; Tavily is usually configured user-scoped and does not need per-worktree isolation.
 
 **Core vs run-local (short)**
 - Core/shared paths (eligible to promote to `main`): `AGENTS.md`, `README.md`, `.github/**`, `docs/**`, `tools/**`.

@@ -46,11 +46,15 @@ Inside the new worktree window:
 
 ## Collision avoidance checklist
 **Browser state**
-- Use a per-run Playwright **user data dir** (profile) to avoid session/cookie collisions.
-- Use a per-run **downloads** directory.
 
-**Temp / outputs**
-- Use per-run temp directories for scraped data, exports, and intermediate files.
+**Web research (Tavily MCP)**
+- Tavily is typically configured **user-scoped** (API key) and does **not** require per-worktree “isolation” the way Playwright does (no browser/profile state).
+- Primary parallel-run risk is **shared API rate limits/quotas** when multiple windows use the same key.
+
+
+Note:
+- This isolation guidance is **specifically for Playwright**.
+- Tavily MCP usage across multiple windows is generally safe without special per-worktree config; treat it as an API-consumption concern (rate limits), not a local state collision concern.
 - Prefer deterministic transforms that read inputs and produce explicit outputs.
 
 **MCP isolation**
