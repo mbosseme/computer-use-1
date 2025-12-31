@@ -28,6 +28,9 @@ Core principles:
   - Ask immediately before clicks that submit/approve/pay/finish.
   - Prefer stable selectors (`data-testid`, roles + accessible names).
 
+Parallel-run note:
+- For parallel worktrees/windows, run a workspace-scoped Playwright MCP server per VS Code window/worktree and configure per-run `--user-data-dir` / `--output-dir` under `runs/<RUN_ID>/...`. Avoid binding tool calls to a shared/global server, which can silently defeat isolation.
+
 Config lives in `.vscode/mcp.json` (this is the only MCP server configured in this repo by default).
 
 ### Web research (Bing + Tavily)

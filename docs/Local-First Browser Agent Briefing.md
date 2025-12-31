@@ -126,6 +126,19 @@ runs/<RUN_ID>/ (optional)         # Conventional per-run state (keep run-local)
 - Use **headed mode** when developing/troubleshooting; optionally default headless for routine runs.
 - Avoid excessive automation speed early; slow down when validating flows.
 
+### Instance isolation (per VS Code window / per worktree)
+When running multiple VS Code windows (one per git worktree), treat Playwright MCP as **instance-specific**:
+- Run one Playwright MCP server per worktree window.
+- Ensure VS Code is using the **workspace-scoped** server for that window (not a shared/global server), otherwise Playwright may silently use the wrong profile/output locations.
+- Keep the server id/name as `playwright` in each workspace so tool calls bind to the intended instance.
+- Configure per-run isolation with:
+  - `--user-data-dir runs/<RUN_ID>/playwright-profile/`
+  - `--output-dir runs/<RUN_ID>/playwright-output/`
+- Do not enable `--shared-browser-context` when you need isolation.
+
+Output-dir note:
+- When `--output-dir` is set, provide screenshot/save filenames relative to that directory (e.g., `mcp-validation.png`), not a path that already includes `runs/<RUN_ID>/playwright-output/`.
+
 ### Interaction principles
 - Prefer **semantic selectors**:
   - `data-testid` when available

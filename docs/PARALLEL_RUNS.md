@@ -54,7 +54,9 @@ Inside the new worktree window:
 - Prefer deterministic transforms that read inputs and produce explicit outputs.
 
 **MCP isolation**
-- Preferred: **one Playwright MCP server per run**.
+- Preferred: **one Playwright MCP server per run/worktree window**.
+- Make sure VS Code is using a **workspace-scoped** Playwright MCP server for each window/worktree. If a global/shared server is running, the agent may bind to it and ignore your per-run `--user-data-dir` / `--output-dir` settings.
+- Ensure the server id/name is `playwright` in each workspace so tool calls bind to the intended instance.
 - If you must share a server: enforce strict per-context isolation and avoid cross-run shared state.
 
 ## Core vs run-local (promotion lanes)
@@ -64,10 +66,12 @@ This repo’s core/shared paths are:
 - `README.md`
 - `.github/**`
 - `docs/**`
-- `.vscode/**`
-- `requirements.txt`
 
 If you add a reusable utilities directory later, treat `tools/**` as core.
+
+Notes:
+- `.vscode/mcp.json` is committed to `main` as a baseline, but it often becomes **worktree-specific** during a run (per-run Playwright isolation). Excluding `.vscode/**` from core promotion/sync prevents accidentally overwriting run isolation settings.
+- Promote `.vscode/mcp.json` changes only when you are intentionally updating the shared baseline configuration.
 
 ### Run-local quarantine paths (do not merge to `main`)
 - `runs/<RUN_ID>/**` (default location for run continuity + artifacts)

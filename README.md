@@ -81,6 +81,19 @@ Notes:
 - Do not store sensitive URLs/tokens/secrets in any run files; use placeholders like `<TRAINING_URL>`.
 - `notes/**`, `scripts/**`, `requirements.txt`, and `.vscode/**` are treated as non-core by default (see Core vs run-local below).
 
+## Workspace-specific Playwright MCP (instance isolation)
+When you run multiple VS Code windows (one per git worktree), Playwright must be isolated per window/worktree to avoid shared cookies, sessions, downloads, and output collisions.
+
+Recommended pattern (per worktree window):
+- Run `.github/prompts/bootstrap_playwright_run_isolation.prompt.md`.
+- Configure the Playwright MCP server to use:
+  - `--user-data-dir runs/<RUN_ID>/playwright-profile/`
+  - `--output-dir runs/<RUN_ID>/playwright-output/`
+- In VS Code’s MCP UI, ensure the active server is workspace-scoped for this window (not a shared/global server). If multiple Playwright MCP servers are running, stop the global/shared one to avoid the agent binding to the wrong instance.
+
+Output-dir note:
+- If `--output-dir` is set, screenshot/save APIs typically interpret filenames as relative to the output dir. Pass a simple filename like `mcp-validation.png` (not a path that already includes `runs/<RUN_ID>/playwright-output/`) to avoid duplicated subpaths.
+
 ## Validation prompt
 Use Copilot Agent Mode with Playwright MCP tools enabled:
 
@@ -115,6 +128,8 @@ Inside the run/worktree window:
 **Core vs run-local (short)**
 - Core/shared paths (eligible to promote to `main`): `AGENTS.md`, `README.md`, `.github/**`, `docs/**`, `tools/**`.
 - Non-core by default (do not promote to `main`): `runs/<RUN_ID>/**`, `notes/**`, `scripts/**`, `requirements.txt`, `.vscode/**`.
+
+Note: `.vscode/mcp.json` is committed to `main` as a baseline, but during a run it often becomes worktree-specific (e.g., per-run `--user-data-dir` / `--output-dir`). Treat run-specific edits as non-core unless you are intentionally updating the shared baseline.
 
 **Promotion to main (core-only)**
 - Keep `run/<RUN_ID>` as the long-lived run journal (may include run artifacts).
