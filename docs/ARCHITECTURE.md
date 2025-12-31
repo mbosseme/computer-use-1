@@ -30,6 +30,12 @@ Core principles:
 
 Config lives in `.vscode/mcp.json` (this is the only MCP server configured in this repo by default).
 
+### Web research (Bing + Tavily)
+- **Bing web search (native)**: Best for quick lookups, broad discovery, and time-sensitive facts. No local install; policy-controlled by GitHub/Copilot settings.
+- **Tavily (MCP, optional)**: Best for deep research loops (search → extract full docs). Requires an API key and runs as a local MCP server.
+
+This repo does not commit third-party API-key-backed MCP servers. Configure Tavily in VS Code user MCP settings and use an input prompt for the API key (see [docs/Copilot Web Search Configuration and Usage.md](Copilot%20Web%20Search%20Configuration%20and%20Usage.md)).
+
 ### Deterministic local transforms
 - Prefer scripted, deterministic transforms over manual UI operations.
 - Typical tooling: Python (e.g., `pandas`, `openpyxl`, `python-pptx`) when justified.

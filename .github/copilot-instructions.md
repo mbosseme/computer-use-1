@@ -22,6 +22,10 @@
 4. **Load Skills (max 1–3)**: Open the most relevant skill(s). If unsure and it’s a web UI task, default to `browser-automation-core/SKILL.md`.
 5. **Execute**: Proceed using the loaded patterns.
 
+If the task involves web research, consult `docs/Copilot Web Search Configuration and Usage.md`:
+- Prefer native Bing web search for quick/broad lookups.
+- Prefer Tavily (MCP) for deep research loops (search → extract) and full-document ingestion.
+
 ## Tooling: Playwright MCP (official)
 - Use the Playwright MCP server tools for browser actions (navigate, click, fill, screenshot, etc.).
 - Keep workflows deterministic: explicit waits, stable selectors, and clear stop conditions.

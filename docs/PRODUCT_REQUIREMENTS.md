@@ -7,6 +7,7 @@ We want a minimal, safe, reproducible workspace where GitHub Copilot Agent Mode 
 - Enable Copilot Agent Mode in VS Code to use the Playwright MCP server to navigate interactive websites.
 - Keep the workspace local-first, deterministic, and reproducible.
 - Support multiple tool classes: Playwright MCP (browser), DB/MCP toolbox (e.g., BigQuery), terminal/file ops (Python transforms).
+- Support web research via native web search (Bing) and optional third-party MCP research tools (e.g., Tavily) when explicitly configured.
 - Support parallel agent instances without collisions via per-run isolation (RUN_ID, worktrees, isolated Playwright profiles/downloads).
 - Define a promotion model: what changes should be merged back into core vs remain run-local.
 - Provide durable repo memory:
@@ -51,12 +52,15 @@ We want a minimal, safe, reproducible workspace where GitHub Copilot Agent Mode 
 
 ### D) General browsing / research
 - Prefer read-only tools (search/fetch) when interactivity is not needed.
+- Prefer native web search (Bing) for quick/broad lookups; use Tavily (MCP) for deep documentation ingestion and multi-step research.
 - Use Playwright only when interaction is required (forms, navigation, dynamic UI states).
 
 ## 5) Architecture
 - VS Code (host environment)
 - GitHub Copilot Agent Mode (planner/executor)
+- Native web search (Bing via Copilot)
 - Playwright MCP server (official) for browser control
+- Optional MCP research servers (e.g., Tavily) for structured search/extract
 - Database MCP toolbox (e.g., BigQuery) for querying/exports
 - Local deterministic tooling via terminal/file ops (Python; e.g., pandas/openpyxl, python-pptx)
 - Run isolation layer (RUN_ID + per-run directories; optional git worktrees)

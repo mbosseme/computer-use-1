@@ -29,12 +29,19 @@ Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_RE
 
 This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
 
+## Web search (Bing + Tavily)
+- **Bing (native)**: Use for quick lookups and broad discovery. It’s built into Copilot and is policy-controlled (no local MCP server to install).
+- **Tavily (MCP, optional)**: Use for deep research loops where the agent should *search → open → extract* documentation. This is a third-party service and requires an API key.
+
+Setup and prompting guidance: [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
+
 If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
 
 ## Reference docs
 - [AGENTS.md](AGENTS.md)
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [docs/Local-First Browser Agent Briefing.md](docs/Local-First%20Browser%20Agent%20Briefing.md)
+- [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
 - [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md)
 - [docs/PARALLEL_RUNS.md](docs/PARALLEL_RUNS.md)
 - [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
