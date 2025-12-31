@@ -90,7 +90,7 @@ Recommended posture:
 - Do **not** merge run artifacts to `main`; use the promotion workflow below.
 - Avoid binaries and never store secrets/session URLs/tokens (use placeholders like `<TRAINING_URL>`).
 
-Note: the repo’s `.gitignore` may ignore `runs/<RUN_ID>/` by default to keep `main` clean. If you intentionally want to version a specific run artifact on the run branch, add it explicitly (e.g., `git add -f runs/<RUN_ID>/scripts/foo.py`).
+Note: the repo’s `.gitignore` ignores most `runs/<RUN_ID>/` contents to keep `main` clean, but allowlists `runs/*/HANDOFF.md` so it can be committed on the run branch without `-f`. Other run artifacts may still require explicit adds (e.g., `git add -f runs/<RUN_ID>/scripts/foo.py`).
 
 ## Promotion to main (core-only)
 The goal is: keep `run/<RUN_ID>` as the run journal (may include run artifacts), while merging only core improvements back to `main`.

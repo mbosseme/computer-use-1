@@ -74,7 +74,8 @@ If the task involves web research, consult `docs/Copilot Web Search Configuratio
 
 ## Logging policy (durable repo memory)
 - After each meaningful run, optionally write a per-session narrative run note in `notes/agent-runs/` using the template (when you intentionally want a versioned session summary).
-- During an active run, maintain/append a per-run handoff journal at `runs/<RUN_ID>/HANDOFF.md` (run-local; typically uncommitted).
+- During an active run, maintain/append a per-run handoff journal at `runs/<RUN_ID>/HANDOFF.md`.
+  - This journal is **run-local** (not promoted to `main`), but is **allowlisted by `.gitignore`** so it can be tracked and pushed on the run branch for rollback/continuity.
 - Keep notes vendor-agnostic; avoid storing secrets, URLs, or personal data.
 - Core changes should be clear from PR descriptions + git history; an optional index may exist at `docs/CORE_REPO_WORK_LOG.md` but should not be updated by default.
 
