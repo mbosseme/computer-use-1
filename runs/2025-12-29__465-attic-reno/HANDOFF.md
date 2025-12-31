@@ -32,6 +32,12 @@
 - Loaded the latest handoff journal and recent run notes.
 - Ensured standard run-local folders exist under `runs/2025-12-29__465-attic-reno/`.
 - Removed the unused default Playwright output folder `.playwright-mcp/` (run output is `runs/2025-12-29__465-attic-reno/playwright-output/`).
+- Added new generalizable research skill implementing a “Research Ladder” (right-sized depth; Bing → Tavily → Playwright escalation) and an evidence-capture pattern.
+	- Files changed:
+		- `.github/skills/research-ladder/SKILL.md` (new)
+		- `.github/skills/README.md` (index entry)
+	- Why: reduce over/under-research; standardize tier selection, stop rules, and run-local evidence capture.
+	- Verification: opened the new skill file and updated the Skills Index.
 
 ## Next Steps
 - Awaiting specific objective.
