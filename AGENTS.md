@@ -43,13 +43,13 @@ Source of truth + practical commands:
 ## RUN_ID + run isolation
 Each run must use a unique `RUN_ID` to prevent collisions.
 - Run-local artifacts go under `runs/<RUN_ID>/` (downloads/tmp/exports/scripts)
-- Default run continuity lives in `runs/<RUN_ID>/HANDOFF.md` (run-local, typically ignored)
+- Default run continuity lives in `runs/<RUN_ID>/HANDOFF.md` (run-local; tracked on the run branch by default; do not promote to `main`)
 - Optional, intentionally-versioned per-session logs can go under `notes/agent-runs/` (one file per session to avoid conflicts)
 - Never share Playwright profile/user-data-dir or downloads/tmp dirs across runs
 - If running in parallel, prefer a git worktree per run and one VS Code window per worktree
 
 Clean main branch depends on `.gitignore` + conventions (not folder names alone):
-- Ignore `runs/<RUN_ID>/` contents by default (except `runs/README.md`)
+- Ignore `runs/<RUN_ID>/` contents by default (except `runs/README.md` and allowlisted `runs/*/HANDOFF.md`)
 - Optionally ignore `notes/agent-runs/` by default unless you intentionally want those logs committed
 
 ## Safety gates (non-negotiable)
@@ -77,6 +77,6 @@ Clean main branch depends on `.gitignore` + conventions (not folder names alone)
 - Avoid promoting: run artifacts (typically remain run-local) unless explicitly requested
 
 ## Where logs live
-- Per-instantiation handoff journal (run-local, default continuity): `runs/<RUN_ID>/HANDOFF.md`
+- Per-instantiation handoff journal (run-local, default continuity): `runs/<RUN_ID>/HANDOFF.md` (tracked on run branches; not promoted to `main`)
 - Optional, intentionally-versioned per-session narrative logs: `notes/agent-runs/`
 - Core changes: rely on PR descriptions + git history; an optional core work log may exist at [docs/CORE_REPO_WORK_LOG.md](docs/CORE_REPO_WORK_LOG.md) but should not be updated by default

@@ -54,7 +54,7 @@ If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@
 ## How repo memory works
 - **Automatic**: `.github/copilot-instructions.md` (custom instructions applied every turn).
 - **On-demand**: Skills in `.github/skills/` are only used when the agent opens them (start with the Skills Index).
-- **Run continuity (default)**: `runs/<RUN_ID>/HANDOFF.md` (run-local; typically not merged to `main`).
+- **Run continuity (default)**: `runs/<RUN_ID>/HANDOFF.md` (run-local; allowlisted for tracking on run branches; not promoted to `main`).
 - **Session notes (optional)**: `notes/agent-runs/` (intentionally-versioned, sanitized summaries; one file per session).
 - **Core log (optional index)**: `docs/CORE_REPO_WORK_LOG.md` (optional; PR descriptions + git history are canonical).
 - **Session vs repo**: Chat/session memory is not durable; repo memory is.
@@ -83,6 +83,9 @@ The bootstrap prompt initializes a standard structure for each run:
 Notes:
 - Do not store sensitive URLs/tokens/secrets in any run files; use placeholders like `<TRAINING_URL>`.
 - `notes/**`, `scripts/**`, `requirements.txt`, and `.vscode/**` are treated as non-core by default (see Core vs run-local below).
+
+Tracking note:
+- By default, `.gitignore` keeps run artifacts out of core history, but allowlists `runs/*/HANDOFF.md` so the journal can be committed/pushed on the run branch for rollback/continuity.
 
 ## Workspace-specific Playwright MCP (instance isolation)
 When you run multiple VS Code windows (one per git worktree), Playwright must be isolated per window/worktree to avoid shared cookies, sessions, downloads, and output collisions.

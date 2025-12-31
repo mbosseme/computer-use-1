@@ -75,6 +75,9 @@ We want a minimal, safe, reproducible workspace where GitHub Copilot Agent Mode 
 - Run-local (isolated execution state): per-run artifacts under `runs/<RUN_ID>/` (downloads/tmp/scripts), per-run Playwright profile and caches.
 - Optional versioned logs: `notes/agent-runs/` may be committed intentionally as one-file-per-session narratives.
 
+Run continuity note:
+- `runs/<RUN_ID>/HANDOFF.md` is run-local but may be tracked/pushed on the run branch for rollback/continuity; it is not promoted to `main`.
+
 ### Skills & Instructions Loading Model
 - **Custom instructions** (this repo’s `.github/copilot-instructions.md`) apply every turn.
 - **Skills** are only considered when Copilot opens/references them; they are not automatically loaded each turn.
