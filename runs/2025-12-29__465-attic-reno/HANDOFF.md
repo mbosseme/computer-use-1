@@ -39,5 +39,15 @@
 	- Why: reduce over/under-research; standardize tier selection, stop rules, and run-local evidence capture.
 	- Verification: opened the new skill file and updated the Skills Index.
 
+### 2026-01-01
+- Ran a quick local search for independent asbestos air/project monitoring firms near 14052 (Buffalo/WNY region) to confirm we have enough candidates.
+- Drafted a generic monitor scope packet + updated outreach email template.
+	- Files changed:
+		- `runs/2025-12-29__465-attic-reno/contractors/monitor/SCOPE_PACKET.md` (new)
+		- `runs/2025-12-29__465-attic-reno/contractors/email-templates/monitor__initial_outreach.md` (updated)
+		- `runs/2025-12-29__465-attic-reno/contractors/monitor/README.md` (updated)
+	- Why: make monitor outreach fast and consistent; ensure we lock clearance criteria + sampling approach early.
+	- Next: shortlist 3–5 monitor firms, send this packet, and schedule 20–30 minute calls.
+
 ## Next Steps
 - Awaiting specific objective.
