@@ -1,8 +1,17 @@
 {
-  "mcpServers": {
+  "servers": {
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@playwright/mcp@latest"]
+      "args": [
+        "--yes",
+        "--package",
+        "@playwright/mcp@latest",
+        "mcp-server-playwright",
+        "--user-data-dir",
+        "runs/2026-01-06__accelerating_technology_delivery_presentation/playwright-profile",
+        "--output-dir",
+        "runs/2026-01-06__accelerating_technology_delivery_presentation/playwright-output"
+      ]
     }
   }
 }

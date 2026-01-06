@@ -1,1 +1,2 @@
 # Intentionally minimal for v1. Add dependencies only when needed.
+pdf2image
