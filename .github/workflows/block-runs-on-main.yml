@@ -1,0 +1,54 @@
+name: Block runs/ changes on main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  block-runs:
+    name: Block runs/ changes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fail if PR changes runs/
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          echo "Checking changed files between:"
+          echo "  base: $BASE_SHA"
+          echo "  head: $HEAD_SHA"
+
+          changed_files=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+
+          echo "Changed files:"
+          echo "$changed_files"
+
+          blocked=$(echo "$changed_files" | grep -E '^runs/' || true)
+
+          # Allow core documentation about runs.
+          blocked=$(echo "$blocked" | grep -vE '^runs/README\.md$' || true)
+
+          if [[ -n "$blocked" ]]; then
+            echo
+            echo "ERROR: This PR changes files under runs/, which should not be merged into main."
+            echo "Move run artifacts to a run branch, or cherry-pick only core commits into main."
+            echo
+            echo "Blocked paths:"
+            echo "$blocked"
+            exit 1
+          fi
+
+          echo "OK: No blocked runs/ changes detected."
