@@ -25,6 +25,8 @@ downloads/
 # Run-local artifacts (keep runs/README.md tracked)
 /runs/*/
 !/runs/README.md
+!/runs/*/HANDOFF.md
+!/runs/*/README.md
 
 # Optional per-session run notes (commit intentionally; keep README + template tracked)
 /notes/agent-runs/*.md
