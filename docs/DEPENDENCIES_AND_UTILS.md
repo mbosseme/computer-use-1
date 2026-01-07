@@ -37,6 +37,9 @@ Recommended locations:
 - **Reusable, generic utilities**: `tools/` (or `lib/`)
 - **Workflow-specific utilities**: co-locate under the relevant skill folder (e.g., `.github/skills/<skill>/`)
 
+This repo also uses:
+- **Reusable Python utilities for runs**: `agent_tools/` (e.g., the Azure OpenAI GPT-5.2 starter client under `agent_tools/llm/`)
+
 Keep utilities:
 - deterministic and reviewable
 - small and composable

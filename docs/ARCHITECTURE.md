@@ -39,6 +39,12 @@ Config lives in `.vscode/mcp.json` (this is the only MCP server configured in th
 
 This repo does not commit third-party API-key-backed MCP servers. Configure Tavily in VS Code user MCP settings and use an input prompt for the API key (see [docs/Copilot Web Search Configuration and Usage.md](Copilot%20Web%20Search%20Configuration%20and%20Usage.md)).
 
+### LLM access (Azure OpenAI GPT-5.2)
+- This repo includes a starter Azure OpenAI **Responses API** client intended for reuse across runs.
+- Implementation lives under [agent_tools/llm/](../agent_tools/llm/).
+- Setup uses local environment variables via a repo-root `.env` (never commit secrets). See [.env.example](../.env.example).
+- Guide and usage notes: [docs/GPT_5_2_INTEGRATION_GUIDE.md](GPT_5_2_INTEGRATION_GUIDE.md).
+
 ### Deterministic local transforms
 - Prefer scripted, deterministic transforms over manual UI operations.
 - Typical tooling: Python (e.g., `pandas`, `openpyxl`, `python-pptx`) when justified.
@@ -63,6 +69,9 @@ This repo does not commit third-party API-key-backed MCP servers. Configure Tavi
 - Per-run continuity and artifacts (run-local): `runs/<RUN_ID>/...` (often uncommitted; no secrets/URLs/tokens).
 - Per-session narrative notes (optional, intentionally-versioned): `notes/agent-runs/` (sanitized).
 - Core repo work log (optional index): `docs/CORE_REPO_WORK_LOG.md` (PRs + git history are canonical).
+
+Note:
+- Run artifacts under `runs/` are tracked on run branches for rollback/continuity, but a PR guardrail blocks `runs/` changes from being merged into `main`.
 
 ## Data and artifacts
 - Downloads: store under `runs/<RUN_ID>/downloads/` when explicitly approved.
