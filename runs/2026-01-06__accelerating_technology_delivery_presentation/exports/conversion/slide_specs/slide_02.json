@@ -1,0 +1,226 @@
+{
+  "layout_hint": "content",
+  "title": "Friction is the Enemy: Why Centralized Delivery Feels Slow",
+  "subtitle": "Queue time + re-translation dominate build time in centralized models.",
+  "bullets": [],
+  "notes": "Dark tech/circuit background. Use two horizontal process flows: top (orange/red) for centralized delivery with multiple wait steps and a net callout; bottom (cyan/teal) for embedded pod model with fewer steps and a net callout. All steps are rounded rectangles with thin neon stroke, subtle glow, small icon at top, white text inside. Connect steps with right-pointing arrows; waiting steps are smaller boxes with hourglass icon. Center-align the section headings above each flow.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Section heading (top): Centralized IT Delivery (Budgeted, Staffed, Planned in Batches)",
+        "bbox": [
+          145,
+          205,
+          715,
+          55
+        ]
+      },
+      {
+        "label": "Top flow step 1: Budget requests (pre-FY)",
+        "bbox": [
+          35,
+          285,
+          125,
+          165
+        ]
+      },
+      {
+        "label": "Top flow step 2 (waiting): Waiting",
+        "bbox": [
+          175,
+          325,
+          70,
+          120
+        ]
+      },
+      {
+        "label": "Top flow step 3: Capacity staffed (FY+2 mo)",
+        "bbox": [
+          255,
+          285,
+          125,
+          165
+        ]
+      },
+      {
+        "label": "Top flow step 4 (waiting): Waiting",
+        "bbox": [
+          395,
+          325,
+          70,
+          120
+        ]
+      },
+      {
+        "label": "Top flow step 5: Re-discovery (FY+4 mo)",
+        "bbox": [
+          475,
+          285,
+          125,
+          165
+        ]
+      },
+      {
+        "label": "Top flow step 6 (waiting): Waiting",
+        "bbox": [
+          615,
+          325,
+          70,
+          120
+        ]
+      },
+      {
+        "label": "Top flow step 7: PI planning / scheduling",
+        "bbox": [
+          695,
+          285,
+          125,
+          165
+        ]
+      },
+      {
+        "label": "Top flow step 8: Build \u2192 QA \u2192 release",
+        "bbox": [
+          835,
+          285,
+          125,
+          165
+        ]
+      },
+      {
+        "label": "Top flow step 9: Rework loop",
+        "bbox": [
+          955,
+          285,
+          115,
+          165
+        ]
+      },
+      {
+        "label": "Top net callout: Net: 9\u201312 months to usable value. Misalignment drives rework.",
+        "bbox": [
+          170,
+          480,
+          665,
+          80
+        ]
+      },
+      {
+        "label": "Section heading (bottom): Embedded Pod + Hub Guardrails (Continuous Delivery)",
+        "bbox": [
+          185,
+          600,
+          640,
+          55
+        ]
+      },
+      {
+        "label": "Bottom flow step 1: Capacity funded to the business",
+        "bbox": [
+          60,
+          675,
+          215,
+          95
+        ]
+      },
+      {
+        "label": "Bottom flow step 2: Kanban: build in small increments",
+        "bbox": [
+          300,
+          675,
+          215,
+          95
+        ]
+      },
+      {
+        "label": "Bottom flow step 3: Automated guardrails (tests, policy-as-code)",
+        "bbox": [
+          540,
+          675,
+          230,
+          95
+        ]
+      },
+      {
+        "label": "Bottom flow step 4: Direct feedback loop",
+        "bbox": [
+          795,
+          675,
+          205,
+          95
+        ]
+      },
+      {
+        "label": "Bottom net callout: Net: weeks to value. Less translation. Faster learning.",
+        "bbox": [
+          230,
+          805,
+          560,
+          85
+        ]
+      }
+    ],
+    "arrows": [
+      {
+        "from": 1,
+        "to": 2,
+        "label": ""
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": ""
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": ""
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": ""
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "label": ""
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "label": ""
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "label": ""
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "label": ""
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "label": ""
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "label": ""
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "label": ""
+      }
+    ]
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_02.png",
+    "slide_index": 2
+  }
+}

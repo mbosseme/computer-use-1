@@ -1,0 +1,276 @@
+{
+  "layout_hint": "two_col",
+  "title": "How the CoC \u2018Fusion Team\u2019 model resolves Charlotte Barber\u2019s dissatisfaction",
+  "subtitle": "Shift Charlotte-specific work from centralized intake \u2192 funded, accountable pod with a dedicated Product Owner \u2013 Erika McDaniel",
+  "bullets": [],
+  "notes": "Dark navy background. Two-column compare layout: left = TODAY (gray flow + side box + experience box), right = FUTURE (green flow + two callouts + happiness box). Bottom row has two wide rounded rectangles: left (what stays) and right (transition steps). Use rounded rectangles, subtle drop shadows, white text on dark sections, black/dark text inside light boxes. Add simple vertical arrows between numbered steps; add one leftward arrow from 'Chad Connelly' box into 'Centralized IT backlog'. On FUTURE side add curved arrow/loop annotation labeled 'Funding stays with CoC' between steps 2 and 3 and callouts.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "TITLE\nHow the CoC \u2018Fusion Team\u2019 model resolves Charlotte Barber\u2019s dissatisfaction",
+        "bbox": [
+          35,
+          40,
+          930,
+          70
+        ]
+      },
+      {
+        "label": "SUBTITLE\nShift Charlotte-specific work from centralized intake \u2192 funded, accountable pod with a dedicated Product Owner \u2013 Erika McDaniel",
+        "bbox": [
+          40,
+          115,
+          920,
+          35
+        ]
+      },
+      {
+        "label": "TODAY HEADER\nTODAY: Centralized IT intake (Chad + TPM Toshia)",
+        "bbox": [
+          45,
+          180,
+          455,
+          55
+        ]
+      },
+      {
+        "label": "TODAY STEP 1\n1. Multiple CoC stakeholders\n(Sales, Ops, Pharmacy, CoC leadership, etc., including CoC Ops/Charlotte)",
+        "bbox": [
+          55,
+          255,
+          255,
+          85
+        ]
+      },
+      {
+        "label": "TODAY STEP 2\n2. Toshia (TPM):\ncollects + synthesizes requests",
+        "bbox": [
+          65,
+          360,
+          235,
+          70
+        ]
+      },
+      {
+        "label": "TODAY STEP 3\n3. Centralized IT backlog\n(Chad\u2019s lane)",
+        "bbox": [
+          75,
+          450,
+          225,
+          70
+        ]
+      },
+      {
+        "label": "TODAY SIDE BOX\nChad Connelly\n(Central IT BU Owner for CoC)",
+        "bbox": [
+          320,
+          450,
+          170,
+          70
+        ]
+      },
+      {
+        "label": "TODAY STEP 4\n4. Delivery team\n(shared capacity)",
+        "bbox": [
+          75,
+          535,
+          225,
+          70
+        ]
+      },
+      {
+        "label": "TODAY STEP 5\n5. Outputs delivered to CoC",
+        "bbox": [
+          75,
+          620,
+          225,
+          70
+        ]
+      },
+      {
+        "label": "CHARLOTTE CURRENT EXPERIENCE\nCharlotte\u2019s current experience\n\u2022 Diluted priorities (Charlotte is 1 voice among many)\n\u2022 Slow feedback loops (requirements \u2192 build \u2192 learn)\n\u2022 Unclear accountability (who owns my outcomes?)\n\u2022 Low visibility / low control (doesn\u2019t feel like \"my team\")",
+        "bbox": [
+          305,
+          560,
+          195,
+          150
+        ]
+      },
+      {
+        "label": "FUTURE HEADER\nFUTURE: CoC embedded accountability (Charlotte-funded Fusion Team)",
+        "bbox": [
+          515,
+          180,
+          440,
+          55
+        ]
+      },
+      {
+        "label": "FUTURE STEP 1\n1. Charlotte Barber\n(Outcome Owner + funding)",
+        "bbox": [
+          535,
+          260,
+          250,
+          75
+        ]
+      },
+      {
+        "label": "FUTURE STEP 2\n2. Erika McDaniel\n(Product Owner in Charlotte\u2019s org)",
+        "bbox": [
+          535,
+          350,
+          250,
+          75
+        ]
+      },
+      {
+        "label": "FUTURE STEP 3\n3. Deployed CoC Fusion Team\n(BTs + Engineers; ships continuously)",
+        "bbox": [
+          535,
+          440,
+          250,
+          80
+        ]
+      },
+      {
+        "label": "FUTURE STEP 4\n4. Working increments /\ndemos every 1\u20132 weeks",
+        "bbox": [
+          535,
+          535,
+          250,
+          80
+        ]
+      },
+      {
+        "label": "FUTURE STEP 5\n5. Outcome metrics\nimprove for CoC",
+        "bbox": [
+          535,
+          630,
+          250,
+          75
+        ]
+      },
+      {
+        "label": "FUTURE CALLOUT 1\nClear product decisions\n\u2022 Erika owns Charlotte-specific priorities\n\u2022 Stakeholders advise; Erika decides",
+        "bbox": [
+          790,
+          285,
+          190,
+          95
+        ]
+      },
+      {
+        "label": "FUTURE CALLOUT 2\nFunding increases throughput\n\u2022 Shift spend from heavy coordination overhead to more BT + engineering capacity in the pod",
+        "bbox": [
+          790,
+          425,
+          190,
+          115
+        ]
+      },
+      {
+        "label": "FUTURE LOOP LABEL\nFunding stays\nwith CoC",
+        "bbox": [
+          735,
+          395,
+          70,
+          80
+        ]
+      },
+      {
+        "label": "WHY CHARLOTTE IS HAPPIER\nWhy Charlotte is happier\n\u2022 Control: priorities flow through Erika (in her org)\n\u2022 Clarity: obvious accountability (Erika + pod)\n\u2022 Cadence: fast demos and course-correction\n\u2022 Visibility: dedicated team working her outcomes",
+        "bbox": [
+          745,
+          575,
+          235,
+          140
+        ]
+      },
+      {
+        "label": "BOTTOM LEFT BOX\nWhat stays with Chad / centralized IT\n\u2022 Shared CoC platform needs and cross-unit initiatives\n\u2022 Multi-BU work requiring broader dependency coordination\n\u2022 Central standards / governance enforced via Hub enablement",
+        "bbox": [
+          45,
+          755,
+          455,
+          205
+        ]
+      },
+      {
+        "label": "BOTTOM RIGHT BOX\nTransition (how we move from Today \u2192 Future)\n1. Carve out Charlotte-specific initiatives from the centralized queue\n2. Name Erika as Product Owner + establish decision cadence (weekly priorities)\n3. Allocate Charlotte-funded Fusion Team capacity (BT + engineers)\n4. Run a 60\u201390 day pilot with demos + outcome review; scale if successful",
+        "bbox": [
+          515,
+          755,
+          440,
+          205
+        ]
+      }
+    ],
+    "arrows": [
+      {
+        "from": 3,
+        "to": 4,
+        "label": ""
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": ""
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "label": ""
+      },
+      {
+        "from": 6,
+        "to": 8,
+        "label": ""
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "label": ""
+      },
+      {
+        "from": 7,
+        "to": 6,
+        "label": ""
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "label": ""
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "label": ""
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "label": ""
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "label": ""
+      },
+      {
+        "from": 12,
+        "to": 18,
+        "label": "curved/loop"
+      },
+      {
+        "from": 13,
+        "to": 19,
+        "label": "curved/loop"
+      }
+    ]
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_11.png",
+    "slide_index": 11
+  }
+}

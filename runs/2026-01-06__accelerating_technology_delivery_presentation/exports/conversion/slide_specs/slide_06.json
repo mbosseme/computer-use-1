@@ -1,0 +1,76 @@
+{
+  "layout_hint": "two_col",
+  "title": "Spokes: Low to Medium Complexity",
+  "subtitle": "",
+  "bullets": [
+    "The Business Technologist \u2014 Role: Domain Expert (e.g., Supply Chain Analyst) using AI agents and low-code tools.",
+    "The Business Technologist \u2014 Focus: Rapid prototyping of local business logic. \u201cVibe coding\u201d allows them to build 80% of the solution instantly.",
+    "The Analytics Team \u2014 Composition: Small squad of Business Technologists + Analytics Lead.",
+    "The Analytics Team \u2014 The \u201cAnalytics Lead\u201d: The Semantic Modeler. Unlike Data Engineers who move raw data, the AE uses tools like Dataform to create data modeling pipelines that build the core data models used for analysis & ML."
+  ],
+  "notes": "Dark navy gradient background. Large white title top-left with a thin horizontal divider line beneath spanning most of slide. Two rounded-rectangle cards below in a 2-column layout. Each card has a small icon at top-left (left: person/robot outline in cyan; right: chart/analytics icon in purple), a colored heading (cyan/purple), then body text in light gray with bold lead-in labels (Role/Focus/Composition/The \u201cAnalytics Lead\u201d and bold 'Dataform'). Cards have subtle border and soft shadow; internal padding ~30-40px equivalent.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Title: Spokes: Low to Medium Complexity",
+        "bbox": [
+          40,
+          95,
+          920,
+          95
+        ]
+      },
+      {
+        "label": "Divider line (thin): spans across under title",
+        "bbox": [
+          40,
+          200,
+          920,
+          3
+        ]
+      },
+      {
+        "label": "Card (Left): The Business Technologist\nRole: Domain Expert (e.g., Supply Chain Analyst) using AI agents and low-code tools.\n\nFocus: Rapid prototyping of local business logic. \u201cVibe coding\u201d allows them to build 80% of the solution instantly.",
+        "bbox": [
+          40,
+          270,
+          450,
+          500
+        ]
+      },
+      {
+        "label": "Card (Right): The Analytics Team\nComposition: Small squad of Business Technologists + Analytics Lead.\n\nThe \u201cAnalytics Lead\u201d: The Semantic Modeler. Unlike Data Engineers who move raw data, the AE uses tools like Dataform to create data modeling pipelines that build the core data models used for analysis & ML.",
+        "bbox": [
+          525,
+          270,
+          435,
+          500
+        ]
+      },
+      {
+        "label": "Icon (Left card, cyan person/robot outline)",
+        "bbox": [
+          70,
+          315,
+          25,
+          25
+        ]
+      },
+      {
+        "label": "Icon (Right card, purple analytics/chart)",
+        "bbox": [
+          555,
+          315,
+          28,
+          28
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_06.png",
+    "slide_index": 6
+  }
+}

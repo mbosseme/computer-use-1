@@ -1,0 +1,2163 @@
+{
+  "0": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "ACCELERATING\nTECHNOLOGY DELIVERY"
+    }
+  ],
+  "1": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "Friction is the Enemy: Why Centralized Delivery Feels Slow"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        157,
+        64
+      ],
+      "text": "Section heading (top): Centralized IT Delivery (Budgeted, Staffed, Planned in Batches)"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        319,
+        344,
+        157,
+        64
+      ],
+      "text": "Top flow step 1: Budget requests (pre-FY)"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        524,
+        344,
+        157,
+        64
+      ],
+      "text": "Top flow step 3: Capacity staffed (FY+2 mo)"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        729,
+        344,
+        157,
+        64
+      ],
+      "text": "Top flow step 5: Re-discovery (FY+4 mo)"
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        114,
+        456,
+        157,
+        64
+      ],
+      "text": "Top flow step 7: PI planning / scheduling"
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        319,
+        456,
+        157,
+        64
+      ],
+      "text": "Top flow step 8: Build \u2192 QA \u2192 release"
+    },
+    {
+      "id": 9,
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        524,
+        456,
+        157,
+        64
+      ],
+      "text": "Top flow step 9: Rework loop"
+    },
+    {
+      "id": 10,
+      "name": "Rounded Rectangle 9",
+      "bbox": [
+        729,
+        456,
+        157,
+        64
+      ],
+      "text": "Top flow step 2 (waiting): Waiting"
+    },
+    {
+      "id": 11,
+      "name": "Rounded Rectangle 10",
+      "bbox": [
+        114,
+        567,
+        157,
+        64
+      ],
+      "text": "Top flow step 4 (waiting): Waiting"
+    },
+    {
+      "id": 12,
+      "name": "Rounded Rectangle 11",
+      "bbox": [
+        319,
+        567,
+        157,
+        64
+      ],
+      "text": "Top flow step 6 (waiting): Waiting"
+    },
+    {
+      "id": 13,
+      "name": "Rounded Rectangle 12",
+      "bbox": [
+        524,
+        567,
+        157,
+        64
+      ],
+      "text": "Top net callout: Net: 9\u201312 months to usable value. Misalignment drives rework."
+    },
+    {
+      "id": 14,
+      "name": "Rounded Rectangle 13",
+      "bbox": [
+        729,
+        567,
+        157,
+        64
+      ],
+      "text": "Section heading (bottom): Embedded Pod + Hub Guardrails (Continuous Delivery)"
+    },
+    {
+      "id": 15,
+      "name": "Rounded Rectangle 14",
+      "bbox": [
+        114,
+        680,
+        157,
+        64
+      ],
+      "text": "Bottom flow step 1: Capacity funded to the business"
+    },
+    {
+      "id": 16,
+      "name": "Rounded Rectangle 15",
+      "bbox": [
+        319,
+        680,
+        157,
+        64
+      ],
+      "text": "Bottom flow step 2: Kanban: build in small increments"
+    },
+    {
+      "id": 17,
+      "name": "Rounded Rectangle 16",
+      "bbox": [
+        524,
+        680,
+        157,
+        64
+      ],
+      "text": "Bottom flow step 3: Automated guardrails (tests, policy-as-code)"
+    },
+    {
+      "id": 18,
+      "name": "Rounded Rectangle 17",
+      "bbox": [
+        729,
+        680,
+        157,
+        64
+      ],
+      "text": "Bottom flow step 4: Direct feedback loop"
+    },
+    {
+      "id": 19,
+      "name": "Rounded Rectangle 18",
+      "bbox": [
+        114,
+        792,
+        157,
+        64
+      ],
+      "text": "Bottom net callout: Net: weeks to value. Less translation. Faster learning."
+    }
+  ],
+  "2": [
+    {
+      "id": 3,
+      "name": "TextBox 2",
+      "bbox": [
+        52,
+        46,
+        420,
+        113
+      ],
+      "text": "Comparing Development Models"
+    },
+    {
+      "id": 4,
+      "name": "TextBox 3",
+      "bbox": [
+        56,
+        538,
+        405,
+        328
+      ],
+      "text": "The Freight Train (Scaled Agile)\nBest For: ERP & Back-Office Stability.\nWhy: Efficient when the destination is known and the route is stable. Optimized for batching and predictability.\nThe Convoy (Fusion/Pods)\nBest For: Innovation & External Products.\nWhy: Necessary when terrain is uncertain. Small, autonomous units that can re-route instantly based on feedback."
+    },
+    {
+      "id": 5,
+      "name": "Picture 4",
+      "bbox": [
+        70,
+        215,
+        430,
+        289
+      ],
+      "text": ""
+    },
+    {
+      "id": 6,
+      "name": "Picture 5",
+      "bbox": [
+        520,
+        215,
+        430,
+        289
+      ],
+      "text": ""
+    }
+  ],
+  "3": [
+    {
+      "id": 3,
+      "name": "TextBox 2",
+      "bbox": [
+        52,
+        46,
+        420,
+        113
+      ],
+      "text": "The Operating Model: Hub-and-Spoke"
+    }
+  ],
+  "4": [
+    {
+      "id": 3,
+      "name": "TextBox 2",
+      "bbox": [
+        52,
+        46,
+        420,
+        113
+      ],
+      "text": "The Hub: Enablement & Supply"
+    },
+    {
+      "id": 4,
+      "name": "TextBox 3",
+      "bbox": [
+        56,
+        266,
+        405,
+        80
+      ],
+      "text": "Enablement over Control"
+    },
+    {
+      "id": 5,
+      "name": "TextBox 4",
+      "bbox": [
+        56,
+        751,
+        405,
+        133
+      ],
+      "text": "The Tooling Mix: Provide seamless access to best-in-class tools (BigQuery, Databricks, Cloud Run) without bureaucratic friction.\nAutomated Governance: Quality checks are baked into the pipeline (Protect, Measure, Enforce), replacing manual review gates.\nGolden Paths: Pre-secured templates for BTs and Fusion Teams to start building immediately.\n\"Make the Right Way, the Easy Way.\""
+    },
+    {
+      "id": 6,
+      "name": "Picture 5",
+      "bbox": [
+        495,
+        190,
+        470,
+        528
+      ],
+      "text": ""
+    }
+  ],
+  "5": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "Spokes: Low to Medium Complexity"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        362,
+        138
+      ],
+      "text": "Divider line (thin): spans across under title"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        524,
+        344,
+        362,
+        138
+      ],
+      "text": "Card (Left): The Business Technologist\nRole: Domain Expert (e.g., Supply Chain Analyst) using AI agents and low-code tools.\n\nFocus: Rapid prototyping of local business logic. \u201cVibe coding\u201d allows them to build 80% of the solution instantly."
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        114,
+        530,
+        362,
+        138
+      ],
+      "text": "Card (Right): The Analytics Team\nComposition: Small squad of Business Technologists + Analytics Lead.\n\nThe \u201cAnalytics Lead\u201d: The Semantic Modeler. Unlike Data Engineers who move raw data, the AE uses tools like Dataform to create data modeling pipelines that build the core data models used for analysis & ML."
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        524,
+        530,
+        362,
+        138
+      ],
+      "text": "Icon (Left card, cyan person/robot outline)"
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        114,
+        716,
+        362,
+        138
+      ],
+      "text": "Icon (Right card, purple analytics/chart)"
+    }
+  ],
+  "6": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "Spokes: Medium to High Complexity"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        362,
+        138
+      ],
+      "text": "Left card container (rounded rectangle)"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        524,
+        344,
+        362,
+        138
+      ],
+      "text": "Right card container (rounded rectangle)"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        114,
+        530,
+        362,
+        138
+      ],
+      "text": "Left card header: icon (group/people) + \"The Fusion Team\""
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        524,
+        530,
+        362,
+        138
+      ],
+      "text": "Right card header: icon (helmet) + \"Forward Deployed Team\""
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        114,
+        716,
+        362,
+        138
+      ],
+      "text": "Left card body text:\nWhere: Internal IT / Product.\n\nModel: Lightweight, cross-functional squads (4-5 utility players). Faster than SAFe, less dense than a Forward Deployed Team.\n\nUse Case: Building scalable, multi-tenant Enterprise SaaS products."
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        524,
+        716,
+        362,
+        138
+      ],
+      "text": "Right card body text:\nWhere: Embedded with Client / Complex Business Area.\n\nModel: Elite, high-talent density. The \"Special Ops\" approach.\n\nUse Case: Only for high-ROI, \"messy\" problems where being on-site is the only solution. Solutions are \"extracted\" back to the platform."
+    }
+  ],
+  "7": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "Formalizing the Business Technologist Vertical"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        225,
+        92
+      ],
+      "text": "Background (dark navy gradient)"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        387,
+        344,
+        225,
+        92
+      ],
+      "text": "Divider line under title (thin, subtle)"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        660,
+        344,
+        225,
+        92
+      ],
+      "text": "Right diagram outer panel (rounded rectangle, very dark, subtle border)"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        114,
+        484,
+        225,
+        92
+      ],
+      "text": "Section header (purple): The \"Third Vertical\""
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        387,
+        484,
+        225,
+        92
+      ],
+      "text": "Body text: Establishing a professional home for technologists who sit outside of\ntraditional Engineering but drive technical value."
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        660,
+        484,
+        225,
+        92
+      ],
+      "text": "Pillar: Business Technologist (purple, tallest) + person icon + labels 'Business' and 'Technologist'"
+    },
+    {
+      "id": 9,
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        114,
+        624,
+        225,
+        92
+      ],
+      "text": "Left card container (rounded rectangle, dark slate, purple left accent strip)"
+    },
+    {
+      "id": 10,
+      "name": "Rounded Rectangle 9",
+      "bbox": [
+        387,
+        624,
+        225,
+        92
+      ],
+      "text": "Card title (purple): The Career Ladder"
+    },
+    {
+      "id": 11,
+      "name": "Rounded Rectangle 10",
+      "bbox": [
+        660,
+        624,
+        225,
+        92
+      ],
+      "text": "Pillar: Product (grey, medium height) + icon + label"
+    },
+    {
+      "id": 12,
+      "name": "Rounded Rectangle 11",
+      "bbox": [
+        114,
+        764,
+        225,
+        92
+      ],
+      "text": "Pillar: Engineering (grey, medium height) + code icon + label"
+    },
+    {
+      "id": 13,
+      "name": "Rounded Rectangle 12",
+      "bbox": [
+        387,
+        764,
+        225,
+        92
+      ],
+      "text": "Bullets (in card):\n\u203a Technical Business Analyst (Junior BT)\n\u203a Senior Tech BA (Business Technologist)\n\u203a Analytics Lead (Specialized/Analytics Engineer)\n\u203a Senior Analytics Lead\n\u203a Principal Analytics Lead"
+    },
+    {
+      "id": 14,
+      "name": "Rounded Rectangle 13",
+      "bbox": [
+        660,
+        764,
+        225,
+        92
+      ],
+      "text": "Caption under pillars (small caps): IT ORGANIZATION STRUCTURE"
+    }
+  ],
+  "8": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "SCS IT Operating Model: Product Vertical + Business Technologist Vertical"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        157,
+        64
+      ],
+      "text": "Top pill\nSupply Chain Services IT"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        319,
+        344,
+        157,
+        64
+      ],
+      "text": "Left group container\nProduct Vertical\n(Capital-P Product + Program Management)"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        524,
+        344,
+        157,
+        64
+      ],
+      "text": "Right group container\nBusiness Technologist Vertical\n(People-Home + Capability)"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        729,
+        344,
+        157,
+        64
+      ],
+      "text": "Callout (top-right)\nEnablement:\ngolden paths +\nautomated checks"
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        114,
+        456,
+        157,
+        64
+      ],
+      "text": "Left box 1\nBusiness Line / P&L Owner\nOwns outcomes, funding, market direction."
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        319,
+        456,
+        157,
+        64
+      ],
+      "text": "Connector label (above Fusion Team)\nOutcome accountability"
+    },
+    {
+      "id": 9,
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        524,
+        456,
+        157,
+        64
+      ],
+      "text": "Right box 1\nBT Leader(s)"
+    },
+    {
+      "id": 10,
+      "name": "Rounded Rectangle 9",
+      "bbox": [
+        729,
+        456,
+        157,
+        64
+      ],
+      "text": "Center group container\nFusion Team\n(small autonomous delivery unit)\n\u2022 Product Owner (direction)\n\u2022 Business Technologist (prototype + functional drafts, AI-assisted)\n\u2022 Engineers (build + harden)\n\u2022 Engineering Steward (quality/standards)\n\u2022 UX (as needed)\n\nPrototype-first \u2192 validate quickly \u2192 engineers harden for scale & security."
+    },
+    {
+      "id": 11,
+      "name": "Rounded Rectangle 10",
+      "bbox": [
+        114,
+        567,
+        157,
+        64
+      ],
+      "text": "Right box 2\nAnalytics Lead / Senior BT"
+    },
+    {
+      "id": 12,
+      "name": "Rounded Rectangle 11",
+      "bbox": [
+        319,
+        567,
+        157,
+        64
+      ],
+      "text": "Left box 2\nProduct Owner\nDay-to-day prioritization, stakeholder alignment, acceptance."
+    },
+    {
+      "id": 13,
+      "name": "Rounded Rectangle 12",
+      "bbox": [
+        524,
+        567,
+        157,
+        64
+      ],
+      "text": "Connector label (between center and right)\nPeople-home\n(hardline)"
+    },
+    {
+      "id": 14,
+      "name": "Rounded Rectangle 13",
+      "bbox": [
+        729,
+        567,
+        157,
+        64
+      ],
+      "text": "Right box 3\nBusiness Technologist (BT)"
+    },
+    {
+      "id": 15,
+      "name": "Rounded Rectangle 14",
+      "bbox": [
+        114,
+        680,
+        157,
+        64
+      ],
+      "text": "Connector label (between left and center)\nDaily direction\n/ priorities"
+    },
+    {
+      "id": 16,
+      "name": "Rounded Rectangle 15",
+      "bbox": [
+        319,
+        680,
+        157,
+        64
+      ],
+      "text": "Left box 3\nProduct Roadmap +\nPortfolio Priorities\nSets what matters and why."
+    },
+    {
+      "id": 17,
+      "name": "Rounded Rectangle 16",
+      "bbox": [
+        524,
+        680,
+        157,
+        64
+      ],
+      "text": "Right box 4\nAssociate/Junior BT"
+    },
+    {
+      "id": 18,
+      "name": "Rounded Rectangle 17",
+      "bbox": [
+        729,
+        680,
+        157,
+        64
+      ],
+      "text": "Right group footer text\nHardline reporting, coaching, craft standards, staffing pool."
+    },
+    {
+      "id": 19,
+      "name": "Rounded Rectangle 18",
+      "bbox": [
+        114,
+        792,
+        157,
+        64
+      ],
+      "text": "Footer (center)\nWe move coordination into the pod by default\u2014Product owns outcomes, BT vertical owns capability, Fusion Teams deliver.\nPortfolio coordination exists only when multi-pod dependencies require it."
+    },
+    {
+      "id": 20,
+      "name": "Rounded Rectangle 19",
+      "bbox": [
+        319,
+        792,
+        157,
+        64
+      ],
+      "text": "Legend (bottom-right)\nSolid line = hardline people-home / reporting\nDotted line = outcome accountability / matrix alignment"
+    }
+  ],
+  "9": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "The Matrix: Fusing IT & Business"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        362,
+        232
+      ],
+      "text": "Engineering\nVertical"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        524,
+        344,
+        362,
+        232
+      ],
+      "text": "BT/Analytics\nVertical"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        114,
+        624,
+        362,
+        232
+      ],
+      "text": "THE FUSION TEAM\nEngineers + BTs + SMEs\nWorking as One"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        524,
+        624,
+        362,
+        232
+      ],
+      "text": "Business\nUnit Leader"
+    }
+  ],
+  "10": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "How the CoC \u2018Fusion Team\u2019 model resolves Charlotte Barber\u2019s dissatisfaction"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        157,
+        64
+      ],
+      "text": "TODAY HEADER\nTODAY: Centralized IT intake (Chad + TPM Toshia)"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        319,
+        344,
+        157,
+        64
+      ],
+      "text": "FUTURE HEADER\nFUTURE: CoC embedded accountability (Charlotte-funded Fusion Team)"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        524,
+        344,
+        157,
+        64
+      ],
+      "text": "TODAY STEP 1\n1. Multiple CoC stakeholders\n(Sales, Ops, Pharmacy, CoC leadership, etc., including CoC Ops/Charlotte)"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        729,
+        344,
+        157,
+        64
+      ],
+      "text": "FUTURE STEP 1\n1. Charlotte Barber\n(Outcome Owner + funding)"
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        114,
+        456,
+        157,
+        64
+      ],
+      "text": "FUTURE CALLOUT 1\nClear product decisions\n\u2022 Erika owns Charlotte-specific priorities\n\u2022 Stakeholders advise; Erika decides"
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        319,
+        456,
+        157,
+        64
+      ],
+      "text": "FUTURE STEP 2\n2. Erika McDaniel\n(Product Owner in Charlotte\u2019s org)"
+    },
+    {
+      "id": 9,
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        524,
+        456,
+        157,
+        64
+      ],
+      "text": "TODAY STEP 2\n2. Toshia (TPM):\ncollects + synthesizes requests"
+    },
+    {
+      "id": 10,
+      "name": "Rounded Rectangle 9",
+      "bbox": [
+        729,
+        456,
+        157,
+        64
+      ],
+      "text": "FUTURE LOOP LABEL\nFunding stays\nwith CoC"
+    },
+    {
+      "id": 11,
+      "name": "Rounded Rectangle 10",
+      "bbox": [
+        114,
+        567,
+        157,
+        64
+      ],
+      "text": "FUTURE CALLOUT 2\nFunding increases throughput\n\u2022 Shift spend from heavy coordination overhead to more BT + engineering capacity in the pod"
+    },
+    {
+      "id": 12,
+      "name": "Rounded Rectangle 11",
+      "bbox": [
+        319,
+        567,
+        157,
+        64
+      ],
+      "text": "FUTURE STEP 3\n3. Deployed CoC Fusion Team\n(BTs + Engineers; ships continuously)"
+    },
+    {
+      "id": 13,
+      "name": "Rounded Rectangle 12",
+      "bbox": [
+        524,
+        567,
+        157,
+        64
+      ],
+      "text": "TODAY STEP 3\n3. Centralized IT backlog\n(Chad\u2019s lane)"
+    },
+    {
+      "id": 14,
+      "name": "Rounded Rectangle 13",
+      "bbox": [
+        729,
+        567,
+        157,
+        64
+      ],
+      "text": "TODAY SIDE BOX\nChad Connelly\n(Central IT BU Owner for CoC)"
+    },
+    {
+      "id": 15,
+      "name": "Rounded Rectangle 14",
+      "bbox": [
+        114,
+        680,
+        157,
+        64
+      ],
+      "text": "TODAY STEP 4\n4. Delivery team\n(shared capacity)"
+    },
+    {
+      "id": 16,
+      "name": "Rounded Rectangle 15",
+      "bbox": [
+        319,
+        680,
+        157,
+        64
+      ],
+      "text": "FUTURE STEP 4\n4. Working increments /\ndemos every 1\u20132 weeks"
+    },
+    {
+      "id": 17,
+      "name": "Rounded Rectangle 16",
+      "bbox": [
+        524,
+        680,
+        157,
+        64
+      ],
+      "text": "CHARLOTTE CURRENT EXPERIENCE\nCharlotte\u2019s current experience\n\u2022 Diluted priorities (Charlotte is 1 voice among many)\n\u2022 Slow feedback loops (requirements \u2192 build \u2192 learn)\n\u2022 Unclear accountability (who owns my outcomes?)\n\u2022 Low visibility / low control (doesn\u2019t feel like \"my team\")"
+    },
+    {
+      "id": 18,
+      "name": "Rounded Rectangle 17",
+      "bbox": [
+        729,
+        680,
+        157,
+        64
+      ],
+      "text": "WHY CHARLOTTE IS HAPPIER\nWhy Charlotte is happier\n\u2022 Control: priorities flow through Erika (in her org)\n\u2022 Clarity: obvious accountability (Erika + pod)\n\u2022 Cadence: fast demos and course-correction\n\u2022 Visibility: dedicated team working her outcomes"
+    },
+    {
+      "id": 19,
+      "name": "Rounded Rectangle 18",
+      "bbox": [
+        114,
+        792,
+        157,
+        64
+      ],
+      "text": "TODAY STEP 5\n5. Outputs delivered to CoC"
+    },
+    {
+      "id": 20,
+      "name": "Rounded Rectangle 19",
+      "bbox": [
+        319,
+        792,
+        157,
+        64
+      ],
+      "text": "FUTURE STEP 5\n5. Outcome metrics\nimprove for CoC"
+    },
+    {
+      "id": 21,
+      "name": "Rounded Rectangle 20",
+      "bbox": [
+        524,
+        792,
+        157,
+        64
+      ],
+      "text": "BOTTOM LEFT BOX\nWhat stays with Chad / centralized IT\n\u2022 Shared CoC platform needs and cross-unit initiatives\n\u2022 Multi-BU work requiring broader dependency coordination\n\u2022 Central standards / governance enforced via Hub enablement"
+    },
+    {
+      "id": 22,
+      "name": "Rounded Rectangle 21",
+      "bbox": [
+        729,
+        792,
+        157,
+        64
+      ],
+      "text": "BOTTOM RIGHT BOX\nTransition (how we move from Today \u2192 Future)\n1. Carve out Charlotte-specific initiatives from the centralized queue\n2. Name Erika as Product Owner + establish decision cadence (weekly priorities)\n3. Allocate Charlotte-funded Fusion Team capacity (BT + engineers)\n4. Run a 60\u201390 day pilot with demos + outcome review; scale if successful"
+    }
+  ],
+  "11": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "Role Evolution: From BA/TPM to Business Technologist + Flow Leadership"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        157,
+        64
+      ],
+      "text": "LEFT HEADER: Traditional Agile Scrum (2010s\u2013Today)"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        319,
+        344,
+        157,
+        64
+      ],
+      "text": "RIGHT HEADER: Accelerated Delivery (Prototype-First Pods)"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        524,
+        344,
+        157,
+        64
+      ],
+      "text": "CENTER DIVIDER (thin vertical line)"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        729,
+        344,
+        157,
+        64
+      ],
+      "text": "LEFT ROLE CHIPS (row): Product Manager | Technical Product Lead | Business Analyst (BA) | TPM/Scrum | Engineers | QA | UX"
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        114,
+        456,
+        157,
+        64
+      ],
+      "text": "RIGHT ROLE CHIPS (row): Outcome Owner (Business) | BT / Product Owner | Pod Lead (flow) | Engineers | Engineering Steward (quality) | UX"
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        319,
+        456,
+        157,
+        64
+      ],
+      "text": "LEFT ROW 1 BOX TITLE: Business Analyst (BA)\n\u2022 Requirements & user stories\n\u2022 Handoffs to dev team"
+    },
+    {
+      "id": 9,
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        524,
+        456,
+        157,
+        64
+      ],
+      "text": "RIGHT ROW 1 BOX TITLE: Business Technologist (BT) / Product Owner (in-pod)\n\u2022 Working prototypes + functional drafts (AI-assisted)\n\u2022 Acceptance criteria + stakeholder testing"
+    },
+    {
+      "id": 10,
+      "name": "Rounded Rectangle 9",
+      "bbox": [
+        729,
+        456,
+        157,
+        64
+      ],
+      "text": "CENTER NOTE + ARROW (row 1): AI enables intent \u2192 working prototype faster\nEVOLVES TO \u2192"
+    },
+    {
+      "id": 11,
+      "name": "Rounded Rectangle 10",
+      "bbox": [
+        114,
+        567,
+        157,
+        64
+      ],
+      "text": "LEFT ROW 2 BOX TITLE: Technical Program Manager (TPM) / Scrum\n\u2022 PI planning / sprint mechanics\n\u2022 Status + coordination layer"
+    },
+    {
+      "id": 12,
+      "name": "Rounded Rectangle 11",
+      "bbox": [
+        319,
+        567,
+        157,
+        64
+      ],
+      "text": "RIGHT ROW 2A BOX (left of pair): Pod Lead (in-pod, hands-on flow)\n\u2022 WIP, sequencing\n\u2022 Demo/retro cadence"
+    },
+    {
+      "id": 13,
+      "name": "Rounded Rectangle 12",
+      "bbox": [
+        524,
+        567,
+        157,
+        64
+      ],
+      "text": "RIGHT ROW 2B BOX (right of pair): Portfolio Delivery Lead\nOnly when >1 pod or hard dependencies\n\u2022 Dependency coordination\n\u2022 Release coordination"
+    },
+    {
+      "id": 14,
+      "name": "Rounded Rectangle 13",
+      "bbox": [
+        729,
+        567,
+        157,
+        64
+      ],
+      "text": "CENTER ARROW (row 2): EVOLVES TO \u2192"
+    },
+    {
+      "id": 15,
+      "name": "Rounded Rectangle 14",
+      "bbox": [
+        114,
+        680,
+        157,
+        64
+      ],
+      "text": "LEFT ROW 3 BOX TITLE: Manual gates & heavy process\n\u2022 Meetings, templates\n\u2022 Approvals"
+    },
+    {
+      "id": 16,
+      "name": "Rounded Rectangle 15",
+      "bbox": [
+        319,
+        680,
+        157,
+        64
+      ],
+      "text": "RIGHT ROW 3 BOX TITLE: Automated governance + golden paths\n\u2022 CI checks, security scans\n\u2022 Standards-by-default"
+    },
+    {
+      "id": 17,
+      "name": "Rounded Rectangle 16",
+      "bbox": [
+        524,
+        680,
+        157,
+        64
+      ],
+      "text": "CENTER ARROW (row 3): EVOLVES TO \u2192"
+    },
+    {
+      "id": 18,
+      "name": "Rounded Rectangle 17",
+      "bbox": [
+        729,
+        680,
+        157,
+        64
+      ],
+      "text": "FOOTER BAND (purple): We remove the coordination layer by default\u2014not accountability."
+    },
+    {
+      "id": 19,
+      "name": "Rounded Rectangle 18",
+      "bbox": [
+        114,
+        792,
+        157,
+        64
+      ],
+      "text": "FOOTER SUBLINE: Business owns outcomes & funding \u00b7 Pods own delivery \u00b7 Engineering owns standards & quality"
+    }
+  ],
+  "12": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "We remove the layer\u2014not the functions"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        116,
+        64
+      ],
+      "text": "Column header: Crucial function\n(what has to happen)"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        278,
+        344,
+        116,
+        64
+      ],
+      "text": "Column header: Who owns it now\n(traditional model)"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        442,
+        344,
+        116,
+        64
+      ],
+      "text": "Column header: Where it lives in the new model\n(role/owner)"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        606,
+        344,
+        116,
+        64
+      ],
+      "text": "Row 1 (left): Problem framing + stakeholder alignment (what are we solving, for whom?)"
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        770,
+        344,
+        116,
+        64
+      ],
+      "text": "Row 1 (middle): BA / TPM\n(often via meetings & docs)"
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        114,
+        456,
+        116,
+        64
+      ],
+      "text": "Row 1 (right): Outcome Owner (Business) + BT/PO (in-pod)"
+    },
+    {
+      "id": 9,
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        278,
+        456,
+        116,
+        64
+      ],
+      "text": "Row 2 (left): Backlog shaping (thin slices, acceptance criteria, \u201cready\u201d work)"
+    },
+    {
+      "id": 10,
+      "name": "Rounded Rectangle 9",
+      "bbox": [
+        442,
+        456,
+        116,
+        64
+      ],
+      "text": "Row 2 (middle): BA (stories) + TPM (planning)"
+    },
+    {
+      "id": 11,
+      "name": "Rounded Rectangle 10",
+      "bbox": [
+        606,
+        456,
+        116,
+        64
+      ],
+      "text": "Row 2 (right): BT/PO (in-pod)"
+    },
+    {
+      "id": 12,
+      "name": "Rounded Rectangle 11",
+      "bbox": [
+        770,
+        456,
+        116,
+        64
+      ],
+      "text": "Row 3 (left): Day-to-day delivery flow (WIP, sequencing, demos, retros, unblock)"
+    },
+    {
+      "id": 13,
+      "name": "Rounded Rectangle 12",
+      "bbox": [
+        114,
+        567,
+        116,
+        64
+      ],
+      "text": "Row 3 (right): Pod Lead (in-pod, hands-on flow)\n(Note: Pod Lead can be a senior BT or senior engineer.)"
+    },
+    {
+      "id": 14,
+      "name": "Rounded Rectangle 13",
+      "bbox": [
+        278,
+        567,
+        116,
+        64
+      ],
+      "text": "Row 3 (middle): TPM/Scrum Master"
+    },
+    {
+      "id": 15,
+      "name": "Rounded Rectangle 14",
+      "bbox": [
+        442,
+        567,
+        116,
+        64
+      ],
+      "text": "Callout (right): Key Principle:\nSingle-pod work stays inside the pod.\nMulti-pod work uses lightweight portfolio coordination."
+    },
+    {
+      "id": 16,
+      "name": "Rounded Rectangle 15",
+      "bbox": [
+        606,
+        567,
+        116,
+        64
+      ],
+      "text": "Row 4 (right): Portfolio Delivery Lead\nException\u2014only when >1 pod or hard dependencies\n(Not present for single-pod work.)"
+    },
+    {
+      "id": 17,
+      "name": "Rounded Rectangle 16",
+      "bbox": [
+        770,
+        567,
+        116,
+        64
+      ],
+      "text": "Row 4 (left): Cross-team dependencies + release coordination (multi-pod work)"
+    },
+    {
+      "id": 18,
+      "name": "Rounded Rectangle 17",
+      "bbox": [
+        114,
+        680,
+        116,
+        64
+      ],
+      "text": "Row 4 (middle): TPM / Program Management layer"
+    },
+    {
+      "id": 19,
+      "name": "Rounded Rectangle 18",
+      "bbox": [
+        278,
+        680,
+        116,
+        64
+      ],
+      "text": "Row 5 (left): Engineering quality, security, standards, architecture guardrails"
+    },
+    {
+      "id": 20,
+      "name": "Rounded Rectangle 19",
+      "bbox": [
+        442,
+        680,
+        116,
+        64
+      ],
+      "text": "Row 5 (right): Engineering Steward + automated checks\n(Examples: PR reviews, CI tests, security scans)"
+    },
+    {
+      "id": 21,
+      "name": "Rounded Rectangle 20",
+      "bbox": [
+        606,
+        680,
+        116,
+        64
+      ],
+      "text": "Row 5 (middle): Architects + QA + Engineering leadership (often via gates)"
+    },
+    {
+      "id": 22,
+      "name": "Rounded Rectangle 21",
+      "bbox": [
+        770,
+        680,
+        116,
+        64
+      ],
+      "text": "Row 6 (right): Outcome Owner (Business) + BT/PO (in-pod)\n(define measures + leading indicators)\n* Enablement support (instrumentation + dashboards)"
+    },
+    {
+      "id": 23,
+      "name": "Rounded Rectangle 22",
+      "bbox": [
+        114,
+        792,
+        116,
+        64
+      ],
+      "text": "Row 6 (left): Outcome measurement + adoption/engagement visibility (\u201care we delivering value?\u201d)"
+    },
+    {
+      "id": 24,
+      "name": "Rounded Rectangle 23",
+      "bbox": [
+        278,
+        792,
+        116,
+        64
+      ],
+      "text": "Row 6 (middle): Often unclear / scattered / after-the-fact reporting"
+    },
+    {
+      "id": 25,
+      "name": "Rounded Rectangle 24",
+      "bbox": [
+        442,
+        792,
+        116,
+        64
+      ],
+      "text": "Bottom band segment 1: In-Pod (default):\nBT/PO + Pod Lead + Engineers + Eng Steward"
+    },
+    {
+      "id": 26,
+      "name": "Rounded Rectangle 25",
+      "bbox": [
+        606,
+        792,
+        116,
+        64
+      ],
+      "text": "Bottom band segment 2: Portfolio (only when needed):\nPortfolio Delivery Lead"
+    },
+    {
+      "id": 27,
+      "name": "Rounded Rectangle 26",
+      "bbox": [
+        770,
+        792,
+        116,
+        64
+      ],
+      "text": "Bottom band segment 3: Business (always):\nOutcome Owner"
+    }
+  ],
+  "13": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "Rules of the Road: Decision Rights in the Matrix"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        116,
+        45
+      ],
+      "text": "The Business decides where we go. Engineering ensures the car is safe and fast. The Business Technologist drives."
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        278,
+        344,
+        116,
+        45
+      ],
+      "text": "Decision Category"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        442,
+        344,
+        116,
+        45
+      ],
+      "text": "Business Unit\n(The \u201cWhat\u201d)"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        606,
+        344,
+        116,
+        45
+      ],
+      "text": "Product / BT Vertical\n(The \u201cShape\u201d)"
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        770,
+        344,
+        116,
+        45
+      ],
+      "text": "Eng / Hub\n(The \u201cHow\u201d)"
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        114,
+        437,
+        116,
+        45
+      ],
+      "text": "Conflict Resolution"
+    },
+    {
+      "id": 9,
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        278,
+        437,
+        116,
+        45
+      ],
+      "text": "Prioritization\n(Budget & Value)"
+    },
+    {
+      "id": 10,
+      "name": "Rounded Rectangle 9",
+      "bbox": [
+        442,
+        437,
+        116,
+        45
+      ],
+      "text": "OWNER\nDecides problem selection\n& value targets."
+    },
+    {
+      "id": 11,
+      "name": "Rounded Rectangle 10",
+      "bbox": [
+        606,
+        437,
+        116,
+        45
+      ],
+      "text": "CONSULTANT\nAdvises on feasibility &\nsequencing."
+    },
+    {
+      "id": 12,
+      "name": "Rounded Rectangle 11",
+      "bbox": [
+        770,
+        437,
+        116,
+        45
+      ],
+      "text": "INFORMED\nReceives execution\ntimelines."
+    },
+    {
+      "id": 13,
+      "name": "Rounded Rectangle 12",
+      "bbox": [
+        114,
+        530,
+        116,
+        45
+      ],
+      "text": "Business GM\n(Budget holder wins\non \u201cWhat\u201d)"
+    },
+    {
+      "id": 14,
+      "name": "Rounded Rectangle 13",
+      "bbox": [
+        278,
+        530,
+        116,
+        45
+      ],
+      "text": "Solution Design\n(Workflow & UX)"
+    },
+    {
+      "id": 15,
+      "name": "Rounded Rectangle 14",
+      "bbox": [
+        442,
+        530,
+        116,
+        45
+      ],
+      "text": "CONSULTANT\nValidates user\nneeds/adoption."
+    },
+    {
+      "id": 16,
+      "name": "Rounded Rectangle 15",
+      "bbox": [
+        606,
+        530,
+        116,
+        45
+      ],
+      "text": "OWNER\nDefines workflow, logic,\n& UI."
+    },
+    {
+      "id": 17,
+      "name": "Rounded Rectangle 16",
+      "bbox": [
+        770,
+        530,
+        116,
+        45
+      ],
+      "text": "APPROVER\nVetoes only if security\nstandards violated."
+    },
+    {
+      "id": 18,
+      "name": "Rounded Rectangle 17",
+      "bbox": [
+        114,
+        623,
+        116,
+        45
+      ],
+      "text": "Product Lead\n(Balances user need\nvs. constraints)"
+    },
+    {
+      "id": 19,
+      "name": "Rounded Rectangle 18",
+      "bbox": [
+        278,
+        623,
+        116,
+        45
+      ],
+      "text": "Architecture & Stack\n(Security & Scale)"
+    },
+    {
+      "id": 20,
+      "name": "Rounded Rectangle 19",
+      "bbox": [
+        442,
+        623,
+        116,
+        45
+      ],
+      "text": "INFORMED\nUses the output."
+    },
+    {
+      "id": 21,
+      "name": "Rounded Rectangle 20",
+      "bbox": [
+        606,
+        623,
+        116,
+        45
+      ],
+      "text": "CONSULTANT\nRequests tools/data\naccess."
+    },
+    {
+      "id": 22,
+      "name": "Rounded Rectangle 21",
+      "bbox": [
+        770,
+        623,
+        116,
+        45
+      ],
+      "text": "OWNER\nMandates \u201cGolden Paths\u201d\n& security standards."
+    },
+    {
+      "id": 23,
+      "name": "Rounded Rectangle 22",
+      "bbox": [
+        114,
+        716,
+        116,
+        45
+      ],
+      "text": "Eng/Hub Lead\n(Standardization wins\non \u201cHow\u201d)"
+    },
+    {
+      "id": 24,
+      "name": "Rounded Rectangle 23",
+      "bbox": [
+        278,
+        716,
+        116,
+        45
+      ],
+      "text": "Staffing & Career\n(Hiring & Promo)"
+    },
+    {
+      "id": 25,
+      "name": "Rounded Rectangle 24",
+      "bbox": [
+        442,
+        716,
+        116,
+        45
+      ],
+      "text": "INPUT\nProvides feedback on\noutcomes."
+    },
+    {
+      "id": 26,
+      "name": "Rounded Rectangle 25",
+      "bbox": [
+        606,
+        716,
+        116,
+        45
+      ],
+      "text": "OWNER\nHiring, firing, promo, &\nstandards (Hardline)."
+    },
+    {
+      "id": 27,
+      "name": "Rounded Rectangle 26",
+      "bbox": [
+        770,
+        716,
+        116,
+        45
+      ],
+      "text": "PEER REVIEW\nTechnical assessment."
+    },
+    {
+      "id": 28,
+      "name": "Rounded Rectangle 27",
+      "bbox": [
+        114,
+        809,
+        116,
+        45
+      ],
+      "text": "Vertical Lead\n(Talent bar is protected\nby function)."
+    }
+  ],
+  "14": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "The BT Vertical as a Talent Marketplace"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        225,
+        92
+      ],
+      "text": "Left panel 1 (green header)\nWhat Business Units KEEP\n\u203a Own the backlog & priorities (\u201cthe What / Where\u201d)\n\u203a Define success metrics and accept work\n\u203a Fund capacity (no ticket queue)"
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        387,
+        344,
+        225,
+        92
+      ],
+      "text": "BU A\nBT Lead | Analytics Engineer\nEngineer(s) | Domain SME\nEmbedded delivery team"
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        660,
+        344,
+        225,
+        92
+      ],
+      "text": "BU B\nBT Lead | Analytics Engineer\nEngineer(s) | Domain SME\nEmbedded delivery team"
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        114,
+        484,
+        225,
+        92
+      ],
+      "text": "BU C\nBT Lead | Analytics Engineer\nEngineer(s) | Domain SME\nEmbedded delivery team"
+    },
+    {
+      "id": 7,
+      "name": "Rounded Rectangle 6",
+      "bbox": [
+        387,
+        484,
+        225,
+        92
+      ],
+      "text": "Left panel 2 (purple header)\nWhat the BT Vertical PROVIDES\n\u203a Career ladder + coaching + standards (hardline)\n\u203a Shared tooling & reusable patterns (faster, safer)\n\u203a Rotation + surge capacity across business units"
+    },
+    {
+      "id": 8,
+      "name": "Rounded Rectangle 7",
+      "bbox": [
+        660,
+        484,
+        225,
+        92
+      ],
+      "text": "Eng/Hub Standards\n(Golden Paths)\nsecure defaults \u00b7 automated checks"
+    },
+    {
+      "id": 9,
+      "name": "Rounded Rectangle 8",
+      "bbox": [
+        114,
+        624,
+        225,
+        92
+      ],
+      "text": "Left panel 3 (blue header)\nWhy this is better than \u201ccentral IT\u201d\n\u203a Work stays embedded with BU cadence\n\u203a Rebalancing is transparent & time-boxed\n\u203a Guardrails are automated (paved roads), not manual gates"
+    },
+    {
+      "id": 10,
+      "name": "Rounded Rectangle 9",
+      "bbox": [
+        387,
+        624,
+        225,
+        92
+      ],
+      "text": "Business Technologist Vertical\n(Professional Home + Talent Pool)\nHiring bar \u00b7 Coaching \u00b7 Leveling \u00b7 Standards"
+    },
+    {
+      "id": 11,
+      "name": "Rounded Rectangle 10",
+      "bbox": [
+        660,
+        624,
+        225,
+        92
+      ],
+      "text": "Footer line (left)\nHardline for craft. Embedded for outcomes."
+    },
+    {
+      "id": 12,
+      "name": "Rounded Rectangle 11",
+      "bbox": [
+        114,
+        764,
+        225,
+        92
+      ],
+      "text": "No ticket intake\nBU-funded capacity is protected"
+    }
+  ],
+  "15": [
+    {
+      "id": 3,
+      "name": "TextBox 2",
+      "bbox": [
+        52,
+        46,
+        420,
+        113
+      ],
+      "text": "The AI-Augmented\nTechnologist"
+    },
+    {
+      "id": 4,
+      "name": "TextBox 3",
+      "bbox": [
+        56,
+        373,
+        405,
+        493
+      ],
+      "text": "The Business-First Builder: AI enables the domain expert to move from \"requirements writer\" to \"solution prototyper.\"\nVibe Coding: Focusing on business intent (\"Show me rebate leakage\") rather than syntax. The AI handles the boilerplate.\nFunctional Wireframes: Using AI to instantly visualize user flows and data logic, iterating in real-time with stakeholders."
+    },
+    {
+      "id": 5,
+      "name": "Picture 4",
+      "bbox": [
+        500,
+        0,
+        500,
+        1000
+      ],
+      "text": ""
+    }
+  ],
+  "16": [
+    {
+      "id": 3,
+      "name": "TextBox 2",
+      "bbox": [
+        52,
+        46,
+        420,
+        113
+      ],
+      "text": "The AI-Augmented\nEngineer"
+    },
+    {
+      "id": 4,
+      "name": "TextBox 3",
+      "bbox": [
+        56,
+        373,
+        405,
+        493
+      ],
+      "text": "The Force Multiplier: Engineers shift from writing syntax to orchestrating multiple AI agents to generate volume.\nScale: A small team of 4 can achieve the output of 10 by leveraging agents for documentation, testing, and boilerplate.\nAutomated Quality: The \"Quality Engineer\" role evolves to building the \"Test-Feed-Fix-Verify\" loop\u2014automating the rejection of insecure AI code."
+    },
+    {
+      "id": 5,
+      "name": "Picture 4",
+      "bbox": [
+        500,
+        0,
+        500,
+        1000
+      ],
+      "text": ""
+    }
+  ],
+  "17": [
+    {
+      "id": 2,
+      "name": "Title 1",
+      "bbox": [
+        37,
+        57,
+        924,
+        104
+      ],
+      "text": "Strategic Roadmap"
+    },
+    {
+      "id": 3,
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        114,
+        344,
+        362,
+        232
+      ],
+      "text": "Card 1: Mandate the Platform Team to build \u201cGolden Paths\u201d for AI (Secure Sandboxes) and Data."
+    },
+    {
+      "id": 4,
+      "name": "Rounded Rectangle 3",
+      "bbox": [
+        524,
+        344,
+        362,
+        232
+      ],
+      "text": "Card 2: Establish the \u201cBusiness Technologist\u201d organization, career ladder, and governance standards."
+    },
+    {
+      "id": 5,
+      "name": "Rounded Rectangle 4",
+      "bbox": [
+        114,
+        624,
+        362,
+        232
+      ],
+      "text": "Card 3: Deploy Fusion Teams into BUs (merging IT & Business) and launch an FDE pilot for a major client."
+    },
+    {
+      "id": 6,
+      "name": "Rounded Rectangle 5",
+      "bbox": [
+        524,
+        624,
+        362,
+        232
+      ],
+      "text": "Card 4: Reinforce values: \u201cSoft Lanes,\u201d \u201cFailure is OK,\u201d and \u201cThe Players Matter\u201d to empower the new verticals."
+    }
+  ],
+  "18": [
+    {
+      "id": 3,
+      "name": "TextBox 2",
+      "bbox": [
+        52,
+        46,
+        420,
+        113
+      ],
+      "text": "Five Key Throughlines"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+PASS_GUESS=3/19
+
+== Slide 01 ==
+PASS
+
+== Slide 02 ==
+- **OVERFLOW (text cut/too tight): ID 3** – the last line “Batches)” is touching/bleeding past the bottom of the box (looks clipped).
+- **OVERFLOW risk (insufficient padding): ID 13** – “Top net callout: …” text is pushed up against the top edge (very tight, could clip depending on renderer).
+
+== Slide 03 ==
+- **[ID 4] OVERFLOW:** Text continues below the bottom edge of the text box (“Why: Efficient when the… Destination is known and…”), with lines running off the container and into the slide margin.  
+- **[ID 4] COLLISION:** Lower lines of the paragraph overlap with a large stray character/shape at bottom-left (looks like a big “0”/“O”), reducing readability.  
+- **[ID 4] OVERFLOW (off-slide):** Bottom-most text appears to extend beyond the slide’s safe area/edge (partially off-slide).
+
+== Slide 04 ==
+- **[ID 3] COLLISION / OVERFLOW:** The second line (“and‑Spoke”) appears to intersect the bottom edge of the title background bar—part of the text looks cut/struck through, as if it’s sitting outside the title shape or behind another layer.
+
+== Slide 05 ==
+- **ID 3 — OVERFLOW/MIS-BOXED:** The title appears to break onto a second line (“Supply”) that sits outside the marked text box boundary, indicating the text box is too short or the line spacing/positioning is off.  
+- **ID 5 — COLLISION:** A horizontal line/shape crosses through the text (“seamless access to best-”), reducing readability.  
+- **ID 5 — OVERFLOW:** The body text runs into the bottom margin; lower lines appear cut off/off-slide (e.g., “in-class tools (BigQuery,” continues beyond the visible area).
+
+== Slide 06 ==
+- **MISSING (ID 3):** Placeholder text “Divider line (thin): spans across under title” is still visible; the actual divider line is missing.
+- **MISSING (ID 6):** Placeholder text “Icon (Left card, cyan person/robot outline)” is still visible; icon graphic is missing.
+- **MISSING (ID 7):** Placeholder text “Icon (Right card, purple analytics/chart)” is still visible; icon graphic is missing.
+
+== Slide 07 ==
+- **OVERFLOW (ID 7):** Left card body text is clipped at the bottom—last line (“Use Case…”) is cut off by the shape boundary.  
+- **MISSING (ID 5):** Header references an icon (group/people) but no icon is visible—appears missing.  
+- **MISSING (ID 6):** Header references an icon (helmet) but no icon is visible—appears missing.  
+- **MISSING (ID 3, ID 4):** The “card container” boxes still show placeholder/instructional text (“Left/Right card container…”) instead of final content.
+
+== Slide 08 ==
+- **[13] OVERFLOW:** Bullet list extends past the bottom of the container; “Principal Analytics Lead” is outside the box (off-card) and appears on the background.  
+- **[4] VISIBILITY:** “Divider line under title” is not visible / too subtle against the dark background (reads as missing).  
+- **[5] VISIBILITY:** “Right diagram outer panel…subtle border” is not perceptible; border/edge is effectively invisible against the background (appears missing).
+
+== Slide 09 ==
+- **[6] COLLISION / OVERFLOW:** Multiple text layers are overlapping within this area (e.g., “Center group container…Fusion Team…” and additional lines). Several lines are visibly clipped at the top/within the box due to crowding.
+- **[10] COLLISION:** Bullet list content overlaps with the text region above (encroaching into the content area associated with **[6]**), reducing readability.
+- **[7] OVERFLOW:** Bottom line (“direction.”) is cut off/clipped inside the box.
+- **[12] OVERFLOW:** Lower lines are very tight to the bottom edge; “acceptance.” appears clipped/at risk of clipping.
+- **[15] OVERFLOW:** Top lines are clipped (text starts too close to the upper boundary; first line partially cut).
+- **[16] OVERFLOW:** Bottom line (“Sets what matters and why.”) is cut off/clipped.
+
+== Slide 10 ==
+PASS
+
+== Slide 11 ==
+- **[7] OVERFLOW:** “FUTURE CALLOUT 1” content is clipped at the bottom (text drops below the box boundary).
+- **[11] OVERFLOW:** “FUTURE CALLOUT 2” bullet text is clipped/cut off at the bottom of the box.
+- **[12] OVERFLOW:** “FUTURE STEP 3” text is clipped at the bottom (last line partially hidden).
+- **[13] COLLISION / OVERFLOW:** “TODAY STEP 3” box overlaps the underlying “CHARLOTTE CURRENT EXPERIENCE” paragraph; additional white text appears outside/under the box (content not contained).
+- **[14] COLLISION / OVERFLOW:** Multiple text lines inside the “TODAY SIDE BOX” overlap each other (e.g., “WAYNE HARLOW…” line colliding with other text) and some text appears cut off.
+- **[17] COLLISION:** “Voice among many” box sits on top of underlying paragraph text (visible text behind/around it), reducing readability.
+- **[18] COLLISION / OVERFLOW:** “FUTURE/TODAY BOX” has overlapping text layers and visible underlying paragraph text; content appears partially clipped.
+- **[21] COLLISION / OVERFLOW:** “Shared CoC platform needs” box overlaps underlying paragraph text and the bottom line(s) appear to run outside the box.
+- **[22] COLLISION / OVERFLOW:** “2. Name Erika…” box overlaps underlying text and the numbered list runs long—lower lines appear cut off/bleeding into the footer area.
+
+== Slide 12 ==
+- **[ID13] COLLISION:** Box text overlaps with underlying/unboxed text (“RIGHT ROW 2B BOX (right of pair): …”), creating unreadable stacked lines.  
+- **[ID11] OVERFLOW:** “Status + coordination layer” sits outside the blue box (text drops below the shape).  
+- **[ID8] OVERFLOW:** Bottom line(s) appear clipped/cut off at the lower edge of the box (e.g., “Handoffs to dev team”).  
+- **[ID9] OVERFLOW/COLLISION:** Lower bullets are clipped and there’s stray/overlapping text at the bottom of the box.  
+- **[ID19] OVERFLOW:** Footer subline is cut off at the bottom (last line clipped).  
+- **[ID5] MISSING:** Center vertical divider line is not visible.  
+- **[ID10], [ID14], [ID17] MISSING/PLACEHOLDER:** “EVOLVES TO →” areas still show placeholder text rather than the intended arrow/graphic treatment.  
+- **[ID18] MISSING/VISIBILITY:** “FOOTER BAND (purple)” doesn’t appear as a purple band—reads like a standard text box instead.
+
+== Slide 13 ==
+- **[5] OVERFLOW:** Top line (“Column header: Where…”) is clipped at the top edge of the textbox.  
+- **[7] OVERFLOW:** Last line (“…docs)”) is cut off at the bottom.  
+- **[9] OVERFLOW:** Bottom line looks truncated/clipped (“…‘ready’ work)” doesn’t fully fit).  
+- **[13] OVERFLOW:** Text continues outside the textbox (the trailing “senior engineer,)” appears below the box).  
+- **[15] COLLISION / OVERFLOW:** Callout text is crowded into/overlapping the nearby body text area; last line(s) appear to spill/stack into surrounding content (“…lightweight portfolio / governance” area).  
+- **[19] OVERFLOW:** Bottom line (“architecture guardrails”) is clipped/cut off.  
+- **[20] OVERFLOW:** Text is cut off at the bottom (“…security scans)” not fully visible).  
+- **[22] COLLISION / OVERFLOW:** Text extends beyond the textbox and overlaps adjacent content (the “Enablement support (instrumentation + dashboards)” lines spill into surrounding area).  
+- **[23] OVERFLOW / MISALIGN:** The heading line (“Row 6 (left): Outcome…”) is separated from the rest and sits outside the highlighted textbox area.  
+- **[26] OVERFLOW:** Second line (“Portfolio Delivery Lead”) is cut off at the bottom.  
+- **[3–7] ALIGNMENT:** Column header boxes are not aligned consistently (top edges/baselines and spacing differ across the row).
+
+== Slide 14 ==
+- **COLLISION:** **ID 3** (blue highlight bar) overlaps/obscures the paragraph text above and below (“The Business decides…” / “The Business Technologist drives.”).
+- **OVERFLOW:** **IDs 13, 18, 23** (left column) have text running outside the blue boxes (bottom lines are not contained within the shape).
+- **OVERFLOW:** **ID 28** text appears clipped/overrunning at the bottom edge of the shape.
+- **COLLISION/OVERFLOW:** Role labels sitting above boxes appear to collide with or sit on the box top edge: **ID 10 (OWNER), ID 11 (CONSULTANT), ID 12 (INFORMED), ID 15 (CONSULTANT), ID 16 (OWNER), ID 17 (APPROVER), ID 21 (CONSULTANT), ID 25 (INPUT), ID 26 (OWNER)**.
+- **MISSING (possible):** Rows **ID 19** and **ID 24** have no corresponding entries shown in the right-side columns (Business Unit / Product-BT Vertical / Eng-Hub). If this is meant to be a complete matrix, those cells are missing content.
+- **ALIGNMENT:** Column header boxes **IDs 4–7** don’t appear evenly aligned/spaced relative to each other (inconsistent horizontal positioning across the top of the matrix).
+
+== Slide 15 ==
+- **OVERFLOW (ID 3):** Last bullet “Fund capacity (no ticket queue)” is rendered outside the blue box boundary (text box too short / overflow).
+- **OVERFLOW (ID 7):** Line “Rotation + surge capacity across business units” appears outside the blue box boundary (text overflow).
+- **OVERFLOW (ID 9):** Final line “manual gates” drops outside the blue box boundary (text overflow).
+
+== Slide 16 ==
+- **OVERFLOW (ID 4):** Body text runs past the bottom of its text box; additional lines (“…the rebate leakage…”) appear below the box and are partially off-slide/cut off.
+- **COLLISION (ID 4):** The overflowed body text at the bottom-left overlaps a white graphic/mark near the lower-left corner (logo-like element), reducing legibility.
+
+== Slide 17 ==
+- **[3] COLLISION:** A horizontal white line is overlapping/cutting through the title text (runs across the “Engineer” line).  
+- **[4] COLLISION:** Another horizontal white line is crossing through the body copy (visible over “Scale: A small team of 4”).  
+- **[4] OVERFLOW:** Body text extends below the textbox boundary—lower lines (“can achieve the output of…”) appear outside the red box and are cut off near the bottom edge of the slide.  
+- **[5] ALIGNMENT/CROP RISK:** Right-side image is hard-flush to the slide edges; verify this is intentional and not unintended cropping/bleed (no safe margin).
+
+== Slide 18 ==
+PASS
+
+== Slide 19 ==
+- **[ID 3] OVERFLOW / MARGIN RISK:** Title container sits extremely close to the top edge (and near the left edge). Not visibly cut off, but it’s outside typical safe margins and may clip on some displays.

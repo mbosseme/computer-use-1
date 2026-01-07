@@ -1,0 +1,44 @@
+{
+  "layout_hint": "title",
+  "title": "ACCELERATING\nTECHNOLOGY DELIVERY",
+  "subtitle": "Optimizing Business Outcomes over Process Outputs",
+  "bullets": [],
+  "notes": "Full-bleed dark navy background with subtle diagonal gradient/vignette (darker top-left, slightly lighter toward center/right). Left-aligned title block positioned mid-left. Title is two lines, all caps, bold sans-serif; first line white, second line bright cyan/blue. Subtitle below in small light gray, regular weight. No logos, photos, or diagrams.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Title line 1: ACCELERATING (white, all caps, bold)",
+        "bbox": [
+          75,
+          345,
+          650,
+          95
+        ]
+      },
+      {
+        "label": "Title line 2: TECHNOLOGY DELIVERY (cyan/blue, all caps, bold)",
+        "bbox": [
+          75,
+          455,
+          820,
+          110
+        ]
+      },
+      {
+        "label": "Subtitle: Optimizing Business Outcomes over Process Outputs (light gray, small)",
+        "bbox": [
+          78,
+          575,
+          700,
+          40
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_01.png",
+    "slide_index": 1
+  }
+}

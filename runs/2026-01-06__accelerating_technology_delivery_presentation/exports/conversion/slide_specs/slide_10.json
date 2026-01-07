@@ -1,0 +1,74 @@
+{
+  "layout_hint": "two_col",
+  "title": "The Matrix: Fusing IT & Business",
+  "subtitle": "",
+  "bullets": [
+    "The Fused Accountability Model",
+    "Business Unit: Owns the Outcomes and Funds the Team.",
+    "IT Verticals: Owns the Standards and Career Growth (Hardline).",
+    "The Team: Operates using Flow Principles (Kanban, Continuous Delivery, Daily Syncs) - NOT PI Plans and Sprints. Embedded in the business and measured in terms of business outcomes instead of Story Points / Features delivered."
+  ],
+  "notes": "Dark navy/black gradient background. Large white title top-left with a thin horizontal divider line across the slide under the title. Left column contains a section header and three icon-led bullets (green $ icon, blue IT icon, purple team icon). Right column is a simple org-style diagram: two small top boxes (blue outline) feeding into a large central box (white outline) labeled THE FUSION TEAM; a green-outlined box 'Business Unit Leader' connects from the left into the central box. No photos.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Engineering\nVertical",
+        "bbox": [
+          655,
+          205,
+          125,
+          105
+        ]
+      },
+      {
+        "label": "BT/Analytics\nVertical",
+        "bbox": [
+          800,
+          205,
+          150,
+          105
+        ]
+      },
+      {
+        "label": "Business\nUnit Leader",
+        "bbox": [
+          445,
+          450,
+          200,
+          130
+        ]
+      },
+      {
+        "label": "THE FUSION TEAM\nEngineers + BTs + SMEs\nWorking as One",
+        "bbox": [
+          635,
+          395,
+          335,
+          260
+        ]
+      }
+    ],
+    "arrows": [
+      {
+        "from": 0,
+        "to": 3,
+        "label": ""
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": ""
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": ""
+      }
+    ]
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_10.png",
+    "slide_index": 10
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "layout_hint": "two_col",
+  "title": "Spokes: Medium to High Complexity",
+  "subtitle": "",
+  "bullets": [],
+  "notes": "Dark navy gradient background. Large white title top-left with thin horizontal divider line underneath. Two equal rounded-rectangle 'cards' side-by-side with subtle border and shadow; each card has a small teal icon + teal heading, followed by three labeled paragraphs (Where/Model/Use Case) in light gray text with bold labels.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Title block: \"Spokes: Medium to High Complexity\" + thin divider line",
+        "bbox": [
+          55,
+          85,
+          890,
+          155
+        ]
+      },
+      {
+        "label": "Left card container (rounded rectangle)",
+        "bbox": [
+          65,
+          285,
+          445,
+          560
+        ]
+      },
+      {
+        "label": "Left card header: icon (group/people) + \"The Fusion Team\"",
+        "bbox": [
+          90,
+          330,
+          390,
+          70
+        ]
+      },
+      {
+        "label": "Left card body text:\nWhere: Internal IT / Product.\n\nModel: Lightweight, cross-functional squads (4-5 utility players). Faster than SAFe, less dense than a Forward Deployed Team.\n\nUse Case: Building scalable, multi-tenant Enterprise SaaS products.",
+        "bbox": [
+          95,
+          410,
+          405,
+          410
+        ]
+      },
+      {
+        "label": "Right card container (rounded rectangle)",
+        "bbox": [
+          535,
+          285,
+          445,
+          560
+        ]
+      },
+      {
+        "label": "Right card header: icon (helmet) + \"Forward Deployed Team\"",
+        "bbox": [
+          560,
+          330,
+          400,
+          70
+        ]
+      },
+      {
+        "label": "Right card body text:\nWhere: Embedded with Client / Complex Business Area.\n\nModel: Elite, high-talent density. The \"Special Ops\" approach.\n\nUse Case: Only for high-ROI, \"messy\" problems where being on-site is the only solution. Solutions are \"extracted\" back to the platform.",
+        "bbox": [
+          565,
+          410,
+          405,
+          410
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_07.png",
+    "slide_index": 7
+  }
+}

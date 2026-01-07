@@ -1,0 +1,134 @@
+{
+  "layout_hint": "two_col",
+  "title": "Formalizing the Business Technologist Vertical",
+  "subtitle": "",
+  "bullets": [],
+  "notes": "Two-column layout on dark navy gradient background. Left column: section header in purple, short description, then a rounded dark card with purple left accent and a bulleted career ladder list. Right column: rounded dark panel containing three vertical pillars (Product, Business Technologist highlighted in purple and taller, Engineering) with simple icons and a small caption 'IT ORGANIZATION STRUCTURE' centered under pillars. Use editable shapes and text; icons can be simple line icons.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Background (dark navy gradient)",
+        "bbox": [
+          0,
+          0,
+          1000,
+          1000
+        ]
+      },
+      {
+        "label": "Title: Formalizing the Business Technologist Vertical",
+        "bbox": [
+          55,
+          105,
+          890,
+          120
+        ]
+      },
+      {
+        "label": "Divider line under title (thin, subtle)",
+        "bbox": [
+          50,
+          205,
+          900,
+          3
+        ]
+      },
+      {
+        "label": "Section header (purple): The \"Third Vertical\"",
+        "bbox": [
+          60,
+          345,
+          420,
+          45
+        ]
+      },
+      {
+        "label": "Body text: Establishing a professional home for technologists who sit outside of\ntraditional Engineering but drive technical value.",
+        "bbox": [
+          60,
+          395,
+          520,
+          95
+        ]
+      },
+      {
+        "label": "Left card container (rounded rectangle, dark slate, purple left accent strip)",
+        "bbox": [
+          60,
+          510,
+          520,
+          380
+        ]
+      },
+      {
+        "label": "Card title (purple): The Career Ladder",
+        "bbox": [
+          85,
+          535,
+          480,
+          40
+        ]
+      },
+      {
+        "label": "Bullets (in card):\n\u203a Technical Business Analyst (Junior BT)\n\u203a Senior Tech BA (Business Technologist)\n\u203a Analytics Lead (Specialized/Analytics Engineer)\n\u203a Senior Analytics Lead\n\u203a Principal Analytics Lead",
+        "bbox": [
+          95,
+          585,
+          470,
+          285
+        ]
+      },
+      {
+        "label": "Right diagram outer panel (rounded rectangle, very dark, subtle border)",
+        "bbox": [
+          520,
+          260,
+          440,
+          650
+        ]
+      },
+      {
+        "label": "Pillar: Product (grey, medium height) + icon + label",
+        "bbox": [
+          585,
+          545,
+          110,
+          310
+        ]
+      },
+      {
+        "label": "Pillar: Business Technologist (purple, tallest) + person icon + labels 'Business' and 'Technologist'",
+        "bbox": [
+          710,
+          455,
+          125,
+          400
+        ]
+      },
+      {
+        "label": "Pillar: Engineering (grey, medium height) + code icon + label",
+        "bbox": [
+          845,
+          545,
+          110,
+          310
+        ]
+      },
+      {
+        "label": "Caption under pillars (small caps): IT ORGANIZATION STRUCTURE",
+        "bbox": [
+          620,
+          890,
+          310,
+          35
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_08.png",
+    "slide_index": 8
+  }
+}

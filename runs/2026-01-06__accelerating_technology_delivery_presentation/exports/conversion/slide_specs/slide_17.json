@@ -1,0 +1,30 @@
+{
+  "layout_hint": "two_col",
+  "title": "The AI-Augmented\nEngineer",
+  "subtitle": "",
+  "bullets": [
+    "The Force Multiplier: Engineers shift from writing syntax to orchestrating multiple AI agents to generate volume.",
+    "Scale: A small team of 4 can achieve the output of 10 by leveraging agents for documentation, testing, and boilerplate.",
+    "Automated Quality: The \"Quality Engineer\" role evolves to building the \"Test-Feed-Fix-Verify\" loop\u2014automating the rejection of insecure AI code."
+  ],
+  "notes": "Two-column split: left is a solid deep navy panel with white text; right is a full-height photo. Title sits upper-left with a thin horizontal divider line underneath. Body copy is three paragraph-style bullets with bold lead-in terms (The Force Multiplier / Scale / Automated Quality) followed by regular-weight text. Keep generous line spacing and wide left margin.",
+  "photos": [
+    {
+      "label": "hand_touching_holographic_dashboard",
+      "bbox": [
+        500,
+        0,
+        500,
+        1000
+      ]
+    }
+  ],
+  "diagram": {
+    "nodes": [],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_17.png",
+    "slide_index": 17
+  }
+}

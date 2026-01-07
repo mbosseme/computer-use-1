@@ -1,0 +1,133 @@
+{
+  "layout_hint": "content",
+  "title": "The BT Vertical as a Talent Marketplace",
+  "subtitle": "Embedded delivery stays in the business. The vertical provides the career ladder and pooled capacity.",
+  "bullets": [
+    "What Business Units KEEP\n\u203a Own the backlog & priorities (\u201cthe What / Where\u201d)\n\u203a Define success metrics and accept work\n\u203a Fund capacity (no ticket queue)",
+    "What the BT Vertical PROVIDES\n\u203a Career ladder + coaching + standards (hardline)\n\u203a Shared tooling & reusable patterns (faster, safer)\n\u203a Rotation + surge capacity across business units",
+    "Why this is better than \u201ccentral IT\u201d\n\u203a Work stays embedded with BU cadence\n\u203a Rebalancing is transparent & time-boxed\n\u203a Guardrails are automated (paved roads), not manual gates",
+    "Hardline for craft. Embedded for outcomes."
+  ],
+  "notes": "Rebuild on a dark navy tech/circuit background (can be template background). Use three left stacked text panels with colored headings (green, purple, blue) and chevron bullets. On right, recreate simplified diagram: three BU boxes at top feeding into a central \u201cBusiness Technologist Vertical\u201d box with curved arrows labeled Deploy/Staff and Rotation (growth + capacity balancing). Add a small standards callout box on far right and a bottom note box. Use rounded rectangles with soft neon strokes (green for BU boxes, purple for vertical).",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Left panel 1 (green header)\nWhat Business Units KEEP\n\u203a Own the backlog & priorities (\u201cthe What / Where\u201d)\n\u203a Define success metrics and accept work\n\u203a Fund capacity (no ticket queue)",
+        "bbox": [
+          45,
+          245,
+          420,
+          185
+        ]
+      },
+      {
+        "label": "Left panel 2 (purple header)\nWhat the BT Vertical PROVIDES\n\u203a Career ladder + coaching + standards (hardline)\n\u203a Shared tooling & reusable patterns (faster, safer)\n\u203a Rotation + surge capacity across business units",
+        "bbox": [
+          45,
+          420,
+          420,
+          200
+        ]
+      },
+      {
+        "label": "Left panel 3 (blue header)\nWhy this is better than \u201ccentral IT\u201d\n\u203a Work stays embedded with BU cadence\n\u203a Rebalancing is transparent & time-boxed\n\u203a Guardrails are automated (paved roads), not manual gates",
+        "bbox": [
+          45,
+          615,
+          420,
+          175
+        ]
+      },
+      {
+        "label": "Footer line (left)\nHardline for craft. Embedded for outcomes.",
+        "bbox": [
+          45,
+          805,
+          420,
+          45
+        ]
+      },
+      {
+        "label": "BU A\nBT Lead | Analytics Engineer\nEngineer(s) | Domain SME\nEmbedded delivery team",
+        "bbox": [
+          465,
+          290,
+          175,
+          195
+        ]
+      },
+      {
+        "label": "BU B\nBT Lead | Analytics Engineer\nEngineer(s) | Domain SME\nEmbedded delivery team",
+        "bbox": [
+          650,
+          290,
+          175,
+          195
+        ]
+      },
+      {
+        "label": "BU C\nBT Lead | Analytics Engineer\nEngineer(s) | Domain SME\nEmbedded delivery team",
+        "bbox": [
+          835,
+          290,
+          175,
+          195
+        ]
+      },
+      {
+        "label": "Business Technologist Vertical\n(Professional Home + Talent Pool)\nHiring bar \u00b7 Coaching \u00b7 Leveling \u00b7 Standards",
+        "bbox": [
+          470,
+          700,
+          520,
+          140
+        ]
+      },
+      {
+        "label": "Eng/Hub Standards\n(Golden Paths)\nsecure defaults \u00b7 automated checks",
+        "bbox": [
+          1020,
+          595,
+          165,
+          200
+        ]
+      },
+      {
+        "label": "No ticket intake\nBU-funded capacity is protected",
+        "bbox": [
+          585,
+          850,
+          300,
+          85
+        ]
+      }
+    ],
+    "arrows": [
+      {
+        "from": 7,
+        "to": 4,
+        "label": "Deploy / Staff"
+      },
+      {
+        "from": 7,
+        "to": 5,
+        "label": "Rotation (growth + capacity balancing)"
+      },
+      {
+        "from": 7,
+        "to": 6,
+        "label": "Deploy / Staff"
+      },
+      {
+        "from": 8,
+        "to": 7,
+        "label": ""
+      }
+    ]
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_15.png",
+    "slide_index": 15
+  }
+}

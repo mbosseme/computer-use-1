@@ -24,6 +24,22 @@ __pycache__/
 # Track everything under runs/ by default so run branches can fully capture state
 # for rollback/debugging. If this becomes too heavy, add targeted ignores later.
 
+# Large, regenerable run artifacts (avoid pushing browser caches and bulk renders)
+runs/**/playwright-profile/
+runs/**/tmp/
+
+# Render outputs (can be regenerated via Gate 2)
+runs/**/exports/**/render_iter_*/
+runs/**/exports/**/converted_*_renders/
+runs/**/exports/**/source_renders/
+
+# Extracted images + crops (can be regenerated from the source PPTX and renders)
+runs/**/exports/**/source_images/
+runs/**/exports/**/crops*/
+
+# Office lock/temp files
+runs/**/~$*.pptx
+
 # Optional per-session run notes (commit intentionally; keep README + template tracked)
 /notes/agent-runs/*.md
 !/notes/agent-runs/README.md

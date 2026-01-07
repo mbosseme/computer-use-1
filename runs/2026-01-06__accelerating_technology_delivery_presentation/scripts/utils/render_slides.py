@@ -14,23 +14,27 @@ on run argv
     set pptxPosixPath to POSIX file pptxPath
     set pdfPosixPath to POSIX file pdfPath
     
-    tell application "Microsoft PowerPoint"
-        activate
-        
-        -- Try to open with a small delay to allow app wake-up
-        try
-            open pptxPosixPath
-        on error errMsg
-            error "Failed to open PPTX: " & errMsg
-        end try
-        
-        set thePres to the active presentation
-        
-        -- EXPORT AS PDF
-        save thePres in pdfPosixPath as save as PDF
-        
-        close thePres saving no
-    end tell
+    with timeout of 600 seconds
+        tell application "Microsoft PowerPoint"
+            activate
+            
+            -- Open explicitly, then grab the active presentation as a handle.
+            try
+                open pptxPosixPath
+            on error errMsg
+                error "Failed to open PPTX: " & errMsg
+            end try
+            set thePres to the active presentation
+            
+            -- Give PowerPoint a moment to finish loading before export.
+            delay 1
+            
+            -- EXPORT AS PDF
+            save thePres in pdfPosixPath as save as PDF
+            
+            close thePres saving no
+        end tell
+    end timeout
 end run
 """
 

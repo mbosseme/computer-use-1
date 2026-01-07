@@ -28,7 +28,14 @@ class AzureOpenAIResponsesClient:
         if "/openai/responses" not in self.api_url:
             print(f"WARNING: The provided URL '{self.api_url}' does not look like a Responses API URL.")
 
-    def chat(self, messages, max_output_tokens=16384, reasoning_effort="medium", additional_payload=None):
+    def chat(
+        self,
+        messages,
+        max_output_tokens=16384,
+        reasoning_effort="medium",
+        additional_payload=None,
+        timeout_s: int = 180,
+    ):
         """
         Sends a chat conversion to the Azure Responses API.
         
@@ -118,7 +125,7 @@ class AzureOpenAIResponsesClient:
         }
         
         try:
-            response = requests.post(self.api_url, headers=headers, json=payload, timeout=60)
+            response = requests.post(self.api_url, headers=headers, json=payload, timeout=timeout_s)
             response.raise_for_status()
             result = response.json()
             print(f"DEBUG: Raw API Response: {json.dumps(result, indent=2)}") 

@@ -1,0 +1,58 @@
+{
+  "layout_hint": "content",
+  "title": "Strategic Roadmap",
+  "subtitle": "",
+  "bullets": [
+    "Mandate the Platform Team to build \u201cGolden Paths\u201d for AI (Secure Sandboxes) and Data.",
+    "Establish the \u201cBusiness Technologist\u201d organization, career ladder, and governance standards.",
+    "Deploy Fusion Teams into BUs (merging IT & Business) and launch an FDE pilot for a major client.",
+    "Reinforce values: \u201cSoft Lanes,\u201d \u201cFailure is OK,\u201d and \u201cThe Players Matter\u201d to empower the new verticals."
+  ],
+  "notes": "Dark navy gradient background. Large white title top-left with a thin horizontal divider line beneath spanning most of slide. Main content is a 2x2 grid of rounded dark cards with subtle border and soft shadow. Each card has a small teal icon in its top-left corner and a single paragraph of light-gray text centered vertically within the card (left-aligned). No photos.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Card 1: Mandate the Platform Team to build \u201cGolden Paths\u201d for AI (Secure Sandboxes) and Data.",
+        "bbox": [
+          65,
+          260,
+          445,
+          225
+        ]
+      },
+      {
+        "label": "Card 2: Establish the \u201cBusiness Technologist\u201d organization, career ladder, and governance standards.",
+        "bbox": [
+          530,
+          260,
+          445,
+          225
+        ]
+      },
+      {
+        "label": "Card 3: Deploy Fusion Teams into BUs (merging IT & Business) and launch an FDE pilot for a major client.",
+        "bbox": [
+          65,
+          545,
+          445,
+          225
+        ]
+      },
+      {
+        "label": "Card 4: Reinforce values: \u201cSoft Lanes,\u201d \u201cFailure is OK,\u201d and \u201cThe Players Matter\u201d to empower the new verticals.",
+        "bbox": [
+          530,
+          545,
+          445,
+          225
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_18.png",
+    "slide_index": 18
+  }
+}

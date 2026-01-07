@@ -1,0 +1,86 @@
+{
+  "layout_hint": "two_col",
+  "title": "The Hub: Enablement & Supply",
+  "subtitle": "Enablement over Control",
+  "bullets": [
+    "The Tooling Mix: Provide seamless access to best-in-class tools (BigQuery, Databricks, Cloud Run) without bureaucratic friction.",
+    "Automated Governance: Quality checks are baked into the pipeline (Protect, Measure, Enforce), replacing manual review gates.",
+    "Golden Paths: Pre-secured templates for BTs and Fusion Teams to start building immediately.",
+    "\"Make the Right Way, the Easy Way.\""
+  ],
+  "notes": "Dark navy gradient background. Top: large white title with a thin horizontal divider line beneath spanning nearly full width. Two-column layout: left column contains section header in bright blue, then 3 icon-led bullets (cloud, robot, road/paths) with bold white lead-in phrases and light-gray body text. Bottom-left: dark rounded rectangle quote callout with a thin vertical cyan accent line at its left edge; quote text in white. Right column: large rounded-corner photo.",
+  "photos": [
+    {
+      "label": "mission_control_room_photo",
+      "bbox": [
+        495,
+        190,
+        470,
+        528
+      ]
+    }
+  ],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Title area (top-left): 'The Hub: Enablement & Supply' + thin divider line",
+        "bbox": [
+          55,
+          70,
+          900,
+          120
+        ]
+      },
+      {
+        "label": "Left column header: 'Enablement over Control'",
+        "bbox": [
+          55,
+          210,
+          420,
+          70
+        ]
+      },
+      {
+        "label": "Bullet 1 (cloud icon) + text",
+        "bbox": [
+          55,
+          285,
+          430,
+          130
+        ]
+      },
+      {
+        "label": "Bullet 2 (robot icon) + text",
+        "bbox": [
+          55,
+          410,
+          430,
+          150
+        ]
+      },
+      {
+        "label": "Bullet 3 (paths/road icon) + text",
+        "bbox": [
+          55,
+          555,
+          430,
+          115
+        ]
+      },
+      {
+        "label": "Quote callout box",
+        "bbox": [
+          55,
+          685,
+          460,
+          95
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_05.png",
+    "slide_index": 5
+  }
+}

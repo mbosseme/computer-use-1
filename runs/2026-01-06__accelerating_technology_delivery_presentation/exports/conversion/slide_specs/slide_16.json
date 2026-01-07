@@ -1,0 +1,30 @@
+{
+  "layout_hint": "two_col",
+  "title": "The AI-Augmented\nTechnologist",
+  "subtitle": "",
+  "bullets": [
+    "The Business-First Builder: AI enables the domain expert to move from \"requirements writer\" to \"solution prototyper.\"",
+    "Vibe Coding: Focusing on business intent (\"Show me rebate leakage\") rather than syntax. The AI handles the boilerplate.",
+    "Functional Wireframes: Using AI to instantly visualize user flows and data logic, iterating in real-time with stakeholders."
+  ],
+  "notes": "Two-column split slide. Left ~50% is a dark navy/black solid panel with white title (large, two lines) and three short paragraph bullets (each begins with a bold label + colon, followed by regular-weight sentence). Add a thin, subtle horizontal divider line under the title spanning most of the left panel. Right ~50% is a full-height abstract tech image (blue/purple layered translucent curves with data/line accents). Keep generous left padding and consistent paragraph spacing.",
+  "photos": [
+    {
+      "label": "abstract_tech_layers_blue_purple",
+      "bbox": [
+        500,
+        0,
+        500,
+        1000
+      ]
+    }
+  ],
+  "diagram": {
+    "nodes": [],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_16.png",
+    "slide_index": 16
+  }
+}

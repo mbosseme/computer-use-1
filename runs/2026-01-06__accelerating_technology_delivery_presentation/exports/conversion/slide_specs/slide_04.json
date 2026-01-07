@@ -1,0 +1,93 @@
+{
+  "layout_hint": "content",
+  "title": "The Operating Model: Hub-and-Spoke",
+  "subtitle": "",
+  "bullets": [],
+  "notes": "Rebuild as a hub-and-spoke diagram on a dark (navy/black) gradient background. Add a thin horizontal divider line under the title. Use 4 semi-transparent rounded-rectangle 'glass' cards (soft blur/low-opacity fill, subtle border, outer glow) positioned left/right in two rows. Center hub is a circular badge with strong outer glow ring and inner gradient; include a simple stacked-layers icon above the hub title. Connect hub to each card with curved, glowing connector lines (can be simplified as thin curved lines or straight arrows).",
+  "photos": [
+    {
+      "label": "background_art",
+      "bbox": [
+        0,
+        0,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "THE HUB\nEnablement &\nGovernance",
+        "bbox": [
+          375,
+          360,
+          250,
+          345
+        ]
+      },
+      {
+        "label": "Business Technologist\nEmbedded in Business",
+        "bbox": [
+          125,
+          270,
+          305,
+          215
+        ]
+      },
+      {
+        "label": "Fusion Team\nInternal IT / Product",
+        "bbox": [
+          655,
+          270,
+          305,
+          215
+        ]
+      },
+      {
+        "label": "Analytics Team\nBTs + Analytics Lead",
+        "bbox": [
+          125,
+          595,
+          305,
+          215
+        ]
+      },
+      {
+        "label": "Forward Deployed\nEmbedded at Client",
+        "bbox": [
+          655,
+          595,
+          305,
+          215
+        ]
+      }
+    ],
+    "arrows": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": ""
+      },
+      {
+        "from": 0,
+        "to": 2,
+        "label": ""
+      },
+      {
+        "from": 0,
+        "to": 3,
+        "label": ""
+      },
+      {
+        "from": 0,
+        "to": 4,
+        "label": ""
+      }
+    ]
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_04.png",
+    "slide_index": 4
+  }
+}

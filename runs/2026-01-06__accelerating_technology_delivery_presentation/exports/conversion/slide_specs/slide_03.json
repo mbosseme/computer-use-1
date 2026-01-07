@@ -1,0 +1,70 @@
+{
+  "layout_hint": "two_col",
+  "title": "Comparing Development Models",
+  "subtitle": "",
+  "bullets": [
+    "The Freight Train (Scaled Agile)",
+    "Best For: ERP & Back-Office Stability.",
+    "Why: Efficient when the destination is known and the route is stable. Optimized for batching and predictability.",
+    "The Convoy (Fusion/Pods)",
+    "Best For: Innovation & External Products.",
+    "Why: Necessary when terrain is uncertain. Small, autonomous units that can re-route instantly based on feedback."
+  ],
+  "notes": "Dark navy gradient background. Large white title top-left with a thin horizontal divider line beneath spanning most of slide. Two side-by-side rounded 'cards' with subtle shadow and thin border: left and right. Each card has a wide photo on top and a dark text panel below. Left card section title in light gray; right card section title in cyan/teal. Body text white/light gray; 'Best For:' and 'Why:' labels bold.",
+  "photos": [
+    {
+      "label": "freight_train_photo",
+      "bbox": [
+        70,
+        215,
+        430,
+        290
+      ]
+    },
+    {
+      "label": "convoy_photo",
+      "bbox": [
+        520,
+        215,
+        430,
+        290
+      ]
+    }
+  ],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Left card container (rounded rectangle)",
+        "bbox": [
+          50,
+          170,
+          450,
+          740
+        ]
+      },
+      {
+        "label": "Right card container (rounded rectangle)",
+        "bbox": [
+          500,
+          170,
+          450,
+          740
+        ]
+      },
+      {
+        "label": "Title divider line (thin)",
+        "bbox": [
+          45,
+          135,
+          910,
+          2
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_03.png",
+    "slide_index": 3
+  }
+}

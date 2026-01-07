@@ -1,0 +1,195 @@
+{
+  "layout_hint": "two_col",
+  "title": "Role Evolution: From BA/TPM to Business Technologist + Flow Leadership",
+  "subtitle": "",
+  "bullets": [],
+  "notes": "Rebuild as a two-column comparison slide on a dark navy gradient background. Use a thin vertical divider line in center. Each column has a header, a row of small rounded 'role chips', then 3 content rows. Rows 1 and 2 show 'EVOLVES TO' arrows from left to right; row 3 shows a simple 'EVOLVES TO' arrow. Bottom full-width purple footer band contains the takeaway sentence + a smaller supporting line. Use rounded rectangles with subtle glow/outline: left column outlines in blue; right column outlines in purple. One right-side row includes two side-by-side boxes (Pod Lead and Portfolio Delivery Lead).",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "TITLE: Role Evolution: From BA/TPM to Business Technologist + Flow Leadership",
+        "bbox": [
+          25,
+          35,
+          950,
+          85
+        ]
+      },
+      {
+        "label": "LEFT HEADER: Traditional Agile Scrum (2010s\u2013Today)",
+        "bbox": [
+          95,
+          160,
+          370,
+          40
+        ]
+      },
+      {
+        "label": "RIGHT HEADER: Accelerated Delivery (Prototype-First Pods)",
+        "bbox": [
+          565,
+          160,
+          405,
+          40
+        ]
+      },
+      {
+        "label": "CENTER DIVIDER (thin vertical line)",
+        "bbox": [
+          498,
+          175,
+          4,
+          520
+        ]
+      },
+      {
+        "label": "LEFT ROLE CHIPS (row): Product Manager | Technical Product Lead | Business Analyst (BA) | TPM/Scrum | Engineers | QA | UX",
+        "bbox": [
+          50,
+          210,
+          450,
+          70
+        ]
+      },
+      {
+        "label": "RIGHT ROLE CHIPS (row): Outcome Owner (Business) | BT / Product Owner | Pod Lead (flow) | Engineers | Engineering Steward (quality) | UX",
+        "bbox": [
+          520,
+          210,
+          450,
+          70
+        ]
+      },
+      {
+        "label": "LEFT ROW 1 BOX TITLE: Business Analyst (BA)\n\u2022 Requirements & user stories\n\u2022 Handoffs to dev team",
+        "bbox": [
+          55,
+          285,
+          430,
+          140
+        ]
+      },
+      {
+        "label": "CENTER NOTE + ARROW (row 1): AI enables intent \u2192 working prototype faster\nEVOLVES TO \u2192",
+        "bbox": [
+          400,
+          320,
+          200,
+          90
+        ]
+      },
+      {
+        "label": "RIGHT ROW 1 BOX TITLE: Business Technologist (BT) / Product Owner (in-pod)\n\u2022 Working prototypes + functional drafts (AI-assisted)\n\u2022 Acceptance criteria + stakeholder testing",
+        "bbox": [
+          520,
+          285,
+          430,
+          140
+        ]
+      },
+      {
+        "label": "LEFT ROW 2 BOX TITLE: Technical Program Manager (TPM) / Scrum\n\u2022 PI planning / sprint mechanics\n\u2022 Status + coordination layer",
+        "bbox": [
+          55,
+          440,
+          430,
+          145
+        ]
+      },
+      {
+        "label": "CENTER ARROW (row 2): EVOLVES TO \u2192",
+        "bbox": [
+          410,
+          495,
+          180,
+          55
+        ]
+      },
+      {
+        "label": "RIGHT ROW 2A BOX (left of pair): Pod Lead (in-pod, hands-on flow)\n\u2022 WIP, sequencing\n\u2022 Demo/retro cadence",
+        "bbox": [
+          520,
+          440,
+          235,
+          145
+        ]
+      },
+      {
+        "label": "RIGHT ROW 2B BOX (right of pair): Portfolio Delivery Lead\nOnly when >1 pod or hard dependencies\n\u2022 Dependency coordination\n\u2022 Release coordination",
+        "bbox": [
+          765,
+          440,
+          185,
+          145
+        ]
+      },
+      {
+        "label": "LEFT ROW 3 BOX TITLE: Manual gates & heavy process\n\u2022 Meetings, templates\n\u2022 Approvals",
+        "bbox": [
+          55,
+          605,
+          430,
+          120
+        ]
+      },
+      {
+        "label": "CENTER ARROW (row 3): EVOLVES TO \u2192",
+        "bbox": [
+          410,
+          645,
+          180,
+          55
+        ]
+      },
+      {
+        "label": "RIGHT ROW 3 BOX TITLE: Automated governance + golden paths\n\u2022 CI checks, security scans\n\u2022 Standards-by-default",
+        "bbox": [
+          520,
+          605,
+          430,
+          120
+        ]
+      },
+      {
+        "label": "FOOTER BAND (purple): We remove the coordination layer by default\u2014not accountability.",
+        "bbox": [
+          0,
+          732,
+          1000,
+          75
+        ]
+      },
+      {
+        "label": "FOOTER SUBLINE: Business owns outcomes & funding \u00b7 Pods own delivery \u00b7 Engineering owns standards & quality",
+        "bbox": [
+          80,
+          775,
+          840,
+          30
+        ]
+      }
+    ],
+    "arrows": [
+      {
+        "from": 6,
+        "to": 8,
+        "label": "EVOLVES TO"
+      },
+      {
+        "from": 9,
+        "to": 11,
+        "label": "EVOLVES TO"
+      },
+      {
+        "from": 13,
+        "to": 15,
+        "label": "EVOLVES TO"
+      }
+    ]
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_12.png",
+    "slide_index": 12
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "layout_hint": "content",
+  "title": "Five Key Throughlines",
+  "subtitle": "",
+  "bullets": [],
+  "notes": "Dark navy tech-themed background image. Large white title top-left. Five rounded-rectangle 'card' containers with soft blue glow and thin light-blue stroke; three across top row and two across bottom row centered. Each card contains a simple line icon on the left and a short paragraph on the right in white. Icons can be swapped with brand icon set; keep consistent stroke weight and single-color (white/light-cyan).",
+  "photos": [
+    {
+      "label": "background_tech_waves_circuitry",
+      "bbox": [
+        0,
+        0,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "CARD 1: Friction is the enemy and creates translation loss and latency.",
+        "bbox": [
+          45,
+          250,
+          300,
+          250
+        ]
+      },
+      {
+        "label": "CARD 2: The enablement hub must be protected from ad hoc work to succeed.",
+        "bbox": [
+          360,
+          250,
+          300,
+          250
+        ]
+      },
+      {
+        "label": "CARD 3: Automated governance is central to prevent uncontrolled tooling bypasses.",
+        "bbox": [
+          675,
+          250,
+          300,
+          250
+        ]
+      },
+      {
+        "label": "CARD 4: The success of this model depends on high-caliber talent investment.",
+        "bbox": [
+          165,
+          575,
+          370,
+          265
+        ]
+      },
+      {
+        "label": "CARD 5: Business outcome is the true scoreboard, not just story points delivered.",
+        "bbox": [
+          535,
+          575,
+          370,
+          265
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_19.png",
+    "slide_index": 19
+  }
+}

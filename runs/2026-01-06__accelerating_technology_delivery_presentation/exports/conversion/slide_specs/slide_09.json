@@ -1,0 +1,244 @@
+{
+  "layout_hint": "content",
+  "title": "SCS IT Operating Model: Product Vertical + Business Technologist Vertical",
+  "subtitle": "Two verticals enable fast delivery: Product owns outcomes & direction; BT vertical supplies capability and people-home for Business Technologists embedded in Fusion Teams.",
+  "bullets": [],
+  "notes": "Dark gradient background. Centered title/subtitle at top. Three main grouped panels: left (Product Vertical) with 3 stacked role boxes and vertical arrows; center (Fusion Team) as main delivery unit; right (Business Technologist Vertical) with 4 stacked role boxes and vertical connectors. Add a top pill 'Supply Chain Services IT' connecting to left and right via thin lines. Use dotted connector for 'Outcome accountability' from Product to Fusion Team. Use solid connector from BT vertical to Fusion Team labeled 'People-home (hardline)'. Add small callout near top-right 'Enablement: golden paths + automated checks'. Footer statement centered; bottom-right legend about solid/dotted lines.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Title block (top)\nSCS IT Operating Model: Product Vertical + Business Technologist Vertical\nTwo verticals enable fast delivery: Product owns outcomes & direction; BT vertical supplies capability and people-home for Business Technologists embedded in Fusion Teams.",
+        "bbox": [
+          40,
+          35,
+          920,
+          120
+        ]
+      },
+      {
+        "label": "Top pill\nSupply Chain Services IT",
+        "bbox": [
+          380,
+          155,
+          300,
+          70
+        ]
+      },
+      {
+        "label": "Left group container\nProduct Vertical\n(Capital-P Product + Program Management)",
+        "bbox": [
+          55,
+          210,
+          330,
+          560
+        ]
+      },
+      {
+        "label": "Left box 1\nBusiness Line / P&L Owner\nOwns outcomes, funding, market direction.",
+        "bbox": [
+          85,
+          300,
+          270,
+          120
+        ]
+      },
+      {
+        "label": "Left box 2\nProduct Owner\nDay-to-day prioritization, stakeholder alignment, acceptance.",
+        "bbox": [
+          85,
+          445,
+          270,
+          120
+        ]
+      },
+      {
+        "label": "Left box 3\nProduct Roadmap +\nPortfolio Priorities\nSets what matters and why.",
+        "bbox": [
+          85,
+          590,
+          270,
+          130
+        ]
+      },
+      {
+        "label": "Center group container\nFusion Team\n(small autonomous delivery unit)\n\u2022 Product Owner (direction)\n\u2022 Business Technologist (prototype + functional drafts, AI-assisted)\n\u2022 Engineers (build + harden)\n\u2022 Engineering Steward (quality/standards)\n\u2022 UX (as needed)\n\nPrototype-first \u2192 validate quickly \u2192 engineers harden for scale & security.",
+        "bbox": [
+          395,
+          355,
+          310,
+          405
+        ]
+      },
+      {
+        "label": "Right group container\nBusiness Technologist Vertical\n(People-Home + Capability)",
+        "bbox": [
+          730,
+          210,
+          315,
+          560
+        ]
+      },
+      {
+        "label": "Right box 1\nBT Leader(s)",
+        "bbox": [
+          770,
+          315,
+          245,
+          85
+        ]
+      },
+      {
+        "label": "Right box 2\nAnalytics Lead / Senior BT",
+        "bbox": [
+          770,
+          420,
+          245,
+          85
+        ]
+      },
+      {
+        "label": "Right box 3\nBusiness Technologist (BT)",
+        "bbox": [
+          770,
+          525,
+          245,
+          90
+        ]
+      },
+      {
+        "label": "Right box 4\nAssociate/Junior BT",
+        "bbox": [
+          770,
+          635,
+          245,
+          90
+        ]
+      },
+      {
+        "label": "Right group footer text\nHardline reporting, coaching, craft standards, staffing pool.",
+        "bbox": [
+          760,
+          725,
+          265,
+          45
+        ]
+      },
+      {
+        "label": "Callout (top-right)\nEnablement:\ngolden paths +\nautomated checks",
+        "bbox": [
+          655,
+          290,
+          135,
+          95
+        ]
+      },
+      {
+        "label": "Connector label (between left and center)\nDaily direction\n/ priorities",
+        "bbox": [
+          312,
+          535,
+          90,
+          70
+        ]
+      },
+      {
+        "label": "Connector label (above Fusion Team)\nOutcome accountability",
+        "bbox": [
+          345,
+          300,
+          330,
+          40
+        ]
+      },
+      {
+        "label": "Connector label (between center and right)\nPeople-home\n(hardline)",
+        "bbox": [
+          680,
+          520,
+          75,
+          70
+        ]
+      },
+      {
+        "label": "Footer (center)\nWe move coordination into the pod by default\u2014Product owns outcomes, BT vertical owns capability, Fusion Teams deliver.\nPortfolio coordination exists only when multi-pod dependencies require it.",
+        "bbox": [
+          70,
+          805,
+          860,
+          95
+        ]
+      },
+      {
+        "label": "Legend (bottom-right)\nSolid line = hardline people-home / reporting\nDotted line = outcome accountability / matrix alignment",
+        "bbox": [
+          785,
+          900,
+          250,
+          70
+        ]
+      }
+    ],
+    "arrows": [
+      {
+        "from": 1,
+        "to": 2,
+        "label": ""
+      },
+      {
+        "from": 1,
+        "to": 7,
+        "label": ""
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": ""
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": ""
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "label": "Daily direction / priorities"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "label": "Outcome accountability (dotted)"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "label": ""
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "label": ""
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "label": ""
+      },
+      {
+        "from": 9,
+        "to": 6,
+        "label": "People-home (hardline)"
+      },
+      {
+        "from": 12,
+        "to": 7,
+        "label": "Enablement"
+      }
+    ]
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_09.png",
+    "slide_index": 9
+  }
+}

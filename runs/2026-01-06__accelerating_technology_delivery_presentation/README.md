@@ -83,3 +83,48 @@ python runs/2026-01-06__accelerating_technology_delivery_presentation/scripts/cr
 # Test rendering a single valid file to debug permissions
 python test_renderer_permissions.py
 ```
+
+## 5. Conversion Workflow (Source Deck -> Premier)
+
+This run also includes a "conversion" pipeline that takes a source PPTX and rebuilds it into the Premier template using editable objects.
+
+**Inputs**
+- Source PPTX (replace this for the next iteration): `runs/2026-01-06__accelerating_technology_delivery_presentation/inputs/presentation_to_convert/Accelerating Technology Delivery.pptx`
+
+**Workflow**
+```bash
+# 1) (Optional) Analyze the source deck structure (flattened slides, extracted images)
+python runs/2026-01-06__accelerating_technology_delivery_presentation/scripts/analyze_source_deck.py
+
+# 2) Gate 2: Render the source deck to PNGs (truthful PowerPoint render)
+python runs/2026-01-06__accelerating_technology_delivery_presentation/scripts/utils/render_slides.py \
+    runs/2026-01-06__accelerating_technology_delivery_presentation/inputs/presentation_to_convert/Accelerating\ Technology\ Delivery.pptx \
+    runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders
+
+# 3) Extract per-slide reconstruction specs using Azure GPT-5.2 Vision
+python runs/2026-01-06__accelerating_technology_delivery_presentation/scripts/extract_slide_specs.py
+
+# 4) Build a Premier-template candidate deck from the specs
+python runs/2026-01-06__accelerating_technology_delivery_presentation/scripts/convert_to_premier.py \
+    --output-pptx runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/converted_premier_candidate.pptx
+
+# 5) Gate 1: Geometry lint (fast fail)
+python runs/2026-01-06__accelerating_technology_delivery_presentation/scripts/utils/lint_slides.py \
+    runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/converted_premier_candidate.pptx \
+    --export-map runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/shape_map_candidate.json
+
+# 6) Gate 2: Render the candidate deck
+python runs/2026-01-06__accelerating_technology_delivery_presentation/scripts/utils/render_slides.py \
+    runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/converted_premier_candidate.pptx \
+    runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/converted_candidate_renders
+
+# 7) Gate 3: Visual critique (run per-slide; see scripts/utils/qa_vision.py usage)
+python runs/2026-01-06__accelerating_technology_delivery_presentation/scripts/utils/qa_vision.py \
+    runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/converted_candidate_renders/slide_01.png \
+    runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/shape_map_candidate.json \
+    0
+```
+
+Notes:
+- Keep the process deterministic: make a change, then re-run Gate 1 -> Gate 2 -> Gate 3.
+- Auth/MFA prompts (PowerPoint dialogs, OS permission prompts) are HITL.

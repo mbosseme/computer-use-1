@@ -1,0 +1,253 @@
+{
+  "layout_hint": "content",
+  "title": "We remove the layer\u2014not the functions",
+  "subtitle": "Where BA/TPM responsibilities land in the accelerated delivery model",
+  "bullets": [],
+  "notes": "Dark gradient background with subtle circuit pattern (can be templated). Build a 3-column comparison table with 6 rows of rounded rectangles. Left column uses blue outline/glow; middle uses dark gray fill; right uses purple outline/glow. Add a purple callout box on the right titled 'Key Principle'. Add a bottom horizontal band with three segments and arrow separators: In\u2011Pod (default) -> Portfolio (only when needed) -> Business (always).",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "Column header: Crucial function\n(what has to happen)",
+        "bbox": [
+          85,
+          140,
+          260,
+          70
+        ]
+      },
+      {
+        "label": "Column header: Who owns it now\n(traditional model)",
+        "bbox": [
+          365,
+          140,
+          240,
+          70
+        ]
+      },
+      {
+        "label": "Column header: Where it lives in the new model\n(role/owner)",
+        "bbox": [
+          620,
+          140,
+          340,
+          70
+        ]
+      },
+      {
+        "label": "Row 1 (left): Problem framing + stakeholder alignment (what are we solving, for whom?)",
+        "bbox": [
+          60,
+          215,
+          300,
+          80
+        ]
+      },
+      {
+        "label": "Row 1 (middle): BA / TPM\n(often via meetings & docs)",
+        "bbox": [
+          370,
+          220,
+          230,
+          75
+        ]
+      },
+      {
+        "label": "Row 1 (right): Outcome Owner (Business) + BT/PO (in-pod)",
+        "bbox": [
+          610,
+          220,
+          360,
+          75
+        ]
+      },
+      {
+        "label": "Row 2 (left): Backlog shaping (thin slices, acceptance criteria, \u201cready\u201d work)",
+        "bbox": [
+          60,
+          305,
+          300,
+          80
+        ]
+      },
+      {
+        "label": "Row 2 (middle): BA (stories) + TPM (planning)",
+        "bbox": [
+          370,
+          310,
+          230,
+          75
+        ]
+      },
+      {
+        "label": "Row 2 (right): BT/PO (in-pod)",
+        "bbox": [
+          610,
+          310,
+          360,
+          75
+        ]
+      },
+      {
+        "label": "Row 3 (left): Day-to-day delivery flow (WIP, sequencing, demos, retros, unblock)",
+        "bbox": [
+          60,
+          395,
+          300,
+          85
+        ]
+      },
+      {
+        "label": "Row 3 (middle): TPM/Scrum Master",
+        "bbox": [
+          370,
+          400,
+          230,
+          80
+        ]
+      },
+      {
+        "label": "Row 3 (right): Pod Lead (in-pod, hands-on flow)\n(Note: Pod Lead can be a senior BT or senior engineer.)",
+        "bbox": [
+          610,
+          395,
+          360,
+          85
+        ]
+      },
+      {
+        "label": "Row 4 (left): Cross-team dependencies + release coordination (multi-pod work)",
+        "bbox": [
+          60,
+          490,
+          300,
+          85
+        ]
+      },
+      {
+        "label": "Row 4 (middle): TPM / Program Management layer",
+        "bbox": [
+          370,
+          495,
+          230,
+          80
+        ]
+      },
+      {
+        "label": "Row 4 (right): Portfolio Delivery Lead\nException\u2014only when >1 pod or hard dependencies\n(Not present for single-pod work.)",
+        "bbox": [
+          610,
+          485,
+          360,
+          95
+        ]
+      },
+      {
+        "label": "Row 5 (left): Engineering quality, security, standards, architecture guardrails",
+        "bbox": [
+          60,
+          585,
+          300,
+          85
+        ]
+      },
+      {
+        "label": "Row 5 (middle): Architects + QA + Engineering leadership (often via gates)",
+        "bbox": [
+          370,
+          590,
+          230,
+          80
+        ]
+      },
+      {
+        "label": "Row 5 (right): Engineering Steward + automated checks\n(Examples: PR reviews, CI tests, security scans)",
+        "bbox": [
+          610,
+          585,
+          360,
+          85
+        ]
+      },
+      {
+        "label": "Row 6 (left): Outcome measurement + adoption/engagement visibility (\u201care we delivering value?\u201d)",
+        "bbox": [
+          60,
+          680,
+          300,
+          90
+        ]
+      },
+      {
+        "label": "Row 6 (middle): Often unclear / scattered / after-the-fact reporting",
+        "bbox": [
+          370,
+          690,
+          230,
+          80
+        ]
+      },
+      {
+        "label": "Row 6 (right): Outcome Owner (Business) + BT/PO (in-pod)\n(define measures + leading indicators)\n* Enablement support (instrumentation + dashboards)",
+        "bbox": [
+          610,
+          675,
+          360,
+          95
+        ]
+      },
+      {
+        "label": "Callout (right): Key Principle:\nSingle-pod work stays inside the pod.\nMulti-pod work uses lightweight portfolio coordination.",
+        "bbox": [
+          835,
+          420,
+          150,
+          270
+        ]
+      },
+      {
+        "label": "Bottom band segment 1: In-Pod (default):\nBT/PO + Pod Lead + Engineers + Eng Steward",
+        "bbox": [
+          0,
+          880,
+          460,
+          120
+        ]
+      },
+      {
+        "label": "Bottom band segment 2: Portfolio (only when needed):\nPortfolio Delivery Lead",
+        "bbox": [
+          460,
+          880,
+          340,
+          120
+        ]
+      },
+      {
+        "label": "Bottom band segment 3: Business (always):\nOutcome Owner",
+        "bbox": [
+          800,
+          880,
+          200,
+          120
+        ]
+      }
+    ],
+    "arrows": [
+      {
+        "from": 24,
+        "to": 25,
+        "label": ""
+      },
+      {
+        "from": 25,
+        "to": 26,
+        "label": ""
+      }
+    ]
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_13.png",
+    "slide_index": 13
+  }
+}

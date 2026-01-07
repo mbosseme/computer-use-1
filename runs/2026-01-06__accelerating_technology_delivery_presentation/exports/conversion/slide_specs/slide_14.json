@@ -1,0 +1,251 @@
+{
+  "layout_hint": "content",
+  "title": "Rules of the Road: Decision Rights in the Matrix",
+  "subtitle": "Distinct accountability ensures speed without chaos.",
+  "bullets": [],
+  "notes": "Dark navy/black gradient background. Top-left title + subtitle, then a single-line explainer sentence. Main content is a 4-column matrix table (Decision Category + 3 function columns) with 4 rows. To the right is a rounded-rectangle 'Conflict Resolution' panel aligned to the table height with 4 stacked items. Use thin light grid lines for the matrix. In the matrix, highlight OWNER cells with colored rounded rectangles: Row1/BU green, Row2/Product purple, Row3/Eng blue, Row4/Product purple (soft glow/outline). Set all table text in white; role words (OWNER/CONSULTANT/etc.) bold and uppercase; supporting text smaller.",
+  "photos": [],
+  "diagram": {
+    "nodes": [
+      {
+        "label": "The Business decides where we go. Engineering ensures the car is safe and fast. The Business Technologist drives.",
+        "bbox": [
+          54,
+          230,
+          890,
+          70
+        ]
+      },
+      {
+        "label": "Decision Category",
+        "bbox": [
+          50,
+          317,
+          186,
+          114
+        ]
+      },
+      {
+        "label": "Business Unit\n(The \u201cWhat\u201d)",
+        "bbox": [
+          236,
+          317,
+          200,
+          114
+        ]
+      },
+      {
+        "label": "Product / BT Vertical\n(The \u201cShape\u201d)",
+        "bbox": [
+          436,
+          317,
+          200,
+          114
+        ]
+      },
+      {
+        "label": "Eng / Hub\n(The \u201cHow\u201d)",
+        "bbox": [
+          636,
+          317,
+          200,
+          114
+        ]
+      },
+      {
+        "label": "Conflict Resolution",
+        "bbox": [
+          850,
+          317,
+          214,
+          114
+        ]
+      },
+      {
+        "label": "Prioritization\n(Budget & Value)",
+        "bbox": [
+          50,
+          431,
+          186,
+          124
+        ]
+      },
+      {
+        "label": "OWNER\nDecides problem selection\n& value targets.",
+        "bbox": [
+          236,
+          431,
+          200,
+          124
+        ]
+      },
+      {
+        "label": "CONSULTANT\nAdvises on feasibility &\nsequencing.",
+        "bbox": [
+          436,
+          431,
+          200,
+          124
+        ]
+      },
+      {
+        "label": "INFORMED\nReceives execution\ntimelines.",
+        "bbox": [
+          636,
+          431,
+          200,
+          124
+        ]
+      },
+      {
+        "label": "Business GM\n(Budget holder wins\non \u201cWhat\u201d)",
+        "bbox": [
+          850,
+          431,
+          214,
+          124
+        ]
+      },
+      {
+        "label": "Solution Design\n(Workflow & UX)",
+        "bbox": [
+          50,
+          555,
+          186,
+          123
+        ]
+      },
+      {
+        "label": "CONSULTANT\nValidates user\nneeds/adoption.",
+        "bbox": [
+          236,
+          555,
+          200,
+          123
+        ]
+      },
+      {
+        "label": "OWNER\nDefines workflow, logic,\n& UI.",
+        "bbox": [
+          436,
+          555,
+          200,
+          123
+        ]
+      },
+      {
+        "label": "APPROVER\nVetoes only if security\nstandards violated.",
+        "bbox": [
+          636,
+          555,
+          200,
+          123
+        ]
+      },
+      {
+        "label": "Product Lead\n(Balances user need\nvs. constraints)",
+        "bbox": [
+          850,
+          555,
+          214,
+          123
+        ]
+      },
+      {
+        "label": "Architecture & Stack\n(Security & Scale)",
+        "bbox": [
+          50,
+          678,
+          186,
+          123
+        ]
+      },
+      {
+        "label": "INFORMED\nUses the output.",
+        "bbox": [
+          236,
+          678,
+          200,
+          123
+        ]
+      },
+      {
+        "label": "CONSULTANT\nRequests tools/data\naccess.",
+        "bbox": [
+          436,
+          678,
+          200,
+          123
+        ]
+      },
+      {
+        "label": "OWNER\nMandates \u201cGolden Paths\u201d\n& security standards.",
+        "bbox": [
+          636,
+          678,
+          200,
+          123
+        ]
+      },
+      {
+        "label": "Eng/Hub Lead\n(Standardization wins\non \u201cHow\u201d)",
+        "bbox": [
+          850,
+          678,
+          214,
+          123
+        ]
+      },
+      {
+        "label": "Staffing & Career\n(Hiring & Promo)",
+        "bbox": [
+          50,
+          801,
+          186,
+          126
+        ]
+      },
+      {
+        "label": "INPUT\nProvides feedback on\noutcomes.",
+        "bbox": [
+          236,
+          801,
+          200,
+          126
+        ]
+      },
+      {
+        "label": "OWNER\nHiring, firing, promo, &\nstandards (Hardline).",
+        "bbox": [
+          436,
+          801,
+          200,
+          126
+        ]
+      },
+      {
+        "label": "PEER REVIEW\nTechnical assessment.",
+        "bbox": [
+          636,
+          801,
+          200,
+          126
+        ]
+      },
+      {
+        "label": "Vertical Lead\n(Talent bar is protected\nby function).",
+        "bbox": [
+          850,
+          801,
+          214,
+          126
+        ]
+      }
+    ],
+    "arrows": []
+  },
+  "_meta": {
+    "source_render": "/Users/matt_bossemeyer/Projects/wt-2026-01-06__accelerating_technology_delivery_presentation/runs/2026-01-06__accelerating_technology_delivery_presentation/exports/conversion/source_renders/slide_14.png",
+    "slide_index": 14
+  }
+}
