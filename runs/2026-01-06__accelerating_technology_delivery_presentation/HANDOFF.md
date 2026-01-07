@@ -14,10 +14,6 @@
 - `runs/2026-01-06__accelerating_technology_delivery_presentation/exports/draft_v0.pptx` exists.
 - `runs/2026-01-06__accelerating_technology_delivery_presentation/inputs/brand/` contains template files.
 
-## Next steps
-- Analyze `PROCESS.md` to understand the sophisticated presentation logic.
-- Iterate on the script to incorporate more advanced structure/content.
-
 ## Blockers
 - None.
 
@@ -105,11 +101,15 @@ A minor margin warning remains on the Title Slide ("Accelerating..." too close t
 -   **Final Report**: `runs/.../exports/consensus_loop_v4/report_iter_1.txt`
 -   **Final Renders**: `runs/.../exports/consensus_loop_v4/render_iter_1/*.png`
 
-## Next Steps
--   **Deployment**: Distribute `draft_v4_content.pptx` to stakeholders.
--   **Refinement**: (Optional) Tune Title Slide left-margin to satisfy Critic's alignment preference.
-
 ## Activity Log (Consensus Loop Implementation)
 
 ## Known Issues
 - "Black on Black" risk: The Visual Critic correctly identified visibility issues in the skeleton draft (Gate 3 pass), so we have a working detector for this now.
+- **Azure Client**: The `azure_client.py` utility has been customized to handle the specific input format of the GPT-5.2 Preview. Do not replace it with standard OpenAI library calls until the SDK fully supports the `input_image` parameter type.
+
+## Handoff to Next Agent
+The presentation generation pipeline is strictly defined and functional.
+1. **The Golden Script**: Is `scripts/generate_content_v4.py`. Modify this if you need to change content.
+2. **The Verification Loop**: Is `scripts/run_consensus_loop.py`. Run this after ANY change to content or layout.
+3. **The Critic**: Is trustworthy. If it says "Text is invisible" or "Content is clipped," believe it. It is seeing the actual PNG output.
+4. **The Deployment Artifact**: Is `runs/2026-01-06__accelerating_technology_delivery_presentation/exports/draft_v4_content.pptx`.

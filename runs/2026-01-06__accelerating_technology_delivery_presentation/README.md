@@ -2,6 +2,8 @@
 
 This system implements a **Safe-Fail Generative Loop** for creating high-fidelity PowerPoint presentations. It combines programmatic generation with real-world rendering and computer vision critique.
 
+**Current Production Generator:** `scripts/generate_content_v4.py`
+
 ## 1. System Architecture: The "Consensus Loop"
 
 The loop consists of four distinct stages orchestrated by `scripts/run_consensus_loop.py`:
@@ -11,7 +13,7 @@ graph TD
     A[Generate Candidate] -->|python-pptx| B(Gate 1: Geometry Linter)
     B -->|Pass| C(Gate 2: Truthful Renderer)
     B -->|Fail| A
-    C -->|PDF/PNGs| D(Visual Critic)
+    C -->|PDF/PNGs| D(Visual Critic - Azure GPT-5.2)
     D -->|Critique| E{Consensus?}
     E -->|No| A
     E -->|Yes| F[Final Output]
@@ -28,21 +30,27 @@ graph TD
     3.  Convert PDF to PNGs using `pdf2image`.
 *   **Requires**: Local installation of Microsoft PowerPoint on macOS.
 
-### B. The Generator (`scripts/generate_via_components.py`)
+### B. The Generator (`scripts/generate_content_v4.py`)
 **Invariant**: We do not write raw shapes. We instantiate from a **Component Library**.
 *   **Source**: `assets/Premier_Components.pptx` (Generated from `inputs/brand/...`).
 *   **Mechanism**: Clones layouts/slides from the library to ensure brand compliance.
+*   **Key Logic**:
+    *   Uses "Premier Dark" variants for high contrast.
+    *   Enforces White text color (`RGB(255,255,255)`).
+    *   Cleans up source template slides post-generation.
 
 ### C. The Linter (`scripts/utils/lint_slides.py`)
 *   **Purpose**: Fast-fail check before expensive rendering.
 *   **Checks**: `shapely` polygons checks for text overflow and off-slide elements.
+*   **Output**: `shape_map.json` (Used by Visual Critic).
 
 ### D. The Critic (`scripts/utils/qa_vision.py`)
 *   **Purpose**: Semantic validation.
-*   **Mechanism**: Applies "Set-of-Mark" (SoM) bounding boxes to the rendered PNGs and sends them to Gemini (Vision Model) to check for:
+*   **Mechanism**: Applies "Set-of-Mark" (SoM) bounding boxes to the rendered PNGs and sends them to **Azure GPT-5.2** (Vision Model) to check for:
     *   Empty placeholders.
     *   Broken layouts.
-    *   Contextual logic errors.
+    *   Contrast issues (e.g., Black text on Black background, which GPT-5.2 successfully catches).
+    *   Crowded margins.
 
 ## 3. "Do Not Regress" List (Lessons Learned)
 
