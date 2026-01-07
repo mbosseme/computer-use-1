@@ -15,14 +15,17 @@ import render_slides
 import qa_vision
 from pptx import Presentation
 
+import json
+
 # Configuration
 RUN_ID = "2026-01-06__accelerating_technology_delivery_presentation"
-INPUT_DECK = f"runs/{RUN_ID}/exports/draft_v2_components.pptx" 
-OUTPUT_DIR = f"runs/{RUN_ID}/exports/consensus_loop"
+INPUT_DECK = f"runs/{RUN_ID}/exports/draft_v4_content.pptx" 
+OUTPUT_DIR = f"runs/{RUN_ID}/exports/consensus_loop_v4"
+SHAPE_MAP_PATH = os.path.join(OUTPUT_DIR, "shape_map.json")
 
 def run_loop():
     print("--------------------------------------------------")
-    print("STARTING CONSENSUS LOOP (v2.0)")
+    print("STARTING CONSENSUS LOOP (v2.0) - Azure GPT-5.2 Edition")
     print("--------------------------------------------------")
     
     if not os.path.exists(INPUT_DECK):
@@ -52,13 +55,19 @@ def run_loop():
         print(f"\n[ITERATION {iteration}]")
         
         # ------------------------------------------------------------------
-        # GATE 1: GEOMETRY LINTER
+        # GATE 1: GEOMETRY LINTER (Now generates Shape Map)
         # ------------------------------------------------------------------
         print("\n>>> GATE 1: GEOMETRY LINTER check...")
         try:
-            lint_slides.lint_presentation(current_candidate)
-            pass_gate_1 = True
-            print("Gate 1: PASSED (No Geometry Crashes)")
+            # We call lint_presentation with the export path
+            success = lint_slides.lint_presentation(current_candidate, map_output_path=SHAPE_MAP_PATH)
+            if success:
+                pass_gate_1 = True
+                print("Gate 1: PASSED (No Geometry Crashes)")
+            else:
+                print("Gate 1: FAILED (Geometry Issues)")
+                # In real loop we would retry, here we break or continue to debug
+                # break
         except Exception as e:
             print(f"Gate 1: FAILED with exception: {e}")
             break
@@ -78,32 +87,29 @@ def run_loop():
             
         print(f"\n>>> GATE 2: VISUAL CRITIC (Set-of-Mark Analysis)...")
         
+        # Load the shape map
+        if not os.path.exists(SHAPE_MAP_PATH):
+            print("CRITICAL: Shape Map missing. Cannot perform SoM Analysis.")
+            break
+            
+        with open(SHAPE_MAP_PATH, "r") as f:
+            shape_map = json.load(f)
+        
         critique_buffer = []
         
-        prs = Presentation(current_candidate)
-        
         for i, png_path in enumerate(pngs):
-            slide_idx = i 
-            if slide_idx >= len(prs.slides):
-                break
-                
-            slide = prs.slides[slide_idx]
+            slide_idx = i # 0-based index matching lint_slides output
+            
             print(f"   Analyzing Slide {i+1}...")
             
-            # 1. Overlay
-            annotated_path = png_path.replace(".png", "_annotated.png")
-            out_path, shape_index = qa_vision.draw_overlays(png_path, slide, prs.slide_width, prs.slide_height, output_path=annotated_path)
-            
-            # 2. Critique
-            critique = qa_vision.critique_slide_with_gemini(annotated_path)
+            # Review Slide (Includes Overlay + GPT-5.2 Call)
+            critique = qa_vision.review_slide(png_path, shape_map, slide_idx)
             
             if critique:
-                print(f"      GEMINI CRITIQUE: \n{critique}")
-                critique_buffer.append(f"Slide {i+1}: {critique}")
+                print(f"      GPT-5.2 CRITIQUE: \n{critique}")
+                critique_buffer.append(f"Slide {i+1}:\n{critique}")
             else:
-                fallback = qa_vision.simple_critique(shape_index)
-                print(f"      FALLBACK CHECK: {fallback}")
-                critique_buffer.append(f"Slide {i+1}: {fallback}")
+                critique_buffer.append(f"Slide {i+1}: Critique Skipped/Failed.")
 
         # LOG THE REPORT
         report_path = os.path.join(OUTPUT_DIR, f"report_iter_{iteration}.txt")
@@ -113,6 +119,7 @@ def run_loop():
         print(f"\nReport written to {report_path}")
         print("Consensus loop cycle complete. (Auto-patching paused for MVP review)")
         break 
+ 
 
 if __name__ == "__main__":
     run_loop()
