@@ -29,6 +29,11 @@ Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_RE
 
 This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
 
+## Azure OpenAI (GPT-5.2)
+- Guide: [docs/GPT_5_2_INTEGRATION_GUIDE.md](docs/GPT_5_2_INTEGRATION_GUIDE.md)
+- Create a local `.env` from [.env.example](.env.example) (do not commit secrets)
+- Quick smoke test: `python -m agent_tools.llm.smoketest --model azure-gpt-5.2 --prompt "hello"`
+
 ## Web search (Bing + Tavily)
 - **Bing (native)**: Use for quick lookups and broad discovery. It’s built into Copilot and is policy-controlled (no local MCP server to install).
 - **Tavily (MCP, optional)**: Use for deep research loops where the agent should *search → open → extract* documentation. This is a third-party service and requires an API key.
@@ -85,7 +90,8 @@ Notes:
 - `notes/**`, `scripts/**`, `requirements.txt`, and `.vscode/**` are treated as non-core by default (see Core vs run-local below).
 
 Tracking note:
-- By default, `.gitignore` keeps run artifacts out of core history, but allowlists `runs/*/HANDOFF.md` so the journal can be committed/pushed on the run branch for rollback/continuity.
+- By default, run artifacts under `runs/` are tracked so run branches can fully capture state for rollback/continuity.
+- A GitHub Actions guardrail blocks changes under `runs/` from being merged into `main`.
 
 ## Workspace-specific Playwright MCP (instance isolation)
 When you run multiple VS Code windows (one per git worktree), Playwright must be isolated per window/worktree to avoid shared cookies, sessions, downloads, and output collisions.
