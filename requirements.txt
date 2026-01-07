@@ -1,1 +1,5 @@
 # Intentionally minimal for v1. Add dependencies only when needed.
+
+requests>=2.31.0
+python-dotenv>=1.0.0
+urllib3<2
