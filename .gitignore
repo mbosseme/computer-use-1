@@ -12,6 +12,10 @@ __pycache__/
 # Environment files (only if ever used)
 .env
 
+# Microsoft Graph token cache (MSAL)
+/.token_cache.json
+/.token_cache*.json
+
 # Playwright artifacts
 /.playwright-mcp/
 /playwright-report/
