@@ -34,6 +34,13 @@ This repo configures Playwright MCP out of the box; additional MCP servers (e.g.
 - Create a local `.env` from [.env.example](.env.example) (do not commit secrets)
 - Quick smoke test: `python -m agent_tools.llm.smoketest --model azure-gpt-5.2 --prompt "hello"`
 
+## Microsoft Graph (Office 365)
+- Guide: [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](docs/GRAPH_AUTH_REPLICATION_GUIDE.md)
+- Create a local `.env` from [.env.example](.env.example) (do not commit secrets)
+- Validate auth + access (interactive loopback + cache): `python -m agent_tools.graph.validate`
+- List next workweek events (Eastern): `python -m agent_tools.graph.validate --next-workweek --list-events --outlook-timezone "Eastern Standard Time" --display-timezone "America/New_York"`
+- Verified 30-min availability next workweek (8:30 AM–4:30 PM Eastern): `python -m agent_tools.graph.validate --next-workweek --availability --outlook-timezone "Eastern Standard Time" --display-timezone "America/New_York"`
+
 ## Web search (Bing + Tavily)
 - **Bing (native)**: Use for quick lookups and broad discovery. It’s built into Copilot and is policy-controlled (no local MCP server to install).
 - **Tavily (MCP, optional)**: Use for deep research loops where the agent should *search → open → extract* documentation. This is a third-party service and requires an API key.

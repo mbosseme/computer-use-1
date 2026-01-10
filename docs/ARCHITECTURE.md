@@ -55,6 +55,12 @@ This repo does not commit third-party API-key-backed MCP servers. Configure Tavi
 - Not configured in this repo by default; when added, keep exports and temp artifacts namespaced under `RUN_ID`.
 - Prefer exporting results and applying deterministic local transforms.
 
+### Microsoft Graph (Office 365)
+- This repo supports delegated Microsoft Graph access via MSAL public client + interactive loopback auth.
+- Implementation lives under [agent_tools/graph/](../agent_tools/graph/).
+- See [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](GRAPH_AUTH_REPLICATION_GUIDE.md) and [.env.example](../.env.example).
+- Calendar support includes both event reads (`calendarView`) and verified free/busy via `calendar/getSchedule`.
+
 ## Repository “memory” model
 
 ### Always-on instructions
