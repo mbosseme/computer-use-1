@@ -40,6 +40,7 @@ This repo configures Playwright MCP out of the box; additional MCP servers (e.g.
 - Validate auth + access (interactive loopback + cache): `python -m agent_tools.graph.validate`
 - List next workweek events (Eastern): `python -m agent_tools.graph.validate --next-workweek --list-events --outlook-timezone "Eastern Standard Time" --display-timezone "America/New_York"`
 - Verified 30-min availability next workweek (8:30 AM–4:30 PM Eastern): `python -m agent_tools.graph.validate --next-workweek --availability --outlook-timezone "Eastern Standard Time" --display-timezone "America/New_York"`
+- Export sent mail compiled to a recipient (writes to ignored `tmp/` by default): `python -m agent_tools.graph.export_sent_mail --to <RECIPIENT_EMAIL> --include-cc --out-dir tmp/mail_exports_<slug>`
 
 ## Web search (Bing + Tavily)
 - **Bing (native)**: Use for quick lookups and broad discovery. It’s built into Copilot and is policy-controlled (no local MCP server to install).

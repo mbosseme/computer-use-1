@@ -39,10 +39,19 @@ class GraphAPIClient:
         return headers
 
     def request(self, method: str, path: str, **kwargs: Any) -> Dict[str, Any]:
-        url = f"{self._config.base_url.rstrip('/')}/{path.lstrip('/')}"
+        if path.startswith("http://") or path.startswith("https://"):
+            url = path
+        else:
+            url = f"{self._config.base_url.rstrip('/')}/{path.lstrip('/')}"
+
+        extra_headers = kwargs.pop("headers", None)
 
         for attempt in (1, 2):
-            resp = requests.request(method, url, headers=self._headers(), timeout=30, **kwargs)
+            headers = self._headers()
+            if isinstance(extra_headers, dict):
+                headers.update({str(k): str(v) for k, v in extra_headers.items()})
+
+            resp = requests.request(method, url, headers=headers, timeout=30, **kwargs)
             if resp.status_code == 401 and attempt == 1:
                 # Retry once with a fresh token.
                 self._token = None
@@ -53,14 +62,29 @@ class GraphAPIClient:
 
         return {}
 
-    def get(self, path: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        return self.request("GET", path, params=params)
+    def get(
+        self,
+        path: str,
+        params: Optional[Dict[str, Any]] = None,
+        headers: Optional[Dict[str, str]] = None,
+    ) -> Dict[str, Any]:
+        return self.request("GET", path, params=params, headers=headers)
 
-    def post(self, path: str, json: Dict[str, Any]) -> Dict[str, Any]:
-        return self.request("POST", path, json=json)
+    def post(
+        self,
+        path: str,
+        json: Dict[str, Any],
+        headers: Optional[Dict[str, str]] = None,
+    ) -> Dict[str, Any]:
+        return self.request("POST", path, json=json, headers=headers)
 
-    def patch(self, path: str, json: Dict[str, Any]) -> Dict[str, Any]:
-        return self.request("PATCH", path, json=json)
+    def patch(
+        self,
+        path: str,
+        json: Dict[str, Any],
+        headers: Optional[Dict[str, str]] = None,
+    ) -> Dict[str, Any]:
+        return self.request("PATCH", path, json=json, headers=headers)
 
     # Convenience wrappers for common resources
 
