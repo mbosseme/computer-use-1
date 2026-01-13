@@ -60,6 +60,7 @@ This repo does not commit third-party API-key-backed MCP servers. Configure Tavi
 - Implementation lives under [agent_tools/graph/](../agent_tools/graph/).
 - See [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](GRAPH_AUTH_REPLICATION_GUIDE.md) and [.env.example](../.env.example).
 - Calendar support includes both event reads (`calendarView`) and verified free/busy via `calendar/getSchedule`.
+- Mail support includes a small, read-focused export utility (compiled sent mail to a recipient) for repeatable workflows.
 
 ## Repository “memory” model
 

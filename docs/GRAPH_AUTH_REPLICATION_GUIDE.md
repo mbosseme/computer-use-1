@@ -295,6 +295,27 @@ Due date format:
 "dueDateTime": {"dateTime": "YYYY-MM-DDT00:00:00", "timeZone": "UTC"}
 ```
 
+### 5.4 Mail search / export (SentItems)
+
+If you need a deterministic way to find and export sent messages (e.g., “all emails I sent to `<RECIPIENT_EMAIL>`”), use SentItems:
+
+- Endpoint: `GET /me/mailFolders/SentItems/messages`
+- Minimal delegated permission: `Mail.Read` (use `Mail.ReadWrite` only if you need to modify mail)
+
+Filtering vs search:
+- Prefer `$filter` first (deterministic), but some tenants reject recipient filters with errors like `ErrorInvalidUrlQueryFilter`.
+- If that happens, fall back to `$search`:
+    - Add header `ConsistencyLevel: eventual`
+    - Example query: `$search="recipients:<recipient_email>"`
+
+Pagination:
+- Respect `@odata.nextLink` until exhausted.
+- `@odata.nextLink` is commonly an absolute URL; your client should be able to request absolute URLs directly.
+
+Output hygiene:
+- Treat exported mail content as sensitive and keep it out of git.
+- Write exports to an ignored folder (e.g., repo-root `tmp/`) or a run-local folder under `runs/<RUN_ID>/exports/`.
+
 ---
 
 ## 6) Diagnostics + Troubleshooting

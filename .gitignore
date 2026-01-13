@@ -32,3 +32,6 @@ __pycache__/
 /notes/agent-runs/*.md
 !/notes/agent-runs/README.md
 !/notes/agent-runs/_TEMPLATE.md
+
+# Local temp exports (intentionally untracked)
+/tmp/
