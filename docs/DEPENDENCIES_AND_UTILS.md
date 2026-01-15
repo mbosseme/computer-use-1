@@ -40,6 +40,15 @@ Recommended locations:
 This repo also uses:
 - **Reusable Python utilities for runs**: `agent_tools/` (e.g., the Azure OpenAI GPT-5.2 starter client under `agent_tools/llm/`)
 
+### Current `agent_tools/llm/` modules
+| Module | Purpose |
+|--------|---------|
+| `azure_openai_responses.py` | Core Azure OpenAI Responses API client |
+| `document_extraction.py` | PDF/EML text extraction + retry/backoff logic for synthesis workflows |
+| `env.py` | Environment variable loading from `.env` |
+| `model_registry.py` | Model config from `config/models.json` |
+| `smoketest.py` | Quick validation that LLM endpoint is reachable |
+
 Keep utilities:
 - deterministic and reviewable
 - small and composable
