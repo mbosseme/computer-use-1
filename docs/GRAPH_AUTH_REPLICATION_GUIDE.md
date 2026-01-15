@@ -29,7 +29,7 @@ Configure delegated permissions in the app registration:
 - `User.Read`
 - `Tasks.ReadWrite`
 - `Calendars.ReadWrite`
-- (Optional) `Mail.ReadWrite`
+- (Optional) `Mail.Read` (use `Mail.ReadWrite` only if you need to modify mail)
 
 If your tenant blocks user consent, an admin must grant consent.
 
@@ -45,7 +45,7 @@ AZURE_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 AZURE_AUTHORITY_URL=https://login.microsoftonline.com/${AZURE_TENANT_ID}
 
 # Comma-separated list; runtime filters reserved scopes.
-GRAPH_API_SCOPES=Calendars.ReadWrite,Mail.ReadWrite,offline_access,Tasks.ReadWrite,User.Read
+GRAPH_API_SCOPES=Calendars.ReadWrite,Mail.Read,offline_access,Tasks.ReadWrite,User.Read
 
 # Local token cache for silent auth on subsequent runs
 TOKEN_CACHE_FILE=.token_cache.json
@@ -115,7 +115,7 @@ class GraphAuthenticator:
         self.authority = os.environ["AZURE_AUTHORITY_URL"].strip()
         raw_scopes = os.getenv(
             "GRAPH_API_SCOPES",
-            "Calendars.ReadWrite,Mail.ReadWrite,offline_access,Tasks.ReadWrite,User.Read",
+            "Calendars.ReadWrite,Mail.Read,offline_access,Tasks.ReadWrite,User.Read",
         )
         self.scopes = [s.strip() for s in raw_scopes.replace(" ", ",").split(",") if s.strip()]
         self.cache_path = os.getenv("TOKEN_CACHE_FILE", ".token_cache.json")
