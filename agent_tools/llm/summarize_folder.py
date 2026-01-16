@@ -170,7 +170,7 @@ def synthesize_folder(
     combined = "\n\n".join(combined_inputs)
 
     final_prompt = (
-        "I have the following per-document syntheses related to B. Braun and Market Insights.\n"
+        "I have the following per-document syntheses from a folder of documents.\n"
         "Please provide a high-level executive summary and thematic synthesis across all these findings.\n"
         "Identify key themes, recurring topics, and strategic takeaways.\n\n"
         "Output Markdown with:\n"
