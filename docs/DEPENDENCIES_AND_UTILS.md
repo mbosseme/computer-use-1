@@ -45,6 +45,8 @@ This repo also uses:
 |--------|---------|
 | `azure_openai_responses.py` | Core Azure OpenAI Responses API client |
 | `document_extraction.py` | PDF/EML text extraction + retry/backoff logic for synthesis workflows |
+| `summarize_file.py` | Chunked map-reduce synthesis for PDFs and text, with coverage warnings + optional manifest |
+| `summarize_folder.py` | One-command folder synthesis (PDF/EML/text) + per-doc outputs |
 | `env.py` | Environment variable loading from `.env` |
 | `model_registry.py` | Model config from `config/models.json` |
 | `smoketest.py` | Quick validation that LLM endpoint is reachable |

@@ -34,6 +34,34 @@ This repo configures Playwright MCP out of the box; additional MCP servers (e.g.
 - Create a local `.env` from [.env.example](.env.example) (do not commit secrets)
 - Quick smoke test: `python -m agent_tools.llm.smoketest --model azure-gpt-5.2 --prompt "hello"`
 
+## Document synthesis (chunked, with coverage warnings)
+This repo includes local-first synthesis tooling that avoids silent truncation by using chunked map-reduce, and always emits a **Coverage / Limit Warnings** section.
+
+- Single PDF synthesis (writes Markdown + optional JSON manifest):
+
+```bash
+python -m agent_tools.llm.summarize_file \
+  --pdf "/path/to/file.pdf" \
+  --out "runs/<RUN_ID>/exports/<slug>__synthesis.md" \
+  --manifest "runs/<RUN_ID>/exports/<slug>__synthesis.manifest.json" \
+  --chunk-summaries-dir "runs/<RUN_ID>/tmp/<slug>__chunks"
+```
+
+- Full folder synthesis (PDF/EML/TXT/MD) + per-doc outputs:
+
+```bash
+python -m agent_tools.llm.summarize_folder \
+  --dir "/path/to/folder" \
+  --out "runs/<RUN_ID>/exports/folder_synthesis.md" \
+  --manifest "runs/<RUN_ID>/exports/folder_synthesis.manifest.json" \
+  --per-doc-dir "runs/<RUN_ID>/exports/docs" \
+  --tmp-dir "runs/<RUN_ID>/tmp/docs"
+```
+
+Notes:
+- If a PDF extractor appears to duplicate identical page text (a known issue with some PDFs), the output will include a warning like `PDF_REDUNDANCY_DEDUPED`.
+- Model credentials and endpoints are always local (`.env` + `config/models.json` placeholders). Do not commit secrets or internal endpoints.
+
 ## Microsoft Graph (Office 365)
 - Guide: [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](docs/GRAPH_AUTH_REPLICATION_GUIDE.md)
 - Create a local `.env` from [.env.example](.env.example) (do not commit secrets)

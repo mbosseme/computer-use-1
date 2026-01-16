@@ -45,6 +45,10 @@ This repo does not commit third-party API-key-backed MCP servers. Configure Tavi
 - Setup uses local environment variables via a repo-root `.env` (never commit secrets). See [.env.example](../.env.example).
 - Guide and usage notes: [docs/GPT_5_2_INTEGRATION_GUIDE.md](GPT_5_2_INTEGRATION_GUIDE.md).
 
+Document synthesis utilities:
+- `python -m agent_tools.llm.summarize_file`: chunked map-reduce synthesis for a single PDF (or text) with **Coverage / Limit Warnings** and an optional JSON manifest.
+- `python -m agent_tools.llm.summarize_folder`: one-command folder synthesis (PDF/EML/TXT/MD) that writes per-doc outputs + a folder-level synthesis.
+
 ### Deterministic local transforms
 - Prefer scripted, deterministic transforms over manual UI operations.
 - Typical tooling: Python (e.g., `pandas`, `openpyxl`, `python-pptx`) when justified.
