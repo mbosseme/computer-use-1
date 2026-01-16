@@ -76,3 +76,59 @@ If resuming this run:
 - Branch: `run/2026-01-15__b-braun-pdf-synthesis`
 - Worktree: `/Users/matt_bossemeyer/Projects/wt-2026-01-15__b-braun-pdf-synthesis`
 - Core promotion: PR #8 merged to `main`
+
+---
+
+## 2026-01-16 — Single-document re-synthesis (Confirmed demo PDF)
+
+### Summary
+- Generated a fresh, single-document synthesis for the OneDrive PDF “Re: Confirmed-BBraun MI Demo - virtual .pdf”.
+
+### Artifacts
+- `runs/2026-01-15__b-braun-pdf-synthesis/exports/confirmed_demo_virtual__synthesis.md`
+- `runs/2026-01-15__b-braun-pdf-synthesis/tmp/confirmed_demo_virtual__extracted.txt` (sanitized + truncated extraction used for the prompt)
+
+### Repro
+- Script: `runs/2026-01-15__b-braun-pdf-synthesis/scripts/summarize_confirmed_demo_virtual_pdf.py`
+- Run: `.venv/bin/python runs/2026-01-15__b-braun-pdf-synthesis/scripts/summarize_confirmed_demo_virtual_pdf.py`
+
+### Verification
+- Script printed “Wrote synthesis: …/exports/confirmed_demo_virtual__synthesis.md” and output file has non-empty content.
+
+---
+
+## 2026-01-16 — Chunked full-document synthesis (large PDFs)
+
+### Summary
+- Implemented and validated a chunked map-reduce synthesizer for large PDFs (local-first, deterministic chunk packing + explicit coverage/limit warnings).
+- Discovered that `PyPDF2` text extraction for “Confirmed-BBraun MI Demo - virtual.pdf” appears to duplicate identical extracted text across pages (page 1 == page 2 == page 3), so “full coverage” depends on extractor fidelity.
+
+### Artifacts
+- `runs/2026-01-15__b-braun-pdf-synthesis/exports/confirmed_demo_virtual__full_synthesis.md`
+- `runs/2026-01-15__b-braun-pdf-synthesis/exports/confirmed_demo_virtual__full_synthesis.manifest.json`
+- `runs/2026-01-15__b-braun-pdf-synthesis/tmp/confirmed_demo_virtual__chunks/` (per-chunk summaries from the large-PDF run)
+
+### Repro
+- Script (single-PDF entrypoint): `runs/2026-01-15__b-braun-pdf-synthesis/scripts/summarize_confirmed_demo_virtual_pdf.py`
+- Run: `.venv/bin/python runs/2026-01-15__b-braun-pdf-synthesis/scripts/summarize_confirmed_demo_virtual_pdf.py`
+
+### Notes
+- The synthesizer emits a `PDF_REDUNDANCY_DEDUPED` warning when many pages extract identically; this is a strong signal of an extractor artifact rather than truly redundant content.
+
+---
+
+## 2026-01-16 — Full folder re-synthesis (all docs)
+
+### Summary
+- Re-ran extraction + synthesis for every document in the B Braun folder using chunked map-reduce PDF synthesis (no naive truncation), and re-generated the global synthesis.
+
+### Artifacts
+- Global synthesis: `runs/2026-01-15__b-braun-pdf-synthesis/exports/b-braun_synthesis.md`
+- Per-document syntheses: `runs/2026-01-15__b-braun-pdf-synthesis/exports/docs/*__synthesis.md`
+- Per-document manifests: `runs/2026-01-15__b-braun-pdf-synthesis/exports/docs/*__synthesis.manifest.json`
+- Per-document chunk summaries (PDFs): `runs/2026-01-15__b-braun-pdf-synthesis/tmp/docs/*__chunks/`
+
+### Repro
+- Script: `runs/2026-01-15__b-braun-pdf-synthesis/scripts/extract_and_synthesize.py`
+- Run: `.venv/bin/python runs/2026-01-15__b-braun-pdf-synthesis/scripts/extract_and_synthesize.py`
+
