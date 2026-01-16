@@ -99,6 +99,7 @@ def _find_overlap_slots(
     business_start: str,
     business_end: str,
     interval_minutes: int,
+    window_minutes: int,
     timeout_s: int,
 ) -> List[Slot]:
     # Compute next Monday–Friday in display tz if possible; else UTC.
@@ -119,6 +120,13 @@ def _find_overlap_slots(
             tzinfo = ZoneInfo(display_tz)
         except Exception:
             tzinfo = None
+
+    if interval_minutes <= 0:
+        raise ValueError("interval_minutes must be positive")
+    if window_minutes <= 0:
+        raise ValueError("window_minutes must be positive")
+    if window_minutes % interval_minutes != 0:
+        raise ValueError("window_minutes must be a multiple of interval_minutes")
 
     all_slots: List[Slot] = []
 
@@ -150,13 +158,30 @@ def _find_overlap_slots(
         if not me_view or not other_view:
             continue
 
-        # Find indices where both are free ('0').
+        # Find indices where both are free ('0'), then emit windows of length window_minutes.
         n = min(len(me_view), len(other_view))
         step = timedelta(minutes=interval_minutes)
-        for idx in range(n):
-            if me_view[idx] == "0" and other_view[idx] == "0":
-                slot_start = window_start + (idx * step)
-                slot_end = slot_start + step
+        needed_steps = window_minutes // interval_minutes
+
+        idx = 0
+        while idx < n:
+            if not (me_view[idx] == "0" and other_view[idx] == "0"):
+                idx += 1
+                continue
+
+            run_start = idx
+            while idx < n and (me_view[idx] == "0" and other_view[idx] == "0"):
+                idx += 1
+            run_end = idx  # exclusive
+
+            run_len = run_end - run_start
+            if run_len < needed_steps:
+                continue
+
+            # For a run of free steps, any start within the run that fits produces a window.
+            for start_idx in range(run_start, run_end - needed_steps + 1):
+                slot_start = window_start + (start_idx * step)
+                slot_end = slot_start + timedelta(minutes=window_minutes)
                 all_slots.append(Slot(start=slot_start, end=slot_end))
 
     return all_slots
@@ -187,11 +212,22 @@ def _format_slot(slot: Slot, display_tz: Optional[str]) -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Find overlapping free 30-min meeting slots next week for you + another attendee.")
+    parser = argparse.ArgumentParser(description="Find overlapping free meeting windows next week for you + another attendee.")
     parser.add_argument("--other-email", required=True, help="Other attendee email (e.g., sachin@...)\n")
     parser.add_argument("--business-start", default="09:00", help="Business hours start (HH:MM) in display timezone")
     parser.add_argument("--business-end", default="16:30", help="Business hours end (HH:MM) in display timezone")
-    parser.add_argument("--interval-minutes", type=int, default=30, help="Slot size (default: 30)")
+    parser.add_argument(
+        "--interval-minutes",
+        type=int,
+        default=30,
+        help="Availability sampling interval in minutes (default: 30). Use 30 to include :00 and :30 starts.",
+    )
+    parser.add_argument(
+        "--window-minutes",
+        type=int,
+        default=60,
+        help="Meeting window length in minutes (default: 60). Must be a multiple of --interval-minutes.",
+    )
     parser.add_argument("--limit", type=int, default=10, help="Max slots to print (default: 10)")
     parser.add_argument("--timeout", type=int, default=90, help="HTTP timeout seconds (default: 90)")
     parser.add_argument(
@@ -225,6 +261,7 @@ def main() -> int:
         business_start=str(args.business_start),
         business_end=str(args.business_end),
         interval_minutes=int(args.interval_minutes),
+        window_minutes=int(args.window_minutes),
         timeout_s=int(args.timeout),
     )
 
