@@ -17,21 +17,28 @@ Synthesize a folder of documents (PDF, EML, etc.) into a structured summary usin
    - **EML**: Use Python's `email` module with `BytesParser`.
    - **Other**: Extend as needed (e.g., `python-docx` for Word).
 3. **Sanitize**: Remove potential secrets (API keys, tokens, passwords) before sending to LLM.
-4. **Character-limit check**: Truncate individual documents to ~20k chars to avoid context limits.
+4. **Avoid naive truncation**: Do **not** default to `text[:N]` for long documents. Instead use chunking (map-reduce) so late-document content is not silently dropped.
 
 ### Phase 2: Per-Document Summarization Loop
-**Why loop?** Sending all documents in one payload often exceeds context limits or triggers rate limits. A per-document loop is more robust.
+**Why loop?** Long documents can exceed practical prompt sizes. A chunked per-document loop is more robust and provides explicit coverage accounting.
 
 1. For each extracted document:
-   - Build a prompt: "Summarize this document, highlighting key business intelligence..."
-   - Call the LLM with `call_with_retry` (handles 429s and timeouts).
-   - Collect the summary.
-   - Add a small delay (1–2s) between calls to reduce rate-limit risk.
+  - Chunk the extracted text (prefer page-aware chunking for PDFs).
+  - **Map step**: summarize each chunk.
+  - **Reduce step**: synthesize chunk summaries into a single document-level synthesis.
+  - Add a small delay (0.5–2s) between calls to reduce rate-limit risk.
+
+User-visible contract:
+- The output MUST include a **Coverage / Limit Warnings** section.
+- If any content is omitted due to configured limits (max chunks/pages/timeouts), the warning must explicitly say so (pages omitted, extraction failures, truncation events).
 
 ### Phase 3: Final Aggregation
 1. Combine all per-document summaries into a single input.
 2. Call the LLM with a "meta-synthesis" prompt: "Given these summaries, identify recurring themes, strategic takeaways, and action items."
 3. Save the final output to `runs/<RUN_ID>/exports/<output_name>.md`.
+
+## Recommended implementation
+- Use `agent_tools/llm/summarize_file.py` for chunked PDF synthesis (map-reduce) with coverage warnings and an optional JSON manifest.
 
 ## Key code patterns
 
@@ -82,10 +89,9 @@ safe_content = sanitize_text(pdf_content)
 ### Context length exceeded (400 Bad Request)
 - **Detection**: Exception message contains "context_length_exceeded" or similar.
 - **Recovery**:
-  1. Check if the file has redundant content (e.g., transcript repeated on every page).
-  2. Truncate to first N pages or first 20k characters.
-  3. Re-run the single-document summarization.
-- **Prevention**: Always truncate individual docs before sending.
+  1. Prefer chunking/map-reduce over truncation so late-document content is not silently dropped.
+  2. If a PDF extractor produces duplicated page text (same content repeated), emit a coverage warning and consider switching extractor/OCR.
+  3. If you must bound inputs, do so with explicit user-visible warnings/manifests (max chunks/pages/timeouts), not silent `text[:N]`.
 
 ### Read timeout
 - **Detection**: "Read timed out" in exception.
@@ -110,6 +116,8 @@ safe_content = sanitize_text(pdf_content)
 ## Related utilities
 - [agent_tools/llm/azure_openai_responses.py](../../../agent_tools/llm/azure_openai_responses.py): Core Responses API client.
 - [agent_tools/llm/document_extraction.py](../../../agent_tools/llm/document_extraction.py): PDF/EML extraction + retry logic.
+- [agent_tools/llm/summarize_file.py](../../../agent_tools/llm/summarize_file.py): Chunked map-reduce synthesis for PDFs and text, with coverage warnings.
+- [agent_tools/llm/summarize_folder.py](../../../agent_tools/llm/summarize_folder.py): One-command folder synthesis (PDF/EML/text).
 - [agent_tools/llm/env.py](../../../agent_tools/llm/env.py): Environment variable loading.
 - [agent_tools/llm/model_registry.py](../../../agent_tools/llm/model_registry.py): Model config from `config/models.json`.
 

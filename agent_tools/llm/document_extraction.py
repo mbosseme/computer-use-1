@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import re
 import time
+from dataclasses import dataclass
 from email import policy
 from email.parser import BytesParser
 from pathlib import Path
@@ -27,6 +28,13 @@ try:
     import PyPDF2
 except ImportError:
     PyPDF2 = None  # type: ignore
+
+
+@dataclass(frozen=True)
+class PdfPageExtraction:
+    page_number: int  # 1-based
+    text: str
+    error: Optional[str] = None
 
 
 def extract_pdf_text(file_path: Path, max_pages: Optional[int] = None) -> str:
@@ -53,6 +61,75 @@ def extract_pdf_text(file_path: Path, max_pages: Optional[int] = None) -> str:
         raise RuntimeError(f"Error extracting PDF {file_path}: {e}") from e
 
     return "\n".join(text_parts)
+
+
+def extract_pdf_pages(
+    file_path: Path,
+    *,
+    max_pages: Optional[int] = None,
+    page_timeout_s: Optional[int] = None,
+) -> list[PdfPageExtraction]:
+    """Extract text from a PDF file as page-level records.
+
+    This is more robust for long documents where we want to chunk/summarize without
+    dropping late-document content.
+
+    Args:
+        file_path: Path to the PDF file.
+        max_pages: Optional limit on number of pages to extract.
+        page_timeout_s: Optional per-page timeout (seconds). On timeout, the page is
+            recorded with error and empty text.
+
+    Returns:
+        A list of PdfPageExtraction in page order (1-based page_number).
+    """
+
+    if PyPDF2 is None:
+        raise ImportError("PyPDF2 is required for PDF extraction. Install with: pip install PyPDF2")
+
+    def _extract_one_page(page) -> str:
+        if page_timeout_s is None:
+            return page.extract_text() or ""
+
+        # Best-effort per-page timeout for macOS/Linux.
+        try:
+            import signal
+
+            if not hasattr(signal, "SIGALRM"):
+                return page.extract_text() or ""
+
+            class _Timeout(Exception):
+                pass
+
+            def _handler(_signum, _frame):
+                raise _Timeout("page extraction timed out")
+
+            previous_handler = signal.getsignal(signal.SIGALRM)
+            signal.signal(signal.SIGALRM, _handler)
+            signal.alarm(int(page_timeout_s))
+            try:
+                return page.extract_text() or ""
+            finally:
+                signal.alarm(0)
+                signal.signal(signal.SIGALRM, previous_handler)
+        except Exception:
+            return page.extract_text() or ""
+
+    results: list[PdfPageExtraction] = []
+    try:
+        with open(file_path, "rb") as f:
+            reader = PyPDF2.PdfReader(f)
+            pages = reader.pages[:max_pages] if max_pages else reader.pages
+            for idx, page in enumerate(pages, start=1):
+                try:
+                    page_text = _extract_one_page(page)
+                    results.append(PdfPageExtraction(page_number=idx, text=page_text, error=None))
+                except Exception as e:
+                    results.append(PdfPageExtraction(page_number=idx, text="", error=str(e)))
+    except Exception as e:
+        raise RuntimeError(f"Error extracting PDF pages {file_path}: {e}") from e
+
+    return results
 
 
 def extract_eml_text(file_path: Path) -> str:
