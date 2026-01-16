@@ -122,4 +122,8 @@ safe_content = sanitize_text(pdf_content)
 - [agent_tools/llm/model_registry.py](../../../agent_tools/llm/model_registry.py): Model config from `config/models.json`.
 
 ## Example run script
-See `runs/2026-01-15__b-braun-pdf-synthesis/scripts/extract_and_synthesize.py` as a reference implementation.
+If you want a one-off script for a run, create it under `runs/<RUN_ID>/scripts/`.
+
+For reusable entry points, prefer the CLIs:
+- `python -m agent_tools.llm.summarize_file` (single PDF/text)
+- `python -m agent_tools.llm.summarize_folder` (folder synthesis)
