@@ -1,0 +1,36 @@
+{
+  "source_folder": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/B Braun",
+  "generated_on": "2026-01-16",
+  "model": "azure-gpt-5.2",
+  "include_exts": [
+    ".pdf",
+    ".eml",
+    ".txt",
+    ".md"
+  ],
+  "documents_included": 2,
+  "documents": [
+    {
+      "filename": "81222 Call With B. Braun.pdf",
+      "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/B Braun/81222 Call With B. Braun.pdf",
+      "type": "pdf",
+      "out_md": "runs/2026-01-15__b-braun-pdf-synthesis/exports/docs_cli/81222_call_with_b_braun__synthesis.md",
+      "out_manifest": "runs/2026-01-15__b-braun-pdf-synthesis/exports/docs_cli/81222_call_with_b_braun__synthesis.manifest.json"
+    },
+    {
+      "filename": "84 Interview With B. Braun.pdf",
+      "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/B Braun/84 Interview With B. Braun.pdf",
+      "type": "pdf",
+      "out_md": "runs/2026-01-15__b-braun-pdf-synthesis/exports/docs_cli/84_interview_with_b_braun__synthesis.md",
+      "out_manifest": "runs/2026-01-15__b-braun-pdf-synthesis/exports/docs_cli/84_interview_with_b_braun__synthesis.manifest.json"
+    }
+  ],
+  "chunking": {
+    "target_chunk_chars": 30000,
+    "max_chunk_chars": 45000,
+    "overlap_pages": 1,
+    "max_chunks": null,
+    "page_timeout_s": 15,
+    "max_reduction_passes": 3
+  }
+}

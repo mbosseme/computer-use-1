@@ -1,0 +1,19 @@
+{
+  "source_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/B Braun/Market Insights - B Braun - Nov 2025.pdf",
+  "generated_on": "2026-01-16",
+  "extraction": {
+    "pages_total": 27,
+    "pages_with_text": 27,
+    "pages_with_error": 0,
+    "total_extracted_chars": 19983
+  },
+  "chunking": {
+    "chunks": 1,
+    "target_chunk_chars": 30000,
+    "max_chunk_chars": 45000,
+    "overlap_pages": 1,
+    "max_chunks": null,
+    "page_timeout_s": 15
+  },
+  "warnings": []
+}
