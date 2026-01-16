@@ -119,3 +119,16 @@ If the task involves web research, consult `docs/Copilot Web Search Configuratio
 - Ask for explicit approval before committing.
 - Ask separately before pushing.
 - Target cadence: commit at major milestones (roughly every few hours or after a meaningful end-to-end success).
+
+## Protected `main` branch (PR-first workflow)
+This repo uses GitHub repository rules that may reject direct pushes to `main` (e.g., GH013 requiring a status check like "Block runs/ changes").
+
+Default approach:
+1. Create a branch for the change (prefer `core/<YYYY-MM-DD__slug>` for core-path updates).
+2. Commit to the branch.
+3. Push the branch to origin (do **not** push `main`).
+4. Open a PR into `main` (prefer `gh pr create` when available).
+5. Wait for required checks to pass, then merge the PR.
+6. Pull `main` locally to re-sync.
+
+Only attempt a direct `git push origin main` if the user explicitly requests it and you have high confidence the repo allows it.
