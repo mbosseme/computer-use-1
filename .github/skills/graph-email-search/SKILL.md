@@ -45,6 +45,15 @@ tools:
   - Include header: `ConsistencyLevel: eventual`
   - Example: `$search="recipients:<email>"`
 
+## Creating draft emails (Drafts)
+- To create a draft (without sending), use:
+  - `POST /me/messages`
+  - This creates a message in **Drafts** by default.
+- Keep **HITL** for sending: do not send mail without explicit user confirmation.
+- Recommended helper (repo utility):
+  - `python -m agent_tools.graph.create_draft_from_md --md <path/to/draft.md> --resolve-to-name "First Last"`
+  - If name resolution is ambiguous, the tool will list candidates and still create a draft with no recipient.
+
 ### Pagination
 - Respect `@odata.nextLink` until exhausted.
 - NextLink is typically an **absolute URL**; your HTTP client should accept absolute URLs directly.
