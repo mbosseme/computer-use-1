@@ -10,6 +10,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 - **[research-ladder](research-ladder/SKILL.md)**: Choose the right research depth; escalate Bing → Tavily → Playwright; capture evidence consistently.
 - **[graph-email-search](graph-email-search/SKILL.md)**: Microsoft Graph mail search/export patterns (SentItems, $filter → $search fallback, paging, safety).
 - **[document-synthesis-llm](document-synthesis-llm/SKILL.md)**: **(Start here for document summarization)** Extract text from PDFs/EMLs, synthesize via LLM with retry/backoff, handle context limits.
+- **[analysis-decision-modeling](analysis-workflow/decision-modeling.md)**: **(Start here for "Build vs Buy" / Underwriting)** Comprehensive workflow for scenario modeling (Evidence Ledger → Data/Logic Split → Scenario Grid → Decision Memo).
 
 ## Skill selection heuristic
 - Choose **1 primary** skill + up to **2 supporting** skills.

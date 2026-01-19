@@ -1,0 +1,36 @@
+{
+  "market_value_at_purchase": 284990.0,
+  "purchase_price": 284990.0,
+  "hold_years": 4,
+  "appreciation_rate": 0.04,
+  "selling_friction_rate": 0.07,
+
+  "down_payment_rate": 0.25,
+  "mortgage_rate_annual": 0.0625,
+  "mortgage_term_months": 360,
+
+  "furnishings": 10000.0,
+  "buyer_closing_cost_rate": 0.02,
+  "closing_cost_basis_fraction": 0.5,
+
+  "hoa_monthly": 200.0,
+  "property_tax_annual": 1576.0,
+  "insurance_annual": 900.0,
+  "maintenance_annual": 0.0,
+  "utilities_monthly": 75.0,
+
+  "federal_ordinary_rate": 0.25,
+  "ny_ordinary_rate": 0.0685,
+
+  "federal_ltcg_plus_niit_rate": 0.238,
+  "ny_cap_gains_rate": 0.0685,
+
+  "portfolio_return_nominal": 0.06,
+  "tax_drag_annual": 0.005,
+
+  "special_assessment_year2": 0.0,
+  "tax_benefit_haircut": 0.75,
+
+  "retirement_P0": 1000000.0,
+  "retirement_target": 3500000.0
+}

@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "run_id": "2026-01-19__vineyard-point",
+    "created": "2026-01-19",
+    "notes": "ACTIVE property: Vineyard Point / Dockside condos. 30+ day minimum leases assumed until HOA docs verified."
+  },
+  "property": {
+    "development": "Vineyard Point / Dockside condos",
+    "address_anchor": "18861 Vineyard Point Ln, Cornelius, NC 28031",
+    "unit_assumptions": {
+      "beds": 2,
+      "baths": 2,
+      "sqft": 782
+    },
+    "purchase": {
+      "market_value_at_purchase": 355000,
+      "purchase_price": 355000,
+      "buyer_closing_cost_rate": 0.025,
+      "sale_horizon_years_options": [5, 7],
+      "annual_appreciation_rate": 0.03,
+      "selling_cost_rate": 0.07
+    }
+  },
+  "financing": {
+    "down_payment_pct_options": [0.15, 0.2, 0.25],
+    "interest_rate_options": [0.06, 0.07, 0.08],
+    "term_years": 30
+  },
+  "cash_budget": {
+    "max_total_cash_available": 100000,
+    "recommended_liquidity_reserve": 10000
+  },
+  "upfront": {
+    "furnish_renovation_budget_options": [10000, 25000, 30000]
+  },
+  "recurring_costs": {
+    "hoa_monthly": 287,
+    "property_tax_annual": 2169,
+    "insurance_annual": 1200,
+    "utilities_owner_paid_monthly": 250,
+    "utilities_tenant_reimbursement_rate": 0.0,
+    "maintenance_fixed_annual": 1000,
+    "maintenance_per_tenant_month": 150
+  },
+  "rental": {
+    "min_lease_days": 30,
+    "turnover_buffer_days": 2,
+    "monthly_rent_options": [2400, 2800, 3100],
+    "market_fill_rate_options": [0.6, 0.75, 0.9],
+    "management_fee_pct_of_rent": 0.2,
+    "management_fee_pct_of_rent_options": [0.07, 0.1, 0.15, 0.2, 0.25],
+    "leasing_fee_per_lease": 250,
+    "leasing_fee_per_lease_options": [250, 500, 1000, 1500],
+    "cleaning_cost_per_turnover": 220
+  },
+  "owner_use": {
+    "scenarios": {
+      "two_trips_feb_aug": {
+        "description": "~2 weeks in Feb + ~2 weeks in Aug",
+        "blocks": [
+          {"start": "2026-02-01", "end": "2026-02-14"},
+          {"start": "2026-08-01", "end": "2026-08-14"}
+        ]
+      },
+      "two_trips_apr_aug": {
+        "description": "~2 weeks in Apr + ~2 weeks in Aug",
+        "blocks": [
+          {"start": "2026-04-01", "end": "2026-04-14"},
+          {"start": "2026-08-01", "end": "2026-08-14"}
+        ]
+      },
+      "three_trips_feb_aug_dec": {
+        "description": "~2 weeks Feb + ~2 weeks Aug + ~2 weeks post-Christmas",
+        "blocks": [
+          {"start": "2026-02-01", "end": "2026-02-14"},
+          {"start": "2026-08-01", "end": "2026-08-14"},
+          {"start": "2026-12-26", "end": "2027-01-08"}
+        ]
+      }
+    }
+  },
+  "rent_instead": {
+    "two_weeks_cost_anchor": 4167,
+    "notes": "Anchor provided by user: ~2 weeks in Feb costs about $5,000 via Airbnb for similar places. Scaled to reflect an average of ~5 weeks rented instead of 6 weeks (5/6 of $5,000 per two-week block)."
+  },
+  "tax": {
+    "income_tax_rate_marginal": 0.31,
+    "capital_gains_tax_rate": 0.2,
+    "depreciation_recapture_rate": 0.25,
+    "land_value_pct_of_purchase": 0.25,
+    "building_depreciation_years": 27.5,
+    "furnishing_depreciation_years": 5,
+    "section_280a_apply": true
+  }
+}
