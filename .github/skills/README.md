@@ -11,6 +11,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 - **[graph-email-search](graph-email-search/SKILL.md)**: Microsoft Graph mail search/export patterns (SentItems, $filter → $search fallback, paging, safety).
 - **[document-synthesis-llm](document-synthesis-llm/SKILL.md)**: **(Start here for document summarization)** Extract text from PDFs/EMLs, synthesize via LLM with retry/backoff, handle context limits.
 - **[analysis-decision-modeling](analysis-workflow/decision-modeling.md)**: **(Start here for "Build vs Buy" / Underwriting)** Comprehensive workflow for scenario modeling (Evidence Ledger → Data/Logic Split → Scenario Grid → Decision Memo).
+  - Includes **[model_template.py](analysis-workflow/model_template.py)**: A minimal Python template for scenario-grid analyses. Copy to `runs/<RUN_ID>/scripts/` and customize.
 
 ## Skill selection heuristic
 - Choose **1 primary** skill + up to **2 supporting** skills.
