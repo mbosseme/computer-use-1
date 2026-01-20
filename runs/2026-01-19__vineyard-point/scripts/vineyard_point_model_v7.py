@@ -113,10 +113,22 @@ def compute_v7_model(inputs: dict, scenario_overrides: dict) -> dict:
     cash_flow_empty = 0.0 - fixed_expenses
     
     # ---------------------------------------------------------
-    # 5. TAX BRIDGE (STRICT V7)
+    # 5. TAX BRIDGE (STRICT V7 + USER "MIXED USE" OVERRIDE)
     # ---------------------------------------------------------
     horizon_years = 7
+    marginal_rate = tax_in.get("income_tax_rate_marginal", 0.31)
     
+    # User Request (2026-01-20): "Time not rented to others is treated as personal use"
+    # Logic: Personal Days = 365 - Days Rented (Market).
+    # This allows allocating that % of Interest/Tax to Schedule A (Deductible)
+    # instead of Schedule E (Suspended).
+    # Requirement: Total Debt < $750k (Checked: $350k + New ~$280k = ~$630k -> Safe)
+
+    days_rented_market = days_occupied
+    days_personal_for_tax = 365.0 - days_rented_market
+    personal_share_pct = days_personal_for_tax / 365.0
+    rental_share_pct = 1.0 - personal_share_pct
+
     # Cumulative Operating Position (for PAL tracking)
     # Taxable Income = Gross Rent - (Operating Expenses + Mortgage Interest + Depreciation)
     # We need average annual interest
@@ -133,16 +145,39 @@ def compute_v7_model(inputs: dict, scenario_overrides: dict) -> dict:
     avg_annual_interest = total_interest_paid / horizon_years
     avg_annual_principal = (mortgage_annual * horizon_years - total_interest_paid) / horizon_years
     
+    # Split Interest & Tax
+    interest_sched_A = avg_annual_interest * personal_share_pct
+    interest_sched_E = avg_annual_interest * rental_share_pct
+    
+    tax_sched_A = property_tax * personal_share_pct
+    tax_sched_E = property_tax * rental_share_pct
+
+    # Immediate Cash Tax Benefit (Schedule A)
+    # Assumes itemizing is beneficial or this adds to it.
+    annual_tax_savings_cash = (interest_sched_A + tax_sched_A) * marginal_rate
+
     # Depreciation
     bldg_val = purchase_price * (1 - 0.25) # 25% Land
     dep_bldg_annual = bldg_val / 27.5
     dep_furn_annual = furnish_budget / 5.0
     total_dep_annual = dep_bldg_annual + dep_furn_annual
     
-    # Taxable P&L (Annual)
-    # Deductible Cash Expenses = Total Outflow - Mortgage (Principal+Interest) + Interest
-    deductible_cash_expenses = total_cash_outflow - mortgage_annual + avg_annual_interest
-    taxable_income_annual = gross_rent_annual - deductible_cash_expenses - total_dep_annual
+    # Taxable P&L (Annual) - Schedule E Only
+    # Expenses must be allocated to rental side.
+    # Fixed Ops (HOA, Ins, Maint) generally 100% deductible if "Available for rent"? 
+    # Or strict allocation?
+    # Court rule: "Expenses other than interest/tax are allocated based on days used / days rented".
+    # But for "Available for rent", mostly 100% is taken. 
+    # We will be conservative and keep 100% of OPEX in Schedule E (as they are not deductible on Sched A anyway).
+    # Only Interest/Tax are split.
+    
+    # OpEx (excl Mortgage/Tax)
+    opex_annual = total_cash_outflow - mortgage_annual - property_tax
+    
+    # Sched E Deductions
+    deductible_expenses_sched_E = opex_annual + interest_sched_E + tax_sched_E
+    
+    taxable_income_annual = gross_rent_annual - deductible_expenses_sched_E - total_dep_annual
     
     # Suspended PAL accumulation
     # If taxable_income < 0, it adds to PAL. If > 0, it uses PAL (if allowed, but strict rule says NO W-2 OFFSET).
@@ -195,11 +230,12 @@ def compute_v7_model(inputs: dict, scenario_overrides: dict) -> dict:
     rent_alternative_cost = owner_weeks * 2500.0
     
     # Cost of Ownership (Annualized Econ Cost)
-    # Inflow: Net Cash Flow * 7 + Net Sale Proceeds
+    # Inflow: Net Cash Flow * 7 + Net Sale Proceeds + Tax Savings (Sched A)
     # Outflow: Upfront Cash
     upfront_cash = (purchase_price * down_pct) + (purchase_price * 0.025) + furnish_budget
     
-    total_lifetime_cash_net = (net_cash_flow * horizon_years) - upfront_cash + net_sale_proceeds
+    total_lifetime_tax_savings = annual_tax_savings_cash * horizon_years
+    total_lifetime_cash_net = (net_cash_flow * horizon_years) + total_lifetime_tax_savings - upfront_cash + net_sale_proceeds
     
     # Convert to annual cost equivalent
     # Simplest: (Total Net Cash / Years) adjusted for sign

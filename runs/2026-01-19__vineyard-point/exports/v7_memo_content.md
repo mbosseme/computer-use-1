@@ -3,10 +3,10 @@
 
 | Owner Weeks | Rent Alt ($/yr) | Cost to Own ($/yr) | Premium ($/yr) | Verdict |
 | :--- | :--- | :--- | :--- | :--- |
-| 2 | $5,000 | $9,409 | **$4,409** | Expensive |
-| 4 | $10,000 | $10,225 | **$225** | Acceptable |
-| 6 | $15,000 | $11,042 | **-$3,958** | Strong Buy |
-| 8 | $20,000 | $11,858 | **-$8,142** | Strong Buy |
+| 2 | $5,000 | $7,539 | **$2,539** | Expensive |
+| 4 | $10,000 | $8,129 | **-$1,871** | Strong Buy |
+| 6 | $15,000 | $8,720 | **-$6,280** | Strong Buy |
+| 8 | $20,000 | $9,310 | **-$10,690** | Strong Buy |
 
 ## Decision 2: Operational Strategy (Rent vs Empty)
 Scenario: 4 Weeks Owner Use.
@@ -20,16 +20,16 @@ Scenario: 4 Weeks Owner Use.
 ## Sensitivity: HOA Impact on Premium (4 Weeks Use)
 | HOA Monthly | Cost to Own | Premium vs Rent ($10k) |
 | :--- | :--- | :--- |
-| $297 | $10,225 | $225 |
-| $400 | $11,461 | $1,461 |
-| $550 | $13,261 | $3,261 |
+| $297 | $8,129 | -$1,871 |
+| $400 | $9,131 | -$869 |
+| $550 | $10,931 | $931 |
 
 ## Sensitivity: Swing Drivers (Impact on Premium)
-Baseline Premium (4 Wks, $297 HOA): **$225** (Acceptable)
+Baseline Premium (4 Wks, $297 HOA): **-$1,871** (Strong Buy)
 
-1. **Appreciation (1% -> 5%)**: Swing of $15,396 (Premium $7,665 -> -$7,731)
-2. **Occupancy (60% -> 75%)**: Swing of $4,210 (Premium $3,032 -> -$1,178)
-3. **HOA ($297 -> $550)**: Swing of $3,036 (Premium $225 -> $3,261)
+1. **Appreciation (1% -> 5%)**: Swing of $13,893 (Premium $5,335 -> -$8,558)
+2. **Occupancy (60% -> 75%)**: Swing of $3,044 (Premium $159 -> -$2,885)
+3. **HOA ($297 -> $550)**: Swing of $2,802 (Premium -$1,871 -> $931)
 
 
 # Appendix
@@ -55,9 +55,9 @@ Assumption: 3% Aprrec, 7y Hold. **Suspended losses ONLY offset sale gain.**
 | **Taxable Gain** | **$109,941** | Sale - Costs - Basis |
 | Recapture Portion | $83,773 | Taxed @ 25% max |
 | LTCG Portion | $26,168 | Taxed @ 20% |
-| Suspended PAL Available | $154,363 | Total accumulated |
-| PAL Applied | $109,941 | **Capped at Gain Amount** |
-| **Tax Due** | **$0** | After PAL offset |
-| Net Proceeds | $147,184 | |
+| Suspended PAL Available | $101,748 | Total accumulated |
+| PAL Applied | $101,748 | **Capped at Gain Amount** |
+| **Tax Due** | **$1,639** | After PAL offset |
+| Net Proceeds | $145,546 | |
 
 *Confirmation: Rent Alternative = Weeks * $2,500 checked.*

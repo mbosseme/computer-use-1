@@ -1,73 +1,73 @@
-# Decision Memo: Vineyard Point (V7.2)
-**Date:** 2026-01-19
-**Status:** Review for Offer
+# Decision Memo: Vineyard Point (V7.3 Tax Optimized)
 
-## 1. Executive Summary
-**Context:**  
-Evaluates Vineyard Point purchase (2BR Lakefront, $355k) under **V7.2 assumptions**: Strict Tax rules, verified HOA, and User-Defined Rental Income/Savings assumptions.
+## Executive Summary
+*   **Property:** Vineyard Point / Dockside Condos (2 Bed / 2 Bath).
+*   **Price:** ,000.
+*   **Strategy:** Buy vs. Continuing to Rent Short-Term ($2,500/wk).
+*   **Verdict:** **Strong Buy at 4+ Weeks of Use.**
+*   **Changes (V7.3):**
+    *   **Tax Optimization:** Assumes vacancy days are treated as "Personal Use," allowing ~35% of mortgage interest to be deducted annually on Schedule A.
+    *   **Arbitrage:** Keeps the $2.5k/wk cost savings vs. $3.8k/mo owner income assumption.
+## Decision 1: Buy vs Rent Vacations
+**Base Assumptions:** HOA $297, Occ 70%, Appr 3%, 7y Hold.
 
-**Critical Inputs (V7.2):**
-1.  **HOA:** **$297/month** (Verified).
-2.  **Tax Logic:** **Strict Passive Loss Rules** (No W-2 offset).
-3.  **Rent Alternative:** **$2,500/week** (User Requirement: "We assume $10k/month to rent").
-4.  **Rental Income:** **$3,800/month** (User Requirement: Gross MTR income target).
+| Owner Weeks | Rent Alt ($/yr) | Cost to Own ($/yr) | Premium ($/yr) | Verdict |
+| :--- | :--- | :--- | :--- | :--- |
+| 2 | $5,000 | $7,539 | **$2,539** | Expensive |
+| 4 | $10,000 | $8,129 | **-$1,871** | Strong Buy |
+| 6 | $15,000 | $8,720 | **-$6,280** | Strong Buy |
+| 8 | $20,000 | $9,310 | **-$10,690** | Strong Buy |
 
-**The Verdict:**
-*   **2 Weeks Use:** **Expensive.** (Premium to Own: ~$4,400/yr). Buying costs more than renting.
-*   **4 Weeks Use:** **Breakeven / Buy.** (Premium to Own: ~$200/yr). *This is the Tipping Point.*
-*   **6 Weeks Use:** **Strong Buy.** (Savings: ~$4,000/yr).
-*   **8 Weeks Use:** **Strong Buy.** (Savings: ~$8,100/yr).
+## Decision 2: Operational Strategy (Rent vs Empty)
+Scenario: 4 Weeks Owner Use.
 
-**Recommendation:**  
-The math now supports a **Buy** decision if you use the property for just **4 weeks (1 month) per year**. The combination of high rental income ($3,800/mo) and avoiding high rental costs ($10k/mo) creates a compelling arbitrage.
-
----
-
-## 2. The Decision Grid (Buy vs. Rent)
-
-**Base Case:** 7-Year Hold, 3% Appreciation, 70% Occupancy ($3,800/mo MTR).
-
-| User Weeks | Cost to Rent ($2.5k/wk) | Net Cost to Own (V7.2) | Result (Cash Difference) |
+| Metric | Buy & Rent Out | Buy & Keep Empty | Incremental Benefit |
 | :--- | :--- | :--- | :--- |
-| **2 Weeks** | $5,000 | $9,409 | **Buy costs $4,409 more** |
-| **4 Weeks** | $10,000 | $10,225 | **Buy costs $225 more (Breakeven)** |
-| **6 Weeks** | $15,000 | $11,042 | **Buy SAVES $3,958** |
-| **8 Weeks** | $20,000 | $11,858 | **Buy SAVES $8,142** |
+| Annual Cash Flow | -$12,762 | -$32,407 | **$19,645** |
 
-*Note: "Net Cost to Own" accounts for Cash Flow + Principal Paydown + Equity at Sale.*
+*Analysis: Renting reduces annual cash bleed by $19,645.*
 
----
+## Sensitivity: HOA Impact on Premium (4 Weeks Use)
+| HOA Monthly | Cost to Own | Premium vs Rent ($10k) |
+| :--- | :--- | :--- |
+| $297 | $8,129 | -$1,871 |
+| $400 | $9,131 | -$869 |
+| $550 | $10,931 | $931 |
 
-## 3. Discrepancy Reconciliation (Final)
-We have aligned the model to your specific market position:
-*   **As a Renter (You):** You face **STR Pricing** ($2,500/week = $10k/month) because you rent in short bursts.
-*   **As an Owner (You):** You capture **High-End MTR Pricing** ($3,800/month).
-*   **Result:** This gap creates the value. By owning, you swap a $10k/month liability for a $3.8k/month asset + operating costs.
+## Sensitivity: Swing Drivers (Impact on Premium)
+Baseline Premium (4 Wks, $297 HOA): **-$1,871** (Strong Buy)
 
----
+1. **Appreciation (1% -> 5%)**: Swing of $13,893 (Premium $5,335 -> -$8,558)
+2. **Occupancy (60% -> 75%)**: Swing of $3,044 (Premium $159 -> -$2,885)
+3. **HOA ($297 -> $550)**: Swing of $2,802 (Premium -$1,871 -> $931)
 
-## 4. Financial Mechanics (V7.2)
 
-### A. Cash Flow (Year 1 - 4 Weeks Use)
-*   **Gross Rent:** **$28,766** (7.8 months @ $3,800) -- *Significantly higher than V7.1*
-*   **Operating Expenses:** -$10,751 (HOA, Tax, Ins, Maint, Utils)
-*   **Mgmt/Leasing:** -$7,013 (20% fee + turnover costs)
-*   **Mortgage Payment:** -$23,764 (P&I)
-*   **Net Cash Flow:** **-$12,762 / year** (Check writing: ~$1,060/month).
+# Appendix
+### A. Occupancy Reconciliation (Base Case)
+| Scenario | Total | Owner | Buffer | Rentable | Occupied (70%) | Month Eq |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2 Weeks | 365 | 14 | 0 | 351 | 245.7 | 8.1 |
+| 4 Weeks | 365 | 28 | 0 | 337 | 235.9 | 7.8 |
+| 6 Weeks | 365 | 42 | 0 | 323 | 226.1 | 7.4 |
+| 8 Weeks | 365 | 56 | 0 | 309 | 216.3 | 7.1 |
 
-### B. Wealth Accumulation
-*   **Principal Paydown:** ~$4,800/yr
-*   **Appreciation (3%):** ~$11,000/yr
-*   **Tax Benefit:** $0/yr (Suspended) -> **$15k/yr** released at Sale.
+### B. Operating Cost Stack (4 Weeks Use)
+* **Fixed Costs ($32,407):** Mortgage, Tax, Ins, HOA ($297), Maint ($1k), Utils ($1.8k)
+* **Variable Costs ($9,843):** Mgmt (20%), Cleaning/Leasing (Est 4-5 turns/yr), Variable Utils/Maint.
 
----
+### C. Sale Year Tax Bridge (Strict V7 Rule)
+Assumption: 3% Aprrec, 7y Hold. **Suspended losses ONLY offset sale gain.**
 
-## 5. Sensitivity Analysis (4 Weeks Use)
+| Line Item | Value | Notes |
+| :--- | :--- | :--- |
+| Sale Price | $436,605 | |
+| Adjusted Basis | $296,102 | (Price + Closing + Furnish - Deprec) |
+| **Taxable Gain** | **$109,941** | Sale - Costs - Basis |
+| Recapture Portion | $83,773 | Taxed @ 25% max |
+| LTCG Portion | $26,168 | Taxed @ 20% |
+| Suspended PAL Available | $101,748 | Total accumulated |
+| PAL Applied | $101,748 | **Capped at Gain Amount** |
+| **Tax Due** | **$1,639** | After PAL offset |
+| Net Proceeds | $145,546 | |
 
-**HOA Impact:**
-Even with value fluctuation, the 4-week use case remains near breakeven.
-*   **$297 HOA:** Cost $10,225 (Buy Premium: $225)
-*   **$550 HOA:** Cost $13,261 (Buy Premium: $3,261) -> *Push usage to 5 weeks to justify.*
-
-**Appreciation Impact:**
-*   At **5% Appreciation**, the "Buy" case saves **$13,500/year** vs Renting even at 4 weeks use.
+*Confirmation: Rent Alternative = Weeks * $2,500 checked.*
