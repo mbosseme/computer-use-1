@@ -15,6 +15,39 @@ Do not guess. Do not produce a single point estimate. Follow this 4-step loop:
 
 ---
 
+## 0. User Override Protocol (Mid-Analysis Corrections)
+**When the user corrects an assumption mid-analysis:**
+
+1.  **Acknowledge** the correction explicitly (don't silently change).
+2.  **Update `inputs.json`** with a `_comment` explaining the override:
+    ```json
+    "monthly_rent": 3800,
+    "_comment_rent": "User override (2026-01-20): $3,800/mo gross. Do not re-validate against market research."
+    ```
+3.  **Re-run the model** with the updated inputs.
+4.  **Do NOT** attempt to "validate" or "correct" the user's assumption against market research unless explicitly asked.
+
+**Why:** Users often have private information (contracts, quotes, preferences) that overrides public data. Respect this.
+
+---
+
+## 0b. Personal Context Capture (Cross-Scenario Constants)
+For financial/tax-sensitive analyses, capture user-specific constraints that apply across all scenarios in `inputs.json`:
+
+```json
+"user_context": {
+  "primary_home_mortgage_balance": 350000,
+  "other_state_local_taxes_annual": 32000,
+  "marginal_tax_rate": 0.31,
+  "qualified_debt_limit": 750000,
+  "_comment": "User-provided 2026-01-20. Determines SALT headroom and Schedule A eligibility."
+}
+```
+
+**Why:** Prevents the agent from repeatedly asking or guessing. Creates a durable "profile" for this user's situation.
+
+---
+
 ## 1. The Evidence Ledger (`research/EVIDENCE_LEDGER.md`)
 **Why:** Prevents hallucinations and provides an audit trail for where numbers came from.
 
