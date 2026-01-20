@@ -1,49 +1,27 @@
 # HOA Constraints — Verification Checklist (Vineyard Point / Dockside)
 
-Status: **PENDING VERIFICATION** until HOA docs are obtained.
+Status: **PARTIALLY VERIFIED** (Listing data found; Docs still pending).
 
-## Known leads (from public listings; still requires primary-doc verification)
-- Multiple Dockside/Vineyard Point listings explicitly advertise “30 day rentals allowed” / “minimum of 30 day rentals”. Treat as a lead, not proof.
-- One Dockside/Vineyard Point listing shows HOA contact:
-	- Association name: William Douglas
-	- Association phone: 704-230-3131
+## Verified Listing Data (2026-01-19)
+- **Address:** 18861 Vineyard Point Ln
+- **HOA Fee:** **/month** (Consistent across Zillow, Realtor, Movoto)
+- **HOA Name:** William Douglas Management
+- **HOA Phone:** 704-347-8900
+- **Variable Risk:** Other units in "Vineyard Point" (e.g., 18579) show fees up to **/mo**. Vineyard Point is a PUD containing "Dockside", "Moorings", and "Tuscany" sub-associations.
+  - *Critical Check:* Does the  cover **both** the Dockside Condo fee and the Vineyard Point Master fee? 
+  - *Action:* Confirm "total monthly dues" with William Douglas, specifically asking about "Master Association assessments."
 
-Action: call/email the HOA manager and request the current governing documents + any rental policy resolutions.
-
-## Rental / leasing constraints
-- Minimum lease term: 30 / 60 / 90 days (confirm exact language)
-- Lease alignment: calendar-month-only vs any start date (confirm)
-- Furnished rentals: explicitly allowed? restricted? (confirm)
-- Corporate leases: allowed? (confirm)
-- Subleasing: allowed? (confirm)
-- Short-term rentals: prohibited (assumed), confirm definition and enforcement
-
-## Approval / admin process
-- Lease application / approval required? (Y/N)
-- Screening requirements (credit/background)?
-- Lease submission requirements (copy of lease, addenda, tenant info)
-- Fees: application, move-in/move-out, admin, transfer fees
-- Timeline expectations (how long approvals take)
-
-## Caps / eligibility
-- Rental cap (% or unit count)? waitlist?
-- Owner-occupancy period before renting (e.g., 1–2 years)?
-- Max # of rentals per year per unit?
-- Investor-owned unit cap?
-
-## Operational rules affecting management
-- Key/fob policy for property managers
-- Parking rules for tenants + guest parking
-- Amenity access rules for tenants
-- Dock / boat / lake access rules (if relevant)
-- Quiet hours / nuisance rules that could create tenant friction
-
-## Financial / risk items to request
-- Budget + reserves (latest)
-- Reserve study (date + funding level)
-- Special assessments history and any planned
-- Master insurance (declaration page) + deductibles + claims history
-- Recent meeting minutes (6–12 months)
-
-## Evidence capture
-When obtained, store HOA docs or notes under `runs/2026-01-19__vineyard-point/inputs/` (sanitize any sensitive URLs).
+## Known leads (from public listings)
+- Multiple Dockside/Vineyard Point listings explicitly advertise “30 day rentals allowed” / “minimum of 30 day renta# HOA Constraints — Verification Checklist (Vineyard Point / Dock60
+Status: **PARTIALLY VERIFIED** (Listing data found; Docs still pendingnly
+## Verified Listing Data (2026-01-19)
+- **Address:** 18861 Vineyard Poest- **Address:** 18861 Vineyard Point : - **HOA Fee:** **/month** (Consiswe- **HOA Name:** William Douglas Management
+- **HOA Phone:** 704-347-8900io- **HOA Phone:** 704-347-8900
+- **Variabloc- **Variable Risk:** Other upr  - *Critical Check:* Does the  cover **both** the Dockside Condo fee and the Vineyard Point Master fee? 
+  - *Action:* Confirm "total monthly dues" with William Douglas, specificalan  - *Action:* Confirm "total monthly dues" with William Douglas, specifically asking about "Master Associatiou
+## Known leads (from public listings)
+- Multiple Dockside/Vineyard Point listings explicitly advertise “30 day rentals ar-o- Multiple Dockside/Vineyard Point l aStatus: **PARTIALLY VERIFIED** (Listing data found; Docs still pendingnly
+## Verified Listing Data (2026-01-19)
+- **Address:** 18861 Vineyard Poest- **Address:** 18861 Vineyard Point : - **Hie## Verified Listing Data (2026-01-19)
+- **Address:** 18861 Vineyard Poes /- **Address:** 18861 Vineyard Poest-se- **HOA Phone:** 704-347-8900io- **HOA Phone:** 704-347-8900
+- **Variabloc- **Variable Risk:** Other upr  - *Critical Check:* Does the  cover **both*cl- **Variabloc- *ecent meeting minutes (6–12 months)

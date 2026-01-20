@@ -277,8 +277,10 @@ def compute_metrics(inputs: dict, scenario: dict, model_year: int = 2026) -> dic
     )
     utilities_net = utilities_gross - utilities_reimb
 
-    maintenance = float(recurring["maintenance_fixed_annual"]) + tenant_months * float(
-        recurring["maintenance_per_tenant_month"]
+    maintenance = (
+        float(recurring["maintenance_fixed_annual"])
+        + tenant_months * float(recurring["maintenance_per_tenant_month"])
+        + float(recurring.get("maintenance_furniture_reserve_annual", 0))
     )
 
     mortgage_annual = 12 * pmt
@@ -392,27 +394,62 @@ def compute_metrics(inputs: dict, scenario: dict, model_year: int = 2026) -> dic
         taxable_rental_income = gross_rent - tier_1_deduction - tier_2_deduction - allowed_depreciation
     
     # 5. Total Tax Benefit Calculation
-    # Benefit = (Taxable Income WITHOUT Strategy) - (Taxable Income WITH Strategy)
-    # Without Strategy (i.e. if you just held cash): You pay 0 tax on rental (logic stretch).
-    # Simpler: Tax Benefit = (Tax Liability if Expenses were Non-Deductible) - (Actual Tax Liability)
-    # Real World: Tax Benefit = Reduction in Total Tax Bill.
-    # Since rental likely runs at a loss (pre-deprec), Taxable Income is 0. Tax Bill is 0.
-    # W-2 Tax Bill is unchanged.
-    # So Total Tax Benefit = 0.
+    # UPDATED LOGIC (2026-01-19): Accounting for Sched A Itemized Deduction explicitly.
     
-    # Exception: If net_rent_after_tier_1_and_2 > 0, then we ARE making taxable profit.
-    # Depreciation shields this.
-    # Benefit = Allowed_Depreciation * Marginal_Rate.
+    # A. Mortgage Interest Deduction (Schedule A + Schedule E)
+    # We use the "Bolton" method (Court-approved) which uses days/365 for interest allocation.
+    # This maximizes the Schedule A portion, which is valuable for high-earners who itemize.
     
+    days_in_year = 365
+    rental_ratio_bolton = effective_tenant_days / days_in_year
+    personal_ratio_bolton = 1.0 - rental_ratio_bolton # Remainder goes to personal
+    
+    # Check Qualified Debt Limit ($750k)
+    primary_debt = float(tax.get("primary_home_mortgage_balance", 0))
+    debt_limit = float(tax.get("qualified_debt_limit", 750000))
+    # Note: We check limit against average balance for simplicity
+    avg_balance = (loan_amount + balance) / 2 # Crude avg over hold period
+    total_debt = primary_debt + avg_balance
+    deductible_debt_ratio = min(1.0, debt_limit / total_debt) if total_debt > 0 else 1.0
+    
+    # Sched A Interest (Personal Portion)
+    # This is "Home Mortgage Interest" on itemized deductions.
+    sched_a_interest_raw = avg_annual_mortgage_interest * personal_ratio_bolton
+    sched_a_interest_deductible = sched_a_interest_raw * deductible_debt_ratio
+    
+    # B. Property Tax Deduction (SALT Cap Check)
+    # Check remaining room in SALT Cap
+    salt_cap = float(tax.get("salt_cap_2026", 10000))
+    existing_salt = float(tax.get("other_state_local_taxes_annual", 10000))
+    salt_room = max(0.0, salt_cap - existing_salt)
+    
+    # Allocation: We can put personal portion on Sched A. 
+    # (Rental portion goes to Sched E, but that's a wash due to 280A loss suspension).
+    # Actually, property tax is Tier 1, so it is deducted first on Sched E.
+    # BUT, technically you can take the personal portion (via Bolton or IRS ratio) to Sched A.
+    # IRS requires "proper" allocation. We'll assume the IRS ratio (Days Used) for Taxes, 
+    # as that's standard, but even if we dump it all to Sched E, it's wasted.
+    # Maximizing Sched A is better if room exists.
+    # Let's assume we can push the Personal Ratio (Days Used) to Sched A.
+    sched_a_tax_deductible = min(indirect_taxes * personal_use_ratio, salt_room)
+    
+    # C. Total Incremental Tax Benefit
+    # Benefit = (Sched A Interest + Sched A Tax) * Marginal Rate
+    # Note: We assume the user ALREADY itemizes, so this is fully incremental.
+    incremental_sched_a_deduction = sched_a_interest_deductible + sched_a_tax_deductible
+    tax_benefit_from_deductions = incremental_sched_a_deduction * marginal_rate
+    
+    # Depreciation Benefit (calculated earlier)
+    # Only if we had net taxable income (usually 0).
     depreciation_tax_benefit_annual = allowed_depreciation * marginal_rate
     
-    # Mortgage Interest Benefit (Schedule A - Personal Portion)
-    # User likely capped ($10k SALT hit, $750k Debt limited). Conservative = 0.
-    mortgage_interest_tax_benefit_annual = 0.0 
-
-    mortgage_interest_tax_benefit = mortgage_interest_tax_benefit_annual * horizon_years
+    # Sum up
+    total_annual_tax_benefit = tax_benefit_from_deductions + depreciation_tax_benefit_annual
+    total_tax_benefits = total_annual_tax_benefit * horizon_years
+    
+    # Map to result variables
+    mortgage_interest_tax_benefit = tax_benefit_from_deductions * horizon_years # Includes Prop Tax benefit
     depreciation_tax_benefit = depreciation_tax_benefit_annual * horizon_years
-    total_tax_benefits = mortgage_interest_tax_benefit + depreciation_tax_benefit
     
     # 6. Recapture on Sale (Only on ALLOWED depreciation)
     total_depreciation_taken = allowed_depreciation * horizon_years

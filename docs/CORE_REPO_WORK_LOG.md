@@ -144,3 +144,19 @@ This is not a per-session scratchpad:
   - Documented a three-tier dependency model (Base / Optional packs / Run-local).
   - Clarified a promotion model (core vs run-local) and batch-and-gate safety framing.
   - Confirmed: no sensitive internal deep links/session URLs/tokens were added; placeholders are used where applicable.
+- Date: 2026-01-19
+- Goal: Promoted 'Analytical Decision Modeling' skill to core.
+- Context: Developed during Vineyard Point underwriting; formalized the Evidence Ledger -> Logic Split -> Scenario Grid -> Decision Memo workflow.
+- Changes:
+  - Created: .github/skills/analysis-workflow/decision-modeling.md
+  - Updated: .github/skills/README.md
+  - Merged: PR #15
+
+- Date: 2026-01-19
+- Goal: Promoted 'Analytical Decision Modeling' skill to core.
+- Context: Developed during Vineyard Point underwriting; formalized the Evidence Ledger -> Logic Split -> Scenario Grid -> Decision Memo workflow.
+- Changes:
+  - Created: .github/skills/analysis-workflow/decision-modeling.md
+  - Updated: .github/skills/README.md
+  - Merged: PR #15
+

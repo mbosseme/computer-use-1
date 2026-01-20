@@ -4,6 +4,7 @@ Target:
 - Address anchor: 18861 Vineyard Point Ln, Cornelius, NC 28031
 - Intent: owned “vacation base” with cost-offset via furnished **30+ day** rentals (not nightly/weekly Airbnb)
 - Owner use: multiple 2-week blocks per year (calendar fragmentation risk)
+- **CRITICAL:** See [ANALYSIS_GUIDE.md](ANALYSIS_GUIDE.md) for definitions of "Total Cost" vs "Premium".
 
 ## Key outputs
 - Decision memo: `properties/vineyard_point/decision_memo.md`
