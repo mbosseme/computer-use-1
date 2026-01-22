@@ -10,6 +10,10 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 - **[research-ladder](research-ladder/SKILL.md)**: Choose the right research depth; escalate Bing → Tavily → Playwright; capture evidence consistently.
 - **[graph-email-search](graph-email-search/SKILL.md)**: Microsoft Graph mail search/export patterns (SentItems, $filter → $search fallback, paging, safety).
 - **[document-synthesis-llm](document-synthesis-llm/SKILL.md)**: **(Start here for document summarization)** Extract text from PDFs/EMLs, synthesize via LLM with retry/backoff, handle context limits.
+- **[google-drive-download](google-drive-download/README.md)**: Authenticate with Google Drive (OAuth 2.0 / HITL) and download files/export Sheets to Excel reliably.
+- **[gmail-search](gmail-search/README.md)**: Authenticate with Gmail (OAuth 2.0 / HITL), search specific queries, and read email bodies safely. (Matches Google Drive auth pattern; uses Testing mode for 7-day token expiry).
+- **[analysis-decision-modeling](analysis-workflow/decision-modeling.md)**: **(Start here for "Build vs Buy" / Underwriting)** Comprehensive workflow for scenario modeling (Evidence Ledger → Data/Logic Split → Scenario Grid → Decision Memo).
+  - Includes **[model_template.py](analysis-workflow/model_template.py)**: A minimal Python template for scenario-grid analyses. Copy to `runs/<RUN_ID>/scripts/` and customize.
 
 ## Skill selection heuristic
 - Choose **1 primary** skill + up to **2 supporting** skills.
