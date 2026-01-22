@@ -34,6 +34,12 @@ tools:
 - **Detection**: If an element is not found, check if it resides within an `iframe`.
 - **Switching**: Switch context to the iframe before querying elements inside it.
 
+## Deep Links & SPA Navigation
+- **Treat URL parameters as opaque**: Do not attempt to "clean" or "fix" URLs by stripping parameters (e.g., tokens, session IDs) unless confirmed to be tracking-only. Many modern apps ("Magic Links", portals) rely on complex tokens in the URL to grant access.
+- **Prefer Extraction over Construction**: When processing a list of links (e.g., from an email), extract the exact URL string rather than trying to construct it from a pattern.
+- **Isolate Navigation**: When moving between two deep links in the same SPA (Single Page App), unexpected state contamination can occur. If a navigation fails or redirects to the wrong view:
+  - Try opening a **new context** or ensuring a **clean navigation** event (`page.goto()`) rather than relying on in-app clicking.
+
 ## Embedded BI Dashboards (Tableau-like)
 
 ### Common traits
