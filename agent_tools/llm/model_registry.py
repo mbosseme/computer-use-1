@@ -6,6 +6,25 @@ from pathlib import Path
 from typing import Any, Optional
 
 
+def _none_if_placeholder(value: Any) -> Optional[str]:
+    if value is None:
+        return None
+    if not isinstance(value, str):
+        return str(value)
+
+    v = value.strip()
+    if not v:
+        return None
+
+    # Treat angle-bracket placeholders like "<your-resource>" as unset so
+    # local environment variables can supply real values without committing
+    # endpoints into the repo.
+    if "<" in v and ">" in v:
+        return None
+
+    return v
+
+
 @dataclass(frozen=True)
 class ModelConfig:
     provider: str
@@ -22,12 +41,12 @@ class ModelConfig:
     def from_dict(data: dict[str, Any]) -> "ModelConfig":
         return ModelConfig(
             provider=str(data.get("provider", "")),
-            model=data.get("model"),
-            deployment_name=data.get("deployment_name"),
-            api_url=data.get("api_url"),
-            display_name=data.get("display_name"),
+            model=_none_if_placeholder(data.get("model")),
+            deployment_name=_none_if_placeholder(data.get("deployment_name")),
+            api_url=_none_if_placeholder(data.get("api_url")),
+            display_name=_none_if_placeholder(data.get("display_name")),
             max_output_tokens=data.get("max_output_tokens"),
-            reasoning_effort=data.get("reasoning_effort"),
+            reasoning_effort=_none_if_placeholder(data.get("reasoning_effort")),
             supports_temperature=data.get("supports_temperature"),
             supports_reasoning_effort=data.get("supports_reasoning_effort"),
         )
