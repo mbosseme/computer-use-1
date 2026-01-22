@@ -104,8 +104,12 @@ def synthesize_folder(
     source_entries: list[dict[str, Any]] = []
     combined_inputs: list[str] = []
 
+    slug_counts: dict[str, int] = {}
+
     for idx, path in enumerate(candidates, start=1):
-        slug = _slugify(path.name)
+        base_slug = _slugify(path.name)
+        slug_counts[base_slug] = slug_counts.get(base_slug, 0) + 1
+        slug = base_slug if slug_counts[base_slug] == 1 else f"{base_slug}_{slug_counts[base_slug]}"
         out_doc_md = per_doc_dir / f"{slug}__synthesis.md"
         out_doc_manifest = per_doc_dir / f"{slug}__synthesis.manifest.json"
 
