@@ -8,9 +8,9 @@
         "@playwright/mcp@latest",
         "mcp-server-playwright",
         "--user-data-dir",
-        "runs/<RUN_ID>/playwright-profile",
+        "runs/2026-01-22__baxter-market-insights/playwright-profile",
         "--output-dir",
-        "runs/<RUN_ID>/playwright-output"
+        "runs/2026-01-22__baxter-market-insights/playwright-output"
       ]
     }
   }
