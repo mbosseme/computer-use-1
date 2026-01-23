@@ -87,7 +87,27 @@ pip install pytz
 
 ## 4) Reference Implementation (Auth + Graph Client)
 
-### 4.1 GraphAuthenticator (MSAL public client)
+> **IMPORTANT: USING THE EXISTING LIBRARY**
+> If you are working inside this repo (or one with `agent_tools`), **use the existing library** instead of re-implementing auth.
+>
+> **Correct Pattern (using `agent_tools.graph`):**
+> ```python
+> from pathlib import Path
+> from agent_tools.graph.env import load_graph_env
+> from agent_tools.graph.auth import GraphAuthenticator
+> 
+> # load_graph_env ensures scopes match .env exactly
+> repo_root = Path.cwd()  # or Path(__file__).parents[...]
+> env = load_graph_env(repo_root)
+> auth = GraphAuthenticator(repo_root=repo_root, env=env)
+> ```
+> **Anti-Pattern:** Do NOT try to instantiate `GraphAuthenticator` with manual `client_id` arguments. The library class requires `env`.
+
+### 4.1 Reference Class (for manual implementation)
+
+If you are replicating this in a **new** repo without `agent_tools`, use this reference implementation:
+
+### 4.1.1 GraphAuthenticator (MSAL public client)
 
 Key requirements:
 - Use `PublicClientApplication`

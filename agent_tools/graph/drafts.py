@@ -190,7 +190,8 @@ def create_draft_message(
     if cc:
         payload["ccRecipients"] = make_recipients(cc)
 
-    created = client.post("me/messages", json=payload, timeout=timeout_s)
+    # Note: Client wrapper does not support custom timeout override for post() yet.
+    created = client.post("me/messages", json=payload)
     msg_id = str(created.get("id") or "").strip()
     if not msg_id:
         raise RuntimeError("Graph created a draft but returned no message id")

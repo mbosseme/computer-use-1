@@ -1,0 +1,168 @@
+{
+  "generated_on": "2026-01-22T12:00:23",
+  "source_dir": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Baxter Related",
+  "staging_dir": "runs/2026-01-22__baxter-market-insights/inputs/staging",
+  "per_doc_dir": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc",
+  "tmp_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks",
+  "model": "azure-gpt-5.2",
+  "detect_mode": "mtime-size",
+  "stats": {
+    "files_seen": 10,
+    "changed": 10,
+    "synthesized": 10,
+    "removed": 0
+  },
+  "removed": [],
+  "entries": {
+    "Baxter Adv. Surg  Premier - Market Insights Follow up 71.pdf": {
+      "source": {
+        "rel_path": "Baxter Adv. Surg  Premier - Market Insights Follow up 71.pdf",
+        "size": 103010,
+        "mtime_ns": 1756408375800218938,
+        "content_hash_sha256": null
+      },
+      "source_name": "Baxter Adv. Surg  Premier - Market Insights Follow up 71.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Baxter Adv. Surg  Premier - Market Insights Follow up 71.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/baxter_adv_surg_premier_market_insights_follow_up_71__43f05ce9fc__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/baxter_adv_surg_premier_market_insights_follow_up_71__43f05ce9fc__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/baxter_adv_surg_premier_market_insights_follow_up_71__43f05ce9fc__chunks",
+      "last_synthesized_on": "2026-01-22T11:52:19"
+    },
+    "Baxter Background from John House.pdf": {
+      "source": {
+        "rel_path": "Baxter Background from John House.pdf",
+        "size": 39823,
+        "mtime_ns": 1756408387197863135,
+        "content_hash_sha256": null
+      },
+      "source_name": "Baxter Background from John House.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Baxter Background from John House.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/baxter_background_from_john_house__4f32fd59b0__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/baxter_background_from_john_house__4f32fd59b0__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/baxter_background_from_john_house__4f32fd59b0__chunks",
+      "last_synthesized_on": "2026-01-22T11:52:37"
+    },
+    "Baxter IV & Legacy Hill Rom.pdf": {
+      "source": {
+        "rel_path": "Baxter IV & Legacy Hill Rom.pdf",
+        "size": 40675,
+        "mtime_ns": 1756408413680661673,
+        "content_hash_sha256": null
+      },
+      "source_name": "Baxter IV & Legacy Hill Rom.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Baxter IV & Legacy Hill Rom.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/baxter_iv_legacy_hill_rom__1dadf01601__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/baxter_iv_legacy_hill_rom__1dadf01601__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/baxter_iv_legacy_hill_rom__1dadf01601__chunks",
+      "last_synthesized_on": "2026-01-22T11:53:15"
+    },
+    "Detailed Briefing Document - Premier's Market Insights and Data-Driven Solutions - July 21st 2025.pdf": {
+      "source": {
+        "rel_path": "Detailed Briefing Document - Premier's Market Insights and Data-Driven Solutions - July 21st 2025.pdf",
+        "size": 87017,
+        "mtime_ns": 1753123893405309998,
+        "content_hash_sha256": null
+      },
+      "source_name": "Detailed Briefing Document - Premier's Market Insights and Data-Driven Solutions - July 21st 2025.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Detailed Briefing Document - Premier's Market Insights and Data-Driven Solutions - July 21st 2025.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/detailed_briefing_document_premier_s_market_insights_and_data_driven_solutions_july_21st_2025__bfa52f30f8__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/detailed_briefing_document_premier_s_market_insights_and_data_driven_solutions_july_21st_2025__bfa52f30f8__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/detailed_briefing_document_premier_s_market_insights_and_data_driven_solutions_july_21st_2025__bfa52f30f8__chunks",
+      "last_synthesized_on": "2026-01-22T11:54:02"
+    },
+    "Digital Supply Chain Message Map.pdf": {
+      "source": {
+        "rel_path": "Digital Supply Chain Message Map.pdf",
+        "size": 481064,
+        "mtime_ns": 1746497883000000000,
+        "content_hash_sha256": null
+      },
+      "source_name": "Digital Supply Chain Message Map.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Digital Supply Chain Message Map.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/digital_supply_chain_message_map__979328b89a__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/digital_supply_chain_message_map__979328b89a__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/digital_supply_chain_message_map__979328b89a__chunks",
+      "last_synthesized_on": "2026-01-22T11:54:44"
+    },
+    "Identifying Specific Medical Devices Within Patient Chargemaster Data (Linking Clinical & Supply Chain Data Beyond the OR).pdf": {
+      "source": {
+        "rel_path": "Identifying Specific Medical Devices Within Patient Chargemaster Data (Linking Clinical & Supply Chain Data Beyond the OR).pdf",
+        "size": 1291085,
+        "mtime_ns": 1754483380034580221,
+        "content_hash_sha256": null
+      },
+      "source_name": "Identifying Specific Medical Devices Within Patient Chargemaster Data (Linking Clinical & Supply Chain Data Beyond the OR).pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Identifying Specific Medical Devices Within Patient Chargemaster Data (Linking Clinical & Supply Chain Data Beyond the OR).pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/identifying_specific_medical_devices_within_patient_chargemaster_data_linking_clinical_supply_chain_data_beyond_the_or__23ccc621c1__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/identifying_specific_medical_devices_within_patient_chargemaster_data_linking_clinical_supply_chain_data_beyond_the_or__23ccc621c1__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/identifying_specific_medical_devices_within_patient_chargemaster_data_linking_clinical_supply_chain_data_beyond_the_or__23ccc621c1__chunks",
+      "last_synthesized_on": "2026-01-22T11:55:43"
+    },
+    "Market Insights - Baxter - Adv Surgery - Jul 2025.pdf": {
+      "source": {
+        "rel_path": "Market Insights - Baxter - Adv Surgery - Jul 2025.pdf",
+        "size": 2963594,
+        "mtime_ns": 1753123663000000000,
+        "content_hash_sha256": null
+      },
+      "source_name": "Market Insights - Baxter - Adv Surgery - Jul 2025.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Market Insights - Baxter - Adv Surgery - Jul 2025.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/market_insights_baxter_adv_surgery_jul_2025__e72aed7f9f__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/market_insights_baxter_adv_surgery_jul_2025__e72aed7f9f__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/market_insights_baxter_adv_surgery_jul_2025__e72aed7f9f__chunks",
+      "last_synthesized_on": "2026-01-22T11:57:03"
+    },
+    "Market Insights - Baxter - Adv Surgery - Jun 2025.pdf": {
+      "source": {
+        "rel_path": "Market Insights - Baxter - Adv Surgery - Jun 2025.pdf",
+        "size": 2895317,
+        "mtime_ns": 1750773021000000000,
+        "content_hash_sha256": null
+      },
+      "source_name": "Market Insights - Baxter - Adv Surgery - Jun 2025.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Market Insights - Baxter - Adv Surgery - Jun 2025.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/market_insights_baxter_adv_surgery_jun_2025__3a00fd349e__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/market_insights_baxter_adv_surgery_jun_2025__3a00fd349e__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/market_insights_baxter_adv_surgery_jun_2025__3a00fd349e__chunks",
+      "last_synthesized_on": "2026-01-22T11:58:22"
+    },
+    "Market Insights - Baxter - May 2025.pdf": {
+      "source": {
+        "rel_path": "Market Insights - Baxter - May 2025.pdf",
+        "size": 1693374,
+        "mtime_ns": 1749034551000000000,
+        "content_hash_sha256": null
+      },
+      "source_name": "Market Insights - Baxter - May 2025.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Market Insights - Baxter - May 2025.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/market_insights_baxter_may_2025__250b41c44b__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/market_insights_baxter_may_2025__250b41c44b__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/market_insights_baxter_may_2025__250b41c44b__chunks",
+      "last_synthesized_on": "2026-01-22T11:59:11"
+    },
+    "Market Insights - Baxter - Proposal - June 2025.pdf": {
+      "source": {
+        "rel_path": "Market Insights - Baxter - Proposal - June 2025.pdf",
+        "size": 1225573,
+        "mtime_ns": 1753123691000000000,
+        "content_hash_sha256": null
+      },
+      "source_name": "Market Insights - Baxter - Proposal - June 2025.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-22__baxter-market-insights/inputs/staging/Market Insights - Baxter - Proposal - June 2025.pdf",
+      "per_doc_md": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/market_insights_baxter_proposal_june_2025__3239230501__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-22__baxter-market-insights/exports/baxter_per_doc/market_insights_baxter_proposal_june_2025__3239230501__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-22__baxter-market-insights/tmp/baxter_chunks/market_insights_baxter_proposal_june_2025__3239230501__chunks",
+      "last_synthesized_on": "2026-01-22T12:00:23"
+    }
+  }
+}

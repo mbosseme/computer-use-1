@@ -10,6 +10,7 @@ tools:
 
 ## Preconditions
 - Delegated auth is configured (see [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](../../../docs/GRAPH_AUTH_REPLICATION_GUIDE.md)).
+  - **Implementation Note**: When writing scripts, always use `load_graph_env` and pass the `env` object to `GraphAuthenticator`. Do not hardcode client IDs.
 - App permissions include Mail scopes:
   - Minimal read-only: `Mail.Read`
   - If you also need move/label/update: `Mail.ReadWrite`
