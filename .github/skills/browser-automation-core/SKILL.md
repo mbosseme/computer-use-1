@@ -20,6 +20,19 @@ tools:
 ## Evidence Capture Hygiene
 - When a tool accepts a `filename`, prefer a **simple filename** (e.g., `tab2-detail-limit-200.png`) rather than passing a full/relative directory path; some environments will prepend their own output directory and can accidentally create nested paths.
 
+### Evidence screenshot trimming (dashboard-only)
+When screenshots include large empty gutters (common with embedded BI dashboards), prefer a **deterministic local crop** after capture:
+
+- Goal: keep the dashboard content + filter state, remove browser/app chrome and big white margins.
+- Pitfall: naive “non-white bbox” cropping can fail because full-width top chrome forces the crop to remain full width.
+- Recommended tool:
+  - `python scripts/make_clean_dashboard_screenshots.py runs/<RUN_ID>/playwright-output/*.png`
+  - Produces `_clean.png` siblings next to originals.
+
+Notes:
+- Capture screenshots with the relevant filter pane/state visible (e.g., procode dropdown showing the selected value).
+- Prefer cropping before embedding into emails/PDFs so evidence stays consistent across formats.
+
 ## Scroll Strategy
 - **Window vs. Container**: Determine if the scrollbar belongs to the `window` or a specific container element.
 - **Incremental Scan**: Scroll in small chunks (e.g., half viewport) to trigger lazy-loading or reveal elements.
