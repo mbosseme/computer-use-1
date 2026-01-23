@@ -40,6 +40,13 @@ Recommended locations:
 This repo also uses:
 - **Reusable Python utilities for runs**: `agent_tools/` (e.g., the Azure OpenAI GPT-5.2 starter client under `agent_tools/llm/`)
 
+### Screenshot / image utilities
+This repo includes deterministic image transforms used to prepare evidence (e.g., cropping BI dashboard screenshots to remove empty gutters).
+
+- Utility module: `agent_tools/images/dashboard_crop.py`
+- CLI helper: `scripts/make_clean_dashboard_screenshots.py`
+- Dependency: `Pillow` (installed via `requirements.txt`)
+
 ### Current `agent_tools/llm/` modules
 | Module | Purpose |
 |--------|---------|
