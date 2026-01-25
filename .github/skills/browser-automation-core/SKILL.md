@@ -101,3 +101,147 @@ Notes:
 - **Visible text not found (canvas / viz rendering)**:
   - Assume the text may not exist in the DOM.
   - Re-target via accessibility roles (e.g., `treegrid`/`gridcell`) or use a “show more rows”/limit control to surface the needed row.
+---
+
+## Visual Evidence Mode
+
+This section teaches when and how to capture visual evidence (screenshots) for tasks that require interpreting what something **looks like**, not just what text it contains.
+
+### Implicit Visual Recon (key trigger)
+When the user asks to "investigate", "review", "analyze", or "assess" something where visual evidence is *likely* relevant (listings, products, designs, diagrams, dashboards, UI behavior, before/after, quality/condition):
+1. Run a **quick visual recon** even if they didn't explicitly say "look at photos".
+2. Locate gallery/images/figures/charts on the page (see Container Detection below).
+3. Open 1–3 representative visuals (click thumbnails, expand carousel).
+4. Take targeted screenshots only if interpretation is needed.
+5. **Skip this step** if the task is purely factual (price, address, counts).
+
+### When to Activate Visual Evidence Mode (explicit triggers)
+Activate when the task requires understanding:
+- **Quality / Condition / Aesthetics**: "Is this renovated?", "What's the finish level?"
+- **Charts / Graphs / Dashboards**: Trends, distributions, visual KPIs not in DOM text
+- **Maps / Diagrams / Floor Plans**: Spatial relationships, layouts
+- **Color-coded UI state**: Status indicators, progress bars, warning highlights
+- **Canvas / WebGL / Embedded Widgets**: Content not exposed in accessibility tree
+
+**Trigger keywords** (user intent signals):
+- "assess", "evaluate", "inspect", "compare", "investigate", "what does it look like"
+- "condition", "quality", "finish", "style", "appearance"
+- "trends", "patterns", "chart", "graph", "dashboard"
+
+### Visual Container Detection
+Before capturing, locate the relevant visual containers:
+- **Image galleries**: `img`, `picture`, carousel containers, lightbox triggers
+- **Charts/Graphs**: `canvas`, `svg`, chart library containers (e.g., `.highcharts-container`, `[data-viz]`)
+- **Embedded dashboards**: `iframe[title*="Tableau"]`, `iframe[src*="looker"]`, BI widget containers
+- **Maps**: `[class*="map"]`, `iframe[src*="maps"]`, Leaflet/Mapbox containers
+
+### Evidence Capture Procedure
+1. **Wait for load**: Ensure images/charts are fully rendered (no spinners, no "Loading..." text).
+2. **Target the element**: Screenshot the specific container, not the full page.
+   - Use `ref` parameter to target an element from the snapshot.
+   - If no stable ref, screenshot the viewport with the element centered.
+3. **Limit quantity**: 1–3 screenshots per page unless more are explicitly needed.
+4. **Name descriptively**: Use filenames like `kitchen-condition.png`, `price-trend-chart.png`.
+5. **Interpret with citations**: Reference observable cues (e.g., "granite countertops visible", "upward trend in Q3").
+
+### Prefer Labels/Legends over OCR
+- **First**: Check for tooltip text (hover interactions may expose values).
+- **Second**: Look for legend/axis labels in the DOM or accessibility tree.
+- **Third**: Only resort to visual interpretation when text is truly unavailable.
+
+### Anti-Flailing Stop Conditions
+- **Max attempts**: 3 retries per visual element before asking user for help.
+- **Timeout**: If a chart/image doesn't load within 15s, note the failure and move on.
+- **Ambiguity threshold**: If you cannot interpret with medium+ confidence, explicitly say so rather than guessing.
+
+---
+
+## Two-Speed Execution Policy
+
+Not all browser tasks require the same level of care. Use the right speed for the task.
+
+### Lane Definitions
+
+| Lane | Description | When to Use |
+|------|-------------|-------------|
+| **FAST** | Minimal verification, trust snapshot, move quickly | Simple lookups, known-structure pages, text extraction, form fills |
+| **DELIBERATE** | Recon first, wait for loading, verify after transitions | Visual interpretation, slow SPAs, dashboards, unknown layouts, qualitative judgment |
+
+### Adaptive Lane Selection (start FAST, escalate when needed)
+
+**Default**: Start in **FAST** lane for all tasks.
+
+**Auto-escalate to DELIBERATE** when you hit:
+- Missing/incomplete info in snapshot (expected data not found)
+- SPA/dashboard still loading (spinners, placeholders, "Loading...")
+- Visual-only content (canvas charts, image galleries, embedded maps)
+- Conflicting cues or ambiguous state
+- Qualitative judgment needed (quality, condition, aesthetics)
+
+**Start in DELIBERATE immediately** when the task clearly demands:
+- Visual interpretation of charts/dashboards/diagrams
+- Quality/condition/aesthetics assessment
+- Before/after or comparison tasks
+- "Investigate" or "analyze" with visual components
+
+### FAST Lane Behavior
+- Navigate → snapshot → extract → done.
+- Skip extra verification unless something fails.
+- Trust stable selectors and accessible names.
+- **Example**: "Find the HOA fee on this listing page" → extract from snapshot text.
+
+### DELIBERATE Lane Behavior
+1. **Recon pass (30–90s)**: Understand page structure before acting.
+   - Identify: Where does the answer live? (text vs visual vs interactive)
+   - Identify: Any iframes, overlays, lazy-loading?
+2. **Wait for load signals**: Spinners gone, charts rendered, images loaded.
+3. **Verify after key transitions**:
+   - After navigation: URL or title confirms destination.
+   - After filter/tab change: re-snapshot shows expected state change.
+   - After iframe switch: context is correct.
+4. **Capture evidence**: Screenshots for visual interpretation.
+5. **Cite sources**: "Found in tooltip", "Visible in chart legend", "Extracted from table row".
+
+### CAPTCHA / Bot Detection Response
+If CAPTCHA or bot-detection blocks access:
+1. **Stop for HITL**: User completes challenge, then says "Done".
+2. **If still blocked after HITL**, consider fallback:
+   - Try an alternative public source for the same data.
+   - Ask user to provide screenshots or copy-paste if automation isn't viable.
+3. Do not maintain site-specific blocklists; treat each block case-by-case.
+
+---
+
+## Examples (for reference)
+
+### Example 1: Assess Condition/Quality from a Listing Page
+**Task**: "Investigate this property listing and assess the interior condition."
+
+**Lane**: DELIBERATE (visual interpretation required)
+
+**Procedure**:
+1. Navigate to listing URL.
+2. Recon: Locate photo gallery container (carousel, thumbnail grid).
+3. Wait for images to load (no placeholder spinners).
+4. Screenshot 2–3 key images: kitchen, bathroom, main living area.
+5. Interpret with citations:
+   - "Kitchen: granite countertops, stainless appliances, modern cabinetry → Premium finish"
+   - "Bathroom: updated vanity, tile flooring → Renovated"
+   - "Living area: wood-look flooring, crown molding → Above average"
+6. Provide confidence level: "Condition assessment: Premium/Renovated, confidence: High"
+
+### Example 2: Summarize Trends from a Dashboard Page
+**Task**: "Summarize the key trends on this analytics dashboard."
+
+**Lane**: DELIBERATE (chart interpretation required)
+
+**Procedure**:
+1. Navigate to dashboard URL.
+2. Recon: Identify chart containers (canvas, SVG, iframe).
+3. Wait for charts to render (loading indicators disappear).
+4. **Try text first**: Check for tooltips, legends, axis labels in DOM.
+5. If text insufficient, screenshot 1–2 key charts.
+6. Interpret with citations:
+   - "Revenue chart shows upward trend Q1→Q3, flattening in Q4"
+   - "Pie chart: Category A = 45%, Category B = 30% (from legend)"
+7. Mark uncertainty if values aren't precise: "Approximate trend direction; exact values not available in DOM."
