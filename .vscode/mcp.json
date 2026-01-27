@@ -12,6 +12,14 @@
         "--output-dir",
         "runs/<RUN_ID>/playwright-output"
       ]
+    },
+    "bigquery": {
+      "command": "/opt/homebrew/bin/toolbox",
+      "args": ["--prebuilt", "bigquery", "--stdio"],
+      "env": {
+        "BIGQUERY_PROJECT": "matthew-bossemeyer",
+        "BIGQUERY_PROJECT_ID": "matthew-bossemeyer"
+      }
     }
   }
 }

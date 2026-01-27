@@ -15,6 +15,8 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 - **[gmail-draft](gmail-draft/README.md)**: Authenticate with Gmail (requires `compose` scope), and create **draft** emails for user review. (Does not send).
 - **[analysis-decision-modeling](analysis-workflow/decision-modeling.md)**: **(Start here for "Build vs Buy" / Underwriting)** Comprehensive workflow for scenario modeling (Evidence Ledger → Data/Logic Split → Scenario Grid → Decision Memo).
   - Includes **[model_template.py](analysis-workflow/model_template.py)**: A minimal Python template for scenario-grid analyses. Copy to `runs/<RUN_ID>/scripts/` and customize.
+- **[bigquery-data-models](bigquery-data-models/SKILL.md)**: **(Start here for BigQuery work)** Authentication, MCP toolbox usage, data dictionaries, query patterns, and privacy guardrails for documented BigQuery tables.
+- **[bigquery-data-dictionaries](bigquery-data-dictionaries/SKILL.md)**: Profile BigQuery tables and generate/update markdown data dictionaries with schema metadata and column statistics. Uses `tools/bigquery-profiling/`.
 
 ## Skill selection heuristic
 - Choose **1 primary** skill + up to **2 supporting** skills.

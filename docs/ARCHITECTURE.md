@@ -54,10 +54,22 @@ Document synthesis utilities:
 - Typical tooling: Python (e.g., `pandas`, `openpyxl`, `python-pptx`) when justified.
 - One-off scripts and artifacts should be namespaced under `runs/<RUN_ID>/`.
 
-### Database queries (DB MCP)
-- Optional component when a run requires querying a data warehouse.
-- Not configured in this repo by default; when added, keep exports and temp artifacts namespaced under `RUN_ID`.
-- Prefer exporting results and applying deterministic local transforms.
+### Database queries (BigQuery via MCP Toolbox)
+- This repo includes BigQuery MCP toolbox configuration for querying data warehouses.
+- Authentication: **Application Default Credentials (ADC) only** — run `gcloud auth application-default login`.
+- MCP server configured in `.vscode/mcp.json` as `bigquery`.
+
+Key resources:
+- [MCP Toolbox Guide](MCP_TOOLBOX_GUIDE.md) — Detailed how-to for BigQuery MCP server configuration, tool usage, and troubleshooting.
+- [BigQuery Data Models Skill](../.github/skills/bigquery-data-models/SKILL.md) — Agent skill for authentication, query patterns, and privacy guardrails.
+- [Data Dictionaries](data_dictionaries/README.md) — Column-level documentation for documented BigQuery tables.
+- [Premier Data Models Handoff](PREMIER_DATA_MODELS_HANDOFF.md) — Domain-specific patterns for healthcare purchasing data.
+
+Best practices:
+- Use `get_table_info` to understand schema before writing queries.
+- Start with LIMIT clauses; remove only when aggregating.
+- Use `dry_run=true` for cost estimation on large scans.
+- Aggregate to protect privacy (no facility-level exports).
 
 ### Microsoft Graph (Office 365)
 - This repo supports delegated Microsoft Graph access via MSAL public client + interactive loopback auth.
