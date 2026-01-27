@@ -132,3 +132,32 @@ If resuming this run:
 - Script: `runs/2026-01-15__b-braun-pdf-synthesis/scripts/extract_and_synthesize.py`
 - Run: `.venv/bin/python runs/2026-01-15__b-braun-pdf-synthesis/scripts/extract_and_synthesize.py`
 
+---
+
+## 2026-01-27 — Graph email search + FY27 thread extraction + Outlook draft creation
+
+### Summary
+- Located a specific FY27 email thread (“FY27 Capital Budget Planning for SC Data Management - what are your data needs?”) and extracted what Audrey, Elise, and Bethany sent back.
+- Drafted a consolidated email to Melanie (saved as a Markdown draft) and created an Outlook draft message via Microsoft Graph.
+- Promoted reusable “create Outlook draft from Markdown via Graph” tooling into core and merged it to `main` (PR #13).
+
+### Artifacts (run-local)
+- `runs/2026-01-15__b-braun-pdf-synthesis/exports/email_to_melanie_proctor__fy27_sc_data_needs__draft.md`
+- `runs/2026-01-15__b-braun-pdf-synthesis/tmp/find_fy27_capital_budget_thread_responses.py`
+- `runs/2026-01-15__b-braun-pdf-synthesis/scripts/create_outlook_draft_from_md.py` (run-local precursor; core CLI exists on `main`)
+
+### Core promotion (already merged to main)
+- Core helper module: `agent_tools/graph/drafts.py`
+- Core CLI: `agent_tools/graph/create_draft_from_md.py`
+- Skill doc update: `.github/skills/graph-email-search/SKILL.md` (includes Inbox subfolder warning + Draft creation section)
+
+### Notes / gotchas
+- Inbox queries can miss messages routed into Inbox subfolders; prefer mailbox-wide search first, then fall back to scanning Inbox subtree.
+- Graph `$search` support varies by tenant; if AQS field queries error, use phrase search + local filtering.
+- Recipient resolution can be ambiguous when display names are “Last, First”; the core helper resolves by token-based matching.
+
+### Repro (core: create an Outlook draft from a Markdown file)
+- Run from repo root (after configuring Graph env):
+   - `python -m agent_tools.graph.create_draft_from_md --md <path/to/draft.md> --resolve-to-name "First Last"`
+
+
