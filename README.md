@@ -11,6 +11,17 @@ Durable repo-based memory (instructions, skills, and run logs) keeps the system 
 
 Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md).
 
+## Current property focus
+This workspace is currently being used to evaluate a specific property:
+
+- **ACTIVE:** Vineyard Point / Dockside condos (Lake Norman-adjacent)
+  - Address anchor: 18861 Vineyard Point Ln, Cornelius, NC 28031
+  - Package: [properties/README.md](properties/README.md)
+  - Active run: `runs/2026-01-19__vineyard-point/`
+
+Historical note:
+- **ARCHIVED:** Alexander Chase (Cornelius, NC) evaluation (retained under `runs/2026-01-17__second-home-condo-net-cost/`)
+
 ## Prereqs
 - Node.js (`node`, `npx`)
   - Optional (Homebrew): `brew install node`

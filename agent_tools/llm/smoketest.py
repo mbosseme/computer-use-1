@@ -86,7 +86,14 @@ def main() -> int:
 
     prompt = args.prompt
     if prompt is None:
-        prompt = sys.stdin.read()
+        # Avoid hanging when invoked interactively with no stdin.
+        # If stdin is piped, read it; otherwise use a default prompt.
+        if sys.stdin is not None and sys.stdin.isatty():
+            prompt = "ping"
+        else:
+            prompt = sys.stdin.read()
+            if not prompt.strip():
+                prompt = "ping"
 
     cfg = _resolve_azure_config(model_name=args.model)
     client = AzureOpenAIResponsesClient(cfg)

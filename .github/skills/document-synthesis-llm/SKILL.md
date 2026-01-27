@@ -37,6 +37,33 @@ User-visible contract:
 2. Call the LLM with a "meta-synthesis" prompt: "Given these summaries, identify recurring themes, strategic takeaways, and action items."
 3. Save the final output to `runs/<RUN_ID>/exports/<output_name>.md`.
 
+### Phase 4 (optional): Incremental re-synthesis (change detection)
+Use this when the source folder changes over time and you want to avoid reprocessing unchanged documents.
+
+Concept:
+- Maintain an **index JSON** that records a lightweight fingerprint per file (by default: `size` + `mtime_ns`).
+- On each run, scan the folder and compare fingerprints to the index.
+- Only re-synthesize files that are new or changed, then rebuild the folder-level synthesis.
+
+Recommended tool:
+- `python -m agent_tools.llm.summarize_incremental` (core, reusable)
+
+Example:
+- `python -m agent_tools.llm.summarize_incremental \
+  --source-dir <SOURCE_FOLDER> \
+  --staging-dir runs/<RUN_ID>/inputs/staging \
+  --per-doc-dir runs/<RUN_ID>/exports/per_doc \
+  --tmp-dir runs/<RUN_ID>/tmp/chunks \
+  --index runs/<RUN_ID>/exports/incremental_index.json \
+  --out runs/<RUN_ID>/exports/folder_synthesis.md \
+  --manifest runs/<RUN_ID>/exports/folder_synthesis.manifest.json`
+
+Notes:
+- Change detection mode is configurable:
+  - Default: `--detect-mode mtime-size` (fast; usually sufficient)
+  - Optional: `--detect-mode content-hash` (slower; more robust)
+- Per-doc output filenames are generated as `slug__stableId__synthesis.md` where `stableId` is derived from the file’s **relative path** within `--source-dir` to avoid collisions (e.g., multiple files that slugify similarly).
+
 ## Recommended implementation
 - Use `agent_tools/llm/summarize_file.py` for chunked PDF synthesis (map-reduce) with coverage warnings and an optional JSON manifest.
 
@@ -106,6 +133,7 @@ safe_content = sanitize_text(pdf_content)
 ## Outputs
 - **Primary**: `runs/<RUN_ID>/exports/<synthesis_name>.md`
 - **Intermediate** (optional): Per-document summaries can be saved for debugging.
+- **Incremental index** (optional): `runs/<RUN_ID>/exports/incremental_index.json`
 
 ## Dependencies
 - `PyPDF2` (Tier A base)
@@ -118,6 +146,7 @@ safe_content = sanitize_text(pdf_content)
 - [agent_tools/llm/document_extraction.py](../../../agent_tools/llm/document_extraction.py): PDF/EML extraction + retry logic.
 - [agent_tools/llm/summarize_file.py](../../../agent_tools/llm/summarize_file.py): Chunked map-reduce synthesis for PDFs and text, with coverage warnings.
 - [agent_tools/llm/summarize_folder.py](../../../agent_tools/llm/summarize_folder.py): One-command folder synthesis (PDF/EML/text).
+- [agent_tools/llm/summarize_incremental.py](../../../agent_tools/llm/summarize_incremental.py): Incremental re-synthesis with change detection and an index file.
 - [agent_tools/llm/env.py](../../../agent_tools/llm/env.py): Environment variable loading.
 - [agent_tools/llm/model_registry.py](../../../agent_tools/llm/model_registry.py): Model config from `config/models.json`.
 

@@ -16,6 +16,10 @@ __pycache__/
 /.token_cache.json
 /.token_cache*.json
 
+# Google Drive Auth & Secrets
+**/token.json
+**/credentials.json
+
 # Playwright artifacts
 /.playwright-mcp/
 /playwright-report/
@@ -38,3 +42,4 @@ __pycache__/
 
 # Local temp exports (intentionally untracked)
 /tmp/
+**/tmp/
