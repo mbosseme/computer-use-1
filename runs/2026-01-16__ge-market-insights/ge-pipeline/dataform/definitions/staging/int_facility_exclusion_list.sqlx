@@ -1,0 +1,45 @@
+config {
+  type: "table",
+  schema: "ge_sample_staging",
+  tags: ["parity", "exclusion"],
+  description: "List of Facility-Quarters to exclude based on missing Transaction Analysis data"
+}
+
+WITH transaction_presence AS (
+  SELECT DISTINCT
+    Premier_Entity_Code,
+    FORMAT_DATE('%Y-Q%q', DATE(Transaction_Date)) as year_quarter
+  FROM `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded`
+  WHERE DATE(Transaction_Date) BETWEEN DATE('2023-10-01') AND DATE('2025-09-30')
+    -- No category filter: check for ANY spend
+),
+
+system_presence AS (
+  SELECT DISTINCT
+    Health_System_Entity_Code,
+    FORMAT_DATE('%Y-Q%q', DATE(Transaction_Date)) as year_quarter
+  FROM `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded`
+  WHERE DATE(Transaction_Date) BETWEEN DATE('2023-10-01') AND DATE('2025-09-30')
+),
+
+supplier_presence AS (
+  SELECT DISTINCT
+    Premier_Entity_Code,
+    FORMAT_DATE('%Y-Q%q', DATE(CAST(LEFT(CAST(Spend_Period_YYYYQMM AS STRING), 4) AS INT64), CAST(RIGHT(CAST(Spend_Period_YYYYQMM AS STRING), 2) AS INT64), 1)) as year_quarter
+  FROM `abi-inbound-prod.abi_inbound_bq_stg_purchasing_supplier_sales.supplier_spend`
+  WHERE DATE(CAST(LEFT(CAST(Spend_Period_YYYYQMM AS STRING), 4) AS INT64), CAST(RIGHT(CAST(Spend_Period_YYYYQMM AS STRING), 2) AS INT64), 1) BETWEEN DATE('2023-10-01') AND DATE('2025-09-30')
+)
+
+SELECT
+  s.Premier_Entity_Code,
+  s.year_quarter,
+  'MISSING_TRANSACTION_DATA' as exclusion_reason
+FROM supplier_presence s
+LEFT JOIN transaction_presence t
+  ON s.Premier_Entity_Code = t.Premier_Entity_Code
+  AND s.year_quarter = t.year_quarter
+LEFT JOIN system_presence tsp
+  ON s.Premier_Entity_Code = tsp.Health_System_Entity_Code
+  AND s.year_quarter = tsp.year_quarter
+WHERE t.Premier_Entity_Code IS NULL
+  AND tsp.Health_System_Entity_Code IS NULL -- Only exclude if it's not a reporting System Code

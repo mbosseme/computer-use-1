@@ -1,0 +1,12 @@
+{
+  "run_id": "20260128T183424Z",
+  "executive": [
+    "exec_modality_trend.png",
+    "exec_share_latest_quarter.png",
+    "exec_share_vs_yoy_scatter.png"
+  ],
+  "qa": [
+    "qa_spend_vs_transactions.png",
+    "qa_contract_category_mix.png"
+  ]
+}

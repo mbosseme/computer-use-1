@@ -1,0 +1,13 @@
+{
+  "warehouse": "bigquery",
+  "defaultDatabase": "matthew-bossemeyer",
+  "defaultSchema": "ge_sample_staging",
+  "defaultLocation": "US",
+  "assertionSchema": "ge_sample_assertions",
+  "vars": {
+    "capital_price_threshold": "25000",
+    "capital_primary_categories": "MAGNETIC RESONANCE|COMPUTED TOMOGRAPHY|PHYSIOLOGICAL MONITORING",
+    "capital_positive_keywords": "MRI|CT|TOMOGRAPHY|RESONANCE|MONITORING",
+    "capital_negative_keywords": "SERVICE|MAINTENANCE|WARRANTY|AGREEMENT|REPAIR|SOFTWARE|LICENSE|RENEWAL"
+  }
+}

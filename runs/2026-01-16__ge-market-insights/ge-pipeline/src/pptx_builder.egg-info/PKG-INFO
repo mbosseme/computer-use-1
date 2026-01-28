@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: pptx-builder
+Version: 0.1.0
+Summary: Branded, template-driven PowerPoint generation for analytics outputs
+Requires-Python: >=3.9
+Requires-Dist: python-pptx>=0.6.23
+Requires-Dist: pandas>=2.0
+Requires-Dist: Pillow>=9.2
+Requires-Dist: PyYAML>=6.0

@@ -1,0 +1,33 @@
+config {
+  type: "view",
+  schema: "ge_sample_staging",
+  tags: ["parity", "supplier_spend"],
+  description: "Filtered supplier spend for parity comparison (Acute only, Capital categories)"
+}
+
+WITH source AS (
+  SELECT
+    *,
+    DATE(CAST(LEFT(CAST(Spend_Period_YYYYQMM AS STRING), 4) AS INT64), CAST(RIGHT(CAST(Spend_Period_YYYYQMM AS STRING), 2) AS INT64), 1) as spend_date
+  FROM `abi-inbound-prod.abi_inbound_bq_stg_purchasing_supplier_sales.supplier_spend`
+),
+
+lookup_table AS (
+  SELECT * FROM ${ref("int_supplier_parent_lookup")}
+)
+
+SELECT
+  s.spend_date,
+  s.Health_System_Entity_Code,
+  s.Premier_Entity_Code,
+  s.Contract_Category,
+  COALESCE(l.entity_name, s.Contracted_Supplier_Parent_Name) as manufacturer_name,
+  s.Contracted_Supplier as vendor_name,
+  s.Premier_Spend as spend
+FROM source s
+LEFT JOIN lookup_table l
+  ON s.Contracted_Supplier_Parent_Entity_Code = l.entity_code
+WHERE Facility_Type = 'ACUTE'
+  AND Contract_Category IN ('COMPUTED TOMOGRAPHY', 'MAGNETIC RESONANCE IMAGING', 'PHYSIOLOGICAL MONITORING SYSTEMS', 'ULTRASOUND RADIOLOGY CARDIOLOGY HAND CARRIED')
+  AND spend_date BETWEEN DATE('2023-10-01') AND DATE('2025-09-30')
+

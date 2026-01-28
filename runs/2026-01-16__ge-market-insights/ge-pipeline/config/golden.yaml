@@ -1,0 +1,26 @@
+# Offline/test configuration used by the pytest golden run.
+# Uses fixture panels under tests/fixtures/golden_inputs.
+
+run:
+  run_id: auto
+  timezone_offset_minutes: 0
+
+io:
+  snapshots_dir: snapshots
+
+window:
+  # Align the default window to the fixture months.
+  start_month: "2023-01"
+  end_month: "2023-12"
+  rolling_m: 6
+  min_pre_months: 3
+
+guards:
+  # Keep thresholds modest for fixture datasets.
+  coverage_guard_pp: 2.0
+  anchor_contract_guard_pp: 2.0
+  target_lift_pp_raw: 2.0
+
+materialize:
+  mode: fixtures
+  fixtures_dir: tests/fixtures/golden_inputs

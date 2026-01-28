@@ -1,0 +1,30 @@
+# Optional style overrides for brand tokens (kept minimal; template still drives most styling)
+target_lift_pp: 2.0
+fonts:
+  title_face: "Calibri"
+  body_face: "Calibri"
+  title_size_pt: 34
+  h2_size_pt: 24
+  body_size_pt: 14
+  caption_size_pt: 11
+inherit_fonts: true
+title_text_color: [255, 255, 255]
+subtitle_text_color: [255, 255, 255]
+force_title_contrast: true
+theme:
+  source: config/theme/premier_theme.yaml
+layout_map:
+  TITLE: ["title"]
+  TITLE_CONTENT: ["content", "two content", "subtitle"]
+  TWO_CONTENT: ["two", "content"]
+  SECTION: ["section", "header"]
+typography:
+  case_title_pt: 24
+  case_metrics_pt: 16
+  case_caption_pt: 12
+  headline_title_pt: 38
+  headline_numbers_pt: 32
+  case_badge_pt: 20
+# colors:
+#   accent1: [30, 93, 170]
+#   text_dark: [38, 38, 38]

@@ -1,0 +1,102 @@
+js {
+  const shared = require("../../includes/ge_capital_shared");
+  const {
+    categoryMatchExpression,
+    positiveRegex,
+    negativeRegex,
+    capitalPriceThreshold,
+    manufacturerCase,
+    reportCategoryCase
+  } = shared;
+}
+
+config {
+  type: "view",
+  schema: "ge_sample_staging",
+  name: "stg_ge_capital_systems",
+  description: "Filtered transactional feed for GE big capital equipment opportunity analysis (MRI, CT, Monitoring)",
+  tags: ["staging", "ge_capital"],
+  columns: {
+    manufacturer_normalized: "Canonical manufacturer bucket (GE, SIEMENS, PHILIPS, CANON, OTHER)",
+    report_category: "Derived modality bucket used for downstream reporting",
+    capture_reason: "Indicates which heuristic (price threshold vs spend type) retained the row",
+    category_source: "Indicates whether the modality came from Contract_Category or Product_Description matching"
+  }
+}
+
+WITH source AS (
+  SELECT
+    *
+  FROM `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded`
+  WHERE DATE(Transaction_Date) BETWEEN DATE('2023-10-01') AND DATE('2025-09-30')
+    AND NOT (
+      UPPER(Health_System_Name) LIKE '% TEST' OR
+      UPPER(Health_System_Name) LIKE '% TEST %' OR
+      UPPER(Health_System_Name) LIKE '%PREMIER%' OR
+      UPPER(Health_System_Name) LIKE '% DEMO' OR
+      UPPER(Health_System_Name) LIKE '% DEMO %'
+    )
+    AND Health_System_Name != "ST. JOSEPH'S - CANDLER HEALTH SYSTEM, INC." -- Temporary exclusion due to bad data load (outliers)
+),
+exclusions AS (
+  SELECT DISTINCT Health_System_Entity_Code, year_quarter
+  FROM ${ref("int_parity_exclusion_list")}
+),
+filtered AS (
+  SELECT
+    source.*,
+    ${reportCategoryCase} AS report_category,
+    CASE
+      WHEN SAFE_CAST(Base_Each_Price AS FLOAT64) >= ${capitalPriceThreshold} THEN 'PRICE_THRESHOLD'
+      WHEN UPPER(Spend_Type) IN ('NON CONTRACT', 'CATEGORIZED ONLY') THEN 'UNMATCHED_SPEND_TYPE'
+      ELSE 'OTHER'
+    END AS capture_reason,
+    CASE
+      WHEN ${categoryMatchExpression} THEN 'CONTRACT_CATEGORY'
+      WHEN (Contract_Category IS NULL OR UPPER(Contract_Category) = 'UNKNOWN') AND REGEXP_CONTAINS(UPPER(Product_Description), r'(${positiveRegex})') THEN 'DESCRIPTION_KEYWORD'
+      ELSE 'UNKNOWN'
+    END AS category_source
+  FROM source
+  LEFT JOIN exclusions
+    ON source.Health_System_Entity_Code = exclusions.Health_System_Entity_Code
+    AND FORMAT_DATE('%Y-Q%Q', DATE(source.Transaction_Date)) = exclusions.year_quarter
+  WHERE
+    exclusions.Health_System_Entity_Code IS NULL -- Exclude rows matching the exclusion list
+    AND (
+      ${categoryMatchExpression}
+      OR (
+        (Contract_Category IS NULL OR UPPER(Contract_Category) = 'UNKNOWN')
+        AND REGEXP_CONTAINS(UPPER(Product_Description), r'(${positiveRegex})')
+      )
+    )
+    AND (
+      SAFE_CAST(Base_Each_Price AS FLOAT64) >= ${capitalPriceThreshold}
+      OR UPPER(Spend_Type) IN ('NON CONTRACT', 'CATEGORIZED ONLY')
+    )
+    AND NOT (
+      REGEXP_CONTAINS(UPPER(Product_Description), r'(${negativeRegex})')
+      OR REGEXP_CONTAINS(UPPER(Contract_Category), r'(${negativeRegex})')
+    )
+    AND SAFE_CAST(Base_Spend AS FLOAT64) > 0
+    AND SAFE_CAST(Base_Each_Price AS FLOAT64) > 0
+    AND SAFE_CAST(Base_Each_Price AS FLOAT64) <= 10000000
+    AND SAFE_CAST(Base_Spend AS FLOAT64) <= 10000000 -- Filter out extreme spend outliers
+)
+
+SELECT
+  DATE(Transaction_Date) AS transaction_date,
+  FORMAT_DATE('%Y-Q%Q', DATE(Transaction_Date)) AS year_quarter,
+  report_category,
+  ${manufacturerCase} AS manufacturer_normalized,
+  Manufacturer_Name,
+  COALESCE(NULLIF(TRIM(Manufacturer_Catalog_Number), ''), 'NO_SKU') AS manufacturer_catalog_number,
+  Product_Description,
+  Contract_Category,
+  Spend_Type,
+  SAFE_CAST(Base_Spend AS FLOAT64) AS base_spend,
+  SAFE_CAST(Base_Each_Price AS FLOAT64) AS base_each_price,
+  SAFE_CAST(Quantity AS FLOAT64) AS quantity,
+  capture_reason,
+  category_source
+FROM filtered
+WHERE report_category IS NOT NULL

@@ -1,0 +1,39 @@
+config {
+  type: "table",
+  schema: "ge_sample_marts",
+  name: "mart_observed_trends",
+  description: "Quarterly observed spend trends by modality and normalized manufacturer",
+  tags: ["mart", "ge_capital", "artifact_trends"]
+}
+
+WITH base AS (
+  SELECT
+    report_category,
+    manufacturer_normalized,
+    DATE_TRUNC(transaction_date, QUARTER) AS quarter_start,
+    FORMAT_DATE('%Y-Q%Q', DATE_TRUNC(transaction_date, QUARTER)) AS year_quarter,
+    SUM(base_spend) AS total_observed_spend
+  FROM ${ref("stg_ge_capital_systems")}
+  GROUP BY 1, 2, 3, 4
+)
+SELECT
+  report_category,
+  manufacturer_normalized,
+  year_quarter,
+  quarter_start,
+  total_observed_spend,
+  SAFE_DIVIDE(
+    total_observed_spend,
+    SUM(total_observed_spend) OVER (PARTITION BY report_category, quarter_start)
+  ) AS share_of_observed_spend,
+  SAFE_DIVIDE(
+    total_observed_spend - LAG(total_observed_spend, 4) OVER (
+      PARTITION BY report_category, manufacturer_normalized
+      ORDER BY quarter_start
+    ),
+    LAG(total_observed_spend, 4) OVER (
+      PARTITION BY report_category, manufacturer_normalized
+      ORDER BY quarter_start
+    )
+  ) AS yoy_growth
+FROM base

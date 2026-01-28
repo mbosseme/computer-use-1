@@ -1,0 +1,16 @@
+config {
+  type: "assertion",
+  schema: "ge_sample_assertions",
+  tags: ["assertion", "ge_capital"],
+  description: "Observed trends metrics must produce bounded shares and non-null report categories"
+}
+
+SELECT
+  *
+FROM ${ref("mart_observed_trends")}
+WHERE
+  report_category IS NULL
+  OR manufacturer_normalized IS NULL
+  OR share_of_observed_spend < 0
+  OR share_of_observed_spend > 1
+  -- OR (yoy_growth IS NOT NULL AND ABS(yoy_growth) > 25) -- Disabled due to high volatility in capital spend

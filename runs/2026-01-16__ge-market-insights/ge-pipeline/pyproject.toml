@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pptx-builder"
+version = "0.1.0"
+description = "Branded, template-driven PowerPoint generation for analytics outputs"
+requires-python = ">=3.9"
+dependencies = [
+  "python-pptx>=0.6.23",
+  "pandas>=2.0",
+  "Pillow>=9.2",
+  "PyYAML>=6.0"
+]
+
+[project.scripts]
+build-analytics-deck = "pptx_builder.build_deck:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pptx_builder*"]

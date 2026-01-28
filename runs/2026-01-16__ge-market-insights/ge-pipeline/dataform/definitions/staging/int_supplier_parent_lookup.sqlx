@@ -1,0 +1,35 @@
+config {
+  type: "table",
+  schema: "ge_sample_staging",
+  tags: ["parity", "lookup"],
+  description: "Distinct list of Supplier Top Parent Entities derived from Transaction Analysis for name normalization"
+}
+
+WITH manufacturers AS (
+  SELECT DISTINCT
+    Manufacturer_Top_Parent_Entity_Code as entity_code,
+    Manufacturer_Top_Parent_Name as entity_name
+  FROM `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded`
+  WHERE Manufacturer_Top_Parent_Entity_Code IS NOT NULL
+),
+
+vendors AS (
+  SELECT DISTINCT
+    Vendor_Top_Parent_Entity_Code as entity_code,
+    Vendor_Top_Parent_Name as entity_name
+  FROM `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded`
+  WHERE Vendor_Top_Parent_Entity_Code IS NOT NULL
+),
+
+combined AS (
+  SELECT * FROM manufacturers
+  UNION ALL
+  SELECT * FROM vendors
+)
+
+SELECT
+  entity_code,
+  MAX(entity_name) as entity_name
+FROM combined
+WHERE entity_code IS NOT NULL
+GROUP BY 1

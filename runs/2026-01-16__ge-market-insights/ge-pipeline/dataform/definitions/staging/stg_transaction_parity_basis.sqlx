@@ -1,0 +1,26 @@
+config {
+  type: "view",
+  schema: "ge_sample_staging",
+  tags: ["parity", "transaction_analysis"],
+  description: "Filtered transaction analysis for parity comparison (Acute only, Capital categories, Standard categorization only)"
+}
+
+SELECT
+  DATE(Transaction_Date) as transaction_date,
+  Health_System_Entity_Code,
+  Contract_Category,
+  Manufacturer_Name as manufacturer_name,
+  SAFE_CAST(Base_Spend AS FLOAT64) as spend
+FROM `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded`
+WHERE Member_Type = 'ACUTE'
+  AND Contract_Category IN ('COMPUTED TOMOGRAPHY', 'MAGNETIC RESONANCE IMAGING', 'PHYSIOLOGICAL MONITORING SYSTEMS', 'ULTRASOUND RADIOLOGY CARDIOLOGY HAND CARRIED')
+  AND DATE(Transaction_Date) BETWEEN DATE('2023-10-01') AND DATE('2025-09-30')
+  AND NOT (
+      UPPER(Health_System_Name) LIKE '% TEST' OR
+      UPPER(Health_System_Name) LIKE '% TEST %' OR
+      UPPER(Health_System_Name) LIKE '%PREMIER%' OR
+      UPPER(Health_System_Name) LIKE '% DEMO' OR
+      UPPER(Health_System_Name) LIKE '% DEMO %'
+  )
+  AND Health_System_Name != "ST. JOSEPH'S - CANDLER HEALTH SYSTEM, INC."
+  AND SAFE_CAST(Base_Spend AS FLOAT64) <= 10000000

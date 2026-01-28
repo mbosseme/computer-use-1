@@ -1,0 +1,129 @@
+{
+  "generated_on": "2026-01-22T15:19:38",
+  "source_dir": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE",
+  "staging_dir": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged",
+  "per_doc_dir": "runs/2026-01-16__ge-market-insights/exports/ge_docs",
+  "tmp_dir": "runs/2026-01-16__ge-market-insights/tmp",
+  "model": "azure-gpt-5.2",
+  "stats": {
+    "files_seen": 8,
+    "changed": 8,
+    "synthesized": 8,
+    "removed": 0
+  },
+  "removed": [],
+  "entries": {
+    "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/GE  Premier Market Insights Introduction & Overview.pdf": {
+      "source": {
+        "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/GE  Premier Market Insights Introduction & Overview.pdf",
+        "size": 535024,
+        "mtime_ns": 1767723315067433755
+      },
+      "source_name": "GE  Premier Market Insights Introduction & Overview.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged/GE  Premier Market Insights Introduction & Overview.pdf",
+      "per_doc_md": "runs/2026-01-16__ge-market-insights/exports/ge_docs/ge_premier_market_insights_introduction_overview__6cbaa8c528__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-16__ge-market-insights/exports/ge_docs/ge_premier_market_insights_introduction_overview__6cbaa8c528__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-16__ge-market-insights/tmp/ge_premier_market_insights_introduction_overview__6cbaa8c528__chunks",
+      "last_synthesized_on": "2026-01-22T15:14:03"
+    },
+    "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/GE : Premier Market Insights Introduction (Transcript 10-20-25).docx": {
+      "source": {
+        "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/GE : Premier Market Insights Introduction (Transcript 10-20-25).docx",
+        "size": 22269,
+        "mtime_ns": 1763122178866238355
+      },
+      "source_name": "GE : Premier Market Insights Introduction (Transcript 10-20-25).docx",
+      "kind": "docx",
+      "staged_path": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged/GE : Premier Market Insights Introduction (Transcript 10-20-25).txt",
+      "per_doc_md": "runs/2026-01-16__ge-market-insights/exports/ge_docs/ge_premier_market_insights_introduction_transcript_10_20_25__1b8bc6c433__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-16__ge-market-insights/exports/ge_docs/ge_premier_market_insights_introduction_transcript_10_20_25__1b8bc6c433__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-16__ge-market-insights/tmp/ge_premier_market_insights_introduction_transcript_10_20_25__1b8bc6c433__chunks",
+      "last_synthesized_on": "2026-01-22T15:15:04"
+    },
+    "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/GE_PILOT_Validation.pdf": {
+      "source": {
+        "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/GE_PILOT_Validation.pdf",
+        "size": 1238372,
+        "mtime_ns": 1769084961548821032
+      },
+      "source_name": "GE_PILOT_Validation.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged/GE_PILOT_Validation.pdf",
+      "per_doc_md": "runs/2026-01-16__ge-market-insights/exports/ge_docs/ge_pilot_validation__e28c49af28__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-16__ge-market-insights/exports/ge_docs/ge_pilot_validation__e28c49af28__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-16__ge-market-insights/tmp/ge_pilot_validation__e28c49af28__chunks",
+      "last_synthesized_on": "2026-01-22T15:15:41"
+    },
+    "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/Market Insights -GE - Oct 2025.pdf": {
+      "source": {
+        "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/Market Insights -GE - Oct 2025.pdf",
+        "size": 1497428,
+        "mtime_ns": 1761916206429473788
+      },
+      "source_name": "Market Insights -GE - Oct 2025.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged/Market Insights -GE - Oct 2025.pdf",
+      "per_doc_md": "runs/2026-01-16__ge-market-insights/exports/ge_docs/market_insights_ge_oct_2025__217bc62916__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-16__ge-market-insights/exports/ge_docs/market_insights_ge_oct_2025__217bc62916__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-16__ge-market-insights/tmp/market_insights_ge_oct_2025__217bc62916__chunks",
+      "last_synthesized_on": "2026-01-22T15:16:32"
+    },
+    "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/Market Insights Examples - Phys Mon & Ultrasound - May 2025.pdf": {
+      "source": {
+        "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/Market Insights Examples - Phys Mon & Ultrasound - May 2025.pdf",
+        "size": 881557,
+        "mtime_ns": 1763161284258588431
+      },
+      "source_name": "Market Insights Examples - Phys Mon & Ultrasound - May 2025.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged/Market Insights Examples - Phys Mon & Ultrasound - May 2025.pdf",
+      "per_doc_md": "runs/2026-01-16__ge-market-insights/exports/ge_docs/market_insights_examples_phys_mon_ultrasound_may_2025__cafcd6454e__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-16__ge-market-insights/exports/ge_docs/market_insights_examples_phys_mon_ultrasound_may_2025__cafcd6454e__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-16__ge-market-insights/tmp/market_insights_examples_phys_mon_ultrasound_may_2025__cafcd6454e__chunks",
+      "last_synthesized_on": "2026-01-22T15:17:12"
+    },
+    "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/RE GE  Premier Market Insights Introduction & Overview.pdf": {
+      "source": {
+        "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/RE GE  Premier Market Insights Introduction & Overview.pdf",
+        "size": 2125839,
+        "mtime_ns": 1769097785769566895
+      },
+      "source_name": "RE GE  Premier Market Insights Introduction & Overview.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged/RE GE  Premier Market Insights Introduction & Overview.pdf",
+      "per_doc_md": "runs/2026-01-16__ge-market-insights/exports/ge_docs/re_ge_premier_market_insights_introduction_overview__b5c028293b__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-16__ge-market-insights/exports/ge_docs/re_ge_premier_market_insights_introduction_overview__b5c028293b__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-16__ge-market-insights/tmp/re_ge_premier_market_insights_introduction_overview__b5c028293b__chunks",
+      "last_synthesized_on": "2026-01-22T15:18:23"
+    },
+    "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/RE: GE : Premier Market Insights Introduction & Overview.pdf": {
+      "source": {
+        "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/RE: GE : Premier Market Insights Introduction & Overview.pdf",
+        "size": 235675,
+        "mtime_ns": 1768391292402830723
+      },
+      "source_name": "RE: GE : Premier Market Insights Introduction & Overview.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged/RE: GE : Premier Market Insights Introduction & Overview.pdf",
+      "per_doc_md": "runs/2026-01-16__ge-market-insights/exports/ge_docs/re_ge_premier_market_insights_introduction_overview__bb5a053188__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-16__ge-market-insights/exports/ge_docs/re_ge_premier_market_insights_introduction_overview__bb5a053188__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-16__ge-market-insights/tmp/re_ge_premier_market_insights_introduction_overview__bb5a053188__chunks",
+      "last_synthesized_on": "2026-01-22T15:18:58"
+    },
+    "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/RE: RE: GE : Premier Market Insights Introduction & Overview.pdf": {
+      "source": {
+        "path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/GE/RE: RE: GE : Premier Market Insights Introduction & Overview.pdf",
+        "size": 257690,
+        "mtime_ns": 1769097852562923044
+      },
+      "source_name": "RE: RE: GE : Premier Market Insights Introduction & Overview.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-16__ge-market-insights/inputs/ge_docs_staged/RE: RE: GE : Premier Market Insights Introduction & Overview.pdf",
+      "per_doc_md": "runs/2026-01-16__ge-market-insights/exports/ge_docs/re_re_ge_premier_market_insights_introduction_overview__e583cd9d57__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-16__ge-market-insights/exports/ge_docs/re_re_ge_premier_market_insights_introduction_overview__e583cd9d57__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-16__ge-market-insights/tmp/re_re_ge_premier_market_insights_introduction_overview__e583cd9d57__chunks",
+      "last_synthesized_on": "2026-01-22T15:19:38"
+    }
+  }
+}

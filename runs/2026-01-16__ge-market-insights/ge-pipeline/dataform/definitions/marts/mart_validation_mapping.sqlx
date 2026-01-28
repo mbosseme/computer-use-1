@@ -1,0 +1,19 @@
+config {
+  type: "table",
+  schema: "ge_sample_marts",
+  name: "mart_validation_mapping",
+  description: "Manufacturer + SKU level view of observed capital transactions for sharing raw PO context",
+  tags: ["mart", "ge_capital", "artifact_validation"]
+}
+
+SELECT
+  report_category,
+  manufacturer_normalized,
+  Manufacturer_Name AS manufacturer_name_raw,
+  COALESCE(NULLIF(TRIM(manufacturer_catalog_number), ''), 'NO_SKU') AS manufacturer_catalog_number,
+  Product_Description,
+  COALESCE(NULLIF(TRIM(Contract_Category), ''), 'UNKNOWN') AS contract_category,
+  SUM(base_spend) AS total_observed_spend,
+  COUNT(1) AS transaction_count
+FROM ${ref("stg_ge_capital_systems")}
+GROUP BY 1, 2, 3, 4, 5, 6

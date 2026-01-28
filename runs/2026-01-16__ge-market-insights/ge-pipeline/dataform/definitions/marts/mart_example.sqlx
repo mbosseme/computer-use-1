@@ -1,0 +1,23 @@
+config {
+  type: "table",
+  schema: "ge_sample_staging",
+  description: "Example mart table - business-logic aggregation for forecasting",
+  tags: ["mart", "example"],
+  bigquery: {
+    partitionBy: "DATE(period_month)",
+    clusterBy: ["product_name_clean"]
+  }
+}
+
+-- Example mart query
+-- Replace with actual business logic for your forecasting needs
+
+SELECT
+  DATE_TRUNC(event_timestamp, MONTH) as period_month,
+  product_name_clean,
+  COUNT(*) as transaction_count,
+  SUM(quantity) as total_quantity,
+  SUM(quantity * unit_price) as total_revenue,
+  AVG(unit_price) as avg_unit_price
+FROM ${ref("stg_example")}
+GROUP BY 1, 2

@@ -1,0 +1,41 @@
+config {
+  type: "table",
+  schema: "ge_sample_staging",
+  tags: ["parity", "exclusion"],
+  description: "List of Health System-Quarters to exclude based on low Supplier Spend coverage (<10%)"
+}
+
+WITH transaction_agg AS (
+  SELECT
+    Health_System_Entity_Code,
+    FORMAT_DATE('%Y-Q%q', transaction_date) as year_quarter,
+    SUM(spend) as total_transaction_spend
+  FROM ${ref("stg_transaction_parity_basis")}
+  GROUP BY 1, 2
+),
+
+supplier_agg AS (
+  SELECT
+    Health_System_Entity_Code,
+    FORMAT_DATE('%Y-Q%q', spend_date) as year_quarter,
+    SUM(spend) as total_supplier_spend
+  FROM ${ref("stg_supplier_spend_parity")}
+  GROUP BY 1, 2
+)
+
+SELECT
+  t.Health_System_Entity_Code,
+  t.year_quarter,
+  t.total_transaction_spend,
+  COALESCE(s.total_supplier_spend, 0) as total_supplier_spend,
+  SAFE_DIVIDE(COALESCE(s.total_supplier_spend, 0), t.total_transaction_spend) as coverage_ratio
+FROM transaction_agg t
+LEFT JOIN supplier_agg s
+  ON t.Health_System_Entity_Code = s.Health_System_Entity_Code
+  AND t.year_quarter = s.year_quarter
+WHERE
+  t.total_transaction_spend > 0
+  AND (
+    s.total_supplier_spend IS NULL
+    OR SAFE_DIVIDE(s.total_supplier_spend, t.total_transaction_spend) < 0.10
+  )

@@ -1,0 +1,97 @@
+# CT product-line terms for Charity request
+#
+# Notes:
+# - `pattern` is a BigQuery RE2 regex evaluated against an UPPER() normalized match_text.
+# - Keep patterns fairly specific; avoid overly-generic tokens.
+# - Prefer token-style patterns for ambiguous terms.
+
+terms:
+  - term_order: 1
+    term_key: REVOLUTION_APEX
+    term_label: Revolution Apex
+    pattern: '\b(?:REVOLUTION|REVOLTUION|REVO)\b[\s\-_]*\bAPEX\b'
+
+  - term_order: 2
+    term_key: REVOLUTION_CT
+    term_label: Revolution CT
+    pattern: '\b(?:REVOLUTION|REVOLTUION|REVO)\b[\s\-_]*\bCT\b'
+
+  - term_order: 3
+    term_key: REVOLUTION_CT_ES
+    term_label: Revolution CT ES
+    pattern: '(?:\b(?:REVOLUTION|REVOLTUION|REV|REVO)\b.*\bCT\b.*\bES\b)|(?:\bCT\b.*\bES\b.*\b(?:REVOLUTION|REVOLTUION|REV|REVO)\b)'
+
+  - term_order: 4
+    term_key: REVOLUTION_HD
+    term_label: Revolution HD
+    pattern: '\b(?:REVOLUTION|REVOLTUION|REVO)\b[\s\-_]*\bHD\b'
+
+  - term_order: 5
+    term_key: REVOLUTION_FRONTIER_ES
+    term_label: Revolution Frontier ES
+    pattern: '(?:\bFRONTIER\b[^|]{0,50}\bES\b)|(?:\bES\b[^|]{0,50}\bFRONTIER\b)'
+
+  - term_order: 6
+    term_key: REVOLUTION_FRONTIER_EX
+    term_label: Revolution Frontier EX
+    pattern: '(?:\bFRONTIER\b[^|]{0,50}\b(?:EX|EXTREME)\b)|(?:\b(?:EX|EXTREME)\b[^|]{0,50}\bFRONTIER\b)'
+
+  - term_order: 7
+    term_key: REVOLUTION_FRONTIER_EL
+    term_label: Revolution Frontier EL
+    pattern: '(?:\bFRONTIER\b[^|]{0,50}\b(?:EL|ELITE)\b)|(?:\b(?:EL|ELITE)\b[^|]{0,50}\bFRONTIER\b)'
+
+  - term_order: 8
+    term_key: MAXIMA
+    term_label: Maxima
+    pattern: '(?:\bMAXIMA\b.*\b(CT|VCT|REVOLUTION|OPTIMA|DISCOVERY)\b)|(?:\b(CT|VCT|REVOLUTION|OPTIMA|DISCOVERY)\b.*\bMAXIMA\b)'
+
+  - term_order: 9
+    term_key: REVOLUTION_ASCEND
+    term_label: Revolution Ascend
+    pattern: '\b(?:REVOLUTION|REVOLTUION|REVO)\b[\s\-_]*\bASCEND\b'
+
+  - term_order: 10
+    term_key: REVOLUTION_EVO
+    term_label: Revolution EVO
+    pattern: '(?:\b(?:REVOLUTION|REVOLTUION|REVO)\b|CTREVOLUTION)[\s\-_]*\bEVO\b'
+
+  - term_order: 11
+    term_key: VCT_CONSOLE_UPGRADES
+    term_label: VCT Console Upgrades
+    pattern: '(?:\bVCT\b.*\b(CONSOLE|WORKSTATION|UPGRAD|LIFT)\b)|(?:\b(CONSOLE|WORKSTATION|UPGRAD|LIFT)\b.*\bVCT\b)'
+
+  - term_order: 12
+    term_key: DISCOVERY_RT
+    term_label: Discovery RT
+    pattern: '\bDISCOVERY\b[\s\-_]*\bRT\b'
+
+  - term_order: 13
+    term_key: OPTIMA_CT540
+    term_label: Optima CT540
+    pattern: '(?:\bOPTIMA\b.*\bCT[\s\-]*540\b)|(?:\bCT[\s\-]*540\b.*\bOPTIMA\b)|(?:\bGE\b.*\bCT[\s\-]*540\b)|(?:\bCT[\s\-]*540\b.*\bGE\b)'
+
+  - term_order: 14
+    term_key: OPTIMA_CT520
+    term_label: Optima CT520
+    pattern: '(?:\bOPTIMA\b[^|]{0,50}\b(?:CT[\s\-]*520)\b)|(?:\b(?:CT[\s\-]*520)\b[^|]{0,50}\bOPTIMA\b)|(?:\bOPTIMA\b[^|]{0,50}\b520\b[^|]{0,50}\bCT\b)'
+
+  - term_order: 15
+    term_key: CARDIOGRAPHE
+    term_label: CardioGraphe
+    pattern: '\b(?:CARDIOGRAPHE|CARDIO[\s\-]*GRAPHE)\b'
+
+  - term_order: 16
+    term_key: AW_WORKSTATION
+    term_label: AW Workstation
+    pattern: '\bADVANTAGE\s*WORKSTATION\b|\bAW\b.*\bWORKSTATION\b'
+
+  - term_order: 17
+    term_key: AW_SERVER
+    term_label: AW Server
+    pattern: '\bAW\b.*\bSERVER\b|\bADVANTAGE\s*WORKSTATION\b.*\bSERVER\b'
+
+  - term_order: 18
+    term_key: AW_SERVER_VIRTUALIZED
+    term_label: AW Server Virtualized
+    pattern: '\bAW\b.*\bSERVER\b.*\bVIRT|\bAW\b.*\bVIRTUAL'

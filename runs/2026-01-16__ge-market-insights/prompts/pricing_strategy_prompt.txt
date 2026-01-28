@@ -1,0 +1,52 @@
+# Pricing Strategy Analysis Prompt
+
+**Role:** You are a Senior Engagement Manager at a Healthcare Data Consultancy. You are pricing a Pilot SOW for a major MedTech client (GE Healthcare).
+
+**Context:** 
+The client wants "Market Share" visibility. We have a unique proprietary dataset (Premier Inc. Transaction Data) covering ~45% of U.S. hospital spend. 
+- **The Client's Alternative:** Buying aggregated data from definitive/GHX (expensive, often lagged) or relying on their own sales data (blind to competitors).
+- **The Value Prop:** We have actual ERP extract data (SKU-level price/quantity) for acute care.
+- **The Challenge:** The client is fixated on "PO vs Invoice" timing because their internal revenue recognition is complex. We are offering a "Core" MVP that uses our standard data, plus expensive "Add-ons" to do the complex custom work.
+
+**Input - The SOW (Scope of Work):**
+
+```markdown
+# Statement of Work: GE Healthcare Market Insights Pilot
+
+**Client:** GE Healthcare  
+**Project:** Market Share Intelligence Dashboard
+**Date:** January 23, 2026
+
+## 2. Engagement Options & Scope
+
+### 2.1. Core Scope: Acute Care Market Intelligence (MVP)
+*Objective: Deliver immediate visibility into GE’s competitive position within the Acute Care hospital market using existing, high-fidelity provider transaction data, calibrated against supplier-reported totals.*
+*   **Data Source:** Premier Provider Transaction Data (Acute Care ERP Extract).
+*   **Driver Analysis:** Share vs. Mix Logic (Automated decomposition of variance).
+*   **"Dual Signal" Calibration:** Overlay view comparing Transaction Data trend (Leading Indicator) against Supplier-Reported Sales trend.
+*   **Interactive Dashboard Views:** Trend Analysis (Rolling 12), Geographic Drill-down (3-Digit Zip), Competitive View (Category/Manufacturer).
+
+### 2.2. Optional Add-On 1: Non-Acute Market Expansion
+*Objective: Extend visibility beyond the hospital into Imaging Centers, Surgery Centers (ASCs), and Clinics.*
+*   **Data Strategy:** Blends Manufacturer-Reported Sales Tracings.
+*   **Limitations:** ~2-4 month reporting lag. Competitive views restricted to "GE vs. Rest of Market."
+
+### 2.3. Optional Add-On 2: Deep Dive: Capital Cycle Timing Analysis (PO vs. Invoice)
+*Objective: Conduct a focused study on the specific timing intervals between Purchase Order and Invoice.*
+*   **Methodology:** Isolate "Pure PO" and "Pure Invoice" data streams from a sub-sample of members. Analyze timing lag for Major Capital categories.  
+*   **Deliverable:** Static analysis and comparative trend lines.
+```
+
+**Task:**
+Estimate the Fair Market Value (Fixed Fee) for these options.
+Consider:
+1.  **Pilot Pricing Strategy:** We want them to buy Option A (Core) quickly. It should feel like a "No Brainer" to get started.
+2.  **Add-on Pricing:** Option B (Non-Acute) is moderate effort. Option C (PO/Invoice Study) is high effort and niche value—we want to price this primarily to deter them from picking it unless they *really* need it (or to make Option A look like a bargain).
+3.  **Market Rates:** For custom analytics dashboards in the US Healthcare Enterprise space.
+
+**Output:**
+Provide a pricing recommendation in the format:
+*   **Option A Range:** $X - $Y
+*   **Option B Range:** +$X - $Y
+*   **Option C Range:** +$X - $Y
+*   **Rationale:** Brief explanation for each price point.

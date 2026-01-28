@@ -1,0 +1,14 @@
+config {
+  type: "assertion",
+  schema: "ge_sample_assertions",
+  description: "Validate that mart_example has no NULL product names",
+  tags: ["assertion", "example"]
+}
+
+-- Example assertion
+-- Replace with actual data quality checks for your forecasting data
+
+SELECT
+  *
+FROM ${ref("mart_example")}
+WHERE product_name_clean IS NULL

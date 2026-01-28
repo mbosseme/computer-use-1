@@ -1,0 +1,30 @@
+{
+  "run_id": "20260128T183424Z",
+  "generated_at": "2026-01-28T22:13:02.690367+00:00",
+  "inputs": {
+    "supplier_table": "`abi-inbound-prod.abi_inbound_bq_stg_purchasing_supplier_sales.supplier_spend`",
+    "provider_table": "`abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded`",
+    "start_date": "2023-10-01",
+    "end_date": "2025-09-30",
+    "capital_price_threshold": 25000
+  },
+  "artifacts": {
+    "supplier_quarterly_csv": "q4_supplier_quarterly.csv",
+    "provider_quarterly_csv": "q4_provider_quarterly.csv",
+    "overlay_indexed_csv": "q4_quarterly_overlay_indexed.csv",
+    "provider_monthly_transition_csv": "q4_provider_monthly_transition.csv",
+    "provider_system_variability_csv": "q4_provider_system_variability.csv",
+    "timing_summary_md": "q4_timing_summary.md",
+    "charts": [
+      "visuals/q4_supplier_quarterly_trend.png",
+      "visuals/q4_provider_quarterly_trend.png",
+      "visuals/q4_quarterly_overlay_indexed.png",
+      "visuals/q4_provider_monthly_transition.png"
+    ]
+  },
+  "notes": [
+    "Provider timing uses Transaction_Date; not revenue timing.",
+    "No PO vs invoice separation is attempted.",
+    "System variability is reported by Health_System_Entity_Code only (no names)."
+  ]
+}

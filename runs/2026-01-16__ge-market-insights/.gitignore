@@ -1,0 +1,20 @@
+# Playwright profile (browser state, cache)
+playwright-profile/
+
+# Large binary snapshots (images, PDFs)
+ge-pipeline/snapshots/*/slide_images*/
+ge-pipeline/snapshots/*/*.pdf
+ge-pipeline/snapshots/*/*.pptx
+ge-pipeline/snapshots/*/*.png
+
+# Inputs and exports (large data files)
+inputs/
+exports/
+downloads/
+
+# Temp files
+tmp/
+*.pyc
+__pycache__/
+.DS_Store
+.df-credentials.json

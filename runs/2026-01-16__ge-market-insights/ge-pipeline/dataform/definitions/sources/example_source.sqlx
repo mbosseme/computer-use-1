@@ -1,0 +1,12 @@
+// Example source declaration
+// Declares an external table that exists in BigQuery but is managed outside Dataform
+//
+// Usage: Reference in other definitions with ${ref("example_raw_data")}
+
+config {
+  type: "declaration",
+  database: "matthew-bossemeyer",
+  schema: "raw_data",
+  name: "example_raw_data",
+  description: "Example external data source. Replace with actual source table reference."
+}

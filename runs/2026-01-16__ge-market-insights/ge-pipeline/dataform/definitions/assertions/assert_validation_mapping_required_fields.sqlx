@@ -1,0 +1,15 @@
+config {
+  type: "assertion",
+  schema: "ge_sample_assertions",
+  tags: ["assertion", "ge_capital"],
+  description: "Validation mapping mart should never surface NULL manufacturer/category fields"
+}
+
+SELECT
+  *
+FROM ${ref("mart_validation_mapping")}
+WHERE
+  report_category IS NULL
+  OR manufacturer_normalized IS NULL
+  OR manufacturer_catalog_number IS NULL
+  OR Product_Description IS NULL
