@@ -93,7 +93,57 @@ LAYOUT_MAP = {
 }
 ```
 
-### 3.3 Normalized Positioning
+### 3.3 Clear Placeholder Shapes (Avoid Layout Collisions)
+
+When adding custom content to a slide, template placeholders (subtitle, body, etc.) can create visual collisions. Clear them before adding custom shapes:
+
+```python
+def clear_placeholder_shapes(slide, keep_title: bool = True):
+    """Remove placeholder shapes that would conflict with custom content.
+    
+    This is CRITICAL when adding tables, charts, or textboxes to slides
+    with pre-existing placeholder text like 'Click to add subtitle'.
+    """
+    # Find subtitle if present (to preserve if needed)
+    subtitle = None
+    for shape in slide.placeholders:
+        if shape.name.lower().find("subtitle") >= 0:
+            subtitle = shape
+            break
+
+    for shape in list(slide.shapes):
+        if not shape.is_placeholder:
+            continue
+        # Always keep the title
+        if keep_title and shape == slide.shapes.title:
+            continue
+        # Optionally keep subtitle
+        if subtitle is not None and shape == subtitle:
+            continue
+        # Clear text first (if present)
+        if shape.has_text_frame:
+            try:
+                shape.text_frame.clear()
+            except Exception:
+                pass
+        # Remove from XML
+        try:
+            shape.element.getparent().remove(shape.element)
+        except Exception:
+            # Fallback: move off-slide if XML removal fails
+            try:
+                from pptx.util import Inches
+                shape.left = Inches(20)  # Push off visible area
+            except Exception:
+                pass
+```
+
+**When to use:**
+- Adding custom textboxes or tables that overlap with body placeholder area
+- Chart-only slides where body text would conflict
+- Two-column layouts where placeholder doesn't match your design
+
+### 3.4 Normalized Positioning
 
 Use normalized (0-1) coordinates for consistent placement across slide sizes:
 
@@ -297,6 +347,8 @@ def build_deck(snapshot_dir: Path, template_path: Path, output_path: Path):
 | Charts look pixelated | Low DPI export | Use `dpi=300` in `plt.savefig()` |
 | Slides appear blank | Shapes added at wrong position | Use normalized positioning with slide dimensions |
 | PDF export fails | LibreOffice not installed or hung process | Install soffice; use `--headless` flag |
+| Template placeholder text shows behind custom content | Layout placeholders not cleared | Use `clear_placeholder_shapes(slide)` before adding custom content (§3.3) |
+| `NameError: name 'subtitle' is not defined` | Forgot to find subtitle placeholder before clearing loop | Initialize `subtitle = None`, then search `slide.placeholders` before the clearing loop |
 
 ## 9. Reference Implementation
 
