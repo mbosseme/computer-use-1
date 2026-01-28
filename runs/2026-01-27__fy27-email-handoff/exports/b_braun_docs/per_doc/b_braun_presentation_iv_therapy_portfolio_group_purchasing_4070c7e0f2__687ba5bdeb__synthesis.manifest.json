@@ -1,0 +1,19 @@
+{
+  "source_path": "/Users/matt_bossemeyer/Projects/wt-2026-01-15__b-braun-pdf-synthesis/runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/b_braun_presentation_iv_therapy_portfolio_group_purchasing__4070c7e0f2.pdf",
+  "generated_on": "2026-01-27",
+  "extraction": {
+    "pages_total": 21,
+    "pages_with_text": 21,
+    "pages_with_error": 0,
+    "total_extracted_chars": 11161
+  },
+  "chunking": {
+    "chunks": 1,
+    "target_chunk_chars": 30000,
+    "max_chunk_chars": 45000,
+    "overlap_pages": 1,
+    "max_chunks": null,
+    "page_timeout_s": 15
+  },
+  "warnings": []
+}

@@ -1,0 +1,24 @@
+{
+  "source_path": "/Users/matt_bossemeyer/Projects/wt-2026-01-15__b-braun-pdf-synthesis/runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/b_braun_follow_up__33ca1c3074.pdf",
+  "generated_on": "2026-01-27",
+  "extraction": {
+    "pages_total": 9,
+    "pages_with_text": 9,
+    "pages_with_error": 0,
+    "total_extracted_chars": 138024
+  },
+  "chunking": {
+    "chunks": 1,
+    "target_chunk_chars": 30000,
+    "max_chunk_chars": 45000,
+    "overlap_pages": 1,
+    "max_chunks": null,
+    "page_timeout_s": 15
+  },
+  "warnings": [
+    {
+      "code": "PDF_REDUNDANCY_DEDUPED",
+      "message": "Detected repeated page extraction; de-duplicated 8 pages using a conservative fingerprint (head+tail). This typically indicates the PDF text layer is duplicated across pages by the extractor. Dropped pages: [2, 3, 4, 5, 6, 7, 8, 9]."
+    }
+  ]
+}

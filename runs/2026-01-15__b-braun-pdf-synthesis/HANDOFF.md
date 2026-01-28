@@ -1,9 +1,12 @@
 # Run Handoff Journal — 2026-01-15__b-braun-pdf-synthesis
 
-## Run Status: COMPLETE (pending user action)
+## Run Status: ACTIVE — Sample Data Cut Complete, Awaiting Delivery
+
+## Latest Work (2026-01-27)
+**CAPS/503B Validation Slice Sample Data Cut** — integrated provider ERP + wholesaler tracing data for 71 NDCs from Jen's list. See detailed section below for query structure, join key validation, coverage findings, and artifacts.
 
 ## Summary
-This run synthesized 16 B. Braun documents (PDFs/EMLs) into actionable business intelligence and drafted a follow-up email for client engagement.
+This run synthesized 16 B. Braun documents (PDFs/EMLs) into actionable business intelligence, drafted follow-up emails, and produced a CAPS/503B category validation slice sample data cut integrating two data feeds.
 
 ### What was accomplished
 1. **Document Synthesis Pipeline**
@@ -59,15 +62,18 @@ Matt Bossemeyer
 ```
 
 ## Pending User Actions
-- [ ] Send the follow-up email to Tracy/Jen (user approved draft above)
-- [ ] Await B. Braun response with SKU list for CAPS validation
-- [ ] Prepare Data Dictionary template (if B. Braun requests it)
+- [ ] **Deliver sample data cut to Jen** — artifacts ready in `exports/caps_503b_validation_slice__*`
+- [ ] Optionally export integrated comparison to JSONL if flat-file deliverable needed
+- [ ] Prepare Data Dictionary if Jen requests column definitions
+- [ ] Send the follow-up email to Tracy/Jen (user approved draft in earlier session)
+- [ ] Await B. Braun response on next steps
 
 ## Next Session Continuity
 If resuming this run:
-1. Check if B. Braun responded with SKU list
-2. If yes, run a validation sample using the extraction pipeline
-3. Consider preparing a "Portfolio Gap Heatmap" mockup
+1. Check if Jen/Tracy responded to the sample data cut
+2. If they request JSONL export, run integrated comparison query and save to `exports/*.jsonl`
+3. If they request Data Dictionary, create column definitions doc
+4. Consider preparing a "Portfolio Gap Heatmap" mockup if engagement advances
 
 ## Blockers
 - None.
@@ -159,5 +165,139 @@ If resuming this run:
 ### Repro (core: create an Outlook draft from a Markdown file)
 - Run from repo root (after configuring Graph env):
    - `python -m agent_tools.graph.create_draft_from_md --md <path/to/draft.md> --resolve-to-name "First Last"`
+
+---
+
+## 2026-01-27 — CAPS/503B Category Validation Slice Sample Data Cut
+
+### Summary
+Produced the sample data cut Jen requested for validating CAPS/compounding 503B category coverage. This integrates **two distinct data feeds**:
+- **Provider ERP purchasing** (Transaction Analysis Expanded) — hospital purchasing transactions
+- **Wholesaler Tracing** (Report Builder) — wholesaler distribution/sales data
+
+The goal is to cross-reference facility-month-NDC aggregates from both feeds to identify coverage alignment and gaps.
+
+### NDC Cohort
+- **71 NDCs** extracted from Jen's PDF ("Re: Confirmed-BBraun MI Demo - virtual.pdf")
+- Normalized to 11-digit digits-only format (stripped hyphens/dashes)
+- Stored at: `runs/2026-01-27__fy27-email-handoff/tmp/re_confirmed_bbraun_mi_demo_virtual__39e24a0260__ndcs_11.txt`
+- Manufacturers: **Fresenius Kabi** (65219* prefix) and **Hikma/APP** (63323* prefix)
+
+### Data Model Integration Approach
+
+#### Tables Used
+| Feed | Table | Row Count | Key Columns |
+|------|-------|-----------|-------------|
+| Provider ERP | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded` | ~839M rows, ~2.41TB | `Transaction_Date`, `Premier_Entity_Code`, `Ndc`, `Landed_Spend`, `Base_Spend`, `Quantity`, `Health_System_Name`, `Contract_Category` |
+| Wholesaler | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_rx_wholesaler_sales.report_builder` | ~690M rows | `month_year` (TIMESTAMP), `facility_id`, `ndc`, `total_spend`, `total_units`, `wholesaler`, `supplier`, `premier_award_status` |
+
+#### Join Key (Empirically Validated)
+- **Correct join**: `Premier_Entity_Code` (provider) → `facility_id` (wholesaler)
+- Validation query showed: 117 of 2,180 wholesaler facility_ids matched via `Premier_Entity_Code`; **0 matched via `Facility_Code`**
+- Note: Provider table has both `Facility_Code` (sometimes = "Aggregated Above Facility Level") and `Premier_Entity_Code`; only the latter is valid for cross-feed joins
+
+#### Timeframe & Filters
+- **Date range**: 24 months (2024-01-01 to 2026-01-01)
+- **Provider exclusions**: `NOT REGEXP_CONTAINS(UPPER(Health_System_Name), r'(\bTEST\b|\bDEMO\b|PREMIER)')`
+- **Wholesaler exclusions**: `facility_id != '00'`
+- **NDC normalization**: `REGEXP_REPLACE(CAST(ndc AS STRING), r'[^0-9]', '')`
+
+### Key Findings
+
+#### Coverage Distribution
+| Coverage Type | Description | Prevalence |
+|---------------|-------------|------------|
+| **PROVIDER_ONLY** | Facility has ERP purchasing data but no wholesaler tracing | **Dominant** |
+| **WHOLESALER_ONLY** | Facility has wholesaler tracing but no ERP purchasing data | Moderate |
+| **BOTH** | Cross-feed overlap on (facility, month, NDC) | **Rare** |
+
+#### Top Health Systems by Feed
+- **Provider ERP (PROVIDER_ONLY)**: ECU Health, Baptist Health South Florida, UPMC Health System, Summa Health, Methodist Health System, Baptist Healthcare System
+- **Wholesaler Tracing (WHOLESALER_ONLY)**: Northwestern Memorial Healthcare, Conductiv, St Luke's University Health Network, CommonSpirit Health
+- **Cross-Feed Overlap (BOTH)**: Texas Health Resources, H. Lee Moffitt Cancer Center, TidalHealth Inc, Acurity (fka GNYHA)
+
+#### Spend Alignment (Where BOTH Exist)
+- **Perfect match examples**: TX0226 (Texas Health Resources) → $4,069.15 provider = $4,069.15 wholesaler (delta = $0)
+- **Large divergence examples**: 714817 (ECU Health) → $228,750 provider vs $1,647 wholesaler (delta = $227K+)
+
+### Artifacts Created
+
+| File | Purpose |
+|------|---------|
+| `exports/caps_503b_validation_slice__integrated_comparison.sql` | FULL OUTER JOIN query: provider ↔ wholesaler on (facility_id, month_year, ndc11) with coverage flags and spend delta |
+| `exports/caps_503b_validation_slice__provider_sample.sql` | Provider-only aggregate query (500-row sample) |
+| `exports/caps_503b_validation_slice__wholesaler_sample.sql` | Wholesaler-only aggregate query (500-row sample) |
+| `exports/caps_503b_validation_slice__summary.md` | Human-readable summary with key findings |
+
+### Sample Query Structure (Integrated Comparison)
+
+```sql
+WITH ndc_cohort AS (SELECT ndc11 FROM UNNEST([...71 NDCs...]) AS ndc11),
+
+provider_agg AS (
+  SELECT
+    Premier_Entity_Code AS facility_id,
+    FORMAT_TIMESTAMP('%Y-%m-01', Transaction_Date) AS month_year,
+    REGEXP_REPLACE(CAST(Ndc AS STRING), r'[^0-9]', '') AS ndc11,
+    SUM(Landed_Spend) AS provider_landed_spend,
+    SUM(Quantity) AS provider_qty
+  FROM transaction_analysis_expanded
+  WHERE Transaction_Date >= '2024-01-01' AND Transaction_Date < '2026-01-01'
+    AND ndc11 IN (SELECT ndc11 FROM ndc_cohort)
+  GROUP BY 1, 2, 3
+),
+
+wholesaler_agg AS (
+  SELECT
+    facility_id,
+    FORMAT_TIMESTAMP('%Y-%m-01', month_year) AS month_year,
+    REGEXP_REPLACE(CAST(ndc AS STRING), r'[^0-9]', '') AS ndc11,
+    SUM(total_spend) AS wholesaler_total_spend,
+    SUM(total_units) AS wholesaler_total_units
+  FROM report_builder
+  WHERE month_year >= '2024-01-01' AND month_year < '2026-01-01'
+    AND ndc11 IN (SELECT ndc11 FROM ndc_cohort)
+  GROUP BY 1, 2, 3
+)
+
+SELECT
+  COALESCE(p.facility_id, w.facility_id) AS facility_id,
+  COALESCE(p.month_year, w.month_year) AS month_year,
+  COALESCE(p.ndc11, w.ndc11) AS ndc11,
+  p.provider_landed_spend,
+  w.wholesaler_total_spend,
+  CASE WHEN p.facility_id IS NOT NULL AND w.facility_id IS NOT NULL THEN 'BOTH'
+       WHEN p.facility_id IS NOT NULL THEN 'PROVIDER_ONLY'
+       ELSE 'WHOLESALER_ONLY'
+  END AS data_source_coverage,
+  p.provider_landed_spend - w.wholesaler_total_spend AS spend_delta
+FROM provider_agg p
+FULL OUTER JOIN wholesaler_agg w
+  ON p.facility_id = w.facility_id
+  AND p.month_year = w.month_year
+  AND p.ndc11 = w.ndc11;
+```
+
+### Next Steps for Continuation
+
+1. **Export to JSONL**: If Jen needs a flat-file deliverable, run the integrated comparison query and export results to JSONL
+2. **Add Data Dictionary**: Prepare column definitions for the output fields
+3. **NDC Category Enrichment**: Map NDCs to product descriptions (currently just raw 11-digit codes)
+4. **Investigate Sparse Overlap**: Why do high-spend provider facilities (ECU, Baptist South Florida) have minimal wholesaler coverage?
+5. **Temporal Trend Charts**: Visualize month-over-month spend patterns if requested
+
+### Repro
+
+To re-run the integrated comparison query:
+1. Open BigQuery console or use MCP BigQuery tool
+2. Execute `exports/caps_503b_validation_slice__integrated_comparison.sql`
+3. Results show coverage flags + spend deltas for all facility-month-NDC combinations
+
+### Notes for Next Agent
+
+- The **join key validation was critical** — do not assume `Facility_Code` works; only `Premier_Entity_Code` aligns with wholesaler `facility_id`
+- Provider table is **partitioned by `Transaction_Date`** — always filter on this column first for performance
+- Wholesaler table is **clustered by `wholesaler_purchase_type`** — useful for purchase type breakdowns but not required for this query
+- NDC normalization is essential — both tables store NDCs differently (some with hyphens, some without)
 
 

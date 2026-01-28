@@ -1,0 +1,91 @@
+{
+  "source_root": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun",
+  "out_dir": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun__source_flat",
+  "files": [
+    {
+      "rel_path": "81222 Call With B. Braun.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/81222 Call With B. Braun.pdf",
+      "dst_name": "81222_call_with_b_braun__bc2c3dec0e.pdf"
+    },
+    {
+      "rel_path": "84 Interview With B. Braun.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/84 Interview With B. Braun.pdf",
+      "dst_name": "84_interview_with_b_braun__ca8c7c7c73.pdf"
+    },
+    {
+      "rel_path": "B Braun Follow Up.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/B Braun Follow Up.pdf",
+      "dst_name": "b_braun_follow_up__33ca1c3074.pdf"
+    },
+    {
+      "rel_path": "B Braun Legacy Notes.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/B Braun Legacy Notes.pdf",
+      "dst_name": "b_braun_legacy_notes__4773299dd8.pdf"
+    },
+    {
+      "rel_path": "B Braun Presentation_IV Therapy Portfolio_Group Purchasing.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/B Braun Presentation_IV Therapy Portfolio_Group Purchasing.pdf",
+      "dst_name": "b_braun_presentation_iv_therapy_portfolio_group_purchasing__4070c7e0f2.pdf"
+    },
+    {
+      "rel_path": "B. Braun Demo 51523.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/B. Braun Demo 51523.pdf",
+      "dst_name": "b_braun_demo_51523__b335202a06.pdf"
+    },
+    {
+      "rel_path": "BBraun Market Insights Meeting in CLT.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/BBraun Market Insights Meeting in CLT.pdf",
+      "dst_name": "bbraun_market_insights_meeting_in_clt__aa5ebb0da4.pdf"
+    },
+    {
+      "rel_path": "BbraunPremier Market Insights -virtual.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/BbraunPremier Market Insights -virtual.pdf",
+      "dst_name": "bbraunpremier_market_insights_virtual__1a46189bde.pdf"
+    },
+    {
+      "rel_path": "Confirmed-BBraun MI Demo - virtual.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/Confirmed-BBraun MI Demo - virtual.pdf",
+      "dst_name": "confirmed_bbraun_mi_demo_virtual__b71fbc44e4.pdf"
+    },
+    {
+      "rel_path": "Fw Following up.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/Fw Following up.pdf",
+      "dst_name": "fw_following_up__c36565e91e.pdf"
+    },
+    {
+      "rel_path": "Market Insights - B Braun - Jan 2026.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/Market Insights - B Braun - Jan 2026.pdf",
+      "dst_name": "market_insights_b_braun_jan_2026__ce54388490.pdf"
+    },
+    {
+      "rel_path": "Market Insights - B Braun - Nov 2025.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/Market Insights - B Braun - Nov 2025.pdf",
+      "dst_name": "market_insights_b_braun_nov_2025__68252122c7.pdf"
+    },
+    {
+      "rel_path": "Premier Market Insights \u2014 Compliance Measurement & Monitoring Support for Suppliers.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/Premier Market Insights \u2014 Compliance Measurement & Monitoring Support for Suppliers.pdf",
+      "dst_name": "premier_market_insights_compliance_measurement_monitoring_support_for_suppliers__aabfe87cd1.pdf"
+    },
+    {
+      "rel_path": "Prep for Market Insights Pitch to B. Braun.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/Prep for Market Insights Pitch to B. Braun.pdf",
+      "dst_name": "prep_for_market_insights_pitch_to_b_braun__a0b76d6fdc.pdf"
+    },
+    {
+      "rel_path": "RE: BBRAUN - market insights meeting in November.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/RE: BBRAUN - market insights meeting in November.pdf",
+      "dst_name": "re_bbraun_market_insights_meeting_in_november__aabdac9dda.pdf"
+    },
+    {
+      "rel_path": "Re: Confirmed-BBraun MI Demo - virtual .pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/Re: Confirmed-BBraun MI Demo - virtual .pdf",
+      "dst_name": "re_confirmed_bbraun_mi_demo_virtual__39e24a0260.pdf"
+    },
+    {
+      "rel_path": "Re: Prep for Market Insights Pitch to B. Braun.pdf",
+      "src_path": "/Users/matt_bossemeyer/Library/CloudStorage/OneDrive-Premier,Inc/Notebook LM Documents/Digital Supply Chain/Market Insights/B Braun/Re: Prep for Market Insights Pitch to B. Braun.pdf",
+      "dst_name": "re_prep_for_market_insights_pitch_to_b_braun__8bae682715.pdf"
+    }
+  ]
+}
