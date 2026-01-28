@@ -1,0 +1,273 @@
+{
+  "generated_on": "2026-01-27T08:13:22",
+  "source_dir": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun__source_flat",
+  "staging_dir": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging",
+  "per_doc_dir": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc",
+  "tmp_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks",
+  "model": "azure-gpt-5.2",
+  "detect_mode": "mtime-size",
+  "stats": {
+    "files_seen": 17,
+    "changed": 0,
+    "synthesized": 0,
+    "removed": 0
+  },
+  "removed": [],
+  "entries": {
+    "81222_call_with_b_braun__bc2c3dec0e.pdf": {
+      "source": {
+        "rel_path": "81222_call_with_b_braun__bc2c3dec0e.pdf",
+        "size": 67372,
+        "mtime_ns": 1762171591068617567,
+        "content_hash_sha256": null
+      },
+      "source_name": "81222_call_with_b_braun__bc2c3dec0e.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/81222_call_with_b_braun__bc2c3dec0e.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/81222_call_with_b_braun_bc2c3dec0e__a13bf799cd__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/81222_call_with_b_braun_bc2c3dec0e__a13bf799cd__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/81222_call_with_b_braun_bc2c3dec0e__a13bf799cd__chunks",
+      "last_synthesized_on": "2026-01-27T07:47:31"
+    },
+    "84_interview_with_b_braun__ca8c7c7c73.pdf": {
+      "source": {
+        "rel_path": "84_interview_with_b_braun__ca8c7c7c73.pdf",
+        "size": 82791,
+        "mtime_ns": 1762171584618203691,
+        "content_hash_sha256": null
+      },
+      "source_name": "84_interview_with_b_braun__ca8c7c7c73.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/84_interview_with_b_braun__ca8c7c7c73.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/84_interview_with_b_braun_ca8c7c7c73__cbbf6525dc__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/84_interview_with_b_braun_ca8c7c7c73__cbbf6525dc__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/84_interview_with_b_braun_ca8c7c7c73__cbbf6525dc__chunks",
+      "last_synthesized_on": "2026-01-27T07:48:29"
+    },
+    "b_braun_demo_51523__b335202a06.pdf": {
+      "source": {
+        "rel_path": "b_braun_demo_51523__b335202a06.pdf",
+        "size": 56970,
+        "mtime_ns": 1762171598949121680,
+        "content_hash_sha256": null
+      },
+      "source_name": "b_braun_demo_51523__b335202a06.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/b_braun_demo_51523__b335202a06.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/b_braun_demo_51523_b335202a06__bb83b8d99b__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/b_braun_demo_51523_b335202a06__bb83b8d99b__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/b_braun_demo_51523_b335202a06__bb83b8d99b__chunks",
+      "last_synthesized_on": "2026-01-27T07:49:03"
+    },
+    "b_braun_follow_up__33ca1c3074.pdf": {
+      "source": {
+        "rel_path": "b_braun_follow_up__33ca1c3074.pdf",
+        "size": 640014,
+        "mtime_ns": 1767630152612237907,
+        "content_hash_sha256": null
+      },
+      "source_name": "b_braun_follow_up__33ca1c3074.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/b_braun_follow_up__33ca1c3074.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/b_braun_follow_up_33ca1c3074__3356946c39__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/b_braun_follow_up_33ca1c3074__3356946c39__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/b_braun_follow_up_33ca1c3074__3356946c39__chunks",
+      "last_synthesized_on": "2026-01-27T07:50:18"
+    },
+    "b_braun_legacy_notes__4773299dd8.pdf": {
+      "source": {
+        "rel_path": "b_braun_legacy_notes__4773299dd8.pdf",
+        "size": 50869,
+        "mtime_ns": 1762171605154804529,
+        "content_hash_sha256": null
+      },
+      "source_name": "b_braun_legacy_notes__4773299dd8.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/b_braun_legacy_notes__4773299dd8.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/b_braun_legacy_notes_4773299dd8__a62d6e01cc__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/b_braun_legacy_notes_4773299dd8__a62d6e01cc__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/b_braun_legacy_notes_4773299dd8__a62d6e01cc__chunks",
+      "last_synthesized_on": "2026-01-27T07:51:05"
+    },
+    "b_braun_presentation_iv_therapy_portfolio_group_purchasing__4070c7e0f2.pdf": {
+      "source": {
+        "rel_path": "b_braun_presentation_iv_therapy_portfolio_group_purchasing__4070c7e0f2.pdf",
+        "size": 2689285,
+        "mtime_ns": 1762172209010102661,
+        "content_hash_sha256": null
+      },
+      "source_name": "b_braun_presentation_iv_therapy_portfolio_group_purchasing__4070c7e0f2.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/b_braun_presentation_iv_therapy_portfolio_group_purchasing__4070c7e0f2.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/b_braun_presentation_iv_therapy_portfolio_group_purchasing_4070c7e0f2__687ba5bdeb__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/b_braun_presentation_iv_therapy_portfolio_group_purchasing_4070c7e0f2__687ba5bdeb__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/b_braun_presentation_iv_therapy_portfolio_group_purchasing_4070c7e0f2__687ba5bdeb__chunks",
+      "last_synthesized_on": "2026-01-27T07:51:52"
+    },
+    "bbraun_market_insights_meeting_in_clt__aa5ebb0da4.pdf": {
+      "source": {
+        "rel_path": "bbraun_market_insights_meeting_in_clt__aa5ebb0da4.pdf",
+        "size": 250487,
+        "mtime_ns": 1764771319046855185,
+        "content_hash_sha256": null
+      },
+      "source_name": "bbraun_market_insights_meeting_in_clt__aa5ebb0da4.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/bbraun_market_insights_meeting_in_clt__aa5ebb0da4.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/bbraun_market_insights_meeting_in_clt_aa5ebb0da4__0d64f6b051__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/bbraun_market_insights_meeting_in_clt_aa5ebb0da4__0d64f6b051__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/bbraun_market_insights_meeting_in_clt_aa5ebb0da4__0d64f6b051__chunks",
+      "last_synthesized_on": "2026-01-27T07:54:14"
+    },
+    "bbraunpremier_market_insights_virtual__1a46189bde.pdf": {
+      "source": {
+        "rel_path": "bbraunpremier_market_insights_virtual__1a46189bde.pdf",
+        "size": 4010383,
+        "mtime_ns": 1767630827098860738,
+        "content_hash_sha256": null
+      },
+      "source_name": "bbraunpremier_market_insights_virtual__1a46189bde.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/bbraunpremier_market_insights_virtual__1a46189bde.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/bbraunpremier_market_insights_virtual_1a46189bde__c6d34f875f__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/bbraunpremier_market_insights_virtual_1a46189bde__c6d34f875f__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/bbraunpremier_market_insights_virtual_1a46189bde__c6d34f875f__chunks",
+      "last_synthesized_on": "2026-01-27T07:57:40"
+    },
+    "confirmed_bbraun_mi_demo_virtual__b71fbc44e4.pdf": {
+      "source": {
+        "rel_path": "confirmed_bbraun_mi_demo_virtual__b71fbc44e4.pdf",
+        "size": 5784848,
+        "mtime_ns": 1768476032305367287,
+        "content_hash_sha256": null
+      },
+      "source_name": "confirmed_bbraun_mi_demo_virtual__b71fbc44e4.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/confirmed_bbraun_mi_demo_virtual__b71fbc44e4.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/confirmed_bbraun_mi_demo_virtual_b71fbc44e4__907adbda08__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/confirmed_bbraun_mi_demo_virtual_b71fbc44e4__907adbda08__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/confirmed_bbraun_mi_demo_virtual_b71fbc44e4__907adbda08__chunks",
+      "last_synthesized_on": "2026-01-27T08:00:43"
+    },
+    "fw_following_up__c36565e91e.pdf": {
+      "source": {
+        "rel_path": "fw_following_up__c36565e91e.pdf",
+        "size": 79523,
+        "mtime_ns": 1768476377346597075,
+        "content_hash_sha256": null
+      },
+      "source_name": "fw_following_up__c36565e91e.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/fw_following_up__c36565e91e.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/fw_following_up_c36565e91e__bb1b94f272__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/fw_following_up_c36565e91e__bb1b94f272__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/fw_following_up_c36565e91e__bb1b94f272__chunks",
+      "last_synthesized_on": "2026-01-27T08:01:38"
+    },
+    "market_insights_b_braun_jan_2026__ce54388490.pdf": {
+      "source": {
+        "rel_path": "market_insights_b_braun_jan_2026__ce54388490.pdf",
+        "size": 1946715,
+        "mtime_ns": 1768478489755832862,
+        "content_hash_sha256": null
+      },
+      "source_name": "market_insights_b_braun_jan_2026__ce54388490.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/market_insights_b_braun_jan_2026__ce54388490.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/market_insights_b_braun_jan_2026_ce54388490__ae08fed5ef__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/market_insights_b_braun_jan_2026_ce54388490__ae08fed5ef__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/market_insights_b_braun_jan_2026_ce54388490__ae08fed5ef__chunks",
+      "last_synthesized_on": "2026-01-27T08:02:51"
+    },
+    "market_insights_b_braun_nov_2025__68252122c7.pdf": {
+      "source": {
+        "rel_path": "market_insights_b_braun_nov_2025__68252122c7.pdf",
+        "size": 1868520,
+        "mtime_ns": 1767630247798587988,
+        "content_hash_sha256": null
+      },
+      "source_name": "market_insights_b_braun_nov_2025__68252122c7.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/market_insights_b_braun_nov_2025__68252122c7.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/market_insights_b_braun_nov_2025_68252122c7__4b65e4778d__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/market_insights_b_braun_nov_2025_68252122c7__4b65e4778d__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/market_insights_b_braun_nov_2025_68252122c7__4b65e4778d__chunks",
+      "last_synthesized_on": "2026-01-27T08:04:22"
+    },
+    "premier_market_insights_compliance_measurement_monitoring_support_for_suppliers__aabfe87cd1.pdf": {
+      "source": {
+        "rel_path": "premier_market_insights_compliance_measurement_monitoring_support_for_suppliers__aabfe87cd1.pdf",
+        "size": 114251,
+        "mtime_ns": 1764072177998668440,
+        "content_hash_sha256": null
+      },
+      "source_name": "premier_market_insights_compliance_measurement_monitoring_support_for_suppliers__aabfe87cd1.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/premier_market_insights_compliance_measurement_monitoring_support_for_suppliers__aabfe87cd1.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/premier_market_insights_compliance_measurement_monitoring_support_for_suppliers_aabfe87cd1__cfc307e41f__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/premier_market_insights_compliance_measurement_monitoring_support_for_suppliers_aabfe87cd1__cfc307e41f__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/premier_market_insights_compliance_measurement_monitoring_support_for_suppliers_aabfe87cd1__cfc307e41f__chunks",
+      "last_synthesized_on": "2026-01-27T08:05:17"
+    },
+    "prep_for_market_insights_pitch_to_b_braun__a0b76d6fdc.pdf": {
+      "source": {
+        "rel_path": "prep_for_market_insights_pitch_to_b_braun__a0b76d6fdc.pdf",
+        "size": 252897,
+        "mtime_ns": 1762171527102678621,
+        "content_hash_sha256": null
+      },
+      "source_name": "prep_for_market_insights_pitch_to_b_braun__a0b76d6fdc.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/prep_for_market_insights_pitch_to_b_braun__a0b76d6fdc.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/prep_for_market_insights_pitch_to_b_braun_a0b76d6fdc__a9e862a0cd__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/prep_for_market_insights_pitch_to_b_braun_a0b76d6fdc__a9e862a0cd__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/prep_for_market_insights_pitch_to_b_braun_a0b76d6fdc__a9e862a0cd__chunks",
+      "last_synthesized_on": "2026-01-27T08:06:03"
+    },
+    "re_bbraun_market_insights_meeting_in_november__aabdac9dda.pdf": {
+      "source": {
+        "rel_path": "re_bbraun_market_insights_meeting_in_november__aabdac9dda.pdf",
+        "size": 103269,
+        "mtime_ns": 1762172967808108325,
+        "content_hash_sha256": null
+      },
+      "source_name": "re_bbraun_market_insights_meeting_in_november__aabdac9dda.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/re_bbraun_market_insights_meeting_in_november__aabdac9dda.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/re_bbraun_market_insights_meeting_in_november_aabdac9dda__1e1a188234__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/re_bbraun_market_insights_meeting_in_november_aabdac9dda__1e1a188234__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/re_bbraun_market_insights_meeting_in_november_aabdac9dda__1e1a188234__chunks",
+      "last_synthesized_on": "2026-01-27T08:07:08"
+    },
+    "re_confirmed_bbraun_mi_demo_virtual__39e24a0260.pdf": {
+      "source": {
+        "rel_path": "re_confirmed_bbraun_mi_demo_virtual__39e24a0260.pdf",
+        "size": 191624,
+        "mtime_ns": 1769517180679447587,
+        "content_hash_sha256": null
+      },
+      "source_name": "re_confirmed_bbraun_mi_demo_virtual__39e24a0260.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/re_confirmed_bbraun_mi_demo_virtual__39e24a0260.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/re_confirmed_bbraun_mi_demo_virtual_39e24a0260__a2ced03a4a__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/re_confirmed_bbraun_mi_demo_virtual_39e24a0260__a2ced03a4a__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/re_confirmed_bbraun_mi_demo_virtual_39e24a0260__a2ced03a4a__chunks",
+      "last_synthesized_on": "2026-01-27T08:08:50"
+    },
+    "re_prep_for_market_insights_pitch_to_b_braun__8bae682715.pdf": {
+      "source": {
+        "rel_path": "re_prep_for_market_insights_pitch_to_b_braun__8bae682715.pdf",
+        "size": 274806,
+        "mtime_ns": 1762171912587328710,
+        "content_hash_sha256": null
+      },
+      "source_name": "re_prep_for_market_insights_pitch_to_b_braun__8bae682715.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-01-27__fy27-email-handoff/inputs/b_braun_docs__staging/re_prep_for_market_insights_pitch_to_b_braun__8bae682715.pdf",
+      "per_doc_md": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/re_prep_for_market_insights_pitch_to_b_braun_8bae682715__897c0f71fa__synthesis.md",
+      "per_doc_manifest": "runs/2026-01-27__fy27-email-handoff/exports/b_braun_docs/per_doc/re_prep_for_market_insights_pitch_to_b_braun_8bae682715__897c0f71fa__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-01-27__fy27-email-handoff/tmp/b_braun_docs__chunks/re_prep_for_market_insights_pitch_to_b_braun_8bae682715__897c0f71fa__chunks",
+      "last_synthesized_on": "2026-01-27T08:09:53"
+    }
+  }
+}
