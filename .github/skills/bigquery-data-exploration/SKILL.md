@@ -206,12 +206,25 @@ dataform/
 
 **Run commands:**
 ```bash
-# Compile (validate syntax)
-npx @dataform/cli compile
+# IMPORTANT: Always use the local binary, NOT npx
+# npx can hang for 30+ minutes trying to download/resolve packages
+
+# Install dependencies first (one-time after clone/migration)
+cd dataform
+npm install
+
+# Compile (validate syntax) — should take < 1 second
+./node_modules/.bin/dataform compile
 
 # Run specific tags
-npx @dataform/cli run --tags your_tag
+./node_modules/.bin/dataform run --tags your_tag
 ```
+
+**Why avoid `npx @dataform/cli`:**
+- `npx` attempts to download the package from npm registry each time
+- Corporate proxies, npm authentication issues, or network latency can cause 30+ minute hangs
+- The local binary (`./node_modules/.bin/dataform`) bypasses this entirely
+- Expected compile time: **< 1 second**; if it takes > 10 seconds, something is wrong
 
 ## 7. Recovery Rules
 
@@ -221,6 +234,8 @@ npx @dataform/cli run --tags your_tag
 | `403 User does not have bigquery.jobs.create permission` | Job project mismatch | Ensure ADC has quota_project_id set to your project |
 | `Column not found` | Schema varies between feeds | Use schema discovery pattern; build queries dynamically |
 | Query returns no rows | Regex pattern too strict or field empty | Test patterns on sample rows first; check for nulls |
+| `npx @dataform/cli` hangs for 30+ minutes | npx downloading/resolving package | Use `./node_modules/.bin/dataform` instead; run `npm install` first |
+| `zsh: command not found: dataform` | Dataform CLI not in PATH | Use `./node_modules/.bin/dataform` (local binary) or run `npm install` in `dataform/` directory |
 
 ## 8. Reference Implementation
 
