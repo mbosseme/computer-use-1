@@ -144,3 +144,14 @@ This is not a per-session scratchpad:
   - Documented a three-tier dependency model (Base / Optional packs / Run-local).
   - Clarified a promotion model (core vs run-local) and batch-and-gate safety framing.
   - Confirmed: no sensitive internal deep links/session URLs/tokens were added; placeholders are used where applicable.
+
+## Entry
+- Date/time: 2026-01-28 08:53:38 EST
+- Goal: Add `product-entity-resolution` skill to capture the "Messy ID" matching workflow (Web Search -> Bridge Table -> Reference Num).
+- Files changed:
+  - `.github/skills/product-entity-resolution/SKILL.md` (New skill)
+  - `.github/skills/README.md` (Indexed new skill)
+- Decisions/notes:
+  - Generalized the specific Jen NDC mapping workflow into a reusable pattern for future agents.
+  - Defined the "Entity Resolution Ladder" (Exact -> Web Search -> Bridge Table -> Pattern).
+  - Included SQL templates for querying `transaction_analysis` as a "Rosetta Stone" for vendor IDs.
