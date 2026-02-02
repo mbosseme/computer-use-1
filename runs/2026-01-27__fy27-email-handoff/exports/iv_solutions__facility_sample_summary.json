@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-01-28T10:01:47.247112",
+  "run_id": "2026-01-27__fy27-email-handoff",
+  "raw_data": {
+    "tae_rows": 27679,
+    "rb_rows": 17322
+  },
+  "facility_counts": {
+    "total": 2771,
+    "both_sources": 689,
+    "tae_only": 637,
+    "rb_only": 1445
+  },
+  "spend_totals": {
+    "combined": 41557665.182000004,
+    "tae": 39524864.52199999,
+    "rb": 2032800.66
+  },
+  "unit_totals": {
+    "combined": 3500433.3349999995,
+    "tae": 3468538.3349999995,
+    "rb": 31895.0
+  },
+  "top_10_facilities": [
+    {
+      "blinded_facility_id": "FAC_0001",
+      "source_coverage": "TAE_ONLY",
+      "combined_spend": 2497317.18,
+      "combined_units": 73789.0
+    },
+    {
+      "blinded_facility_id": "FAC_0002",
+      "source_coverage": "TAE_ONLY",
+      "combined_spend": 1281401.47,
+      "combined_units": 30747.0
+    },
+    {
+      "blinded_facility_id": "FAC_0003",
+      "source_coverage": "BOTH",
+      "combined_spend": 867565.15,
+      "combined_units": 37710.0
+    },
+    {
+      "blinded_facility_id": "FAC_0004",
+      "source_coverage": "TAE_ONLY",
+      "combined_spend": 851058.47,
+      "combined_units": 46859.0
+    },
+    {
+      "blinded_facility_id": "FAC_0005",
+      "source_coverage": "TAE_ONLY",
+      "combined_spend": 793765.71,
+      "combined_units": 14199.0
+    },
+    {
+      "blinded_facility_id": "FAC_0006",
+      "source_coverage": "TAE_ONLY",
+      "combined_spend": 621267.75,
+      "combined_units": 16033.0
+    },
+    {
+      "blinded_facility_id": "FAC_0007",
+      "source_coverage": "TAE_ONLY",
+      "combined_spend": 572393.32,
+      "combined_units": 16570.0
+    },
+    {
+      "blinded_facility_id": "FAC_0008",
+      "source_coverage": "BOTH",
+      "combined_spend": 509200.9,
+      "combined_units": 15770.0
+    },
+    {
+      "blinded_facility_id": "FAC_0009",
+      "source_coverage": "TAE_ONLY",
+      "combined_spend": 503416.18,
+      "combined_units": 18481.0
+    },
+    {
+      "blinded_facility_id": "FAC_0010",
+      "source_coverage": "TAE_ONLY",
+      "combined_spend": 479437.8,
+      "combined_units": 16906.0
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+volume,solution_type,sku,description,ndc
+50 mL,0.45% Sodium Chloride,626050,"0.45% Sodium Chloride Injection, USP",63323-626-50
+100 mL,0.45% Sodium Chloride,626100,"0.45% Sodium Chloride Injection, USP",63323-626-00
+250 mL,0.45% Sodium Chloride,626250,"0.45% Sodium Chloride Injection, USP",63323-626-25
+500 mL,0.45% Sodium Chloride,626500,"0.45% Sodium Chloride Injection, USP",63323-626-55
+"1,000 mL",0.45% Sodium Chloride,626010,"0.45% Sodium Chloride Injection, USP",63323-626-10
+50 mL,0.9% Sodium Chloride,416660,"0.9% Sodium Chloride Injection, USP",65219-466-60
+100 mL,0.9% Sodium Chloride,416650,"0.9% Sodium Chloride Injection, USP",65219-468-50
+250 mL,0.9% Sodium Chloride,416630,"0.9% Sodium Chloride Injection, USP",65219-470-30
+500 mL,0.9% Sodium Chloride,416620,"0.9% Sodium Chloride Injection, USP",65219-472-20
+"1,000 mL",0.9% Sodium Chloride,416610,"0.9% Sodium Chloride Injection, USP",65219-474-10
+50 mL,0.9% Sodium Chloride,232150,"0.9% Sodium Chloride Injection, USP",65219-218-50
+100 mL,0.9% Sodium Chloride,232200,"0.9% Sodium Chloride Injection, USP",65219-220-10
+250 mL,0.9% Sodium Chloride,232225,"0.9% Sodium Chloride Injection, USP",65219-222-25
+500 mL,0.9% Sodium Chloride,232250,"0.9% Sodium Chloride Injection, USP",65219-224-50
+"1,000 mL",0.9% Sodium Chloride,502010,"0.9% Sodium Chloride Irrigation, USP",65219-502-10
+"2,000 mL",0.9% Sodium Chloride,504020,"0.9% Sodium Chloride Irrigation, USP",65219-504-20
+"3,000 mL",0.9% Sodium Chloride,506030,"0.9% Sodium Chloride Irrigation, USP",65219-506-30
+250 mL,10% Dextrose,824174,"10% Dextrose Injection, USP",63323-824-74
+500 mL,10% Dextrose,824175,"10% Dextrose Injection, USP",63323-824-75
+"1,000 mL",10% Dextrose,824176,"10% Dextrose Injection, USP",63323-824-76
+500 mL,3% Sodium Chloride,530175,"3% Sodium Chloride Injection, USP",63323-530-75
+50 mL,5% Dextrose,416460,"5% Dextrose Injection, USP",65219-456-60
+100 mL,5% Dextrose,416450,"5% Dextrose Injection, USP",65219-464-50
+250 mL,5% Dextrose,416430,"5% Dextrose Injection, USP",65219-458-30
+500 mL,5% Dextrose,416420,"5% Dextrose Injection, USP",65219-460-20
+"1,000 mL",5% Dextrose,416410,"5% Dextrose Injection, USP",65219-462-10
+50 mL,5% Dextrose,252300,"5% Dextrose Injection, USP",65219-234-10
+100 mL,5% Dextrose,262300,"5% Dextrose Injection, USP",65219-236-10
+250 mL,5% Dextrose,262325,"5% Dextrose Injection, USP",65219-238-25
+500 mL,5% Dextrose,262450,"5% Dextrose Injection, USP",65219-240-50
+"1,000 mL",Cardioplegic Solution,258810,Cardioplegic Solution,65219-258-10
+500 mL,Dextrose in Lactated Ringer's,310243,"Lactated Ringer’s and 5% Dextrose Injection, USP",65219-243-50
+"1,000 mL",Dextrose in Lactated Ringer's,310241,"Lactated Ringer’s and 5% Dextrose Injection, USP",65219-241-10
+500 mL,Dextrose in Sodium Chloride,870110,"5% Dextrose and 0.9% Sodium Chloride Injection, USP",63323-870-10
+"1,000 mL",Dextrose in Sodium Chloride,870174,"5% Dextrose and 0.9% Sodium Chloride Injection, USP",63323-870-74
+250 mL,Dextrose in Sodium Chloride,869175,"5% Dextrose and 0.45% Sodium Chloride Injection, USP",63323-869-75
+500 mL,Dextrose in Sodium Chloride,869174,"5% Dextrose and 0.45% Sodium Chloride Injection, USP",63323-869-74
+"1,000 mL",Dextrose in Sodium Chloride,869110,"5% Dextrose and 0.45% Sodium Chloride Injection, USP",63323-869-10
+250 mL,Dextrose in Sodium Chloride,873175,"5% Dextrose and 0.225% Sodium Chloride Injection, USP",63323-873-75
+500 mL,Dextrose in Sodium Chloride,873174,"5% Dextrose and 0.225% Sodium Chloride Injection, USP",63323-873-74
+"1,000 mL",Dextrose in Sodium Chloride,873110,"5% Dextrose and 0.225% Sodium Chloride Injection, USP",63323-873-10
+500 mL,Dextrose in Sodium Chloride,867174,"5% Dextrose and 0.3% Sodium Chloride Injection, USP",63323-867-74
+"1,000 mL",Dextrose in Sodium Chloride,867110,"5% Dextrose and 0.3% Sodium Chloride Injection, USP",63323-867-10
+250 mL,Lactated Ringer's,417730,"Lactated Ringer’s Injection, USP",65219-475-30
+500 mL,Lactated Ringer's,417720,"Lactated Ringer’s Injection, USP",65219-477-20
+"1,000 mL",Lactated Ringer's,417710,"Lactated Ringer’s Injection, USP",65219-479-10
+500 mL,Multiple Electrolytes pH 7.4,389150,"Multiple Electrolytes Injection, Type 1, USP, pH 7.4",65219-389-05
+"1,000 mL",Multiple Electrolytes pH 7.4,389100,"Multiple Electrolytes Injection, Type 1, USP, pH 7.4",65219-389-10
+"1,000 mL",Potassium Chloride in Dextrose,667110,"Potassium Chloride in 5% Dextrose Injection, USP",63323-667-10
+"1,000 mL",Potassium Chloride in Dextrose,669110,"Potassium Chloride in 5% Dextrose Injection, USP",63323-669-10
+"1,000 mL",Potassium Chloride in Dextrose & Sodium Chloride,219118,"Potassium Chloride in 5% Dextrose and 0.9% Sodium Chloride Injection, USP",65219-118-10
+"1,000 mL",Potassium Chloride in Dextrose & Sodium Chloride,219119,"Potassium Chloride in 5% Dextrose and 0.9% Sodium Chloride Injection, USP",65219-119-10
+"1,000 mL",Potassium Chloride in Dextrose & Sodium Chloride,255310,"Potassium Chloride in 5% Dextrose and 0.225% Sodium Chloride Injection, USP",65219-153-10
+500 mL,Potassium Chloride in Dextrose & Sodium Chloride,245075,"Potassium Chloride in 5% Dextrose and 0.45% Sodium Chloride Injection, USP",65219-150-75
+"1,000 mL",Potassium Chloride in Dextrose & Sodium Chloride,224210,"Potassium Chloride in 5% Dextrose and 0.45% Sodium Chloride Injection, USP",65219-142-10
+"1,000 mL",Potassium Chloride in Dextrose & Sodium Chloride,244410,"Potassium Chloride in 5% Dextrose and 0.45% Sodium Chloride Injection, USP",65219-144-10
+"1,000 mL",Potassium Chloride in Dextrose & Sodium Chloride,244610,"Potassium Chloride in 5% Dextrose and 0.45% Sodium Chloride Injection, USP",65219-146-10
+"1,000 mL",Potassium Chloride in Dextrose & Sodium Chloride,244810,"Potassium Chloride in 5% Dextrose and 0.45% Sodium Chloride Injection, USP",65219-148-10
+"1,000 mL",Potassium Chloride in Lactated Ringer & Dextrose,360236,"Potassium Chloride in Lactated Ringer’s and 5% Dextrose Injection, USP",65219-246-10
+"1,000 mL",Potassium Chloride in Sodium Chloride,683110,"Potassium Chloride in Sodium Chloride Injection, USP",63323-683-10
+"1,000 mL",Potassium Chloride in Sodium Chloride,686110,"Potassium Chloride in Sodium Chloride Injection, USP",63323-686-10
+"1,000 mL",Potassium Chloride in Sodium Chloride,688110,"Potassium Chloride in Sodium Chloride Injection, USP",63323-688-10
+50 mL,Potassium Chloride Injection,129041,10 mEq Potassium Chloride per 50 mL,65219-004-01
+50 mL,Potassium Chloride Injection,129081,20 mEq Potassium Chloride per 50 mL,65219-008-51
+100 mL,Potassium Chloride Injection,129121,10 mEq Potassium Chloride per 100 mL,65219-012-01
+100 mL,Potassium Chloride Injection,129061,20 mEq Potassium Chloride per 100 mL,65219-006-01
+100 mL,Potassium Chloride Injection,129101,40 mEq Potassium Chloride per 100 mL,65219-010-01
+"1,000 mL",Sterile Water,917876,"Sterile Water for Injection, USP",63323-178-76
+"1,000 mL",Sterile Water,495010,"Sterile Water for Irrigation, USP",65219-495-10
+"2,000 mL",Sterile Water,497020,"Sterile Water for Irrigation, USP",65219-497-20
+"3,000 mL",Sterile Water,499030,"Sterile Water for Irrigation, USP",65219-499-30

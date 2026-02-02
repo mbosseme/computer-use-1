@@ -115,14 +115,25 @@ if __name__ == "__main__":
     json_file = sys.argv[2]
     
     with open(json_file, 'r') as f:
-        # JSON file might be line-delimited JSON objects from the tool output?
-        # The tool likely returns lines of JSON.
-        data = []
-        for line in f:
-            if line.strip():
-                try:
-                    data.append(json.loads(line))
-                except json.JSONDecodeError:
-                    pass
+        # Check if it's a list or LDJSON
+        try:
+            content = f.read()
+            # Try parsing as full JSON list first
+            data = json.loads(content)
+            if not isinstance(data, list):
+                # If valid JSON but not a list (e.g. dict), wrap it? Or maybe it is LDJSON that failed parsing as whole array?
+                # Actually if it parsed as dict, it's not a list of meta.
+                # Let's fallback to Line Delimited if this fails or isn't a list
+                raise ValueError("Not a list")
+        except (json.JSONDecodeError, ValueError):
+            # Fallback to Line Delimited JSON
+            f.seek(0)
+            data = []
+            for line in f:
+                if line.strip():
+                    try:
+                        data.append(json.loads(line))
+                    except json.JSONDecodeError:
+                        pass
     
     update_markdown(md_file, data)
