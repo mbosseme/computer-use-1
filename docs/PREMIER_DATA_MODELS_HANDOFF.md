@@ -212,7 +212,58 @@ WHERE dhc_firm_type = 'Hospital'
 
 ---
 
-## 6. MCP Toolbox Interaction Patterns
+## 6. Report Builder (`report_builder`)
+
+### Purpose
+Transactional sales data reported by **Pharmaceutical Wholesalers** (McKesson, Cardinal, AmerisourceBergen, etc.).
+This table is critical for "indirect" sales visibility, capturing spend that flows through distribution channels rather than direct-from-manufacturer.
+
+### Key Context
+- **Full Path**: `abi-inbound-prod.abi_inbound_bq_stg_purchasing_rx_wholesaler_sales.report_builder`
+- **Visibility**: Often captures smaller non-acute facilities or pharmacy spend not seen in the main ERP feed (`transaction_analysis_expanded`).
+- **Vendor Name Nuance**: The `wholesaler` column contains the specific distributor name (e.g., "Cardinal Health"), while other columns might just say "Wholesaler". Use `wholesaler` for specificity.
+
+### Key Columns
+| Column | Description |
+|--------|-------------|
+| `invoice_date` | Date of sale (YYYY-MM-DD or similar) |
+| `facility_id` | Premier Entity Code of the purchasing facility |
+| `ndc` | National Drug Code (raw format) |
+| `total_spend` | Invoiced spend amount |
+| `wholesaler` | Name of the specific wholesaler (Source of truth for Vendor) |
+
+---
+
+## 7. Premier Primary Item Master (`premier_primary_item_master`)
+
+### Purpose
+The definitive catalog for product metadata (Brands, Mfr Names, Catalog Numbers, Packaging).
+Used to enrich strictly transactional tables (RB, TA) with human-readable product details.
+
+### Key Context
+- **Full Path**: `abi-inbound-prod.abi_inbound_bq_stg_master_data_premier_product.premier_primary_item_master`
+- **Join Key**: `ndc` (cleaned to 11-digit) or `reference_number`.
+
+### Manufacturer Name Logic (Critical)
+The item master contains both Manufacturer and Distributor records for the same product.
+**To find the true OEM (Original Equipment Manufacturer):**
+Prioritize records where `vend_type = 'M'` (Manufacturer) and `pkg_uom = 'EA'` (Each).
+Distributor records (`vend_type = 'D'`) often list themselves (e.g., "McKesson") as the manufacturer name, which is incorrect for brand attribution.
+
+```sql
+-- Pattern: Select best product metadata
+SELECT * FROM premier_primary_item_master
+WHERE reference_number = '...'
+ORDER BY 
+  CASE WHEN vend_type = 'M' AND pkg_uom = 'EA' THEN 1 
+       WHEN vend_type = 'M' THEN 2 
+       ELSE 3 END
+LIMIT 1
+```
+
+---
+
+## 8. MCP Toolbox Interaction Patterns
 
 ### Available Tools (via prebuilt BigQuery server)
 
@@ -267,7 +318,7 @@ WHERE dhc_firm_type = 'Hospital'
 
 ---
 
-## 7. Key Analytical Patterns & Lessons Learned
+## 9. Key Analytical Patterns & Lessons Learned
 
 ### Pattern 1: Parity Analysis (Provider vs Supplier)
 Compare what providers reported vs what manufacturers reported:
@@ -334,7 +385,7 @@ LIMIT 100
 
 ---
 
-## 8. Privacy & Compliance Guardrails
+## 10. Privacy & Compliance Guardrails
 
 **Aggregated data only.** Never export or display:
 - Individual `Facility_Name` values
@@ -349,7 +400,7 @@ When building reports, always aggregate to:
 
 ---
 
-## 9. Data Dictionary Resources
+## 11. Data Dictionary Resources
 
 Detailed column-level documentation with null rates, distinct counts, and sample values:
 
@@ -361,7 +412,7 @@ Detailed column-level documentation with null rates, distinct counts, and sample
 
 ---
 
-## 10. Reusable Techniques Checklist
+## 12. Reusable Techniques Checklist
 
 When starting a new analysis with these models:
 

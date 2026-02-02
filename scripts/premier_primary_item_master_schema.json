@@ -1,0 +1,498 @@
+[
+  {
+    "column_name": "product_contract_category",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "manufacturer_name",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "reference_number",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "manufacturer_catalog_number",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "product_description",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "pkg_uom",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "uom_conv",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "benchmark_low_price",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_10th_percentile",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_25th_percentile",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_median_price",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_high_price",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_median_price_6_month",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_high_price_6_month",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_low_price_6_month",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_10th_percentile_6_month",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "benchmark_25th_percentile_6_month",
+    "data_type": "FLOAT"
+  },
+  {
+    "column_name": "product_group_category",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "product_subcategory1",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "product_subcategory2",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "product_subcategory3",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "hvi_level_2_category_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "hvi_level_2_category_description",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "hvi_level_3_category_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "hvi_level_3_category_description",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "hvi_level_4_category_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "hvi_level_4_category_description",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "product_id",
+    "data_type": "INTEGER"
+  },
+  {
+    "column_name": "premier_item_number",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "company_id",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "part_number_compressed",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "top_parent_entity_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "top_parent_name",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "unspsc_description",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "contracted",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "rx_end_date",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "insert_date_time",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "inserted_by_file_id",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "source_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "antibacterial_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "bisphenol_a_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "brand_name",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "ca_prop_65_warning",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "ca_prop_65_warning_required",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "cons_friendly_pkg_label",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "contract_id",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "cont_prop_65_below_threshold",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "cont_prop_65_below_thresh_det",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "description",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "description_100",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "drug_case_size",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "drug_form_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "drug_generic_name",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "drug_labeler_id",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "drug_package_size",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "drug_product_wac_price",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "drug_unit_of_use",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "energy_efficient",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "epp_indicator",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "flame_retardant_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "gtin",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "hcpcs_description",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "hcpcs_number",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "iec_62474_substance_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "ingredients_declared",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "inner_pack_uom_quantity",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "is_custom",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "is_proprietary",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "item_type",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "kit_set_pack_tray",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "latex_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "lead_cadmium_organitins_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "manufacturer_assn_pin",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "manufacturer_product_description",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "man_dist",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "mercury_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "multi_use",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "ndc",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "ndc_configuration_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_functional_alternative_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_functional_equivalent_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_skey_dosage_form_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_skey_generic",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_skey_ps",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_skey_route_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_skey_strength_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_skey_thera",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "nddf_skey_unitdose",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "noun",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "obsolete_date",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "other_epp_attributes",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "packaging_string",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "paper_packaging_fsc_certified",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "pbt_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "pediatric",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "pediatric_indicator",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "pfas_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "phthalates_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "polystyrene_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "premier_benchmark_average",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "prim_pkg_pc_recycled",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "prim_pkg_pc_recycled_perc",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "prim_pkg_recyclable",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "prim_pkg_recyclable_perc",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "primary_product_image_filepath",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "pvc_free",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "recyclable",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "recyclable_content_percent",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "recy_cont_post_consumer",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "recy_cont_post_consumer_per",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "reprocessable",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "rohs_compliant",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "sec_pkg_pc_recycled",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "sec_pkg_pc_recycled_perc",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "total_package_qty",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "unspsc_category_code",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "vend_type",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "water_efficiency_attributes",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "wooden_parts_fsc_certified",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "discontinued_reason",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "is_berry_compliant",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "replaced_by_item_number",
+    "data_type": "STRING"
+  },
+  {
+    "column_name": "contract_category_key",
+    "data_type": "INTEGER"
+  },
+  {
+    "column_name": "newline",
+    "data_type": "STRING"
+  }
+]

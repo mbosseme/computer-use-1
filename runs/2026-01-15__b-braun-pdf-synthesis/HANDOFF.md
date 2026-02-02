@@ -1,11 +1,43 @@
 # Run Handoff Journal — 2026-01-15__b-braun-pdf-synthesis
 
-## Run Status: ACTIVE — Sample Data Cut Complete, Awaiting Delivery
+## Run Status: ACTIVE — CRITICAL FINDING: Clarification Needed on Product Scope
 
-## Latest Work (2026-01-27)
-**CAPS/503B Validation Slice Sample Data Cut** — integrated provider ERP + wholesaler tracing data for 71 NDCs from Jen's list. See detailed section below for query structure, join key validation, coverage findings, and artifacts.
+## Latest Work (2026-01-28)
+**CRITICAL FINDING — Product List Manufacturer Mismatch**
 
-## Summary
+The 71 NDCs Jen provided are **Fresenius Kabi / Hikma products**, NOT B. Braun products:
+- **65219-xxx-xx** (46 products) = Fresenius Kabi labeler code
+- **63323-xxx-xx** (25 products) = Hikma Pharmaceuticals labeler code
+
+When validated against CAMS (manufacturer-reported contract sales):
+- These products are reported under **Fresenius Group (entity 616951)**, NOT B. Braun (entity 606326)
+- Only 7 of 49 mapped Reference Numbers appear in CAMS at all under the validation period
+
+**B. Braun DOES have IV Solutions in CAMS** under entity 606326 with $182M+ in IV Fluids Bag-Based Solutions.
+
+**CLARIFICATION NEEDED FROM JEN:**
+1. Does she want data for the 71 **Fresenius Kabi products** she listed? (These would validate against Fresenius Group in CAMS, not B. Braun)
+2. Or does she want data for **B. Braun's own IV Solutions products**? (Different NDCs, catalog numbers like L8002, L7500, etc.)
+
+### Evidence
+- Extracted full product table from Jen's Jan 23, 2026 email via Microsoft Graph
+- Parsed 71 products with SKUs and NDCs → saved to `exports/jen_sku_list.csv`
+- Converted to 11-digit format → saved to `tmp/jen_ndcs_11digit.txt`
+- CAMS validation query confirmed products report under Fresenius Group (616951)
+
+### Artifacts Created This Session
+| File | Purpose |
+|------|---------|
+| `exports/jen_sku_list.csv` | Complete product list from Jen's email (71 rows) |
+| `tmp/jen_ndcs_11digit.txt` | 11-digit NDCs for TAE matching |
+| `tmp/jen_email_sku_list.html` | Raw HTML email body |
+| `scripts/search_jen_emails.py` | Graph email search script |
+| `scripts/parse_sku_table.py` | HTML table parser |
+| `scripts/convert_ndcs.py` | NDC format converter |
+
+---
+
+## Previous Summary (pre-2026-01-28)
 This run synthesized 16 B. Braun documents (PDFs/EMLs) into actionable business intelligence, drafted follow-up emails, and produced a CAPS/503B category validation slice sample data cut integrating two data feeds.
 
 ### What was accomplished

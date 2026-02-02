@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-01-28T10:48:01.208498",
+  "run_id": "2026-01-27__fy27-email-handoff",
+  "sample_window": "2024-01 to 2025-12",
+  "months_included": 24,
+  "record_counts": {
+    "total_rows": 45001,
+    "erp_rows": 27679,
+    "wholesaler_rows": 17322
+  },
+  "spend": {
+    "total": 41557665.18,
+    "erp": 39524864.52,
+    "wholesaler": 2032800.66,
+    "erp_pct": 95.1
+  },
+  "units": {
+    "total": 3500433.0
+  },
+  "coverage": {
+    "unique_facilities": 2771,
+    "unique_ndcs": 118,
+    "unique_reference_numbers": 54,
+    "facilities_with_erp": 1331,
+    "facilities_with_wholesaler": 2183,
+    "facilities_with_both_sources": 743,
+    "pct_with_both_sources": 26.8
+  }
+}

@@ -17,6 +17,8 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
   - Includes **[model_template.py](analysis-workflow/model_template.py)**: A minimal Python template for scenario-grid analyses. Copy to `runs/<RUN_ID>/scripts/` and customize.
 - **[bigquery-data-models](bigquery-data-models/SKILL.md)**: **(Start here for BigQuery work)** Authentication, MCP toolbox usage, data dictionaries, query patterns, and privacy guardrails for documented BigQuery tables.
 - **[bigquery-data-dictionaries](bigquery-data-dictionaries/SKILL.md)**: Profile BigQuery tables and generate/update markdown data dictionaries with schema metadata and column statistics. Uses `tools/bigquery-profiling/`.
+- **[product-entity-resolution](product-entity-resolution/SKILL.md)**: **(Start here for "Messy" ID Matching)** Workflow for mapping non-standard external IDs (NDCs, Vendor SKUs) to internal Master Data using web search, bridge identifiers, and transaction history lookups.
+- **[premier-data-analytics](premier-data-analytics/SKILL.md)**: **(Start here for Premier Purchasing Data)** Critical "Tribal Knowledge" for working with ERP vs. Wholesaler datasets, resolving true OEMs vs. Distributors, and joining strictly safe facility blinds. Use this to avoid common traps like misidentified manufacturers or mismatched vendor names.
 
 ## Skill selection heuristic
 - Choose **1 primary** skill + up to **2 supporting** skills.
