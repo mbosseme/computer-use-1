@@ -45,13 +45,14 @@ class GraphAPIClient:
             url = f"{self._config.base_url.rstrip('/')}/{path.lstrip('/')}"
 
         extra_headers = kwargs.pop("headers", None)
+        timeout_s = kwargs.pop("timeout", 30)
 
         for attempt in (1, 2):
             headers = self._headers()
             if isinstance(extra_headers, dict):
                 headers.update({str(k): str(v) for k, v in extra_headers.items()})
 
-            resp = requests.request(method, url, headers=headers, timeout=30, **kwargs)
+            resp = requests.request(method, url, headers=headers, timeout=timeout_s, **kwargs)
             if resp.status_code == 401 and attempt == 1:
                 # Retry once with a fresh token.
                 self._token = None
@@ -67,24 +68,27 @@ class GraphAPIClient:
         path: str,
         params: Optional[Dict[str, Any]] = None,
         headers: Optional[Dict[str, str]] = None,
+        **kwargs: Any,
     ) -> Dict[str, Any]:
-        return self.request("GET", path, params=params, headers=headers)
+        return self.request("GET", path, params=params, headers=headers, **kwargs)
 
     def post(
         self,
         path: str,
         json: Dict[str, Any],
         headers: Optional[Dict[str, str]] = None,
+        **kwargs: Any,
     ) -> Dict[str, Any]:
-        return self.request("POST", path, json=json, headers=headers)
+        return self.request("POST", path, json=json, headers=headers, **kwargs)
 
     def patch(
         self,
         path: str,
         json: Dict[str, Any],
         headers: Optional[Dict[str, str]] = None,
+        **kwargs: Any,
     ) -> Dict[str, Any]:
-        return self.request("PATCH", path, json=json, headers=headers)
+        return self.request("PATCH", path, json=json, headers=headers, **kwargs)
 
     # Convenience wrappers for common resources
 
@@ -113,9 +117,14 @@ class GraphAPIClient:
         end_local: str,
         timezone_name: str,
         interval_minutes: int = 30,
+        timeout: Optional[int] = None,
     ) -> Dict[str, Any]:
         # POST /me/calendar/getSchedule
         # https://learn.microsoft.com/graph/api/calendar-getschedule
+        kwargs: Dict[str, Any] = {}
+        if timeout is not None:
+            kwargs["timeout"] = int(timeout)
+
         return self.post(
             "me/calendar/getSchedule",
             json={
@@ -124,6 +133,7 @@ class GraphAPIClient:
                 "endTime": {"dateTime": end_local, "timeZone": timezone_name},
                 "availabilityViewInterval": interval_minutes,
             },
+            **kwargs,
         )
 
     def create_todo_task(self, *, list_id: str, title: str) -> Dict[str, Any]:
