@@ -193,7 +193,17 @@ If CAPTCHA or bot-detection blocks access:
 ## Protected `main` branch (PR-first workflow)
 This repo uses GitHub repository rules that may reject direct pushes to `main` (e.g., GH013 requiring a status check like "Block runs/ changes").
 
-Default approach:
+### Clean PR Protocol (Promoting from Run to Core)
+When promoting files from an active run (`runs/`) to core:
+1. **Never branch from the current run branch**: It contains run-local history that must not pollute `main`.
+2. **Fetch Source**: `git fetch origin main`.
+3. **Branch from Remote**: `git checkout -b core/<slug> origin/main`. (Do not `checkout main` directly as it may be locked by another worktree).
+4. **Restore Files**: Bring the specific file(s) from the run branch: `git checkout <run-branch-name> -- path/to/file`.
+5. **Commit & Push**: `git add <files>`, commit, and push.
+6. **PR & Merge**: Create PR targeting `main`. If authorized, use `gh pr merge --admin --merge --delete-branch`.
+7. **Cleanup**: `git checkout <run-branch-name>` and delete the core branch.
+
+### General Commit Flow
 1. Create a branch for the change (prefer `core/<YYYY-MM-DD__slug>` for core-path updates).
 2. Commit to the branch.
 3. Push the branch to origin (do **not** push `main`).
