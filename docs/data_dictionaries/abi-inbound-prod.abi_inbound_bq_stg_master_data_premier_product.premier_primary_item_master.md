@@ -141,7 +141,8 @@
 
 ### benchmark_median_price
 
-- **Description**: TBD
+- **Description**: The median price paid for this item across the dataset.
+- **Usage Note**: This is the PRIMARY benchmark to start with. If this is NULL, other benchmarks are likely NULL as well.
 - **Data Type**: FLOAT
 - **Nulls**: 15006447
 - **Distinct Values**: 114921
@@ -449,7 +450,8 @@
 
 ### drug_product_wac_price
 
-- **Description**: TBD
+- **Description**: Wholesale Acquisition Cost (List Price).
+- **Usage Note**: This is the SECONDARY pricing fallback for drugs. Check this if `benchmark_median_price` is NULL.
 - **Data Type**: STRING
 - **Nulls**: 18655080
 - **Distinct Values**: 39685
