@@ -63,6 +63,37 @@ Keep utilities:
 - small and composable
 - explicit about inputs/outputs
 
+## Validated Logic Snippets
+
+### Report Builder "Units" Calculation
+Logic to convert `wholesaler_pkg_qty` (Case Size) and `quantity_ordered` (Cases) into "Eaches" (Units), correcting for data quality issues.
+
+```python
+def process_rb_units(row):
+    qty = row['quantity_ordered']
+    pack = row['wholesaler_pkg_qty']
+    vol = row['pkg_size'] # Check mapping: Report Builder often stores volume here
+    
+    factor = 1
+    try:
+        p = float(pack)
+        v = float(vol) if vol else 0
+        
+        if p > 1:
+            # Check for volume leakage (Pack == Volume mistake)
+            if p == v:
+                factor = 1 
+            # Suspicious logic for large rounded numbers matching volume
+            elif p > 100 and v > 0 and (p % v == 0 or v % p == 0):
+                factor = 1
+            else:
+                factor = p
+    except:
+        factor = 1
+        
+    return qty * factor
+```
+
 ## Promotion checklist (PR-friendly)
 When promoting a dependency or utility into core:
 - What capability it enables and why it’s needed

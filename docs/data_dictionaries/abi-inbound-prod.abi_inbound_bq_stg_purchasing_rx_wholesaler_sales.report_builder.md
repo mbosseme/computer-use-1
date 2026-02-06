@@ -551,7 +551,8 @@
 - Description: If credit issued, refers to the original invoice # being credited.
 - Nulls: 519,153,270 (75.24%)
 - Distinct: 8,319,262
-- Top values: None (519,153,270), 0 (151,426,062), - (1,550,485),  (67,746), 7442116076 (11,492)
+- Top values: None (519,153,270), 0 (151,426,062), - (1,550,485), 
+ (67,746), 7442116076 (11,492)
 
 
 ### pkg_desc
@@ -889,6 +890,9 @@
 - Description: Number of sellable units in a package (wholesaler reported).
 - Nulls: 0 (0.00%)
 - Distinct: 340
+- **Data Quality Warning:** Significant data leakage observed where "Volume" (e.g., 1000 for 1000mL) is populated instead of "Pack Count".
+  - **Heuristic:** Compare `wholesaler_pkg_qty` vs `pkg_size` (Volume). If `wholesaler_pkg_qty == pkg_size` (and > 1), treat as 1 (leakage).
+  - **Usage:** To calculate Units (Eaches), use: `Quantity Ordered * (wholesaler_pkg_qty if valid else 1)`.
 
 
 ### wholesaler_purchase_type
