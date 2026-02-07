@@ -202,7 +202,7 @@ When promoting files from an active run (`runs/`) to core:
 5. **Commit & Push**: `git add <files>`, commit, and push.
 6. **PR & Merge**: 
    - Create PR targeting `main`.
-   - **Autonomously wait for checks**: Use `gh pr checks <id> --watch` (or a wait loop) to wait for required status checks (e.g., "Block runs/ changes") to pass. **Do not stop and ask** unless checks fail or hang (>5 mins).
+   - **Wait for checks**: Ensure required status checks (e.g., "Block runs/ changes") pass or are actionable.
    - If authorized, use `gh pr merge --admin --merge --delete-branch`.
 7. **Cleanup**: `git checkout <run-branch-name>` and delete the core branch.
 
@@ -211,7 +211,7 @@ When promoting files from an active run (`runs/`) to core:
 2. Commit to the branch.
 3. Push the branch to origin (do **not** push `main`).
 4. Open a PR into `main` (prefer `gh pr create` when available).
-5. Autonomously wait for checks to pass (use `gh pr checks --watch`), then merge the PR.
+5. Wait for required checks to pass, then merge the PR.
 6. Pull `main` locally to re-sync.
 
 Only attempt a direct `git push origin main` if the user explicitly requests it and you have high confidence the repo allows it.
