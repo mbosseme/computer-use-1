@@ -76,6 +76,11 @@ Clean main branch depends on `.gitignore` + conventions (not folder names alone)
 - Promote: reusable utilities (e.g., `tools/`) and dependency pack specs when proven (2+ uses) and reviewed
 - Avoid promoting: run artifacts (typically remain run-local) unless explicitly requested
 
+## Report Generation Discipline
+- **No Hardcoded Numbers**: In text narratives (PDF/Email), numbers must be variables derived from data, never string literals (e.g., `f"{count} facilities"` not `"252 facilities"`). This prevents text drifting from table data.
+- **Narrative Consistency**: Ensure facility counts and dollar totals in the executive summary text match the data tables exactly.
+- **Visuals**: Charts must be readable. Stack vertical charts for PDF reports (do not squeeze side-by-side unless width permits).
+
 ## Where logs live
 - Per-instantiation handoff journal (run-local, default continuity): `runs/<RUN_ID>/HANDOFF.md` (tracked on run branches; not promoted to `main`)
 - Optional, intentionally-versioned per-session narrative logs: `notes/agent-runs/`

@@ -152,7 +152,25 @@ def resolve_email_candidates_from_mailbox(
             seen[addr.lower()] = (name, addr)
 
     # Token-based, order-insensitive name match: "Melanie Proctor" matches "Proctor, Melanie".
+    # STRICTER MATCHING: Tokens must effectively cover the search name.
+    # Prioritize EXACT substring matches first.
+    
     tokens = [t for t in re.split(r"[^a-z0-9]+", _norm(display_name)) if t]
+    
+    # 1. Exact Name Match (Highest Priority)
+    exact_matches = []
+    display_lower = display_name.lower().strip()
+    for name, addr in seen.values():
+        val_lower = name.lower()
+        # If the search query appears as a substring in the candidate name (e.g. "Lindsey" in "Lindsey Schmidt")
+        # AND shares first letter
+        if (display_lower in val_lower) or (val_lower in display_lower):
+             exact_matches.append((name, addr))
+             
+    if exact_matches:
+        return exact_matches
+
+    # 2. Token overlap fallback (Riskier)
     filtered: List[Tuple[str, str]] = []
     for name, addr in seen.values():
         name_norm = _norm(name)

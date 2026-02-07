@@ -47,6 +47,17 @@ For MCP toolbox interaction patterns and authentication setup, see:
 - [MCP Toolbox Guide](../MCP_TOOLBOX_GUIDE.md)
 - [Premier Data Models Handoff](../PREMIER_DATA_MODELS_HANDOFF.md)
 
+## Common Metrics (Market Insights)
+
+| Metric | Definition | Critical Note |
+| :--- | :--- | :--- |
+| **Active GPO Sales** | Manufacturer-reported sales tracings linked to a GPO contract. | Excludes open market, private contract, or non-reported spend. |
+| **Same Store Sales (SSS)** | Year-over-Year growth rate for a cohort of facilities that had spend in *both* periods. (e.g., Active in 2024 AND 2025). | **Metric Warning:** A negative SSS relative to the market strongly *implies* **Share Shift**, but strictly proves only **Relative Underperformance**. To confirm "Shift" vs. "Divergent Utilization," run a correlation check on facility-level delta spend. |
+| **Share Displacement** | When a facility reduces spend with one vendor while increasing buy with a competitor (Zero-sum swap). | Requires checking the competitor side of the equation. |
+| **Divergent Utilization** | When a facility reduces spend because their overall patient volume dropped. | Requires `Total Market` for that facility to drop. |
+| **Churn / Defection** | Binary loss: A facility that was active (>$0) in the Prior Period and became inactive ($0) in the Current Period. | Does **not** include partial volume drops (that's SSS). |
+| **Attribution Rule** | If a facility drops volume but stays >$0, it contributes to the "Trend/Retained" bar, *not* the "Lost Customer" bar. | |
+
 ## Current Dictionaries
 
 | Table | Dictionary File | Description |

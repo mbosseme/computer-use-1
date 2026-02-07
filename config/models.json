@@ -9,5 +9,13 @@
     "reasoning_effort": "medium",
     "supports_temperature": false,
     "supports_reasoning_effort": true
-  }
+  },
+  "core_categories": [
+    "Negative Pressure Wound Therapy (NPWT)",
+    "Sterilization Assurance",
+    "Patient Warming",
+    "Medical Tape & Securement",
+    "Disinfection Caps",
+    "Dressings"
+  ]
 }
