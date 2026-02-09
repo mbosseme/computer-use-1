@@ -65,14 +65,23 @@ When looking for a "Price Benchmark," start here (Order of Operations):
         *   `Contract_Access_Price` (if checking specific contract availability).
         *   `Contract_Best_Price`.
 
-## 6. Zero-Result Protocol (The NDC Check)
-If a search for a pharmaceutical product (by Name or Brand) returns **zero** transaction rows:
-1.  **Do NOT stop.** Zero transactions on a "Name" search is inconclusive.
-2.  **Identify Identifiers**: Use `premier_primary_item_master` (or web search) to find the item's **NDC** and **Reference Number** (Manufacturer Catalog #).
-3.  **Rx Wholesaler Check (`report_builder`)**:
-    *   Query `report_builder` where `ndc` match the NDCs found.
-4.  **Med-Surg Check (`transaction_analysis_expanded`)**:
-    *   Query `transaction_analysis_expanded` where `Ndc` matches NDCs OR `Reference_Number` matches Reference Numbers.
-    *   *Why*: Med-Surg data often relies on Catalog Numbers if NDCs are not captured.
-5.  **Conclude**: Only declare "No Purchasing History" if all above yield 0 rows.
+## 6. Zero-Result Protocol
+If a standard search (e.g. by mapped Reference Number or NDC) returns **zero** transaction rows, assume identifiers may be stripped/missing in the facility feed.
+
+**Escalation Ladder:**
+1.  **Identifier Search (Standard)**: Query by Mapped Reference Number and NDC (checking formatted vs unformatted).
+2.  **Keyword Fallback (Critical)**: If #1 fails, search `Facility_Product_Description` using distinct brand/generic keywords (e.g. `%AMYVID%`, `%FLUTEMETAMOL%`).
+    *   *Validation Required*: Verify the results by checking the `Vendor_Name` aligns with the known manufacturer/distributor (e.g. "Petnet", "Sofie Co").
+    *   **Transparency Rule**: If you find data via this method, you **MUST** explicitly notify the user: "Standard identifiers (NDC/Ref #) yielded no results. Data was located via keyword text matching on descriptions." Do not present these results as ID-matched.
+3.  **Rx vs Med-Surg Check**:
+    *   Rx: Query `report_builder` by NDC.
+    *   Med-Surg: Query `transaction_analysis_expanded` by Ref # or Keyword.
+
+## 7. Pricing Analysis Heuristics
+When deriving "Median Unit Price" from raw transaction data:
+1.  **Blanket PO Detection**: Watch for high `Landed_Spend` with `Quantity <= 1`. These are often service contracts or blanket orders, not per-unit pricing.
+    *   *Action*: Filter `WHERE Quantity > 0` (or `> 1` if noisy).
+2.  **Use Robust Statistics**: Prefer `APPROX_QUANTILES(Unit_Price, 100)[OFFSET(50)]` over `AVG()`.
+    *   *Why*: Transaction data contains extreme outliers (returns, corrections, bulk sums) that skew the mean.
+3.  **Sanity Bounds**: Apply heuristic filters (e.g. `Unit_Price BETWEEN 100 AND 10000`) based on expected cost to strip data entry errors (e.g. price entered as quantity).
 
