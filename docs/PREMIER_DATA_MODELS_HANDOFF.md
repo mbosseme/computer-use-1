@@ -12,6 +12,10 @@ gcloud auth application-default login
 export BIGQUERY_PROJECT_ID=matthew-bossemeyer  # ALWAYS use this project 
 ```
 - **Standard Project:** Always use `matthew-bossemeyer` as the default execution project for queries, Dataform, and table creation.
+- **Dataset Naming Convention:** Any dataset created by Dataform or the agent must use the worktree name (sanitized) as a prefix.
+    *   *Example Worktree:* `wt-2026-02-10__portfolio-expansion`
+    *   *Dataset Name:* `matthew-bossemeyer.wt_2026_02_10__portfolio_expansion_<optional_suffix>`
+    *   *Sanitization:* Replace hyphens `-` with underscores `_`.
 - **Never embed secrets or commit keys.** If auth fails, prompt the user to run the gcloud command.
 - Service account JSON files (`GOOGLE_APPLICATION_CREDENTIALS`) are not supported for interactive work.
 

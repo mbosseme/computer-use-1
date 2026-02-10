@@ -1,6 +1,6 @@
 config {
   type: "table",
-  schema: "invoicing_provider_match",
+  schema: "wt_2026_02_10__portfolio_expansion",
   name: "provider_invoice_line_level_history_enhanced",
   description: "Enhanced version of provider_invoice_line_level_details with a unified effective_invoice_date derived from ERP, Vendor, and Remitra sources.",
   tags: ["invoicing", "enhanced"]

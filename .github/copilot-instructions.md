@@ -96,7 +96,10 @@ If CAPTCHA or bot-detection blocks access:
 
 ## Tooling: Database MCP (e.g., BigQuery)
 - Prefer DB MCP for query/extract tasks; export results for local parsing when needed.
-- Namespace temp tables/exports using `RUN_ID`.
+- **Namespace temp tables/exports**:
+  - Project: `matthew-bossemeyer` (ALWAYS).
+  - Dataset: Must use the current worktree name (hyphens -> underscores) as the prefix.
+    - Example: `wt-2026-02-10__portfolio-expansion` -> `wt_2026_02_10__portfolio_expansion`.
 
 ## Tooling: Deterministic local transforms (preferred over UI edits)
 - Prefer Python/pandas/openpyxl for spreadsheet work after download.
