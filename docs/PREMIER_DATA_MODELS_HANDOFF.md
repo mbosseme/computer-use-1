@@ -9,8 +9,9 @@
 ### Non-Negotiable: Application Default Credentials (ADC) Only
 ```bash
 gcloud auth application-default login
-export BIGQUERY_PROJECT_ID=matthew-bossemeyer  # or your project
+export BIGQUERY_PROJECT_ID=matthew-bossemeyer  # ALWAYS use this project 
 ```
+- **Standard Project:** Always use `matthew-bossemeyer` as the default execution project for queries, Dataform, and table creation.
 - **Never embed secrets or commit keys.** If auth fails, prompt the user to run the gcloud command.
 - Service account JSON files (`GOOGLE_APPLICATION_CREDENTIALS`) are not supported for interactive work.
 
