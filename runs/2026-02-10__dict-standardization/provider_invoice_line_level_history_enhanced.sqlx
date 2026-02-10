@@ -1,0 +1,29 @@
+config {
+  type: "table",
+  schema: "invoicing_provider_match",
+  name: "provider_invoice_line_level_history_enhanced",
+  description: "Enhanced version of provider_invoice_line_level_details with a unified effective_invoice_date derived from ERP, Vendor, and Remitra sources.",
+  tags: ["invoicing", "enhanced"]
+}
+
+SELECT
+  *,
+  -- Logic to derive a single reliable invoice date across disparate data sources
+  COALESCE(
+    invoice_date,             -- 1. Standard ERP Invoice Date (100% valid for ERP & ERP/Remitra)
+    vendor_invoice_date,      -- 2. Vendor Date (Covers ~94% of Remitra rows)
+    remitra_received_date,    -- 3. Remitra Receipt (Plugs gaps in Remitra data)
+    remitra_created_date      -- 4. Final fallback (Metadata creation time)
+  ) AS effective_invoice_date,
+
+  -- Lineage/Provenance for the effective date
+  CASE
+    WHEN invoice_date IS NOT NULL THEN 'ERP Invoice Date'
+    WHEN vendor_invoice_date IS NOT NULL THEN 'Vendor Invoice Date'
+    WHEN remitra_received_date IS NOT NULL THEN 'Remitra Received Date'
+    WHEN remitra_created_date IS NOT NULL THEN 'Remitra Created Date'
+    ELSE NULL
+  END AS effective_invoice_date_source
+
+FROM
+  ${ref("abi_outbound_bq_tgt_invoicing_provider_match", "provider_invoice_line_level_details")}

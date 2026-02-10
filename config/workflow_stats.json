@@ -1,0 +1,586 @@
+{
+  "total_rows": 89066461,
+  "approval_needed_date_distinct": 4779,
+  "approval_needed_date_nulls": 83597909,
+  "approval_needed_date_top": [
+    { "count": 83597909, "value": null },
+    { "count": 6848, "value": "2022-11-30" },
+    { "count": 5718, "value": "2024-03-01" },
+    { "count": 5679, "value": "2023-11-30" },
+    { "count": 5415, "value": "2022-09-30" }
+  ],
+  "approval_user_id_distinct": 15581,
+  "approval_user_id_nulls": 57591,
+  "approval_user_id_top": [
+    { "count": 45792167, "value": "null" },
+    { "count": 2551293, "value": "MediClick" },
+    { "count": 2226284, "value": "GatewayUser" },
+    { "count": 1326322, "value": "Admin" },
+    { "count": 996453, "value": "EDI" }
+  ],
+  "approved_date_distinct": 8300,
+  "approved_date_nulls": 45855303,
+  "approved_date_top": [
+    { "count": 45855303, "value": null },
+    { "count": 59370, "value": "2021-12-31" },
+    { "count": 56709, "value": "2021-12-28" },
+    { "count": 55574, "value": "2021-12-29" },
+    { "count": 44530, "value": "2022-01-04" }
+  ],
+  "approver_group_distinct": 14962,
+  "approver_group_nulls": 85341655,
+  "approver_group_top": [
+    { "count": 85341655, "value": null },
+    { "count": 35313, "value": "10600-BizSupSvc" },
+    { "count": 26797, "value": "10-100-4485-I" },
+    { "count": 25251, "value": "10-100-3015-I" },
+    { "count": 23610, "value": "10600-BIZSUPSVC" }
+  ],
+  "assigned_user_id_distinct": 5887,
+  "assigned_user_id_nulls": 0,
+  "assigned_user_id_top": [
+    { "count": 22169743, "value": "OAGIS9" },
+    { "count": 17086152, "value": "EDI" },
+    { "count": 2841524, "value": "L9MA540" },
+    { "count": 2477241, "value": "WRK_API_XML" },
+    { "count": 2452257, "value": "EDI810_4030_Tenet" }
+  ],
+  "check_date_distinct": 1181,
+  "check_date_nulls": 88087175,
+  "check_date_top": [
+    { "count": 88087175, "value": null },
+    { "count": 8903, "value": "2025-10-03" },
+    { "count": 7976, "value": "2026-01-05" },
+    { "count": 7417, "value": "2026-02-04" },
+    { "count": 6335, "value": "2025-04-03" }
+  ],
+  "create_user_id_distinct": 2230,
+  "create_user_id_nulls": 0,
+  "create_user_id_top": [
+    { "count": 45792167, "value": "null" },
+    { "count": 3229879, "value": "MediClick" },
+    { "count": 2299889, "value": "EDI" },
+    { "count": 2235208, "value": "GatewayUser" },
+    { "count": 1949602, "value": "Admin" }
+  ],
+  "data_source_distinct": 3,
+  "data_source_nulls": 0,
+  "data_source_top": [
+    { "count": 45792167, "value": "Remitra" },
+    { "count": 33602034, "value": "ERP" },
+    { "count": 9672260, "value": "ERP/Remitra" }
+  ],
+  "direct_approver_distinct": 8355,
+  "direct_approver_nulls": 87249412,
+  "direct_approver_top": [
+    { "count": 87249412, "value": null },
+    { "count": 31687, "value": "kquinn" },
+    { "count": 24035, "value": "CALIMENA" },
+    { "count": 23372, "value": "CH100705" },
+    { "count": 20089, "value": "Eastmanli" }
+  ],
+  "direct_parent_entity_code_distinct": 1,
+  "direct_parent_entity_code_nulls": 0,
+  "direct_parent_entity_code_top": [
+    { "count": 89066461, "value": "null" }
+  ],
+  "direct_parent_name_distinct": 97,
+  "direct_parent_name_nulls": 42877049,
+  "direct_parent_name_top": [
+    { "count": 42877049, "value": null },
+    { "count": 4428225, "value": "OSF HealthCare" },
+    { "count": 4176262, "value": "University of California San Diego Health System (AKA UC San Diego Health)" },
+    { "count": 3635136, "value": "Adventist Health" },
+    { "count": 2953445, "value": "Coastal Community Health" }
+  ],
+  "discount_taken_amount_distinct": 26732,
+  "discount_taken_amount_nulls": 45792167,
+  "discount_taken_amount_top": [
+    { "count": 45792167, "value": null },
+    { "count": 42143632, "value": 0 },
+    { "count": 9860, "value": 0.080000000000000002 },
+    { "count": 9336, "value": 0.050000000000000003 },
+    { "count": 9169, "value": 0.10000000000000001 }
+  ],
+  "edi_810_exception_yn_distinct": 2,
+  "edi_810_exception_yn_nulls": 45792167,
+  "edi_810_exception_yn_top": [
+    { "count": 45792167, "value": null },
+    { "count": 43138585, "value": 0 },
+    { "count": 135709, "value": 1 }
+  ],
+  "exception_date_distinct": 2394,
+  "exception_date_nulls": 88930752,
+  "exception_date_top": [
+    { "count": 88930752, "value": null },
+    { "count": 488, "value": "2025-12-09" },
+    { "count": 475, "value": "2025-03-18" },
+    { "count": 465, "value": "2026-01-08" },
+    { "count": 460, "value": "2025-12-18" }
+  ],
+  "facility_entity_code_distinct": 220,
+  "facility_entity_code_nulls": 42874448,
+  "facility_entity_code_top": [
+    { "count": 42874448, "value": null },
+    { "count": 4176262, "value": "743158" },
+    { "count": 1682414, "value": "CA2043" },
+    { "count": 1594462, "value": "TX0488" },
+    { "count": 1377886, "value": "FL0091" }
+  ],
+  "facility_entity_name_distinct": 1,
+  "facility_entity_name_nulls": 0,
+  "facility_entity_name_top": [
+    { "count": 89066461, "value": "null" }
+  ],
+  "fiscal_period_distinct": 13,
+  "fiscal_period_nulls": 45792167,
+  "fiscal_period_top": [
+    { "count": 45792167, "value": null },
+    { "count": 3919334, "value": 12 },
+    { "count": 3792267, "value": 4 },
+    { "count": 3657482, "value": 1 },
+    { "count": 3642360, "value": 3 }
+  ],
+  "fiscal_year_distinct": 31,
+  "fiscal_year_nulls": 45792167,
+  "fiscal_year_top": [
+    { "count": 45792167, "value": null },
+    { "count": 6252197, "value": 2024 },
+    { "count": 6107407, "value": 2023 },
+    { "count": 6011948, "value": 2025 },
+    { "count": 5995530, "value": 2022 }
+  ],
+  "health_system_entity_code_distinct": 33,
+  "health_system_entity_code_nulls": 42610197,
+  "health_system_entity_code_top": [
+    { "count": 43274294, "value": "null" },
+    { "count": 42610197, "value": null },
+    { "count": 1620349, "value": "CA2043" },
+    { "count": 359538, "value": "815090" },
+    { "count": 240815, "value": "KY0080" }
+  ],
+  "health_system_name_distinct": 796,
+  "health_system_name_nulls": 153881,
+  "health_system_name_top": [
+    { "count": 11531867, "value": "AdventHealth (AHS Florida)" },
+    { "count": 4215819, "value": "EM_OSF" },
+    { "count": 4176237, "value": "EM_UCSD" },
+    { "count": 3715686, "value": "Dignity Health" },
+    { "count": 3446335, "value": "Catholic Health Initiatives" }
+  ],
+  "import_exception_count_distinct": 2,
+  "import_exception_count_nulls": 87188129,
+  "import_exception_count_top": [
+    { "count": 87188129, "value": null },
+    { "count": 1874344, "value": 1 },
+    { "count": 3988, "value": 2 }
+  ],
+  "invoice_create_date_distinct": 8236,
+  "invoice_create_date_nulls": 45792167,
+  "invoice_create_date_top": [
+    { "count": 45792167, "value": null },
+    { "count": 62754, "value": "2021-12-31" },
+    { "count": 56037, "value": "2021-12-28" },
+    { "count": 54110, "value": "2021-12-29" },
+    { "count": 43275, "value": "2022-01-04" }
+  ],
+  "invoice_create_type_description_distinct": 10,
+  "invoice_create_type_description_nulls": 0,
+  "invoice_create_type_description_top": [
+    { "count": 44311513, "value": "IDS PO" },
+    { "count": 10647233, "value": "From PO" },
+    { "count": 10285250, "value": "EDI 810" },
+    { "count": 8285777, "value": "IDS Non-PO" },
+    { "count": 7506527, "value": "Manually" }
+  ],
+  "invoice_due_date_distinct": 9249,
+  "invoice_due_date_nulls": 45802985,
+  "invoice_due_date_top": [
+    { "count": 45802985, "value": null },
+    { "count": 89058, "value": "2022-01-30" },
+    { "count": 86336, "value": "2022-01-27" },
+    { "count": 32564, "value": "2025-05-30" },
+    { "count": 29571, "value": "2023-06-30" }
+  ],
+  "invoice_had_exception_yn_distinct": 2,
+  "invoice_had_exception_yn_nulls": 45792167,
+  "invoice_had_exception_yn_top": [
+    { "count": 45792167, "value": null },
+    { "count": 31732033, "value": 0 },
+    { "count": 11542261, "value": 1 }
+  ],
+  "invoice_has_active_exception_yn_distinct": 2,
+  "invoice_has_active_exception_yn_nulls": 45792167,
+  "invoice_has_active_exception_yn_top": [
+    { "count": 45792167, "value": null },
+    { "count": 43245085, "value": 0 },
+    { "count": 29209, "value": 1 }
+  ],
+  "invoice_header_id_distinct": 5676768,
+  "invoice_header_id_nulls": 45792167,
+  "invoice_header_id_top": [
+    { "count": 45792167, "value": null },
+    { "count": 6, "value": 69788 },
+    { "count": 6, "value": 42665 },
+    { "count": 6, "value": 7294 },
+    { "count": 4, "value": 4425067 }
+  ],
+  "invoice_match_status_description_distinct": 5,
+  "invoice_match_status_description_nulls": 0,
+  "invoice_match_status_description_top": [
+    { "count": 45792167, "value": "null" },
+    { "count": 27063843, "value": "Matched" },
+    { "count": 16175685, "value": "No Match" },
+    { "count": 29205, "value": "Exception" },
+    { "count": 5561, "value": "Incomplete" }
+  ],
+  "invoice_number_distinct": 71106107,
+  "invoice_number_nulls": 29,
+  "invoice_number_top": [
+    { "count": 13589, "value": "MILEAGE" },
+    { "count": 3454, "value": "REIMBURSEMENT" },
+    { "count": 3262, "value": "1" },
+    { "count": 2095, "value": "REIMB" },
+    { "count": 1949, "value": "PAYROLL" }
+  ],
+  "invoice_paid_amount_distinct": 1948718,
+  "invoice_paid_amount_nulls": 45792167,
+  "invoice_paid_amount_top": [
+    { "count": 45792167, "value": null },
+    { "count": 6177769, "value": 0 },
+    { "count": 190883, "value": 20 },
+    { "count": 160440, "value": 25 },
+    { "count": 143951, "value": 10 }
+  ],
+  "invoice_received_date_distinct": 8815,
+  "invoice_received_date_nulls": 45792183,
+  "invoice_received_date_top": [
+    { "count": 45792183, "value": null },
+    { "count": 87222, "value": "2021-12-28" },
+    { "count": 86216, "value": "2021-12-31" },
+    { "count": 21287, "value": "2022-11-01" },
+    { "count": 20832, "value": "2024-12-17" }
+  ],
+  "invoice_status_description_distinct": 10,
+  "invoice_status_description_nulls": 0,
+  "invoice_status_description_top": [
+    { "count": 45792167, "value": "null" },
+    { "count": 37152770, "value": "Paid-in-Full" },
+    { "count": 5692889, "value": "Completed" },
+    { "count": 372659, "value": "Approved" },
+    { "count": 29205, "value": "Exception" }
+  ],
+  "invoice_total_amount_distinct": 2949345,
+  "invoice_total_amount_nulls": 83430,
+  "invoice_total_amount_top": [
+    { "count": 816867, "value": 0 },
+    { "count": 212721, "value": 20 },
+    { "count": 191073, "value": 50 },
+    { "count": 182347, "value": 25 },
+    { "count": 161132, "value": 30 }
+  ],
+  "last_modified_date_distinct": 3037,
+  "last_modified_date_nulls": 45792167,
+  "last_modified_date_top": [
+    { "count": 45792167, "value": null },
+    { "count": 2069161, "value": "2020-07-03" },
+    { "count": 87192, "value": "2025-09-19" },
+    { "count": 84778, "value": "2025-09-18" },
+    { "count": 70755, "value": "2021-12-18" }
+  ],
+  "lines_missing_with_exception_distinct": 43,
+  "lines_missing_with_exception_nulls": 45792167,
+  "lines_missing_with_exception_top": [
+    { "count": 45792167, "value": null },
+    { "count": 43221825, "value": 0 },
+    { "count": 42947, "value": 1 },
+    { "count": 5483, "value": 2 },
+    { "count": 1787, "value": 3 }
+  ],
+  "lines_with_other_exception_distinct": 68,
+  "lines_with_other_exception_nulls": 45792167,
+  "lines_with_other_exception_top": [
+    { "count": 45792167, "value": null },
+    { "count": 43030024, "value": 0 },
+    { "count": 161784, "value": 1 },
+    { "count": 34114, "value": 2 },
+    { "count": 15337, "value": 3 }
+  ],
+  "lines_with_price_exception_distinct": 53,
+  "lines_with_price_exception_nulls": 45792167,
+  "lines_with_price_exception_top": [
+    { "count": 45792167, "value": null },
+    { "count": 43041385, "value": 0 },
+    { "count": 182966, "value": 1 },
+    { "count": 29604, "value": 2 },
+    { "count": 9617, "value": 3 }
+  ],
+  "lines_with_quantity_exception_distinct": 45,
+  "lines_with_quantity_exception_nulls": 45792167,
+  "lines_with_quantity_exception_top": [
+    { "count": 45792167, "value": null },
+    { "count": 43125750, "value": 0 },
+    { "count": 122813, "value": 1 },
+    { "count": 6861, "value": 2 },
+    { "count": 4036, "value": 3 }
+  ],
+  "lines_with_receipt_exception_distinct": 140,
+  "lines_with_receipt_exception_nulls": 45792167,
+  "lines_with_receipt_exception_top": [
+    { "count": 45792167, "value": null },
+    { "count": 42675384, "value": 0 },
+    { "count": 428488, "value": 1 },
+    { "count": 85502, "value": 2 },
+    { "count": 32489, "value": 3 }
+  ],
+  "org_description_distinct": 1354,
+  "org_description_nulls": 624154,
+  "org_description_top": [
+    { "count": 11531867, "value": "AdventHealth (AHS Florida)" },
+    { "count": 3723439, "value": "UCSD MEDICAL CENTER" },
+    { "count": 3715686, "value": "Dignity Health" },
+    { "count": 3446335, "value": "Catholic Health Initiatives" },
+    { "count": 3108405, "value": "Northwell Health" }
+  ],
+  "org_number_distinct": 9842,
+  "org_number_nulls": 7376880,
+  "org_number_top": [
+    { "count": 7376880, "value": null },
+    { "count": 5740930, "value": "1" },
+    { "count": 5271365, "value": "001" },
+    { "count": 3768313, "value": "01" },
+    { "count": 3022389, "value": "10" }
+  ],
+  "payment_method_description_distinct": 9,
+  "payment_method_description_nulls": 7926435,
+  "payment_method_description_top": [
+    { "count": 45792167, "value": "null" },
+    { "count": 20335199, "value": "Local Print" },
+    { "count": 7926435, "value": null },
+    { "count": 7059181, "value": "ACH - CCD" },
+    { "count": 3484401, "value": "Check" }
+  ],
+  "payment_posted_date_distinct": 8149,
+  "payment_posted_date_nulls": 45847916,
+  "payment_posted_date_top": [
+    { "count": 45847916, "value": null },
+    { "count": 59362, "value": "2021-12-31" },
+    { "count": 56698, "value": "2021-12-28" },
+    { "count": 55544, "value": "2021-12-29" },
+    { "count": 44537, "value": "2022-01-04" }
+  ],
+  "payment_terms_distinct": 601,
+  "payment_terms_nulls": 10642,
+  "payment_terms_top": [
+    { "count": 45792167, "value": "null" },
+    { "count": 5561873, "value": "30" },
+    { "count": 5202931, "value": "N30" },
+    { "count": 4563137, "value": "Net 30" },
+    { "count": 3556265, "value": "UR" }
+  ],
+  "po_header_id_distinct": 3178409,
+  "po_header_id_nulls": 61967813,
+  "po_header_id_top": [
+    { "count": 61967813, "value": null },
+    { "count": 56347, "value": 8736 },
+    { "count": 23065, "value": 501874 },
+    { "count": 21658, "value": 1034521 },
+    { "count": 18758, "value": 192605 }
+  ],
+  "po_number_distinct": 35153740,
+  "po_number_nulls": 21789064,
+  "po_number_top": [
+    { "count": 21789064, "value": null },
+    { "count": 60518, "value": "RENT" },
+    { "count": 57559, "value": "A4-6951D" },
+    { "count": 23186, "value": "17959" },
+    { "count": 21682, "value": "28715" }
+  ],
+  "premier_vendor_name_distinct": 18676,
+  "premier_vendor_name_nulls": 13324732,
+  "premier_vendor_name_top": [
+    { "count": 13324732, "value": null },
+    { "count": 7316167, "value": "MEDLINE INDUSTRIES, LP" },
+    { "count": 3837608, "value": "CARDINAL HEALTH 414, LLC" },
+    { "count": 2996016, "value": "AMERISOURCEBERGEN DRUG CORPORATION" },
+    { "count": 2924985, "value": "MCKESSON CORPORATION" }
+  ],
+  "refresh_date_distinct": 1,
+  "refresh_date_nulls": 45792167,
+  "refresh_date_top": [
+    { "count": 45792167, "value": null },
+    { "count": 43274294, "value": "2026-02-10" }
+  ],
+  "rejection_count_distinct": 10,
+  "rejection_count_nulls": 45792167,
+  "rejection_count_top": [
+    { "count": 45792167, "value": null },
+    { "count": 43254727, "value": 0 },
+    { "count": 17198, "value": 1 },
+    { "count": 1884, "value": 2 },
+    { "count": 350, "value": 3 }
+  ],
+  "remitra_discrepancy_count_distinct": 0,
+  "remitra_discrepancy_count_nulls": 89066461,
+  "remitra_discrepancy_count_top": [
+    { "count": 89066461, "value": null }
+  ],
+  "remitra_invoice_header_id_distinct": 55234113,
+  "remitra_invoice_header_id_nulls": 33602034,
+  "remitra_invoice_header_id_top": [
+    { "count": 33602034, "value": null },
+    { "count": 2, "value": "fff79176-788b-11eb-975f-0a0083640000" },
+    { "count": 2, "value": "ff5f801c-b066-11f0-bc53-0a0083cb0000" },
+    { "count": 2, "value": "feb77c4e-e38b-11ef-bc51-0a0083cb0000" },
+    { "count": 2, "value": "fe96de54-df0e-11ed-afc0-0a0083cb0000" }
+  ],
+  "remitra_invoice_received_date_distinct": 3706,
+  "remitra_invoice_received_date_nulls": 33618096,
+  "remitra_invoice_received_date_top": [
+    { "count": 33618096, "value": null },
+    { "count": 61255, "value": "2025-10-14" },
+    { "count": 58740, "value": "2025-12-23" },
+    { "count": 51953, "value": "2024-11-05" },
+    { "count": 50105, "value": "2023-11-02" }
+  ],
+  "remitra_invoice_sent_date_distinct": 3623,
+  "remitra_invoice_sent_date_nulls": 40472190,
+  "remitra_invoice_sent_date_top": [
+    { "count": 40472190, "value": null },
+    { "count": 49936, "value": "2025-08-26" },
+    { "count": 46035, "value": "2025-10-14" },
+    { "count": 40079, "value": "2025-11-14" },
+    { "count": 38118, "value": "2025-07-04" }
+  ],
+  "remitra_invoice_status_description_distinct": 18,
+  "remitra_invoice_status_description_nulls": 6870156,
+  "remitra_invoice_status_description_top": [
+    { "count": 48555435, "value": "Acknowledged" },
+    { "count": 33602034, "value": "null" },
+    { "count": 6870156, "value": null },
+    { "count": 19049, "value": "Awaiting Pickup" },
+    { "count": 13696, "value": "Not Sent-InDoc-Normalized" }
+  ],
+  "remitra_invoice_yn_distinct": 2,
+  "remitra_invoice_yn_nulls": 478151,
+  "remitra_invoice_yn_top": [
+    { "count": 54379536, "value": 1 },
+    { "count": 34208774, "value": 0 },
+    { "count": 478151, "value": null }
+  ],
+  "remitra_payment_method_description_distinct": 1,
+  "remitra_payment_method_description_nulls": 0,
+  "remitra_payment_method_description_top": [
+    { "count": 89066461, "value": "null" }
+  ],
+  "remitra_payment_terms_distinct": 1,
+  "remitra_payment_terms_nulls": 0,
+  "remitra_payment_terms_top": [
+    { "count": 89066461, "value": "null" }
+  ],
+  "remitra_po_header_id_distinct": 1,
+  "remitra_po_header_id_nulls": 0,
+  "remitra_po_header_id_top": [
+    { "count": 89066461, "value": "null" }
+  ],
+  "remitra_wf_invoice_yn_distinct": 2,
+  "remitra_wf_invoice_yn_nulls": 33602034,
+  "remitra_wf_invoice_yn_top": [
+    { "count": 34643968, "value": 0 },
+    { "count": 33602034, "value": null },
+    { "count": 20820459, "value": 1 }
+  ],
+  "remitra_wf_modified_date_distinct": 3622,
+  "remitra_wf_modified_date_nulls": 68246002,
+  "remitra_wf_modified_date_top": [
+    { "count": 68246002, "value": null },
+    { "count": 40674, "value": "2026-02-08" },
+    { "count": 35137, "value": "2022-08-09" },
+    { "count": 28487, "value": "2024-09-17" },
+    { "count": 25494, "value": "2025-07-04" }
+  ],
+  "remitra_wf_modified_user_distinct": 2564,
+  "remitra_wf_modified_user_nulls": 82038864,
+  "remitra_wf_modified_user_top": [
+    { "count": 82038864, "value": null },
+    { "count": 140536, "value": 24062 },
+    { "count": 112291, "value": 24059 },
+    { "count": 112274, "value": 25153 },
+    { "count": 109065, "value": 26448 }
+  ],
+  "remitra_wf_status_description_distinct": 192,
+  "remitra_wf_status_description_nulls": 68246002,
+  "remitra_wf_status_description_top": [
+    { "count": 68246002, "value": null },
+    { "count": 11251882, "value": "Processed" },
+    { "count": 3307187, "value": "Duplicates" },
+    { "count": 2680937, "value": "Bypassed" },
+    { "count": 2147336, "value": "Deleted by Customer" }
+  ],
+  "touch_count_distinct": 18,
+  "touch_count_nulls": 45792167,
+  "touch_count_top": [
+    { "count": 45792167, "value": null },
+    { "count": 37107921, "value": 1 },
+    { "count": 6063609, "value": 0 },
+    { "count": 81297, "value": 2 },
+    { "count": 17478, "value": 3 }
+  ],
+  "touchless_invoice_yn_distinct": 2,
+  "touchless_invoice_yn_nulls": 45792167,
+  "touchless_invoice_yn_top": [
+    { "count": 45792167, "value": null },
+    { "count": 37210685, "value": 0 },
+    { "count": 6063609, "value": 1 }
+  ],
+  "vendor_entity_code_distinct": 21723,
+  "vendor_entity_code_nulls": 13225317,
+  "vendor_entity_code_top": [
+    { "count": 13225317, "value": null },
+    { "count": 7270802, "value": "IL2114" },
+    { "count": 2916231, "value": "OH2129" },
+    { "count": 2314414, "value": "OH5010" },
+    { "count": 2299203, "value": "VA2023" }
+  ],
+  "vendor_invoice_date_distinct": 9443,
+  "vendor_invoice_date_nulls": 23,
+  "vendor_invoice_date_top": [
+    { "count": 123318, "value": "2021-12-31" },
+    { "count": 107140, "value": "2025-04-30" },
+    { "count": 104962, "value": "2025-02-28" },
+    { "count": 103792, "value": "2025-01-31" },
+    { "count": 102304, "value": "2025-09-30" }
+  ],
+  "vendor_name_distinct": 360146,
+  "vendor_name_nulls": 850465,
+  "vendor_name_top": [
+    { "count": 2380259, "value": "Medline Industries, Inc." },
+    { "count": 2357539, "value": "MEDLINE INDUSTRIES INC" },
+    { "count": 2271728, "value": "AmerisourceBergen" },
+    { "count": 2162365, "value": "OneTime" },
+    { "count": 1662937, "value": "Arthrex Inc." }
+  ],
+  "vendor_number_distinct": 324196,
+  "vendor_number_nulls": 12267606,
+  "vendor_number_top": [
+    { "count": 12267606, "value": null },
+    { "count": 2562482, "value": "OneTime" },
+    { "count": 1737915, "value": "0000000029" },
+    { "count": 1132987, "value": "0034560" },
+    { "count": 858412, "value": "SUP-078528" }
+  ],
+  "vendor_top_parent_entity_code_distinct": 9952,
+  "vendor_top_parent_entity_code_nulls": 19143628,
+  "vendor_top_parent_entity_code_top": [
+    { "count": 19143628, "value": null },
+    { "count": 7316167, "value": "IL2114" },
+    { "count": 3837608, "value": "OH5010" },
+    { "count": 2991928, "value": "OH2129" },
+    { "count": 2924770, "value": "613772" }
+  ],
+  "vendor_top_parent_name_distinct": 1,
+  "vendor_top_parent_name_nulls": 0,
+  "vendor_top_parent_name_top": [
+    { "count": 89066461, "value": "null" }
+  ]
+}
