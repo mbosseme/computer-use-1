@@ -4,42 +4,60 @@ Copy-paste everything below the `---` line into a new conversation.
 
 ---
 
-## Context: Portfolio Expansion — Workflow History vs TSA Comparison
+## Context: Portfolio Expansion — TSA Cohort for Non-Labor Spend Extrapolation
 
-You are continuing work on RUN_ID `2026-02-10__portfolio-expansion` (branch: `run/2026-02-10__portfolio-expansion`). A previous session completed significant analysis. Before doing anything, read these files to orient yourself:
+You are continuing work on RUN_ID `2026-02-10__portfolio-expansion` (branch: `run/2026-02-10__portfolio-expansion`).
 
-1. **`runs/2026-02-10__portfolio-expansion/HANDOFF.md`** — Full session narrative, data source reference, known issues/gotchas, and suggested next steps.
-2. **`runs/2026-02-10__portfolio-expansion/exports/osf_deep_dive_analysis.md`** — Detailed working paper with all OSF query results, tables, and root cause analysis.
-3. **`docs/validated_health_system_mapping.md`** — The 9 validated health system name mappings between the two data models.
-4. **`scripts/gen_mapped_spend_comparison.sql`** — The SQL with hardcoded CASE logic used for the 9-system spend comparison.
+### Bootstrap (read these first)
 
-### What Was Done (Session 1)
+1. **`runs/2026-02-10__portfolio-expansion/HANDOFF.md`** — Full narrative across 2 sessions, data source reference, known issues/gotchas, all artifacts, and prioritized next steps.
+2. **`runs/2026-02-10__portfolio-expansion/exports/comprehensive_cohort_analysis.md`** — **PRIMARY DELIVERABLE**: 29-system tiered cohort with methodology, service line classification, capture ratios, demographic enrichment, risk assessment, and validation notes.
+3. **`runs/2026-02-10__portfolio-expansion/ANALYSIS_PLAN.md`** — 6-phase analysis plan (all phases executed and audited).
 
-**Mission**: Determine whether Premier's `provider_invoice_workflow_history` table (89M rows, AP-level) can replace or supplement the legacy `transaction_analysis_expanded` table (819M rows, med/surg supply chain) for health-system-level spend analytics.
+Optional deeper context:
+- `runs/.../exports/analyst_briefing.md` — Concise narrative sent to analyst team
+- `runs/.../exports/osf_deep_dive_analysis.md` — OSF vendor categorization deep dive (Session 1)
+- `docs/validated_health_system_mapping.md` — Original 9-system name mapping (Session 1)
+- `notes/agent-runs/2026-02-10__portfolio-expansion-session-2.md` — Session 2 run log
 
-**Key Findings**:
-- Entity code fields in Workflow History are broken (~50-100% NULL). Must use name-based mapping.
-- 9 health systems were successfully mapped by name (user-validated). See `docs/validated_health_system_mapping.md`.
-- Most mapped systems show Workflow capturing 1.4x–2.7x more spend than TSA. One system (Advocate) shows 54% under-capture.
-- **Root cause** (confirmed via deep dive on OSF, the most extreme case at 272%): **Workflow History is an Accounts Payable model** (all invoices — pharma, insurance, payroll, IT, intercompany, etc.). **TSA is a Med/Surg Supply Chain purchasing feed** (narrow product-level scope). 55% of OSF's Workflow spend is non-supply-chain. After removing it, the gap shrinks to ~22%, explainable by vendor hierarchy fragmentation and TSA overhead allocations.
+### What Was Done (Sessions 1 + 2)
+
+**Mission**: Identify ≥20 health systems in Premier's Transaction Analysis (TSA) data with comprehensive non-labor purchasing across Clinical, Non-Clinical, and Pharma service lines, suitable for extrapolation to Premier's GPO membership (~25% of US healthcare).
+
+**Result**: **29 health systems** identified across 3 tiers:
+- **Tier 1** (3 systems): All 4 service lines including Food (Prisma, Health First, VCU)
+- **Tier 2** (13 systems): 3 service lines + some food data (UPMC through Midland)
+- **Tier 3** (13 systems): 3 service lines, no food (AdventHealth through Greater Baltimore)
+- **Cohort total**: ~80,000 beds, ~$57B annual TSA volume, 25+ states
+
+**Key structural finding**: Food is <1% of TSA platform-wide ($1B of $115B+). "Comprehensive" = Clinical + Non-Clinical + Pharma.
+
+**Validated**: Post-hoc audit caught and corrected 2 inclusion errors + 1 duplicate. Spot-checked PRISMA and ECU. Sensitivity-tested service line classification.
 
 ### What's Left To Do (Prioritized)
 
-1. **Confirm the scope-difference hypothesis generalizes**: Run the same vendor categorization waterfall for **AdventHealth** (226% capture ratio) to see if the same ~55% non-supply-chain pattern holds.
-2. **Investigate Advocate under-capture**: Why does Workflow show only 54% of TSA for Advocate Health? Is it a post-merger entity split (Advocate + Aurora)?
-3. **Build a reusable "TSA-scope filter"**: Create a SQL filter/view that removes non-supply-chain vendors from Workflow History, making it comparable to TSA. Base it on the category rules from the OSF deep dive (pharma, insurance, intercompany, staffing, IT, capital, food, legal, one-time — all described in `exports/osf_deep_dive_analysis.md`).
-4. **Expand the mapping table**: Map additional health systems beyond the current 9 (candidates: Dignity Health, Catholic Health Initiatives, Northwell Health, Tenet Healthcare, EM_UCSD).
-5. **Vendor entity code roll-up strategy**: Build a vendor parent-to-child crosswalk to normalize vendor codes across the two models.
+1. **Per-bed spend benchmarks** (highest priority): Compute $/bed ratios for each service line across the 29-system cohort using bed counts from `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join`. This is the bridge from cohort-level findings to extrapolation.
 
-### Critical Gotchas (from Session 1)
+2. **GPO membership mapping**: Compare cohort demographics (size, type, geography) against the full Premier GPO membership universe (~4,000+ hospitals) to quantify representativeness and coverage gaps.
 
-- **NULL representation**: Workflow uses both string `'NULL'` and actual SQL NULL. Always filter with `AND col IS NOT NULL AND col != 'NULL'`.
-- **Header vs line-item**: Workflow `invoice_total_amount` is per-invoice header. TSA `Base_Spend` is per-product line item. Compare at aggregated totals only.
-- **Vendor hierarchy fragmentation**: Same parent vendor has different child entity codes in each system (e.g., Medtronic = `MN2140` in WF, `643965` in TSA).
-- **`facility_entity_name` is 100% NULL** in Workflow. Use `org_description` + `facility_entity_code` instead.
+3. **Extrapolation model**: Cohort spend × membership scale factor, segmented by system size, hospital type, and region.
+
+4. **Food supplementary analysis**: If food is in scope, pull from Supplier Sales data or apply industry benchmarks (~3-5% of operating expenses).
 
 ### BigQuery Tables
 
-- **Workflow**: `abi-xform-prod.abi_xform_bq_erp_hardening.provider_invoice_workflow_history`
-- **TSA**: `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded`
-- **Data dictionaries**: see `docs/data_dictionaries/` for both tables.
+| Table | FQN | Purpose |
+|-------|-----|---------|
+| TSA | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded` | Primary — 819M rows, med/surg purchasing with `Contract_Category` taxonomy |
+| WF | `abi-xform-prod.abi_xform_bq_erp_hardening.provider_invoice_workflow_history` | Calibration — 89M rows, full AP invoices |
+| Demographics | `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join` | Facility enrichment — beds, types, geography (filter `dhc_firm_type='Hospital'`) |
+
+Data dictionaries: `docs/data_dictionaries/`
+
+### Critical Gotchas
+
+- **TSA is med/surg only; WF is full AP.** Capture ratios require filtering WF to supply-chain-only spend first.
+- **Food is structurally absent from TSA** (<1% platform-wide). Don't filter on 4 service lines.
+- **NULL representation in WF**: Both string `'NULL'` and actual SQL NULL exist. Filter with `AND col IS NOT NULL AND col != 'NULL'`.
+- **Entity codes are broken in WF**: `health_system_entity_code` is 50% NULL, `direct_parent_entity_code` is 100% NULL. Use name-based mapping only.
+- **Service line classification**: ~870 `Contract_Category` values mapped to 4 buckets. Full mapping in the comprehensive analysis appendix. 6 "debatable" categories (clinically-adjacent purchased services) are classified as Non-Clinical — sensitivity-tested and confirmed robust.

@@ -9,7 +9,9 @@
 ---
 
 ## Mission
-Investigate the feasibility of expanding Premier's portfolio analytics from the legacy **Transaction Analysis (TSA)** data model to the newer **Provider Invoice Workflow History** data model. The core question: Can Workflow History serve as a viable replacement/complement to TSA for health-system-level spend analysis?
+Identify a set of health systems in Premier's **Transaction Analysis (TSA)** data that provide comprehensive non-labor purchasing data across multiple service lines, suitable for extrapolation to Premier's GPO membership (~25% of US healthcare).
+
+> **Note**: Session 1 originally framed this as a WF-vs-TSA comparison. Session 2 reframed to the real objective above. The WF comparison is retained as a **calibration tool** — it validates which TSA systems submit comprehensive data.
 
 ---
 
@@ -108,6 +110,10 @@ After removing non-supply-chain categories, the remaining ~22% gap is explained 
 | `scripts/map_health_systems.py` | Python fuzzy matcher for initial candidate discovery | Committed |
 | `scripts/gen_spend_comparison_2025.sql` | Earlier iteration of comparison SQL | Committed |
 | `scripts/gen_stable_systems_spend_comparison.sql` | Earlier iteration for "stable" systems | Committed |
+| `runs/.../exports/comprehensive_cohort_analysis.md` | **PRIMARY DELIVERABLE** — 29-system tiered cohort with methodology, service line classification, capture ratios, validation notes | Committed |
+| `runs/.../exports/analyst_briefing.md` | Concise narrative for analysts + exec summary for leadership | Committed |
+| `runs/.../exports/osf_deep_dive_analysis.md` | OSF vendor categorization deep dive (Session 1) | Committed |
+| `runs/.../ANALYSIS_PLAN.md` | 6-phase analysis plan (audited; all phases executed) | Committed |
 
 ---
 
@@ -184,19 +190,20 @@ Target: ≥20 health systems with comprehensive non-labor purchasing data across
 ## What's Left To Do
 
 ### Immediate Next Steps
-1. ~~**Validate 3-5 TSA-only cohort systems**~~: ✅ Done — spot-checked PRISMA (Tier 1) and ECU (Tier 3) top vendors/categories; both confirmed comprehensive. Also validated service line classification sensitivity (debatable NC categories don't affect any system's qualification).
-2. **Build per-bed spend benchmarks**: For each service line, compute $/bed ratios across the cohort to establish baseline for extrapolation.
-3. **Map cohort to Premier GPO membership universe**: Use `sa_sf_dhc_join` demographics to determine how representative the cohort is (bed mix, geography, hospital type).
+1. ~~**Validate 3-5 TSA-only cohort systems**~~: ✅ Done — spot-checked PRISMA (Tier 1) and ECU (Tier 3); validated service line classification sensitivity.
+2. ~~**Draft analyst briefing**~~: ✅ Done — `exports/analyst_briefing.md` with exec summary + analyst detail.
+3. **Build per-bed spend benchmarks**: For each service line, compute $/bed ratios across the 29-system cohort using bed counts from `sa_sf_dhc_join`. This is the bridge to extrapolation.
+4. **Map cohort to Premier GPO membership universe**: Use `sa_sf_dhc_join` demographics to quantify how representative the cohort is (~4,000+ hospitals — bed mix, geography, hospital type).
 
 ### Medium-Term
-4. **Develop extrapolation model**: Cohort spend × membership scale factor, accounting for size/type/geography.
-5. **Food supplementary analysis**: If food is critical, investigate Supplier Sales data or industry benchmarks (~3-5% of operating expenses).
-6. **Contract coverage analysis**: Assess which products/categories have Premier contracts vs off-contract purchasing (future scope per user).
+5. **Develop extrapolation model**: Cohort spend × membership scale factor, segmented by system size, type, and region.
+6. **Food supplementary analysis**: If food is critical, investigate Supplier Sales data or industry benchmarks (~3-5% of operating expenses).
+7. **Contract coverage analysis**: Assess which products/categories have Premier contracts vs off-contract purchasing (future scope per user).
 
-### Strategic Decisions Needed
-7. **Accept 3-service-line standard?** Given TSA's structural food gap, is Clinical + Non-Clinical + Pharma sufficient for extrapolation?
-8. **Include GPO alliances?** ACURITY ($29.9B), ALLSPIRE ($7.8B), ADVOCATE ALLIANCE ($17.6B) were excluded as multi-system alliances. Should they be included as "super-systems" for volume coverage?
-9. **Cohort size vs quality tradeoff**: 29 systems identified. Prioritize Tiers 1-2 (16 systems with food data) or use all 29?
+### Strategic Decisions Needed (from user/stakeholders)
+8. **Accept 3-service-line standard?** Given TSA's structural food gap, is Clinical + Non-Clinical + Pharma sufficient for extrapolation?
+9. **Include GPO alliances?** ACURITY ($29.9B), ALLSPIRE ($7.8B), ADVOCATE ALLIANCE ($17.6B) were excluded as multi-system alliances. Should they be included as "super-systems" for volume coverage?
+10. **Cohort size vs quality tradeoff**: 29 systems identified. Prioritize Tiers 1-2 (16 systems with food data) or use all 29?
 
 ---
 
