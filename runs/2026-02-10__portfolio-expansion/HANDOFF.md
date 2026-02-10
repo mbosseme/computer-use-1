@@ -160,21 +160,43 @@ After removing non-supply-chain categories, the remaining ~22% gap is explained 
 
 ---
 
+## Session 2 Summary (continuation)
+
+### Mission Reframing
+User reframed the core objective: the REAL goal is **not** just comparing two data models. It is:
+> "Identify a set of health systems present in the TSA that is substantial enough to extrapolate from to make estimations for at least the whole of Premier's GPO membership (~25% of US healthcare)."
+
+Target: ≥20 health systems with comprehensive non-labor purchasing data across 4 service lines (Clinical, Non-Clinical, Pharma, Food). The WF comparison is a **calibration tool** — use it to understand what "comprehensive" looks like, then expand in TSA.
+
+### Key Analysis Steps Completed
+1. **Universe establishment**: Identified 80+ TSA health systems with 12-month coverage and >$100M spend in CY2025.
+2. **Expanded WF-TSA mapping**: Grew from 9 to 15 cross-referenced systems. Computed WF supply-chain-only spend by applying comprehensive vendor categorization (pharma, insurance, staffing, IT, overhead, government, food, intercompany removal).
+3. **Capture ratio calibration**: 6 systems have TSA/WF_SC_only ≥0.85 (ADVOCATE 3.0x, HONORHEALTH 1.86x, UCI 1.89x, METHODIST_LB 2.03x, CFNI 1.16x, ADVENTIST 0.90x). These confirm TSA can capture comprehensive supply chain data.
+4. **Service line classification**: Mapped ~870 TSA Contract_Category values into 4 buckets (Clinical, Non-Clinical, Pharma, Food). Applied filter: each ≥2% of system spend AND ≥$5M.
+5. **Structural finding — FOOD GAP**: Food is <1% of total TSA platform spend (~$1B out of $115B+). Only 3 systems have food ≥2%. This is structural, not a per-system data quality issue.
+6. **Cohort identified**: 27 unique health systems with 3+ service line coverage, spanning 25+ states, ~68,000 beds, ~$52B annual TSA volume.
+
+### Deliverable
+- **[comprehensive_cohort_analysis.md](exports/comprehensive_cohort_analysis.md)** — Full analysis with tiered cohort, capture ratio calibration, service line distributions, geographic coverage, risk assessment, and recommendations.
+
+---
+
 ## What's Left To Do
 
 ### Immediate Next Steps
-1. **Confirm the scope-difference hypothesis generalizes**: Run the same vendor categorization waterfall for AdventHealth (226% capture ratio) to confirm it follows the same pattern as OSF.
-2. **Investigate Advocate under-capture**: Determine if Workflow's "Advocate Health" is missing the Aurora side, or if TSA's "ADVOCATE HEALTH SUPPLY CHAIN ALLIANCE" includes more members.
+1. **Validate 3-5 TSA-only cohort systems**: Spot-check top vendors and Contract_Category distributions for systems like PRISMA, UPMC, UVA to confirm comprehensiveness.
+2. **Build per-bed spend benchmarks**: For each service line, compute $/bed ratios across the cohort to establish baseline for extrapolation.
+3. **Map cohort to Premier GPO membership universe**: Use `sa_sf_dhc_join` demographics to determine how representative the cohort is (bed mix, geography, hospital type).
 
 ### Medium-Term
-3. **Build a reusable "TSA-scope filter"**: Create a SQL filter/view that removes non-supply-chain vendors from Workflow History to make it comparable to TSA. This would be based on the category rules developed in the OSF deep dive.
-4. **Expand the mapping table**: Currently 9 systems mapped. The original Top 20 list had more candidates. Consider mapping: Dignity Health, Catholic Health Initiatives, Northwell Health, Tenet Healthcare, EM_UCSD.
-5. **Vendor entity code roll-up strategy**: Develop a vendor parent-to-child crosswalk that normalizes vendor entity codes across the two data models (leveraging `vendor_top_parent_entity_code` where available).
+4. **Develop extrapolation model**: Cohort spend × membership scale factor, accounting for size/type/geography.
+5. **Food supplementary analysis**: If food is critical, investigate Supplier Sales data or industry benchmarks (~3-5% of operating expenses).
+6. **Contract coverage analysis**: Assess which products/categories have Premier contracts vs off-contract purchasing (future scope per user).
 
-### Strategic Questions (for Matt)
-6. Is the goal to **replace** TSA with Workflow History, or to **supplement** TSA with the non-supply-chain spend categories that only Workflow captures?
-7. How important is it to close the ~20% residual gap between the two sources for med/surg supply chain, or is "within 20%" acceptable for portfolio analytics?
-8. Should we build a persistent BigQuery mapping table (rather than hardcoded CASE statements) for the health system crosswalk?
+### Strategic Decisions Needed
+7. **Accept 3-service-line standard?** Given TSA's structural food gap, is Clinical + Non-Clinical + Pharma sufficient for extrapolation?
+8. **Include GPO alliances?** ACURITY ($29.9B), ALLSPIRE ($7.8B), ADVOCATE ALLIANCE ($17.6B) were excluded as multi-system alliances. Should they be included as "super-systems" for volume coverage?
+9. **Cohort size vs quality tradeoff**: 27 systems identified. Prioritize Tiers 1-2 (16 systems with food data) or use all 27?
 
 ---
 
