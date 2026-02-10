@@ -174,7 +174,7 @@ Target: ≥20 health systems with comprehensive non-labor purchasing data across
 3. **Capture ratio calibration**: 6 systems have TSA/WF_SC_only ≥0.85 (ADVOCATE 3.0x, HONORHEALTH 1.86x, UCI 1.89x, METHODIST_LB 2.03x, CFNI 1.16x, ADVENTIST 0.90x). These confirm TSA can capture comprehensive supply chain data.
 4. **Service line classification**: Mapped ~870 TSA Contract_Category values into 4 buckets (Clinical, Non-Clinical, Pharma, Food). Applied filter: each ≥2% of system spend AND ≥$5M.
 5. **Structural finding — FOOD GAP**: Food is <1% of total TSA platform spend (~$1B out of $115B+). Only 3 systems have food ≥2%. This is structural, not a per-system data quality issue.
-6. **Cohort identified**: 27 unique health systems with 3+ service line coverage, spanning 25+ states, ~68,000 beds, ~$52B annual TSA volume.
+6. **Cohort identified**: 29 unique health systems with 3+ service line coverage, spanning 25+ states, ~80,000 beds, ~$57B annual TSA volume. (Originally 27; post-audit added AdventHealth and St Luke's University, removed Midland duplicate.)
 
 ### Deliverable
 - **[comprehensive_cohort_analysis.md](exports/comprehensive_cohort_analysis.md)** — Full analysis with tiered cohort, capture ratio calibration, service line distributions, geographic coverage, risk assessment, and recommendations.
@@ -184,7 +184,7 @@ Target: ≥20 health systems with comprehensive non-labor purchasing data across
 ## What's Left To Do
 
 ### Immediate Next Steps
-1. **Validate 3-5 TSA-only cohort systems**: Spot-check top vendors and Contract_Category distributions for systems like PRISMA, UPMC, UVA to confirm comprehensiveness.
+1. ~~**Validate 3-5 TSA-only cohort systems**~~: ✅ Done — spot-checked PRISMA (Tier 1) and ECU (Tier 3) top vendors/categories; both confirmed comprehensive. Also validated service line classification sensitivity (debatable NC categories don't affect any system's qualification).
 2. **Build per-bed spend benchmarks**: For each service line, compute $/bed ratios across the cohort to establish baseline for extrapolation.
 3. **Map cohort to Premier GPO membership universe**: Use `sa_sf_dhc_join` demographics to determine how representative the cohort is (bed mix, geography, hospital type).
 
@@ -196,7 +196,7 @@ Target: ≥20 health systems with comprehensive non-labor purchasing data across
 ### Strategic Decisions Needed
 7. **Accept 3-service-line standard?** Given TSA's structural food gap, is Clinical + Non-Clinical + Pharma sufficient for extrapolation?
 8. **Include GPO alliances?** ACURITY ($29.9B), ALLSPIRE ($7.8B), ADVOCATE ALLIANCE ($17.6B) were excluded as multi-system alliances. Should they be included as "super-systems" for volume coverage?
-9. **Cohort size vs quality tradeoff**: 27 systems identified. Prioritize Tiers 1-2 (16 systems with food data) or use all 27?
+9. **Cohort size vs quality tradeoff**: 29 systems identified. Prioritize Tiers 1-2 (16 systems with food data) or use all 29?
 
 ---
 

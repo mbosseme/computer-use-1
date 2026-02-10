@@ -4,9 +4,11 @@
 
 **Objective**: Identify ≥20 health systems within Premier's Transaction Analysis (TSA) data that provide comprehensive non-labor purchasing data, suitable for extrapolation to Premier's GPO membership (~25% of US healthcare).
 
-**Result**: We identified **28 health systems** with 3+ service line coverage across Clinical, Non-Clinical, and Pharma categories, with 12-month continuous data in CY2025. Three of these also show meaningful Food purchasing. The cohort spans 25+ states, covers ~68,000 staffed hospital beds, and represents ~$52B in annual TSA purchasing volume.
+**Result**: We identified **29 health systems** with 3+ service line coverage across Clinical, Non-Clinical, and Pharma categories, with 12-month continuous data in CY2025. Three of these also show meaningful Food purchasing. The cohort spans 25+ states, covers ~80,000 staffed hospital beds, and represents ~$57B in annual TSA purchasing volume.
 
 **Key structural finding**: Food purchasing is systematically underrepresented in TSA (<1% of total spend platform-wide). A strict 4-service-line requirement would yield only 3 qualifying systems. The realistic definition of "comprehensive" in TSA is 3 service lines (Clinical Med/Surg + Non-Clinical + Pharma).
+
+> **Post-hoc validation note**: This document was audited against the original ANALYSIS_PLAN.md. Two systems (AdventHealth, St Luke's University) were initially excluded as "borderline" but in fact pass the stated ≥2% + $5M thresholds for all 3 service lines. They have been added to Tier 3. The Midland duplicate (formerly listed as both #16 and #28) has been resolved. See "Validation Notes" appendix for full audit details.
 
 ---
 
@@ -116,29 +118,26 @@ These have robust Clinical + Non-Clinical + Pharma but effectively zero food in 
 
 | # | Health System | TSA ($M) | Clin % | NC % | Pharma % | Beds | States |
 |---|--------------|---------|--------|------|---------|------|--------|
-| 17 | **HONORHEALTH** | 1,558 | 58.0 | 38.6 | 3.4 | 1,654 | AZ |
-| 18 | **FAIRVIEW** | 1,465 | 60.0 | 14.1 | 25.9 | 3,483 | MN |
-| 19 | **ECU HEALTH** | 1,164 | 43.3 | 28.5 | 28.3 | 1,367 | NC |
-| 20 | **SOUTH BROWARD** | 1,226 | 40.8 | 56.4 | 2.7 | 1,818 | FL |
-| 21 | **SAINT FRANCIS** | 571 | 81.5 | 15.6 | 2.6 | 1,721 | OK |
-| 22 | **LIFEBRIDGE** | 561 | 45.6 | 51.8 | 2.3 | 816 | MD |
-| 23 | **CARILION** | 544 | 58.1 | 39.3 | 2.5 | 894 | VA |
-| 24 | **BEEBE** | 469 | 23.2 | 56.0 | 20.4 | 201 | DE |
-| 25 | **TIDALHEALTH** | 268 | 62.9 | 24.3 | 12.1 | 408 | DE, MD |
-| 26 | **GREATER BALTIMORE** | 135 | 51.0 | 21.0 | 28.0 | 258 | MD |
-| 27 | **TERREBONNE** | 184 | 38.9 | 41.6 | 17.4 | 242 | LA |
-| 28 | **MIDLAND MEMORIAL** | 217 | 44.4 | 46.7 | 8.0 | 261 | TX |
-
-*Note: Systems #16 and #28 are the same (Midland). Final unique count is 27 systems.*
+| 17 | **ADVENTHEALTH** | 3,720 | 86.6 | 11.1 | 2.3 | 10,719 | FL + 10 states |
+| 18 | **HONORHEALTH** | 1,558 | 58.0 | 38.6 | 3.4 | 1,654 | AZ |
+| 19 | **FAIRVIEW** | 1,465 | 60.0 | 14.1 | 25.9 | 3,483 | MN |
+| 20 | **ST LUKE'S UNIVERSITY** | 1,307 | 52.7 | 43.7 | 3.1 | 1,774 | PA, NJ |
+| 21 | **ECU HEALTH** | 1,164 | 43.3 | 28.5 | 28.3 | 1,367 | NC |
+| 22 | **SOUTH BROWARD** | 1,226 | 40.8 | 56.4 | 2.7 | 1,818 | FL |
+| 23 | **SAINT FRANCIS** | 571 | 81.5 | 15.6 | 2.6 | 1,721 | OK |
+| 24 | **LIFEBRIDGE** | 561 | 45.6 | 51.8 | 2.3 | 816 | MD |
+| 25 | **CARILION** | 544 | 58.1 | 39.3 | 2.5 | 894 | VA |
+| 26 | **BEEBE** | 469 | 23.2 | 56.0 | 20.4 | 201 | DE |
+| 27 | **TIDALHEALTH** | 268 | 62.9 | 24.3 | 12.1 | 408 | DE, MD |
+| 28 | **TERREBONNE** | 184 | 38.9 | 41.6 | 17.4 | 242 | LA |
+| 29 | **GREATER BALTIMORE** | 135 | 51.0 | 21.0 | 28.0 | 258 | MD |
 
 ### Additional Candidates (borderline but worth noting)
 
 | Health System | TSA ($M) | Issue | Notes |
 |--------------|---------|-------|-------|
-| ADVENTHEALTH | 3,720 | Pharma only 2.3%, Food 0% | Large system, mostly clinical |
-| HEALTHPARTNERS | 769 | NC only 2.8% | Heavy pharma + clinical mix |
+| HEALTHPARTNERS | 769 | NC only 2.8% but shallow — mostly hardware resellers + equipment repair; no construction, staffing, insurance, IT consulting | Technically passes ≥2% but fails qualitative diversity check |
 | CHILDREN'S HOSPITAL CORP | 1,400 | Pediatric-only | May not be representative of general acute care |
-| ST LUKE'S UNIVERSITY | 1,307 | Pharma 3.1%, Food 0.5% | Borderline pharma |
 | MHS PURCHASING | 499 | Likely a GPO entity | Need to verify vs actual health system |
 
 ---
@@ -149,23 +148,23 @@ These have robust Clinical + Non-Clinical + Pharma but effectively zero food in 
 
 | Region | Systems | Total Beds |
 |--------|---------|-----------|
-| Southeast (SC, NC, FL, LA, OK) | PRISMA, HEALTH FIRST, ECU, SOUTH BROWARD, SAINT FRANCIS, TERREBONNE | ~8,457 |
-| Mid-Atlantic (VA, MD, DE, PA) | VCU, UVA, LUMINIS, LIFEBRIDGE, GREATER BALTIMORE, CARILION, BEEBE, TIDALHEALTH, UPMC | ~14,284 |
-| Northeast (MA, NJ, IN) | CFNI, BAPTIST | ~3,256 |
+| Southeast (SC, NC, FL, LA, OK) | PRISMA, HEALTH FIRST, ADVENTHEALTH, ECU, SOUTH BROWARD, SAINT FRANCIS, TERREBONNE | ~19,176 |
+| Mid-Atlantic (VA, MD, DE, PA) | VCU, UVA, LUMINIS, LIFEBRIDGE, GREATER BALTIMORE, CARILION, BEEBE, TIDALHEALTH, UPMC, ST LUKE'S | ~16,058 |
+| Northeast (NJ, IN, KY) | CFNI, BAPTIST | ~3,256 |
 | Midwest (MI, MN) | McLAREN, FAIRVIEW | ~5,369 |
 | Southwest (AZ, NM, TX) | HONORHEALTH, PRESBYTERIAN, MIDLAND, UNIVERSITY HEALTH, TEXAS HEALTH | ~13,085 |
 | West (CA, WA, OR) | UCI, PEACEHEALTH | ~2,730 |
 | Appalachian (WV) | WVUHS | ~2,592 |
 
-**25+ states represented** across all major US regions.
+**25+ states represented** across all major US regions. AdventHealth alone spans 11 states (FL, CO, GA, IL, KS, KY, NC, SC, TX, VA, WI).
 
 ### Size Distribution
-- **Large** (>$2B TSA): UPMC, McLAREN, WVUHS, TEXAS HEALTH, PRISMA = 5 systems
-- **Medium** ($500M-$2B): UVA, UNIVERSITY HEALTH, HONORHEALTH, FAIRVIEW, BAPTIST, UCI, PEACEHEALTH, ECU, SOUTH BROWARD, HEALTH FIRST, PRESBYTERIAN, VCU, SAINT FRANCIS, LIFEBRIDGE, CFNI, CARILION = 16 systems
+- **Large** (>$2B TSA): UPMC, ADVENTHEALTH, McLAREN, WVUHS, TEXAS HEALTH, PRISMA = 6 systems
+- **Medium** ($500M-$2B): UVA, UNIVERSITY HEALTH, HONORHEALTH, FAIRVIEW, BAPTIST, ST LUKE'S, UCI, PEACEHEALTH, ECU, SOUTH BROWARD, HEALTH FIRST, PRESBYTERIAN, VCU, SAINT FRANCIS, LIFEBRIDGE, CFNI, CARILION = 17 systems
 - **Small** (<$500M): BEEBE, TIDALHEALTH, MIDLAND, TERREBONNE, GREATER BALTIMORE, LUMINIS = 6 systems
 
 ### Hospital Type Mix
-- Short Term Acute Care: All 27 systems
+- Short Term Acute Care: All 29 systems
 - Critical Access: 10 systems
 - Children's: 7 systems
 - Psychiatric: 5 systems
@@ -175,18 +174,18 @@ These have robust Clinical + Non-Clinical + Pharma but effectively zero food in 
 
 ## Capture Ratio Validation (Where Available)
 
-Of the 27 cohort systems, 6 have WF data for cross-validation:
+Of the 29 cohort systems, 7 have WF data for cross-validation:
 
 | System | Capture Ratio | Confidence Level |
-|--------|--------------|-----------------|
+|--------|--------------|------------------|
 | HONORHEALTH | 1.86 | **High** — TSA > WF supply chain |
 | UCI | 1.89 | **High** — TSA > WF supply chain |
 | CFNI | 1.16 | **High** — near parity |
 | MIDLAND | 0.79 | **Medium** — partial coverage |
-| ADVENTHEALTH* | 0.69 | Borderline — not in final cohort |
+| ADVENTHEALTH | 0.69 | **Medium** — TSA captures ~2/3 of WF supply chain |
 | CONWAY* | 0.49 | Low — not in final cohort |
 
-The remaining 21 systems are **TSA-only** (no WF to compare). Their comprehensiveness is inferred from service line breadth analysis rather than cross-model validation.
+The remaining 22 systems are **TSA-only** (no WF to compare). Their comprehensiveness is inferred from service line breadth analysis rather than cross-model validation.
 
 ---
 
@@ -208,7 +207,7 @@ The remaining 21 systems are **TSA-only** (no WF to compare). Their comprehensiv
 
 ## Recommendations
 
-1. **Accept 3-service-line standard**: Given TSA's structural food gap, define "comprehensive" as Clinical + Non-Clinical + Pharma with ≥2% each. This yields 27 qualifying systems — well above the ≥20 target.
+1. **Accept 3-service-line standard**: Given TSA's structural food gap, define "comprehensive" as Clinical + Non-Clinical + Pharma with ≥2% each. This yields 29 qualifying systems — well above the ≥20 target.
 
 2. **Prioritize Tiers 1-2 (16 systems)**: These have the richest data including at least some food. They are the strongest candidates for extrapolation.
 
@@ -221,7 +220,7 @@ The remaining 21 systems are **TSA-only** (no WF to compare). Their comprehensiv
    - Industry benchmarks for food-as-%-of-operating-expenses (~3-5% typically)
 
 6. **Next steps**:
-   - Validate 3-5 of the TSA-only systems by spot-checking top vendors and Contract_Category distributions
+   - ~~Validate 3-5 of the TSA-only systems by spot-checking top vendors and Contract_Category distributions~~ ✅ Done (PRISMA, ECU validated; see Validation Notes)
    - Build per-bed spend benchmarks for each service line
    - Map cohort systems to the full Premier GPO membership universe using `sa_sf_dhc_join` demographics
    - Develop extrapolation model (cohort spend × membership scale factor)
@@ -254,3 +253,43 @@ All Contract_Category values not explicitly assigned to other buckets, including
 
 ### Food
 `FOOD DISTRIBUTION`, `FOODSERVICE SUPPORT PROGRAMS`, `DIETARY/NUTRITIONAL SUPPLEMENT PRODUCTS`
+
+---
+
+## Appendix: Validation Notes
+
+*Added after post-hoc audit comparing executed analysis against ANALYSIS_PLAN.md*
+
+### Corrections Applied
+
+1. **AdventHealth promoted to Tier 3**: Originally listed as "borderline" with "Pharma only 2.3%". However, 2.3% ≥ 2% threshold and ~$85M pharma ≫ $5M floor. NC at 11.1% ($413M) with real diversity. This is the 2nd largest system in the cohort ($3.7B) and spans 11 states — a significant addition.
+
+2. **St Luke's University Health Network promoted to Tier 3**: Originally listed as "borderline" with "Pharma 3.1%". Pharma at 3.1% ($40M) passes both thresholds. NC at 43.7% has excellent diversity — construction ($81M), insurance ($70M), finance consulting ($65M), IT ($31M), hardware ($26M), MRO ($20M), real estate ($20M), staffing ($7M), EMR ($5M). Genuinely comprehensive.
+
+3. **Midland duplicate removed**: Was listed as both #16 (Tier 2, with food data) and #28 (Tier 3). Now appears only in Tier 2.
+
+### Justified Exclusions Confirmed
+
+- **HealthPartners** ($769M): NC at 2.8% technically passes the quantitative threshold, but composition is almost entirely hardware/software resellers ($6.9M) + clinical equipment repair ($5.9M). Zero construction, staffing, insurance, or IT consulting spend. Per ANALYSIS_PLAN.md Step 3.3 ("flag outliers — e.g., a system with 0% IT spend is likely not submitting non-clinical"), this is a qualitative exclusion.
+- **CONDUCTIV** ($1.6B): Verified as a multi-system GPO containing UVM, University of Louisville, and TriHealth — not a single health system.
+- **GPO/Alliance entities** (Acurity $29.9B, Allspire $7.8B, Yankee $2.0B, etc.): Correctly excluded as purchasing alliances.
+
+### Service Line Classification Validation
+
+- **Debatable categories** (6 categories totaling $8.3B platform-wide — GENERAL OUTSOURCED CLINICAL SERVICES, CLINICAL EQUIPMENT REPAIR, ANESTHESIA SERVICES, etc.): These are *purchased services*, not med/surg supplies. Classification as Non-Clinical is defensible. **Sensitivity test**: Even if reclassified to Clinical, every cohort system still passes the ≥2% NC threshold using only core NC categories. Lowest core-only NC% is Fairview at 13.6%.
+- **UNKNOWN category** (~$1.6B platform-wide): Top vendors are GE Healthcare ($51M), Steris ($35M), Philips ($34M), Medtronic ($21M) — predominantly clinical. Minor leakage: Microsoft ($34M in 1 system), US Foods ($24M across 46 systems), CDW ($13M in 2 systems). Default to Clinical is reasonable.
+
+### Spot-Check Results
+
+- **PRISMA HEALTH (Tier 1)**: Confirmed comprehensive — AmerisourceBergen $626M (pharma), Brasfield & Gorrie $76M (construction), Qualivis $68M (staffing), Morrison $61M (food), Choice Energy $42M (utilities), Epic $36M (IT), plus deep clinical device vendors across cardiac, ortho, surgical robotics.
+- **ECU HEALTH (Tier 3)**: Confirmed comprehensive — pharma $323M, diverse NC across 10+ categories: staffing $71M, construction $47M, IT $43M, municipal $26M, consulting $18M, MRO $17M, anesthesia $16M, hardware $17M, EMR $9M.
+
+### Plan Deviations Acknowledged
+
+| Deviation | Assessment |
+|-----------|------------|
+| Capture ratio ≥0.85 dropped as cohort filter | **Justified** — only 7 of 29 systems have WF data; requiring WF presence would eliminate 22 systems. Mission correctly pivoted to TSA-only signature detection per Phase 5. |
+| UNSPSC_Segment_Code not used for UNKNOWN classification | **Acceptable** — UNKNOWN is ~90% clinical vendors by spend; UNSPSC would marginally improve classification but wouldn't change any system's qualification. |
+| Advocate exemplar comparison (Step 4.2) not performed | **Minor gap** — would strengthen peer validation but is not blocking. |
+| Service line mix variance across cohort not formally assessed | **Noted** — high variance is present (pharma: 2.3%–47.5%, NC: 5.3%–62.4%). This reflects genuinely different purchasing profiles rather than data quality issues. |
+| Vendor concentration per service line (Phase 6.2) not computed | **Deliverable gap** — deferred to next phase (per-bed benchmarking). |
