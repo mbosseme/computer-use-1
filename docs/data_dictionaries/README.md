@@ -55,6 +55,7 @@ For MCP toolbox interaction patterns and authentication setup, see:
 | Supplier Spend | [abi-inbound-prod...supplier_spend.md](abi-inbound-prod.abi_inbound_bq_stg_purchasing_supplier_sales.supplier_spend.md) | Manufacturer-reported contract sales tracings (~87M rows); comprehensive scope including non-acute |
 | SASF DHC Join (Hospitals) | [matthew-bossemeyer...sa_sf_dhc_join__dhc_firm_type=Hospital.md](matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join__dhc_firm_type=Hospital.md) | Definitive Healthcare hospital enrichment (~7K hospitals); IDN rollups, bed counts, facility metadata |
 | Report Builder (Pharma) | [abi-inbound-prod...report_builder.md](abi-inbound-prod.abi_inbound_bq_stg_purchasing_rx_wholesaler_sales.report_builder.md) | Pharma wholesaler tracings (~690M rows); Acute & Non-Acute purchasing view |
+| Provider Purchasing (Identified) | [abi-xform-dataform-prod...month_agg.md](abi-xform-dataform-prod.ssp_create_provider_transaction_base.provider_purchasing_transaction_identified_month_agg.md) | Monthly aggregated provider purchasing (~320M rows); identified by facility/product with Premier roster data |
 
 ---
 
