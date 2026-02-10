@@ -26,7 +26,11 @@ Two layers (choose what you need):
 ### Server Naming
 VS Code config (prebuilt) lives in `.vscode/mcp.json` under server id `bigquery`.
 
-**Required configuration:** The BigQuery prebuilt server requires the `BIGQUERY_PROJECT` environment variable. Example `.vscode/mcp.json`:
+**Required configuration:** The BigQuery prebuilt server requires the `BIGQUERY_PROJECT` environment variable. 
+
+> **Important:** Always use `matthew-bossemeyer` as the default project for interactive exploration, dataform execution, and dataset/table creation.
+
+Example `.vscode/mcp.json`:
 
 ```json
 {

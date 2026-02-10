@@ -1,22 +1,21 @@
-# Data Dictionary: `<TABLE_NAME>`
-
-- **Full Path:** `<project>.<dataset>.<table>`
-- **Description:** <Brief description of what this table contains and its purpose>
-- **Estimated Rows:** ~<N>
-- **Generated:** <Date or method>
-
----
-
-## Overview
-
-<Optional: High-level notes about the table, its source, update frequency, key relationships, etc.>
-
----
+# Data Dictionary: <TABLE_SHORT_NAME>
+**Table**: `<PROJECT>.<DATASET>.<TABLE>`
+**Description**: <Table Description>
+**Total Records**: <COUNT>
 
 ## Columns
 
-<!-- 
-Column sections follow this format:
+### <COLUMN_NAME>
+- **Type**: `<TYPE>`
+- **Description**: <Description>
+- **Distinct Values**: <N>
+- **Nulls**: <N> (<PCT%>)
+- **Top Values**:
+  - `<VALUE>`: <COUNT> (<PCT%>)
+  - `<VALUE>`: <COUNT> (<PCT%>)
+
+---
+
 
 ### column_name
 - Type: `DTYPE`
@@ -24,9 +23,6 @@ Column sections follow this format:
 - Nulls: N (X.XX%)
 - Distinct: N
 - Top values: val1 (count), val2 (count), ...
-
-The profiling script (tools/bigquery-profiling/update_dictionary.py) will inject/update:
-  - Type, Nulls, Distinct, Top values
 
 You should manually provide:
   - Description (what the column means, business context)

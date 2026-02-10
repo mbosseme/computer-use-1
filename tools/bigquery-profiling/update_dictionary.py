@@ -13,7 +13,7 @@ The script finds column sections in the markdown (### column_name) and injects/u
   - Type: `DTYPE`
   - Nulls: N (X.XX%)
   - Distinct: N
-  - Top values: val1 (count), val2 (count), ...
+  - Top values: Value (Count X.XX%), ...
 """
 
 import argparse
@@ -21,6 +21,25 @@ import json
 import re
 import sys
 
+def format_count_pct(count_val, total):
+    """Format a count and its percentage of total."""
+    try:
+        c = int(str(count_val).replace(',', ''))
+        c_str = f"{c:,}"
+        if total and isinstance(total, int) and total > 0:
+            pct = (c / total) * 100
+            if pct == 0 and c > 0:
+                    pct_str = "(<0.01%)"
+            elif pct == 0:
+                    pct_str = "(0%)"
+            elif pct < 0.01:
+                pct_str = "(<0.01%)"
+            else:
+                pct_str = f"({pct:.2f}%)"
+            return f"{c_str} {pct_str}"
+        return c_str
+    except (ValueError, TypeError):
+        return str(count_val)
 
 def load_profiling_results(json_path: str) -> list[dict]:
     """Load profiling results from NDJSON file."""
@@ -36,18 +55,26 @@ def load_profiling_results(json_path: str) -> list[dict]:
     return results
 
 
-def format_top_values(top_vals: list[dict]) -> str:
-    """Format top values as 'val1 (count), val2 (count), ...'"""
+def format_top_values(top_vals: list[dict], total_rows: int) -> str:
+    """Format top values as a markdown list with percentages."""
     if not top_vals:
         return ""
-    items = []
+    
+    lines = []
     for item in top_vals:
         val = item.get('value')
         if val is None:
-            val = "None"
+            val = "NULL"
+        
+        # Ensure value is string
+        val_str = str(val)
+        
         cnt = item.get('count', 0)
-        items.append(f"{val} ({cnt:,})")
-    return ", ".join(items)
+        cnt_display = format_count_pct(cnt, total_rows)
+        
+        lines.append(f"  - `{val_str}`: {cnt_display}")
+    
+    return "\n".join(lines)
 
 
 def update_markdown(content: str, metadata_list: list[dict], total_rows: int) -> str:
@@ -67,27 +94,34 @@ def update_markdown(content: str, metadata_list: list[dict], total_rows: int) ->
         distinct = meta.get('distinct_count', 0)
         top_vals_raw = meta.get('top_values', [])
         
-        # Calculate null percentage
-        pct = (nulls / total_rows) * 100 if total_rows > 0 else 0
+        # Format counts
+        null_display = format_count_pct(nulls, total_rows)
+        try:
+             distinct_display = f"{int(str(distinct).replace(',', '')):,}"
+        except:
+             distinct_display = str(distinct)
         
         # Format top values string
-        top_str = format_top_values(top_vals_raw)
+        top_str = format_top_values(top_vals_raw, total_rows)
         
         # Build metadata lines
-        extra_meta = f"- Nulls: {nulls:,} ({pct:.2f}%)\n- Distinct: {distinct:,}\n"
+        # Uses Standard Format
+        extra_meta = f"- **Distinct Values**: {distinct_display}\n"
+        extra_meta += f"- **Nulls**: {null_display}\n"
+        
         if top_str:
-            extra_meta += f"- Top values: {top_str}\n"
+            extra_meta += f"- **Top Values**:\n{top_str}\n"
         
         # Regex to find column section and inject metadata
-        # Matches: ### column_name\n(optional existing Type/Nulls lines)\n- Description: ...
-        # We replace to: ### column_name\n- Type: ...\n- Description: ...\n- Nulls: ...\n...
+        # Supports old "- Description:" and new "- **Description**:"
+        # Also handles cases where Type might already exist or not.
+        # Strategy: Match Header, then look for Description line.
         
-        # Pattern: capture the header and description line
-        regex = r"(### " + re.escape(col) + r"\s+)(- Description: .*)"
+        regex = r"(### " + re.escape(col) + r"\s*\n)(?:[\s\S]*?)(\- \*\*?Description\*\*?: .*)"
         
         replacement = (
             f"### {col}\n"
-            f"- Type: `{dtype}`\n"
+            f"- **Type**: `{dtype}`\n"
             f"\\2\n"
             f"{extra_meta}"
         )
@@ -125,14 +159,6 @@ def main():
         # For now, use a safe fallback or warn.
         print("Warning: --total-rows not specified. Null percentages may be inaccurate.", 
               file=sys.stderr)
-        # Try to estimate from the data (sum of first column's top values)
-        first_col = metadata[0]
-        top_vals = first_col.get('top_values', [])
-        if top_vals:
-            # This is a rough estimate - assumes top 5 values cover most data
-            # Not reliable, but better than 0
-            total_rows = sum(v.get('count', 0) for v in top_vals) * 10
-            print(f"Estimated total rows: ~{total_rows:,} (rough estimate)", file=sys.stderr)
     
     # Read markdown file
     with open(args.markdown_file, 'r') as f:
@@ -146,7 +172,6 @@ def main():
         f.write(updated)
     
     print(f"Updated {args.markdown_file}", file=sys.stderr)
-
 
 if __name__ == "__main__":
     main()

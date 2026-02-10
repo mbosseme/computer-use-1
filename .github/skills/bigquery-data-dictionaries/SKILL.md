@@ -33,21 +33,40 @@ python tools/bigquery-profiling/gen_profiling_sql.py \
 
 ### Phase 3: Execute Queries
 1. Run the SQL via `mcp_bigquery_execute_sql`.
-2. If the query is too large (>50 columns), split into batches of ~40 columns each.
-3. Combine results into a single NDJSON file (one JSON object per line).
+2. (Optional) Run `SELECT count(*) as total_rows FROM <table>` to get the total record count.
+3. Combine results into a single JSON file.
 
-### Phase 4: Update Markdown Dictionary
-Use `tools/bigquery-profiling/update_dictionary.py`:
+### Phase 4: Generate Markdown Dictionary
+Use `tools/bigquery-profiling/create_dictionary.py` to generate the full markdown file in the standard format:
 ```bash
-python tools/bigquery-profiling/update_dictionary.py \
-  <path_to_dictionary.md> \
-  <profiling_results.json> \
-  [--total-rows N]
+python tools/bigquery-profiling/create_dictionary.py \
+  --schema <schema.json> \
+  --stats <stats.json> \
+  --output <output.md>
 ```
+Ensure `stats.json` includes a "total_rows" key if you want the total count in the header.
 
-The script injects/updates:
-- `- Type: \`DTYPE\``
-- `- Nulls: N (X.XX%)`
+### Phase 5: Update Existing Dictionary (Partial)
+Use `tools/bigquery-profiling/update_dictionary.py` if you only need to inject stats into an existing file that might have custom formatting you want to preserve (legacy method).
+
+## Standard Output Format
+The generated dictionary must follow this structure, including percentages for Nulls and Top Values:
+```markdown
+# Data Dictionary: short_table_name
+**Table**: `project.dataset.table_name`
+**Description**: Description...
+**Total Records**: 123,456
+
+## Columns
+### column_name
+- **Type**: `STRING`
+- **Description**: Description of column.
+- **Distinct Values**: 100
+- **Nulls**: 5 (0.00%)
+- **Top Values**:
+  - `ValueA`: 50 (0.04%)
+  - `ValueB`: 30 (0.02%)
+```
 - `- Distinct: N`
 - `- Top values: val1 (count), val2 (count), ...`
 
@@ -79,7 +98,8 @@ See `docs/data_dictionaries/_TEMPLATE.md` for the standard structure.
 | Tool | Location | Purpose |
 |------|----------|---------|
 | `gen_profiling_sql.py` | `tools/bigquery-profiling/` | Generate profiling SQL from schema |
-| `update_dictionary.py` | `tools/bigquery-profiling/` | Inject profiling stats into markdown |
+| `create_dictionary.py` | `tools/bigquery-profiling/` | Generate new dictionary from schema + stats |
+| `update_dictionary.py` | `tools/bigquery-profiling/` | Inject profiling stats into existing dictionary |
 
 ## Privacy / Safety
 - Do not include actual data values that could be PII in the dictionary (top values are aggregated counts, generally safe)
