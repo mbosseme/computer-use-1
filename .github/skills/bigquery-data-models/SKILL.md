@@ -108,9 +108,10 @@ docs/data_dictionaries/<project>.<dataset>.<table>.md
 
 | Model | Full Table Path | Use Case |
 |-------|-----------------|----------|
-| Transaction Analysis | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded` | Provider-side purchasing visibility |
+| Transaction Analysis | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded` | Provider-side purchasing visibility (med/surg supply chain only) |
+| Workflow History | `abi-xform-prod.abi_xform_bq_erp_hardening.provider_invoice_workflow_history` | Full AP invoices (ERP + Remitra); broader scope than TSA — includes pharma, insurance, staffing, IT, capital, food, intercompany |
 | Supplier Spend | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_supplier_sales.supplier_spend` | Manufacturer-reported contract sales |
-| SASF DHC Join | `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join` | Facility/IDN enrichment, hospital metadata |
+| SASF DHC Join | `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join` | Facility/IDN enrichment, hospital metadata (beds, type, geography; filter `dhc_firm_type='Hospital'` for acute care) |
 
 For detailed model documentation, see [Premier Data Models Handoff](../../../docs/PREMIER_DATA_MODELS_HANDOFF.md).
 
