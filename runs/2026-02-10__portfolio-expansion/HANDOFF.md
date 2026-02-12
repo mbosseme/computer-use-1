@@ -1295,3 +1295,131 @@ The TSA clinical calibration (Step 4) is marked as **CRITICAL** and must be run 
 |---|---|
 | `runs/.../exports/analyst_briefing.md` | Added Section III-B (TSA-calibrated extrapolation), updated Executive Summary to $128B |
 | `docs/ANALYST_BRIEFING_PRODUCTION.md` | **Created** — comprehensive production process with 6 steps + consistency checks |
+
+---
+
+## Session 12 (2026-02-12): Briefing Finalization, Stakeholder Email, Charts, Workspace Cleanup
+
+### 11. Analyst Briefing — Historical Context Removal
+
+Removed all version history references from the briefing to make it a clean, forward-looking stakeholder document:
+- Stripped v3.2, v4, v4.3 references, session references, "prior approach" explanations
+- Removed 73-line historical Clinical Extrapolation Validation section
+- Renumbered sections, cleaned "(Expanded)" from Section II title
+- File went from 540 → 455 lines
+
+### 12. Transcript-Driven Refinements (6 items)
+
+Based on a team meeting transcript (Bossemeyer, Lilly/Zach, Kapu/Uday) about what to convey to executive stakeholder Bill Marquardt:
+
+1. **Ranges not points**: Replaced point estimates with ranges in exec summary ($122B–$132B)
+2. **Spend-coverage stat**: Added "$42B = ~80% of $52B GPO clinical" to cohort finding
+3. **NC analysis-readiness**: Added Finding #4 — 100 systems ready for NC on/off/non-contract analysis
+4. **Merged Section III**: Combined per-bed and TSA-calibrated into single section with Approach A / Approach B (Recommended), range as headline
+5. **GPO market-share**: Added "~27% of ~6,500 US hospitals" in exec summary and Section III
+6. **Feed-mapping table**: Restructured Connection section with "What we now know" (volume targets × detailed feeds) and "What we can do next"
+
+### 13. Precision Corrections
+
+- **WF pharma/food explanation**: Corrected from "TSA taxonomy can't distinguish" to "WF invoices are large monthly aggregates from wholesalers/distributors lacking product-level granularity"
+- **Clinical range floor tightened**: Lower bound moved from $48B (median-rate) to $52B (TSA-observed floor), since observed data already exceeded model-based lower bound. Clinical range: $52B–$57B
+- **Range derivation documented**: Added "Range Derivation Rules" section to ANALYST_BRIEFING_PRODUCTION.md with clinical floor constraint, step-by-step formula, worked example
+
+### 14. Analysis Scope Statement
+
+Added "Analysis Scope" subsection to Executive Summary clarifying:
+- Analysis is **health system and hospital-centric** (ERP-sourced data)
+- Some non-acute volume appears from owned/leased/managed facilities sharing the ERP
+- **Out of scope**: Independent non-acute/alternate-site facilities ($123B non-acute pharma alone)
+- Pharma wholesaler tracing cross-check: $21.5B acute tracings vs $18B–$19B GPO extrapolation (slight overshoot expected due to broader pharmacy program footprint)
+
+### 15. Stakeholder Visuals (new)
+
+Created two charts for Bill Marquardt email:
+
+| File | Description |
+|------|-------------|
+| `exports/gpo_spend_landscape.png` | Horizontal stacked bar — $128B total by service line, 84/16 split (SA data vs wholesaler tracings needed) |
+| `exports/sl_readiness_matrix.png` | Bubble chart — volume × data-source readiness, with scope disclaimer |
+
+The readiness matrix was refined through 3 iterations:
+- X-axis: "Data Source for On/Off/Non-Contract Analysis" with "Sales tracings" (left) and "Health system ERP data in Supply Analytics" (right)
+- Title: "Estimated GPO Member Health System Non-Labor Expense by Service Line"
+- Scope note: "Excludes non-acute / continuum of care. Does not consider health systems that are pharma and/or food program only."
+- Generation scripts alongside PNGs for reproducibility
+
+### 16. Stakeholder Email Draft
+
+Drafted email to Bill Marquardt covering:
+- Invoice data analysis across 500+ health systems → reliable service line mix benchmarks
+- Two key enablers: (1) volume targets by SL across full GPO, (2) extend Supply Analytics clinical dashboard to NC
+- 100 systems comprehensively reporting C+NC → immediate NC analysis capability
+- Scope note: health system purchasing only, not non-acute/alternate-site market
+- Next steps: NC category breakdowns (Jordan Garrett, targeting 2/13), SL leader validation
+
+### 17. Revenue Sizing (back-of-napkin)
+
+At $127B midpoint, 3% avg admin fee, 60% shareback:
+- **Gross admin fee**: $3.81B
+- **Net admin fee (Premier retains)**: $1.52B
+- Each 1% of volume = ~$38M gross / $15M net
+
+### 18. Workspace Cleanup
+
+**Moved PE-specific docs from core to run-local:**
+- `docs/ANALYST_BRIEFING_PRODUCTION.md` → `runs/2026-02-10__portfolio-expansion/ANALYST_BRIEFING_PRODUCTION.md`
+- `docs/validated_health_system_mapping.md` → `runs/2026-02-10__portfolio-expansion/validated_health_system_mapping.md`
+
+**Confirmed to stay in core** (generalizable):
+- `docs/PREMIER_DATA_MODELS_HANDOFF.md` — explicitly "generalizable reference for any agent"
+- `docs/.github/skills/premier-data-analytics/` — general Premier data skill
+- All data dictionaries, architecture docs, tooling guides
+
+### 19. Core PR Merged
+
+**PR #40** merged into `main` — "core: Dataform gitignore, dataset naming convention, best practices doc":
+1. `.gitignore` — `dataform/.df-credentials.json`, `dataform/snowflake.log`, `dataform/node_modules/`
+2. `docs/PREMIER_DATA_MODELS_HANDOFF.md` — restored dataset naming convention block
+3. `docs/dataform_in_vscode_best_practices.md` — new 858-line Dataform CLI guide
+
+Worktree branch synced with main at `fa92aa7`.
+
+### 20. Current Artifact State
+
+| File | Location | Status |
+|------|----------|--------|
+| `analyst_briefing.md` | `runs/.../exports/` | **Final** — ~425 lines, scope statement, ranges, merged sections, all 4 findings |
+| `ANALYST_BRIEFING_PRODUCTION.md` | `runs/.../` (run-local) | Updated — scope boundaries, pharma tracing cross-check, range derivation rules |
+| `validated_health_system_mapping.md` | `runs/.../` (run-local) | Moved from core, unchanged |
+| `gpo_spend_landscape.png` + `.py` | `runs/.../exports/` | Final stacked bar chart |
+| `sl_readiness_matrix.png` + `.py` | `runs/.../exports/` | Final bubble chart (3 iterations) |
+| `HANDOFF.md` | `runs/.../` | This file — updated through Session 12 |
+
+### 21. Key Numbers (current pipeline)
+
+| Metric | Value |
+|--------|-------|
+| Cohort systems | 100 |
+| Cohort beds (hospital-only) | 113K |
+| GPO facilities | 1,775 |
+| GPO beds | 224K |
+| TSA-observed GPO clinical | $52.2B |
+| Recommended total non-labor | **$128B** |
+| Presentation range | **$122B–$132B** |
+| Clinical range | $52B–$57B |
+| NC range | $50B–$54B |
+| Pharma range | $18B–$19B |
+| Food range | ~$2B |
+| Pharma wholesaler tracing (acute) | $21.5B |
+| Pharma wholesaler tracing (non-acute) | $123B |
+| WF clinical share | 0.428 |
+| WF C+NC share | 0.841 |
+| Non-reporting assumption (clinical) | 5% |
+
+### 22. Open Items / Next Steps
+
+1. **NC category breakdowns**: Awaiting Jordan Garrett's catch-all category decomposition (target 2/13) to enable NC subcategory opportunity sizing
+2. **SL leader validation**: Confirm category-to-SL mapping with Pam (Clinical), Molly (NC), Justin (Pharma), Joan (Food)
+3. **System-level scoring matrix**: Build per-system × per-SL heat map once NC subcategories are available
+4. **Email to Bill**: Draft ready; send once Matt reviews final wording and chart selection
+5. **Pharma/Food deep dive**: Source wholesaler/distributor tracing data for on/off/non-contract in these channels
