@@ -1,0 +1,86 @@
+config {
+  type: "table",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "tsa_clin_nc_cohort",
+  description: "Health systems with comprehensive Clinical AND Non-Clinical TSA reporting. Qualification: ≥$10M clinical spend, ≥$10M NC spend, ≥5 distinct clinical categories, ≥5 distinct NC categories. Excludes purchasing alliances/GPOs.",
+  tags: ["mart", "cohort"],
+  dependencies: ["tsa_cy2025", "sa_sf_dhc_join_enriched"],
+  assertions: {
+    uniqueKey: ["Health_System_Entity_Code"],
+    nonNull: ["Health_System_Entity_Code", "Health_System_Name", "clinical_spend", "nc_spend"]
+  }
+}
+
+-- Cohort uses parent_service_line from tsa_cy2025 (which inherits from service_line_mapping).
+-- No separate "marker category" enumeration — all Clinical and Non-Clinical categories
+-- under the mapping count toward thresholds. This is more robust and consistent.
+
+WITH system_spend AS (
+  SELECT
+    Health_System_Entity_Code,
+    Health_System_Name,
+    parent_service_line,
+    Contract_Category,
+    SUM(Base_Spend) AS spend
+  FROM ${ref("tsa_cy2025")}
+  WHERE parent_service_line IN ('Clinical', 'Non-Clinical')
+  GROUP BY 1, 2, 3, 4
+),
+
+system_summary AS (
+  SELECT
+    Health_System_Entity_Code,
+    MAX(Health_System_Name) AS Health_System_Name,
+    SUM(CASE WHEN parent_service_line = 'Clinical'     THEN spend ELSE 0 END) AS clinical_spend,
+    SUM(CASE WHEN parent_service_line = 'Non-Clinical'  THEN spend ELSE 0 END) AS nc_spend,
+    SUM(spend) AS addressable_spend,
+    COUNT(DISTINCT CASE WHEN parent_service_line = 'Clinical'    AND spend > 0 THEN Contract_Category END) AS clinical_categories,
+    COUNT(DISTINCT CASE WHEN parent_service_line = 'Non-Clinical' AND spend > 0 THEN Contract_Category END) AS nc_categories
+  FROM system_spend
+  GROUP BY 1
+),
+
+-- Total system spend (all SLs, not just C+NC)
+total AS (
+  SELECT
+    Health_System_Entity_Code,
+    SUM(Base_Spend) AS total_spend
+  FROM ${ref("tsa_cy2025")}
+  GROUP BY 1
+),
+
+-- Bed count from facility directory (facility-level, not system-level)
+beds AS (
+  SELECT
+    t.Health_System_Entity_Code,
+    SUM(SAFE_CAST(REPLACE(f.dhc_number_of_staffed_beds, ',', '') AS INT64)) AS staffed_beds
+  FROM (
+    SELECT DISTINCT Health_System_Entity_Code, Premier_Entity_Code
+    FROM ${ref("tsa_cy2025")}
+  ) t
+  JOIN ${ref("sa_sf_dhc_join_enriched")} f
+    ON t.Premier_Entity_Code = f.facility_entity_code
+  WHERE f.dhc_number_of_staffed_beds IS NOT NULL
+  GROUP BY 1
+)
+
+SELECT
+  s.Health_System_Entity_Code,
+  s.Health_System_Name,
+  s.clinical_spend,
+  s.nc_spend,
+  s.addressable_spend,
+  s.clinical_categories,
+  s.nc_categories,
+  tot.total_spend,
+  b.staffed_beds
+FROM system_summary s
+LEFT JOIN total tot ON s.Health_System_Entity_Code = tot.Health_System_Entity_Code
+LEFT JOIN beds b    ON s.Health_System_Entity_Code = b.Health_System_Entity_Code
+WHERE s.clinical_spend >= 10000000
+  AND s.nc_spend >= 10000000
+  AND s.clinical_categories >= 5
+  AND s.nc_categories >= 5
+  -- Exclude purchasing alliances / GPOs (not individual health systems)
+  AND NOT REGEXP_CONTAINS(UPPER(s.Health_System_Name),
+    r'ACURITY|ALLSPIRE|YANKEE ALLIANCE|CONDUCTIV|ALLIANT|HOSPITAL SHARED SERVICES|HEALTH ENTERPRISES|PRAIRIE HEALTH VENTURES|WELLLINK|MHS PURCHASING|OPTUM')

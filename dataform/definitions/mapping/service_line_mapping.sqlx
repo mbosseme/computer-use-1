@@ -1,0 +1,31 @@
+config {
+  type: "table",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "service_line_mapping",
+  description: "SINGLE SOURCE OF TRUTH: Maps TSA service_line values to parent_service_line. All downstream tables (entity_sl_mix, tsa_cy2025, cohort, WF benchmarks) derive their SL classification from this mapping. 10 rows covering all non-NULL TSA service_line values. NULL service_line (UNKNOWN contract_category) is intentionally unmapped → excluded from SL proportions, NULL parent_service_line in tsa_cy2025.",
+  tags: ["mapping", "core"],
+  assertions: {
+    uniqueKey: ["service_line"],
+    nonNull: ["service_line", "parent_service_line"],
+    rowConditions: [
+      "parent_service_line IN ('Clinical', 'Non-Clinical', 'Pharma', 'Food')"
+    ]
+  }
+}
+
+-- The 10 TSA service_line values and their parent_service_line grouping.
+-- This replaces ALL prior Contract_Category enumeration logic.
+-- Changes here cascade to every downstream table via ${ref()}.
+
+SELECT * FROM UNNEST([
+  STRUCT('PPI'                AS service_line, 'Clinical'     AS parent_service_line),
+  STRUCT('NURSING',                            'Clinical'),
+  STRUCT('SURGICAL',                           'Clinical'),
+  STRUCT('DIAGNOSTICS',                        'Clinical'),
+  STRUCT('DISTRIBUTION',                       'Clinical'),
+  STRUCT('PURCHASED SERVICES',                 'Non-Clinical'),
+  STRUCT('FACILITIES',                         'Non-Clinical'),
+  STRUCT('IT/DIGITAL HEALTH',                  'Non-Clinical'),
+  STRUCT('PHARMACY',                           'Pharma'),
+  STRUCT('FOODS',                              'Food')
+])

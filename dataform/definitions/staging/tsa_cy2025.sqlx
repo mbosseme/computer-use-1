@@ -1,0 +1,24 @@
+config {
+  type: "table",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "tsa_cy2025",
+  description: "CY2025 TSA transactions with parent_service_line from service_line_mapping. Base table for all TSA analysis. ~118M rows. Excludes test/demo entities. NULL parent_service_line for UNKNOWN contract_category (unmapped).",
+  tags: ["staging", "tsa"],
+  dependencies: ["service_line_mapping"]
+}
+
+-- Base CY2025 TSA table. parent_service_line is derived exclusively from
+-- service_line_mapping via LEFT JOIN (preserves all rows; UNKNOWN → NULL).
+-- Cohort and GPO flags are added downstream in tsa_cy2025_enriched.
+
+SELECT
+  t.*,
+  m.parent_service_line
+FROM ${ref("transaction_analysis_expanded")} t
+LEFT JOIN ${ref("service_line_mapping")} m ON t.service_line = m.service_line
+WHERE EXTRACT(YEAR FROM Transaction_Date) = 2025
+  AND NOT (
+    UPPER(Health_System_Name) LIKE '%TEST%'
+    OR UPPER(Health_System_Name) LIKE '%DEMO%'
+    OR UPPER(Health_System_Name) LIKE '%COST TECHNOLOGY%'
+  )

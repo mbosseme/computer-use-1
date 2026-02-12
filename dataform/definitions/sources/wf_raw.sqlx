@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "abi-xform-prod",
+  schema: "abi_xform_bq_erp_hardening",
+  name: "provider_invoice_workflow_history",
+  description: "Workflow History (WF) invoice source. Contains health_system_name, vendor_name, vendor_entity_code, invoice_total_amount, vendor_invoice_date."
+}

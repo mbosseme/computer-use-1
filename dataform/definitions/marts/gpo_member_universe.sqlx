@@ -1,0 +1,35 @@
+config {
+  type: "table",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "gpo_member_universe",
+  description: "Premier GPO acute-care membership universe. 868 facilities, 194K beds. Filtered to Short Term Acute Care, Health System, Childrens Hospital, Critical Access Hospital. Deduplicated by dhc_definitive_id.",
+  tags: ["mart", "gpo"],
+  dependencies: ["sa_sf_dhc_join_enriched"],
+  assertions: {
+    uniqueKey: ["dhc_definitive_id"],
+    nonNull: ["dhc_definitive_id", "dhc_hospital_name", "staffed_beds", "premier_gpo_member"]
+  }
+}
+
+SELECT
+  dhc_definitive_id,
+  dhc_hospital_name,
+  dhc_hospital_type,
+  SAFE_CAST(REPLACE(dhc_number_of_staffed_beds, ',', '') AS INT64) AS staffed_beds,
+  facility_entity_code,
+  premier_gpo_member_improved AS premier_gpo_member
+FROM (
+  SELECT
+    *,
+    ROW_NUMBER() OVER (PARTITION BY dhc_definitive_id ORDER BY dhc_hospital_name) AS rn
+  FROM ${ref("sa_sf_dhc_join_enriched")}
+  WHERE premier_gpo_member_improved = TRUE
+    AND dhc_hospital_type IN (
+      'Short Term Acute Care',
+      'Health System',
+      'Childrens Hospital',
+      'Critical Access Hospital'
+    )
+    AND dhc_definitive_id IS NOT NULL
+)
+WHERE rn = 1

@@ -1,0 +1,14 @@
+config {
+  type: "assertion",
+  description: "Sanity check: the C+NC cohort should contain 50-200 health systems. A count outside this range suggests a threshold or mapping change has silently broken the pipeline. Current expected value: ~100 systems.",
+  tags: ["assertion", "sanity"],
+  dependencies: ["tsa_clin_nc_cohort"]
+}
+
+-- Fails (returns a row) if cohort size is outside the 50-200 reasonable range.
+
+SELECT
+  COUNT(*) AS cohort_size,
+  'Cohort size outside expected 50-200 range' AS failure_reason
+FROM ${ref("tsa_clin_nc_cohort")}
+HAVING COUNT(*) < 50 OR COUNT(*) > 200

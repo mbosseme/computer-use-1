@@ -1,0 +1,7 @@
+{
+  "defaultSchema": "wt_2026_02_10__portfolio_expansion",
+  "assertionSchema": "wt_2026_02_10__portfolio_expansion_assertions",
+  "warehouse": "bigquery",
+  "defaultDatabase": "matthew-bossemeyer",
+  "defaultLocation": "US"
+}

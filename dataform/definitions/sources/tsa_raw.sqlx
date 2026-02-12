@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "abi-inbound-prod",
+  schema: "abi_inbound_bq_stg_purchasing_provider_transaction",
+  name: "transaction_analysis_expanded",
+  description: "Raw TSA (Transaction Analysis) source table. Contains all purchasing transactions with Contract_Category, service_line, Vendor_Entity_Code, Manufacturer_Entity_Code, Landed_Spend, Base_Spend, etc."
+}

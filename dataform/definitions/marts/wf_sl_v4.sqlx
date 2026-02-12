@@ -1,0 +1,177 @@
+config {
+  type: "table",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "wf_sl_v4",
+  description: "WF Service Line classification v4. Uses corrected entity_sl_mix (service_line-based mapping, not Contract_Category enumeration). Entity-bridge primary (79%), name-pattern fallback (6%), exclude identification (2.4%), unmatched residual (15%). Per-system SL spend and match rates.",
+  tags: ["mart", "wf-benchmark"],
+  dependencies: ["entity_sl_mix"],
+  assertions: {
+    uniqueKey: ["health_system_name"],
+    nonNull: ["health_system_name", "total_spend"],
+    rowConditions: [
+      "total_spend > 0",
+      "addressable_match_pct >= 0 AND addressable_match_pct <= 100"
+    ]
+  }
+}
+
+-- v4 rebuild: entity_sl_mix now uses service_line_mapping, fixing $19.5B
+-- NC→Clinical misclassification from the fragile category enumeration in v3.2.
+-- Name-pattern fallback layer is unchanged (vendor-name based, independent of mapping).
+
+WITH wf_raw AS (
+  SELECT
+    health_system_name,
+    vendor_name,
+    vendor_entity_code,
+    invoice_total_amount
+  FROM ${ref("provider_invoice_workflow_history")}
+  WHERE EXTRACT(YEAR FROM vendor_invoice_date) = 2025
+    AND invoice_total_amount > 0
+),
+
+classified AS (
+  SELECT
+    w.health_system_name,
+    w.invoice_total_amount,
+    CASE WHEN e.entity_code IS NOT NULL THEN 'entity' ELSE
+      CASE
+        -- ===== EXCLUDE layer =====
+        -- Tax authorities
+        WHEN UPPER(w.vendor_name) LIKE '%INTERNAL REVENUE%' OR UPPER(w.vendor_name) LIKE '% IRS %' OR UPPER(w.vendor_name) LIKE '%IRS/%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%DEPT OF REVENUE%' OR UPPER(w.vendor_name) LIKE '%DEPARTMENT OF REVENUE%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%TAX COMMISSION%' OR UPPER(w.vendor_name) LIKE '%STATE TAX%' OR UPPER(w.vendor_name) LIKE '%FRANCHISE TAX%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%SALES TAX%' THEN 'exclude'
+        -- Retirement / pension / 401k/403b
+        WHEN UPPER(w.vendor_name) LIKE '%FIDELITY INVEST%' OR UPPER(w.vendor_name) LIKE '%FIDELITY RETIRE%' OR UPPER(w.vendor_name) LIKE '%FIDELITY SECURITY%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%VANGUARD%' OR UPPER(w.vendor_name) LIKE '%VOYA FINANCIAL%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%TIAA%' OR UPPER(w.vendor_name) LIKE '%LINCOLN FINANCIAL%' OR UPPER(w.vendor_name) LIKE '%LINCOLN LIFE%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%EMPOWER RETIREMENT%' OR UPPER(w.vendor_name) LIKE '%GREAT-WEST%' OR UPPER(w.vendor_name) LIKE '%PRUDENTIAL RETIRE%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%RETIREMENT%' OR UPPER(w.vendor_name) LIKE '%PENSION%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%401K%' OR UPPER(w.vendor_name) LIKE '%403B%' THEN 'exclude'
+        -- Insurance claims / health plans
+        WHEN UPPER(w.vendor_name) LIKE '%AETNA%CLAIM%' OR UPPER(w.vendor_name) LIKE '%AETNA/%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%BCBS%' OR UPPER(w.vendor_name) LIKE '%BLUE CROSS%' OR UPPER(w.vendor_name) LIKE '%CAREFIRST%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%CIGNA%CLAIM%' OR UPPER(w.vendor_name) LIKE '%CIGNA HEALTH%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%HUMANA %' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%UNITED HEALTHCARE%CLAIM%' OR UPPER(w.vendor_name) LIKE '%UHC CLAIM%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%DELTA DENTAL%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%COMMUNITY FIRST HEALTH PLAN%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%DENTAQUEST%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%MALPRACTICE%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%WORKERS COMP%' OR UPPER(w.vendor_name) LIKE '%WORKERS%COMPENSATION%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%UNEMPLOYMENT%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%DISABILITY%PAYROLL%' OR UPPER(w.vendor_name) LIKE '%RELIASTAR%' OR UPPER(w.vendor_name) LIKE '%UNUM LIFE%' THEN 'exclude'
+        -- Payroll / transfers
+        WHEN UPPER(w.vendor_name) LIKE '%PAYROLL%' THEN 'exclude'
+        -- Banking
+        WHEN UPPER(w.vendor_name) LIKE '%PNC BANK%' OR UPPER(w.vendor_name) LIKE '%BANK OF AMERICA%' OR UPPER(w.vendor_name) LIKE '%US BANK%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%REGIONS BANK%' OR UPPER(w.vendor_name) LIKE '%WELLS FARGO%BANK%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%WEX BANK%' THEN 'exclude'
+        -- P-cards
+        WHEN UPPER(w.vendor_name) LIKE '%P-CARD%' OR UPPER(w.vendor_name) LIKE '%PCARD%' THEN 'exclude'
+        -- OneTime / placeholder
+        WHEN UPPER(w.vendor_name) = 'ONETIME' THEN 'exclude'
+        -- Intercompany
+        WHEN UPPER(w.vendor_name) LIKE '%INTERCOMPANY%' OR UPPER(w.vendor_name) LIKE '%INTER-COMPANY%' THEN 'exclude'
+        -- Government entities (non-purchasing)
+        WHEN UPPER(w.vendor_name) LIKE '%HEALTH CARE AUTHORITY%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%STATE OF%' AND UPPER(w.vendor_name) NOT LIKE '%STATE OF THE ART%' THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%COUNTY%' AND (
+          UPPER(w.vendor_name) LIKE '%COUNTY TAX%' OR UPPER(w.vendor_name) LIKE '%COUNTY FLORIDA%'
+          OR UPPER(w.vendor_name) LIKE '%COUNTY RETIRE%' OR UPPER(w.vendor_name) LIKE '%COUNTY %DISTRICT%'
+        ) THEN 'exclude'
+        WHEN UPPER(w.vendor_name) LIKE '%TEXAS COUNTY%RETIRE%' THEN 'exclude'
+        -- Settlement / legal non-purchasing
+        WHEN UPPER(w.vendor_name) LIKE '%SETTLEMENT%' AND UPPER(w.vendor_name) NOT LIKE '%BUSINESS%' THEN 'exclude'
+
+        -- ===== PHARMA layer (BEFORE broad Cardinal/McKesson clinical) =====
+        WHEN UPPER(w.vendor_name) LIKE '%NUCLEAR PHARM%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%SPEC PH SRVC%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%SPECIALTY PHARM%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%SPECIALTY CARE DIST%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%340B%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%RADIOPHARM%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%AMERISOURCE%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%MACRO HELIX%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%CARDINAL%PHARM%' AND UPPER(w.vendor_name) NOT LIKE '%ROCHE%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%MCKESSON%PHARM%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%MCKESSON%340B%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%MCKESSON%DRUG%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%MCKESSON%SPEC%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%MCKESSON%RX%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%NAVITUS%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%CAREMARK%' THEN 'pharma_name'
+        WHEN UPPER(w.vendor_name) LIKE '%OMNICELL%PHARM%' OR UPPER(w.vendor_name) LIKE '%OMNICELL%SPEC%' THEN 'pharma_name'
+
+        -- ===== FOOD layer =====
+        WHEN UPPER(w.vendor_name) LIKE '%MORRISON MANAGEMENT%' OR UPPER(w.vendor_name) LIKE '%MORRISON HEALTHCARE%' THEN 'food_name'
+        WHEN UPPER(w.vendor_name) LIKE '%SODEXO%' THEN 'food_name'
+        WHEN UPPER(w.vendor_name) LIKE '%DISTRIBUTION COOPERATIVE%' THEN 'food_name'
+
+        -- ===== NC layer =====
+        WHEN UPPER(w.vendor_name) LIKE '%CONSTRUCTION%' OR UPPER(w.vendor_name) LIKE '%CONTRACTING%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%STAFFING%' OR UPPER(w.vendor_name) LIKE '%TEMP AGENCY%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%ENERGY%' OR UPPER(w.vendor_name) LIKE '%ELECTRIC%' OR UPPER(w.vendor_name) LIKE '%UTILITY%' OR UPPER(w.vendor_name) LIKE '%UTILITIES%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%ARCHITECT%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%EPIC HOSTING%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%LAUNDRY%' OR UPPER(w.vendor_name) LIKE '%TEXTILE%' OR UPPER(w.vendor_name) LIKE '%LINEN%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%HARTFORD%' AND UPPER(w.vendor_name) LIKE '%INSURANCE%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%GUILD EDUCATION%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%WASTE MANAGEMENT%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%ELEVATOR%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%RACKSPACE%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%HCL TECHNOLOGIES%' THEN 'nc_name'
+        WHEN UPPER(w.vendor_name) LIKE '%TRANE%' OR UPPER(w.vendor_name) LIKE '%HVAC%' THEN 'nc_name'
+
+        -- ===== CLINICAL layer (broad Cardinal/McKesson AFTER pharma-specific) =====
+        WHEN UPPER(w.vendor_name) LIKE '%ANESTHESIA%' OR UPPER(w.vendor_name) LIKE '%ANESTHESIOL%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%ORTHOPEDIC%' OR UPPER(w.vendor_name) LIKE '%ORTHOPAEDIC%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%ONCOLOGY%' OR UPPER(w.vendor_name) LIKE '%HEMATOLOGY%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%BLOOD%BANK%' OR UPPER(w.vendor_name) LIKE '%RED CROSS%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%SOUND PHYSICIANS%' OR UPPER(w.vendor_name) LIKE '%HOSPITALIST%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%EMERGENCY MEDICINE%' OR UPPER(w.vendor_name) LIKE '%EMERGIMED%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%CARDINAL HEALTH%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%SMITH%NEPHEW%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%RADIOLOG%' AND UPPER(w.vendor_name) NOT LIKE '%RADIOPHARM%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%WOUND CARE%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%SPINE%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%HEALTHTRUST%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%AGILITI%' THEN 'clinical_name'
+        WHEN UPPER(w.vendor_name) LIKE '%PT SOLUTIONS%' THEN 'clinical_name'
+        ELSE 'unmatched'
+      END
+    END AS method,
+    CASE WHEN e.entity_code IS NOT NULL THEN w.invoice_total_amount * e.clinical_pct / 100.0 ELSE 0 END AS entity_clinical,
+    CASE WHEN e.entity_code IS NOT NULL THEN w.invoice_total_amount * e.nc_pct      / 100.0 ELSE 0 END AS entity_nc,
+    CASE WHEN e.entity_code IS NOT NULL THEN w.invoice_total_amount * e.pharma_pct  / 100.0 ELSE 0 END AS entity_pharma,
+    CASE WHEN e.entity_code IS NOT NULL THEN w.invoice_total_amount * e.food_pct    / 100.0 ELSE 0 END AS entity_food
+  FROM wf_raw w
+  LEFT JOIN ${ref("entity_sl_mix")} e
+    ON w.vendor_entity_code = e.entity_code
+)
+
+SELECT
+  health_system_name,
+  SUM(invoice_total_amount) AS total_spend,
+  SUM(CASE WHEN method = 'entity'       THEN entity_clinical
+           WHEN method = 'clinical_name' THEN invoice_total_amount ELSE 0 END) AS clinical_spend,
+  SUM(CASE WHEN method = 'entity'       THEN entity_nc
+           WHEN method = 'nc_name'       THEN invoice_total_amount ELSE 0 END) AS nc_spend,
+  SUM(CASE WHEN method = 'entity'       THEN entity_pharma
+           WHEN method = 'pharma_name'   THEN invoice_total_amount ELSE 0 END) AS pharma_spend,
+  SUM(CASE WHEN method = 'entity'       THEN entity_food
+           WHEN method = 'food_name'     THEN invoice_total_amount ELSE 0 END) AS food_spend,
+  SUM(CASE WHEN method = 'exclude'       THEN invoice_total_amount ELSE 0 END) AS exclude_spend,
+  SUM(CASE WHEN method NOT IN ('unmatched', 'exclude') THEN invoice_total_amount ELSE 0 END) AS matched_spend,
+  SUM(CASE WHEN method = 'unmatched'     THEN invoice_total_amount ELSE 0 END) AS unmatched_spend,
+  COUNT(*) AS total_rows,
+  SUM(CASE WHEN method = 'entity' THEN 1 ELSE 0 END) AS entity_rows,
+  SUM(CASE WHEN method IN ('clinical_name','nc_name','pharma_name','food_name') THEN 1 ELSE 0 END) AS name_rows,
+  SUM(CASE WHEN method = 'exclude' THEN 1 ELSE 0 END) AS exclude_rows,
+  ROUND(SAFE_DIVIDE(
+    SUM(CASE WHEN method NOT IN ('unmatched', 'exclude') THEN invoice_total_amount ELSE 0 END),
+    SUM(invoice_total_amount) - SUM(CASE WHEN method = 'exclude' THEN invoice_total_amount ELSE 0 END)
+  ) * 100, 1) AS addressable_match_pct
+FROM classified
+GROUP BY health_system_name

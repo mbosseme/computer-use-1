@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-expansion-dataform",
+  "version": "1.0.0",
+  "dependencies": {
+    "@dataform/core": "2.9.0"
+  },
+  "devDependencies": {
+    "@dataform/cli": "^2.9.0"
+  }
+}

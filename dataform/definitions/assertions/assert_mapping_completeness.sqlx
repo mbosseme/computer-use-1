@@ -1,0 +1,19 @@
+config {
+  type: "assertion",
+  description: "CRITICAL: Verifies every non-NULL TSA service_line has a mapping in service_line_mapping. If this fails, transactions will get NULL parent_service_line, silently dropping from SL proportions and cohort calculations. This is the class of bug that caused the $19.5B misclassification in v3.2.",
+  tags: ["assertion", "critical"],
+  dependencies: ["tsa_cy2025", "service_line_mapping"]
+}
+
+-- Returns rows for any TSA service_line values that have data but no mapping.
+-- Zero rows = pass. Any rows = new service_line appeared in TSA that needs mapping.
+
+SELECT
+  t.service_line,
+  COUNT(*) AS row_count,
+  SUM(Landed_Spend) AS total_spend
+FROM ${ref("tsa_cy2025")} t
+LEFT JOIN ${ref("service_line_mapping")} m ON t.service_line = m.service_line
+WHERE t.service_line IS NOT NULL
+  AND m.service_line IS NULL
+GROUP BY t.service_line

@@ -36,7 +36,7 @@ Optional deeper context:
 
 ### What's Left To Do (Prioritized)
 
-1. **Per-bed spend benchmarks** (highest priority): Compute $/bed ratios for each service line across the 29-system cohort using bed counts from `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join`. This is the bridge from cohort-level findings to extrapolation.
+1. **Per-bed spend benchmarks** (highest priority): Compute $/bed ratios for each service line across the 29-system cohort using bed counts from `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join`. This is the bridge from cohort-level findings to extrapolation.
 
 2. **GPO membership mapping**: Compare cohort demographics (size, type, geography) against the full Premier GPO membership universe (~4,000+ hospitals) to quantify representativeness and coverage gaps.
 
@@ -50,7 +50,7 @@ Optional deeper context:
 |-------|-----|---------|
 | TSA | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded` | Primary — 819M rows, med/surg purchasing with `Contract_Category` taxonomy |
 | WF | `abi-xform-prod.abi_xform_bq_erp_hardening.provider_invoice_workflow_history` | Calibration — 89M rows, full AP invoices |
-| Demographics | `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join` | Facility enrichment — beds, types, geography (filter `dhc_firm_type='Hospital'`) |
+| Demographics | `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join` | Facility enrichment — beds, types, geography (filter `dhc_firm_type='Hospital'`) |
 
 Data dictionaries: `docs/data_dictionaries/`
 

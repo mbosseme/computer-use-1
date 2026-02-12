@@ -43,3 +43,5 @@ __pycache__/
 # Local temp exports (intentionally untracked)
 /tmp/
 **/tmp/
+dataform/snowflake.log
+dataform/node_modules/

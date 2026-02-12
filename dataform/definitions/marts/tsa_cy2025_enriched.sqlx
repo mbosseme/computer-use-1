@@ -1,0 +1,22 @@
+config {
+  type: "table",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "tsa_cy2025_enriched",
+  description: "CY2025 TSA with cohort membership and GPO membership flags added. This is the primary analysis table — use this for Tableau and downstream queries. Depends on tsa_cy2025, tsa_clin_nc_cohort, and sa_sf_dhc_join_enriched.",
+  tags: ["mart", "analysis"],
+  dependencies: ["tsa_cy2025", "tsa_clin_nc_cohort", "sa_sf_dhc_join_enriched"]
+}
+
+SELECT
+  t.*,
+  (c.Health_System_Entity_Code IS NOT NULL) AS is_clin_nc_cohort,
+  COALESCE(f.premier_gpo_member_improved, FALSE) AS premier_gpo_member
+FROM ${ref("tsa_cy2025")} t
+LEFT JOIN (
+  SELECT DISTINCT Health_System_Entity_Code
+  FROM ${ref("tsa_clin_nc_cohort")}
+) c ON t.Health_System_Entity_Code = c.Health_System_Entity_Code
+LEFT JOIN (
+  SELECT facility_entity_code, premier_gpo_member_improved
+  FROM ${ref("sa_sf_dhc_join_enriched")}
+) f ON t.Premier_Entity_Code = f.facility_entity_code

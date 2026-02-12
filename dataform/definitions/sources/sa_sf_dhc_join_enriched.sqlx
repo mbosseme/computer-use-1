@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "matthew-bossemeyer",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "sa_sf_dhc_join_enriched",
+  description: "Pre-built facility directory with improved premier_gpo_member_improved flag. 482K rows. Join key: facility_entity_code = Premier_Entity_Code. Built in Session 7-8."
+}

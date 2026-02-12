@@ -1,4 +1,4 @@
-# Data Dictionary: `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join`
+# Data Dictionary: `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join`
 
 - Filter: `dhc_firm_type` = 'Hospital'
 - Estimated rows: 6769

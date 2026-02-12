@@ -1,0 +1,16 @@
+config {
+  type: "assertion",
+  description: "Verifies WF v4 SL decomposition is consistent: clinical + nc + pharma + food + exclude + unmatched should equal total_spend per system (within rounding tolerance). A gap indicates the classification CASE logic dropped some transactions.",
+  tags: ["assertion", "reconciliation"],
+  dependencies: ["wf_sl_v4"]
+}
+
+-- Returns systems where SL breakdown doesn't reconcile to total within $1.
+
+SELECT
+  health_system_name,
+  total_spend,
+  clinical_spend + nc_spend + pharma_spend + food_spend + exclude_spend + unmatched_spend AS sum_components,
+  ABS(total_spend - (clinical_spend + nc_spend + pharma_spend + food_spend + exclude_spend + unmatched_spend)) AS gap
+FROM ${ref("wf_sl_v4")}
+WHERE ABS(total_spend - (clinical_spend + nc_spend + pharma_spend + food_spend + exclude_spend + unmatched_spend)) > 1

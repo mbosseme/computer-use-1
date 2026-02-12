@@ -44,7 +44,7 @@ For interactive BigQuery exploration inside VS Code Copilot Chat, configure an M
 |-------|-----------------|--------|---------------|--------------|
 | **Transaction Analysis** | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded` | Provider-submitted POs/Invoices | ~820M | Provider-side purchasing visibility |
 | **Supplier Spend** | `abi-inbound-prod.abi_inbound_bq_stg_purchasing_supplier_sales.supplier_spend` | Manufacturer-reported sales tracings | ~87M | Manufacturer-side contract sales |
-| **SASF DHC Join** | `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join` | Definitive Healthcare enrichment | ~7K (hospitals) | Facility/IDN enrichment, hospital metadata |
+| **SASF DHC Join** | `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join` | Definitive Healthcare enrichment | ~7K (hospitals) | Facility/IDN enrichment, hospital metadata |
 
 ### When to Use Which
 
@@ -211,7 +211,7 @@ Enrichment table joining **Definitive Healthcare** hospital/facility metadata. U
 
 ### Common Use: Filter to Hospitals
 ```sql
-SELECT * FROM `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join`
+SELECT * FROM `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join`
 WHERE dhc_firm_type = 'Hospital'
 ```
 
@@ -413,7 +413,7 @@ Detailed column-level documentation with null rates, distinct counts, and sample
 |-------|-------------------------|
 | Transaction Analysis | `docs/data_dictionaries/abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded.md` |
 | Supplier Spend | `docs/data_dictionaries/abi-inbound-prod.abi_inbound_bq_stg_purchasing_supplier_sales.supplier_spend.md` |
-| SASF DHC Join | `docs/data_dictionaries/matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join__dhc_firm_type=Hospital.md` |
+| SASF DHC Join | `docs/data_dictionaries/abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join__dhc_firm_type=Hospital.md` |
 
 ---
 

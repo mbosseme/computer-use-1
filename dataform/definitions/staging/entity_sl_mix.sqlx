@@ -1,0 +1,78 @@
+config {
+  type: "table",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "entity_sl_mix",
+  description: "TSA-derived service line proportions per child entity code. Double-attributed (Vendor + Manufacturer entity). Uses service_line_mapping for consistent SL classification — NO direct Contract_Category enumeration. 18K+ entity codes with clinical_pct, nc_pct, pharma_pct, food_pct.",
+  tags: ["staging", "entity-bridge"],
+  dependencies: ["service_line_mapping"],
+  assertions: {
+    uniqueKey: ["entity_code"],
+    nonNull: ["entity_code", "total_spend"],
+    rowConditions: [
+      "total_spend > 0",
+      "ABS(COALESCE(clinical_pct,0) + COALESCE(nc_pct,0) + COALESCE(pharma_pct,0) + COALESCE(food_pct,0) - 100) < 0.1"
+    ]
+  }
+}
+
+-- Session 9 rebuild: switched from fragile Contract_Category enumeration to
+-- service_line JOIN, fixing $19.5B NC→Clinical misclassification in prior build.
+-- Radiopharmaceuticals now follow TSA service_line=DIAGNOSTICS → Clinical
+-- (previously overridden to Pharma by category enumeration).
+
+WITH sl_classified AS (
+  SELECT
+    Vendor_Entity_Code,
+    Manufacturer_Entity_Code,
+    Landed_Spend,
+    m.parent_service_line
+  FROM ${ref("transaction_analysis_expanded")} t
+  JOIN ${ref("service_line_mapping")} m ON t.service_line = m.service_line
+  WHERE Spend_Period_YYYYQMM BETWEEN ${constants.CY2025_START} AND ${constants.CY2025_END}
+    AND Landed_Spend > ${constants.SPEND_FLOOR}
+    AND Landed_Spend < ${constants.SPEND_CEILING}
+    -- INNER JOIN to mapping drops NULL service_line (UNKNOWN etc.)
+),
+
+attributed AS (
+  -- Vendor entity attribution
+  SELECT Vendor_Entity_Code AS entity_code, parent_service_line, Landed_Spend
+  FROM sl_classified
+  WHERE Vendor_Entity_Code IS NOT NULL AND Vendor_Entity_Code != ''
+
+  UNION ALL
+
+  -- Manufacturer entity attribution (double-attribution, only where different from vendor)
+  SELECT Manufacturer_Entity_Code AS entity_code, parent_service_line, Landed_Spend
+  FROM sl_classified
+  WHERE Manufacturer_Entity_Code IS NOT NULL AND Manufacturer_Entity_Code != ''
+    AND Manufacturer_Entity_Code != Vendor_Entity_Code
+),
+
+entity_totals AS (
+  SELECT
+    entity_code,
+    SUM(Landed_Spend) AS total_spend,
+    SUM(CASE WHEN parent_service_line = 'Clinical'     THEN Landed_Spend ELSE 0 END) AS clinical_spend,
+    SUM(CASE WHEN parent_service_line = 'Non-Clinical'  THEN Landed_Spend ELSE 0 END) AS nc_spend,
+    SUM(CASE WHEN parent_service_line = 'Pharma'        THEN Landed_Spend ELSE 0 END) AS pharma_spend,
+    SUM(CASE WHEN parent_service_line = 'Food'          THEN Landed_Spend ELSE 0 END) AS food_spend,
+    COUNT(*) AS row_count
+  FROM attributed
+  GROUP BY entity_code
+)
+
+SELECT
+  entity_code,
+  total_spend,
+  clinical_spend,
+  nc_spend,
+  pharma_spend,
+  food_spend,
+  row_count,
+  ROUND(100.0 * clinical_spend / NULLIF(total_spend, 0), 2) AS clinical_pct,
+  ROUND(100.0 * nc_spend       / NULLIF(total_spend, 0), 2) AS nc_pct,
+  ROUND(100.0 * pharma_spend   / NULLIF(total_spend, 0), 2) AS pharma_pct,
+  ROUND(100.0 * food_spend     / NULLIF(total_spend, 0), 2) AS food_pct
+FROM entity_totals
+WHERE total_spend > 0
