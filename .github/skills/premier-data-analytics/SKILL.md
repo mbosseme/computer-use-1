@@ -3,15 +3,33 @@
 **Status**: Recommended / Core
 **Context**: Use when extracting or analyzing Premier purchasing data (`transaction_analysis_expanded`, `report_builder`) and enriching it with `premier_primary_item_master`.
 
-## 1. The "Dual-Source" Reality
+## 1. The "Dual-Source" Reality (Purchasing)
 Purchasing data exists in two parallel universes. Use both for complete coverage.
 
 | Feature | Provider Feed (`transaction_analysis_expanded`) | Wholesaler Feed (`report_builder`) |
 | :--- | :--- | :--- |
 | **Source** | ERP / Accounts Payable (Direct) | Distributor Sales Tracings (Indirect) |
-| **Scope** | Acute Care / Large IDNs | Physician Offices / Non-Acute / Pharmacy |
+| **Scope** | Acute Care / Large IDNs — **med/surg supply chain only** | Physician Offices / Non-Acute / Pharmacy |
 | **Date Field** | `Transaction_Date` (PO Date) | `invoice_date` (Sale Date) |
 | **Vendor Field** | `Vendor_Name` | **`wholesaler`** (Specific) / `source` (Generic) |
+
+## 1b. Workflow History — The "Full AP" Model
+The `provider_invoice_workflow_history` table (`abi-xform-prod.abi_xform_bq_erp_hardening`) captures **all Accounts Payable invoices** (ERP + Remitra), not just med/surg supply chain.
+
+| Aspect | Workflow History | TSA (transaction_analysis_expanded) |
+| :--- | :--- | :--- |
+| **Scope** | Full AP: pharma, insurance, staffing, IT, capital, food, intercompany, AND med/surg | Med/surg supply chain only |
+| **Granularity** | Header-level (per invoice) | Line-item-level (per product) |
+| **Amount Field** | `invoice_total_amount` | `Base_Spend` / `Landed_Spend` |
+| **Category Taxonomy** | None — must classify by vendor name patterns | `Contract_Category` (~870 values) |
+
+**Critical insight**: When comparing WF to TSA, WF will typically show 1.5–2.7× more spend. This is NOT duplication — it's because WF includes non-supply-chain categories (pharma distributors ~12%, insurance ~10%, intercompany ~12%, staffing ~10%, IT ~4%, capital ~5%, food ~1%). After removing these via vendor name pattern matching, the residual gap is ~20%, explained by vendor hierarchy fragmentation and TSA overhead allocations.
+
+**Broken fields in WF** (do NOT rely on):
+- `health_system_entity_code`: 50% NULL, only 33 distinct values
+- `direct_parent_entity_code`: 100% NULL (literal string `null`)
+- `facility_entity_name`: 100% NULL
+- Must use `health_system_name` for system-level joins (name-based mapping required)
 
 ### Warning: The "Wholesaler" Trap
 In `report_builder`, the `source` or `vendor_name` columns often just say "WHOLESALER" or "Wholesaler".
