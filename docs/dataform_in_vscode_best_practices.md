@@ -63,6 +63,49 @@ Instead of hardcoding dates in every mart, create a single view that calculates 
 
 ---
 
+## 2a. Dataform CLI Credentials (ADC-First, No Secrets)
+
+This workspace is set up to run the Dataform CLI using **Application Default Credentials (ADC)**.
+
+### 1) `dataform/.df-credentials.json` (non-secret)
+- This file is safe to commit because it contains **no secrets**.
+- It only sets the default GCP project and location the CLI should use.
+- Canonical content for this repo:
+
+```json
+{
+  "projectId": "matthew-bossemeyer",
+  "location": "US"
+}
+```
+
+### 2) Authentication mechanism (ADC)
+- The Dataform CLI picks up credentials from your local environment via the Google auth stack.
+- Authenticate once via:
+
+```bash
+gcloud auth application-default login
+```
+
+### 3) Minimal working commands
+Run these from the `dataform/` directory:
+
+```bash
+npx dataform compile
+npx dataform run
+```
+
+### Troubleshooting checklist
+- Ensure `GOOGLE_APPLICATION_CREDENTIALS` is **not** set (it overrides ADC and can break access).
+- If you changed accounts, re-auth ADC:
+
+```bash
+gcloud auth application-default revoke
+gcloud auth application-default login
+```
+
+---
+
 ## 3. Best Practices for Agents Authoring SQLX
 
 ### 1. Dependency Management is Mandatory

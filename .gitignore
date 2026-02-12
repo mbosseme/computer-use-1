@@ -45,3 +45,4 @@ __pycache__/
 **/tmp/
 dataform/snowflake.log
 dataform/node_modules/
+dataform/.df-credentials.json

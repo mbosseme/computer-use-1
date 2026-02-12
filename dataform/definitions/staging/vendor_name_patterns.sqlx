@@ -105,8 +105,32 @@ UNION ALL SELECT '%COUNTY %DISTRICT%',         NULL, 'Exclude', 120, 'Government
 UNION ALL SELECT '%TEXAS COUNTY%RETIRE%',      NULL, 'Exclude', 120, 'Government'
 UNION ALL SELECT '%SETTLEMENT%',               '%BUSINESS%', 'Exclude', 120, 'Legal'
 
--- NEW exclude patterns
+-- NEW exclude patterns (Session 9c)
 UNION ALL SELECT '%COMPTROLLER%',              NULL, 'Exclude', 125, 'Government'
+
+-- NEW exclude patterns (Session 10 — pattern expansion)
+-- Benefits / insurance / claims (110)
+UNION ALL SELECT '%BENEFITS FUND%',            NULL, 'Exclude', 110, 'Benefits'
+UNION ALL SELECT '%BENEFITS TRUST%',           NULL, 'Exclude', 110, 'Benefits'
+UNION ALL SELECT '%BENEFIT PLAN%',             NULL, 'Exclude', 110, 'Benefits'
+UNION ALL SELECT '%CLAIMS MANAGEMENT%',        NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%INDEMNITY%',                NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%RECIPROCAL%',               NULL, 'Exclude', 110, 'Insurance'
+-- Payroll / HR / payment services / banking (115)
+UNION ALL SELECT '%UKG%',                      NULL, 'Exclude', 115, 'Payroll'
+UNION ALL SELECT '%COMDATA%',                  NULL, 'Exclude', 115, 'P-card'
+UNION ALL SELECT '%EFTPS%',                    NULL, 'Exclude', 115, 'Tax'
+UNION ALL SELECT '%ESCROW%',                   NULL, 'Exclude', 115, 'Banking'
+UNION ALL SELECT '%CONCENTRATION ACCOUNT%',    NULL, 'Exclude', 115, 'Banking'
+-- Government / Medicaid / intercompany / legal / collections (120)
+UNION ALL SELECT '%MEDICAID%',                 NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%DEPT OF HEALTH%',           NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%DEPT%HLTH%',                NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%DEPT%HUMAN SERVICE%',       NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%ACCOUNTS RECEIVABLE%',      NULL, 'Exclude', 120, 'Intercompany'
+UNION ALL SELECT '%CREDIT SERVICE%',           NULL, 'Exclude', 120, 'Collections'
+UNION ALL SELECT '%LAW GROUP%',                NULL, 'Exclude', 120, 'Legal'
+UNION ALL SELECT '%LAW PLLC%',                 NULL, 'Exclude', 120, 'Legal'
 
 -- ===== PHARMA: Pharmacy / PBM / specialty distribution (200) =====
 UNION ALL SELECT '%NUCLEAR PHARM%',            NULL, 'Pharma', 200, 'Pharmacy'
@@ -128,11 +152,17 @@ UNION ALL SELECT '%CAREMARK%',                 NULL, 'Pharma', 200, 'PBM'
 UNION ALL SELECT '%OMNICELL%PHARM%',           NULL, 'Pharma', 200, 'Pharmacy'
 UNION ALL SELECT '%OMNICELL%SPEC%',            NULL, 'Pharma', 200, 'Pharmacy'
 
--- NEW pharma patterns
+-- NEW pharma patterns (Session 9c)
 UNION ALL SELECT '%RXBENEFIT%',                NULL, 'Pharma', 210, 'PBM'
 UNION ALL SELECT '%PHARMACY BENEFIT%',         NULL, 'Pharma', 210, 'PBM'
 UNION ALL SELECT '%OMNICARE%',                 NULL, 'Pharma', 210, 'Pharmacy'
 UNION ALL SELECT '%PHARMERICA%',               NULL, 'Pharma', 210, 'Pharmacy'
+-- NEW pharma patterns (Session 10 — pattern expansion)
+UNION ALL SELECT '%PFIZER%',                   NULL, 'Pharma', 210, 'Pharma manufacturer'
+UNION ALL SELECT '%SANOFI%',                   NULL, 'Pharma', 210, 'Pharma manufacturer'
+UNION ALL SELECT '%GENZYME%',                  NULL, 'Pharma', 210, 'Pharma manufacturer'
+UNION ALL SELECT '%MORRIS%DICKSON%',           NULL, 'Pharma', 210, 'Distribution'
+UNION ALL SELECT '%AKEBIA%',                   NULL, 'Pharma', 210, 'Pharma manufacturer'
 
 -- ===== FOOD: Food service / distribution / beverage (300) =====
 UNION ALL SELECT '%MORRISON MANAGEMENT%',      NULL, 'Food', 300, 'Food service'
@@ -172,7 +202,7 @@ UNION ALL SELECT '%HCL TECHNOLOGIES%',         NULL, 'NC', 400, 'IT'
 UNION ALL SELECT '%TRANE%',                    NULL, 'NC', 400, 'HVAC'
 UNION ALL SELECT '%HVAC%',                     NULL, 'NC', 400, 'HVAC'
 
--- NEW NC patterns
+-- NEW NC patterns (Session 9c)
 UNION ALL SELECT '%MCKESSON%TECH%',            NULL, 'NC', 410, 'IT'
 UNION ALL SELECT '%MEDSTAFF%',                 NULL, 'NC', 410, 'Staffing'
 UNION ALL SELECT '%LOCUM%',                    NULL, 'NC', 410, 'Staffing'
@@ -182,6 +212,16 @@ UNION ALL SELECT '%KPMG%',                     NULL, 'NC', 410, 'Consulting'
 UNION ALL SELECT '%ACCENTURE%',                NULL, 'NC', 410, 'Consulting'
 UNION ALL SELECT '%JANITORIAL%',               NULL, 'NC', 410, 'Facilities'
 UNION ALL SELECT '%SIEMENS INDUSTRY%',         NULL, 'NC', 410, 'Facilities'
+-- NEW NC patterns (Session 10 — pattern expansion)
+UNION ALL SELECT '%CONSULTING%',               NULL, 'NC', 410, 'Consulting'
+UNION ALL SELECT '%ADVERTIS%',                 NULL, 'NC', 410, 'Marketing'
+UNION ALL SELECT '%REVENUE CYCLE%',            NULL, 'NC', 410, 'Revenue cycle'
+UNION ALL SELECT '%ENVIRONMEN%SERVICE%',       NULL, 'NC', 410, 'Facilities'
+UNION ALL SELECT '%PAINTING%',                 NULL, 'NC', 410, 'Construction'
+UNION ALL SELECT '%LANDSCAP%',                 NULL, 'NC', 410, 'Facilities'
+UNION ALL SELECT '%PLUMBING%',                 NULL, 'NC', 410, 'Construction'
+UNION ALL SELECT '%ROOFING%',                  NULL, 'NC', 410, 'Construction'
+UNION ALL SELECT '%PUBLISHING%',               NULL, 'NC', 410, 'Publishing'
 
 -- ===== CLINICAL: Medical specialties / supplies / labs (500) =====
 UNION ALL SELECT '%ANESTHESIA%',               NULL, 'Clinical', 500, 'Physician services'
@@ -205,9 +245,24 @@ UNION ALL SELECT '%HEALTHTRUST%',              NULL, 'Clinical', 500, 'GPO/distr
 UNION ALL SELECT '%AGILITI%',                  NULL, 'Clinical', 500, 'Medical equipment'
 UNION ALL SELECT '%PT SOLUTIONS%',             NULL, 'Clinical', 500, 'Therapy'
 
--- NEW clinical patterns
+-- NEW clinical patterns (Session 9c)
 UNION ALL SELECT '%FISHER SCIENTIFIC%',        NULL, 'Clinical', 510, 'Lab supplies'
 UNION ALL SELECT '%THERMO FISHER%',            NULL, 'Clinical', 510, 'Lab supplies'
 UNION ALL SELECT '%LABORATORY%',               NULL, 'Clinical', 510, 'Lab services'
 UNION ALL SELECT '%DIALYSIS%',                 NULL, 'Clinical', 510, 'Renal care'
 UNION ALL SELECT '%RENAL CARE%',               NULL, 'Clinical', 510, 'Renal care'
+-- NEW clinical patterns (Session 10 — pattern expansion)
+UNION ALL SELECT '%REHABILITATION%',           NULL, 'Clinical', 510, 'Rehabilitation'
+UNION ALL SELECT '%AMBULANCE%',                NULL, 'Clinical', 510, 'EMS'
+UNION ALL SELECT '%LINDE%GAS%',                NULL, 'Clinical', 510, 'Medical gas'
+UNION ALL SELECT '%PRAXAIR%',                  NULL, 'Clinical', 510, 'Medical gas'
+UNION ALL SELECT '%MEDICAL GAS%',              NULL, 'Clinical', 510, 'Medical gas'
+UNION ALL SELECT '%BLOOD%CENTER%',             NULL, 'Clinical', 510, 'Blood services'
+UNION ALL SELECT '%BLOOD%CTR%',                NULL, 'Clinical', 510, 'Blood services'
+UNION ALL SELECT '%PATHOLOG%',                 '%PATHOLOG%CONSULT%', 'Clinical', 510, 'Pathology'
+UNION ALL SELECT '%DONOR SERVICE%',            NULL, 'Clinical', 510, 'Organ/tissue'
+UNION ALL SELECT '%ORGAN PROCUREMENT%',        NULL, 'Clinical', 510, 'Organ/tissue'
+UNION ALL SELECT '%BECKMAN COULTER%',          NULL, 'Clinical', 510, 'Lab diagnostics'
+UNION ALL SELECT '%INPATIENT PHYSICIAN%',      NULL, 'Clinical', 510, 'Hospitalist'
+UNION ALL SELECT '%URGENT CARE%',              NULL, 'Clinical', 510, 'Clinical services'
+UNION ALL SELECT '%DAVITA%',                   NULL, 'Clinical', 510, 'Renal care'

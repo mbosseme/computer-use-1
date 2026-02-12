@@ -1,7 +1,22 @@
 config {
-  type: "declaration",
-  database: "matthew-bossemeyer",
+  type: "table",
   schema: "wt_2026_02_10__portfolio_expansion",
   name: "sa_sf_dhc_join_enriched",
-  description: "Pre-built facility directory with improved premier_gpo_member_improved flag. 482K rows. Join key: facility_entity_code = Premier_Entity_Code. Built in Session 7-8."
+  description: "Facility directory enriched with improved GPO membership flag and integer staffed_beds. Built from production sa_sf_dhc_join. 488K rows. Join key: facility_entity_code = Premier_Entity_Code.",
+  tags: ["staging", "facility"],
+  dependencies: ["sa_sf_dhc_join"]
 }
+
+SELECT
+  *,
+  -- Cast comma-formatted string beds to INT64 (e.g. "5,942" → 5942)
+  SAFE_CAST(REPLACE(dhc_number_of_staffed_beds, ',', '') AS INT64) AS staffed_beds,
+  -- Improved GPO membership: original boolean OR GPS in Enterprise Unit Roll-Up
+  IF(
+    (Premier_Enterprise_Unit_Roll_Up IS NOT NULL
+      AND STRPOS(UPPER(Premier_Enterprise_Unit_Roll_Up), 'GPS') > 0)
+    OR (premier_gpo_member IS NOT NULL AND premier_gpo_member),
+    TRUE,
+    FALSE
+  ) AS premier_gpo_member_improved
+FROM ${ref("sa_sf_dhc_join")}

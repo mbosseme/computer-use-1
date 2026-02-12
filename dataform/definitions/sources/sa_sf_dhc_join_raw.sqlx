@@ -1,0 +1,7 @@
+config {
+  type: "declaration",
+  database: "abi-xform-dataform-prod",
+  schema: "cdx_sample_size",
+  name: "sa_sf_dhc_join",
+  description: "Upstream facility directory: Salesforce membership + DHC hospital data join. 488K rows. Contains membership flags, DHC demographics, bed counts (dhc_number_of_staffed_beds is STRING with comma formatting)."
+}

@@ -49,18 +49,20 @@ total AS (
   GROUP BY 1
 ),
 
--- Bed count from facility directory (facility-level, not system-level)
+-- Bed count from facility directory (hospital-level only, excluding Health System
+-- parent rows whose beds are roll-ups of children and would double-count)
 beds AS (
   SELECT
     t.Health_System_Entity_Code,
-    SUM(SAFE_CAST(REPLACE(f.dhc_number_of_staffed_beds, ',', '') AS INT64)) AS staffed_beds
+    SUM(f.staffed_beds) AS staffed_beds
   FROM (
     SELECT DISTINCT Health_System_Entity_Code, Premier_Entity_Code
     FROM ${ref("tsa_cy2025")}
   ) t
   JOIN ${ref("sa_sf_dhc_join_enriched")} f
     ON t.Premier_Entity_Code = f.facility_entity_code
-  WHERE f.dhc_number_of_staffed_beds IS NOT NULL
+  WHERE f.staffed_beds IS NOT NULL
+    AND f.dhc_hospital_type != 'Health System'  -- exclude parent roll-up rows
   GROUP BY 1
 )
 
