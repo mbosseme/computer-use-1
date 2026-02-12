@@ -1,0 +1,213 @@
+config {
+  type: "table",
+  schema: "wt_2026_02_10__portfolio_expansion",
+  name: "vendor_name_patterns",
+  description: "Vendor name LIKE-pattern rules for WF service line classification. Priority-ordered: lower number wins when a vendor matches multiple patterns. Bands: 100 Exclude, 200 Pharma, 300 Food, 400 NC, 500 Clinical. Used by wf_sl_v4 as the name-pattern fallback layer after entity-bridge matching.",
+  tags: ["staging", "reference"],
+  assertions: {
+    nonNull: ["pattern", "parent_service_line", "priority", "category"],
+    rowConditions: [
+      "parent_service_line IN ('Exclude', 'Pharma', 'Food', 'NC', 'Clinical')",
+      "priority BETWEEN 100 AND 599"
+    ]
+  }
+}
+
+-- =====================================================================
+-- Vendor name pattern rules for WF service line classification.
+--
+-- Each row defines:
+--   pattern              LIKE pattern applied to UPPER(vendor_name)
+--   exclude_pattern      Optional LIKE pattern that negates the match
+--   parent_service_line  Target SL: Exclude | Pharma | Food | NC | Clinical
+--   priority             Lower = higher precedence (resolves multi-match)
+--   category             Human-readable grouping for auditing
+--
+-- Priority bands:
+--   100–199  Exclude   (tax, retirement, insurance, payroll, banking, govt)
+--   200–299  Pharma    (pharmacy, PBM, specialty distribution)
+--   300–399  Food      (food service, distribution, beverage)
+--   400–499  NC        (construction, staffing, IT, facilities, consulting)
+--   500–599  Clinical  (medical specialties, supplies, labs)
+-- =====================================================================
+
+-- ===== EXCLUDE: Tax (100) =====
+SELECT '%INTERNAL REVENUE%' AS pattern, CAST(NULL AS STRING) AS exclude_pattern, 'Exclude' AS parent_service_line, 100 AS priority, 'Tax' AS category
+UNION ALL SELECT '% IRS %',                   NULL, 'Exclude', 100, 'Tax'
+UNION ALL SELECT '%IRS/%',                     NULL, 'Exclude', 100, 'Tax'
+UNION ALL SELECT '%DEPT OF REVENUE%',          NULL, 'Exclude', 100, 'Tax'
+UNION ALL SELECT '%DEPARTMENT OF REVENUE%',    NULL, 'Exclude', 100, 'Tax'
+UNION ALL SELECT '%TAX COMMISSION%',           NULL, 'Exclude', 100, 'Tax'
+UNION ALL SELECT '%STATE TAX%',                NULL, 'Exclude', 100, 'Tax'
+UNION ALL SELECT '%FRANCHISE TAX%',            NULL, 'Exclude', 100, 'Tax'
+UNION ALL SELECT '%SALES TAX%',                NULL, 'Exclude', 100, 'Tax'
+
+-- ===== EXCLUDE: Retirement / pension (105) =====
+UNION ALL SELECT '%FIDELITY INVEST%',          NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%FIDELITY RETIRE%',          NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%FIDELITY SECURITY%',        NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%VANGUARD%',                 NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%VOYA%',                     NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%TIAA%',                     NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%LINCOLN FINANCIAL%',        NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%LINCOLN LIFE%',             NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%EMPOWER RETIREMENT%',       NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%GREAT-WEST%',               NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%PRUDENTIAL RETIRE%',        NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%RETIREMENT%',               NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%PENSION%',                  NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%401K%',                     NULL, 'Exclude', 105, 'Retirement'
+UNION ALL SELECT '%403B%',                     NULL, 'Exclude', 105, 'Retirement'
+
+-- ===== EXCLUDE: Insurance claims / health plans (110) =====
+UNION ALL SELECT '%AETNA%CLAIM%',              NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%AETNA/%',                   NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%BCBS%',                     NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%BLUE CROSS%',               NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%CAREFIRST%',                NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%CIGNA%CLAIM%',              NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%CIGNA HEALTH%',             NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%HUMANA %',                  NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%UNITED HEALTHCARE%CLAIM%',  NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%UHC CLAIM%',                NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%DELTA DENTAL%',             NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%COMMUNITY FIRST HEALTH PLAN%', NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%DENTAQUEST%',               NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%MALPRACTICE%',              NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%WORKERS COMP%',             NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%WORKERS%COMPENSATION%',     NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%UNEMPLOYMENT%',             NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%DISABILITY%PAYROLL%',       NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%RELIASTAR%',                NULL, 'Exclude', 110, 'Insurance'
+UNION ALL SELECT '%UNUM LIFE%',               NULL, 'Exclude', 110, 'Insurance'
+
+-- ===== EXCLUDE: Payroll / banking / P-cards (115) =====
+UNION ALL SELECT '%PAYROLL%',                  NULL, 'Exclude', 115, 'Payroll'
+UNION ALL SELECT '%PNC BANK%',                 NULL, 'Exclude', 115, 'Banking'
+UNION ALL SELECT '%BANK OF AMERICA%',          NULL, 'Exclude', 115, 'Banking'
+UNION ALL SELECT '%US BANK%',                  NULL, 'Exclude', 115, 'Banking'
+UNION ALL SELECT '%REGIONS BANK%',             NULL, 'Exclude', 115, 'Banking'
+UNION ALL SELECT '%WELLS FARGO%BANK%',         NULL, 'Exclude', 115, 'Banking'
+UNION ALL SELECT '%WEX BANK%',                 NULL, 'Exclude', 115, 'Banking'
+UNION ALL SELECT '%P-CARD%',                   NULL, 'Exclude', 115, 'P-card'
+UNION ALL SELECT '%PCARD%',                    NULL, 'Exclude', 115, 'P-card'
+
+-- ===== EXCLUDE: Intercompany / government / other (120) =====
+UNION ALL SELECT 'ONETIME',                    NULL, 'Exclude', 120, 'Placeholder'
+UNION ALL SELECT '%INTERCOMPANY%',             NULL, 'Exclude', 120, 'Intercompany'
+UNION ALL SELECT '%INTER-COMPANY%',            NULL, 'Exclude', 120, 'Intercompany'
+UNION ALL SELECT '%HEALTH CARE AUTHORITY%',    NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%STATE OF%',                 '%STATE OF THE ART%', 'Exclude', 120, 'Government'
+UNION ALL SELECT '%COUNTY TAX%',               NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%COUNTY FLORIDA%',           NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%COUNTY%RETIRE%',            NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%COUNTY %DISTRICT%',         NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%TEXAS COUNTY%RETIRE%',      NULL, 'Exclude', 120, 'Government'
+UNION ALL SELECT '%SETTLEMENT%',               '%BUSINESS%', 'Exclude', 120, 'Legal'
+
+-- NEW exclude patterns
+UNION ALL SELECT '%COMPTROLLER%',              NULL, 'Exclude', 125, 'Government'
+
+-- ===== PHARMA: Pharmacy / PBM / specialty distribution (200) =====
+UNION ALL SELECT '%NUCLEAR PHARM%',            NULL, 'Pharma', 200, 'Pharmacy'
+UNION ALL SELECT '%SPEC PH SRVC%',             NULL, 'Pharma', 200, 'Pharmacy'
+UNION ALL SELECT '%SPECIALTY PHARM%',          NULL, 'Pharma', 200, 'Pharmacy'
+UNION ALL SELECT '%SPECIALTY CARE DIST%',      NULL, 'Pharma', 200, 'Distribution'
+UNION ALL SELECT '%340B%',                     NULL, 'Pharma', 200, 'Pharmacy'
+UNION ALL SELECT '%RADIOPHARM%',               NULL, 'Pharma', 200, 'Pharmacy'
+UNION ALL SELECT '%AMERISOURCE%',              NULL, 'Pharma', 200, 'Distribution'
+UNION ALL SELECT '%MACRO HELIX%',              NULL, 'Pharma', 200, 'Pharmacy'
+UNION ALL SELECT '%CARDINAL%PHARM%',           '%ROCHE%', 'Pharma', 200, 'Distribution'
+UNION ALL SELECT '%MCKESSON%PHARM%',           NULL, 'Pharma', 200, 'Distribution'
+UNION ALL SELECT '%MCKESSON%340B%',            NULL, 'Pharma', 200, 'Distribution'
+UNION ALL SELECT '%MCKESSON%DRUG%',            NULL, 'Pharma', 200, 'Distribution'
+UNION ALL SELECT '%MCKESSON%SPEC%',            NULL, 'Pharma', 200, 'Distribution'
+UNION ALL SELECT '%MCKESSON%RX%',              NULL, 'Pharma', 200, 'Distribution'
+UNION ALL SELECT '%NAVITUS%',                  NULL, 'Pharma', 200, 'PBM'
+UNION ALL SELECT '%CAREMARK%',                 NULL, 'Pharma', 200, 'PBM'
+UNION ALL SELECT '%OMNICELL%PHARM%',           NULL, 'Pharma', 200, 'Pharmacy'
+UNION ALL SELECT '%OMNICELL%SPEC%',            NULL, 'Pharma', 200, 'Pharmacy'
+
+-- NEW pharma patterns
+UNION ALL SELECT '%RXBENEFIT%',                NULL, 'Pharma', 210, 'PBM'
+UNION ALL SELECT '%PHARMACY BENEFIT%',         NULL, 'Pharma', 210, 'PBM'
+UNION ALL SELECT '%OMNICARE%',                 NULL, 'Pharma', 210, 'Pharmacy'
+UNION ALL SELECT '%PHARMERICA%',               NULL, 'Pharma', 210, 'Pharmacy'
+
+-- ===== FOOD: Food service / distribution / beverage (300) =====
+UNION ALL SELECT '%MORRISON MANAGEMENT%',      NULL, 'Food', 300, 'Food service'
+UNION ALL SELECT '%MORRISON HEALTHCARE%',      NULL, 'Food', 300, 'Food service'
+UNION ALL SELECT '%SODEXO%',                   NULL, 'Food', 300, 'Food service'
+UNION ALL SELECT '%DISTRIBUTION COOPERATIVE%', NULL, 'Food', 300, 'Distribution'
+
+-- NEW food patterns
+UNION ALL SELECT '%PEPSI%',                    NULL, 'Food', 310, 'Beverage'
+UNION ALL SELECT '%COCA-COLA%',                NULL, 'Food', 310, 'Beverage'
+UNION ALL SELECT '%COCA COLA%',                NULL, 'Food', 310, 'Beverage'
+UNION ALL SELECT '%US FOODS%',                 NULL, 'Food', 310, 'Distribution'
+UNION ALL SELECT '%SYSCO%',                    NULL, 'Food', 310, 'Distribution'
+UNION ALL SELECT '%ARAMARK%',                  NULL, 'Food', 310, 'Food service'
+UNION ALL SELECT '%COMPASS GROUP%',            NULL, 'Food', 310, 'Food service'
+
+-- ===== NC: Construction / staffing / IT / facilities (400) =====
+UNION ALL SELECT '%CONSTRUCTION%',             NULL, 'NC', 400, 'Construction'
+UNION ALL SELECT '%CONTRACTING%',              NULL, 'NC', 400, 'Construction'
+UNION ALL SELECT '%STAFFING%',                 NULL, 'NC', 400, 'Staffing'
+UNION ALL SELECT '%TEMP AGENCY%',              NULL, 'NC', 400, 'Staffing'
+UNION ALL SELECT '%ENERGY%',                   NULL, 'NC', 400, 'Utilities'
+UNION ALL SELECT '%ELECTRIC%',                 NULL, 'NC', 400, 'Utilities'
+UNION ALL SELECT '%UTILITY%',                  NULL, 'NC', 400, 'Utilities'
+UNION ALL SELECT '%UTILITIES%',                NULL, 'NC', 400, 'Utilities'
+UNION ALL SELECT '%ARCHITECT%',                NULL, 'NC', 400, 'Construction'
+UNION ALL SELECT '%EPIC HOSTING%',             NULL, 'NC', 400, 'IT'
+UNION ALL SELECT '%LAUNDRY%',                  NULL, 'NC', 400, 'Facilities'
+UNION ALL SELECT '%TEXTILE%',                  NULL, 'NC', 400, 'Facilities'
+UNION ALL SELECT '%LINEN%',                    NULL, 'NC', 400, 'Facilities'
+UNION ALL SELECT '%HARTFORD%INSURANCE%',       NULL, 'NC', 400, 'Insurance-operational'
+UNION ALL SELECT '%GUILD EDUCATION%',          NULL, 'NC', 400, 'Education'
+UNION ALL SELECT '%WASTE MANAGEMENT%',         NULL, 'NC', 400, 'Facilities'
+UNION ALL SELECT '%ELEVATOR%',                 NULL, 'NC', 400, 'Facilities'
+UNION ALL SELECT '%RACKSPACE%',                NULL, 'NC', 400, 'IT'
+UNION ALL SELECT '%HCL TECHNOLOGIES%',         NULL, 'NC', 400, 'IT'
+UNION ALL SELECT '%TRANE%',                    NULL, 'NC', 400, 'HVAC'
+UNION ALL SELECT '%HVAC%',                     NULL, 'NC', 400, 'HVAC'
+
+-- NEW NC patterns
+UNION ALL SELECT '%MCKESSON%TECH%',            NULL, 'NC', 410, 'IT'
+UNION ALL SELECT '%MEDSTAFF%',                 NULL, 'NC', 410, 'Staffing'
+UNION ALL SELECT '%LOCUM%',                    NULL, 'NC', 410, 'Staffing'
+UNION ALL SELECT '%NTT DATA%',                 NULL, 'NC', 410, 'IT'
+UNION ALL SELECT '%DELOITTE%',                 NULL, 'NC', 410, 'Consulting'
+UNION ALL SELECT '%KPMG%',                     NULL, 'NC', 410, 'Consulting'
+UNION ALL SELECT '%ACCENTURE%',                NULL, 'NC', 410, 'Consulting'
+UNION ALL SELECT '%JANITORIAL%',               NULL, 'NC', 410, 'Facilities'
+UNION ALL SELECT '%SIEMENS INDUSTRY%',         NULL, 'NC', 410, 'Facilities'
+
+-- ===== CLINICAL: Medical specialties / supplies / labs (500) =====
+UNION ALL SELECT '%ANESTHESIA%',               NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%ANESTHESIOL%',              NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%ORTHOPEDIC%',               NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%ORTHOPAEDIC%',              NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%ONCOLOGY%',                 NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%HEMATOLOGY%',               NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%BLOOD%BANK%',               NULL, 'Clinical', 500, 'Blood services'
+UNION ALL SELECT '%RED CROSS%',                NULL, 'Clinical', 500, 'Blood services'
+UNION ALL SELECT '%SOUND PHYSICIANS%',         NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%HOSPITALIST%',              NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%EMERGENCY MEDICINE%',       NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%EMERGIMED%',                NULL, 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%CARDINAL HEALTH%',          NULL, 'Clinical', 500, 'Medical distribution'
+UNION ALL SELECT '%SMITH%NEPHEW%',             NULL, 'Clinical', 500, 'Medical devices'
+UNION ALL SELECT '%RADIOLOG%',                 '%RADIOPHARM%', 'Clinical', 500, 'Physician services'
+UNION ALL SELECT '%WOUND CARE%',               NULL, 'Clinical', 500, 'Clinical services'
+UNION ALL SELECT '%SPINE%',                    NULL, 'Clinical', 500, 'Medical devices'
+UNION ALL SELECT '%HEALTHTRUST%',              NULL, 'Clinical', 500, 'GPO/distribution'
+UNION ALL SELECT '%AGILITI%',                  NULL, 'Clinical', 500, 'Medical equipment'
+UNION ALL SELECT '%PT SOLUTIONS%',             NULL, 'Clinical', 500, 'Therapy'
+
+-- NEW clinical patterns
+UNION ALL SELECT '%FISHER SCIENTIFIC%',        NULL, 'Clinical', 510, 'Lab supplies'
+UNION ALL SELECT '%THERMO FISHER%',            NULL, 'Clinical', 510, 'Lab supplies'
+UNION ALL SELECT '%LABORATORY%',               NULL, 'Clinical', 510, 'Lab services'
+UNION ALL SELECT '%DIALYSIS%',                 NULL, 'Clinical', 510, 'Renal care'
+UNION ALL SELECT '%RENAL CARE%',               NULL, 'Clinical', 510, 'Renal care'

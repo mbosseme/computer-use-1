@@ -1,7 +1,7 @@
 # Portfolio Expansion: Multi-Source Spend Analysis
 
 **From**: Matt Bossemeyer  
-**Date**: February 12, 2026 (updated February 13, 2026 — v4 service line mapping correction)  
+**Date**: February 12, 2026 (updated — v4 SL mapping correction + v4.1 vendor_name_patterns expansion)  
 **Re**: Health System Spend Landscape — Service Line Mix, Cohort Expansion, and Extrapolation Framework
 
 ---
@@ -25,8 +25,8 @@ This reframing **more than triples the qualifying cohort** (from 31 systems requ
 
 ### Key Findings
 
-1. **WF Service Line Mix** (entity-bridge classification, balanced 3-SL reporters, 46 systems, $54.6B classified):
-   - Clinical: **~43%** (IQR 35–51%) | Non-Clinical: **~41%** (IQR 26–46%) | Pharma: **~15%** (IQR 7–28%) | Food: **~1–2%**
+1. **WF Service Line Mix** (entity-bridge classification, balanced 3-SL reporters, 46 systems, $55.2B classified):
+   - Clinical: **~43%** (IQR 34–51%) | Non-Clinical: **~41%** (IQR 26–46%) | Pharma: **~14%** (IQR 6–27%) | Food: **~1–2%**
    - Clinical and NC are roughly balanced at ~43%/41% across cohort definitions
    - TSA external cross-check: Pharma = 18.6% of $133.5B TSA CY2025 mapped spend — consistent with our WF-derived 14–17% range
 
@@ -41,7 +41,7 @@ This reframing **more than triples the qualifying cohort** (from 31 systems requ
 4. **GPO Membership Extrapolation**: Premier's GPO membership universe — **868 acute-care facilities, 194K staffed beds** — represents an estimated **$68B in total non-labor purchasing**:
    - TSA-observable C+NC addressable: **$57B** ($295K/bed × 194K beds)
    - Total non-labor (WF-adjusted, C+NC ÷ 0.84): **$68B**
-   - By service line: Clinical **~$29B** (43%) | NC **~$28B** (41%) | Pharma **~$10B** (15%) | Food **~$1B** (1.5%)
+   - By service line: Clinical **~$29B** (43%) | NC **~$28B** (41%) | Pharma **~$10B** (14%) | Food **~$1B** (1.5%)
    - *Note: The prior $36B estimate used marker-category per-bed rates ($160K/bed), which counted only specific contract categories. The v4 rate ($295K/bed) counts ALL categories under parent_service_line Clinical/NC, providing a more complete measure of the same spend.*
 
 ---
@@ -54,19 +54,19 @@ We classified CY2025 WF invoice spend across 521 health systems using a two-laye
 
 1. **Primary — Entity-code bridge (79% of spend)**: Each WF invoice has a `vendor_entity_code`. We matched these to TSA's 18,838 child entity codes, where each entity has a known service line mix derived from TSA's `Contract_Category` classifications. Invoice amounts are then distributed proportionally across the four service lines based on that entity's TSA-derived mix. This approach uses **double-attribution** (both `Vendor_Entity_Code` and `Manufacturer_Entity_Code` from TSA) and applies at the **child entity level** (not top-parent), so that the same parent company (e.g., Cardinal Health) is correctly split: OH5010 (med-surg) → 81% clinical, 682446 (drug distribution) → 90% pharma.
 
-2. **Fallback — Name-pattern rules (6% of spend)**: For invoices without a matching entity code, we apply vendor-name pattern rules covering the ~250 largest unmatched vendors. These assign 100% of the invoice to a single SL based on vendor type (e.g., PBM → pharma, construction → NC, anesthesia groups → clinical). Pharma-specific patterns (Nuclear Pharmacy, 340B, Specialty Pharmacy, radiopharmacy, McKesson Drug/Spec/Rx, Omnicell Pharm) fire before broader distributor catch-all rules, ensuring correct classification of pharma subsidiaries within multi-SL parent companies.
+2. **Fallback — Name-pattern rules (4.5% of spend)**: For invoices without a matching entity code, we apply vendor-name LIKE patterns from a persistent `vendor_name_patterns` reference table (153 patterns, priority-ordered by service line band). The pattern table assigns 100% of the invoice to a single SL based on vendor type (e.g., PBM → pharma, construction → NC, anesthesia groups → clinical, Fisher Scientific → clinical). Priority bands ensure pharma-specific patterns (Nuclear Pharmacy, 340B, Specialty Pharmacy, McKesson Drug/Spec/Rx) fire before broader distributor catch-all rules. The pattern table is a Dataform-managed asset — adding or modifying rules requires editing only `vendor_name_patterns.sqlx`, not the classification query.
 
-3. **Exclude identification (2.4% of spend)**: The fallback layer also identifies non-addressable spend — taxes (IRS), insurance claims (Aetna, BCBS, Cigna), retirement/investment (Fidelity, Vanguard), payroll, banking, intercompany transfers, placeholder vendors, government remittances (State Comptroller, Healthcare & Family Services), ASO/benefits funds, and one-time pass-through entries — and removes it from the addressable denominator.
+3. **Exclude identification (2.0% of spend)**: The pattern table also identifies non-addressable spend — taxes (IRS), insurance claims (Aetna, BCBS, Cigna), retirement/investment (Fidelity, Vanguard, VOYA, TIAA), payroll, banking, intercompany transfers, placeholder vendors, government remittances (State Comptroller, Healthcare & Family Services), ASO/benefits funds, and one-time pass-through entries — and removes it from the addressable denominator.
 
 | Classification Layer | WF CY2025 Spend | Share of Total |
 |---------------------|----------------|----------------|
-| Entity-bridge classified | $58.8B | 78.9% |
-| Name-pattern classified (SL) | $2.5B | 3.4% |
-| Name-pattern identified (EXCLUDE) | $1.8B | 2.4% |
-| Unmatched (residual) | $11.5B | 15.4% |
+| Entity-bridge classified | $58.9B | 79.1% |
+| Name-pattern classified (SL) | $3.4B | 4.5% |
+| Name-pattern identified (EXCLUDE) | $1.5B | 2.0% |
+| Unmatched (residual) | $10.7B | 14.3% |
 | **Total** | **$74.5B** | 100% |
 
-This approach achieves an **85% addressable classification rate** across $74.5B in CY2025 WF spend. The entity-bridge method is critical for multi-SL distributors: a naive vendor-name approach would assign all Cardinal Health or McKesson invoices to a single SL, when in reality these companies have distinct child entities (e.g., Cardinal OH5010 = 81% clinical med-surg, Cardinal 682446 = 90% pharma drug distribution). Operating at the child-entity level correctly splits this spend.
+This approach achieves an **86% addressable classification rate** across $74.5B in CY2025 WF spend (up from 85% after expanding the vendor_name_patterns reference table with 28 additional patterns recovering ~$1.4B from the unmatched pool). The entity-bridge method is critical for multi-SL distributors: a naive vendor-name approach would assign all Cardinal Health or McKesson invoices to a single SL, when in reality these companies have distinct child entities (e.g., Cardinal OH5010 = 81% clinical med-surg, Cardinal 682446 = 90% pharma drug distribution). Operating at the child-entity level correctly splits this spend.
 
 ### Benchmark Service Line Mix — Ranges & Confidence Intervals
 
@@ -76,12 +76,12 @@ We present benchmarks as **ranges** rather than point estimates, reflecting genu
 
 | Cohort | N | Classified | Clinical | NC | Pharma | Food |
 |--------|---|-----------|----------|----|--------|------|
-| **3-SL balanced ≥$200M** (primary) | **46** | **$54.6B** | **43.1%** | **41.0%** | **14.5%** | **1.5%** |
-| 3-SL balanced ≥$100M | 56 | $55.7B | 43.2% | 40.8% | 14.6% | 1.4% |
-| 4-SL food≥0.5% ≥$200M | 37 | $49.4B | 41.8% | 43.2% | 13.4% | 1.6% |
-| 4-SL food≥1% ≥$200M | 25 | $26.8B | 43.6% | 43.1% | 11.0% | 2.3% |
-| All ≥$50M, ≥70% match | 78 | $58.8B | 42.3% | 39.3% | 16.9% | 1.5% |
-| 3-SL balanced ≥$50M | 73 | $56.8B | 43.3% | 40.6% | 14.6% | 1.5% |
+| **3-SL balanced ≥$200M** (primary) | **46** | **$55.2B** | **42.8%** | **41.3%** | **14.4%** | **1.5%** |
+| 3-SL balanced ≥$100M | 57 | $56.4B | 43.0% | 41.0% | 14.5% | 1.5% |
+| 4-SL food≥0.5% ≥$200M | 39 | $52.0B | 42.3% | 43.0% | 13.1% | 1.6% |
+| 4-SL food≥1% ≥$200M | 26 | $27.3B | 43.0% | 43.6% | 10.9% | 2.4% |
+| All ≥$50M, ≥70% match | 79 | $59.5B | 42.1% | 39.5% | 16.8% | 1.6% |
+| 3-SL balanced ≥$50M | 74 | $57.5B | 43.1% | 40.9% | 14.5% | 1.5% |
 
 **3-SL balanced definition**: Systems with ≥$200M total spend, ≥70% addressable match rate, and ≥1% of classified spend in Clinical, NC, and Pharma.
 
@@ -89,66 +89,74 @@ We present benchmarks as **ranges** rather than point estimates, reflecting genu
 
 | Service Line | Min | P10 | P25 | Median | Mean | P75 | P90 | Max |
 |-------------|-----|-----|-----|--------|------|-----|-----|-----|
-| **Clinical** | 16.2% | 26.9% | 34.6% | 44.2% | 44.7% | 51.3% | 64.2% | 95.3% |
-| **NC** | 1.3% | 3.8% | 25.6% | 34.1% | 34.0% | 46.1% | 55.3% | 76.4% |
-| **Pharma** | 1.5% | 3.4% | 6.6% | 10.8% | 19.8% | 27.6% | 53.7% | 71.6% |
-| **Food** | 0.0% | 0.3% | 0.6% | 1.1% | 1.5% | 2.1% | 2.9% | 7.6% |
+| **Clinical** | 16.2% | 26.9% | 34.4% | 43.9% | 44.5% | 51.0% | 63.6% | 95.3% |
+| **NC** | 1.3% | 3.8% | 25.7% | 34.3% | 34.2% | 46.3% | 55.3% | 76.3% |
+| **Pharma** | 1.5% | 3.4% | 6.3% | 10.8% | 19.7% | 27.4% | 53.4% | 71.6% |
+| **Food** | 0.0% | 0.3% | 0.6% | 1.1% | 1.6% | 2.1% | 3.1% | 7.9% |
 
 #### Recommended Presentation Ranges
 
 | Service Line | Central Estimate | IQR (System-Level) | Cross-Cohort Range | External Check (TSA) |
 |-------------|-----------------|--------------------|--------------------|---------------------|
-| **Clinical** | ~43% | 35–51% | 42–44% | 43% (parent_service_line) |
-| **NC** | ~41% | 26–46% | 39–43% | 37% (parent_service_line) |
-| **Pharma** | ~14–15% | 7–28% | 11–17% | **18.6%** |
-| **Food** | ~1–2% | 0.6–2.1% | 1.4–2.3% | 1.1% |
+| **Clinical** | ~43% | 34–51% | 42–43% | 43% (parent_service_line) |
+| **NC** | ~41% | 26–46% | 40–44% | 37% (parent_service_line) |
+| **Pharma** | ~14% | 6–27% | 11–17% | **18.6%** |
+| **Food** | ~1–2% | 0.6–2.1% | 1.5–2.4% | 1.1% |
 
 > **TSA cross-check**: TSA Pharmacy = **18.6%** of $133.5B CY2025 mapped spend, consistent with our WF-derived 14–17% range (the range widens to include higher-pharma cohort definitions). TSA uses `service_line` → `parent_service_line` via the same mapping table as WF v4, so the Clinical and NC comparisons are now directly aligned.
 
 **Key observations**:
 - **Clinical and NC are roughly balanced** (~43%/41%) across all cohort definitions, a dramatic shift from the v3.2 estimate of 64%/22%. The prior overcount of Clinical was caused by ~160 NC contract categories falling through the explicit enumeration's `ELSE → Clinical` fallback. The corrected entity-bridge proportions show NC is nearly as large as Clinical.
-- **Pharma is ~14–15% in the primary cohort** (weighted); system-level median is 10.8% with wide IQR (7–28%), reflecting genuine variation in how much pharma flows through WF vs. direct wholesaler channels. The strict 4-SL food≥1% cohort depresses pharma to 11.0% due to selection bias (food-floor drops pharma-heavy systems)
-- **TSA pharma cross-check validates**: TSA Pharmacy = 18.6% on $133.5B mapped spend; our 14.5% weighted central falls within range given different scope (WF captures invoices routed through ERP, TSA captures contract-specific transactional data)
-- **NC at ~41%** is the most dramatic correction — stable across all cuts (39–43%), reflecting the proper inclusion of PURCHASED SERVICES, FACILITIES, and IT/DIGITAL HEALTH categories that were previously misclassified as Clinical
-- **Food at ~1–2%** is structurally small in WF; the 4-SL cohort inflates it to 2.3% by definition (food floor = 1%)
+- **Pharma is ~14% in the primary cohort** (weighted); system-level median is 10.8% with wide IQR (6–27%), reflecting genuine variation in how much pharma flows through WF vs. direct wholesaler channels. The strict 4-SL food≥1% cohort depresses pharma to 10.9% due to selection bias (food-floor drops pharma-heavy systems)
+- **TSA pharma cross-check validates**: TSA Pharmacy = 18.6% on $133.5B mapped spend; our 14.4% weighted central falls within range given different scope (WF captures invoices routed through ERP, TSA captures contract-specific transactional data)
+- **NC at ~41%** is the most dramatic correction — stable across all cuts (40–44%), reflecting the proper inclusion of PURCHASED SERVICES, FACILITIES, and IT/DIGITAL HEALTH categories that were previously misclassified as Clinical
+- **Food at ~1–2%** is structurally small in WF; the 4-SL cohort inflates it to 2.4% by definition (food floor = 1%)
 - **System-level variation is substantial**: Pharma ranges from 1.5% to 71.6% across the 46-system cohort, driven by differences in ERP capture (some systems route all pharma through wholesaler-direct channels not visible in WF)
 
 ### Selected System-Level Mix (Primary 3-SL Cohort)
 
 | System | Total ($B) | Match % | Clinical | NC | Pharma | Food |
 |--------|-----------|---------|----------|----|--------|------|
-| AdventHealth (AHS Florida) | 8.51 | 87.9% | 51.3% | 40.1% | 6.7% | 2.0% |
-| Catholic Health Initiatives | 4.51 | 81.4% | 30.7% | 61.9% | 5.4% | 2.0% |
-| Dignity Health | 4.34 | 77.0% | 29.7% | 61.1% | 6.6% | 2.6% |
+| AdventHealth (AHS Florida) | 8.51 | 88.7% | 50.8% | 40.0% | 7.0% | 2.2% |
+| Catholic Health Initiatives | 4.51 | 83.2% | 30.2% | 62.5% | 5.3% | 2.0% |
+| Dignity Health | 4.34 | 80.3% | 29.3% | 61.7% | 6.3% | 2.7% |
 | EM_CCH | 1.60 | 84.9% | 49.9% | 37.5% | 10.8% | 1.8% |
-| Beth Israel Lahey Health | 1.36 | 70.5% | 44.5% | 48.3% | 5.7% | 1.4% |
-| EM_Renown | 1.30 | 88.2% | 49.7% | 29.1% | 19.7% | 1.5% |
-| Adventist Health (California HQ) | 1.29 | 83.2% | 35.6% | 47.5% | 9.3% | 7.6% |
-| EM_ULHealth | 1.25 | 90.0% | 45.5% | 50.5% | 3.4% | 0.6% |
-| EM_SouthAlabama | 0.29 | 91.6% | 69.2% | 22.7% | 5.2% | 2.9% |
+| Beth Israel Lahey Health | 1.36 | 71.5% | 43.9% | 48.8% | 5.7% | 1.6% |
+| EM_Renown | 1.30 | 88.3% | 49.7% | 29.1% | 19.7% | 1.5% |
+| Adventist Health (California HQ) | 1.29 | 84.0% | 35.4% | 47.5% | 9.2% | 7.9% |
+| EM_ULHealth | 1.25 | 90.1% | 45.5% | 50.5% | 3.4% | 0.6% |
+| EM_SouthAlabama | 0.29 | 92.6% | 68.5% | 23.2% | 5.2% | 3.1% |
 
 > Match rates >100% occur when exclude-type spending (taxes, insurance) is identified and removed from the denominator, making the addressable base smaller than classified spend.
 
 ### Sensitivity to Unmatched Spend
 
-The 15% residual unmatched spend ($11B) is a genuine mix of vendor types — PBMs ($200M), specialty pharmacy ($200M+), construction firms, food service (Sodexo), and many intercompany/system-level transfers that would likely be EXCLUDE. Scenario analysis shows the benchmark is robust:
+The ~15% residual unmatched spend ($10.7B) is predominantly a long tail of small, nondescript vendors (84K+ distinct names). Prior to pattern expansion (Session 9c), the unmatched pool contained identifiable vendor types that have since been reclassified:
+
+- **Recovered → NC ($704M):** McKesson Technology ($277M), locum tenens ($137M), Deloitte/KPMG/Accenture ($167M), Siemens Industry ($41M), MedStaff ($42M), NTT Data ($24M), janitorial ($16M)
+- **Recovered → Food ($453M):** US Foods ($287M), Pepsi ($51M), Aramark ($45M), Compass Group ($38M), Sysco ($26M), Coca-Cola ($6M)
+- **Recovered → Clinical ($223M):** Renal care ($77M), Fisher Scientific ($63M), laboratory vendors ($60M), dialysis ($21M)
+- **Recovered → Pharma ($34M):** RxBenefits ($31M), pharmacy benefit managers ($3M)
+- **Recovered → Exclude ($26M):** Comptroller/government entities
+
+Note: Major PBMs (OptumRx $190M, Express Scripts $15M) and food service providers (Sodexo $140M) were already classified via the entity-bridge layer, not name patterns. Scenario analysis shows the benchmark remains robust:
 
 | Scenario | Clinical | NC | Pharma | Food |
 |----------|----------|----|--------|------|
-| Matched only (current) | 42.3% | 39.3% | 16.9% | 1.5% |
-| Estimated actual unmatched mix | ~40% | ~37% | ~21% | ~2% |
-| Extreme: all unmatched = pharma | ~35% | ~32% | ~32% | ~1% |
+| Matched only (current) | 43.0% | 38.8% | 16.7% | 1.5% |
+| Estimated actual unmatched mix | ~41% | ~40% | ~16% | ~2% |
+| Extreme: all unmatched = pharma | ~37% | ~33% | ~29% | ~1% |
 
-Uncertainty band: ±3–5pp on each SL from unmatched spend.
+Uncertainty band: ±2–4pp on each SL from unmatched spend (tightened from ±3–5pp after pattern expansion).
 
 ### Implications for Extrapolation
 
 For any system where you know the Clinical + NC spend from TSA, you can estimate total non-labor purchasing:
-- If Clinical + NC = **~84%** of total (per primary benchmark: 43.1% + 41.0%), then total ≈ Clinical+NC / 0.84
+- If Clinical + NC = **~84%** of total (per primary benchmark: 42.8% + 41.3%), then total ≈ Clinical+NC / 0.84
 - Pharma ≈ total × 0.14–0.15 (range: 0.11–0.17 across cohort definitions)
 - Food ≈ total × 0.01–0.02
 
-These ratios should be applied **directionally** — individual system mix varies substantially (pharma IQR: 7–28%).
+These ratios should be applied **directionally** — individual system mix varies substantially (pharma IQR: 6–27%).
 
 ---
 
@@ -297,15 +305,15 @@ Applying the WF benchmark mix percentages to the $68B total non-labor estimate:
 
 | Service Line | Share | Estimated GPO Spend | Per Bed |
 |-------------|-------|--------------------|---------| 
-| **Clinical** | ~43% | **$29.3B** | $151K |
+| **Clinical** | ~43% | **$29.2B** | $151K |
 | **Non-Clinical** | ~41% | **$27.9B** | $144K |
-| **Pharma** | ~15% | **$9.9B** | $51K |
+| **Pharma** | ~14% | **$9.5B** | $49K |
 | **Food** | ~1.5% | **$1.0B** | $5K |
 | **Total** | 100% | **$68.1B** | $352K |
 
 > **Interpretation**: These are estimates of what Premier GPO members spend in each service line across their total non-labor purchasing — not what flows through Premier contracts. The gap between this total and Premier's contracted volume is the opportunity the Portfolio Expansion Heat Map is designed to quantify.
 
-> **Caveat on pharma and food**: The pharma estimate ($9.9B) reflects only GPO-addressable pharma purchasing visible in WF invoices. Wholesaler-direct channels, 340B carve-outs, and specialty pharmacy flows are not captured — the actual pharma spend is likely significantly higher. Similarly, food ($1.0B) is a structural undercount relative to industry benchmarks suggesting 3–5% of operating expenses.
+> **Caveat on pharma and food**: The pharma estimate ($9.5B) reflects only GPO-addressable pharma purchasing visible in WF invoices. Wholesaler-direct channels, 340B carve-outs, and specialty pharmacy flows are not captured — the actual pharma spend is likely significantly higher. Similarly, food ($1.0B) is a structural undercount relative to industry benchmarks suggesting 3–5% of operating expenses.
 
 ### Sensitivity
 
@@ -321,7 +329,7 @@ The combined range across both inputs is approximately **$40B–$107B**. The $68
 ### For Portfolio Expansion Heat Map Purposes
 
 - **Clinical + NC represent ~84% of total non-labor purchasing**, making them not only the directly addressable service lines for TSA profiling, but also the overwhelming majority of the spend envelope
-- **Pharma (~14–15%) and Food (~1–2%)** are comparatively small at the GPO-purchasable level; much of what flows through wholesaler entities like Cardinal and McKesson is actually med-surg supply chain rather than pharma distribution
+- **Pharma (~14%) and Food (~1–2%)** are comparatively small at the GPO-purchasable level; much of what flows through wholesaler entities like Cardinal and McKesson is actually med-surg supply chain rather than pharma distribution
 - The 100-system cohort provides the foundation for the service-line-by-system scoring matrix
 
 ---
@@ -408,7 +416,8 @@ The v4 full-service-line rate ($295K/bed C+NC) supersedes the v3.2 marker-catego
 | `tsa_cy2025_enriched` | 118.7M rows — tsa_cy2025 + `is_clin_nc_cohort`, `premier_gpo_member` flags |
 | `sa_sf_dhc_join_enriched` | 482K rows — Full facility directory with improved `premier_gpo_member_improved` flag |
 | `entity_sl_mix` | 18,838 child entity codes with SL proportions (from TSA double-attribution, using service_line_mapping) |
-| `wf_sl_v4` | 521 systems with distributed SL spend, exclude spend, match rates |
+| `vendor_name_patterns` | 153 LIKE-pattern rules for WF name-based classification (priority-ordered, auditable, Dataform-managed) |
+| `wf_sl_v4` | 521 systems with distributed SL spend, exclude spend, match rates (uses vendor_name_patterns for fallback layer) |
 | `tsa_clin_nc_cohort` | 100 systems with beds, Clinical/NC/total spend |
 | `gpo_member_universe` | 868 acute-care GPO member facilities with beds, hospital type, program flags |
 
@@ -428,7 +437,7 @@ This analysis feeds directly into the **Portfolio Expansion Heat Map** initiativ
 
 1. **Service line segmentation**: The 100-system cohort enables on/off/non-contract profiling for Clinical and Non-Clinical — the two service lines where TSA has direct contracting visibility
 2. **Winnability scoring**: Per-system contract category detail supports identification of off-contract and non-contract spend opportunities
-3. **Expected mix benchmarks**: WF-derived SL mix (**~43% Clinical / ~41% NC / ~14–15% Pharma / ~1–2% Food**, with IQRs) provides the denominator for expressing opportunity as a percentage of total addressable spend — and shows that C+NC represent ~84% of the total envelope
+3. **Expected mix benchmarks**: WF-derived SL mix (**~43% Clinical / ~41% NC / ~14% Pharma / ~1–2% Food**, with IQRs) provides the denominator for expressing opportunity as a percentage of total addressable spend — and shows that C+NC represent ~84% of the total envelope
 4. **Data timeline alignment**: Jordan Garrett targets data cleanup by 2/13 and winnability framework by 2/27; this cohort and benchmark work provides the analytical foundation
 
 ### Next Steps (Recommended)

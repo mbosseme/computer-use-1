@@ -110,10 +110,11 @@ After removing non-supply-chain categories, the remaining ~22% gap is explained 
 | `scripts/map_health_systems.py` | Python fuzzy matcher for initial candidate discovery | Committed |
 | `scripts/gen_spend_comparison_2025.sql` | Earlier iteration of comparison SQL | Committed |
 | `scripts/gen_stable_systems_spend_comparison.sql` | Earlier iteration for "stable" systems | Committed |
-| `runs/.../exports/comprehensive_cohort_analysis.md` | **PRIMARY DELIVERABLE** — 29-system tiered cohort with methodology, service line classification, capture ratios, validation notes | Committed |
-| `runs/.../exports/analyst_briefing.md` | Concise narrative for analysts + exec summary for leadership | Committed |
+| `runs/.../exports/comprehensive_cohort_analysis.md` | **PRIMARY DELIVERABLE** — 31-system tiered cohort | Updated Session 3b |
+| `runs/.../exports/analyst_briefing.md` | **PRIMARY DELIVERABLE** — Clean current-state briefing (v4.1 numbers) | **Updated Session 9c** |
 | `runs/.../exports/osf_deep_dive_analysis.md` | OSF vendor categorization deep dive (Session 1) | Committed |
 | `runs/.../ANALYSIS_PLAN.md` | 6-phase analysis plan (audited; all phases executed) | Committed |
+| `dataform/` | Full Dataform pipeline — 8 tables + 14 assertions | **Updated Session 9c** |
 
 ---
 
@@ -288,11 +289,15 @@ The original WF calibration used **broad exclusions** — removing pharma, IT, c
 | `scripts/gen_spend_comparison_2025.sql` | Earlier iteration of comparison SQL | Committed |
 | `scripts/gen_stable_systems_spend_comparison.sql` | Earlier iteration for "stable" systems | Committed |
 | `runs/.../exports/comprehensive_cohort_analysis.md` | **PRIMARY DELIVERABLE** — 31-system tiered cohort with corrected methodology, revised capture ratios, Advocate split | Updated Session 3b |
-| `runs/.../exports/analyst_briefing.md` | **PRIMARY DELIVERABLE** — Clean current-state briefing (v3.2 methodology, ranges, external validation) | Updated Session 7 |
+| `runs/.../exports/analyst_briefing.md` | **PRIMARY DELIVERABLE** — Clean current-state briefing with v4.1 numbers, pattern table methodology, full cohort benchmarks | **Updated Session 9c** |
 | `runs/.../exports/osf_deep_dive_analysis.md` | OSF vendor categorization deep dive (Session 1) | Committed |
 | `runs/.../exports/per_bed_benchmarks_and_extrapolation.md` | Per-bed benchmarks, GPO mapping, extrapolation model, TSA coverage calibration | Updated Session 3b |
 | `runs/.../exports/external_validation_synthesis.md` | External benchmark comparison — consensus ranges from deep research reports vs our v3.2 empirical findings | **New Session 7** |
 | `runs/.../ANALYSIS_PLAN.md` | 6-phase analysis plan (audited; all phases executed) | Committed |
+| `dataform/definitions/staging/vendor_name_patterns.sqlx` | **Name-pattern reference table** — 153 LIKE rules, priority-ordered, single source of truth for WF name classification | **New Session 9c** |
+| `dataform/definitions/marts/wf_sl_v4.sqlx` | **WF Service Line classification** — JOIN-based (entity-bridge + pattern table), primary benchmark table | **Rewritten Session 9c** |
+| `dataform/definitions/staging/*.sqlx` | Staging tables: service_line_mapping, entity_sl_mix, tsa_cy2025, tsa_cy2025_enriched, tsa_clin_nc_cohort, gpo_member_universe | Committed Session 9b |
+| `dataform/definitions/assertions/*.sqlx` | 14 assertions (5 inline + 3 standalone files) validating referential integrity, classification coverage, budget-level sanity | Committed Session 9b–9c |
 
 ---
 
@@ -995,8 +1000,68 @@ The analyst_briefing.md was comprehensively updated with all v4 numbers. Key sec
 - **Cohort expanded** from 81→100 because corrected NC classification means 19 more systems meet ≥$10M NC
 - **Per-bed rates use facility-level beds** (matched through TSA entity codes ↔ DHC), not system-level inflated beds
 - **$295K/bed rate** counts ALL C+NC categories (not just marker categories)
-- **WF C+NC share** ≈ 84% (43.1% + 41.0%), range 82–87% across cohort definitions
-- **Dataform pipeline** is in `dataform/` — 13 .sqlx files defining the full build DAG
+- **WF C+NC share** ≈ 84% (42.8% + 41.3%), range 82–87% across cohort definitions
+- **Dataform pipeline** is in `dataform/` — 14 .sqlx files defining the full build DAG (includes vendor_name_patterns.sqlx)
 - **wf_sl_v3_2** is superseded by `wf_sl_v4`; old table still exists in BQ
 
 ---
+
+## Session 9c (2026-02-13): vendor_name_patterns Reference Table + Expanded Name Pattern Coverage
+
+### 1. Problem Discovery — Briefing Accuracy on Unmatched Spend
+
+User questioned the analyst briefing's claim that "15% residual unmatched spend ($11B) is a genuine mix of vendor types — PBMs ($200M), specialty pharmacy ($200M+), construction firms, food service (Sodexo)." Investigation revealed:
+
+- **Statement was partially inaccurate**: Major PBMs (OptumRx $190M, Express Scripts $15M) and Sodexo ($140M) were *already entity-bridge classified* — they were NOT in the unmatched pool
+- **But real gaps existed**: Top 50 unmatched vendors totaled ~$2.5B+ of clearly classifiable spend (McKesson Technology $278M → NC, Fisher Scientific $41M → Clinical, RXBENEFITS $28M → Pharma, Pepsi-Cola $28M → Food, etc.)
+- Decomposition: Of $11.5B unmatched, ~$8.8B genuinely ambiguous (84K vendors), ~$2.7B catchable with expanded patterns
+
+### 2. Architecture Change — Pattern Table Replaces Inline CASE WHEN
+
+**Before**: wf_sl_v4.sqlx had a 90-line nested CASE WHEN with all name patterns inline — fragile, hard to audit, impossible to extend without modifying the classification query.
+
+**After**: Two-layer design:
+- **`vendor_name_patterns.sqlx`** (new, `definitions/staging/`): 153 LIKE-pattern rules in a reference table, priority-ordered by SL band (100=Exclude, 200=Pharma, 300=Food, 400=NC, 500=Clinical). Each rule has pattern, exclude_pattern (negation), parent_service_line, priority, and category fields.
+- **`wf_sl_v4.sqlx`** (rewritten): JOINs vendor_name_patterns via `ROW_NUMBER() OVER (ORDER BY priority)` match. 75 lines, clean separation of rules (data) from logic (SQL).
+
+To add/modify name patterns, edit `vendor_name_patterns.sqlx` only — the classification query needs no changes.
+
+### 3. New Patterns Added (28 total)
+
+| SL | Patterns | Top examples | Recovered Spend |
+|---|---|---|---|
+| NC (410) | 9 | McKesson Tech ($277M), locum tenens ($137M), Deloitte ($86M), KPMG ($62M), MedStaff ($42M), Siemens Industry ($41M) | **$704M** |
+| Food (310) | 7 | US Foods ($287M), Pepsi ($51M), Aramark ($45M), Compass Group ($38M), Sysco ($26M) | **$453M** |
+| Clinical (510) | 5 | Renal care ($77M), Fisher Scientific ($63M), laboratory ($60M), dialysis ($21M) | **$223M** |
+| Pharma (210) | 4 | RxBenefits ($31M), pharmacy benefit ($3M), Omnicare, PharMerica | **$34M** |
+| Exclude (125) | 1 | Comptroller ($26M) | **$26M** |
+| Exclude (105) | 1 | Broadened VOYA from `%VOYA FINANCIAL%` → `%VOYA%` | (reclassified) |
+
+### 4. Impact on Key Numbers
+
+| Metric | v4 (pre-expansion) | v4.1 (post-expansion) | Change |
+|--------|------|------|--------|
+| Name-pattern SL spend | $2.5B (3.4%) | $3.4B (4.5%) | +$0.9B |
+| Exclude spend | $1.8B (2.4%) | $1.5B (2.0%) | -$0.3B |
+| Unmatched | $11.5B (15.4%) | $10.7B (14.3%) | -$0.8B |
+| Match rate | 85% | **86%** | +1pp |
+| Primary cohort (46 sys) Clinical | 43.1% | 42.8% | -0.3pp |
+| Primary cohort NC | 41.0% | 41.3% | +0.3pp |
+| Primary cohort Pharma | 14.5% | 14.4% | -0.1pp |
+| Primary cohort Food | 1.5% | 1.5% | — |
+
+### 5. Updated Artifacts
+
+- **`analyst_briefing.md`**: Comprehensively updated — classification table, methodology description (now references pattern table), all 6 cohort benchmark rows, percentile distribution, selected system-level mix, sensitivity section (corrected PBM/Sodexo claims), data assets (added vendor_name_patterns), GPO extrapolation numbers
+- **`vendor_name_patterns.sqlx`**: New Dataform-managed reference table
+- **`wf_sl_v4.sqlx`**: Rewritten to JOIN pattern table
+- **BQ tables**: `vendor_name_patterns` and `wf_sl_v4` rebuilt
+
+### 6. Key Facts for Continuity
+
+- **vendor_name_patterns is the single source of truth for name patterns** — edit only this file
+- **Priority bands**: 100–199 Exclude, 200–299 Pharma, 300–399 Food, 400–499 NC, 500–599 Clinical
+- **Lower priority number wins** when a vendor matches multiple patterns (ROW_NUMBER ORDER BY priority)
+- **exclude_pattern column** enables negation (e.g., `%STATE OF%` excludes `%STATE OF THE ART%`)
+- **Dataform compiles**: 8 tables + 14 assertions, zero errors
+- **No Dataform CLI credentials** — tables materialized via direct BQ SQL execution
