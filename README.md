@@ -11,17 +11,6 @@ Durable repo-based memory (instructions, skills, and run logs) keeps the system 
 
 Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_REQUIREMENTS.md).
 
-## Current property focus
-This workspace is currently being used to evaluate a specific property:
-
-- **ACTIVE:** Vineyard Point / Dockside condos (Lake Norman-adjacent)
-  - Address anchor: 18861 Vineyard Point Ln, Cornelius, NC 28031
-  - Package: [properties/README.md](properties/README.md)
-  - Active run: `runs/2026-01-19__vineyard-point/`
-
-Historical note:
-- **ARCHIVED:** Alexander Chase (Cornelius, NC) evaluation (retained under `runs/2026-01-17__second-home-condo-net-cost/`)
-
 ## Prereqs
 - Node.js (`node`, `npx`)
   - Optional (Homebrew): `brew install node`
@@ -223,16 +212,13 @@ Dependencies are managed in tiers to keep the base reproducible while enabling o
 
 Details: [docs/DEPENDENCIES_AND_UTILS.md](docs/DEPENDENCIES_AND_UTILS.md)
 
-## Training run procedure
-1. You paste the training URL into chat as session-only: `<TRAINING_URL>`.
-2. Agent opens the browser and navigates.
-3. If login/SSO/MFA/CAPTCHA appears, agent stops; you complete it; you type “Done”.
-4. Agent proceeds through the training:
-   - Detects gating (disabled Next/Continue, timers, “video must finish”)
-   - Waits for explicit completion signals (button enabled, timer hits 0, completed badge)
-   - Scrolls/handles hidden controls and common overlays
-5. Before the final completion/submission step (Complete/Submit/Attest/Finish), the agent asks for explicit confirmation.
+## General Automation Workflow
+1. **Initiate**: You provide the starting URL or task instructions.
+2. **Navigate**: Agent opens the browser and navigates to the target site.
+3. **Auth**: If login/SSO/MFA/CAPTCHA appears, agent stops; you complete it; you type “Done”.
+4. **Execute**: Agent proceeds with the task (extraction, form filling, navigation).
+5. **Safety**: Before any irreversible action (Submit/Buy/Post/Attest), the agent asks for explicit confirmation.
 
 ## After-action
 - Optionally write a session note in [notes/agent-runs/](notes/agent-runs/) using [notes/agent-runs/_TEMPLATE.md](notes/agent-runs/_TEMPLATE.md).
-- Update or extract skills in [.github/skills/](.github/skills/), especially [.github/skills/training-navigation/SKILL.md](.github/skills/training-navigation/SKILL.md), with new recovery rules or landmarks.
+- Update or extract skills in [.github/skills/](.github/skills/) with new recovery rules or landmarks.
