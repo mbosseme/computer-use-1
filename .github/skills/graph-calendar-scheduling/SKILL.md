@@ -37,6 +37,8 @@ tools:
 
 ### 2) Compute mutual availability (organizer + attendees)
 - Use `POST /me/calendar/getSchedule` (granular) or `POST /me/findMeetingTimes` (high-level suggestions).
+- Reusable CLI utility (preferred for quick runs):
+  - `python tools/graph/find_mutual_slots.py --emails <email1> <email2> ... --days 7 --duration 30 --day-start 08:30 --day-end 16:30 --allow-tentative`
 - For `findMeetingTimes`:
   - Pass `maxCandidates`, `meetingDuration`, and `timeConstraint` (restricted to 8:30-4:30 EST).
   - Note: `findMeetingTimes` may fail or error with >20 attendees. Fall back to checking the specific date/time directly if the list is large.
