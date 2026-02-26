@@ -53,6 +53,10 @@ tools:
 - Recommended helper (repo utility):
   - `python -m agent_tools.graph.create_draft_from_md --md <path/to/draft.md> --resolve-to-name "First Last"`
   - If name resolution is ambiguous, the tool will list candidates and still create a draft with no recipient.
+- Reusable structured-draft utility (for multi-section request emails):
+  - `python tools/graph/draft_structured_email.py --input <spec.json> [--fallbacks <fallbacks.json>]`
+  - Use this when a request has repeated sections, placeholders, and standardized asks.
+  - Use `create_draft_from_md` for freeform one-off messages; use `draft_structured_email.py` for consistent, templated updates across runs.
 
 ## Evidence-led drafts with inline images (CID)
 When the user wants a draft that “reads like a clear explanation supported by images”, prefer **inline CID images placed immediately after the relevant paragraph**, not a lumped “Evidence” section.

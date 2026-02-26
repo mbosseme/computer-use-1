@@ -39,6 +39,7 @@ Recommended locations:
 
 This repo also uses:
 - **Reusable Python utilities for runs**: `agent_tools/` (e.g., the Azure OpenAI GPT-5.2 starter client under `agent_tools/llm/`)
+- **Reusable Graph CLIs for scheduling/drafts**: `tools/graph/` (cross-worktree utilities for mutual slot finding and structured draft email creation)
 
 ### Screenshot / image utilities
 This repo includes deterministic image transforms used to prepare evidence (e.g., cropping BI dashboard screenshots to remove empty gutters).
