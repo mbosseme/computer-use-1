@@ -39,6 +39,14 @@ Recommended locations:
 
 This repo also uses:
 - **Reusable Python utilities for runs**: `agent_tools/` (e.g., the Azure OpenAI GPT-5.2 starter client under `agent_tools/llm/`)
+- **Reusable Graph CLIs for scheduling/drafts**: `tools/graph/` (cross-worktree utilities for mutual slot finding and structured draft email creation)
+
+### Screenshot / image utilities
+This repo includes deterministic image transforms used to prepare evidence (e.g., cropping BI dashboard screenshots to remove empty gutters).
+
+- Utility module: `agent_tools/images/dashboard_crop.py`
+- CLI helper: `scripts/make_clean_dashboard_screenshots.py`
+- Dependency: `Pillow` (installed via `requirements.txt`)
 
 ### Current `agent_tools/llm/` modules
 | Module | Purpose |
@@ -55,6 +63,37 @@ Keep utilities:
 - deterministic and reviewable
 - small and composable
 - explicit about inputs/outputs
+
+## Validated Logic Snippets
+
+### Report Builder "Units" Calculation
+Logic to convert `wholesaler_pkg_qty` (Case Size) and `quantity_ordered` (Cases) into "Eaches" (Units), correcting for data quality issues.
+
+```python
+def process_rb_units(row):
+    qty = row['quantity_ordered']
+    pack = row['wholesaler_pkg_qty']
+    vol = row['pkg_size'] # Check mapping: Report Builder often stores volume here
+    
+    factor = 1
+    try:
+        p = float(pack)
+        v = float(vol) if vol else 0
+        
+        if p > 1:
+            # Check for volume leakage (Pack == Volume mistake)
+            if p == v:
+                factor = 1 
+            # Suspicious logic for large rounded numbers matching volume
+            elif p > 100 and v > 0 and (p % v == 0 or v % p == 0):
+                factor = 1
+            else:
+                factor = p
+    except:
+        factor = 1
+        
+    return qty * factor
+```
 
 ## Promotion checklist (PR-friendly)
 When promoting a dependency or utility into core:

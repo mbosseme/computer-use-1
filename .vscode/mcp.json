@@ -12,6 +12,14 @@
         "--output-dir",
         "runs/2026-01-22__baxter-market-insights/playwright-output"
       ]
+    },
+    "bigquery": {
+      "command": "/opt/homebrew/bin/toolbox",
+      "args": ["--prebuilt", "bigquery", "--stdio"],
+      "env": {
+        "BIGQUERY_PROJECT": "matthew-bossemeyer",
+        "BIGQUERY_PROJECT_ID": "matthew-bossemeyer"
+      }
     }
   }
 }

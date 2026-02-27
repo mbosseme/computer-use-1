@@ -197,3 +197,49 @@ def create_draft_message(
         raise RuntimeError("Graph created a draft but returned no message id")
 
     return DraftCreateResult(id=msg_id)
+
+
+def create_reply_draft(
+    client: GraphAPIClient,
+    *,
+    message_id: str,
+    body: str,
+    content_type: str = "HTML",
+    timeout_s: int = 90,
+) -> DraftCreateResult:
+    """Create a reply draft to an existing message.
+
+    This uses POST /createReply to generate the draft with history,
+    then PATCH to insert the new body *above* the history.
+    """
+    # 1. Create Reply Draft (creates item in Drafts w/ quoted history)
+    reply_resp = client.post(f"me/messages/{message_id}/createReply", json={}, timeout=timeout_s)
+    draft_id = str(reply_resp.get("id") or "").strip()
+    if not draft_id:
+        raise RuntimeError("Graph createReply returned no draft id")
+
+    # 2. Get current body (the history)
+    current_draft = client.get(f"me/messages/{draft_id}", timeout=timeout_s)
+    current_body = (current_draft.get("body") or {}).get("content", "")
+
+    # 3. Combine new content + history
+    # Standard Outlook HTML separator
+    separator = "<br><div class='BodyFragment'><hr></div>" if "div" in current_body else "<br><hr>"
+    if content_type.upper() == "TEXT":
+        # If user passed text, wrap in standard HTML wrapper
+        new_content = f"<html><body>{html.escape(body)}</body></html>"
+        full_body = f"{new_content}{separator}{current_body}"
+    else:
+        # User passed HTML
+        full_body = f"{body}{separator}{current_body}"
+
+    # 4. Patch the draft
+    payload = {
+        "body": {
+            "contentType": "HTML",
+            "content": full_body
+        }
+    }
+    client.patch(f"me/messages/{draft_id}", json=payload, timeout=timeout_s)
+
+    return DraftCreateResult(id=draft_id)

@@ -153,19 +153,25 @@ def _textutil_docx_to_text(docx_path: Path) -> str:
 def _ensure_symlink(src: Path, dst: Path) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
 
+    # Always link to an absolute source path.
+    # If callers pass relative paths (common for runs/<RUN_ID>/...), using a
+    # relative symlink here will resolve relative to dst's directory and can
+    # produce broken links.
+    src_abs = src.resolve()
+
     # Safety: if src and dst refer to the same on-disk path, do nothing.
     try:
-        if src.exists() and dst.exists() and src.samefile(dst):
+        if src_abs.exists() and dst.exists() and src_abs.samefile(dst):
             return
     except OSError:
         pass
 
-    if src.resolve() == dst.resolve():
+    if src_abs == dst.resolve():
         return
 
     if dst.exists() or dst.is_symlink():
         dst.unlink()
-    os.symlink(src, dst)
+    os.symlink(src_abs, dst)
 
 
 def _extract_body(md: str) -> str:

@@ -54,6 +54,40 @@ tools:
 - Recommended helper (repo utility):
   - `python -m agent_tools.graph.create_draft_from_md --md <path/to/draft.md> --resolve-to-name "First Last"`
   - If name resolution is ambiguous, the tool will list candidates and still create a draft with no recipient.
+- Reusable structured-draft utility (for multi-section request emails):
+  - `python tools/graph/draft_structured_email.py --input <spec.json> [--fallbacks <fallbacks.json>]`
+  - Use this when a request has repeated sections, placeholders, and standardized asks.
+  - Use `create_draft_from_md` for freeform one-off messages; use `draft_structured_email.py` for consistent, templated updates across runs.
+
+## Evidence-led drafts with inline images (CID)
+When the user wants a draft that “reads like a clear explanation supported by images”, prefer **inline CID images placed immediately after the relevant paragraph**, not a lumped “Evidence” section.
+
+### Structure (recommended)
+- 1–3 sentence summary up top (scope + what was validated)
+- For each claim:
+  - 1–2 sentences explaining what the screenshot demonstrates
+  - The screenshot directly beneath (inline `<img src="cid:<contentId>">`)
+- Preserve the quoted thread below (reply-all drafts typically include it)
+
+### Implementation pattern (Graph)
+- Create (or locate) the draft message.
+- Fetch the current HTML body and split out the quoted thread tail (keep everything from the first `From:` block onward).
+- Replace the top-of-email body with your narrative + inline images, then append the quoted tail.
+- Attach images as inline file attachments with stable `contentId` values.
+  - Keep the `contentId` stable even if you swap the image file (so the HTML `<img src="cid:...">` continues to work).
+
+### Repo tool (starter)
+- Update an existing draft with inline images (NOT SENT):
+  - `python scripts/update_outlook_draft_inline_evidence.py --draft-id <DRAFT_MESSAGE_ID> --images-json <PATH> --preserve-quoted --body-html <OPTIONAL_HTML>`
+
+### Common pitfalls
+- If images don’t render:
+  - Confirm the HTML uses `cid:<contentId>` (no filename suffix).
+  - Confirm the attachment is `isInline: true` and `contentId` exactly matches.
+- If the quoted thread disappears:
+  - Make sure you append the preserved tail when patching the draft body.
+- If whitespace-heavy screenshots make the email hard to read:
+  - Crop to `_clean.png` first (see the browser automation skill’s screenshot trimming section).
 
 ### Pagination
 - Respect `@odata.nextLink` until exhausted.
