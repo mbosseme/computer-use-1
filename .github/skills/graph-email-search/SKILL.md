@@ -92,6 +92,107 @@ When the user wants a draft that “reads like a clear explanation supported by 
 - Respect `@odata.nextLink` until exhausted.
 - NextLink is typically an **absolute URL**; your HTTP client should accept absolute URLs directly.
 
+## Attachment operations (file + inline)
+Two modules handle attachments — use the right one for the job:
+
+| Module | Use Case |
+|--------|----------|
+| `agent_tools.graph.attachments` | Regular file attachments (PDF, XLSX, etc.) — attach, download, list |
+| `agent_tools.graph.inline_images` | CID inline images in HTML body — add, replace, delete |
+
+Both re-export `AttachmentInfo` and `list_attachments`, so you can import from either.
+
+### Attaching a file to a draft
+```python
+from agent_tools.graph.attachments import attach_file
+info = attach_file(client, draft_id, Path("report.pdf"), skip_if_exists=True)
+```
+- Uses the small-file upload path (< 3 MB base64).
+- `skip_if_exists=True` (default) prevents duplicate attachments on retries.
+
+### Downloading attachments from a message
+```python
+from agent_tools.graph.attachments import download_attachments
+paths = download_attachments(client, message_id, Path("tmp/downloads"))
+```
+- By default skips inline (CID) attachments; pass `include_inline=True` to get everything.
+- Optional `filter_fn` predicate for selective download (e.g., only `.xlsx` files).
+
+### Listing attachments
+```python
+from agent_tools.graph.attachments import list_attachments, AttachmentInfo
+atts = list_attachments(client, message_id)
+```
+
+## Reply-all drafts
+When the original message has multiple recipients and you need to keep everyone on the thread:
+```python
+from agent_tools.graph.drafts import create_reply_all_draft
+result = create_reply_all_draft(client, message_id=msg_id, body="<p>New content</p>")
+```
+- Uses `POST /me/messages/{id}/createReplyAll` (empty body), then PATCHes new content above the quoted history.
+- Optionally override `to` / `cc` lists while keeping the reply-all structure.
+- For reply to sender only, use `create_reply_draft` instead.
+
+## Draft management (find, update, verify)
+
+### Finding an existing draft by subject
+```python
+from agent_tools.graph.drafts import find_draft_by_subject
+draft = find_draft_by_subject(client, subject="Q4 spending review")
+if draft:
+    draft_id = draft["id"]
+```
+- Scans `me/mailFolders/drafts/messages` with case-insensitive substring match.
+- Returns the most-recently-modified match, or None.
+
+### Updating a draft's body
+```python
+from agent_tools.graph.drafts import update_draft_body
+update_draft_body(client, draft_id, "<p>New HTML content</p>", preserve_quoted=True)
+```
+- `preserve_quoted=True` keeps the existing quoted reply tail and only replaces the top portion.
+
+### Verifying a draft against expected content
+```python
+from agent_tools.graph.drafts import verify_draft
+result = verify_draft(client, draft_id, expected_phrases=["spend analysis", "facility breakdown"])
+print(f"{result.passed_count}/{result.total_count} checks passed")
+assert result.all_passed
+```
+- Fetches draft body + metadata + attachment list.
+- Runs case-insensitive substring checks on body HTML for each phrase.
+- Returns `DraftVerifyResult` with `all_passed`, `phrase_results`, `attachment_names`, etc.
+
+## Thread export to Markdown
+Export an entire conversation thread (by subject) to a chronologically-ordered Markdown file:
+```python
+from agent_tools.graph.mail_search import export_thread_markdown
+export_thread_markdown(client, subject="McKinsey product codes", out_path=Path("tmp/thread.md"))
+```
+- Searches mailbox-wide via `$search`, filters client-side by subject substring.
+- Converts HTML bodies to plain text.
+- Sorts oldest-first for reading order.
+
+## Finding the latest message from a sender
+```python
+from agent_tools.graph.mail_search import find_latest_from_sender
+msg = find_latest_from_sender(client, '"Itani"', with_attachments=True)
+if msg:
+    print(msg["subject"], msg["receivedDateTime"])
+```
+- Searches mailbox, sorts by date, validates sender tokens match.
+- Useful for "find the most recent email with attachments from X" pattern.
+
+## General-purpose mail search
+```python
+from agent_tools.graph.mail_search import search_messages
+msgs = search_messages(client, query='"McKinsey" AND "sample"', folder="Inbox", top=25)
+```
+- Wraps `$search` + `ConsistencyLevel: eventual` + local sort by date.
+- Optional `folder` param (well-known name like `"SentItems"` or folder ID).
+- Handles pagination via `@odata.nextLink` automatically.
+
 ## Output hygiene
 - The exported document may contain sensitive content.
 - Do not commit exports to git.
