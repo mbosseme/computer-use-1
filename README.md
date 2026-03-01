@@ -37,6 +37,13 @@ Historical note:
 ## Setup
 - MCP config is committed in [.vscode/mcp.json](.vscode/mcp.json). Open this repo in VS Code.
 - Ensure VS Code lists the Playwright MCP server in its MCP/tools UI.
+- Run a quick preflight before starting browser tasks:
+
+```bash
+python3 tools/playwright_mcp_preflight.py --file .vscode/mcp.json
+```
+
+- For M365 Copilot chat tasks, set the model selector (top-right) to `GPT-5.2 Think` before prompting; re-check after refresh/navigation because it may revert to `Auto`.
 
 This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
 
@@ -90,7 +97,7 @@ Parallel runs note:
 
 Setup and prompting guidance: [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
 
-If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
+If the Playwright MCP server fails to start, run the preflight check above first and fix any binary mismatch (for `@playwright/mcp`, the currently published executable is typically `playwright-mcp`).
 
 ## Reference docs
 - [AGENTS.md](AGENTS.md)

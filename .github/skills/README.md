@@ -5,10 +5,9 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 ## Available Skills
 
 ### Browser & Research
-- **[browser-automation-core](browser-automation-core/SKILL.md)**: **(Start here for web tasks)** General-purpose browser automation patterns (selectors, waiting, scrolling, overlays, HITL). **Now includes**: Visual Evidence Mode (when to screenshot) + Two-Speed Execution Policy (FAST vs DELIBERATE lanes).
+- **[browser-automation-core](browser-automation-core/SKILL.md)**: **(Start here for web tasks)** General-purpose browser automation patterns (selectors, waiting, scrolling, overlays, HITL). **Now includes**: Visual Evidence Mode (when to screenshot) + Two-Speed Execution Policy (FAST vs DELIBERATE lanes) + M365 Copilot model heuristic (`GPT-5.2 Think` by default).
 - **[training-navigation](training-navigation/SKILL.md)**: Specialized logic for navigating gated training modules (timers, videos, quizzes).
 - **[research-ladder](research-ladder/SKILL.md)**: Choose the right research depth; escalate Bing → Tavily → Playwright; capture evidence consistently.
-
 ### Data & Analytics
 - **[bigquery-data-exploration](bigquery-data-exploration/SKILL.md)**: **(Start here for cross-project BQ queries)** BigQuery patterns for cross-project access, schema discovery, product/entity matching, and Dataform transformations.
 - **[bigquery-data-models](bigquery-data-models/SKILL.md)**: **(Start here for BigQuery work)** Authentication, MCP toolbox usage, data dictionaries, query patterns, and privacy guardrails for documented BigQuery tables.
@@ -26,6 +25,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 ### Email & Integrations
 - **[graph-email-search](graph-email-search/SKILL.md)**: Microsoft Graph mail search/export patterns (SentItems, $filter → $search fallback, paging, safety).
 - **[graph-calendar-scheduling](graph-calendar-scheduling/SKILL.md)**: Read calendars, find availability, and analyze meeting history.
+- **[tools/graph](../../tools/graph/README.md)**: Reusable Graph CLI utilities for mutual slot finding and structured draft-email creation.
 - **[google-drive-download](google-drive-download/README.md)**: Authenticate with Google Drive (OAuth 2.0 / HITL) and download files/export Sheets to Excel reliably.
 - **[gmail-search](gmail-search/README.md)**: Authenticate with Gmail (OAuth 2.0 / HITL), search specific queries, and read email bodies safely.
 - **[gmail-draft](gmail-draft/README.md)**: Authenticate with Gmail (requires `compose` scope), and create **draft** emails for user review. (Does not send).

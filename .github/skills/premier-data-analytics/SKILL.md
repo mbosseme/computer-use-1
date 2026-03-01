@@ -103,3 +103,55 @@ When deriving "Median Unit Price" from raw transaction data:
     *   *Why*: Transaction data contains extreme outliers (returns, corrections, bulk sums) that skew the mean.
 3.  **Sanity Bounds**: Apply heuristic filters (e.g. `Unit_Price BETWEEN 100 AND 10000`) based on expected cost to strip data entry errors (e.g. price entered as quantity).
 
+## 8. Market Insights / Self-Service Data Models
+Premier provides a set of **self-service analytical models** (often called "Market Insights") that pre-aggregate purchasing data at the product/manufacturer/facility level.  These complement the raw transactional tables in §1 and are the foundation for benchmarking decks, GPO evaluation, and consulting extracts.
+
+### Key tables
+
+| Table | Grain | Primary Use |
+| :--- | :--- | :--- |
+| `provider_purchasing_txn` | Facility × Product × Month | Self-service transaction-level purchasing data; de-identified Entity Codes for external sharing |
+| `ppt_stable_sample` | xref_group × Manufacturer × Month | Product penetration / market share with stable facility sample; ~1-month production lag vs live data |
+| `week_xref_mfr_analysis` | xref_group × Manufacturer × Week | Weekly manufacturer breakdown by product group |
+| `supply_signals_week_refnum` | Reference Number × Week | Weekly product-level supply signals (e.g. shortage indicators, sourcing shifts) |
+
+### The `xref_group` concept
+Products are grouped into **xref_groups** — cross-reference groups that represent clinically equivalent product families (e.g., all brands/generics of a particular surgical glove size).
+
+*   A single `xref_group` may contain dozens of individual Reference Numbers from different manufacturers.
+*   This is the fundamental unit for market share analysis: "what % of this product group does Manufacturer X capture?"
+*   The `xref_group` label itself is a text description (e.g., "GLOVE EXAM NITRILE PF SM") — not a numeric ID.
+
+### 4-level product taxonomy
+The Market Insights models organize products into a hierarchy:
+
+1.  **Category** — Broadest grouping (e.g., "SURGICAL SUPPLIES")
+2.  **Sub-Category** — Mid-level (e.g., "GLOVES")
+3.  **xref_group** — Clinically equivalent product family
+4.  **Reference Number** — Individual SKU / catalog number
+
+When building extracts or analyses, decide which level is appropriate:
+- **Category/Sub-Category**: Executive dashboards, high-level spend allocation
+- **xref_group**: Competitive benchmarking, manufacturer market share, contract evaluation
+- **Reference Number**: Product-level pricing, compliance audits, specific item sourcing
+
+### Stable sample methodology (`ppt_stable_sample`)
+This table uses a *stable sample* of facilities — meaning the set of contributing facilities is held constant over a rolling period to enable apples-to-apples trending.
+
+*   **Production lag**: Expect ~1 month delay.  If the current month is February, the latest data may only go through December or January.
+*   **Coverage**: Not all facilities report in every period; the stable sample controls for this by only including facilities with consistent reporting.
+*   **Columns of note**: `pct_penetration`, `total_spend`, `total_units`, `facility_count`, `mfr_name`, `xref_group`
+
+### De-identified facilities (self-service / external sharing)
+When data is shared externally (e.g., consulting extracts for McKinsey, Bain):
+*   Entity Codes are replaced with blinded IDs (e.g., `FAC_0001`, `FAC_0002`).
+*   Blinding must be **consistent across multiple extracts** — same facility always gets the same blinded ID.
+*   Use `tools/data-utilities/blinding_manager.py` (see §3 above) for blinding operations.
+*   The `provider_purchasing_txn` table already uses de-identified entity codes in its self-service variant — check which variant you're querying before applying additional blinding.
+
+### Trending / consistency checks
+When profiling Market Insights data:
+1.  Check **date range** coverage per table — are there gaps or trailing-edge partial months?
+2.  Check **weekly continuity** (for `week_xref_mfr_analysis` and `supply_signals_week_refnum`) — are all ISO weeks present with no gaps?
+3.  Compare **stable sample lag** (`ppt_stable_sample`) against live transactional data (`provider_purchasing_txn`) — the stable sample is expected to trail by ~1 month.
+4.  Validate **row count stability** — large week-over-week swings in row count may indicate feed issues.
