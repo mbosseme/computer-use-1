@@ -4,7 +4,7 @@
 
 | Property | Value |
 |----------|-------|
-| **Project** | matthew-bossemeyer |
+| **Project** | abi-xform-dataform-prod |
 | **Dataset** | cdx_sample_size |
 | **Table** | sa_sf_dhc_join |
 | **Row Count** | 482,332 |

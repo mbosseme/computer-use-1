@@ -155,3 +155,11 @@ This is not a per-session scratchpad:
   - Generalized the specific Jen NDC mapping workflow into a reusable pattern for future agents.
   - Defined the "Entity Resolution Ladder" (Exact -> Web Search -> Bridge Table -> Pattern).
   - Included SQL templates for querying `transaction_analysis` as a "Rosetta Stone" for vendor IDs.
+
+## 2026-02-10: Data Dictionary Tooling Standardization
+**Context**: During analysis of invoice history, we identified that raw counts in data dictionaries were insufficient for context (e.g., "50k nulls" is ambiguous without knowing if the total is 100k or 100M).
+**Changes**:
+- **Tooling**: Updated `create_dictionary.py` and `update_dictionary.py` in `tools/bigquery-profiling/` to automatically calculate and append percentages for Nulls and Top Values.
+- **Standards**: Updated `docs/data_dictionaries/_TEMPLATE.md` and `.github/skills/bigquery-data-dictionaries/SKILL.md` to mandate this new format (Count + Percentage).
+- **Optimization**: Refactored `gen_profiling_sql.py` to use `STRUCT` based query generation for cleaner outputs and easier JSON parsing.
+**Result**: All future dictionaries will automatically include percentage context, improving readability and immediate analytical value.
