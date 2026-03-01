@@ -5,7 +5,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 ## Available Skills
 
 ### Browser & Research
-- **[browser-automation-core](browser-automation-core/SKILL.md)**: **(Start here for web tasks)** General-purpose browser automation patterns (selectors, waiting, scrolling, overlays, HITL). **Now includes**: Visual Evidence Mode (when to screenshot) + Two-Speed Execution Policy (FAST vs DELIBERATE lanes).
+- **[browser-automation-core](browser-automation-core/SKILL.md)**: **(Start here for web tasks)** General-purpose browser automation patterns (selectors, waiting, scrolling, overlays, HITL). **Now includes**: Visual Evidence Mode (when to screenshot) + Two-Speed Execution Policy (FAST vs DELIBERATE lanes) + M365 Copilot model heuristic (`GPT-5.2 Think` by default).
 - **[training-navigation](training-navigation/SKILL.md)**: Specialized logic for navigating gated training modules (timers, videos, quizzes).
 - **[research-ladder](research-ladder/SKILL.md)**: Choose the right research depth; escalate Bing → Tavily → Playwright; capture evidence consistently.
 ### Data & Analytics

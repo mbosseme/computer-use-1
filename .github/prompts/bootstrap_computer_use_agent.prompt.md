@@ -90,6 +90,11 @@ OPERATING RULES (must follow)
    - Select and open/read 1–3 relevant skills before acting.
    - Do not load more than 3 skills unless explicitly instructed.
 
+1a) M365 Copilot mode default (when applicable)
+   - If the task involves M365 Copilot chat in browser, set model/mode to `GPT-5.2 Think` before sending prompts.
+   - Re-check after navigation/refresh because the selector may revert to `Auto`.
+   - Use quick-response mode only for trivial lookups.
+
 2) Tooling preference order
    - Prefer deterministic local transforms (Python/pandas/openpyxl/python-pptx) over UI edits.
    - Prefer database MCP tools for query/extract tasks (namespace temp tables/exports with RUN_ID).

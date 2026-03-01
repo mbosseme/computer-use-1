@@ -17,6 +17,12 @@ tools:
 - **Bounded Polling**: If no clear signal exists, use a loop with a short sleep (1-2s) and a max retry count.
 - **Avoid**: Long blind sleeps (e.g., `sleep(5000)`).
 
+## M365 Copilot Model Heuristic
+- When automating M365 Copilot chat tasks, set the top-right model selector to **`GPT-5.2 Think`** before prompting.
+- Verify the selector label after setting (it should show `GPT-5.2 Think`, not `Auto`).
+- Re-verify after refresh/navigation because the mode can revert.
+- Use `Quick response` only for low-risk, simple retrieval tasks where latency matters more than depth.
+
 ## Evidence Capture Hygiene
 - When a tool accepts a `filename`, prefer a **simple filename** (e.g., `tab2-detail-limit-200.png`) rather than passing a full/relative directory path; some environments will prepend their own output directory and can accidentally create nested paths.
 
@@ -101,6 +107,12 @@ Notes:
 - **Visible text not found (canvas / viz rendering)**:
   - Assume the text may not exist in the DOM.
   - Re-target via accessibility roles (e.g., `treegrid`/`gridcell`) or use a “show more rows”/limit control to surface the needed row.
+
+- **Streaming response UIs (chat agents, copilots) still generating**:
+  - Prefer waiting on a stable completion signal when available (e.g., “Stop generating” button disappears).
+  - If completion signals are unreliable, use bounded fallback: short wait (20–45s) → new snapshot → read the tail of the latest response block.
+  - Treat `Sources`/citation controls plus enabled send input as stronger completion evidence than transient narrator text.
+  - For long responses, extract in chunks (tail-first) and confirm whether content is still streaming before acting on incomplete output.
 ---
 
 ## Visual Evidence Mode
