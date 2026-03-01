@@ -1423,3 +1423,69 @@ Worktree branch synced with main at `fa92aa7`.
 3. **System-level scoring matrix**: Build per-system × per-SL heat map once NC subcategories are available
 4. **Email to Bill**: Draft ready; send once Matt reviews final wording and chart selection
 5. **Pharma/Food deep dive**: Source wholesaler/distributor tracing data for on/off/non-contract in these channels
+
+---
+
+## Session 13 (2026-02-12 → 2026-03-01): Repo Hygiene, Core Sync, Q&A
+
+This session spanned multiple interactions focused on repo maintenance and knowledge-transfer Q&A rather than new analysis.
+
+### 23. .github/ Restoration (2026-02-12)
+
+Root `.github/` folder was missing from this branch (disappeared after Session 9b commit `2d8e3bd`). Only `docs/.github/` existed (a misplaced duplicate).
+
+**Actions**:
+1. Restored `.github/` from `origin/main` via `git checkout origin/main -- .github/`
+2. Found 3 files more current in `docs/.github/` than main (copilot-instructions.md, bigquery-data-models/SKILL.md, premier-data-analytics/SKILL.md) — all dated Feb 12 on this branch vs Feb 6/Jan 27/Feb 9 on main
+3. Copied the more-current versions into root `.github/`
+4. Removed `docs/.github/` duplicate
+5. Committed as `5713631`, pushed
+
+**PR #41**: Promoted the 3 updated `.github/` files to main (merged).
+
+### 24. Q&A Interactions (2026-02-25)
+
+No code changes. Two knowledge-transfer questions answered from existing artifacts:
+
+1. **TSA data model fields**: Explained 4 fields added across 2 layers:
+   - `tsa_cy2025`: `parent_service_line` (from `service_line_mapping` JOIN)
+   - `tsa_cy2025_enriched`: `is_clin_nc_cohort`, `premier_gpo_member`, `dhc_staffed_beds`
+
+2. **Extrapolation multiplier**: Explained why we don't use a simple cohort-to-GPO multiplier (composition bias). The recommended approach (Approach B) anchors on TSA-observed clinical ($52.2B), adjusts for 5% non-reporting, then divides by WF clinical mix share (0.428) → $128B. Bed ratio is ~2.0× (224K ÷ 113K) but should only be applied to median rate.
+
+### 25. Core Sync & PR #45 (2026-03-01)
+
+**Incoming from main** (3 PRs merged since last sync):
+- PR #42: Graph scheduling/draft utilities
+- PR #43: Graph attachments, mail search, drafts, workbook profiler
+- PR #44: Browser-run workflow updates
+
+All merged cleanly — no conflicts.
+
+**Promoted to main** (PR #45, merged):
+- Renamed 2 data dictionary files from `matthew-bossemeyer.*` → `abi-xform-dataform-prod.*` (correct production project)
+- Fixed project references in `MCP_TOOLBOX_GUIDE.md` and `data_dictionaries/README.md`
+- Added dictionary tooling standardization entry to `CORE_REPO_WORK_LOG.md`
+
+**Post-sync state**: Zero core-file divergence between this branch and `origin/main`. Only `runs/`, `notes/`, `dataform/`, `scripts/`, and `config/` differ (all PE-specific, intentionally run-local).
+
+### 26. Current State Summary
+
+| Item | Value |
+|------|-------|
+| Branch | `run/2026-02-10__portfolio-expansion` at `f3cc1cd` |
+| Main synced through | PR #45 (2026-03-01) |
+| Core divergence | Zero (excluding PE-specific dirs) |
+| Dataform | 23 actions (9 datasets + 14 assertions), 0 errors, all pass |
+| Analyst briefing | ~425 lines, final stakeholder-ready document |
+| Key estimate | $128B recommended ($122B–$132B range) |
+| Cohort | 100 systems, 113K beds, 1,775 GPO facilities, 224K beds |
+
+### 27. Open Items / Next Steps (Updated)
+
+1. **NC category breakdowns**: Awaiting Jordan Garrett's catch-all category decomposition to enable NC subcategory opportunity sizing
+2. **SL leader validation**: Confirm category-to-SL mapping with Pam (Clinical), Molly (NC), Justin (Pharma), Joan (Food)
+3. **System-level scoring matrix**: Build per-system × per-SL heat map once NC subcategories are available
+4. **Email to Bill**: Draft ready; send once Matt reviews final wording and chart selection
+5. **Pharma/Food deep dive**: Source wholesaler/distributor tracing data for on/off/non-contract in these channels
+6. **HANDOFF.md update**: Committed through Session 13 (this section)
