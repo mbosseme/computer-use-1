@@ -43,6 +43,11 @@ code -n "../wt-${RUN_ID}"
 Inside the new worktree window:
 - Follow the bootstrap prompt in `.github/prompts/bootstrap_computer_use_agent.prompt.md`.
 - Use `runs/<RUN_ID>/HANDOFF.md` as default run continuity across chat resets.
+- Run Playwright MCP preflight before browser work:
+
+```bash
+python3 tools/playwright_mcp_preflight.py --file .vscode/mcp.json
+```
 
 ## Collision avoidance checklist
 **Browser state**
