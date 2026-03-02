@@ -5,7 +5,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 ## Available Skills
 
 ### Browser & Research
-- **[browser-automation-core](browser-automation-core/SKILL.md)**: **(Start here for web tasks)** General-purpose browser automation patterns (selectors, waiting, scrolling, overlays, HITL). **Now includes**: Visual Evidence Mode (when to screenshot) + Two-Speed Execution Policy (FAST vs DELIBERATE lanes) + M365 Copilot model heuristic (`GPT-5.2 Think` by default).
+- **[browser-automation-core](browser-automation-core/SKILL.md)**: **(Start here for web tasks)** General-purpose browser automation patterns (selectors, waiting, scrolling, overlays, HITL). **Now includes**: Visual Evidence Mode (when to screenshot) + Two-Speed Execution Policy (FAST vs DELIBERATE lanes).
 - **[training-navigation](training-navigation/SKILL.md)**: Specialized logic for navigating gated training modules (timers, videos, quizzes).
 - **[research-ladder](research-ladder/SKILL.md)**: Choose the right research depth; escalate Bing → Tavily → Playwright; capture evidence consistently.
 ### Data & Analytics
@@ -18,12 +18,11 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
   - Includes **[model_template.py](analysis-workflow/model_template.py)**: A minimal Python template for scenario-grid analyses. Copy to `runs/<RUN_ID>/scripts/` and customize.
 
 ### Document Generation
-- **[document-synthesis-llm](document-synthesis-llm/SKILL.md)**: **(Start here for document summarization)** Extract text from PDFs/EMLs, synthesize via LLM with retry/backoff, handle context limits.
+- **[document-synthesis-llm](document-synthesis-llm/SKILL.md)**: **(Start here for document summarization)** Extract text from PDFs/EMLs, synthesize via LLM with retry/backoff, and use checkpointed incremental re-synthesis for resilient reruns.
 - **[document-generation-sow](document-generation-sow.md)**: Draft and generate formal SOW documents using Premier Standard formatting.
 - **[pptx-deck-generation](pptx-deck-generation/SKILL.md)**: **(Start here for presentations)** Build branded PowerPoint decks with python-pptx, charts, and PDF export.
 
 ### Email & Integrations
-- **[m365-copilot-secondary-research](m365-copilot-secondary-research/SKILL.md)**: **(Start here for O365 secondary research)** Use in-browser M365 Copilot retrieval across emails/chats/files when Graph API access is unavailable, incomplete, or less efficient; includes source verification and export contract.
 - **[graph-email-search](graph-email-search/SKILL.md)**: Microsoft Graph mail search/export patterns (SentItems, $filter → $search fallback, paging, safety).
 - **[graph-calendar-scheduling](graph-calendar-scheduling/SKILL.md)**: Read calendars, find availability, and analyze meeting history.
 - **[tools/graph](../../tools/graph/README.md)**: Reusable Graph CLI utilities for mutual slot finding and structured draft-email creation.

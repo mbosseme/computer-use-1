@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import json
+import random
 import time
 from dataclasses import dataclass
 from typing import Any, Literal, Optional
 
 import requests
+from requests.exceptions import ConnectionError as RequestsConnectionError
+from requests.exceptions import SSLError, Timeout
 
 ReasoningEffort = Literal["minimal", "low", "medium", "high"]
 
@@ -19,6 +22,10 @@ class AzureResponsesClientConfig:
     # Defaults are conservative; callers can override.
     max_output_tokens: int = 2048
     reasoning_effort: ReasoningEffort = "medium"
+    max_transport_retries: int = 4
+    initial_backoff_s: float = 1.5
+    max_backoff_s: float = 20.0
+    connect_timeout_s: float = 20.0
 
 
 class AzureOpenAIResponsesClient:
@@ -57,22 +64,47 @@ class AzureOpenAIResponsesClient:
             "Content-Type": "application/json",
         }
 
-        started = time.time()
-        resp = requests.post(
-            self._config.responses_api_url,
-            headers=headers,
-            data=json.dumps(payload),
-            timeout=timeout_s,
-        )
+        max_attempts = max(1, int(self._config.max_transport_retries) + 1)
 
-        duration_s = time.time() - started
-        if resp.status_code >= 400:
-            raise RuntimeError(
-                "Azure OpenAI request failed "
-                f"({resp.status_code}) after {duration_s:.2f}s: {resp.text}"
-            )
+        for attempt in range(max_attempts):
+            started = time.time()
+            try:
+                resp = requests.post(
+                    self._config.responses_api_url,
+                    headers=headers,
+                    data=json.dumps(payload),
+                    timeout=(float(self._config.connect_timeout_s), float(timeout_s)),
+                )
+            except (Timeout, RequestsConnectionError, SSLError) as e:
+                if attempt >= max_attempts - 1:
+                    raise RuntimeError(
+                        "Azure OpenAI transport failed after retries: "
+                        f"{type(e).__name__}: {e}"
+                    ) from e
+                self._sleep_backoff(attempt)
+                continue
 
-        return resp.json()
+            duration_s = time.time() - started
+            if resp.status_code >= 400:
+                if self._is_retriable_status(resp.status_code) and attempt < max_attempts - 1:
+                    self._sleep_backoff(attempt)
+                    continue
+                raise RuntimeError(
+                    "Azure OpenAI request failed "
+                    f"({resp.status_code}) after {duration_s:.2f}s: {resp.text}"
+                )
+
+            try:
+                return resp.json()
+            except ValueError as e:
+                if attempt >= max_attempts - 1:
+                    raise RuntimeError(
+                        "Azure OpenAI response was not valid JSON after retries: "
+                        f"{resp.text[:800]}"
+                    ) from e
+                self._sleep_backoff(attempt)
+
+        raise RuntimeError("Azure OpenAI request failed after retries")
 
     @staticmethod
     def extract_output_text(result: dict[str, Any]) -> str:
@@ -143,3 +175,15 @@ class AzureOpenAIResponsesClient:
         if effort == "high":
             return "high"
         return "medium"
+
+    @staticmethod
+    def _is_retriable_status(status_code: int) -> bool:
+        return status_code in {408, 409, 425, 429} or status_code >= 500
+
+    def _sleep_backoff(self, attempt: int) -> None:
+        delay = min(
+            float(self._config.max_backoff_s),
+            float(self._config.initial_backoff_s) * (2**attempt),
+        )
+        jitter = random.uniform(0.0, min(0.5, delay * 0.2))
+        time.sleep(delay + jitter)

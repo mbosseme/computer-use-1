@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import tempfile
 import time
 from dataclasses import asdict
 from datetime import date
@@ -69,6 +70,14 @@ def _extract_body(md: str) -> str:
     if "\n---\r\n" in md:
         return md.split("\n---\r\n", 1)[1].strip()
     return md.strip()
+
+
+def _atomic_write_text(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as tf:
+        tf.write(content)
+        temp_path = Path(tf.name)
+    temp_path.replace(path)
 
 
 def synthesize_folder(
@@ -199,7 +208,8 @@ def synthesize_folder(
     result = call_with_retry(client, input_text, instructions, max_retries=6, initial_delay=2.0, timeout_s=300.0)
     synthesis = client.extract_output_text(result).strip()
 
-    out_md_path.write_text(
+    _atomic_write_text(
+        out_md_path,
         "\n".join(
             [
                 "# Folder Synthesis",
@@ -216,7 +226,6 @@ def synthesize_folder(
                 "",
             ]
         ),
-        encoding="utf-8",
     )
 
     manifest = {
@@ -286,8 +295,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     )
 
     if manifest_path:
-        manifest_path.parent.mkdir(parents=True, exist_ok=True)
-        manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+        _atomic_write_text(manifest_path, json.dumps(manifest, indent=2) + "\n")
         print(f"Wrote: {manifest_path}")
 
     print(f"Wrote: {out_md}")
