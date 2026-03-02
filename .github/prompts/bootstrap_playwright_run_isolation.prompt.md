@@ -34,12 +34,12 @@ STEPS
 
 4) Update the MCP config in this worktree ONLY
 - Edit `.vscode/mcp.json` so the **workspace** `playwright` server invokes:
-  - `npx --yes --package @playwright/mcp@latest playwright-mcp --user-data-dir runs/<RUN_ID>/playwright-profile --output-dir runs/<RUN_ID>/playwright-output`
+  - `npx --yes --package @playwright/mcp@latest mcp-server-playwright --user-data-dir runs/<RUN_ID>/playwright-profile --output-dir runs/<RUN_ID>/playwright-output`
 - Do NOT enable `--shared-browser-context`.
 
 Config shape note:
-- Some VS Code versions/UI flows write `.vscode/mcp.json` using a top-level `servers` object (recommended for this repo).
-- If you see an older `mcpServers` shape, update it to the `servers` shape (or ensure the effective workspace server config uses the args above).
+- You MUST use the top-level `servers` object in `.vscode/mcp.json`.
+- If you see the older `mcpServers` shape, you MUST migrate it to `servers`.
 
 Path note:
 - Prefer repo-relative paths (`runs/<RUN_ID>/...`) over absolute `/Users/...` paths so the config is portable across machines/worktrees.
