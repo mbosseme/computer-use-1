@@ -23,6 +23,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 - **[pptx-deck-generation](pptx-deck-generation/SKILL.md)**: **(Start here for presentations)** Build branded PowerPoint decks with python-pptx, charts, and PDF export.
 
 ### Email & Integrations
+- **[m365-copilot-secondary-research](m365-copilot-secondary-research/SKILL.md)**: **(Start here for O365 secondary research)** Use in-browser M365 Copilot retrieval across emails/chats/files when Graph API access is unavailable, incomplete, or less efficient; includes source verification and export contract.
 - **[graph-email-search](graph-email-search/SKILL.md)**: Microsoft Graph mail search/export patterns (SentItems, $filter → $search fallback, paging, safety).
 - **[graph-calendar-scheduling](graph-calendar-scheduling/SKILL.md)**: Read calendars, find availability, and analyze meeting history.
 - **[tools/graph](../../tools/graph/README.md)**: Reusable Graph CLI utilities for mutual slot finding and structured draft-email creation.

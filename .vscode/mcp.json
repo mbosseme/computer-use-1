@@ -6,11 +6,11 @@
         "--yes",
         "--package",
         "@playwright/mcp@latest",
-        "mcp-server-playwright",
+        "playwright-mcp",
         "--user-data-dir",
-        "runs/<RUN_ID>/playwright-profile",
+        "runs/2026-02-10__portfolio-expansion/playwright-profile",
         "--output-dir",
-        "runs/<RUN_ID>/playwright-output"
+        "runs/2026-02-10__portfolio-expansion/playwright-output"
       ]
     },
     "bigquery": {
