@@ -24,7 +24,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 
 ### Email & Integrations
 - **[graph-email-search](graph-email-search/SKILL.md)**: Microsoft Graph mail search/export patterns (SentItems, $filter → $search fallback, paging, safety).
-- **[graph-calendar-scheduling](graph-calendar-scheduling/SKILL.md)**: Read calendars, find availability, and analyze meeting history.
+- **[graph-calendar-scheduling](graph-calendar-scheduling/SKILL.md)**: Read calendars, find availability, and analyze meeting history (default guardrail: schedule only Mon–Fri, 08:30–16:30 Eastern unless user explicitly overrides).
 - **[tools/graph](../../tools/graph/README.md)**: Reusable Graph CLI utilities for mutual slot finding and structured draft-email creation.
 - **[google-drive-download](google-drive-download/README.md)**: Authenticate with Google Drive (OAuth 2.0 / HITL) and download files/export Sheets to Excel reliably.
 - **[gmail-search](gmail-search/README.md)**: Authenticate with Gmail (OAuth 2.0 / HITL), search specific queries, and read email bodies safely.
