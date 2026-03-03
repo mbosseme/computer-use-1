@@ -37,7 +37,9 @@ tools:
 
 ## M365 Copilot Model Heuristic
 - When automating M365 Copilot chat tasks, set the top-right model selector to **`GPT-5.2 Think`** before prompting.
+- If the selector shows only `Auto`, open it and use: **`Auto` → `More` → `GPT-5.2 Think deeper`** (preferred) or `GPT-5.2 Quick response` for trivial lookups.
 - Verify the selector label after setting (it should show `GPT-5.2 Think`, not `Auto`).
+- If the top pill still shows `Auto`, re-open selector and re-apply `Auto` → `More` → `GPT-5.2 Think deeper` immediately before sending any substantial prompt.
 - Re-verify after refresh/navigation because the mode can revert.
 - Use `Quick response` only for low-risk, simple retrieval tasks where latency matters more than depth.
 
