@@ -34,7 +34,7 @@ STEPS
 
 4) Update the MCP config in this worktree ONLY
 - Edit `.vscode/mcp.json` so the **workspace** `playwright` server invokes:
-  - `npx --yes --package @playwright/mcp@latest mcp-server-playwright --user-data-dir runs/<RUN_ID>/playwright-profile --output-dir runs/<RUN_ID>/playwright-output`
+  - `npx --yes --package @playwright/mcp@latest playwright-mcp --user-data-dir runs/<RUN_ID>/playwright-profile --output-dir runs/<RUN_ID>/playwright-output`
 - Do NOT enable `--shared-browser-context`.
 
 Config shape note:

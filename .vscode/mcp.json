@@ -6,7 +6,7 @@
         "--yes",
         "--package",
         "@playwright/mcp@latest",
-        "mcp-server-playwright",
+        "playwright-mcp",
         "--user-data-dir",
         "runs/<RUN_ID>/playwright-profile",
         "--output-dir",

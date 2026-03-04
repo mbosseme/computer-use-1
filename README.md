@@ -106,7 +106,7 @@ Parallel runs note:
 
 Setup and prompting guidance: [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
 
-If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
+If the MCP server fails to start, ensure the binary in `.vscode/mcp.json` is set to `playwright-mcp` (the command changed in newer versions of @playwright/mcp).
 
 ## Reference docs
 - [AGENTS.md](AGENTS.md)
