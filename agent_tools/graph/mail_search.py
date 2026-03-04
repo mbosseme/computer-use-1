@@ -317,3 +317,90 @@ def export_thread_markdown(
 
     out_path.write_text("\n".join(lines), encoding="utf-8")
     return out_path
+
+
+def get_latest_human_reply(
+    client: GraphAPIClient,
+    subject_query: str,
+    top: int = 15
+) -> Optional[Dict[str, Any]]:
+    """Get the latest human reply on a thread, ignoring calendar accepts/declines.
+    
+    This function explicitly fetches the `uniqueBody` property which isolates 
+    the new text the user just typed from the rest of the HTML thread history
+    and corporate security banners. 
+    
+    It also skips system-generated calendar responses.
+    
+    Returns the message dictionary, or None if no valid reply is found.
+    """
+    params = {
+        "$search": f'"{subject_query}"',
+        "$top": top,
+        # Request uniqueBody to parse ONLY the new text written by the user, skipping the thread history trap
+        "$select": "id,subject,receivedDateTime,from,toRecipients,ccRecipients,uniqueBody,body",
+    }
+    
+    resp = client.get(
+        "me/messages",
+        params=params,
+        headers={"ConsistencyLevel": "eventual"},
+    )
+    
+    msgs = resp.get("value", [])
+    msgs.sort(key=lambda x: x.get("receivedDateTime", ""), reverse=True)
+    
+    for msg in msgs:
+        subj = (msg.get("subject") or "").strip().lower()
+        if subj.startswith(("accepted:", "declined:", "tentative:")):
+            continue
+        return msg
+        
+    return None
+
+
+def get_latest_human_reply(
+    client: GraphAPIClient,
+    subject_query: str,
+    top: int = 15,
+) -> Optional[Dict[str, Any]]:
+    """Get the latest human reply on a thread, ignoring calendar accepts/declines.
+    
+    This function explicitly requests the ``uniqueBody`` property, which isolates 
+    only the new text the user just typed (stripping out the thread history and 
+    most security banners that clutter the standard ``body`` property).
+    
+    It also filters out system-generated calendar responses based on subject prefixes.
+    
+    Args:
+        client: The authenticated GraphAPIClient.
+        subject_query: Substring or exact subject to search for.
+        top: Number of messages to retrieve and scan.
+        
+    Returns:
+        The message dictionary containing metadata and properties (including
+        `uniqueBody`), or None if no valid reply is found.
+    """
+    params = {
+        "$search": f'"{subject_query}"',
+        "$top": top,
+        # Request uniqueBody to parse ONLY the new text written by the user, skipping the thread history trap
+        "$select": "id,subject,receivedDateTime,from,toRecipients,ccRecipients,uniqueBody,body",
+    }
+    
+    resp = client.get(
+        "me/messages",
+        params=params,
+        headers={"ConsistencyLevel": "eventual"},
+    )
+    
+    msgs = resp.get("value", [])
+    msgs.sort(key=lambda x: x.get("receivedDateTime", ""), reverse=True)
+    
+    for msg in msgs:
+        subj = (msg.get("subject") or "").strip().lower()
+        if subj.startswith(("accepted:", "declined:", "tentative:")):
+            continue
+        return msg
+        
+    return None
