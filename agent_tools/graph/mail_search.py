@@ -145,6 +145,109 @@ def search_sent_messages(
     )
 
 
+def _extract_search_query_resources(resp: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Extract ``resource`` objects from a Graph ``/search/query`` response."""
+    value = resp.get("value") if isinstance(resp, dict) else None
+    first = value[0] if isinstance(value, list) and value else {}
+    containers = first.get("hitsContainers") if isinstance(first, dict) else None
+    container = containers[0] if isinstance(containers, list) and containers else {}
+    hits = container.get("hits") if isinstance(container, dict) else None
+
+    resources: List[Dict[str, Any]] = []
+    if isinstance(hits, list):
+        for hit in hits:
+            if not isinstance(hit, dict):
+                continue
+            resource = hit.get("resource")
+            if isinstance(resource, dict):
+                resources.append(resource)
+    return resources
+
+
+def search_messages_query_api(
+    client: GraphAPIClient,
+    *,
+    query: str,
+    size: int = 50,
+    from_offset: int = 0,
+    timeout_s: int = 120,
+) -> List[Dict[str, Any]]:
+    """Search mailbox messages via ``POST /search/query``.
+
+    This is a useful fallback when AQS ``$search`` ranking is noisy.
+    """
+    payload = {
+        "requests": [
+            {
+                "entityTypes": ["message"],
+                "query": {"queryString": query},
+                "from": int(from_offset),
+                "size": int(size),
+                "fields": [
+                    "id",
+                    "subject",
+                    "from",
+                    "toRecipients",
+                    "ccRecipients",
+                    "receivedDateTime",
+                    "sentDateTime",
+                    "conversationId",
+                    "bodyPreview",
+                    "internetMessageId",
+                ],
+            }
+        ]
+    }
+    resp = client.post("search/query", json=payload, timeout=timeout_s)
+    resources = _extract_search_query_resources(resp)
+    resources.sort(
+        key=lambda m: str(m.get("receivedDateTime") or m.get("sentDateTime") or ""),
+        reverse=True,
+    )
+    return resources
+
+
+def search_events_query_api(
+    client: GraphAPIClient,
+    *,
+    query: str,
+    size: int = 50,
+    from_offset: int = 0,
+    timeout_s: int = 120,
+) -> List[Dict[str, Any]]:
+    """Search meeting/calendar events via ``POST /search/query``.
+
+    Returned event resources can include ``bodyPreview`` and other schedule fields.
+    """
+    payload = {
+        "requests": [
+            {
+                "entityTypes": ["event"],
+                "query": {"queryString": query},
+                "from": int(from_offset),
+                "size": int(size),
+                "fields": [
+                    "id",
+                    "subject",
+                    "bodyPreview",
+                    "start",
+                    "end",
+                    "organizer",
+                    "lastModifiedDateTime",
+                    "isCancelled",
+                ],
+            }
+        ]
+    }
+    resp = client.post("search/query", json=payload, timeout=timeout_s)
+    resources = _extract_search_query_resources(resp)
+    resources.sort(
+        key=lambda e: str(e.get("lastModifiedDateTime") or ""),
+        reverse=True,
+    )
+    return resources
+
+
 def find_latest_from_sender(
     client: GraphAPIClient,
     sender_query: str,
