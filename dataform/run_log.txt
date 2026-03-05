@@ -1,0 +1,118 @@
+Compiling...
+
+[32mCompiled successfully.
+[0m
+Running...
+
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_6mo[0m [view] 
+ 	 jobId: dataform-b794a0d9-b1dd-4611-a3f7-77dc05bdd545,
+ 	 Bytes billed: 0 B
+[32mTable created: [0m [36mdataform_hciq.received_benchmarks_stg[0m [table] 
+ 	 jobId: dataform-3322c32d-6815-40ba-8970-395bb1db4b13,
+ 	 Bytes billed: 324.00 MiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_best_price[0m [table] 
+ 	 jobId: dataform-19738f40-e4bc-45fb-b255-eb564129fcfe,
+ 	 Bytes billed: 7.50 GiB
+[32mTable created: [0m [36mdataform_hciq.facility_program_map[0m [table] 
+ 	 jobId: dataform-a82ce786-36dc-444d-b9fc-b8da462fb077,
+ 	 Bytes billed: 2.91 GiB
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_mapped[0m [table] 
+ 	 jobId: dataform-379c0cc8-c21d-48e7-9ef6-b5d549411595,
+ 	 Bytes billed: 8.63 GiB
+[32mOperation completed successfully: [0m [36mdataform_hciq.received_benchmarks_stg_add_refnum[0m 
+ 	 jobId: dataform-05a7f27e-356e-408f-b978-67cce26a99ed,
+ 	 Bytes billed: 35.91 GiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_benchmark_summary[0m [table] 
+ 	 jobId: dataform-1494b256-7e29-4b31-980d-15aebe1beb48,
+ 	 Bytes billed: 7.07 GiB
+[91mDataset creation failed: [0m [36mdataform_hciq.contract_benchmark_summary[0m [table]
+  > create or replace table `matthew-bossemeyer.dataform_hciq.contract_benchmark_summary` as 
+  > 
+  > WITH agg AS (
+  >   SELECT
+  >     Contract_Number,
+  >     MAX(Contract_Name) as Contract_Name,
+  >     MAX(Portfolio_Prefix) as Portfolio_Prefix,
+  >     
+  >     SUM(Total_Units_6mo) as Contract_Total_Units,
+  >     SUM(Total_Spend_6mo) as Contract_Total_Spend,
+  >     
+  >     -- Coverage stats
+  >     SUM(CASE WHEN is_benchmarked THEN Total_Units_6mo ELSE 0 END) as Benchmarked_Units,
+  >     SUM(CASE WHEN is_benchmarked THEN Total_Spend_6mo ELSE 0 END) as Benchmarked_Spend,
+  >     
+  >     -- Rollup benchmark spend vs best tier spend
+  >     SUM(Spend_at_Best_Tier) as Spend_at_Best_Tier,
+  >     
+  >     -- We map HCIQ column outputs correctly
+  >     SUM(Spend_at_HCIQ90) as Target_Spend_P10,
+  >     SUM(Spend_at_HCIQ75) as Target_Spend_P25,
+  >     SUM(Spend_at_HCIQ50) as Target_Spend_P50,
+  >     SUM(Spend_at_High)   as Target_Spend_High,
+  >     
+  >     -- Pick arbitrary example of the price used for spot check
+  >     MAX(contract_best_price) as sample_contract_best_price,
+  >     MAX(contract_best_tier_description) as best_tier_description,
+  >     MAX(CAST(flag_multiple_best_prices AS INT64)) as has_multiple_best_prices
+  >   FROM `matthew-bossemeyer.dataform_hciq.contract_item_benchmark_summary`
+  >   GROUP BY 1
+  > )
+  > 
+  > SELECT
+  >   Contract_Number,
+  >   Contract_Name,
+  >   CASE 
+  >     WHEN Portfolio_Prefix = 'PP' THEN 'National'
+  >     WHEN Portfolio_Prefix = 'AD' THEN 'Ascend Drive'
+  >     WHEN Portfolio_Prefix = 'SP' THEN 'Surpass'
+  >     ELSE 'Unknown'
+  >   END as Portfolio,
+  >   
+  >   Contract_Total_Spend,
+  >   Contract_Total_Units,
+  >   
+  >   -- Coverage metrics
+  >   IF(Contract_Total_Spend > 0, Benchmarked_Spend / Contract_Total_Spend, 0) as Benchmark_Coverage_Pct,
+  >   
+  >   Spend_at_Best_Tier,
+  >   Target_Spend_P10,
+  >   Target_Spend_P25,
+  >   Target_Spend_P50,
+  >   Target_Spend_High,
+  >   
+  >   -- Percentile Bucketing
+  >   CASE
+  >     WHEN Spend_at_Best_Tier <= Target_Spend_P10 THEN '>=90th'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_P10 AND Spend_at_Best_Tier <= Target_Spend_P25 THEN '75th-90th'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_P25 AND Spend_at_Best_Tier <= Target_Spend_P50 THEN '50th-75th'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_P50 AND Spend_at_Best_Tier <= Target_Spend_High THEN '25th-50th'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_High THEN '<25th'
+  >     ELSE 'Unknown'
+  >   END as Percentile_Bucket,
+  >   
+  >   -- Rough Interpolation (Estimated Percentile where Higher = Better/Lower Cost)
+  >   CASE
+  >     WHEN Spend_at_Best_Tier <= Target_Spend_P10 THEN 90.0
+  >     WHEN Spend_at_Best_Tier > Target_Spend_P10 AND Spend_at_Best_Tier <= Target_Spend_P25
+  >       THEN 90.0 - (15.0 * ((Spend_at_Best_Tier - Target_Spend_P10) / NULLIF(Target_Spend_P25 - Target_Spend_P10, 0)))
+  >     WHEN Spend_at_Best_Tier > Target_Spend_P25 AND Spend_at_Best_Tier <= Target_Spend_P50
+  >       THEN 75.0 - (25.0 * ((Spend_at_Best_Tier - Target_Spend_P25) / NULLIF(Target_Spend_P50 - Target_Spend_P25, 0)))
+  >     WHEN Spend_at_Best_Tier > Target_Spend_P50 AND Spend_at_Best_Tier <= Target_Spend_High
+  >       THEN 50.0 - (25.0 * ((Spend_at_Best_Tier - Target_Spend_P50) / NULLIF(Target_Spend_High - Target_Spend_P50, 0)))
+  >     WHEN Spend_at_Best_Tier > Target_Spend_High THEN 10.0
+  >   
+  >   -- QA Flags
+  >   CASE 
+  >     WHEN IF(Contract_Total_Spend > 0, Benchmarked_Spend / Contract_Total_Spend, 0) < 0.8 THEN 'LOW_COVERAGE' 
+  >     ELSE 'OK' 
+  >   END as Flag_Coverage,
+  >   
+  >   CASE 
+  >     WHEN has_multiple_best_prices > 0 THEN 'MULTIPLE_BEST_PRICES'
+  >     ELSE 'OK'
+  >   END as Flag_Ambiguity,
+  >   
+  >   best_tier_description
+  > FROM agg
+  [91mbigquery error: Syntax error: Expected keyword ELSE or keyword END but got keyword CASE at [77:3][0m
+[93mSkipping dataset creation: [0m [36mdataform_hciq.program_benchmark_summary[0m [table]

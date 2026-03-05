@@ -1,0 +1,23 @@
+config {
+  type: "table",
+  name: "program_benchmark_summary",
+  tags: ["models"]
+}
+
+SELECT
+  Portfolio as Program,
+  COUNT(DISTINCT Contract_Number) as Total_Contracts,
+  SUM(Contract_Total_Spend) as Total_Historical_Spend,
+  SUM(Benchmarked_Spend) as Total_Benchmarkable_Spend,
+  IF(SUM(Contract_Total_Spend) > 0, SUM(Benchmarked_Spend) / SUM(Contract_Total_Spend), 0) as Benchmark_Coverage_Pct,
+  SUM(Spend_at_Best_Tier) as Total_Spend_at_Best_Tier,
+  AVG(Estimated_Percentile_Linear) as Avg_Program_Percentile
+FROM ${ref("contract_benchmark_summary")}
+GROUP BY Portfolio
+ORDER BY 
+  CASE Program
+    WHEN 'Surpass' THEN 1
+    WHEN 'Ascend Drive' THEN 2
+    WHEN 'National' THEN 3
+    ELSE 4
+  END ASC

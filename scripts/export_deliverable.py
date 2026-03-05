@@ -1,6 +1,9 @@
 import pandas as pd
 from google.cloud import bigquery
 import os
+import openpyxl
+from openpyxl.formatting.rule import ColorScaleRule
+from openpyxl.utils import get_column_letter
 
 print("Connecting to BigQuery...")
 client = bigquery.Client()
@@ -12,10 +15,30 @@ def extract_to_excel(project_id, dataset_id, run_id):
     os.makedirs(output_dir, exist_ok=True)
     out_file = os.path.join(output_dir, "HCIQ_Benchmark_Analysis_Deliverable.xlsx")
 
-    # Tab A: Contract-level Summary
+    # Tab A: Program Summary
     tab_a_query = f"""
     SELECT 
-        Portfolio,
+        Program,
+        Total_Contracts,
+        Total_Historical_Spend,
+        Total_Benchmarkable_Spend,
+        Benchmark_Coverage_Pct,
+        Total_Spend_at_Best_Tier,
+        Avg_Program_Percentile
+    FROM `{project_id}.{dataset_id}.program_benchmark_summary`
+    ORDER BY 
+        CASE Program
+            WHEN 'Surpass' THEN 1
+            WHEN 'Ascend Drive' THEN 2
+            WHEN 'National' THEN 3
+            ELSE 4
+        END ASC
+    """
+
+# Tab B: Contract-level Summary
+    tab_b_query = f"""
+    SELECT 
+        Portfolio as Program,
         Contract_Number,
         Contract_Name,
         Contract_Total_Spend,
@@ -30,24 +53,28 @@ def extract_to_excel(project_id, dataset_id, run_id):
         Estimated_Percentile_Linear,
         Flag_Coverage,
         Flag_Ambiguity,
-        sample_tier_description
+        best_tier_description
     FROM `{project_id}.{dataset_id}.contract_benchmark_summary`
     ORDER BY Portfolio, Contract_Number
     """
     
-    # Tab B: Contract-product Drilldown
-    tab_b_query = f"""
+    # Tab C: Contract-product Drilldown
+    tab_c_query = f"""
     SELECT 
-        Portfolio_Prefix,
+        Portfolio_Prefix as Program_Prefix,
         Contract_Number,
         Contract_Name,
         Product_Identifier,
         Product_Description,
         Total_Units_6mo,
         Total_Spend_6mo,
-        contract_best_tier_description,
-        contract_best_price,
+        contract_best_tier_description as best_tier_description,
+        contract_best_price as Best_Tier_Unit_Price,
         is_benchmarked,
+        hciq_90_benchmark as Benchmark_Unit_Price_P10,
+        hciq_75_benchmark as Benchmark_Unit_Price_P25,
+        hciq_50_benchmark as Benchmark_Unit_Price_P50,
+        hciq_high_benchmark as Benchmark_Unit_Price_High,
         Spend_at_HCIQ90 as Target_Spend_P10,
         Spend_at_HCIQ75 as Target_Spend_P25,
         Spend_at_HCIQ50 as Target_Spend_P50,
@@ -61,29 +88,37 @@ def extract_to_excel(project_id, dataset_id, run_id):
     ORDER BY Portfolio_Prefix, Contract_Number, Total_Spend_6mo DESC
     """
     
-    # Tab C: QA Flags
-    # This tab highlights any contracts from Tab A that have LOW_COVERAGE or MULTIPLE_BEST_PRICES
-    tab_c_query = f"""
+    # Tab D: QA Flags
+    # This tab highlights any contracts from Tab B that have LOW_COVERAGE or MULTIPLE_BEST_PRICES
+    tab_d_query = f"""
     SELECT 
         Contract_Number,
         Contract_Name,
-        Portfolio,
+        Portfolio as Program,
         Benchmark_Coverage_Pct,
         Flag_Coverage,
+        CASE 
+            WHEN Flag_Coverage = 'LOW_COVERAGE' THEN 'Less than 80% of contract spend has assigned HCIQ benchmarks'
+            ELSE 'Sufficient coverage'
+        END as Flag_Coverage_Definition,
         Flag_Ambiguity,
+        CASE 
+            WHEN Flag_Ambiguity = 'MULTIPLE_BEST_PRICES' THEN 'Multiple distinct best prices found for a single tier'
+            ELSE 'No ambiguity'
+        END as Flag_Ambiguity_Definition,
         Contract_Total_Spend
     FROM `{project_id}.{dataset_id}.contract_benchmark_summary`
     WHERE Flag_Coverage = 'LOW_COVERAGE' OR Flag_Ambiguity = 'MULTIPLE_BEST_PRICES'
     ORDER BY Contract_Total_Spend DESC
     """
     
-    # Tab D: Methodology
+    # Tab E: Methodology
     methodology_path = os.path.join(output_dir, "METHODOLOGY.md")
     with open(methodology_path, "r") as f:
         methodology_text = f.read()
     
-    df_d = pd.DataFrame({"Methodology Documentation": methodology_text.split('\n')})
-
+    df_e = pd.DataFrame({"Methodology Documentation": methodology_text.split('\n')})
+    
     print("Executing queries...")
     df_a = client.query(tab_a_query).to_dataframe()
     print(f"Tab A loaded: {len(df_a)} rows.")
@@ -94,12 +129,55 @@ def extract_to_excel(project_id, dataset_id, run_id):
     df_c = client.query(tab_c_query).to_dataframe()
     print(f"Tab C loaded: {len(df_c)} rows.")
 
+    df_d = client.query(tab_d_query).to_dataframe()
+    print(f"Tab D loaded: {len(df_d)} rows.")
+
     print(f"Writing to {out_file}...")
     with pd.ExcelWriter(out_file, engine='openpyxl') as writer:
-        df_a.to_excel(writer, sheet_name='Tab A - Contract Summary', index=False)
-        df_b.to_excel(writer, sheet_name='Tab B - Item Drilldown', index=False)
-        df_c.to_excel(writer, sheet_name='Tab C - QA Flags', index=False)
-        df_d.to_excel(writer, sheet_name='Tab D - Methodology', index=False)
+        df_a.to_excel(writer, sheet_name='Tab A - Program Summary', index=False)
+        df_b.to_excel(writer, sheet_name='Tab B - Contract Summary', index=False)
+        df_c.to_excel(writer, sheet_name='Tab C - Item Drilldown', index=False)
+        df_d.to_excel(writer, sheet_name='Tab D - QA Flags', index=False)
+        df_e.to_excel(writer, sheet_name='Tab E - Methodology', index=False)
+
+        workbook = writer.book
+        
+        dollar_format = '_($* #,##0_);_($* (#,##0);_($* "-"_);_(@_)'
+        pct_format = '0%'
+        pctl_format = '0'
+        
+        for ws_name, df_name in [('Tab A - Program Summary', df_a),
+                                 ('Tab B - Contract Summary', df_b),
+                                 ('Tab C - Item Drilldown', df_c),
+                                 ('Tab D - QA Flags', df_d)]:
+            if ws_name in workbook.sheetnames:
+                ws = workbook[ws_name]
+                for col_idx, col_name in enumerate(df_name.columns, 1):
+                    col_name_lower = col_name.lower()
+                    
+                    cell_format = None
+                    if 'price' in col_name_lower or 'spend' in col_name_lower:
+                        cell_format = dollar_format
+                    elif 'pct' in col_name_lower or 'percentage' in col_name_lower:
+                        cell_format = pct_format
+                    elif 'percentile' in col_name_lower:
+                        cell_format = pctl_format
+                    
+                    if cell_format:
+                        for row in range(2, len(df_name) + 2):
+                            ws.cell(row=row, column=col_idx).number_format = cell_format
+
+        # Add conditional formatting to Tab B - Estimated_Percentile_Linear
+        ws_b = workbook['Tab B - Contract Summary']
+        if 'Estimated_Percentile_Linear' in df_b.columns:
+            col_idx_m = list(df_b.columns).index('Estimated_Percentile_Linear') + 1
+            col_letter_m = get_column_letter(col_idx_m)
+            
+            # Red-Yellow-Green scale
+            rule = ColorScaleRule(start_type='min', start_color='F8696B',
+                                  mid_type='percentile', mid_value=50, mid_color='FFEB84',
+                                  end_type='max', end_color='63BE7B')
+            ws_b.conditional_formatting.add(f"{col_letter_m}2:{col_letter_m}{len(df_b)+1}", rule)
 
     print("Done! ✅")
 

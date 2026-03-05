@@ -7,9 +7,9 @@ config {
 WITH facility_contracts AS (
   SELECT
     Facility_Name,
-    MAX(CASE WHEN SUBSTR(Contract_Number, 1, 2) = 'SP' THEN 1 ELSE 0 END) as has_sp,
-    MAX(CASE WHEN SUBSTR(Contract_Number, 1, 2) = 'AD' THEN 1 ELSE 0 END) as has_ad,
-    MAX(CASE WHEN SUBSTR(Contract_Number, 1, 2) = 'PP' THEN 1 ELSE 0 END) as has_pp
+    SUM(CASE WHEN SUBSTR(Contract_Number, 1, 2) = 'SP' THEN Base_Spend ELSE 0 END) as sp_spend,
+    SUM(CASE WHEN SUBSTR(Contract_Number, 1, 2) = 'AD' THEN Base_Spend ELSE 0 END) as ad_spend,
+    SUM(CASE WHEN SUBSTR(Contract_Number, 1, 2) = 'PP' THEN Base_Spend ELSE 0 END) as pp_spend
   FROM ${ref("transaction_analysis_6mo")}
   GROUP BY 1
 )
@@ -17,15 +17,15 @@ WITH facility_contracts AS (
 SELECT
   Facility_Name,
   CASE
-    WHEN has_sp = 1 THEN 'Surpass'
-    WHEN has_ad = 1 THEN 'Ascend Drive'
-    WHEN has_pp = 1 THEN 'National'
+    WHEN sp_spend > 50000 THEN 'Surpass'
+    WHEN ad_spend > 50000 THEN 'Ascend Drive'
+    WHEN pp_spend > 0 THEN 'National'
     ELSE 'Unknown'
   END as inferred_program,
   CASE
-    WHEN has_sp = 1 THEN 'SP'
-    WHEN has_ad = 1 THEN 'AD'
-    WHEN has_pp = 1 THEN 'PP'
+    WHEN sp_spend > 50000 THEN 'SP'
+    WHEN ad_spend > 50000 THEN 'AD'
+    WHEN pp_spend > 0 THEN 'PP'
     ELSE 'UNKNOWN'
   END as inferred_prefix
 FROM facility_contracts
