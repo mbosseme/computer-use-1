@@ -16,6 +16,7 @@ WITH base_prices AS (
   FROM ${ref("transaction_analysis_6mo")}
   WHERE Contract_Best_Price IS NOT NULL
     AND UPPER(Contract_Type) NOT IN ('LOCAL', 'REGIONAL')
+    AND UPPER(COALESCE(Contract_Best_Tier_Description, '')) NOT LIKE '%UNKNOWN%'
     AND SUBSTR(Contract_Number, 1, 2) IN ('PP', 'AD', 'SP')
     -- heuristic for premier tier (skip local tiers if possible)
     AND (

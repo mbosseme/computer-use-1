@@ -47,7 +47,7 @@ FROM ${ref("transaction_analysis_mapped")} t
 JOIN ${ref("contract_item_best_price")} cibp 
   ON t.Attributed_Contract_Number = cibp.Contract_Number 
   AND t.Reference_Number = cibp.Reference_Number
-LEFT JOIN ${ref("received_benchmarks_stg_add_refnum")} b
+LEFT JOIN (SELECT matched_reference_number, MAX(hciq_low_benchmark) as hciq_low_benchmark, MAX(hciq_50_benchmark) as hciq_50_benchmark, MAX(hciq_75_benchmark) as hciq_75_benchmark, MAX(hciq_90_benchmark) as hciq_90_benchmark, MAX(hciq_high_benchmark) as hciq_high_benchmark FROM ${ref("received_benchmarks_stg_add_refnum")} WHERE matched_reference_number IS NOT NULL GROUP BY 1) b
   ON t.Reference_Number = b.matched_reference_number
 WHERE 
   -- We only examine Premier contracts

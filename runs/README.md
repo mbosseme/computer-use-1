@@ -1,22 +1,11 @@
-# runs/ (run-local state)
-
-This folder is reserved for **per-run / per-instantiation** state, namespaced by `RUN_ID`.
-
-Conventions:
-- `runs/<RUN_ID>/HANDOFF.md` is the rolling state/handoff journal for that instantiation.
-- Put run-local artifacts under `runs/<RUN_ID>/` (downloads/tmp/exports/scripts).
-
-Standard structure (created/maintained by the bootstrap prompt):
-- `runs/<RUN_ID>/HANDOFF.md` (append-only continuity journal)
-- `runs/<RUN_ID>/briefing/` (briefing materials specific to this run)
-- `runs/<RUN_ID>/inputs/` (raw inputs specific to this run)
-- `runs/<RUN_ID>/exports/` (exports produced during the run)
-- `runs/<RUN_ID>/scripts/` (one-off scripts used only for this run)
-- `runs/<RUN_ID>/tmp/` (scratch)
-- `runs/<RUN_ID>/downloads/` (downloads for this run)
-- `runs/<RUN_ID>/playwright-profile/` (per-run Playwright user-data-dir)
-- `runs/<RUN_ID>/playwright-output/` (per-run Playwright outputs)
-
-Default posture:
-- Contents under `runs/<RUN_ID>/` are typically **local/uncommitted** unless explicitly requested.
-- Do not store sensitive internal URLs, session links, tokens, or secrets.
+/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Connecting to BigQuery...
+Exporting data to Excel...
+Executing queries...
+Tab A loaded: 3 rows.
+Tab B loaded: 1782 rows.
+Tab C loaded: 198247 rows.
+Tab D loaded: 449 rows.
+Writing to runs/2026-03-04__portfolio-competitiveness/HCIQ_Benchmark_Analysis_Deliverable.xlsx...
+Done! ✅

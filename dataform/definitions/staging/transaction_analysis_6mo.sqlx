@@ -19,8 +19,37 @@ SELECT
   Product_Description
 FROM ${ref("transaction_analysis_expanded")}
 WHERE 
-  Transaction_Date >= TIMESTAMP(DATE_SUB(CURRENT_DATE(), INTERVAL 6 MONTH))
+  -- We exclude partial/unclosed months. 
+  -- If it's before the 15th of the current month, data for the prior month is not fully submitted yet.
+  -- To reliably ensure 6 full closed months, we dynamically determine the "end date" (the last day of the valid month)
+  -- and use the 6 months prior to that end date.
+  (
+    -- Valid window ends at the end of the prior month IF we are past the 15th, 
+    -- otherwise it ends at the end of two months prior.
+    Transaction_Date <= TIMESTAMP(
+      LAST_DAY(
+        CASE 
+          WHEN EXTRACT(DAY FROM CURRENT_DATE()) > 15 THEN DATE_SUB(CURRENT_DATE(), INTERVAL 1 MONTH)
+          ELSE DATE_SUB(CURRENT_DATE(), INTERVAL 2 MONTH)
+        END
+      )
+    )
+    -- And begins exactly 6 months before that derived valid window end date.
+    AND Transaction_Date > TIMESTAMP(
+      LAST_DAY(
+        CASE 
+          WHEN EXTRACT(DAY FROM CURRENT_DATE()) > 15 THEN DATE_SUB(CURRENT_DATE(), INTERVAL 7 MONTH)
+          ELSE DATE_SUB(CURRENT_DATE(), INTERVAL 8 MONTH)
+        END
+      )
+    )
+  )
   AND UPPER(Facility_Name) NOT LIKE '%TEST%' 
   AND UPPER(Facility_Name) NOT LIKE '%DEMO%'
   AND Quantity_in_Eaches IS NOT NULL
   AND Quantity_in_Eaches > 0
+  AND NOT (
+    -- Exclude UOM busts (e.g., recording total spend as quantity and price as $1) that distort large calculations
+    Base_Each_Price = 1.0 AND Quantity_in_Eaches = Base_Spend AND Quantity_in_Eaches > 1000
+    AND Contract_Best_Price > 10 -- Only drop if the best price isn't actually close to $1
+  )

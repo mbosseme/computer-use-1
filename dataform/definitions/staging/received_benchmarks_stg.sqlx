@@ -5,3 +5,7 @@ config {
 }
 
 SELECT * FROM ${ref("received_benchmarks")}
+QUALIFY ROW_NUMBER() OVER (
+  PARTITION BY manufacturer_entity_code, manufacturer_catalog_number 
+  ORDER BY abi_snapshot_date DESC
+) = 1

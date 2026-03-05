@@ -1614,14 +1614,14 @@
 ### Program_Line
 - Type: `STRING`
 - Description: A descriptor for the kinds of products on the contract (MS – Nursing, MS - Surgical Services, MS – Cardiology, CE – Imaging, LA – Laboratory, CE – Facilities, CE - IT/ Telecom, MS – Distribution, SV - Purchased Services, FS – Chemicals, FS – Food, FS - Non-Foods, FS – Nutritionals, Rx – Hospital, Rx - Wholesaler)
-- Nulls: TBD
-- Distinct: TBD
+- Nulls: 66,230,273 (7.86%)
+- Distinct: 21
 
 ### Proprietary_Product
 - Type: `STRING`
 - Description: Product that only fits a specific manufacturer's device
-- Nulls: TBD
-- Distinct: TBD
+- Nulls: 131,591,314 (15.61%)
+- Distinct: 2
 
 ### Pvc_Free
 - Type: `STRING`

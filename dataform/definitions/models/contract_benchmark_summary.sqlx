@@ -28,7 +28,7 @@ WITH agg AS (
     
     -- Pick arbitrary example of the price used for spot check
     MAX(contract_best_price) as sample_contract_best_price,
-    MAX(contract_best_tier_description) as sample_tier_description,
+    MAX(contract_best_tier_description) as best_tier_description,
     MAX(CAST(flag_multiple_best_prices AS INT64)) as has_multiple_best_prices
   FROM ${ref("contract_item_benchmark_summary")}
   GROUP BY 1
@@ -46,6 +46,7 @@ SELECT
   
   Contract_Total_Spend,
   Contract_Total_Units,
+  Benchmarked_Spend,
   
   -- Coverage metrics
   IF(Contract_Total_Spend > 0, Benchmarked_Spend / Contract_Total_Spend, 0) as Benchmark_Coverage_Pct,
@@ -58,24 +59,24 @@ SELECT
   
   -- Percentile Bucketing
   CASE
-    WHEN Spend_at_Best_Tier <= Target_Spend_P10 THEN '<=10th'
-    WHEN Spend_at_Best_Tier > Target_Spend_P10 AND Spend_at_Best_Tier <= Target_Spend_P25 THEN '10-25'
-    WHEN Spend_at_Best_Tier > Target_Spend_P25 AND Spend_at_Best_Tier <= Target_Spend_P50 THEN '25-50'
-    WHEN Spend_at_Best_Tier > Target_Spend_P50 AND Spend_at_Best_Tier <= Target_Spend_High THEN '50-90'
-    WHEN Spend_at_Best_Tier > Target_Spend_High THEN '>=90th'
+    WHEN Spend_at_Best_Tier <= Target_Spend_P10 THEN '>=90th'
+    WHEN Spend_at_Best_Tier > Target_Spend_P10 AND Spend_at_Best_Tier <= Target_Spend_P25 THEN '75th-90th'
+    WHEN Spend_at_Best_Tier > Target_Spend_P25 AND Spend_at_Best_Tier <= Target_Spend_P50 THEN '50th-75th'
+    WHEN Spend_at_Best_Tier > Target_Spend_P50 AND Spend_at_Best_Tier <= Target_Spend_High THEN '25th-50th'
+    WHEN Spend_at_Best_Tier > Target_Spend_High THEN '<25th'
     ELSE 'Unknown'
   END as Percentile_Bucket,
   
-  -- Rough Interpolation (Optional Estimated Percentile)
+  -- Rough Interpolation (Estimated Percentile where Higher = Better/Lower Cost)
   CASE
-    WHEN Spend_at_Best_Tier <= Target_Spend_P10 THEN 10.0
-    WHEN Spend_at_Best_Tier > Target_Spend_P10 AND Spend_at_Best_Tier <= Target_Spend_P25 
-      THEN 10.0 + (15.0 * ((Spend_at_Best_Tier - Target_Spend_P10) / NULLIF(Target_Spend_P25 - Target_Spend_P10, 0)))
-    WHEN Spend_at_Best_Tier > Target_Spend_P25 AND Spend_at_Best_Tier <= Target_Spend_P50 
-      THEN 25.0 + (25.0 * ((Spend_at_Best_Tier - Target_Spend_P25) / NULLIF(Target_Spend_P50 - Target_Spend_P25, 0)))
-    WHEN Spend_at_Best_Tier > Target_Spend_P50 AND Spend_at_Best_Tier <= Target_Spend_High 
-      THEN 50.0 + (40.0 * ((Spend_at_Best_Tier - Target_Spend_P50) / NULLIF(Target_Spend_High - Target_Spend_P50, 0)))
-    WHEN Spend_at_Best_Tier > Target_Spend_High THEN 90.0
+    WHEN Spend_at_Best_Tier <= Target_Spend_P10 THEN 90.0
+    WHEN Spend_at_Best_Tier > Target_Spend_P10 AND Spend_at_Best_Tier <= Target_Spend_P25
+      THEN 90.0 - (15.0 * ((Spend_at_Best_Tier - Target_Spend_P10) / NULLIF(Target_Spend_P25 - Target_Spend_P10, 0)))
+    WHEN Spend_at_Best_Tier > Target_Spend_P25 AND Spend_at_Best_Tier <= Target_Spend_P50
+      THEN 75.0 - (25.0 * ((Spend_at_Best_Tier - Target_Spend_P25) / NULLIF(Target_Spend_P50 - Target_Spend_P25, 0)))
+    WHEN Spend_at_Best_Tier > Target_Spend_P50 AND Spend_at_Best_Tier <= Target_Spend_High
+      THEN 50.0 - (25.0 * ((Spend_at_Best_Tier - Target_Spend_P50) / NULLIF(Target_Spend_High - Target_Spend_P50, 0)))
+    WHEN Spend_at_Best_Tier > Target_Spend_High THEN 10.0
     ELSE NULL
   END as Estimated_Percentile_Linear,
   
@@ -90,5 +91,5 @@ SELECT
     ELSE 'OK'
   END as Flag_Ambiguity,
   
-  sample_tier_description
+  best_tier_description
 FROM agg
