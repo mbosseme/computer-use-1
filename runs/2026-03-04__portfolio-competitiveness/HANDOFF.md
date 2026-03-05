@@ -65,3 +65,31 @@ Conducted extensive business context research via M365 Copilot (GPT-5.2 Think, W
 
 ### Blockers
 - None.
+---
+
+## Session: 2026-03-05 (Dataform Refinement and Output Formatting)
+
+### Summary
+Built out the full execution logic in BigQuery/Dataform mapping the `transaction_analysis_expanded` table against the `received_benchmarks` table and outputting a multi-tab deliverable via Python export. Handled iterative refinements around data anomalies (UOM drops) and final deliverable formatting.
+
+**Major Deliverables & Fixes:**
+1. **Dataform Build Out**:
+   - `transaction_analysis_6mo`: Base clean 6-month historical view. Also implemented UOM drop logic to filter mathematical outliers (`Base_Each_Price = 1.0 AND Quantity_in_Eaches = Base_Spend`).
+   - `received_benchmarks_stg`: Handled benchmark ingestion and implicit deduplication (via `QUALIFY ROW_NUMBER() OVER(PARTITION BY manufacturer_entity_code, manufacturer_catalog_number ORDER BY abi_snapshot_date DESC) = 1`).
+   - Downstream mapped/merged views (`contract_item_best_price`, `contract_item_benchmark_summary`, `contract_benchmark_summary`, `program_benchmark_summary`).
+2. **Data Pipeline Enhancements**:
+   - Pulled `Contracted_Supplier`, `Manufacturer_Top_Parent_Name`, `Manufacturer_Name`, and `Manufacturer_Catalog_Number` through the whole pipeline into the final tab outputs.
+   - Handled intentional transaction subsetting limiting output to purely `PP`, `AD`, and `SP` portfolios (mapping $12.6B raw spend vs $8.6B final eligible spend).
+   - Produced weighted linear percentile logic (`Weighted_Avg_Program_Percentile`).
+3. **Python Execution Pipeline**:
+   - Scaled out Python export scripting (`scripts/export_deliverable.py`) to systematically apply precise openpyxl formatting (`0%`, `$`, `0`) explicitly and implemented conditional red-yellow-green formatting bars for estimated benchmark percentiles. 
+4. **Drafted Communication**:
+   - Formally wrote out the `METHODOLOGY.md` rules and compiled them directly into Tab E of the delivery Excel workbook.
+   - Pushed a locally staged Outlook Draft mapping the context.
+
+### Next Steps / Standing Assumptions for New Agent:
+- The codebase state is currently complete, committed, and stable. You do not need to restart or run `dataform compile/run` unless the user implicitly requests schema changes. 
+- The project structure pushes `transaction_analysis_expanded` and `received_benchmarks` through Dataform -> Python -> Excel Output (`HCIQ_Benchmark_Analysis_Deliverable.xlsx`). 
+
+### Blockers
+- None.
