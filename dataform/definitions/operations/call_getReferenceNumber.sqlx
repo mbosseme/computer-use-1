@@ -1,0 +1,27 @@
+config {
+  type: "operations",
+  hasOutput: true,
+  name: "received_benchmarks_stg_add_refnum",
+  dependencies: ["received_benchmarks_stg"]
+}
+
+-- The stored procedure creates a table named {source_project}.{output_dataset}.{source_table}_add_refnum
+-- Here, source_project is dataform.projectConfig.defaultDatabase (matthew-bossemeyer)
+-- output_dataset is dataform.projectConfig.defaultSchema (dataform_hciq)
+-- source_table is received_benchmarks_stg
+-- The output table will therefore be matthew-bossemeyer.dataform_hciq.received_benchmarks_stg_add_refnum
+-- However, Dataform expects the output to match the name of this operation ("received_benchmarks_add_refnum")
+-- So we pass "received_benchmarks" as source_table? No, source table must be the staged one in our dataset.
+-- Wait, if source table is received_benchmarks_stg, output is received_benchmarks_stg_add_refnum.
+-- So we name this operation "received_benchmarks_stg_add_refnum" OR we just rename it at the end. Let's name it "received_benchmarks_stg_add_refnum".
+
+-- What happens if we just set the name of this operation to "received_benchmarks_stg_add_refnum"? Dataform thinks it created it, which it did!
+
+CALL `premierinc-com-data.stored_procedures_premier_master_data.getReferenceNumberForSupplierNameAndPartNumber`(
+  'hciq_manufacturer_name',
+  'hciq_manufacturer_catalog_number',
+  '${dataform.projectConfig.defaultDatabase}',
+  '${dataform.projectConfig.defaultSchema}',
+  'received_benchmarks_stg',
+  '${dataform.projectConfig.defaultSchema}'
+)

@@ -1,0 +1,58 @@
+config {
+  type: "table",
+  name: "contract_item_benchmark_summary",
+  tags: ["models"]
+}
+
+SELECT
+  -- Tab B: Contract-product drilldown fields
+  t.Attributed_Contract_Number as Contract_Number,
+  MAX(cibp.Contract_Name) as Contract_Name,
+  SUBSTR(t.Attributed_Contract_Number, 1, 2) as Portfolio_Prefix,
+  t.Reference_Number as Product_Identifier,
+  MAX(t.Product_Description) as Product_Description,
+  
+  -- Spend and Volume from transactions
+  SUM(t.Quantity_in_Eaches) as Total_Units_6mo,
+  SUM(t.Base_Spend) as Total_Spend_6mo,
+  
+  -- The tier description & best price used
+  MAX(cibp.Contract_Best_Tier_Description) as contract_best_tier_description,
+  MAX(cibp.Contract_Best_Price) as contract_best_price,
+  MAX(cibp.Contract_Type) as contract_type_context,
+  MAX(cibp.flag_multiple_prices) as flag_multiple_best_prices,
+  STRING_AGG(DISTINCT t.Match_Context) as Match_Contexts,
+  STRING_AGG(DISTINCT t.Original_Contract_Type) as Original_Contract_Types,
+  
+  -- Benchmark fields
+  MAX(b.hciq_low_benchmark) as hciq_low_benchmark,
+  MAX(b.hciq_50_benchmark) as hciq_50_benchmark,
+  MAX(b.hciq_75_benchmark) as hciq_75_benchmark,
+  MAX(b.hciq_90_benchmark) as hciq_90_benchmark,
+  MAX(b.hciq_high_benchmark) as hciq_high_benchmark,
+  
+  CASE WHEN MAX(b.matched_reference_number) IS NOT NULL THEN TRUE ELSE FALSE END as is_benchmarked,
+  
+  -- Benchmark-extended spend (Units * Benchmark Price)
+  SUM(t.Quantity_in_Eaches * b.hciq_90_benchmark) as Spend_at_HCIQ90,
+  SUM(t.Quantity_in_Eaches * b.hciq_75_benchmark) as Spend_at_HCIQ75,
+  SUM(t.Quantity_in_Eaches * b.hciq_50_benchmark) as Spend_at_HCIQ50,
+  SUM(t.Quantity_in_Eaches * b.hciq_high_benchmark) as Spend_at_High,
+  
+  -- Actual-extended spend using the BEST PREMIER PRICE we found
+  SUM(t.Quantity_in_Eaches * cibp.Contract_Best_Price) as Spend_at_Best_Tier
+
+FROM ${ref("transaction_analysis_mapped")} t
+-- Must join to cibp to only include lines that HAVE a Premier Top Tier price
+JOIN ${ref("contract_item_best_price")} cibp 
+  ON t.Attributed_Contract_Number = cibp.Contract_Number 
+  AND t.Reference_Number = cibp.Reference_Number
+LEFT JOIN ${ref("received_benchmarks_stg_add_refnum")} b
+  ON t.Reference_Number = b.matched_reference_number
+WHERE 
+  -- We only examine Premier contracts
+  SUBSTR(t.Attributed_Contract_Number, 1, 2) IN ('PP', 'AD', 'SP')
+GROUP BY 
+  t.Attributed_Contract_Number,
+  SUBSTR(t.Attributed_Contract_Number, 1, 2),
+  t.Reference_Number

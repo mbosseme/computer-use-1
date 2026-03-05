@@ -1,0 +1,38 @@
+{
+  "generated_on": "2026-03-04",
+  "rebuilt_on": "2026-03-04T12:01:31",
+  "model": "azure-gpt-5.2",
+  "documents_included": 2,
+  "documents": [
+    {
+      "source": {
+        "rel_path": "Connect.pdf",
+        "size": 490933,
+        "mtime_ns": 1772632967973459625,
+        "content_hash_sha256": null
+      },
+      "source_name": "Connect.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-03-04__portfolio-competitiveness/corpus/staging/Connect.pdf",
+      "per_doc_md": "runs/2026-03-04__portfolio-competitiveness/corpus/per_doc/connect__c349351683__synthesis.md",
+      "per_doc_manifest": "runs/2026-03-04__portfolio-competitiveness/corpus/per_doc/connect__c349351683__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-03-04__portfolio-competitiveness/corpus/tmp/connect__c349351683__chunks",
+      "last_synthesized_on": "2026-03-04T11:59:03"
+    },
+    {
+      "source": {
+        "rel_path": "Urgent Request.pdf",
+        "size": 3872771,
+        "mtime_ns": 1772643069233046981,
+        "content_hash_sha256": null
+      },
+      "source_name": "Urgent Request.pdf",
+      "kind": "pdf",
+      "staged_path": "runs/2026-03-04__portfolio-competitiveness/corpus/staging/Urgent Request.pdf",
+      "per_doc_md": "runs/2026-03-04__portfolio-competitiveness/corpus/per_doc/urgent_request__c7a54da9ab__synthesis.md",
+      "per_doc_manifest": "runs/2026-03-04__portfolio-competitiveness/corpus/per_doc/urgent_request__c7a54da9ab__synthesis.manifest.json",
+      "chunk_dir": "runs/2026-03-04__portfolio-competitiveness/corpus/tmp/urgent_request__c7a54da9ab__chunks",
+      "last_synthesized_on": "2026-03-04T11:59:57"
+    }
+  ]
+}

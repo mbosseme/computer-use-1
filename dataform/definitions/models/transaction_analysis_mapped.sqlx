@@ -1,0 +1,57 @@
+config {
+  type: "table",
+  name: "transaction_analysis_mapped",
+  tags: ["models"]
+}
+
+WITH transaction_base AS (
+  SELECT
+    t.*,
+    fpm.inferred_program,
+    fpm.inferred_prefix,
+    -- Determine if we need to remap
+    CASE WHEN UPPER(t.Contract_Type) IN ('LOCAL', 'REGIONAL') THEN true ELSE false END as is_local_remap
+  FROM ${ref("transaction_analysis_6mo")} t
+  LEFT JOIN ${ref("facility_program_map")} fpm ON t.Facility_Name = fpm.Facility_Name
+),
+candidate_contracts AS (
+  SELECT 
+    Reference_Number,
+    Contract_Prefix,
+    MAX(Contract_Number) as Contract_Number
+  FROM (
+    SELECT 
+      Reference_Number,
+      Contract_Number,
+      SUBSTR(Contract_Number, 1, 2) as Contract_Prefix
+    FROM ${ref("contract_item_best_price")}
+  )
+  GROUP BY 1, 2
+)
+
+SELECT
+  tb.Contract_Number as Original_Contract_Number,
+  tb.Contract_Type as Original_Contract_Type,
+  tb.is_local_remap,
+  tb.inferred_prefix,
+  tb.Reference_Number,
+  tb.Product_Description,
+  tb.Base_Spend,
+  tb.Quantity_in_Eaches,
+  tb.Base_Each_Price,
+  
+  -- Remap contract number if local
+  CASE 
+    WHEN tb.is_local_remap AND cc.Contract_Number IS NOT NULL THEN cc.Contract_Number
+    ELSE tb.Contract_Number
+  END as Attributed_Contract_Number,
+  
+  CASE 
+    WHEN tb.is_local_remap AND cc.Contract_Number IS NOT NULL THEN 'REMAPPED_LOCAL'
+    ELSE 'DIRECT_MATCH'
+  END as Match_Context
+FROM transaction_base tb
+LEFT JOIN candidate_contracts cc 
+  ON tb.is_local_remap = TRUE 
+  AND tb.Reference_Number = cc.Reference_Number 
+  AND tb.inferred_prefix = cc.Contract_Prefix

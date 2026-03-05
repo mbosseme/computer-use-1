@@ -1,0 +1,24 @@
+{
+  "source_path": "runs/2026-03-04__portfolio-competitiveness/corpus/staging/Connect.pdf",
+  "generated_on": "2026-03-04",
+  "extraction": {
+    "pages_total": 8,
+    "pages_with_text": 8,
+    "pages_with_error": 0,
+    "total_extracted_chars": 211864
+  },
+  "chunking": {
+    "chunks": 1,
+    "target_chunk_chars": 30000,
+    "max_chunk_chars": 45000,
+    "overlap_pages": 1,
+    "max_chunks": null,
+    "page_timeout_s": 15
+  },
+  "warnings": [
+    {
+      "code": "PDF_REDUNDANCY_DEDUPED",
+      "message": "Detected repeated page extraction; de-duplicated 7 pages using a conservative fingerprint (head+tail). This typically indicates the PDF text layer is duplicated across pages by the extractor. Dropped pages: [2, 3, 4, 5, 6, 7, 8]."
+    }
+  ]
+}
