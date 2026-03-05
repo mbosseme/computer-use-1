@@ -1,0 +1,6 @@
+{
+  "name": "portfolio-competitiveness",
+  "dependencies": {
+    "@dataform/core": "3.0.0"
+  }
+}

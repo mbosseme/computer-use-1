@@ -1,0 +1,6 @@
+config {
+  type: "declaration",
+  database: "abi-inbound-prod",
+  schema: "abi_inbound_bq_stg_purchasing_provider_transaction",
+  name: "transaction_analysis_expanded"
+}

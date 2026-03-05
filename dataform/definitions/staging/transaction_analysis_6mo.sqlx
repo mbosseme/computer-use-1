@@ -1,0 +1,26 @@
+config {
+  type: "view",
+  name: "transaction_analysis_6mo",
+  tags: ["staging"]
+}
+
+SELECT
+  Contract_Number,
+  Contract_Name,
+  Contract_Type,
+  Reference_Number,
+  Base_Spend,
+  Quantity_in_Eaches,
+  Transaction_Date,
+  Base_Each_Price,
+  Contract_Best_Price,
+  Contract_Best_Tier_Description,
+  Facility_Name,
+  Product_Description
+FROM ${ref("transaction_analysis_expanded")}
+WHERE 
+  Transaction_Date >= TIMESTAMP(DATE_SUB(CURRENT_DATE(), INTERVAL 6 MONTH))
+  AND UPPER(Facility_Name) NOT LIKE '%TEST%' 
+  AND UPPER(Facility_Name) NOT LIKE '%DEMO%'
+  AND Quantity_in_Eaches IS NOT NULL
+  AND Quantity_in_Eaches > 0

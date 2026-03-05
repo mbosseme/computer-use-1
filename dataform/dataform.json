@@ -1,0 +1,7 @@
+{
+  "defaultSchema": "dataform_hciq",
+  "assertionSchema": "dataform_hciq_assertions",
+  "warehouse": "bigquery",
+  "defaultDatabase": "matthew-bossemeyer",
+  "defaultLocation": "US"
+}

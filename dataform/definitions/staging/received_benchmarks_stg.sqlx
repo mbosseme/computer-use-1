@@ -1,0 +1,7 @@
+config {
+  type: "table",
+  name: "received_benchmarks_stg",
+  description: "Staging copy of received benchmarks in local project to be processed by stored proc"
+}
+
+SELECT * FROM ${ref("received_benchmarks")}

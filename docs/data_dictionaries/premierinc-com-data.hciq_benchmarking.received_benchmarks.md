@@ -4,8 +4,6 @@
 - Estimated rows: 1,662,301
 - Snapshots: 2025-11-13 to 2026-02-09
 
-> **Percentile Scale Warning (counterintuitive):** HCIQ uses an inverted scale where higher percentile = better (lower cost). `hciq_low_benchmark` is the *best* price (~99th percentile) and `hciq_high_benchmark` is the *worst* price (~25th percentile). When interpolating a contract price against these benchmarks, a price near `hciq_low_benchmark` yields ~99th percentile; near `hciq_high_benchmark` yields ~25th.
-
 ## Columns
 
 ### manufacturer_entity_code
@@ -62,7 +60,7 @@
 
 ### hciq_low_benchmark
 - Type: `FLOAT`
-- Description: Best (lowest) price benchmark from HCIQ — effectively the **99th percentile**. Despite the name "low", this represents the best pricing in the market. A contract price at or below this value indicates top-tier pricing.
+- Description: Low price benchmark mark from HCIQ
 - Nulls: 337,140 (20.28%)
 - Distinct: 64,150
 
@@ -90,7 +88,7 @@
 
 ### hciq_high_benchmark
 - Type: `FLOAT`
-- Description: Worst (highest) price benchmark from HCIQ — effectively the **25th percentile**. Despite the name "high", this represents the worst pricing in the market. A contract price at or above this value indicates poor pricing.
+- Description: High price benchmark mark from HCIQ
 - Nulls: 337,140 (20.28%)
 - Distinct: 75,274
 
@@ -100,12 +98,6 @@
 - Description: Date of the given snapshot capture
 - Nulls: 0 (0.00%)
 - Distinct: 4
-
-## Known UOM Hazards
-
-Benchmark prices in this table may be on a **different unit of measure** than corresponding transaction data (e.g., benchmark per EACH vs. contract priced per CASE). This mismatch is the #1 source of false outliers when joining against `transaction_analysis_expanded` or contract pricing tables.
-
-When benchmarking, apply ratio-based outlier detection (contract price / `hciq_50_benchmark`) to flag UOM mismatches before aggregation. See the 4-tier flag pattern documented in the `premier-data-analytics` skill (§9.4) for recommended thresholds.
 
 
 ### abi_load_date

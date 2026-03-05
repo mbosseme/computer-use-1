@@ -1,0 +1,94 @@
+config {
+  type: "table",
+  name: "contract_benchmark_summary",
+  tags: ["models"]
+}
+
+WITH agg AS (
+  SELECT
+    Contract_Number,
+    MAX(Contract_Name) as Contract_Name,
+    MAX(Portfolio_Prefix) as Portfolio_Prefix,
+    
+    SUM(Total_Units_6mo) as Contract_Total_Units,
+    SUM(Total_Spend_6mo) as Contract_Total_Spend,
+    
+    -- Coverage stats
+    SUM(CASE WHEN is_benchmarked THEN Total_Units_6mo ELSE 0 END) as Benchmarked_Units,
+    SUM(CASE WHEN is_benchmarked THEN Total_Spend_6mo ELSE 0 END) as Benchmarked_Spend,
+    
+    -- Rollup benchmark spend vs best tier spend
+    SUM(Spend_at_Best_Tier) as Spend_at_Best_Tier,
+    
+    -- We map HCIQ column outputs correctly
+    SUM(Spend_at_HCIQ90) as Target_Spend_P10,
+    SUM(Spend_at_HCIQ75) as Target_Spend_P25,
+    SUM(Spend_at_HCIQ50) as Target_Spend_P50,
+    SUM(Spend_at_High)   as Target_Spend_High,
+    
+    -- Pick arbitrary example of the price used for spot check
+    MAX(contract_best_price) as sample_contract_best_price,
+    MAX(contract_best_tier_description) as sample_tier_description,
+    MAX(CAST(flag_multiple_best_prices AS INT64)) as has_multiple_best_prices
+  FROM ${ref("contract_item_benchmark_summary")}
+  GROUP BY 1
+)
+
+SELECT
+  Contract_Number,
+  Contract_Name,
+  CASE 
+    WHEN Portfolio_Prefix = 'PP' THEN 'National'
+    WHEN Portfolio_Prefix = 'AD' THEN 'Ascend Drive'
+    WHEN Portfolio_Prefix = 'SP' THEN 'Surpass'
+    ELSE 'Unknown'
+  END as Portfolio,
+  
+  Contract_Total_Spend,
+  Contract_Total_Units,
+  
+  -- Coverage metrics
+  IF(Contract_Total_Spend > 0, Benchmarked_Spend / Contract_Total_Spend, 0) as Benchmark_Coverage_Pct,
+  
+  Spend_at_Best_Tier,
+  Target_Spend_P10,
+  Target_Spend_P25,
+  Target_Spend_P50,
+  Target_Spend_High,
+  
+  -- Percentile Bucketing
+  CASE
+    WHEN Spend_at_Best_Tier <= Target_Spend_P10 THEN '<=10th'
+    WHEN Spend_at_Best_Tier > Target_Spend_P10 AND Spend_at_Best_Tier <= Target_Spend_P25 THEN '10-25'
+    WHEN Spend_at_Best_Tier > Target_Spend_P25 AND Spend_at_Best_Tier <= Target_Spend_P50 THEN '25-50'
+    WHEN Spend_at_Best_Tier > Target_Spend_P50 AND Spend_at_Best_Tier <= Target_Spend_High THEN '50-90'
+    WHEN Spend_at_Best_Tier > Target_Spend_High THEN '>=90th'
+    ELSE 'Unknown'
+  END as Percentile_Bucket,
+  
+  -- Rough Interpolation (Optional Estimated Percentile)
+  CASE
+    WHEN Spend_at_Best_Tier <= Target_Spend_P10 THEN 10.0
+    WHEN Spend_at_Best_Tier > Target_Spend_P10 AND Spend_at_Best_Tier <= Target_Spend_P25 
+      THEN 10.0 + (15.0 * ((Spend_at_Best_Tier - Target_Spend_P10) / NULLIF(Target_Spend_P25 - Target_Spend_P10, 0)))
+    WHEN Spend_at_Best_Tier > Target_Spend_P25 AND Spend_at_Best_Tier <= Target_Spend_P50 
+      THEN 25.0 + (25.0 * ((Spend_at_Best_Tier - Target_Spend_P25) / NULLIF(Target_Spend_P50 - Target_Spend_P25, 0)))
+    WHEN Spend_at_Best_Tier > Target_Spend_P50 AND Spend_at_Best_Tier <= Target_Spend_High 
+      THEN 50.0 + (40.0 * ((Spend_at_Best_Tier - Target_Spend_P50) / NULLIF(Target_Spend_High - Target_Spend_P50, 0)))
+    WHEN Spend_at_Best_Tier > Target_Spend_High THEN 90.0
+    ELSE NULL
+  END as Estimated_Percentile_Linear,
+  
+  -- QA Flags
+  CASE 
+    WHEN IF(Contract_Total_Spend > 0, Benchmarked_Spend / Contract_Total_Spend, 0) < 0.8 THEN 'LOW_COVERAGE' 
+    ELSE 'OK' 
+  END as Flag_Coverage,
+  
+  CASE 
+    WHEN has_multiple_best_prices > 0 THEN 'MULTIPLE_BEST_PRICES'
+    ELSE 'OK'
+  END as Flag_Ambiguity,
+  
+  sample_tier_description
+FROM agg
