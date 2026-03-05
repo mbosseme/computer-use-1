@@ -5,11 +5,14 @@ config {
 }
 
 SELECT
-  -- Tab B: Contract-product drilldown fields
+  -- Tab C: Contract-product drilldown fields
   t.Attributed_Contract_Number as Contract_Number,
   MAX(cibp.Contract_Name) as Contract_Name,
+  MAX(t.Contracted_Supplier) as Contracted_Supplier,
+  MAX(t.Manufacturer_Top_Parent_Name) as Manufacturer_Top_Parent_Name,
+  MAX(t.Manufacturer_Name) as Manufacturer_Name,
+  MAX(t.Manufacturer_Catalog_Number) as Manufacturer_Catalog_Number,
   SUBSTR(t.Attributed_Contract_Number, 1, 2) as Portfolio_Prefix,
-  t.Reference_Number as Product_Identifier,
   MAX(t.Product_Description) as Product_Description,
   
   -- Spend and Volume from transactions
