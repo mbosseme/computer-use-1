@@ -2,7 +2,10 @@
 
 **Session:** 2026-03-04__portfolio-competitiveness  
 **Research Method:** M365 Copilot (GPT-5.2 Think, Work mode) + SharePoint Word doc extraction  
-**Date:** 2026-03-04  
+**Date:** 20Okay, just a few additional pieces of feedback for continued refinement.
+- On tab A, you have column G: Average Program Percentile and in column H: a weighted average program percentile using the total historical spend for each contract as the weight.
+- In tab B, Contract Summary, add next to contract name the contracted supplier so we can see who the contract is with.
+- In tab C, Item Drilldown, I'm not sure what field you're using for product identifier, but we should be getting that field from the Transaction Analysis Data Model.26-03-04  
 **Purpose:** Validate analytical assumptions and gather business context for the contract-level percentile positioning analysis vs Healthcare IQ benchmarks.
 
 ---
