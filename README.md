@@ -37,13 +37,6 @@ Historical note:
 ## Setup
 - MCP config is committed in [.vscode/mcp.json](.vscode/mcp.json). Open this repo in VS Code.
 - Ensure VS Code lists the Playwright MCP server in its MCP/tools UI.
-- Run a quick preflight before starting browser tasks:
-
-```bash
-python3 tools/playwright_mcp_preflight.py --file .vscode/mcp.json
-```
-
-- For M365 Copilot chat tasks, set the model selector (top-right) to `GPT-5.2 Think` before prompting; re-check after refresh/navigation because it may revert to `Auto`.
 
 This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
 
@@ -76,9 +69,25 @@ python -m agent_tools.llm.summarize_folder \
   --tmp-dir "runs/<RUN_ID>/tmp/docs"
 ```
 
+- Incremental folder synthesis (recommended for recurring updates):
+
+```bash
+python -m agent_tools.llm.summarize_incremental \
+  --source-dir "/path/to/folder" \
+  --staging-dir "runs/<RUN_ID>/tmp/staging" \
+  --per-doc-dir "runs/<RUN_ID>/exports/docs" \
+  --tmp-dir "runs/<RUN_ID>/tmp/incremental" \
+  --index "runs/<RUN_ID>/exports/folder_synthesis.index.json" \
+  --out "runs/<RUN_ID>/exports/folder_synthesis.md" \
+  --manifest "runs/<RUN_ID>/exports/folder_synthesis.manifest.json" \
+  --model "azure-gpt-5.2" \
+  --detect-mode mtime-size
+```
+
 Notes:
 - If a PDF extractor appears to duplicate identical page text (a known issue with some PDFs), the output will include a warning like `PDF_REDUNDANCY_DEDUPED`.
 - Model credentials and endpoints are always local (`.env` + `config/models.json` placeholders). Do not commit secrets or internal endpoints.
+- Incremental index and manifests now write atomically, and index progress is checkpointed per file so reruns can recover cleanly after transient API/network failures.
 
 ## Microsoft Graph (Office 365)
 - Guide: [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](docs/GRAPH_AUTH_REPLICATION_GUIDE.md)
@@ -97,7 +106,7 @@ Parallel runs note:
 
 Setup and prompting guidance: [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
 
-If the Playwright MCP server fails to start, run the preflight check above first and fix any binary mismatch (for `@playwright/mcp`, the currently published executable is typically `playwright-mcp`).
+If the MCP server fails to start, ensure the binary in `.vscode/mcp.json` is set to `playwright-mcp` (the command changed in newer versions of @playwright/mcp).
 
 ## Reference docs
 - [AGENTS.md](AGENTS.md)

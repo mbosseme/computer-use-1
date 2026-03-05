@@ -26,11 +26,18 @@ tools:
 - Scopes: `Calendars.ReadWrite` (and `User.Read` for /me).
 - **Default Scheduling Profile**:
   - Timezone: `Eastern Standard Time` (EST/EDT).
-  - Business Hours: **08:30** to **16:30**. Do not schedule earlier than 8:30 AM or later than 4:30 PM unless explicitly requested.
+  - Business Hours: **08:30** to **16:30**, **Monday through Friday only**.
+
+## Hard scheduling guardrail (default)
+- Unless the user explicitly requests otherwise, only propose or book times that are:
+  - within **08:30–16:30 Eastern**, and
+  - on **weekdays (Mon–Fri)**.
+- Treat this as a non-negotiable default boundary for scheduling operations.
+- If no slots are available in that window, report that clearly and propose next in-window options.
 
 ## Recommended approach (safe + repeatable)
 ### 1) Determine the target time window
-- Default to **08:30 - 16:30 Eastern Standard Time**.
+- Default to **08:30 - 16:30 Eastern Standard Time, Monday-Friday**.
 - Normalize time zone:
   - **Graph getSchedule/findMeetingTimes** expects a **Windows timezone name** (e.g., `Eastern Standard Time`).
   - Local formatting (Python) can use IANA (e.g., `America/New_York` or `US/Eastern`).

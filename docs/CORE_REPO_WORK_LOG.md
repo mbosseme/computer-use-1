@@ -24,7 +24,7 @@ This is not a per-session scratchpad:
 - Decisions/notes:
   - Training URLs are treated as session-only and must not be written to repo files; use `<TRAINING_URL>` placeholders.
   - `.venv/` is gitignored; venv is created locally without installing packages.
-  - If the Playwright MCP server fails to start, switch to `@microsoft/mcp-server-playwright` and record what worked.
+  - If the Playwright MCP server fails to start, check that the binary command is `playwright-mcp`, not the legacy `mcp-server-playwright`.
 - Next steps:
   - Add PRD + guardrails docs.
   - Align README/instructions to reference docs.
