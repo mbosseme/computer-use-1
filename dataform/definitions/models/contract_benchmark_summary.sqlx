@@ -8,6 +8,7 @@ WITH agg AS (
   SELECT
     Contract_Number,
     MAX(Contract_Name) as Contract_Name,
+    MAX(Contracted_Supplier) as Contracted_Supplier,
     MAX(Portfolio_Prefix) as Portfolio_Prefix,
     
     SUM(Total_Units_6mo) as Contract_Total_Units,
@@ -37,6 +38,7 @@ WITH agg AS (
 SELECT
   Contract_Number,
   Contract_Name,
+  Contracted_Supplier,
   CASE 
     WHEN Portfolio_Prefix = 'PP' THEN 'National'
     WHEN Portfolio_Prefix = 'AD' THEN 'Ascend Drive'

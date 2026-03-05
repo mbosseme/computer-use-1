@@ -16,7 +16,11 @@ SELECT
   Contract_Best_Price,
   Contract_Best_Tier_Description,
   Facility_Name,
-  Product_Description
+  Product_Description,
+  Contracted_Supplier,
+  Manufacturer_Top_Parent_Name,
+  Manufacturer_Name,
+  Manufacturer_Catalog_Number
 FROM ${ref("transaction_analysis_expanded")}
 WHERE 
   -- We exclude partial/unclosed months. 

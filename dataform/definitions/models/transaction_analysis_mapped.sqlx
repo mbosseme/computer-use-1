@@ -39,6 +39,10 @@ SELECT
   tb.Base_Spend,
   tb.Quantity_in_Eaches,
   tb.Base_Each_Price,
+  tb.Contracted_Supplier,
+  tb.Manufacturer_Top_Parent_Name,
+  tb.Manufacturer_Name,
+  tb.Manufacturer_Catalog_Number,
   
   -- Remap contract number if local
   CASE 

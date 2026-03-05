@@ -24,7 +24,8 @@ def extract_to_excel(project_id, dataset_id, run_id):
         Total_Benchmarkable_Spend,
         Benchmark_Coverage_Pct,
         Total_Spend_at_Best_Tier,
-        Avg_Program_Percentile
+        Avg_Program_Percentile,
+        Weighted_Avg_Program_Percentile
     FROM `{project_id}.{dataset_id}.program_benchmark_summary`
     ORDER BY 
         CASE Program
@@ -41,6 +42,7 @@ def extract_to_excel(project_id, dataset_id, run_id):
         Portfolio as Program,
         Contract_Number,
         Contract_Name,
+        Contracted_Supplier,
         Contract_Total_Spend,
         Contract_Total_Units,
         Benchmark_Coverage_Pct,
@@ -64,7 +66,10 @@ def extract_to_excel(project_id, dataset_id, run_id):
         Portfolio_Prefix as Program_Prefix,
         Contract_Number,
         Contract_Name,
-        Product_Identifier,
+        Contracted_Supplier,
+        Manufacturer_Top_Parent_Name,
+        Manufacturer_Name,
+        Manufacturer_Catalog_Number,
         Product_Description,
         Total_Units_6mo,
         Total_Spend_6mo,
