@@ -4,7 +4,7 @@
 >
 > **Update policy**: Append/update as you learn new things. Do not delete entries — mark them superseded if outdated. Keep sections focused and scannable.
 >
-> **Last updated**: 2026-03-03
+> **Last updated**: 2026-03-04 (session 3: Shimshock 1:1 prep via Graph + M365 Copilot)
 
 ---
 
@@ -45,6 +45,8 @@
 | Sync strategic context from task-planner | When goals/stakeholders change; check at session start if >7 days stale | 2026-03-03 | `github_repo` search → overwrite `docs/strategic_context.md` |
 | Review HANDOFF.md for continuity | Every session start | 2026-03-03 | Read `runs/2026-03-02__orchestrator/HANDOFF.md` |
 | Check for new exports/briefings | Every session start | 2026-03-03 | `list_dir` on `runs/2026-03-02__orchestrator/exports/` |
+| Pull My Day tasks | Daily / session start | 2026-03-03 | `python3 runs/2026-03-02__orchestrator/scripts/pull_my_day_tasks.py -o runs/2026-03-02__orchestrator/exports/todo_my_day_current.json` |
+| Check delegation status from other worktrees | After delegating | 2026-03-03 (B. Braun delegation pending) | Ask Matt for status or check worktree HANDOFF.md |
 
 ---
 
@@ -70,6 +72,26 @@
 - Multiple worktrees for parallel agent work
 - Git discipline: ask before commit, ask separately before push
 
+### Multi-agent delegation
+- Matt sees the orchestrator as having broad organizational context, NOT detailed task context
+- Delegation to specialist worktrees is preferred when deep domain context exists there
+- Current delegation method: orchestrator crafts a prompt, Matt copy-pastes into target worktree's Copilot chat
+- Matt is open to better delegation mechanisms (file-based briefs, etc.)
+- The B. Braun worktree was the first real delegation target (2026-03-03)
+
+### Graph API To Do limitations
+- Microsoft Graph's `isInMyDay` property is NOT available on this tenant (400 error on v1.0 and beta)
+- No `linkedResources` with `applicationName=myDay`, no `wellknownListName=myDay` list
+- **Workaround**: `pull_my_day_tasks.py` uses "inferred_due_today" mode (incomplete tasks with due date = today)
+- This means manually added My Day items without a due date will NOT appear — only due-today items
+- Graph timestamps can have 7-digit fractional seconds; regex-strip to 6 before parsing
+
+### M365 Copilot (Playwright) interaction patterns
+- "Think deeper" queries take 60-120 seconds. Time-based `wait_for` (60-90s) is more reliable than `textGone` on "Stop generating" or "Generating response" buttons.
+- Two-pass strategy works well: (1) broad topical scan, (2) targeted follow-up for Teams chats + meeting transcripts not covered by email.
+- Model selector can reset to "Auto" after navigation; re-check before each prompt submission.
+- Work mode is required for organizational queries (emails, meetings, Teams chats, documents).
+
 ---
 
 ## 5. Active Workstreams (high-level snapshot)
@@ -80,7 +102,12 @@
 |------------|--------|-------------|
 | Orchestrator bootstrap | Complete | Playwright isolated, Graph context extracted, M365 deep scan done, walk return ingested |
 | Strategic context sync | Active | `docs/strategic_context.md` synced from task-planner; sync policy established |
-| Daily prioritization flow | Not started | Orchestrator's role is to advise on priorities using task-planner output + own org awareness |
+| Daily prioritization flow | Validated | Two full intake cycles completed. Scan→Enrich→Assess→Act/Hand loop working end-to-end including delegation. |
+| Shimshock 1:1 prep | Complete | 2026-03-04: Graph email/calendar scan + 2 M365 Copilot deep queries. 7-topic briefing delivered. Exports: shimshock_emails_recent.json, shimshock_meetings_recent.json. |
+| Forvis/IRS audit compliance | Waiting | FY25: Trevor reply + Bethany forward sent (artifacts due March 9). FY23 ABI: Sri forward in Drafts. Two To Do tasks still `notStarted`. |
+| B. Braun pilot scoping | Delegated | Delegated to `wt-2026-01-15__b-braun-pdf-synthesis` on 2026-03-03. Task: draft follow-up email to Jen Gotto proposing 30-min call. Last contact: 2026-02-11 (ball with Jen's team on data sample review). |
+| FDA dashboard data model | Not started | My Day task: Migrate data model to dataform prod project & have Eng schedule. Due 03/03. |
+| Contract Performance deck | Not started | My Day task: Review revised deck; integrate MI analysis for Joe/Nicole briefing. Due 03/03. |
 
 ---
 
@@ -118,10 +145,17 @@ Recently active (last 3 days):
 | `docs/strategic_context.md` | FY26 goals + 8-tier stakeholder hierarchy (synced from task-planner) |
 | `runs/2026-03-02__orchestrator/HANDOFF.md` | Chronological session journal |
 | `runs/2026-03-02__orchestrator/exports/` | Accumulated briefings, Graph context, walk notes |
+| `runs/2026-03-02__orchestrator/exports/todo_my_day_current.json` | Latest My Day task pull (3 tasks, mode=inferred_due_today) |
+| `runs/2026-03-02__orchestrator/exports/todo_all_current.json` | All 119 incomplete To Do tasks |
 | `runs/2026-03-02__orchestrator/context/ORCHESTRATOR_STATE.md` | This file — persistent agent memory |
 | `runs/2026-03-02__orchestrator/context/OPERATING_PROTOCOL.md` | Daily loop, decision framework, delegation format |
-| `runs/2026-03-02__orchestrator/scripts/pull_my_day_tasks.py` | Pull My Day tasks from Microsoft To Do via Graph |
+| `runs/2026-03-02__orchestrator/scripts/pull_my_day_tasks.py` | Pull My Day tasks from Microsoft To Do via Graph (inferred_due_today fallback) |
 | `runs/2026-03-02__orchestrator/scripts/scan_worktrees.py` | Scan and categorize all git worktrees |
+| `runs/2026-03-02__orchestrator/scripts/scan_forvis_irs_actions.py` | Graph mailbox scanner for Forvis/IRS threads |
+| `runs/2026-03-02__orchestrator/scripts/draft_forvis_emails.py` | Drafts reply/forward emails for Forvis follow-up |
+| `runs/2026-03-02__orchestrator/scripts/draft_sri_forward.py` | Forward ABI thread to Sri with context |
 | `.github/prompts/orchestrator.prompt.md` | Bootstrap prompt for new sessions |
+| `runs/2026-03-02__orchestrator/exports/shimshock_emails_recent.json` | 50 Shimshock-related email summaries (2026-03-04 scan) |
+| `runs/2026-03-02__orchestrator/exports/shimshock_meetings_recent.json` | 24 Shimshock calendar events (2026-03-04 scan) |
 
 ---

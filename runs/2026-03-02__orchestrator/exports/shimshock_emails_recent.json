@@ -1,0 +1,1175 @@
+[
+  {
+    "subject": "FW: FY27 CIAM carryover \u2013 quick relevance check needed (FOUND\u2011S\u201131 / CIAM\u2011S\u201112)",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-03-03T17:59:54Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAMKbinc8n-NJgOGcQMATH0w=",
+    "bodyPreview": "FYI - Michael, Zach, Elise and team did a nice job here. Remember that list of needs on CIAM we could never get them to deliver on? The Platform team just ended up building solution themselves, using AI to code it initially.\r\n\r\nMatt\r\n\r\nFrom: Bossemeyer, M",
+    "bodyText": "FYI - Michael, Zach, Elise and team did a nice job here. Remember that list of needs on CIAM we could never get them to deliver on? The Platform team just ended up building solution themselves, using AI to code it initially.\n\nMatt\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nDate: Thursday, February 26, 2026 at 5:15\u202fPM\nTo: Barrett, Craig <Craig_Barrett@PremierInc.com>\nCc: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>, De Luna, Michael <Michael_DeLuna@premierinc.com>, Siepiela, Audrey <Audrey_Earleson@PremierInc.com>, Lilly, Zach <Zach_Lilly@PremierInc.com>, Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: RE: FY27 CIAM carryover \u2013 quick relevance check needed (FOUND\u2011S\u201131 / CIAM\u2011S\u201112)\n\nHi Craig,\n\nClosing the loop \u2014 neither S-31 nor S-12 is needed for FY27.\n\nWhile they were blocked last year, the team built their own provisioning solution that handles our needs. It calls CIAM's APIs under the hood but gives us more flexibility & control. Credit to Michael & team for making that happen.\n\nThat said, Audrey flagged one area that I think deserves attention: supplier user creation\u00a0still runs through Premier Connect, which requires fields (e.g., tax ID) that are impractical for many of our new supplier users to provide individually. We've been working around it via one-off requests to Judy Fiddler, but CIAM isn't a fan of that process either. Today this is manageable because our user base is ~99% national accounts \u2014 but we have good reason to believe ... [truncated]"
+  },
+  {
+    "subject": "FW: Follow up from early",
+    "from": "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-03-03T17:26:03Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAJz8ovbbmUHmvG8dng1L0Jo=",
+    "bodyPreview": "FYI\r\n\r\nThanks,\r\n\r\nElise Prete-Adams\r\nSenior Technical Product Manager\r\nelise_prete-adams@premierinc.com\r\n\r\nNeed ABI access? Click here to request.\r\n\r\nFrom: Prete-Adams, Elise\r\nSent: Friday, February 27, 2026 4:48 PM\r\nTo: Miller, Suzanne <Suzanne_Miller@Pr",
+    "bodyText": "FYI\n\n\u00a0\n\nThanks,\n\n\u00a0\n\nElise Prete-Adams\n\nSenior Technical Product Manager\n\nelise_prete-adams@premierinc.com\n\n\u00a0\n\nNeed ABI access? Click here to request.\n\n\u00a0\n\nFrom: Prete-Adams, Elise \nSent: Friday, February 27, 2026 4:48 PM\nTo: Miller, Suzanne <Suzanne_Miller@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nSubject: FW: Follow up from early\n\n\u00a0\n\nHey Suzy,\n\n\u00a0\n\nAfternoon! Hope all is well.\n\n\u00a0\n\nHead\u2019s up, I gave Johnny and Melanie D some pretty blunt feedback this morning on the Workday effort (my email below is a bit of a mea culpa but also to reiterate action). We\u2019ve hit a wall where requirements are unclear, and the team is loathe to make decisions that may turn out to be wrong.\n\n\u00a0\n\nI\u2019m being pushy to try to get a commitment on action. If we keep on keeping on, we\u2019re going to be idle soon and stop progress; if we bite the bullet and make decisions, we might be wrong, but we\u2019ll get further in development.\n\n\u00a0\n\nI\u2019m not sending feedback to Melanie P since I trust Johnny and Melanie D are keeping her well in the loop, but since you\u2019re talented at getting people moving, I wanted to make sure you were aware of current conversations. \n\n\u00a0\n\n@Shimshock, Matthew, including you for visibility as well. \ud83d\ude0a\n\n\u00a0\n\nThanks,\n\n\u00a0\n\nElise Prete-Adams\n\nSenior Technical Product Manager\n\nelise_prete-adams@premierinc.com\n\n\u00a0\n\nNeed ABI access? Click here to request.\n\n\u00a0\n\nFrom: Prete-Adams, Elise \nSent: Friday, February 27, 2026 4:43 PM\nTo: Largin, Johnny <Johnny_Largin@PremierInc.com>; Deal, Mel... [truncated]"
+  },
+  {
+    "subject": "Re: ABI Monthly Team Meeting",
+    "from": "Lilly, Zach <Zach_Lilly@PremierInc.com>",
+    "to": [
+      "Shah, Sachin <Sachin_Shah@PremierInc.com>",
+      "Graham, Donielle <Donielle_Graham@PremierInc.com>",
+      "Morrall, Rich <Richard_Morrall@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Adam Papp-Kuster <adam.papp-kuster@nixs.com>",
+      "svitlana.snesar@nixs.com <svitlana.snesar@nixs.com>",
+      "Harsh Singh Baghel <harsh.baghel@neurealm.com>",
+      "shivani.d@neurealm.com <shivani.d@neurealm.com>",
+      "robin.thomas@neurealm.com <robin.thomas@neurealm.com>",
+      "Havrylov, Serhii <Serhii_Havrylov@PremierInc.com>",
+      "serhii.havrylov@nixs.com <serhii.havrylov@nixs.com>",
+      "Amoo, Abdullahi <Abdullahi_Amoo@PremierInc.com>",
+      "Kuster, Adam <Adam_Kuster@PremierInc.com>",
+      "Siepiela, Audrey <Audrey_Earleson@PremierInc.com>",
+      "Downs, Bethany <Bethany_Downs@PremierInc.com>",
+      "Moturu, Brahmani <Brahmani_Moturu@PremierInc.com>",
+      "Shakya, Brijesh <Brijesh_Shakya@PremierInc.com>",
+      "RamchandraMahato, DharmendraKumar <DharmendraKumar_RamchandraMahato@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>",
+      "Lambdin, Elizabeth <Elizabeth_Lambdin@PremierInc.com>",
+      "Rickert, Hannah <Hannah_Rickert@PremierInc.com>",
+      "Singh Baghel, Harsh <Harsh_SinghBaghel@PremierInc.com>",
+      "Plous, Jesse <Jesse_Plous@PremierInc.com>",
+      "Pothuru, Madhuri <Madhuri_Pothuru@premierinc.com>",
+      "Rayapati, Mahaboob Basha <MahaboobBasha_Rayapati@PremierInc.com>",
+      "Mohanty, Mala <Mala_Mohanty@PremierInc.com>",
+      "Duraikkannu, Manikandan <Manikandan_Duraikkannu@PremierInc.com>",
+      "George, Mathews <Mathews_George@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Nellutla, Megha <Megha_Nellutla@PremierInc.com>",
+      "Boyle, Michael <Mike_Boyle@PremierInc.com>",
+      "De Luna, Michael <Michael_DeLuna@PremierInc.com>",
+      "Itani, Mohamad <Mohamad_Itani@PremierInc.com>",
+      "Saleem, MohamedImran <MohamedImran_Saleem@PremierInc.com>",
+      "Khanna, Mukul <Mukul_Khanna@PremierInc.com>",
+      "Delli, Naveen <Naveen_Delli@PremierInc.com>",
+      "Venkateswarlu, Nivesh <Nivesh_Venkateswarlu@PremierInc.com>",
+      "Ionis, Oleh <Oleh_Ionis@PremierInc.com>",
+      "Misra, Payal <Payal_Misra@PremierInc.com>",
+      "Warade, Pratik Suryakant <PratikSuryakant_Warade@PremierInc.com>",
+      "Kandasamy, Prem Kumar <Prem_Kandasamy@PremierInc.com>",
+      "Rajendran, Priya <Priya_Rajendran@PremierInc.com>",
+      "Ramesh Rao, Rajkumar <Rajkumar_RameshRao@PremierInc.com>",
+      "Iluri, RamaKrishna <RamaKrishna_Iluri@PremierInc.com>",
+      "Thomas, RobinGamaliyel <RobinGamaliyel_Thomas@PremierInc.com>",
+      "Hossain, Sadd <Sadd_Hossain@premierinc.com>",
+      "Goel, Sapan <Sapan_Goel@premierinc.com>",
+      "Yenigalla, Satyasai <Satyasai_Yenigalla@premierinc.com>",
+      "Dhiman, Shivani <Shivani_Dhiman@PremierInc.com>",
+      "Jaiswal, Sonam <Sonam_Jaiswal@PremierInc.com>",
+      "Nandakkumar, SowminiTiruchengode <SowminiTiruchengode_Nandakkumar@PremierInc.com>",
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Moles, Stephanie <Stephanie_Moles@PremierInc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Snesar, Svitlana <Svitlana_Snesar@PremierInc.com>",
+      "Kapu, UdayKumar <UdayKumar_Kapu@PremierInc.com>",
+      "Balamurugan, Venkatesh <Venkatesh_Balamurugan@PremierInc.com>",
+      "Raman, Venket <Venket_Raman@PremierInc.com>",
+      "Mogarala, Vidhya <Vidhya_Mogarala@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-03-03T14:33:39Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAEy-cUmQr9tFhIo0uk2c2Hw=",
+    "bodyPreview": "Hey Team,\r\n\r\nQuick reminder to complete the survey if there are any questions you\u2019d like covered in the upcoming ABI Monthly Team Meeting. Thank you!\r\n\r\nIf you have any questions, please submit them ahead of time using this form (additional details about ",
+    "bodyText": "Hey Team,\n\nQuick reminder to complete the survey if there are any questions you\u2019d like covered in the upcoming ABI Monthly Team Meeting. Thank you!\n\nIf you have any questions, please submit them ahead of time using this form\u00a0(additional details about this can be found within the form).\n\nBest,\n\nZach Lilly\n\nSenior Technical Business Analyst\n\nAdvanced Business Intelligence (ABI) Team\n\nFrom:\u00a0Lilly, Zach <Zach_Lilly@PremierInc.com>\nSent:\u00a0Tuesday, February 24, 2026 2:27 PM\nTo:\u00a0Shah, Sachin <Sachin_Shah@PremierInc.com>; Graham, Donielle <Donielle_Graham@PremierInc.com>; Morrall, Rich <Richard_Morrall@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Adam Papp-Kuster <adam.papp-kuster@nixs.com>; svitlana.snesar@nixs.com <svitlana.snesar@nixs.com>; Harsh Singh Baghel <harsh.baghel@neurealm.com>; shivani.d@neurealm.com <shivani.d@neurealm.com>; robin.thomas@neurealm.com <robin.thomas@neurealm.com>; Havrylov, Serhii <Serhii_Havrylov@PremierInc.com>; serhii.havrylov@nixs.com <serhii.havrylov@nixs.com>; Amoo, Abdullahi <Abdullahi_Amoo@PremierInc.com>; Kuster, Adam <Adam_Kuster@PremierInc.com>; Siepiela, Audrey <Audrey_Earleson@PremierInc.com>; Downs, Bethany <Bethany_Downs@PremierInc.com>; Moturu, Brahmani <Brahmani_Moturu@PremierInc.com>; Shakya, Brijesh <Brijesh_Shakya@PremierInc.com>; RamchandraMahato, DharmendraKumar <DharmendraKumar_RamchandraMahato@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.... [truncated]"
+  },
+  {
+    "subject": "Supply Chain Leadership Team Meeting (All)",
+    "from": "Radcliff, Bruce <Bruce_Radcliff@PremierInc.com>",
+    "to": [
+      "Sorensen, Scott <Scott_Sorensen@premierinc.com>",
+      "McCleary, Scott <Scott_McCleary@PremierInc.com>",
+      "Rollins, Rachael <Rachael_Rollins@PremierInc.com>",
+      "Zablocki, Paul <Paul_Zablocki@PremierInc.com>",
+      "Montagnolo, Anthony <Anthony_Montagnolo@PremierInc.com>",
+      "Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Daigle, Pam <Pamela_Daigle@PremierInc.com>",
+      "Ralph, Joan <Joan_Ralph@PremierInc.com>",
+      "Jackson, Del <Del_Jackson@PremierInc.com>",
+      "Aftosmes, Peter <Peter_Aftosmes@PremierInc.com>",
+      "Mouroutsos, Anita <Anita_Mouroutsos@PremierInc.com>",
+      "Bain, Adam <Adam_Bain@PremierInc.com>",
+      "Roberts, Sharon <Sharon_Roberts@PremierInc.com>",
+      "Searl, Frank <Frank_Searl@PremierInc.com>",
+      "Hall, Brian <Brian_Hall@PremierInc.com>",
+      "Wyatt, Meg <Meg_Wyatt@PremierInc.com>",
+      "Karcher, Bob <BKarcher@acurity.com>",
+      "McCoy, Traci <Traci_McCoy@PremierInc.com>",
+      "Kenley, Ashley <Ashley_Kenley@PremierInc.com>",
+      "Schneider, Justin <Justin_Schneider@premierinc.com>",
+      "Russell, Wayne <Wayne_Russell@PremierInc.com>",
+      "MacKinnon, Kyle <Kyle_MacKinnon@premierinc.com>",
+      "Merendino, John <John_Merendino@PremierInc.com>",
+      "Craft, Donna <Donna_Craft@PremierInc.com>",
+      "Regan, Michael <Michael_Regan@PremierInc.com>",
+      "Nettles, David <David_Nettles@PremierInc.com>",
+      "Foutty, Todd <Todd_Foutty@PremierInc.com>",
+      "Kickert, Kathy <Kathy_Kickert@PremierInc.com>",
+      "Gurz, Paula <Paula_Gurz@PremierInc.com>",
+      "Sudol, Patrick <Patrick_Sudol@PremierInc.com>",
+      "Long, David (Sourcing) <David_Long@PremierInc.com>",
+      "Moore, Melia <Melia_Moore@premierinc.com>",
+      "Helms, Laura <Laura_Helms@PremierInc.com>",
+      "Connelly, Chad <Chad_Connelly@PremierInc.com>",
+      "Proctor, Melanie <Melanie_Proctor@PremierInc.com>",
+      "Beshara, Peter <PBeshara@acurity.com>",
+      "Monroe, Amy <Amy_Monroe@PremierInc.com>",
+      "Garrett, Jordan <Jordan_Garrett@PremierInc.com>",
+      "Stinson, Ken <Ken_Stinson@premierinc.com>",
+      "Behr, Matthew <Matthew_Behr@PremierInc.com>",
+      "Lehman, Molly <Molly_Lehman@PremierInc.com>",
+      "Thorne, Ken <Ken_Thorne@PremierInc.com>",
+      "Bichler, Joe <Joe_Bichler@premierinc.com>",
+      "Chrystal, Danielle <Danielle_Chrystal@PremierInc.com>",
+      "Abraham, Angela <Angela_Abraham@PremierInc.com>",
+      "Yu, Averill <Averill_Yu@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Miller, Steven <Steve_Miller@PremierInc.com>",
+      "Niven, Karen <Karen_Niven@PremierInc.com>",
+      "McFalls, Blaine <Blaine_McFalls@PremierInc.com>",
+      "Payes, Dulce <Dulce_Payes@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "McGraw, Maria <Maria_McGraw@premierinc.com>",
+      "Goel, Sapan <Sapan_Goel@premierinc.com>",
+      "Bolognia, Mandy <Mandy_Bolognia@premierinc.com>",
+      "Karl, Whitney <Whitney_Karl@PremierInc.com>",
+      "Jammalamadaka, Venkata <Venkata_Jammalamadaka@PremierInc.com>",
+      "Zagorsky, Ed <Ed_Zagorsky@premierinc.com>",
+      "Marshall, Pamela <Pamela_Marshall@PremierInc.com>",
+      "Erhart, Matt <Matt_Erhart@PremierInc.com>",
+      "Spahic, Irma <Irma_Spahic@PremierInc.com>",
+      "Kilbourne, Rebecca <Rebecca_Kilbourne@PremierInc.com>",
+      "Johnson, Leslie <Leslie_Johnson@PremierInc.com>",
+      "Chawla, Lucky <Lucky_Chawla@PremierInc.com>",
+      "Plourd, Paul <Paul_Plourd@PremierInc.com>",
+      "Shinozaki, Ayumi <Ayumi_Shinozaki@PremierInc.com>",
+      "Rutter, Beth <Beth_Rutter@PremierInc.com>",
+      "Hansen, Kevin <Kevin_Hansen@PremierInc.com>",
+      "Busch, Chris <Chris_Busch@PremierInc.com>",
+      "Wingert, Sharon <Sharon_Wingert@premierinc.com>",
+      "Twito, Larry <Larry_Twito@PremierInc.com>",
+      "Carrigan, Julie <Julie_Carrigan@PremierInc.com>",
+      "Roth, Abby <Abby_Roth@PremierInc.com>",
+      "Smith, Melissa <Melissa_Smith@PremierInc.com>",
+      "Stanley, Karolyn <Karolyn_Stanley@PremierInc.com>",
+      "Rounds, Caitlin <Caitlin_Rounds@PremierInc.com>"
+    ],
+    "cc": [
+      "Wilson, Janet <Janet_Wilson@premierinc.com>",
+      "Henderson, Amy <Amy_Henderson@PremierInc.com>"
+    ],
+    "date": "2026-03-02T16:21:00Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAI7ETmxJpe9BnrXa35RbnZc=",
+    "bodyPreview": "Leadership Meeting to include Senior Directors and above.\r\n\r\nCameras are encouraged!\r\n________________________________________________________________________________\r\nMicrosoft Teams Need help?\r\nJoin the meeting now\r\nMeeting ID: 283 933 053 317 97\r\nPassc",
+    "bodyText": "Leadership Meeting to include Senior Directors and above.\n\n\u00a0\n\nCameras are encouraged!\n\n________________________________________________________________________________\n\nMicrosoft Teams Need help? \n\nJoin the meeting now \n\nMeeting ID: 283 933 053 317 97 \n\nPasscode: VY6jh6Tc \n\nDial in by phone \n\n+1 980-729-7847,,709897010# United States, Charlotte \n\n(833) 445-2017,,709897010# United States (Toll-free) \n\nFind a local number \n\nPhone conference ID: 709 897 010# \n\nFor organizers: Meeting options | Reset dial-in PIN \n\nOrg help \n\n________________________________________________________________________________"
+  },
+  {
+    "subject": "Upstream Data & Sourcing Analytics",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Bichler, Joe <Joe_Bichler@premierinc.com>"
+    ],
+    "cc": [],
+    "date": "2026-03-02T14:46:40Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAAkdILQmsPJLrUGGmNyBC7E=",
+    "bodyPreview": "Hi Joe,\r\n\r\nMy team (ABI) has been building upstream data models that I think overlap significantly with some of the data needs you're working through on the sourcing side, and I'd like to make sure we're not duplicating effort.\r\n\r\nSpecifically, we've esta",
+    "bodyText": "Hi Joe,\n\nMy team (ABI) has been building upstream data models that I think overlap significantly with some of the data needs you're working through on the sourcing side, and I'd like to make sure we're not duplicating effort.\n\nSpecifically, we've established supplier parent/child mappings, category-to-service-line attribution, and clinical & non-clinical volume measurement as part of our data work supporting the Portfolio Expansion project (working with Brian/Jordan/Jennie). I'd love to spend a few minutes understanding what you're pulling together and where there might be a fit.\n\nI\u2019m also trying to figure out the best way to help support what you and Justin\u2019s team are trying to achieve long-term. Attached is what I have for context so far.\n\nI'd also like to tee up a follow-on conversation around some leading\u2011indicator work we've been doing on contract and program health \u2014 early signals on performance trends that could be useful for your analysis down the road.\n\nLooking forward to connecting again!\n\nMatt\n\n________________________________________________________________________________\nMicrosoft Teams meeting \nJoin: https://teams.microsoft.com/meet/27889801269067?p=XEhpFx4Ab1GwMpnGWn \nMeeting ID: 278 898 012 690 67 \nPasscode: dg3hZ7DC \n\nNeed help? | System reference\nDial in by phone \n+1 980-729-7847,,931261149# United States, Charlotte\nFind a local number\nPhone conference ID: 931 261 149# \nFor organizers: Meeting options | Reset dial-in PIN\nOrg help \n__________________________... [truncated]"
+  },
+  {
+    "subject": "Weekly Catch up: Matt B. and Matt S.",
+    "from": "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-03-02T13:06:25Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAJ-WUl6Gb0_Zv3CLhX8zIgs=",
+    "bodyPreview": "",
+    "bodyText": ""
+  },
+  {
+    "subject": "Accepted: Weekly Catch up: Matt B. and Matt S.",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-03-02T00:52:33Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAJ-WUl6Gb0_Zv3CLhX8zIgs=",
+    "bodyPreview": "",
+    "bodyText": ""
+  },
+  {
+    "subject": "New Time Proposed: Weekly Catch up: Matt B. and Matt S.",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-03-01T18:53:14Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAJ-WUl6Gb0_Zv3CLhX8zIgs=",
+    "bodyPreview": "",
+    "bodyText": ""
+  },
+  {
+    "subject": "Tentative: Weekly Catch up: Matt B. and Matt S.",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-03-01T18:53:05Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAJ-WUl6Gb0_Zv3CLhX8zIgs=",
+    "bodyPreview": "",
+    "bodyText": ""
+  },
+  {
+    "subject": "FW: Matt's time entry week of Feb 15th-21st",
+    "from": "Lewis, Andrea <ANDREA_LEWIS@premierinc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-27T21:08:19Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAArUoNfEUkkSl5Ryiy9Om7k=",
+    "bodyPreview": "Matt \u2013 FYI below.\r\n\r\nThanks\r\n\r\nAndrea L. Lewis\r\nExecutive Coordinator to:\r\n\r\nBill Marquardt, GVP of Digital Supply Chain\r\nChad Connelly, VP of Supply Chain Technology\r\nLarry Twito, VP of Business Development-AP Automation & Payables\r\nMatthew Behr, VP of O",
+    "bodyText": "Matt \u2013 FYI below.\n\n\u00a0\n\nThanks\n\n\u00a0\n\nAndrea L. Lewis\n\nExecutive Coordinator to: \n\n\u00a0\n\nBill Marquardt, GVP of Digital Supply Chain\n\nChad Connelly, VP of Supply Chain Technology\n\nLarry Twito, VP of Business Development-AP Automation & Payables\n\nMatthew Behr, VP of Operations, Invoice Automation\n\nMatthew Bossemeyer, VP of Advanced Analytics & Supply Chain Technology\n\nMatthew Shimshock, VP of Supply Chain Technology\n\nPaul Zablocki, VP of Technical Support, Invoice Automation & Payables\n\n\u00a0\n\nPhone: 704.449.2383 | Supply Chain Services| Premier, Inc. \n\nCliftonStrengths\u00ae: Connectedness |Positivity |Empathy |Strategic |Developer\n\n\u00a0\n\nFrom: HR Inquiries <HRInquiries@PremierInc.com> \nSent: Wednesday, February 25, 2026 1:16 PM\nTo: Lewis, Andrea <ANDREA_LEWIS@premierinc.com>\nSubject: RE: Matt's time entry week of Feb 15th-21st\n\n\u00a0\n\nI have entered the PTO for Feb 16-20.\n\n\u00a0\n\nFrom: Corporate Financial Services - Payroll <CorpFinSvcs_Payroll@PremierInc.com> \nSent: Tuesday, February 24, 2026 9:11 AM\nTo: Lewis, Andrea <ANDREA_LEWIS@premierinc.com>; HR Inquiries <HRInquiries@PremierInc.com>\nSubject: RE: Matt's time entry week of Feb 15th-21st\n\n\u00a0\n\nGood morning,\n\n\u00a0\n\nTimesheets are currently closed for payroll processing and will reopen at 11:59pm tonight. \n\nAfter looking into this a little further on my end, his pay will not be affected as he is a non-exempt employee. However, he will need to adjust his timesheet once has open to account for his flex time off and not his project hours that are currently ... [truncated]"
+  },
+  {
+    "subject": "RE: Google/Pythian Cloud Costs Breakdown",
+    "from": "Miller, Jeremy <Jeremy_Miller@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [
+      "Daugherty, Treston <Treston_Daugherty@premierinc.com>",
+      "Osborn, Mackenzie <Mackenzie_Taylor@premierinc.com>",
+      "Marco, Zach <Zach_Marco@PremierInc.com>",
+      "Skender, Kristy <Kristy_Skender@premierinc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Haines, Matt <Matt_Haines@premierinc.com>",
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-27T15:27:50Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE6S4lVIjkZrvOBIaG8_k-k=",
+    "bodyPreview": "Thank you for the update, Matt!\r\n\r\nMatt & Lindsay have been made aware, but we did create new cost centers for the Tech Business unit that includes the service lines Tech Admin, Clinical and Financial Performance Solutions (CFP, formerly PIT), Digital Sup",
+    "bodyText": "Thank you for the update, Matt!\n\n\u00a0\n\nMatt & Lindsay have been made aware, but we did create new cost centers for the Tech Business unit that includes the service lines Tech Admin, Clinical and Financial Performance Solutions (CFP, formerly PIT), Digital Supply Chain (DSC) and Clinical Decision Support (CDS). There are new cost centers for each of the product families under the Tech business unit service line \u2013 one for revenue, COS, SG&A, and Development, Marketing and Legal, when applicable. \n\n\u00a0\n\nWhen assigning cost centers for Tech Business unit products, we want to use these new cost centers. Any other products that are non-Tech can be mapped to the legacy cost centers. See attached on the second tab for these new Tech Business Unit cost centers that have a one for one relationship to product family. \n\n\u00a0\n\nLet me know if you have any questions. \n\n\u00a0\n\nThank you, \n\n\u00a0\n\nJeremy\n\n\u00a0\n\nJeremy Miller\n\nDirector of Accounting, CPA\n\nJeremy_Miller@premierinc.com | Premier, Inc. (NASDAQ: PINC)\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 10:57 AM\nTo: Miller, Jeremy <Jeremy_Miller@PremierInc.com>\nCc: Daugherty, Treston <Treston_Daugherty@PremierInc.com>; Osborn, Mackenzie <Mackenzie_Taylor@premierinc.com>; Marco, Zach <Zach_Marco@PremierInc.com>; Skender, Kristy <Kristy_Skender@premierinc.com>; Bava, Stephen <Stephen_Bava@PremierInc.com>; Haines, Matt <Matt_Haines@premierinc.com>; Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Pre... [truncated]"
+  },
+  {
+    "subject": "RE: Google/Pythian Cloud Costs Breakdown",
+    "from": "Stanley, Karolyn <Karolyn_Stanley@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-27T13:23:06Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE6S4lVIjkZrvOBIaG8_k-k=",
+    "bodyPreview": "Thanks, Matt! Accounting just created new cost centers that align to our Digital Supply Chain Product Families. See updated Cost Centers below.\r\n\r\n\r\nProduct Family/Practice Area\r\n\r\nBusiness Owner\r\n\r\nCost Center\r\n\r\nProvider Analytics\r\n\r\nLindsay Schmidt",
+    "bodyText": "Thanks, Matt! Accounting just created new cost centers that align to our Digital Supply Chain Product Families. See updated Cost Centers below.\n\n\u00a0\n\nProduct Family/Practice Area\n\nBusiness Owner\n\nCost Center\n\nProvider Analytics\n\nLindsay Schmidt\n\n810302 GPO Development (or 110171 ITS PCSC Revenue?) 1200012 Provider Analytics - PHSI SG&A\n\n\u00a0Supplier Analytics\n\nLindsay Schmidt\n\n810302 GPO Development \n\n1200072 Supplier Analytics - PHSI SG&A\n\n\u00a0Provider P2P\n\nMatt Shimshock\n\n130010 Remitra Operations (Revenue & SG&A) \n\n1200032 Provider P2P - PHSI SG&A\n\n\u00a0Supplier P2P\n\nMatt Shimshock\n\n130010 Remitra Operations (Revenue & SG&A) \n\n1200092 Supplier P2P - SG&A\n\nOperate the GPO\n\nChad Connelly \n\n810302 GPO Development\n\n\u00a0\n\nPriscilla historically submitted the budget to the 4 cost centers below, but Accounting is asking us to review and make sure we have the costs correctly allocated to our product families going forward. \n\nThe stuff that was historically in ITS PCSC Revenue should loosely translate to Provider Analytics (Supply Analytics, Supply Chain Analytics, SC Decision Support, etc.)The stuff in 810302 should be internal tools that support the GPOThe stuff that was in 130010 should loosely translate to Provider P2P (Invoice Automation, etc.)I\u2019m not sure what was in 120820 PPP Customer Analytics, but if it\u2019s stuff outside of Digital Supply Chain/Operate the GPO, I would label it as \u201cNot Digital Supply Chain\u201d for the exercise accounting asked you to do.\u00a0\n\nThanks!\nKarolyn \n\n\u00a0\n\nFrom: Shimshoc... [truncated]"
+  },
+  {
+    "subject": "RE: ABI Superuser Training",
+    "from": "Miller, Steven <Steve_Miller@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-27T13:05:47Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAO787moUBUi2uedMIeap11o=",
+    "bodyPreview": "Many members (including UnityPoint) are accessing the core Supply Chain tables (Transaction Analysis, Product And Pricing, etc) through the mart but don\u2019t have the skills to effectively pull the data they need. I get asked all the time for help beyond jus",
+    "bodyText": "Many members (including UnityPoint) are accessing the core Supply Chain tables (Transaction Analysis, Product And Pricing, etc) through the mart but don\u2019t have the skills to effectively pull the data they need. I get asked all the time for help beyond just walking them through the data. This is similar to the ERP data support issues. I think it\u2019s reasonable to ask the Customer Success team to answer questions about the data but there needs to be additional support on how to use it. If we don\u2019t it will ultimately cost us more money as members set up queries and connections to BI tools that consistently pull in too much data beyond what their business use case needs.\n\n\u00a0\n\nSteve\n\n\u00a0\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 5:30 PM\nTo: Miller, Steven <Steve_Miller@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nSubject: Re: ABI Superuser Training\n\n\u00a0\n\nThrough what product(s) does UnityPoint get access to BQ? Or did we just turn them on by virtue of being a member?\n\n\u00a0\n\nFrom: Miller, Steven <Steve_Miller@PremierInc.com>\nDate: Thursday, February 26, 2026 at 3:58\u202fPM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>, Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: FW: ABI Superuser Training\n\nJust FYI\u2026here is another member asking for help using BigQuery. I\u2019m going to do my best and encourage him to use online resources but there is a need members have for more support. Just want to let you kno... [truncated]"
+  },
+  {
+    "subject": "RE: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867",
+    "from": "Zablocki, Paul <Paul_Zablocki@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-26T22:39:05Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAF0nc2yndKxJpnjOA4xetT8=",
+    "bodyPreview": "Thanks Matt B, will keep this in mind.\r\n\r\nPaul Zablocki\r\nVP, Technical Support\r\nP2P Solutions | Premier Inc.\r\nM: 720.284.1558\r\nwww.premierinc.com\r\n\r\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\r\nSent: Thursday, February 26, 2026 3:33 PM\r\nTo:",
+    "bodyText": "Thanks Matt B, will keep this in mind.\n\n\u00a0\n\nPaul Zablocki\n\nVP, Technical Support\n\nP2P Solutions | Premier Inc.\nM: 720.284.1558\n\nwww.premierinc.com\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 3:33 PM\nTo: Zablocki, Paul <Paul_Zablocki@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nSubject: Re: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867\n\n\u00a0\n\nWe do have an enterprise license for Google Workspace available to select employees. If we need to migrate legacy Google accounts, Paige Starnes is my point of contact for handling the account, and then the ABI Platform team would do provisioning.\u00a0\n\n\u00a0\n\nFrom: Zablocki, Paul <Paul_Zablocki@PremierInc.com>\nDate: Thursday, February 26, 2026 at 4:54\u202fPM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: RE: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867\n\nMatt,\n\n\u00a0\n\nLooks like it\u2019s related to a subscription for \u201cGoogle Workspace\u201d. I\u2019ll check with the P2P Teams to determine who might be using this and will contact Google to update address to a person\u2019s name who is still here. If not needed will cancel.\n\n\u00a0\n\nPaul Zablocki\n\nVP, Technical Support\n\nP2P Solutions | Premier Inc.\nM: 720.284.1558\n\nwww.premierinc.com\n\n\u00a0\n\nFrom:\u00a0Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nSent:\u00a0Thursday, February 26, 2026 2:46 PM\nTo:\u00a0Zablocki, Paul <Paul_Zablocki@Premier... [truncated]"
+  },
+  {
+    "subject": "Re: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Zablocki, Paul <Paul_Zablocki@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-26T22:32:58Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAF0nc2yndKxJpnjOA4xetT8=",
+    "bodyPreview": "We do have an enterprise license for Google Workspace available to select employees. If we need to migrate legacy Google accounts, Paige Starnes is my point of contact for handling the account, and then the ABI Platform team would do provisioning.\r\n\r\nFrom",
+    "bodyText": "We do have an enterprise license for Google Workspace available to select employees. If we need to migrate legacy Google accounts, Paige Starnes is my point of contact for handling the account, and then the ABI Platform team would do provisioning.\u00a0\n\nFrom: Zablocki, Paul <Paul_Zablocki@PremierInc.com>\nDate: Thursday, February 26, 2026 at 4:54\u202fPM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: RE: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867\n\nMatt,\n\n\u00a0\n\nLooks like it\u2019s related to a subscription for \u201cGoogle Workspace\u201d. I\u2019ll check with the P2P Teams to determine who might be using this and will contact Google to update address to a person\u2019s name who is still here. If not needed will cancel.\n\n\u00a0\n\nPaul Zablocki\n\nVP, Technical Support\n\nP2P Solutions | Premier Inc.\nM: 720.284.1558\n\nwww.premierinc.com\n\n\u00a0\n\nFrom:\u00a0Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nSent:\u00a0Thursday, February 26, 2026 2:46 PM\nTo:\u00a0Zablocki, Paul <Paul_Zablocki@PremierInc.com>\nCc:\u00a0Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject:\u00a0FW: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867\n\n\u00a0\n\nDo you know what this is ?\u00a0 It is sent to Bevan May in Canada.\u00a0\u00a0 Seems like an account someone forgot to close.\n\n\u00a0\n\nFrom: premierinc@myworkday.com\u00a0<premierinc@myworkday.com>\nSent:\u00a0Thursday, February 26, 2026 3:46 PM\nTo:\u00a0Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nSubject:\u00a0A Task Awai... [truncated]"
+  },
+  {
+    "subject": "Re: ABI Superuser Training",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Miller, Steven <Steve_Miller@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-26T22:30:28Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAO787moUBUi2uedMIeap11o=",
+    "bodyPreview": "Through what product(s) does UnityPoint get access to BQ? Or did we just turn them on by virtue of being a member?\r\n\r\nFrom: Miller, Steven <Steve_Miller@PremierInc.com>\r\nDate: Thursday, February 26, 2026 at 3:58\u202fPM\r\nTo: Shimshock, Matthew <Matt_Shimshock@",
+    "bodyText": "Through what product(s) does UnityPoint get access to BQ? Or did we just turn them on by virtue of being a member?\n\nFrom: Miller, Steven <Steve_Miller@PremierInc.com>\nDate: Thursday, February 26, 2026 at 3:58\u202fPM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>, Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: FW: ABI Superuser Training\n\nJust FYI\u2026here is another member asking for help using BigQuery. I\u2019m going to do my best and encourage him to use online resources but there is a need members have for more support. Just want to let you know that I consistently get asked questions on this.\n\n\u00a0\n\nFrom:\u00a0Bavas, Nick <nick.bavas@unitypoint.org>\nSent:\u00a0Thursday, February 26, 2026 3:50 PM\nTo:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>; Fink, Jonathan <Jon_Fink@PremierInc.com>\nCc:\u00a0Kirchoff, Nicole <NICOLE_KIRCHOFF@premierinc.com>; Currey, Colin <Colin_Currey@PremierInc.com>\nSubject:\u00a0RE: ABI Superuser Training\n\n\u00a0\n\nGood Afternoon, Steven! Do you have any availability to jump on a 15 minute call? I just have some questions about using BigQuery. Thanks! Nick Bavas Contract Manager - Cardiology & Orthopedics UnityPoint Health 515-478-6044 Nick.\u200aBavas@\u200aunitypoint.\u200aorg\n\nZjQcmQRYFpfptBannerStart\n\nThis Message Is From an External Sender\n\nThis email did not originate from the Premier, Inc. network. Use caution when opening attachments or clicking on URLs.\n\n\u00a0 \u00a0\u00a0Report\u00a0Suspicious\u00a0 \u00a0\u00a0\u200c\n\nZjQcmQRYFpfptBannerEnd\n\nGood Afternoon, Steven!\n\n\u00a0\n\nDo you have any availability to jump on a ... [truncated]"
+  },
+  {
+    "subject": "RE: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867",
+    "from": "Zablocki, Paul <Paul_Zablocki@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "date": "2026-02-26T21:54:44Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAF0nc2yndKxJpnjOA4xetT8=",
+    "bodyPreview": "Matt,\r\n\r\nLooks like it\u2019s related to a subscription for \u201cGoogle Workspace\u201d. I\u2019ll check with the P2P Teams to determine who might be using this and will contact Google to update address to a person\u2019s name who is still here. If not needed will cancel.",
+    "bodyText": "Matt,\n\n\u00a0\n\nLooks like it\u2019s related to a subscription for \u201cGoogle Workspace\u201d. I\u2019ll check with the P2P Teams to determine who might be using this and will contact Google to update address to a person\u2019s name who is still here. If not needed will cancel.\n\n\u00a0\n\nPaul Zablocki\n\nVP, Technical Support\n\nP2P Solutions | Premier Inc.\nM: 720.284.1558\n\nwww.premierinc.com\n\n\u00a0\n\nFrom: Shimshock, Matthew <Matt_Shimshock@PremierInc.com> \nSent: Thursday, February 26, 2026 2:46 PM\nTo: Zablocki, Paul <Paul_Zablocki@PremierInc.com>\nCc: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: FW: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867\n\n\u00a0\n\nDo you know what this is ?\u00a0 It is sent to Bevan May in Canada.\u00a0\u00a0 Seems like an account someone forgot to close. \n\n\u00a0\n\nFrom: premierinc@myworkday.com <premierinc@myworkday.com> \nSent: Thursday, February 26, 2026 3:46 PM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nSubject: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867\n\n\u00a0\n\nPlease log into the Workday system to complete this action. Business Process: Approval: Awaiting Action by Bill Marquardt, Matt Shimshock, or Paul Zablocki Subject: Procurement Card Transaction Verification: P-Card-0008867, Paige Starnes (19023)\n\nZjQcmQRYFpfptBannerStart\n\nThis Message Is From an External Sender \n\nThis email did not originate from the Premier, Inc. network. Use caution when opening attachments or clicking on URLs. \n\n\u00a0\u00a0\u00a0\u00a0Report\u00a0Suspicious\u00a0\u00a0\u00a0\u00a0\u200c \n\nZjQcmQRYFpfp... [truncated]"
+  },
+  {
+    "subject": "FW: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867",
+    "from": "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+    "to": [
+      "Zablocki, Paul <Paul_Zablocki@PremierInc.com>"
+    ],
+    "cc": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "date": "2026-02-26T21:45:33Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAF0nc2yndKxJpnjOA4xetT8=",
+    "bodyPreview": "Do you know what this is ?  It is sent to Bevan May in Canada.   Seems like an account someone forgot to close.\r\n\r\nFrom: premierinc@myworkday.com <premierinc@myworkday.com>\r\nSent: Thursday, February 26, 2026 3:46 PM\r\nTo: Shimshock, Matthew <Matt_Shimshock",
+    "bodyText": "Do you know what this is ?\u00a0 It is sent to Bevan May in Canada.\u00a0\u00a0 Seems like an account someone forgot to close. \n\n\u00a0\n\nFrom: premierinc@myworkday.com <premierinc@myworkday.com> \nSent: Thursday, February 26, 2026 3:46 PM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nSubject: A Task Awaits You: Approval by Cost Center Expense Manager - P-Card-0008867\n\n\u00a0\n\nPlease log into the Workday system to complete this action. Business Process: Approval: Awaiting Action by Bill Marquardt, Matt Shimshock, or Paul Zablocki Subject: Procurement Card Transaction Verification: P-Card-0008867, Paige Starnes (19023)\n\nZjQcmQRYFpfptBannerStart\n\nThis Message Is From an External Sender \n\nThis email did not originate from the Premier, Inc. network. Use caution when opening attachments or clicking on URLs. \n\n\u00a0\u00a0\u00a0\u00a0Report\u00a0Suspicious\u00a0\u00a0\u00a0\u00a0\u200c \n\nZjQcmQRYFpfptBannerEnd\n\nPlease log into the Workday system to complete this action.\n\n\u00a0\n\nBusiness Process: Approval: Awaiting Action by Bill Marquardt, Matt Shimshock, or Paul Zablocki\n\nSubject: Procurement Card Transaction Verification: P-Card-0008867, Paige Starnes (19023) on 02/26/2026 for $218.40\n\nClick here to view the notification details.\n\n\u00a0\n\n\u00a0\n\nThis email was intended for Matt_Shimshock@PremierInc.com \u00b7 Manage Preferences \n\nPremier, Inc. \u00b7 13520 Ballantyne Corporate Place, Charlotte, North Carolina 28277"
+  },
+  {
+    "subject": "FW: ABI Superuser Training",
+    "from": "Miller, Steven <Steve_Miller@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-26T20:58:41Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAO787moUBUi2uedMIeap11o=",
+    "bodyPreview": "Just FYI\u2026here is another member asking for help using BigQuery. I\u2019m going to do my best and encourage him to use online resources but there is a need members have for more support. Just want to let you know that I consistently get asked questions on this.",
+    "bodyText": "Just FYI\u2026here is another member asking for help using BigQuery. I\u2019m going to do my best and encourage him to use online resources but there is a need members have for more support. Just want to let you know that I consistently get asked questions on this.\n\n\u00a0\n\nFrom: Bavas, Nick <nick.bavas@unitypoint.org> \nSent: Thursday, February 26, 2026 3:50 PM\nTo: Miller, Steven <Steve_Miller@PremierInc.com>; Fink, Jonathan <Jon_Fink@PremierInc.com>\nCc: Kirchoff, Nicole <NICOLE_KIRCHOFF@premierinc.com>; Currey, Colin <Colin_Currey@PremierInc.com>\nSubject: RE: ABI Superuser Training\n\n\u00a0\n\nGood Afternoon, Steven! Do you have any availability to jump on a 15 minute call? I just have some questions about using BigQuery. Thanks! Nick Bavas Contract Manager - Cardiology & Orthopedics UnityPoint Health 515-478-6044 Nick.\u200aBavas@\u200aunitypoint.\u200aorg\n\nZjQcmQRYFpfptBannerStart\n\nThis Message Is From an External Sender \n\nThis email did not originate from the Premier, Inc. network. Use caution when opening attachments or clicking on URLs. \n\n\u00a0\u00a0\u00a0\u00a0Report\u00a0Suspicious\u00a0\u00a0\u00a0\u00a0\u200c \n\nZjQcmQRYFpfptBannerEnd\n\nGood Afternoon, Steven!\n\n\u00a0\n\nDo you have any availability to jump on a 15 minute call?\u00a0 I just have some questions about using BigQuery.\u00a0 Thanks!\n\n\u00a0\n\n\u00a0\n\n\u00a0\n\n\u00a0\n\nNick Bavas\n\nContract Manager - Cardiology & Orthopedics\n\nUnityPoint Health\n\n515-478-6044\n\nNick.Bavas@unitypoint.org\n\n\u00a0\n\nFrom: Miller, Steven <Steve_Miller@PremierInc.com> \nSent: Wednesday, January 14, 2026 10:23 AM\nTo: Fink, Jonathan <Jon_Fink@PremierInc.com>; Bavas... [truncated]"
+  },
+  {
+    "subject": "FW: Google and Potential Liability Gaps",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-26T20:19:21Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAEu9xu3301xGvipHA8byXM8=",
+    "bodyPreview": "Hey Matt,\r\n\r\nQuick heads-up on an upcoming expense. We've crafted a statement of work with Pythian to implement more advanced PHI detection and scanning across our Google Cloud environment. Legal (Evan Williams) has reviewed and approved the SOW.\r\n\r\nBackg",
+    "bodyText": "Hey Matt,\n\nQuick heads-up on an upcoming expense. We've crafted a statement of work with Pythian to implement more advanced PHI detection and scanning across our Google Cloud environment. Legal (Evan Williams) has reviewed and approved the SOW.\n\nBackground:\u00a0This work is driven by heightened concern (from legal & Todd\u2019s group) over potential liability should any meaningful PHI exist within our cloud platforms where it shouldn\u2019t be. Apparently, we provide much greater indemnity to our customers that the major cloud providers give to us, putting Premier at particular risk should PHI get exposed, even if it's the fault of the cloud provider. While this is primarily an issue with the way we write contracts IMO, it can\u2019t hurt to go an extra mile to ensure that if PHI is making its way into Google (e.g. advisory staff uploading clinical data), we detect it quickly.\n\nApproach:\u00a0We've leveraged Pythian to help design the solution, but we'll be implementing it ourselves internally to minimize both impact to the team and expense.\n\nCost & Timeline:\n\n~$70K total expenseTargeting a start in the next month or twoExpected to take a couple of months to completeNo action needed on your end \u2014 just wanted to make sure you're aware of the spend and the rationale before it hits. Just let me know if you have any concerns, or if we should delay the work. Currently we plan to begin sometime late next month.\n\nThanks,\nMatt\n\nFrom: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nDate: Thursday, Dece... [truncated]"
+  },
+  {
+    "subject": "RE: SQL Server Reporting Database  - Premier ERP",
+    "from": "Miller, Steven <Steve_Miller@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Downs, Bethany <Bethany_Downs@PremierInc.com>",
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Siepiela, Audrey <Audrey_Earleson@PremierInc.com>"
+    ],
+    "cc": [
+      "Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>",
+      "Haggett, Edward <Edward_Haggett@premierinc.com>"
+    ],
+    "date": "2026-02-26T19:15:02Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOeHcMogF0UsiBIL1QSORvs=",
+    "bodyPreview": "Thanks Matt. I\u2019ll let Michele Reed at UCI know that Cindy and Ed will be reaching out to her and the team. I appreciate everyone\u2019s help with this.\r\n\r\nSteve\r\n\r\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\r\nSent: Thursday, February 26, 2026 12",
+    "bodyText": "Thanks Matt. I\u2019ll let Michele Reed at UCI know that Cindy and Ed will be reaching out to her and the team. I appreciate everyone\u2019s help with this.\n\n\u00a0\n\nSteve\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 12:53 PM\nTo: Miller, Steven <Steve_Miller@PremierInc.com>; Bava, Stephen <Stephen_Bava@PremierInc.com>; Downs, Bethany <Bethany_Downs@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Siepiela, Audrey <Audrey_Earleson@PremierInc.com>\nCc: Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>; Haggett, Edward <Edward_Haggett@premierinc.com>\nSubject: Re: SQL Server Reporting Database - Premier ERP\n\n\u00a0\n\nHi all,\n\n\u00a0\n\nI had a great call today with Cindy, Ed, Don, and Gene from the ERP team. They plan to contact the UCI team to understand their specific needs better and will assist us in triaging from there. Cindy emphasized their commitment to being the frontline support for ERP clients, including matters related to ABI content directly tied to ERP. However, they must avoid becoming general trainers for non-ERP technologies like Power BI or BigQuery, which I agree with.\n\n\u00a0\n\nOnce the ERP team identifies the UCI team's needs, particularly if UCI requires guidance on best practices for exporting from BigQuery, I assured them that we would provide level 3 support. For now, there is no further action required from our group until we hear back from Cindy and her team.\n... [truncated]"
+  },
+  {
+    "subject": "RE: Pythian - GCP Premier Commitment Contract",
+    "from": "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-26T18:22:08Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAMsTPTObuE4Ps2kSUs16npo=",
+    "bodyPreview": "Nice work\u2026\r\n\r\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\r\nSent: Thursday, February 26, 2026 10:32 AM\r\nTo: Schwering, Ben <Ben_Schwering@Premierinc.com>; Marquardt, Bill <Bill_Marquardt@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@Pr",
+    "bodyText": "Nice work\u2026 \n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 10:32 AM\nTo: Schwering, Ben <Ben_Schwering@Premierinc.com>; Marquardt, Bill <Bill_Marquardt@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSubject: Re: Pythian - GCP Premier Commitment Contract\n\n\u00a0\n\nThank you all!\n\n\u00a0\n\nFrom: Schwering, Ben <Ben_Schwering@Premierinc.com>\nDate: Thursday, February 26, 2026 at 8:46\u202fAM\nTo: Marquardt, Bill <Bill_Marquardt@PremierInc.com>, Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSubject: Re: Pythian - GCP Premier Commitment Contract\n\nI agree - a 2-year commitment makes sense. Let me know if I can help with the justification if you get any pushback.\n\n\u00a0\n\nBen\n\n\u00a0\n\nFrom: Marquardt, Bill <Bill_Marquardt@PremierInc.com>\nDate: Thursday, February 26, 2026 at 8:28\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Shimshock, Matthew <Matt_Shimshock@PremierInc.com>, Schwering, Ben <Ben_Schwering@Premierinc.com>\nCc: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSubject: RE: Pythian - GCP Premier Commitment Contract\n\nNice work on the negotiations.\n\n\u00a0\n\nYour recommendation makes sense to me.\u00a0\u00a0 I do want to run this by Ben who\u2019s leading the Databricks project.\u00a0\u00a0 We\u2019ve said in the past that a full migration away from GCP is far down the list of... [truncated]"
+  },
+  {
+    "subject": "RE: Google/Pythian Cloud Costs Breakdown",
+    "from": "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+    "to": [
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Stanley, Karolyn <Karolyn_Stanley@PremierInc.com>"
+    ],
+    "cc": [
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-26T18:13:32Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE6S4lVIjkZrvOBIaG8_k-k=",
+    "bodyPreview": "Looping Karolyn in..\r\n\r\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\r\nSent: Thursday, February 26, 2026 9:25 AM\r\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\r\nCc: Ramayanam, Srikan",
+    "bodyText": "Looping Karolyn in..\n\n\u00a0\n\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com> \nSent: Thursday, February 26, 2026 9:25 AM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: RE: Google/Pythian Cloud Costs Breakdown\n\n\u00a0\n\nFollow up then \u2013 should some of it be mapped to Operate the GPO? Or Advisory? \n\n\u00a0\n\nLindsay K. Schmidt, MHSA\u00a0\n\nVice President, Advanced Analytics and Supply Chain Technology\n\nDigital Supply Chain | Premier Inc.\u00a0\n\nMobile: 913.461.9378 \u00a0\n\npremierinc.com\u00a0\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 8:18 AM\nTo: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: Re: Google/Pythian Cloud Costs Breakdown\n\n\u00a0\n\nMarket insights I believe.\n\n\u00a0\n\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nSent: Thursday, February 26, 2026 9:12:39 AM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: RE: Google/Pythian Cloud Costs Breakdown \n\n\u00a0\n\nThe 2nd row may not be accurate.\u00a0 Was that intended to... [truncated]"
+  },
+  {
+    "subject": "RE: Pythian - GCP Premier Commitment Contract (2\u2011Year, $3.1M)",
+    "from": "Webb, George <George_Webb@premierinc.com>",
+    "to": [
+      "Climer, Crystal <Crystal_Climer@premierinc.com>",
+      "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>"
+    ],
+    "cc": [
+      "Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Schwering, Ben <Ben_Schwering@Premierinc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Williams, Evan <Evan_Williams@premierinc.com>",
+      "Lilly, Cameron <Cameron_Lilly@PremierInc.com>"
+    ],
+    "date": "2026-02-26T17:57:31Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQANlDmlGKmy1JgoCM7BSi8B8=",
+    "bodyPreview": "This is included in the forecast and is planned in our budget for next year.\r\n\r\nNote that this cost does get pushed down to the business with a large portion of the cost hitting GPO Support.\r\n\r\nFrom: Climer, Crystal <Crystal_Climer@premierinc.com>\r\nSent: ",
+    "bodyText": "This is included in the forecast and is planned in our budget for next year. \n\n\u00a0\n\nNote that this cost does get pushed down to the business with a large portion of the cost hitting GPO Support.\n\n\u00a0\n\nFrom: Climer, Crystal <Crystal_Climer@premierinc.com> \nSent: Thursday, February 26, 2026 10:17 AM\nTo: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>; Webb, George <George_Webb@premierinc.com>\nCc: Marquardt, Bill <Bill_Marquardt@PremierInc.com>; Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Schwering, Ben <Ben_Schwering@Premierinc.com>; Bava, Stephen <Stephen_Bava@PremierInc.com>; Williams, Evan <Evan_Williams@premierinc.com>; Lilly, Cameron <Cameron_Lilly@PremierInc.com>\nSubject: Re: Pythian - GCP Premier Commitment Contract (2\u2011Year, $3.1M)\n\n\u00a0\n\nGeorge - Is this budgeted and aligned with our forecasts?\n\nFrom: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSent: Thursday, February 26, 2026 10:05 AM\nTo: Climer, Crystal <Crystal_Climer@premierinc.com>\nCc: Marquardt, Bill <Bill_Marquardt@PremierInc.com>; Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Schwering, Ben <Ben_Schwering@Premierinc.com>; Bava, Stephen <Stephen_Bava@PremierInc.com>; Williams, Evan <Evan_Williams@premierinc.com>\nSubject: FW: Pythian - GCP Premier Commitment Contract (2\u2011Year, $3.1M) \n\n\u00a0\n\nHi Crystal,\n\n\u00a0\n\nWe have finalized a 2\u2011year Google Cloud Premier Commitment Contract through Pythian, which has been fully negotiated and reviewed by legal and the leadership team.\n\n\u00a0\n\nSummary of the agr... [truncated]"
+  },
+  {
+    "subject": "Re: SQL Server Reporting Database  - Premier ERP",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Miller, Steven <Steve_Miller@PremierInc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Downs, Bethany <Bethany_Downs@PremierInc.com>",
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Siepiela, Audrey <Audrey_Earleson@PremierInc.com>"
+    ],
+    "cc": [
+      "Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>",
+      "Haggett, Edward <Edward_Haggett@premierinc.com>"
+    ],
+    "date": "2026-02-26T17:52:50Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOeHcMogF0UsiBIL1QSORvs=",
+    "bodyPreview": "Hi all,\r\n\r\nI had a great call today with Cindy, Ed, Don, and Gene from the ERP team. They plan to contact the UCI team to understand their specific needs better and will assist us in triaging from there. Cindy emphasized their commitment to being the fron",
+    "bodyText": "Hi all,\n\nI had a great call today with Cindy, Ed, Don, and Gene from the ERP team. They plan to contact the UCI team to understand their specific needs better and will assist us in triaging from there. Cindy emphasized their commitment to being the frontline support for ERP clients, including matters related to ABI content directly tied to ERP. However, they must avoid becoming general trainers for non-ERP technologies like Power BI or BigQuery, which I agree with.\n\nOnce the ERP team identifies the UCI team's needs, particularly if UCI requires guidance on best practices for exporting from BigQuery, I assured them that we would provide level 3 support. For now, there is no further action required from our group until we hear back from Cindy and her team.\n\nBest,\nMatt\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nDate: Wednesday, February 25, 2026 at 8:38\u202fAM\nTo: Miller, Steven <Steve_Miller@PremierInc.com>, Bava, Stephen <Stephen_Bava@PremierInc.com>, Downs, Bethany <Bethany_Downs@PremierInc.com>, Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>, Shimshock, Matthew <Matt_Shimshock@PremierInc.com>, Siepiela, Audrey <Audrey_Earleson@PremierInc.com>\nSubject: RE: SQL Server Reporting Database - Premier ERP\n\nHi all,\n\nQuick update: I\u2019ve reached out to connect with Ed early this morning to articulate my view (ERP-led tips/tricks up to a re-implementation if necessary, ABI team is a backstop for hard questions / GCP provisioning needs) and better understand what support ... [truncated]"
+  },
+  {
+    "subject": "Re: Renown ERP - ABI's KPI tile inquiry",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Miller, Steven <Steve_Miller@PremierInc.com>"
+    ],
+    "cc": [
+      "Haggett, Edward <Edward_Haggett@premierinc.com>",
+      "Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>"
+    ],
+    "date": "2026-02-26T17:49:51Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOObIph8bE4Cq0jXyiaZIcA=",
+    "bodyPreview": "Lindsay, Steve,\r\n\r\nCindy said she / her team can field training requests on the ERP KPI dashboard that come in from the Nexera team. Sounds like they are already pretty familiar with whome might be the specific team members involved in this request, but F",
+    "bodyText": "Lindsay, Steve,\n\nCindy said she / her team can field training requests on the ERP KPI dashboard that come in from the Nexera team. Sounds like they are already pretty familiar with whome might be the specific team members involved in this request, but FF to forward directly in the future.\n\nTY!!\nMatt\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nDate: Wednesday, February 25, 2026 at 9:17\u202fAM\nTo: Haggett, Edward <Edward_Haggett@premierinc.com>, Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>\nSubject: FW: Renown ERP - ABI's KPI tile inquiry\n\nEd, Cindy, may we touch on this as well when we connect tomorrow?\n\nThank You,\nMatt\n\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nDate: Wednesday, February 25, 2026 at 8:42\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: Fw: Renown ERP - ABI's KPI tile inquiry\n\nAnother example for when you talk to Ed. I never heard back.\u00a0\n\nLindsay Schmidt\u00a0\nVice President, Supply Chain Technology\nPremier Inc\n\nGet Outlook for iOS\n\nFrom:\u00a0Boss, Don <Don_Boss@PremierInc.com>\nSent:\u00a0Thursday, February 19, 2026 7:10:59 AM\nTo:\u00a0Haggett, Edward <Edward_Haggett@premierinc.com>\nCc:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Sos, Brandon <Brandon_Sos@PremierInc.com>\nSubject:\u00a0Re: Renown ERP - ABI's KPI tile inquiry\u00a0\n\nPlus Ed\n\nDon Boss\nConsider\nGoodhart's Law\n\nFrom:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>\nSent:\u00a0Thursday, February 19, 2026 6:01 AM\nTo:\u00a0Schmidt, Linds... [truncated]"
+  },
+  {
+    "subject": "RE: Pythian SOW: PHI Management and Tool SOC",
+    "from": "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>",
+    "to": [
+      "Moles, Stephanie <Stephanie_Moles@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Williams, Evan <Evan_Williams@premierinc.com>"
+    ],
+    "cc": [
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-26T16:36:46Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAM191N7ouHJBgx2HerKeEqI=",
+    "bodyPreview": "The commitment contract is in flight for approval, no concerns there.\r\n\r\nFrom: Moles, Stephanie <Stephanie_Moles@PremierInc.com>\r\nSent: Friday, February 20, 2026 2:34 PM\r\nTo: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>; Bossemeyer, Matthew <Matt",
+    "bodyText": "The commitment contract is in flight for approval, no concerns there. \n\n\u00a0\n\nFrom: Moles, Stephanie <Stephanie_Moles@PremierInc.com> \nSent: Friday, February 20, 2026 2:34 PM\nTo: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>; Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Williams, Evan <Evan_Williams@premierinc.com>\nCc: Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: Re: Pythian SOW: PHI Management and Tool SOC\n\n\u00a0\n\nGood Afternoon,\n\n\u00a0\n\nI wanted to check in with this group to see if there are any questions about the SOW and confirm we are extending our MSA with Pythian that is set to expire at the end of next week.\n\n\u00a0\n\nI am hoping to compile all of the feedback/legal concerns and get back to Pythian the first week in March.\n\n\u00a0\n\nThank you,\n\nStephanie\n\nFrom: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSent: Thursday, February 12, 2026 9:42 AM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Williams, Evan <Evan_Williams@premierinc.com>\nCc: Moles, Stephanie <Stephanie_Moles@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: RE: Pythian SOW: PHI Management and Tool SOC \n\n\u00a0\n\nHi Evan \u2013 The business team is requesting professional services with Pythian, below is a description from Matt B.; enclosed is the SOW. \n\n\u00a0\n\nCan you please review and advise if there are any legal concerns? Thank you.\n\n\u00a0\n\nFro... [truncated]"
+  },
+  {
+    "subject": "FW: It's time to celebrate! Sign LUCKY CHAWLA's Card",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Boyle, Michael <Mike_Boyle@PremierInc.com>",
+      "Siepiela, Audrey <Audrey_Earleson@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-26T16:10:50Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAPR_l3Kxsf9IoJ8of-cNwIk=",
+    "bodyPreview": "Forwarding along\r\n\r\nFrom: Shimshock, Matthew <matt_shimshock@premierinc.com>\r\nDate: Tuesday, February 17, 2026 at 7:34\u202fAM\r\nTo: Barham, Stephanie <Stephanie_Barham@premierinc.com>, Giri, Sandeep <Sandeep_Giri@PremierInc.com>, Mackey, Kevin <Kevin_Mackey@pr",
+    "bodyText": "Forwarding along\n\nFrom: Shimshock, Matthew <matt_shimshock@premierinc.com>\nDate: Tuesday, February 17, 2026 at 7:34\u202fAM\nTo: Barham, Stephanie <Stephanie_Barham@premierinc.com>, Giri, Sandeep <Sandeep_Giri@PremierInc.com>, Mackey, Kevin <Kevin_Mackey@premierinc.com>, Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Bava, Stephen <Stephen_Bava@PremierInc.com>, Chan-Lok, Fred <Frederick_Chan-Lok@premierinc.com>, Busch, Chris <Chris_Busch@premierinc.com>, Notkin, Eric <Eric_Notkin@PremierInc.com>, Latterner, Andrew <Andrew_Latterner@PremierInc.com>, Buie, Marty <Marty_Buie@PremierInc.com>, Quick Jr, David <David_Quick@PremierInc.com>\nSubject: FW: It's time to celebrate! Sign LUCKY CHAWLA's Card\n\nPlease sign and pass around.\n\n\u00a0\n\nFrom:\u00a0Member Support <donotreply@email.achievers.com>\nSent:\u00a0Saturday, February 14, 2026 8:26 AM\nTo:\u00a0Shimshock, Matthew <matt_shimshock@premierinc.com>\nSubject:\u00a0It's time to celebrate! Sign LUCKY CHAWLA's Card\n\n\u00a0\n\n\u00a0 It's time to celebrate! Sign LUCKY CHAWLA's Card \u00a0 LUCKY CHAWLA is celebrating an important service anniversary soon. Make it special by signing their card. LUCKY will receive this card on the day of their anniversary. \u00a0 \u00a0 \u00a0 \u00a0 LUCKY CHAWLA\n\nZjQcmQRYFpfptBannerStart\n\nThis Message Is From an External Sender\n\nThis email did not originate from the Premier, Inc. network. Use caution when opening attachments or clicking on URLs.\n\n\u00a0 \u00a0\u00a0Report\u00a0Suspicious\u00a0 \u00a0\u00a0\u200c\n\nZjQcmQRYFpfptBannerEnd\n\n\u00a0\n\n\u00a0\n\nIt's time to celebrate! Sign LUCKY CHAWLA's Card\n\n\u00a0\n\nLUCKY CH... [truncated]"
+  },
+  {
+    "subject": "RE: Google/Pythian Cloud Costs Breakdown",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Miller, Jeremy <Jeremy_Miller@PremierInc.com>"
+    ],
+    "cc": [
+      "Daugherty, Treston <Treston_Daugherty@PremierInc.com>",
+      "Osborn, Mackenzie <Mackenzie_Taylor@premierinc.com>",
+      "Marco, Zach <Zach_Marco@PremierInc.com>",
+      "Skender, Kristy <Kristy_Skender@premierinc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Haines, Matt <Matt_Haines@premierinc.com>",
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-26T15:57:20Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE6S4lVIjkZrvOBIaG8_k-k=",
+    "bodyPreview": "Jeremy,\r\n\r\nQuick update on the GCP-to-product-family mapping:\r\n\r\n  *   The engineering and platform team have completed the mapping of our GCP projects to the Digital Supply Chain product families you provided.\r\n  *   We\u2019re now in the final step \u2014 confirm",
+    "bodyText": "Jeremy,\n\nQuick update on the GCP-to-product-family mapping:\n\nThe engineering and platform team have completed the mapping of our GCP projects to the Digital Supply Chain product families you provided.We\u2019re now in the final step \u2014 confirming cost center assignments and business owners with the respective product leads (Lindsay Schmidt and Matt Shimshock are reviewing now).Once that\u2019s finalized, we\u2019ll return the completed document to you and your team.I\u2019m also looping\u00a0in Treston \u2014 he reached out to me separately on a related request to break down Google expense by product family for this budget cycle. This should be the same underlying effort, so wanted to make sure we\u2019re all aligned and he has visibility into the progress.\n\nExpect to have the final version back to you shortly.\n\nThank You,\nMatt\n\nFrom:\u00a0Miller, Jeremy <Jeremy_Miller@PremierInc.com>\nSent:\u00a0Friday, February 13, 2026 9:08:43 AM\nTo:\u00a0Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nCc:\u00a0Osborn, Mackenzie <Mackenzie_Taylor@premierinc.com>; Marco, Zach <Zach_Marco@PremierInc.com>; Skender, Kristy <Kristy_Skender@premierinc.com>; Bava, Stephen <Stephen_Bava@PremierInc.com>; Haines, Matt <Matt_Haines@premierinc.com>\nSubject:\u00a0RE: Google/Pythian Cloud Costs Breakdown\u00a0\n\nHey Matt \u2013 totally understand other priorities!\n\n\u00a0\n\nOur overall goal is to get as granular to the associated product as possible. If there are GC... [truncated]"
+  },
+  {
+    "subject": "Re: Pythian - GCP Premier Commitment Contract",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Schwering, Ben <Ben_Schwering@Premierinc.com>",
+      "Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [
+      "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>"
+    ],
+    "date": "2026-02-26T15:31:50Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAMsTPTObuE4Ps2kSUs16npo=",
+    "bodyPreview": "Thank you all!\r\n\r\nFrom: Schwering, Ben <Ben_Schwering@Premierinc.com>\r\nDate: Thursday, February 26, 2026 at 8:46\u202fAM\r\nTo: Marquardt, Bill <Bill_Marquardt@PremierInc.com>, Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Shimshock, Matthew <Matt_Shimsh",
+    "bodyText": "Thank you all!\n\nFrom: Schwering, Ben <Ben_Schwering@Premierinc.com>\nDate: Thursday, February 26, 2026 at 8:46\u202fAM\nTo: Marquardt, Bill <Bill_Marquardt@PremierInc.com>, Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSubject: Re: Pythian - GCP Premier Commitment Contract\n\nI agree - a 2-year commitment makes sense. Let me know if I can help with the justification if you get any pushback.\n\nBen\n\nFrom: Marquardt, Bill <Bill_Marquardt@PremierInc.com>\nDate: Thursday, February 26, 2026 at 8:28\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Shimshock, Matthew <Matt_Shimshock@PremierInc.com>, Schwering, Ben <Ben_Schwering@Premierinc.com>\nCc: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSubject: RE: Pythian - GCP Premier Commitment Contract\n\nNice work on the negotiations.\n\n\u00a0\n\nYour recommendation makes sense to me.\u00a0\u00a0 I do want to run this by Ben who\u2019s leading the Databricks project.\u00a0\u00a0 We\u2019ve said in the past that a full migration away from GCP is far down the list of priorities.\u00a0\u00a0 If that\u2019s still the case, then a 2 yr commitment to GCP seems appropriate.\u00a0\u00a0\u00a0\u00a0\n\n\u00a0\n\n@Schwering, Ben\u00a0 Welcome your thoughts on this.\n\n\u00a0\n\nThx\n\nBill\n\n\u00a0\n\n\u00a0\n\nFrom:\u00a0Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSent:\u00a0Wednesday, February 25, 2026 9:15 AM\nTo:\u00a0Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Marquardt, Bill <Bill_Marquardt@PremierInc.com>\nCc:\u00a0Sanchez, Priscilla ... [truncated]"
+  },
+  {
+    "subject": "Re: Pythian - GCP Premier Commitment Contract (2\u2011Year, $3.1M)",
+    "from": "Climer, Crystal <Crystal_Climer@premierinc.com>",
+    "to": [
+      "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>",
+      "Webb, George <George_Webb@premierinc.com>"
+    ],
+    "cc": [
+      "Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Schwering, Ben <Ben_Schwering@Premierinc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Williams, Evan <Evan_Williams@premierinc.com>",
+      "Lilly, Cameron <Cameron_Lilly@PremierInc.com>"
+    ],
+    "date": "2026-02-26T15:17:28Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQANlDmlGKmy1JgoCM7BSi8B8=",
+    "bodyPreview": "George - Is this budgeted and aligned with our forecasts?\r\n________________________________\r\nFrom: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\r\nSent: Thursday, February 26, 2026 10:05 AM\r\nTo: Climer, Crystal <Crystal_Climer@premierinc.com>\r\nCc: ",
+    "bodyText": "George - Is this budgeted and aligned with our forecasts?\n\nFrom: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSent: Thursday, February 26, 2026 10:05 AM\nTo: Climer, Crystal <Crystal_Climer@premierinc.com>\nCc: Marquardt, Bill <Bill_Marquardt@PremierInc.com>; Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Schwering, Ben <Ben_Schwering@Premierinc.com>; Bava, Stephen <Stephen_Bava@PremierInc.com>; Williams, Evan <Evan_Williams@premierinc.com>\nSubject: FW: Pythian - GCP Premier Commitment Contract (2\u2011Year, $3.1M) \u00a0\n\nHi Crystal,\n\n\u00a0\n\nWe have finalized a 2\u2011year Google Cloud Premier Commitment Contract through Pythian, which has been fully negotiated and reviewed by legal and the leadership team.\n\n\u00a0\n\nSummary of the agreement\n\nTerm: 24 monthsCommitment: $3.1M minimum spendDiscount: 7% on servicesCounterparty: Pythian (direct agreement)\u00a0\n\nWhy this makes sense\n\nWe declined a direct renewal with Google due to significantly higher required commitment levels to maintain prior discounts.By contracting through Pythian, we were able to preserve a comparable discount while keeping the commitment lower and limiting duration to two years.The agreement is expected to generate approximately $217K in savings over the term versus a non\u2011discounted alternative.From a strategic standpoint, this aligns with our current cloud roadmap: while Databricks remains a long\u2011term consolidation objective, we have stable, cost\u2011effective BigQuery workloads that do not warrant near\u2011term migration. Lead... [truncated]"
+  },
+  {
+    "subject": "FW: Pythian - GCP Premier Commitment Contract (2\u2011Year, $3.1M)",
+    "from": "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>",
+    "to": [
+      "Climer, Crystal <Crystal_Climer@premierinc.com>"
+    ],
+    "cc": [
+      "Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Schwering, Ben <Ben_Schwering@Premierinc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Williams, Evan <Evan_Williams@premierinc.com>"
+    ],
+    "date": "2026-02-26T15:05:37Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQANlDmlGKmy1JgoCM7BSi8B8=",
+    "bodyPreview": "Hi Crystal,\r\n\r\nWe have finalized a 2\u2011year Google Cloud Premier Commitment Contract through Pythian, which has been fully negotiated and reviewed by legal and the leadership team.\r\n\r\nSummary of the agreement\r\n\r\n  *   Term: 24 months\r\n  *   Commitment: $3.1",
+    "bodyText": "Hi Crystal,\n\n\u00a0\n\nWe have finalized a 2\u2011year Google Cloud Premier Commitment Contract through Pythian, which has been fully negotiated and reviewed by legal and the leadership team.\n\n\u00a0\n\nSummary of the agreement\n\nTerm: 24 monthsCommitment: $3.1M minimum spendDiscount: 7% on servicesCounterparty: Pythian (direct agreement)\u00a0\n\nWhy this makes sense\n\nWe declined a direct renewal with Google due to significantly higher required commitment levels to maintain prior discounts.By contracting through Pythian, we were able to preserve a comparable discount while keeping the commitment lower and limiting duration to two years.The agreement is expected to generate approximately $217K in savings over the term versus a non\u2011discounted alternative.From a strategic standpoint, this aligns with our current cloud roadmap: while Databricks remains a long\u2011term consolidation objective, we have stable, cost\u2011effective BigQuery workloads that do not warrant near\u2011term migration. Leadership has confirmed that a 2\u2011year GCP commitment is appropriate given this posture.\u00a0\n\nStatus\n\nThe approach has been reviewed and approved by Bill, Matt, and Ben, with no outstanding concerns.Pythian has provided a clean, final version and is ready to route via DocuSign upon approval.\u00a0\n\nI will route the attached amendment to you for signature via Docusign, please let us know if you have any questions. \n\n\u00a0\n\nThank you,\n\nPriscilla\n\n\u00a0\n\n\u00a0\n\nFrom: Schwering, Ben <Ben_Schwering@Premierinc.com> \nSent: Thursday, February 26, 2026 8:46 AM... [truncated]"
+  },
+  {
+    "subject": "RE: Google/Pythian Cloud Costs Breakdown",
+    "from": "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-26T14:25:24Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE6S4lVIjkZrvOBIaG8_k-k=",
+    "bodyPreview": "Follow up then \u2013 should some of it be mapped to Operate the GPO? Or Advisory?\r\n\r\nLindsay K. Schmidt, MHSA\r\nVice President, Advanced Analytics and Supply Chain Technology\r\nDigital Supply Chain | Premier Inc.\r\nMobile: 913.461.9378\r\npremierinc.com\r\n\r\nFrom: B",
+    "bodyText": "Follow up then \u2013 should some of it be mapped to Operate the GPO? Or Advisory? \n\n\u00a0\n\nLindsay K. Schmidt, MHSA\u00a0\n\nVice President, Advanced Analytics and Supply Chain Technology\n\nDigital Supply Chain | Premier Inc.\u00a0\n\nMobile: 913.461.9378 \u00a0\n\npremierinc.com\u00a0\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 8:18 AM\nTo: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: Re: Google/Pythian Cloud Costs Breakdown\n\n\u00a0\n\nMarket insights I believe.\n\n\u00a0\n\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nSent: Thursday, February 26, 2026 9:12:39 AM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: RE: Google/Pythian Cloud Costs Breakdown \n\n\u00a0\n\nThe 2nd row may not be accurate.\u00a0 Was that intended to be actual GPO support?\u00a0 Or is that Market Insights?\n\n\u00a0\n\nLindsay K. Schmidt, MHSA\u00a0\n\nVice President, Advanced Analytics and Supply Chain Technology\n\nDigital Supply Chain | Premier Inc.\u00a0\n\nMobile: 913.461.9378 \u00a0\n\npremierinc.com\u00a0\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 7:52 AM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Schmidt, Linds... [truncated]"
+  },
+  {
+    "subject": "Re: Google/Pythian Cloud Costs Breakdown",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-26T14:18:13Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE6S4lVIjkZrvOBIaG8_k-k=",
+    "bodyPreview": "Market insights I believe.\r\n\r\n________________________________\r\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\r\nSent: Thursday, February 26, 2026 9:12:39 AM\r\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Shimshock, Matthew <Matt_Shims",
+    "bodyText": "Market insights I believe.\n\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nSent: Thursday, February 26, 2026 9:12:39 AM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>\nCc: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: RE: Google/Pythian Cloud Costs Breakdown \u00a0\n\nThe 2nd row may not be accurate.\u00a0 Was that intended to be actual GPO support?\u00a0 Or is that Market Insights?\n\n\u00a0\n\nLindsay K. Schmidt, MHSA\u00a0\n\nVice President, Advanced Analytics and Supply Chain Technology\n\nDigital Supply Chain | Premier Inc.\u00a0\n\nMobile: 913.461.9378 \u00a0\n\npremierinc.com\u00a0\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 7:52 AM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nCc: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: FW: Google/Pythian Cloud Costs Breakdown\n\n\u00a0\n\nMatt, Lindsay,\n\n\u00a0\n\nThe team is mapping our GCP projects to product lines/families to fulfill a request from accounting (related to product line profitability). Can you tell me if the below assignments are correct?\n\n\u00a0\n\nProduct Family/Practice Area\n\nBusiness Owner\n\nCost Center\n\nProvider Analytics\n\nLindsay Schmidt\n\n810302 GPO Development (or 110171 ITS PCSC Revenue?)\n\n\u00a0Supplier Analytics\n\nLindsay Schmidt\n\n810302 GPO Development\n\n\u00a0Pr... [truncated]"
+  },
+  {
+    "subject": "RE: Google/Pythian Cloud Costs Breakdown",
+    "from": "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-26T14:12:43Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE6S4lVIjkZrvOBIaG8_k-k=",
+    "bodyPreview": "The 2nd row may not be accurate.  Was that intended to be actual GPO support?  Or is that Market Insights?\r\n\r\nLindsay K. Schmidt, MHSA\r\nVice President, Advanced Analytics and Supply Chain Technology\r\nDigital Supply Chain | Premier Inc.\r\nMobile: 913.461.93",
+    "bodyText": "The 2nd row may not be accurate.\u00a0 Was that intended to be actual GPO support?\u00a0 Or is that Market Insights?\n\n\u00a0\n\nLindsay K. Schmidt, MHSA\u00a0\n\nVice President, Advanced Analytics and Supply Chain Technology\n\nDigital Supply Chain | Premier Inc.\u00a0\n\nMobile: 913.461.9378 \u00a0\n\npremierinc.com\u00a0\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Thursday, February 26, 2026 7:52 AM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nCc: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>; Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nSubject: FW: Google/Pythian Cloud Costs Breakdown\n\n\u00a0\n\nMatt, Lindsay,\n\n\u00a0\n\nThe team is mapping our GCP projects to product lines/families to fulfill a request from accounting (related to product line profitability). Can you tell me if the below assignments are correct?\n\n\u00a0\n\nProduct Family/Practice Area\n\nBusiness Owner\n\nCost Center\n\nProvider Analytics\n\nLindsay Schmidt\n\n810302 GPO Development (or 110171 ITS PCSC Revenue?)\n\n\u00a0Supplier Analytics\n\nLindsay Schmidt\n\n810302 GPO Development\n\n\u00a0Provider P2P\n\nMatt Shimshock\n\n130010 Remitra Operations (Revenue & SG&A)\n\n\u00a0Supplier P2P\n\nMatt Shimshock\n\n130010 Remitra Operations (Revenue & SG&A)\n\n\u00a0\n\nThank You,\n\nMatt\n\n\u00a0\n\nFrom: Miller, Jeremy <Jeremy_Miller@PremierInc.com>\nDate: Friday, February 13, 2026 at 9:08\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>, Prete-Adams, Elise <Elise... [truncated]"
+  },
+  {
+    "subject": "FW: Google/Pythian Cloud Costs Breakdown",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>"
+    ],
+    "cc": [
+      "Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>",
+      "Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>"
+    ],
+    "date": "2026-02-26T13:52:19Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE6S4lVIjkZrvOBIaG8_k-k=",
+    "bodyPreview": "Matt, Lindsay,\r\n\r\nThe team is mapping our GCP projects to product lines/families to fulfill a request from accounting (related to product line profitability). Can you tell me if the below assignments are correct?\r\n\r\nProduct Family/Practice Area\r\nBusiness ",
+    "bodyText": "Matt, Lindsay,\n\nThe team is mapping our GCP projects to product lines/families to fulfill a request from accounting (related to product line profitability). Can you tell me if the below assignments are correct?\n\nProduct Family/Practice Area\nBusiness Owner\nCost Center\nProvider Analytics\nLindsay Schmidt\n810302 GPO Development (or 110171 ITS PCSC Revenue?)\n\u00a0Supplier Analytics\nLindsay Schmidt\n810302 GPO Development\n\u00a0Provider P2P\nMatt Shimshock\n130010 Remitra Operations (Revenue & SG&A)\n\u00a0Supplier P2P\nMatt Shimshock\n130010 Remitra Operations (Revenue & SG&A)\n\nThank You,\nMatt\n\nFrom: Miller, Jeremy <Jeremy_Miller@PremierInc.com>\nDate: Friday, February 13, 2026 at 9:08\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>, Prete-Adams, Elise <Elise_Prete-Adams@premierinc.com>\nCc: Osborn, Mackenzie <Mackenzie_Taylor@premierinc.com>, Marco, Zach <Zach_Marco@PremierInc.com>, Skender, Kristy <Kristy_Skender@premierinc.com>, Bava, Stephen <Stephen_Bava@PremierInc.com>, Haines, Matt <Matt_Haines@premierinc.com>\nSubject: RE: Google/Pythian Cloud Costs Breakdown\n\nHey Matt \u2013 totally understand other priorities!\n\n\u00a0\n\nOur overall goal is to get as granular to the associated product as possible. If there are GCP projects that support multiple products and we cannot identify a specific product it may support, let\u2019s label those as \u201cMultiple products\u201d for now. We can then evaluate the amount of \u201cMultiple products\u201d once you and the team ha... [truncated]"
+  },
+  {
+    "subject": "Re: Pythian - GCP Premier Commitment Contract",
+    "from": "Schwering, Ben <Ben_Schwering@Premierinc.com>",
+    "to": [
+      "Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>"
+    ],
+    "cc": [
+      "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>"
+    ],
+    "date": "2026-02-26T13:46:25Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAMsTPTObuE4Ps2kSUs16npo=",
+    "bodyPreview": "I agree - a 2-year commitment makes sense. Let me know if I can help with the justification if you get any pushback.\r\n\r\nBen\r\n\r\nFrom: Marquardt, Bill <Bill_Marquardt@PremierInc.com>\r\nDate: Thursday, February 26, 2026 at 8:28\u202fAM\r\nTo: Bossemeyer, Matthew <Ma",
+    "bodyText": "I agree - a 2-year commitment makes sense. Let me know if I can help with the justification if you get any pushback.\n\nBen\n\nFrom: Marquardt, Bill <Bill_Marquardt@PremierInc.com>\nDate: Thursday, February 26, 2026 at 8:28\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Shimshock, Matthew <Matt_Shimshock@PremierInc.com>, Schwering, Ben <Ben_Schwering@Premierinc.com>\nCc: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSubject: RE: Pythian - GCP Premier Commitment Contract\n\nNice work on the negotiations.\n\n\u00a0\n\nYour recommendation makes sense to me.\u00a0\u00a0 I do want to run this by Ben who\u2019s leading the Databricks project.\u00a0\u00a0 We\u2019ve said in the past that a full migration away from GCP is far down the list of priorities.\u00a0\u00a0 If that\u2019s still the case, then a 2 yr commitment to GCP seems appropriate.\u00a0\u00a0\u00a0\u00a0\n\n\u00a0\n\n@Schwering, Ben\u00a0 Welcome your thoughts on this.\n\n\u00a0\n\nThx\n\nBill\n\n\u00a0\n\n\u00a0\n\nFrom:\u00a0Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSent:\u00a0Wednesday, February 25, 2026 9:15 AM\nTo:\u00a0Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Marquardt, Bill <Bill_Marquardt@PremierInc.com>\nCc:\u00a0Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSubject:\u00a0FW: Pythian - GCP Premier Commitment Contract\n\n\u00a0\n\nMatt, Bill,\n\n\u00a0\n\nPriscilla took the initiative to negotiate directly with Pythian to secure a 2-year recommitment for GCP at a $3.1M minimum spend with a 7% discount.\n\n\u00a0\n\nWhy this is a good outcome:\n\nAs you\u2019ll recall, we declined to renew directly with Google because sustaining our prior dis... [truncated]"
+  },
+  {
+    "subject": "RE: Pythian - GCP Premier Commitment Contract",
+    "from": "Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Schwering, Ben <Ben_Schwering@Premierinc.com>"
+    ],
+    "cc": [
+      "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>"
+    ],
+    "date": "2026-02-26T13:28:53Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAMsTPTObuE4Ps2kSUs16npo=",
+    "bodyPreview": "Nice work on the negotiations.\r\n\r\nYour recommendation makes sense to me.   I do want to run this by Ben who\u2019s leading the Databricks project.   We\u2019ve said in the past that a full migration away from GCP is far down the list of priorities.   If that\u2019s stil",
+    "bodyText": "Nice work on the negotiations.\n\n\u00a0\n\nYour recommendation makes sense to me.\u00a0\u00a0 I do want to run this by Ben who\u2019s leading the Databricks project.\u00a0\u00a0 We\u2019ve said in the past that a full migration away from GCP is far down the list of priorities.\u00a0\u00a0 If that\u2019s still the case, then a 2 yr commitment to GCP seems appropriate.\u00a0\u00a0\u00a0\u00a0 \n\n\u00a0\n\n@Schwering, Ben\u00a0 Welcome your thoughts on this.\n\n\u00a0\n\nThx\n\nBill\n\n\u00a0\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Wednesday, February 25, 2026 9:15 AM\nTo: Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Marquardt, Bill <Bill_Marquardt@PremierInc.com>\nCc: Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>\nSubject: FW: Pythian - GCP Premier Commitment Contract\n\n\u00a0\n\nMatt, Bill,\n\n\u00a0\n\nPriscilla took the initiative to negotiate directly with Pythian to secure a 2-year recommitment for GCP at a $3.1M minimum spend with a 7% discount.\n\n\u00a0\n\nWhy this is a good outcome:\n\nAs you\u2019ll recall, we declined to renew directly with Google because sustaining our prior discounts required significantly higher commitment levels. Priscilla managed to secure nearly the same discount through a Pythian-driven commitment, keeping the overall spend on the lower end of our projections and limiting the duration to two years.\n\n\u00a0\n\nExpected financial impact:\n\nIf we assume no discounting as the alternative, this agreement should save roughly:\n\n- $108.5K per year (7% of ~$1.55M/year implied by $3.1M over 24 months), or\n\n- $217K over the 2-year term (7% of $3.1M).\n\n\u00a0\n\n... [truncated]"
+  },
+  {
+    "subject": "Re: SQL Server Reporting Database  - Premier ERP",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Miller, Steven <Steve_Miller@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-25T20:57:44Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOeHcMogF0UsiBIL1QSORvs=",
+    "bodyPreview": "Very helpful, thank you! I\u2019ll include this in my discussion with Ed & Cindy.\r\n\r\nFrom: Miller, Steven <Steve_Miller@PremierInc.com>\r\nDate: Wednesday, February 25, 2026 at 9:47\u202fAM\r\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\r\nSubject: RE: SQL S",
+    "bodyText": "Very helpful, thank you! I\u2019ll include this in my discussion with Ed & Cindy.\n\nFrom: Miller, Steven <Steve_Miller@PremierInc.com>\nDate: Wednesday, February 25, 2026 at 9:47\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: RE: SQL Server Reporting Database - Premier ERP\n\nThanks Matt. From my perspective the \u201ctips and tricks\u201d UCI is looking for is around best practices on querying the data efficiently and then surfacing it in PowerBI. This is the third group of analysts they have had and this group is going down the same path that previous analysts did. Their instincts are to pull entire tables over on a daily basis so that they \u201ccan drill into the detail\u201d if needed and then use their visualization tool to filter/query. I mentioned that they should focus on creating specific queries to answer focused business needs but they are resistant to that. I worry that if we don\u2019t set them up for success not only will it result in frustration on their part but also significant expense for us on their use of Google.\n\n\u00a0\n\nThere are some ERP data questions that they had that I\u2019ve sent in around how we are identifying cancelled PO lines that the ERP team would likely be the right people to get involved but I didn\u2019t know who worked with UCI.\n\n\u00a0\n\nJust wanted to give you some additional context.\n\n\u00a0\n\nSteve\n\n\u00a0\n\n\u00a0\n\nFrom:\u00a0Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSent:\u00a0Wednesday, February 25, 2026 8:39 AM\nTo:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>; Bava, Stephen <... [truncated]"
+  },
+  {
+    "subject": "February Leading at Premier: Peer Group Coaching and Discussion",
+    "from": "Hector, Emily <Emily_Hector@premierinc.com>",
+    "to": [
+      "Gordon, Madeline <Madeline_Gordon@PremierInc.com>",
+      "Davis, Andrea <Andrea_Davis@PremierInc.com>",
+      "Hector, Emily <Emily_Hector@premierinc.com>",
+      "Gayoso, Gabriella <Gabriella_Gayoso@PremierInc.com>",
+      "Fullard, Destiny <Destiny_Fullard@PremierInc.com>",
+      "Rushing, Brandon <Brandon_Rushing@PremierInc.com>",
+      "Lanning, Angela <Angela_Lanning@PremierInc.com>",
+      "Davis, Jill <Jill_Davis@PremierInc.com>",
+      "Hicks, Kelly <Kelly_Hicks@PremierInc.com>",
+      "Jackson, Diana <Diana_Jackson@PremierInc.com>",
+      "Hill, Gretta <Gretta_Hill@PremierInc.com>",
+      "Judd, Brian <Brian_Judd@PremierInc.com>",
+      "Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+      "Sweet, Melissa <Melissa_Sweet@PremierInc.com>",
+      "Vawter, Jeff <Jeff_Vawter@premierinc.com>",
+      "Ward, Greg <Greg_Ward@PremierInc.com>",
+      "Wilkes, Todd <Todd_Wilkes@PremierInc.com>",
+      "Woodall, Pamela <Pamela_Woodall@PremierInc.com>",
+      "Nell, Kristin <Kristin_Nell@PremierInc.com>",
+      "Hren, Joelle <Joelle_Hren@PremierInc.com>",
+      "Kite, Sarah <Sarah_Kite@PremierInc.com>",
+      "Ralph, Joan <Joan_Ralph@PremierInc.com>",
+      "Transou, Michelle <Michelle_Transou@PremierInc.com>",
+      "Golding, Allison <Allison_Golding@Premierinc.com>",
+      "Rinehardt, Tim <Tim_Rinehardt@PremierInc.com>",
+      "Ickert, Chris <Chris_Ickert@PremierInc.com>",
+      "Glover, Chioke <Chioke_Glover@PremierInc.com>",
+      "Douglas, Ann <Ann_Douglas@PremierInc.com>",
+      "Desloge, Leah <Leah_Desloge@premierinc.com>",
+      "Rossi, Wendy <Wendy_Rossi@PremierInc.com>",
+      "Peterson, Andrew <Andrew_Peterson@PremierInc.com>",
+      "Drake, Kim <Kim_Drake@PremierInc.com>",
+      "Lackey, Tasha <Tasha_Lackey@PremierInc.com>",
+      "Richardson, Dena <Dena_Richardson@PremierInc.com>",
+      "Gross, Erin <Erin_Gross@PremierInc.com>",
+      "Lloyd, Allison <Allison_Lloyd@PremierInc.com>",
+      "Henderson, Stephanie <Stephanie_Henderson@PremierInc.com>",
+      "Tracy, Samantha <Samantha_Tracy@PremierInc.com>",
+      "Bahnson, Charlie <Charlie_Bahnson@PremierInc.com>",
+      "Johnson, Kim <Kim_Johnson@PremierInc.com>",
+      "Moreno, Kim <Kim_Moreno@PremierInc.com>",
+      "Abraham, Angela <Angela_Abraham@PremierInc.com>",
+      "Yu, Averill <Averill_Yu@PremierInc.com>",
+      "Glenn, Jodie <Jodie_Glenn@PremierInc.com>",
+      "Reilley, Jim <James_Reilley@PremierInc.com>",
+      "McFalls, Cathy <Cathy_McFalls@PremierInc.com>",
+      "Aversa, Martine <Martine_Aversa@PremierInc.com>",
+      "Tompkins, Ken <Ken_Tompkins@PremierInc.com>",
+      "Miller, Doug <Doug_Miller@PremierInc.com>",
+      "Maskeri, Chris <Chris_Maskeri@PremierInc.com>",
+      "Burke, Neene <Neene_Burke@PremierInc.com>",
+      "Connelly, Chad <Chad_Connelly@PremierInc.com>",
+      "Jackson, Del <Del_Jackson@PremierInc.com>",
+      "Daigle, Pam <Pamela_Daigle@PremierInc.com>",
+      "Falk, Rob <Rob_Falk@PremierInc.com>",
+      "Biagi, Bob <Robert_Biagi@PremierInc.com>",
+      "Wright, Michele <Michele_Wright@PremierInc.com>",
+      "Fisher, Deborah <Deborah_Fisher@PremierInc.com>",
+      "Russell, Wayne <Wayne_Russell@PremierInc.com>",
+      "Carter, Glynis <Glynis_Carter@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Woods, Christina <Christina_Woods@PremierInc.com>",
+      "Hunt, Matthew <Matt_Hunt@PremierInc.com>",
+      "Davis, Jim <Jim_Davis@PremierInc.com>",
+      "Cheney, James <James_Cheney@PremierInc.com>",
+      "Hamlett, Lauren <Lauren_Hamlett@PremierInc.com>",
+      "Hendrix, Jennie <Jennie_Hendrix@PremierInc.com>",
+      "Barham, Stephanie <Stephanie_Barham@premierinc.com>",
+      "Perigard, Raymond <Ray_Perigard@PremierInc.com>",
+      "Proctor, Melanie <Melanie_Proctor@PremierInc.com>",
+      "Burgest, Marcia <Marcia_Burgest@PremierInc.com>",
+      "Hall, Brian <Brian_Hall@PremierInc.com>",
+      "Lilly, Cameron <Cameron_Lilly@PremierInc.com>",
+      "McKinney, Carissa <Carissa_McKinney@PremierInc.com>",
+      "Reital, Lindsay <Lindsay_Reital@PremierInc.com>",
+      "Langham, Betsey <Betsey_Langham@PremierInc.com>",
+      "Carey, Kevin D <Kevin_Carey@PremierInc.com>",
+      "Barber, Charlotte <Charlotte_Barber@PremierInc.com>",
+      "Banner, Sarah <Sarah_Banner@PremierInc.com>",
+      "Estrada, Ed <Ed_Estrada@PremierInc.com>",
+      "Newton, Julie <Julie_Newton@PremierInc.com>",
+      "Kickert, Kathy <Kathy_Kickert@PremierInc.com>",
+      "Martin, John <John_Martin@PremierInc.com>",
+      "Schilpp, Marty <Marty_Schilpp@PremierInc.com>",
+      "Acharya, Sudhi <Sudhi_Acharya@premierinc.com>",
+      "Giri, Sandeep <Sandeep_Giri@PremierInc.com>",
+      "Granger, Nicole <Nicole_Granger@PremierInc.com>",
+      "Wong, Jeffrey <Jeffrey_Wong@PremierInc.com>",
+      "Masterson, Karen <Karen_Masterson@PremierInc.com>",
+      "Halleland, Ross <Ross_Halleland@PremierInc.com>",
+      "Johnson, Eric <Eric_Johnson@PremierInc.com>",
+      "Nguyen, Emily <Emily_Nguyen@PremierInc.com>",
+      "Barrington-Hughes, Alan <Alan_Barrington-Hughes@PremierInc.com>",
+      "Sidow, Abdikarim <Abdikarim_Sidow@premierinc.com>",
+      "Huettner, Jennifer <Jennifer_Huettner@PremierInc.com>",
+      "Smith, Ashley <Ashley_Smith@PremierInc.com>",
+      "Foutty, Todd <Todd_Foutty@PremierInc.com>",
+      "Halter, Liz <Liz_Halter@PremierInc.com>",
+      "Adusumilli, Uma <Uma_Adusumilli@PremierInc.com>",
+      "Verrone, Bryan <Bryan_Verrone@PremierInc.com>",
+      "Minnich, Julie <Julie_Minnich@premierinc.com>",
+      "Dorcas, Tammy <Tammy_Dorcas@PremierInc.com>",
+      "Barrett, Craig <Craig_Barrett@PremierInc.com>",
+      "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>",
+      "Rudy, Shannon <Shannon_Rudy@PremierInc.com>",
+      "Richardson, Latoya <Latoya_Richardson@PremierInc.com>",
+      "Kasischke, Christopher <Chris_Kasischke@PremierInc.com>",
+      "Maas, Brian <Brian_Maas@PremierInc.com>",
+      "Hilton, Josh <Josh_Hilton@PremierInc.com>",
+      "Lewis, Ryan <Ryan_Lewis@PremierInc.com>",
+      "Henton, Hyun <Hyun_Henton@PremierInc.com>",
+      "Calvert, Lori <Lori_Calvert@PremierInc.com>",
+      "Forster, Amanda <Amanda_Forster@PremierInc.com>",
+      "Pachalla, Kavita <Kavita_Pachalla@PremierInc.com>",
+      "Robinson, Rodney (Informatics) <Rodney_Robinson@PremierInc.com>",
+      "Karner, Jessica <Jessica_Karner@PremierInc.com>",
+      "Blanchard, Summer <Summer_Blanchard@PremierInc.com>",
+      "Bandaru, Shanti <Shanti_Bandaru@PremierInc.com>",
+      "Wyatt, Meg <Meg_Wyatt@PremierInc.com>",
+      "Selves, Esther <Esther_Selves@PremierInc.com>",
+      "Kilaru, Bhaskar R <Bhaskar_Kilaru@PremierInc.com>",
+      "Matoga, Marta <Marta_Matoga@PremierInc.com>",
+      "Long, Mike <Mike_Long@PremierInc.com>",
+      "Scott, Carolyn <Carolyn_Scott@PremierInc.com>",
+      "Smith, Bryan <Bryan_Smith@PremierInc.com>",
+      "Kosgey, Alfred <Alfred_Kosgey@PremierInc.com>",
+      "Niven, Karen <Karen_Niven@PremierInc.com>",
+      "Sanders, Nolan <Nolan_Sanders@PremierInc.com>",
+      "Inlow, Erika <Erika_Inlow@PremierInc.com>",
+      "Edwards, Seth <Seth_Edwards@PremierInc.com>",
+      "Miller, Suzanne <Suzanne_Miller@PremierInc.com>",
+      "Siddiq, Aasia <Aasia_Siddiq@PremierInc.com>",
+      "Patkus, Jackson <Jackson_Patkus@PremierInc.com>",
+      "Lemke, Kirk <Kirk_Lemke@PremierInc.com>",
+      "Bain, Adam <Adam_Bain@PremierInc.com>",
+      "Roberts, Sharon <Sharon_Roberts@PremierInc.com>",
+      "Murr, Michael <Michael_Murr@PremierInc.com>",
+      "Tomas, Randy <Randy_Tomas@PremierInc.com>",
+      "Fink, Jonathan <Jon_Fink@PremierInc.com>",
+      "Tucker, LaShawn <LaShawn_Tucker@PremierInc.com>",
+      "Thorne, Ken <Ken_Thorne@PremierInc.com>",
+      "Foard, Carol <Carol_Foard@PremierInc.com>",
+      "Kelley, Courtney <Courtney_Kelley@PremierInc.com>",
+      "DeBruyne, Kevin <Kevin_DeBruyne@PremierInc.com>",
+      "Shukla, Manish <Manish_Shukla@PremierInc.com>",
+      "Glinka, Katelin <Katelin_Glinka@PremierInc.com>",
+      "Hyers, Bill <Bill_Hyers@PremierInc.com>",
+      "Gurz, Paula <Paula_Gurz@PremierInc.com>",
+      "Karras, Trina <Trina_Karras@PremierInc.com>",
+      "Schaaf, Geoff <Geoff_Schaaf@PremierInc.com>",
+      "Panduro, Fabian <Fabian_Panduro@PremierInc.com>",
+      "Eaton, Ryan <Ryan_Eaton@PremierInc.com>",
+      "McFalls, Blaine <Blaine_McFalls@PremierInc.com>",
+      "Goff, Janice <Janice_Goff@PremierInc.com>",
+      "Brooks, Tammy <Tammy_Brooks@PremierInc.com>",
+      "Mason, Stacy <Stacy_Mason@PremierInc.com>",
+      "Sauber, Alan <Alan_Sauber@PremierInc.com>",
+      "Peck, Daryl <Daryl_Peck@PremierInc.com>",
+      "Giles, Benjamin <Ben_Giles@PremierInc.com>",
+      "Thigpen, Mary Lynn <MaryLynn_Thigpen@PremierInc.com>",
+      "Stutts, Sherri <Sherri_Stutts@PremierInc.com>",
+      "Kenley, Ashley <Ashley_Kenley@PremierInc.com>",
+      "Kloewer, Brenda <Brenda_Kloewer@PremierInc.com>",
+      "Easterling, Bev <Bev_Easterling@PremierInc.com>",
+      "Mason, Allyson <Allyson_Mason@PremierInc.com>",
+      "Hester, Lauren <Lauren_Hester@PremierInc.com>",
+      "Maurer, Kristen <Kristen_Maurer@PremierInc.com>",
+      "Herron, Michael <Michael_Herron@PremierInc.com>",
+      "Abreu, Lauren <Lauren_Abreu@PremierInc.com>",
+      "Brown, David <David_Brown@PremierInc.com>",
+      "Cornett, Steve <Steve_Cornett@PremierInc.com>",
+      "Searl, Frank <Frank_Searl@PremierInc.com>",
+      "Sheppard, Joseph <Joseph_Sheppard@PremierInc.com>",
+      "Elgowainy Green, Mona <Mona_Elgowainy-Green@PremierInc.com>",
+      "Payes, Dulce <Dulce_Payes@PremierInc.com>",
+      "Horton, Josh <Josh_Horton@PremierInc.com>",
+      "Sudol, Patrick <Patrick_Sudol@PremierInc.com>",
+      "LeRoy, Charlene <Charlene_Le-roy@PremierInc.com>",
+      "Ulmer, Jill <Jill_Ulmer@PremierInc.com>",
+      "Cao, Zhun <Zhun_Cao@PremierInc.com>",
+      "Rish-Brown, Nina <Nina_Rish-Brown@PremierInc.com>",
+      "McCoy, Traci <Traci_McCoy@PremierInc.com>",
+      "Rich, Stephen <Steve_Rich@PremierInc.com>",
+      "Capozzi, Pat <Pat_Capozzi@PremierInc.com>",
+      "Morrelli, Mike <Mike_Morrelli@PremierInc.com>",
+      "Howell, Chase <Chase_Howell@PremierInc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Xiong, Lee <Lee_Xiong@PremierInc.com>",
+      "Musser, Megan <Megan_Musser@PremierInc.com>",
+      "Helms, Laura <Laura_Helms@PremierInc.com>",
+      "Shephard, Hannah <Hannah_Shephard@PremierInc.com>",
+      "Walker, Wesley <Wesley_Walker@PremierInc.com>",
+      "Ferri, Jason <Jason_Ferri@PremierInc.com>",
+      "Hendricks, Brandie <Brandie_Hendricks@premierinc.com>",
+      "Shea, Ali <Ali_Shea@PremierInc.com>",
+      "Everett, David <David_Everett@PremierInc.com>",
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Thurlo, Troy <Troy_Thurlo@PremierInc.com>",
+      "Starnes, Clay <Clay_Starnes@PremierInc.com>",
+      "Smyth, Matt <Matthew_Smyth@PremierInc.com>",
+      "Garber, Kathy <Kathy_Garber@PremierInc.com>",
+      "Guimont, Elise <Elise_Guimont@PremierInc.com>",
+      "Rabon, Matt <Matt_Rabon@PremierInc.com>",
+      "Wranischar, Justin <Justin_Wranischar@PremierInc.com>",
+      "Nettles, David <David_Nettles@PremierInc.com>",
+      "Iovino, Patricia <Patricia_Iovino@PremierInc.com>",
+      "Viehweg, Caroline <Caroline_Viehweg@PremierInc.com>",
+      "Liu, Zhidong <Zhidong_Liu@PremierInc.com>",
+      "Madlang, Matt <Matt_Madlang@PremierInc.com>",
+      "Schweitzer-King, Naomi <Naomi_Schweitzer-King@PremierInc.com>",
+      "Adrian, Jeremy <Jeremy_Adrian@PremierInc.com>",
+      "Shay, Sabra <Sabra_Shay@PremierInc.com>",
+      "Grow, Mike <Mike_Grow@PremierInc.com>",
+      "Curnow, Elizabeth <Elizabeth_Curnow@PremierInc.com>",
+      "Woodruff, Susan <Susan_Woodruff@PremierInc.com>",
+      "Miller, Jeff <Jeff_Miller@PremierInc.com>",
+      "Goudie, Amy <Amy_Goudie@Premierinc.com>",
+      "Haese, Jonathan <Jonathan_Haese@PremierInc.com>",
+      "Rogers, Jeff <Jeff_Rogers@PremierInc.com>",
+      "Settle, Kim <Kim_Settle@PremierInc.com>",
+      "Boss, Carolyn <Carolyn_Boss@PremierInc.com>",
+      "Starling, Jamie <Jamie_Starling@PremierInc.com>",
+      "Burns, Cara <Cara_Burns@PremierInc.com>",
+      "Montague, Selena <Selena_Montague@PremierInc.com>",
+      "Patel, Umang <Umang_Patel@PremierInc.com>",
+      "Stoddard, Jeremy <Jeremy_Stoddard@PremierInc.com>",
+      "Abbes, Faye <Faye_Abbes@PremierInc.com>",
+      "McKinnon, Bryce <Bryce_McKinnon@PremierInc.com>",
+      "McCormick, Chad <Chad_McCormick@PremierInc.com>",
+      "Vogt, Leigh <Leigh_Vogt@PremierInc.com>",
+      "Raab, Beth <Beth_Raab@PremierInc.com>",
+      "Sharma, Jay <Jay_Sharma@PremierInc.com>",
+      "Josey, Adam <Adam_Josey@PremierInc.com>",
+      "Mark, Paige <Paige_Mark@PremierInc.com>",
+      "Xiong, Thai <Thai_Xiong@PremierInc.com>",
+      "Wagner, Lauren <Lauren_Wagner@PremierInc.com>",
+      "Webster, Janna <Janna_Webster@PremierInc.com>",
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+      "Hooks, John <John_Hooks@PremierInc.com>",
+      "Largin, Johnny <Johnny_Largin@PremierInc.com>",
+      "Merendino, John <John_Merendino@PremierInc.com>",
+      "Campbell, Kaylee <Kaylee_Campbell@Premierinc.com>",
+      "Rosenthal, Ning <Ning_Rosenthal@PremierInc.com>",
+      "Herrington, John <John_Herrington@PremierInc.com>",
+      "Goode, Jessica <Jessica_Goode@PremierInc.com>",
+      "Woody, Jay <Jay_Woody@PremierInc.com>",
+      "Weir, Tyler <Tyler_Weir@PremierInc.com>",
+      "House, John <John_House@PremierInc.com>",
+      "Burns, Chris <Chris_Burns@PremierInc.com>",
+      "Ash, Chris <Chris_Ash@premierinc.com>",
+      "Mahoney, Farrah <Farrah_Mahoney@premierinc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-25T20:55:35Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOSAsVG8SbBKm_lv0n4LD54=",
+    "bodyPreview": "Thank you to everyone who attended the Peer Group Coaching and Discussion Sessions in February!\r\n\r\n\r\n\r\nWhether you attended in February or at any time recently, or listened to the recording,  please take this short survey (3 minutes) to provide feedba",
+    "bodyText": "Thank you to everyone who attended the Peer Group Coaching and Discussion Sessions in February!\n\n\u00a0\n\nWhether you attended in February or at any time recently, or listened to the recording,\u00a0\u00a0please take this\u00a0short survey\u00a0(3 minutes) to provide feedback on the Leading at Premier Program. We want to know what you think of the three session formats we are using and to how we can improve the program as we all learn together.\n\n\u00a0\n\nWhat\u2019s next?\n\n\u00a0\n\nOur topic in January and February was Collaboration as a Performance Driver. If you didn't attend the webinar in January or watch the 28-minute recording,\u00a0 you still can at this link: Leading at Premier: Collaboration as a Performance Driver (Recording)\n\u00a0\n\nPrint your Quick Cheat Sheet: Attached above is a one-page PDF of a Quick Cheat Sheet for Coaching for Effective Collaboration. You may want to print this out and have it handy or save it to your desktop.\u00a0\n\u00a0\n\nCheck out the Resources Linked in the attached presentation: \u00a0In January, we presented a few resources that can support you in effective collaboration. Those include: \u200bRACI Matrix Template\u200b, \u200bReal Talk Planning Tool\u200b, and other learning resources for deeper learning on this topic.\n\u00a0\n\nStart thinking about questions and topics you want to bring to the Leading at Premier: Leadership Lab session you\u2019ve been invited to in March. We will do a quick demo of a tool that will help you as you lead your team through change.\u00a0\n\u00a0\n\nLearn more about our Leading at Premier program and find recordings... [truncated]"
+  },
+  {
+    "subject": "RE: SQL Server Reporting Database  - Premier ERP",
+    "from": "Miller, Steven <Steve_Miller@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-25T14:47:36Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOeHcMogF0UsiBIL1QSORvs=",
+    "bodyPreview": "Thanks Matt. From my perspective the \u201ctips and tricks\u201d UCI is looking for is around best practices on querying the data efficiently and then surfacing it in PowerBI. This is the third group of analysts they have had and this group is going down the same p",
+    "bodyText": "Thanks Matt. From my perspective the \u201ctips and tricks\u201d UCI is looking for is around best practices on querying the data efficiently and then surfacing it in PowerBI. This is the third group of analysts they have had and this group is going down the same path that previous analysts did. Their instincts are to pull entire tables over on a daily basis so that they \u201ccan drill into the detail\u201d if needed and then use their visualization tool to filter/query. I mentioned that they should focus on creating specific queries to answer focused business needs but they are resistant to that. I worry that if we don\u2019t set them up for success not only will it result in frustration on their part but also significant expense for us on their use of Google. \n\n\u00a0\n\nThere are some ERP data questions that they had that I\u2019ve sent in around how we are identifying cancelled PO lines that the ERP team would likely be the right people to get involved but I didn\u2019t know who worked with UCI. \n\n\u00a0\n\nJust wanted to give you some additional context.\n\n\u00a0\n\nSteve\n\n\u00a0\n\n\u00a0\n\nFrom: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com> \nSent: Wednesday, February 25, 2026 8:39 AM\nTo: Miller, Steven <Steve_Miller@PremierInc.com>; Bava, Stephen <Stephen_Bava@PremierInc.com>; Downs, Bethany <Bethany_Downs@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Siepiela, Audrey <Audrey_Earleson@PremierInc.com>\nSubject: RE: SQL Server Reporting Database - Premier ERP\n... [truncated]"
+  },
+  {
+    "subject": "FW: Renown ERP - ABI's KPI tile inquiry",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Haggett, Edward <Edward_Haggett@premierinc.com>",
+      "Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-25T14:17:12Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOObIph8bE4Cq0jXyiaZIcA=",
+    "bodyPreview": "Ed, Cindy, may we touch on this as well when we connect tomorrow?\r\n\r\nThank You,\r\nMatt\r\n\r\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\r\nDate: Wednesday, February 25, 2026 at 8:42\u202fAM\r\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\r\nSubj",
+    "bodyText": "Ed, Cindy, may we touch on this as well when we connect tomorrow?\n\nThank You,\nMatt\n\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nDate: Wednesday, February 25, 2026 at 8:42\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: Fw: Renown ERP - ABI's KPI tile inquiry\n\nAnother example for when you talk to Ed. I never heard back.\u00a0\n\nLindsay Schmidt\u00a0\nVice President, Supply Chain Technology\nPremier Inc\n\nGet Outlook for iOS\n\nFrom:\u00a0Boss, Don <Don_Boss@PremierInc.com>\nSent:\u00a0Thursday, February 19, 2026 7:10:59 AM\nTo:\u00a0Haggett, Edward <Edward_Haggett@premierinc.com>\nCc:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Sos, Brandon <Brandon_Sos@PremierInc.com>\nSubject:\u00a0Re: Renown ERP - ABI's KPI tile inquiry\u00a0\n\nPlus Ed\n\nDon Boss\nConsider\nGoodhart's Law\n\nFrom:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>\nSent:\u00a0Thursday, February 19, 2026 6:01 AM\nTo:\u00a0Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Boss, Don <Don_Boss@PremierInc.com>; Sos, Brandon <Brandon_Sos@premierinc.com>\nSubject:\u00a0RE: Renown ERP - ABI's KPI tile inquiry\u00a0\n\nI provisioned two Nexcera team members who are working for Episcopal Health System (St Johns) this week and have time set up to make sure they can access. Other than that I haven\u2019t trained anyone in a long time.\n\n\u00a0\n\nSteve\n\n\u00a0\n\n\u00a0\n\nFrom:\u00a0Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nSent:\u00a0Thursday, February 19, 2026 7:55 AM\nTo:\u00a0Boss, Don <Don_Boss@PremierInc.com>; Sos, Brandon <Brandon_Sos@premi... [truncated]"
+  },
+  {
+    "subject": "Re: Renown ERP - ABI's KPI tile inquiry",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-25T14:16:42Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOObIph8bE4Cq0jXyiaZIcA=",
+    "bodyPreview": "Got it, thanks!\r\n\r\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\r\nDate: Wednesday, February 25, 2026 at 8:42\u202fAM\r\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\r\nSubject: Fw: Renown ERP - ABI's KPI tile inquiry\r\n\r\nAnother example for wh",
+    "bodyText": "Got it, thanks!\n\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nDate: Wednesday, February 25, 2026 at 8:42\u202fAM\nTo: Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject: Fw: Renown ERP - ABI's KPI tile inquiry\n\nAnother example for when you talk to Ed. I never heard back.\u00a0\n\nLindsay Schmidt\u00a0\nVice President, Supply Chain Technology\nPremier Inc\n\nGet Outlook for iOS\n\nFrom:\u00a0Boss, Don <Don_Boss@PremierInc.com>\nSent:\u00a0Thursday, February 19, 2026 7:10:59 AM\nTo:\u00a0Haggett, Edward <Edward_Haggett@premierinc.com>\nCc:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Sos, Brandon <Brandon_Sos@PremierInc.com>\nSubject:\u00a0Re: Renown ERP - ABI's KPI tile inquiry\u00a0\n\nPlus Ed\n\nDon Boss\nConsider\nGoodhart's Law\n\nFrom:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>\nSent:\u00a0Thursday, February 19, 2026 6:01 AM\nTo:\u00a0Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Boss, Don <Don_Boss@PremierInc.com>; Sos, Brandon <Brandon_Sos@premierinc.com>\nSubject:\u00a0RE: Renown ERP - ABI's KPI tile inquiry\u00a0\n\nI provisioned two Nexcera team members who are working for Episcopal Health System (St Johns) this week and have time set up to make sure they can access. Other than that I haven\u2019t trained anyone in a long time.\n\n\u00a0\n\nSteve\n\n\u00a0\n\n\u00a0\n\nFrom:\u00a0Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>\nSent:\u00a0Thursday, February 19, 2026 7:55 AM\nTo:\u00a0Boss, Don <Don_Boss@PremierInc.com>; Sos, Brandon <Brandon_Sos@premierinc.com>; Miller, Steven <Steve_Miller@PremierInc.com>\nSubject:\u00a0F... [truncated]"
+  },
+  {
+    "subject": "FW: Pythian - GCP Premier Commitment Contract",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Marquardt, Bill <Bill_Marquardt@PremierInc.com>"
+    ],
+    "cc": [
+      "Sanchez, Priscilla <Priscilla_Sanchez@PremierInc.com>"
+    ],
+    "date": "2026-02-25T14:15:42Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAMsTPTObuE4Ps2kSUs16npo=",
+    "bodyPreview": "Matt, Bill,\r\n\r\nPriscilla took the initiative to negotiate directly with Pythian to secure a 2-year recommitment for GCP at a $3.1M minimum spend with a 7% discount.\r\n\r\nWhy this is a good outcome:\r\nAs you\u2019ll recall, we declined to renew directly with Googl",
+    "bodyText": "Matt, Bill,\n\nPriscilla took the initiative to negotiate directly with Pythian to secure a 2-year recommitment for GCP at a $3.1M minimum spend with a 7% discount.\n\nWhy this is a good outcome:\nAs you\u2019ll recall, we declined to renew directly with Google because sustaining our prior discounts required significantly higher commitment levels. Priscilla managed to secure nearly the same discount through a Pythian-driven commitment, keeping the overall spend on the lower end of our projections and limiting the duration to two years.\n\nExpected financial impact:\nIf we assume no discounting as the alternative, this agreement should save roughly:\n- $108.5K per year (7% of ~$1.55M/year implied by $3.1M over 24 months), or\n- $217K over the 2-year term (7% of $3.1M).\n\nStrategic context / why I recommend proceeding:\nI recognize the organizational goal to consolidate to Databricks where feasible, and we\u2019ll continue working toward that. However, we have significant BigQuery-based workloads that are stable, perform well, and would be more expensive and disruptive to migrate unnecessarily. For many of these, we can meet the \u201csingle plane of glass\u201d objective by surfacing views into Databricks, avoiding a wholesale lift-and-shift of workloads that don\u2019t need to move. Additionally, maintaining a meaningful presence with Google remains strategically useful for negotiation leverage, experimentation, and optionality as Google continues to evolve, especially given their position in the AI landscape. I... [truncated]"
+  },
+  {
+    "subject": "Align on ERP Reporting DB Approach (Steve Miller thread context)",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Haggett, Edward <Edward_Haggett@premierinc.com>",
+      "Kim, Gene <Eugene_Kim@PremierInc.com>",
+      "Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>"
+    ],
+    "cc": [
+      "Boss, Don <Don_Boss@PremierInc.com>"
+    ],
+    "date": "2026-02-25T14:04:34Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAIjX5JeOrv1PiLz0BSq3MCA=",
+    "bodyPreview": "Adding Gene and moving to next available 30 min for all, per request. Let me know if this is too early in the day - it looks like 12:30 EST may work as well if Ed is flexible at that time.\r\n\r\nThank You,\r\n\r\nMatt\r\n\r\n----------\r\n\r\nEd,\r\n\r\nI\u2019d like to align on",
+    "bodyText": "Adding Gene and moving to next available 30 min for all, per request. Let me know if this is too early in the day - it looks like 12:30 EST may work as well if Ed is flexible at that time.\n\nThank You,\n\nMatt\n\n----------\n\nEd,\n\nI\u2019d like to align on approach for UCI (context attached).\n\nMy initial position:\n\nContinue with the current ABI-for-ERP operating model where ERP implementation/support leads execution.Our team backstops on difficult questions and escalations the implementation/support team can\u2019t handle directly.Treat this as a reimplementation scenario given staffing turnover at UCI.Proceed carefully because there are signals they may consider an ERP-wide RFP.Goal for this meeting: confirm that we\u2019re aligned on posture, ownership boundaries, and near-term response approach.\n\nThanks,\nMatt\n\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/22404931701710?p=NyWcL39d57MKydkaMC \nMeeting ID: 224 049 317 017 10 \nPasscode: r2N5qs36 \n\nNeed help? | System reference\nDial in by phone\n+1 980-729-7847,,816354805# United States, Charlotte\nFind a local number\nPhone conference ID: 816 354 805# \nFor organizers: Meeting options | Reset dial-in PIN\nOrg help\n________________________________________________________________________________"
+  },
+  {
+    "subject": "Re: Andrea Lewis Leave",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Smith, Melissa <Melissa_Smith@PremierInc.com>"
+    ],
+    "cc": [
+      "Lewis, Andrea <ANDREA_LEWIS@PremierInc.com>"
+    ],
+    "date": "2026-02-25T14:02:42Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAIIENp8rf06upgxGX7zQN3k=",
+    "bodyPreview": "No problem at all! I\u2019ll plan to handle things myself during that time. Thank you both for the support.\r\n\r\nFrom: Smith, Melissa <Melissa_Smith@PremierInc.com>\r\nDate: Tuesday, February 24, 2026 at 5:50\u202fPM\r\nTo: Marquardt, Bill <Bill_Marquardt@PremierInc.com>",
+    "bodyText": "No problem at all! I\u2019ll plan to handle things myself during that time. Thank you both for the support.\n\nFrom: Smith, Melissa <Melissa_Smith@PremierInc.com>\nDate: Tuesday, February 24, 2026 at 5:50\u202fPM\nTo: Marquardt, Bill <Bill_Marquardt@PremierInc.com>, Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>, Behr, Matthew <MATTHEW_BEHR@PremierInc.com>, Shimshock, Matthew <Matt_Shimshock@PremierInc.com>, Connelly, Chad <Chad_Connelly@PremierInc.com>, Zablocki, Paul <Paul_Zablocki@PremierInc.com>\nCc: Lewis, Andrea <ANDREA_LEWIS@premierinc.com>\nSubject: Andrea Lewis Leave\n\nGood afternoon,\n\n\u00a0\n\nI hope this email finds you all well!\n\n\u00a0\n\nI wanted to send a note to this team acknowledging Andrea Lewis\u2019 upcoming leave March 2- April 6 and discuss back-up support. As most of you are aware, Jolene Smith, who supported the SSE Team and Pam Daigle, departed the SCS Admin team in December 2025. Her support desk has been transitioned over to myself, Peg Schwartz and Kena Rodman in the interim until approval to backfill her role is granted. Absorbing Jolene\u2019s support desk has added a high amount of additional workload to our small team and with Andrea taking time away, \u00a0we will be down another Coordinator for a period of time. While my team and I are always here to support you in the best possible way, I\u2019m hoping you all could please help us by directly handling minor tasks or delegating them to a member of your team while Andrea is out of office and coming to the admin team for larger/complex ... [truncated]"
+  },
+  {
+    "subject": "Align on ERP Reporting DB Approach (Steve Miller thread context)",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Haggett, Edward <Edward_Haggett@premierinc.com>",
+      "Kim, Gene <Eugene_Kim@PremierInc.com>",
+      "Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>"
+    ],
+    "cc": [
+      "Boss, Don <Don_Boss@PremierInc.com>"
+    ],
+    "date": "2026-02-25T14:00:06Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAIjX5JeOrv1PiLz0BSq3MCA=",
+    "bodyPreview": "Adding Gene and moving to next available 30 min for all, per request. Let me know if this is too early in the day - it looks like 12:30 EST may work as well if Ed is flexible at that time.\r\n\r\nThank You,\r\n\r\nMatt\r\n\r\n----------\r\n\r\nEd,\r\n\r\nI\u2019d like to align on",
+    "bodyText": "Adding Gene and moving to next available 30 min for all, per request. Let me know if this is too early in the day - it looks like 12:30 EST may work as well if Ed is flexible at that time.\n\nThank You,\n\nMatt\n\n----------\n\nEd,\n\nI\u2019d like to align on approach for UCI (context attached).\n\nMy initial position:\n\nContinue with the current ABI-for-ERP operating model where ERP implementation/support leads execution.Our team backstops on difficult questions and escalations the implementation/support team can\u2019t handle directly.Treat this as a reimplementation scenario given staffing turnover at UCI.Proceed carefully because there are signals they may consider an ERP-wide RFP.Goal for this meeting: confirm that we\u2019re aligned on posture, ownership boundaries, and near-term response approach.\n\nThanks,\nMatt\n\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.com/meet/22404931701710?p=NyWcL39d57MKydkaMC \nMeeting ID: 224 049 317 017 10 \nPasscode: r2N5qs36 \n\nNeed help? | System reference\nDial in by phone\n+1 980-729-7847,,816354805# United States, Charlotte\nFind a local number\nPhone conference ID: 816 354 805# \nFor organizers: Meeting options | Reset dial-in PIN\nOrg help\n________________________________________________________________________________"
+  },
+  {
+    "subject": "Fw: Renown ERP - ABI's KPI tile inquiry",
+    "from": "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+    "to": [
+      "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-25T13:42:50Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOObIph8bE4Cq0jXyiaZIcA=",
+    "bodyPreview": "Another example for when you talk to Ed. I never heard back.\r\n\r\nLindsay Schmidt\r\nVice President, Supply Chain Technology\r\nPremier Inc\r\n\r\nGet Outlook for iOS\r\n________________________________\r\nFrom: Boss, Don <Don_Boss@PremierInc.com>\r\nSent: Thursday, Febr",
+    "bodyText": "Another example for when you talk to Ed. I never heard back.\u00a0\n\nLindsay Schmidt\u00a0\nVice President, Supply Chain Technology\nPremier Inc\n\nGet Outlook for iOS\n\nFrom: Boss, Don <Don_Boss@PremierInc.com>\nSent: Thursday, February 19, 2026 7:10:59 AM\nTo: Haggett, Edward <Edward_Haggett@premierinc.com>\nCc: Miller, Steven <Steve_Miller@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Sos, Brandon <Brandon_Sos@PremierInc.com>\nSubject: Re: Renown ERP - ABI's KPI tile inquiry \u00a0\n\nPlus Ed\n\nDon Boss\nConsider\nGoodhart's Law\n\nFrom: Miller, Steven <Steve_Miller@PremierInc.com>\nSent: Thursday, February 19, 2026 6:01 AM\nTo: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Boss, Don <Don_Boss@PremierInc.com>; Sos, Brandon <Brandon_Sos@premierinc.com>\nSubject: RE: Renown ERP - ABI's KPI tile inquiry \u00a0\n\nI provisioned two Nexcera team members who are working for Episcopal Health System (St Johns) this week and have time set up to make sure they can access. Other than that I haven\u2019t trained anyone in a long time.\n\n\u00a0\n\nSteve\n\n\u00a0\n\n\u00a0\n\nFrom: Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com> \nSent: Thursday, February 19, 2026 7:55 AM\nTo: Boss, Don <Don_Boss@PremierInc.com>; Sos, Brandon <Brandon_Sos@premierinc.com>; Miller, Steven <Steve_Miller@PremierInc.com>\nSubject: FW: Renown ERP - ABI's KPI tile inquiry\n\n\u00a0\n\nWho trains on the ERP KPI Dashboard these days?\n\n\u00a0\n\nLindsay K. Schmidt, MHSA\u00a0\n\nVice President, Advanced Analytics and Supply Chain Technology\n\nDigital Supply Chain | Premier Inc.\u00a0\n... [truncated]"
+  },
+  {
+    "subject": "Align on ERP Reporting DB Approach (Steve Miller thread context)",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Haggett, Edward <Edward_Haggett@premierinc.com>"
+    ],
+    "cc": [
+      "Koulentianos, Cindy <Cindy_Koulentianos@PremierInc.com>",
+      "Boss, Don <Don_Boss@PremierInc.com>"
+    ],
+    "date": "2026-02-25T13:41:37Z",
+    "hasAttachments": true,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAIjX5JeOrv1PiLz0BSq3MCA=",
+    "bodyPreview": "Ed,\r\n\r\nI\u2019d like to align on approach for UCI (context attached).\r\n\r\nMy initial position:\r\n\r\n  *   Continue with the current ABI-for-ERP operating model where ERP implementation/support leads execution.\r\n  *   Our team backstops on difficult questions and ",
+    "bodyText": "Ed,\n\nI\u2019d like to align on approach for UCI (context attached).\n\nMy initial position:\n\nContinue with the current ABI-for-ERP operating model where ERP implementation/support leads execution.Our team backstops on difficult questions and escalations the implementation/support team can\u2019t handle directly.Treat this as a reimplementation scenario given staffing turnover at UCI.Proceed carefully because there are signals they may consider an ERP-wide RFP.Goal for this meeting: confirm that we\u2019re aligned on posture, ownership boundaries, and near-term response approach.\n\nThanks,\nMatt\n\n________________________________________________________________________________\nMicrosoft Teams meeting \nJoin: https://teams.microsoft.com/meet/22404931701710?p=NyWcL39d57MKydkaMC \nMeeting ID: 224 049 317 017 10 \nPasscode: r2N5qs36 \n\nNeed help? | System reference\nDial in by phone \n+1 980-729-7847,,816354805# United States, Charlotte\nFind a local number\nPhone conference ID: 816 354 805# \nFor organizers: Meeting options | Reset dial-in PIN\nOrg help \n________________________________________________________________________________"
+  },
+  {
+    "subject": "RE: SQL Server Reporting Database  - Premier ERP",
+    "from": "Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>",
+    "to": [
+      "Miller, Steven <Steve_Miller@PremierInc.com>",
+      "Bava, Stephen <Stephen_Bava@PremierInc.com>",
+      "Downs, Bethany <Bethany_Downs@PremierInc.com>",
+      "Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>",
+      "Shimshock, Matthew <Matt_Shimshock@PremierInc.com>",
+      "Siepiela, Audrey <Audrey_Earleson@PremierInc.com>"
+    ],
+    "cc": [],
+    "date": "2026-02-25T13:38:41Z",
+    "hasAttachments": false,
+    "conversationId": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAOeHcMogF0UsiBIL1QSORvs=",
+    "bodyPreview": "Hi all,\r\n\r\nQuick update: I\u2019ve reached out to connect with Ed early this morning to articulate my view (ERP-led tips/tricks up to a re-implementation if necessary, ABI team is a backstop for hard questions / GCP provisioning needs) and better understand wh",
+    "bodyText": "Hi all,\n\nQuick update: I\u2019ve reached out to connect with Ed early this morning to articulate my view (ERP-led tips/tricks up to a re-implementation if necessary, ABI team is a backstop for hard questions / GCP provisioning needs) and better understand what support he really needs.\n\nThanks,\nMatt\n\nFrom:\u00a0Miller, Steven <Steve_Miller@PremierInc.com>\nSent:\u00a0Friday, February 20, 2026 1:31:11 PM\nTo:\u00a0Bava, Stephen <Stephen_Bava@PremierInc.com>; Downs, Bethany <Bethany_Downs@PremierInc.com>; Schmidt, Lindsay <Lindsay_Schmidt@PremierInc.com>; Shimshock, Matthew <Matt_Shimshock@PremierInc.com>; Siepiela, Audrey <Audrey_Earleson@PremierInc.com>; Bossemeyer, Matthew <Matt_Bossemeyer@PremierInc.com>\nSubject:\u00a0RE: SQL Server Reporting Database - Premier ERP\u00a0\n\nHi again everyone,\n\n\u00a0\n\nThe UC-Irvine team has brought in several new team members who have been tasked with using the ERP data tables for reporting. I got them provisioned and they can access the data but once again the people they brought in don\u2019t seem to really know how to use it. I\u2019m not able to \u201ctutor\u201d them because I really don\u2019t know much beyond how to do simple queries. Michele Reed at UCI is asking for a 30 minute call to share \u201ctips, tricks and best practices\u201d.\n\n\u00a0\n\nAudrey spent a tremendous amount of time helping their previous team member navigate the mart and create queries and I hate to have to ask for some additional time from her but I\u2019m not sure who else to turn to. Would she be able to help with that 30 minute call?\n\n\u00a0\n\nSte... [truncated]"
+  }
+]

@@ -1,0 +1,653 @@
+{
+  "query_count": 8,
+  "total_unique_messages": 50,
+  "internal_unique_messages": 48,
+  "employee_summary": [
+    {
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "evidence_count": 37,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "Resiliency Management - Supply Disruption Manager",
+        "Resiliency Management - Supply Disruption Manager",
+        "Resiliency Management - Supply Disruption Manager",
+        "Resiliency Management - Supply Disruption Manager",
+        "Resiliency Management - Supply Disruption Manager"
+      ],
+      "top_samples": [
+        {
+          "subject": "Resiliency Management - Supply Disruption Manager",
+          "receivedDateTime": "2026-03-03T17:25:54Z",
+          "score": 0,
+          "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are..."
+        },
+        {
+          "subject": "Resiliency Management - Supply Disruption Manager",
+          "receivedDateTime": "2026-02-24T16:46:19Z",
+          "score": 0,
+          "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are..."
+        },
+        {
+          "subject": "Resiliency Management - Supply Disruption Manager",
+          "receivedDateTime": "2026-02-17T16:42:05Z",
+          "score": 0,
+          "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are..."
+        },
+        {
+          "subject": "Resiliency Management - Supply Disruption Manager",
+          "receivedDateTime": "2026-02-10T17:22:12Z",
+          "score": 0,
+          "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are..."
+        },
+        {
+          "subject": "Resiliency Management - Supply Disruption Manager",
+          "receivedDateTime": "2026-02-03T17:35:41Z",
+          "score": 0,
+          "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are..."
+        }
+      ]
+    },
+    {
+      "sender": "Matt_Bossemeyer@PremierInc.com",
+      "sender_name": "Bossemeyer, Matthew",
+      "evidence_count": 3,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "FW: Premier R&D Tax Credit \u2013 FY2025 Project Qualification & Documentation Request",
+        "Re: DSC Pod \"Pilot\"",
+        "FW: Reminders: Year-End Process"
+      ],
+      "top_samples": [
+        {
+          "subject": "FW: Premier R&D Tax Credit \u2013 FY2025 Project Qualification & Documentation Request",
+          "receivedDateTime": "2026-03-03T16:24:22Z",
+          "score": 0,
+          "bodyPreview": "Hey Bethany, Forwarding Trevor's latest reply below. The good news: your Epics/features documentation was exactly what they needed. The next ask is a sample of supporting development..."
+        },
+        {
+          "subject": "Re: DSC Pod \"Pilot\"",
+          "receivedDateTime": "2026-01-06T14:07:06Z",
+          "score": 0,
+          "bodyPreview": "...in a pod / Fusion team is worth more than my philosophizing, so please bring / send ahead some thoughts on how to improve / replace the draft below to reflect your strongest ..."
+        },
+        {
+          "subject": "FW: Reminders: Year-End Process",
+          "receivedDateTime": "2025-07-29T12:48:10Z",
+          "score": 0,
+          "bodyPreview": "Hey Stephen, I was able to get a PDF print out of the draft overall evaluation so that you can review it ahead of our 1:1 / discussion. Best, Matt From: Bossemeyer, Matthew <Matt_"
+        }
+      ]
+    },
+    {
+      "sender": "Zach_Lilly@PremierInc.com",
+      "sender_name": "Lilly, Zach",
+      "evidence_count": 1,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "Re: ABI Culture Presentation from Joe Machicote"
+      ],
+      "top_samples": [
+        {
+          "subject": "Re: ABI Culture Presentation from Joe Machicote",
+          "receivedDateTime": "2026-02-05T11:51:27Z",
+          "score": 0,
+          "bodyPreview": "Hey Everyone,  Good morning! Please see below for a special message from Joe Machicote \ud83d\ude42  Joe, thank you again for joining us, sharing your perspective, and for the very..."
+        }
+      ]
+    },
+    {
+      "sender": "Joseph_Machicote@Premierinc.com",
+      "sender_name": "Machicote, Joseph",
+      "evidence_count": 1,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "RE: ABI Culture Presentation from Joe Machicote"
+      ],
+      "top_samples": [
+        {
+          "subject": "RE: ABI Culture Presentation from Joe Machicote",
+          "receivedDateTime": "2026-02-04T20:52:49Z",
+          "score": 0,
+          "bodyPreview": "Hello Team!  I just wanted to follow up with a message to the team and a BIG surprise! I would like to gift everyone a PDF eBook copy of my book! I forgot to mention it yesterday..."
+        }
+      ]
+    },
+    {
+      "sender": "Ben_Davis@PremierInc.com",
+      "sender_name": "Davis, Ben",
+      "evidence_count": 1,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "FW: AI Testing Standards and Questions"
+      ],
+      "top_samples": [
+        {
+          "subject": "FW: AI Testing Standards and Questions",
+          "receivedDateTime": "2025-12-18T14:31:12Z",
+          "score": 0,
+          "bodyPreview": "From: Davis, Ben <Ben_Davis@PremierInc.com> Date: Thursday, December 18, 2025 at 8:36\u202fAM To: McCleary, Scott <Scott_McCleary@PremierInc.com>, Kennedy, Holly <Holly_Kennedy@"
+        }
+      ]
+    },
+    {
+      "sender": "Lindsay_Schmidt@PremierInc.com",
+      "sender_name": "Schmidt, Lindsay",
+      "evidence_count": 1,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "Light reading - Premier_Palantir_Project_Charter"
+      ],
+      "top_samples": [
+        {
+          "subject": "Light reading - Premier_Palantir_Project_Charter",
+          "receivedDateTime": "2025-12-12T17:15:25Z",
+          "score": 0,
+          "bodyPreview": "Carve out some time to read this 41 pager \ud83d\ude0a You can read it all or start on Page 19 at Use Case #1. This is where we define the scope, timeline and metrics for the analytics piece..."
+        }
+      ]
+    },
+    {
+      "sender": "Karolyn_Stanley@PremierInc.com",
+      "sender_name": "Stanley, Karolyn",
+      "evidence_count": 1,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "RE: Internal Overview / Training on What Data We have "
+      ],
+      "top_samples": [
+        {
+          "subject": "RE: Internal Overview / Training on What Data We have ",
+          "receivedDateTime": "2025-10-31T12:05:07Z",
+          "score": 0,
+          "bodyPreview": "Thanks, Elise \u2013 wow, this is super cool! I\u2019m impressed. I like your plan to go ahead and introduce the cohort to what data is available, BQ, connected sheets, etc. in the meantime..."
+        }
+      ]
+    },
+    {
+      "sender": "Kenneth_Scher@PremierInc.com",
+      "sender_name": "Scher, Kenneth",
+      "evidence_count": 1,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "Trinity Prep"
+      ],
+      "top_samples": [
+        {
+          "subject": "Trinity Prep",
+          "receivedDateTime": "2025-08-10T23:46:03Z",
+          "score": 0,
+          "bodyPreview": "Hi All \u2013 we have the call with Trinity tomorrow at 11am Eastern\u2026 we never had a prep call, so I am scheduling this so we can align. Attached is also the RFI response we provided..."
+        }
+      ]
+    },
+    {
+      "sender": "Diane_Karp@PremierInc.com",
+      "sender_name": "Karp, Diane",
+      "evidence_count": 1,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "New Project:  Baptist Health, KY  Supply Chain Analytics and HVI"
+      ],
+      "top_samples": [
+        {
+          "subject": "New Project:  Baptist Health, KY  Supply Chain Analytics and HVI",
+          "receivedDateTime": "2025-03-27T14:05:16Z",
+          "score": 0,
+          "bodyPreview": "Hi Colin/Steve: A new project has come in for Baptist Health, Louisville effective 3/31/25. Please start the implementation and let me know the estimated go-live dates. Product(s..."
+        }
+      ]
+    },
+    {
+      "sender": "Melanie_Proctor@PremierInc.com",
+      "sender_name": "Proctor, Melanie",
+      "evidence_count": 1,
+      "avg_top_score": 0.0,
+      "top_subjects": [
+        "RE: Premier <> Conductiv Data Strategy Regroup "
+      ],
+      "top_samples": [
+        {
+          "subject": "RE: Premier <> Conductiv Data Strategy Regroup ",
+          "receivedDateTime": "2025-03-21T18:04:48Z",
+          "score": 0,
+          "bodyPreview": "Slide deck attached that has some of what we do in data management. Melanie Proctor Vice President, Supply Chain Data Management Supply Chain Services | Premier Inc. O: 704.816."
+        }
+      ]
+    }
+  ],
+  "top_internal_messages": [
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2026-03-03T17:25:54Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "FW: Premier R&D Tax Credit \u2013 FY2025 Project Qualification & Documentation Request",
+      "receivedDateTime": "2026-03-03T16:24:22Z",
+      "sender": "Matt_Bossemeyer@PremierInc.com",
+      "sender_name": "Bossemeyer, Matthew",
+      "bodyPreview": "Hey Bethany, Forwarding Trevor's latest reply below. The good news: your Epics/features documentation was exactly what they needed. The next ask is a sample of supporting development...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2026-02-24T16:46:19Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2026-02-17T16:42:05Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2026-02-10T17:22:12Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Re: ABI Culture Presentation from Joe Machicote",
+      "receivedDateTime": "2026-02-05T11:51:27Z",
+      "sender": "Zach_Lilly@PremierInc.com",
+      "sender_name": "Lilly, Zach",
+      "bodyPreview": "Hey Everyone,  Good morning! Please see below for a special message from Joe Machicote \ud83d\ude42  Joe, thank you again for joining us, sharing your perspective, and for the very...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "RE: ABI Culture Presentation from Joe Machicote",
+      "receivedDateTime": "2026-02-04T20:52:49Z",
+      "sender": "Joseph_Machicote@Premierinc.com",
+      "sender_name": "Machicote, Joseph",
+      "bodyPreview": "Hello Team!  I just wanted to follow up with a message to the team and a BIG surprise! I would like to gift everyone a PDF eBook copy of my book! I forgot to mention it yesterday...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2026-02-03T17:35:41Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2026-01-27T16:51:47Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2026-01-21T17:55:15Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Re: DSC Pod \"Pilot\"",
+      "receivedDateTime": "2026-01-06T14:07:06Z",
+      "sender": "Matt_Bossemeyer@PremierInc.com",
+      "sender_name": "Bossemeyer, Matthew",
+      "bodyPreview": "...in a pod / Fusion team is worth more than my philosophizing, so please bring / send ahead some thoughts on how to improve / replace the draft below to reflect your strongest ...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-12-30T16:46:21Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-12-23T16:45:32Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "FW: AI Testing Standards and Questions",
+      "receivedDateTime": "2025-12-18T14:31:12Z",
+      "sender": "Ben_Davis@PremierInc.com",
+      "sender_name": "Davis, Ben",
+      "bodyPreview": "From: Davis, Ben <Ben_Davis@PremierInc.com> Date: Thursday, December 18, 2025 at 8:36\u202fAM To: McCleary, Scott <Scott_McCleary@PremierInc.com>, Kennedy, Holly <Holly_Kennedy@",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-12-16T16:38:27Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Light reading - Premier_Palantir_Project_Charter",
+      "receivedDateTime": "2025-12-12T17:15:25Z",
+      "sender": "Lindsay_Schmidt@PremierInc.com",
+      "sender_name": "Schmidt, Lindsay",
+      "bodyPreview": "Carve out some time to read this 41 pager \ud83d\ude0a You can read it all or start on Page 19 at Use Case #1. This is where we define the scope, timeline and metrics for the analytics piece...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-12-09T20:03:56Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-12-02T17:24:05Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-11-25T17:04:53Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-11-18T16:58:34Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-11-11T18:27:19Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-11-04T17:19:36Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "RE: Internal Overview / Training on What Data We have ",
+      "receivedDateTime": "2025-10-31T12:05:07Z",
+      "sender": "Karolyn_Stanley@PremierInc.com",
+      "sender_name": "Stanley, Karolyn",
+      "bodyPreview": "Thanks, Elise \u2013 wow, this is super cool! I\u2019m impressed. I like your plan to go ahead and introduce the cohort to what data is available, BQ, connected sheets, etc. in the meantime...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-10-28T16:38:40Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-10-21T16:48:08Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-10-14T18:58:20Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-09-30T17:06:12Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-09-23T16:46:41Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-09-16T16:48:42Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-09-09T16:58:54Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-09-02T16:44:31Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-08-26T17:03:13Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-08-19T16:47:04Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-08-12T17:07:06Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Trinity Prep",
+      "receivedDateTime": "2025-08-10T23:46:03Z",
+      "sender": "Kenneth_Scher@PremierInc.com",
+      "sender_name": "Scher, Kenneth",
+      "bodyPreview": "Hi All \u2013 we have the call with Trinity tomorrow at 11am Eastern\u2026 we never had a prep call, so I am scheduling this so we can align. Attached is also the RFI response we provided...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-08-05T16:44:58Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-07-29T20:30:51Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "FW: Reminders: Year-End Process",
+      "receivedDateTime": "2025-07-29T12:48:10Z",
+      "sender": "Matt_Bossemeyer@PremierInc.com",
+      "sender_name": "Bossemeyer, Matthew",
+      "bodyPreview": "Hey Stephen, I was able to get a PDF print out of the draft overall evaluation so that you can review it ahead of our 1:1 / discussion. Best, Matt From: Bossemeyer, Matthew <Matt_",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-07-15T17:44:31Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-07-08T17:10:39Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-07-01T16:40:29Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer, Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-06-24T16:38:51Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer , Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-06-17T19:30:34Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer , Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-06-10T16:48:40Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer , Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-06-03T17:07:37Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer , Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "Resiliency Management - Supply Disruption Manager",
+      "receivedDateTime": "2025-05-27T17:58:00Z",
+      "sender": "sdm_noreply@premierinc.com",
+      "sender_name": "sdm_noreply@premierinc.com",
+      "bodyPreview": "Resiliency Management Supply Disruption Manager - Weekly Updates Hello Matt Bossemeyer , Below we have highlighted the main take aways this week for RENOWN HEALTH. These are...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "New Project:  Baptist Health, KY  Supply Chain Analytics and HVI",
+      "receivedDateTime": "2025-03-27T14:05:16Z",
+      "sender": "Diane_Karp@PremierInc.com",
+      "sender_name": "Karp, Diane",
+      "bodyPreview": "Hi Colin/Steve: A new project has come in for Baptist Health, Louisville effective 3/31/25. Please start the implementation and let me know the estimated go-live dates. Product(s...",
+      "score": 0
+    },
+    {
+      "id": null,
+      "subject": "RE: Premier <> Conductiv Data Strategy Regroup ",
+      "receivedDateTime": "2025-03-21T18:04:48Z",
+      "sender": "Melanie_Proctor@PremierInc.com",
+      "sender_name": "Proctor, Melanie",
+      "bodyPreview": "Slide deck attached that has some of what we do in data management. Melanie Proctor Vice President, Supply Chain Data Management Supply Chain Services | Premier Inc. O: 704.816.",
+      "score": 0
+    }
+  ]
+}

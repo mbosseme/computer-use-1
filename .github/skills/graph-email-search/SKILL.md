@@ -228,3 +228,12 @@ If `$search` returns messages from the wrong thread (e.g., a 1:1 with similar ke
 - 401: token expired → retry once with a fresh token.
 - 403: missing Mail scopes or missing admin consent.
 - Empty results: confirm you’re searching SentItems vs Inbox and whether you included Cc.
+
+## Advanced Search (`/search/query`)
+If `$search` on `/me/messages` is failing or returning inconsistent results across mailbox folders, or if you need to search events (meeting invites), use the Microsoft Graph Search API (`/search/query`):
+- `agent_tools.graph.mail_search.search_messages_query_api`
+- `agent_tools.graph.mail_search.search_events_query_api`
+
+**Important Note for `/search/query`**:
+Depending on the tenant projection, the `resource` objects returned inside the `hits` array may occasionally be missing the `id` field. When performing operations that require deduplication, you must implement a robust fallback deduplication key (e.g., combining `receivedDateTime`, `subject`, and `sender` or `organizer`) rather than strictly relying on `id`.
+

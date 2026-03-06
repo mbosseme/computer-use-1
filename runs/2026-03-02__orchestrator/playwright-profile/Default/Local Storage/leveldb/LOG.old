@@ -1,0 +1,51 @@
+2026/03/04-11:51:32.476 6497c0 Reusing MANIFEST /Users/matt_bossemeyer/Projects/wt-2026-03-02__orchestrator/runs/2026-03-02__orchestrator/playwright-profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/03/04-11:51:32.479 6497c0 Recovering log #100
+2026/03/04-11:51:32.479 6497c0 Reusing old log /Users/matt_bossemeyer/Projects/wt-2026-03-02__orchestrator/runs/2026-03-02__orchestrator/playwright-profile/Default/Local Storage/leveldb/000100.log 
+2026/03/04-11:52:32.507 6497c3 Level-0 table #104: started
+2026/03/04-11:52:32.512 6497c3 Level-0 table #104: 195693 bytes OK
+2026/03/04-11:52:32.515 6497c3 Delete type=0 #100
+2026/03/04-12:01:39.715 6497c3 Level-0 table #106: started
+2026/03/04-12:01:39.721 6497c3 Level-0 table #106: 52935 bytes OK
+2026/03/04-12:01:39.724 6497c3 Delete type=0 #103
+2026/03/04-12:51:34.314 6497c3 Level-0 table #108: started
+2026/03/04-12:51:34.321 6497c3 Level-0 table #108: 40797 bytes OK
+2026/03/04-12:51:34.326 6497c3 Delete type=0 #105
+2026/03/04-12:51:34.330 6497c3 Compacting 4@0 + 1@1 files
+2026/03/04-12:51:34.337 6497c3 Generated table #109@0: 143 keys, 433113 bytes
+2026/03/04-12:51:34.337 6497c3 Compacted 4@0 + 1@1 files => 433113 bytes
+2026/03/04-12:51:34.338 6497c3 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/04-12:51:34.339 6497c3 Delete type=2 #101
+2026/03/04-12:51:34.339 6497c3 Delete type=2 #104
+2026/03/04-12:51:34.339 6497c3 Delete type=2 #99
+2026/03/04-12:51:34.339 6497c3 Delete type=2 #106
+2026/03/04-12:51:34.339 6497c3 Delete type=2 #108
+2026/03/04-14:51:38.252 6497c3 Level-0 table #111: started
+2026/03/04-14:51:38.258 6497c3 Level-0 table #111: 58473 bytes OK
+2026/03/04-14:51:38.261 6497c3 Delete type=0 #107
+2026/03/04-15:41:47.891 6497c3 Level-0 table #113: started
+2026/03/04-15:41:47.897 6497c3 Level-0 table #113: 59412 bytes OK
+2026/03/04-15:41:47.901 6497c3 Delete type=0 #110
+2026/03/04-16:51:39.181 6497c3 Level-0 table #115: started
+2026/03/04-16:51:39.188 6497c3 Level-0 table #115: 65718 bytes OK
+2026/03/04-16:51:39.191 6497c3 Delete type=0 #112
+2026/03/04-18:16:26.729 6497c3 Level-0 table #117: started
+2026/03/04-18:16:26.734 6497c3 Level-0 table #117: 45252 bytes OK
+2026/03/04-18:16:26.738 6497c3 Delete type=0 #114
+2026/03/04-18:16:26.740 6497c3 Compacting 4@0 + 1@1 files
+2026/03/04-18:16:26.749 6497c3 Generated table #118@0: 144 keys, 440454 bytes
+2026/03/04-18:16:26.750 6497c3 Compacted 4@0 + 1@1 files => 440454 bytes
+2026/03/04-18:16:26.751 6497c3 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/04-18:16:26.752 6497c3 Delete type=2 #117
+2026/03/04-18:16:26.752 6497c3 Delete type=2 #115
+2026/03/04-18:16:26.752 6497c3 Delete type=2 #111
+2026/03/04-18:16:26.752 6497c3 Delete type=2 #113
+2026/03/04-18:16:26.753 6497c3 Delete type=2 #109
+2026/03/04-19:04:55.847 6497c3 Level-0 table #120: started
+2026/03/04-19:04:55.852 6497c3 Level-0 table #120: 57564 bytes OK
+2026/03/04-19:04:55.854 6497c3 Delete type=0 #116
+2026/03/04-19:11:39.773 6497c3 Level-0 table #122: started
+2026/03/04-19:11:39.779 6497c3 Level-0 table #122: 40538 bytes OK
+2026/03/04-19:11:39.783 6497c3 Delete type=0 #119
+2026/03/04-19:26:21.620 6497c3 Level-0 table #124: started
+2026/03/04-19:26:21.625 6497c3 Level-0 table #124: 40755 bytes OK
+2026/03/04-19:26:21.627 6497c3 Delete type=0 #121

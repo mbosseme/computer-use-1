@@ -1,0 +1,21 @@
+2026/03/05-09:02:03.523 818a8b Reusing MANIFEST /Users/matt_bossemeyer/Projects/wt-2026-03-02__orchestrator/runs/2026-03-02__orchestrator/playwright-profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/03/05-09:02:03.525 818a8b Recovering log #123
+2026/03/05-09:02:03.527 818a8b Reusing old log /Users/matt_bossemeyer/Projects/wt-2026-03-02__orchestrator/runs/2026-03-02__orchestrator/playwright-profile/Default/Local Storage/leveldb/000123.log 
+2026/03/05-09:03:03.535 818a8e Level-0 table #127: started
+2026/03/05-09:03:03.539 818a8e Level-0 table #127: 216775 bytes OK
+2026/03/05-09:03:03.540 818a8e Delete type=0 #123
+2026/03/05-09:03:03.541 818a8e Compacting 4@0 + 1@1 files
+2026/03/05-09:03:03.549 818a8e Generated table #128@0: 150 keys, 439600 bytes
+2026/03/05-09:03:03.549 818a8e Compacted 4@0 + 1@1 files => 439600 bytes
+2026/03/05-09:03:03.550 818a8e compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/05-09:03:03.550 818a8e Delete type=2 #122
+2026/03/05-09:03:03.550 818a8e Delete type=2 #120
+2026/03/05-09:03:03.550 818a8e Delete type=2 #118
+2026/03/05-09:03:03.550 818a8e Delete type=2 #124
+2026/03/05-09:03:03.550 818a8e Delete type=2 #127
+2026/03/05-09:05:08.281 818a8e Level-0 table #130: started
+2026/03/05-09:05:08.285 818a8e Level-0 table #130: 54773 bytes OK
+2026/03/05-09:05:08.290 818a8e Delete type=0 #126
+2026/03/05-10:02:19.928 818a8e Level-0 table #132: started
+2026/03/05-10:02:19.936 818a8e Level-0 table #132: 38351 bytes OK
+2026/03/05-10:02:19.942 818a8e Delete type=0 #129

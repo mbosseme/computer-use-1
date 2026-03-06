@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-03-03T14:31:05.847311+00:00",
+  "principal": "matt_bossemeyer@premierinc.com",
+  "focus_task_count": 2,
+  "focus_tasks": [
+    {
+      "id": "AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4-xIVEVaBwCtC60M6iwCT6oV7C2g6lbxAAAAQ-5DAAAmYvJHuYjqQbIghoy3jqM-AAmAaDDiAAA=",
+      "title": "MI FY25 R&D credit: Select 2 epics and deliver documentation by Feb 10",
+      "status": "notStarted",
+      "importance": "normal",
+      "due_date": "2026-02-09",
+      "body_preview": "For the Digital Supply Chain (Market Insights) project, select two major FY25 epics and provide documentation for 2\u20133 new features/functions each (stories, design alternatives, testing spikes/results). Send materials to Forvis by Tuesday, Feb 10.\n\n---\nMETADATA:\nPrimary BigRock: BR6 - Forvis/IRS Compliance Packet Catch-up\nTrue Deadline: 2026-02-10 (hard) - Documentation requested by auditors\nEstimated Effort: \n  - value: 2.0 hours - Identify epics, compile artifacts, and submit\n  - confidence: me",
+      "body_full": "For the Digital Supply Chain (Market Insights) project, select two major FY25 epics and provide documentation for 2\u20133 new features/functions each (stories, design alternatives, testing spikes/results). Send materials to Forvis by Tuesday, Feb 10.\n\n---\nMETADATA:\nPrimary BigRock: BR6 - Forvis/IRS Compliance Packet Catch-up\nTrue Deadline: 2026-02-10 (hard) - Documentation requested by auditors\nEstimated Effort: \n  - value: 2.0 hours - Identify epics, compile artifacts, and submit\n  - confidence: medium\nDependencies:\n  - value: Coordination with Lindsay Schmidt and engineering for story/testing artifacts\n  - confidence: medium\nPrimary Stakeholders: Lindsay Schmidt (Peer leader), Scott McCleary (Internal collaborator), Forvis Mazars team (External auditor)\nStrategic Alignment: \n  - value: Goal 4b - Organizational compliance; supports R&D credit integrity\n  - confidence: medium\n---\n=== TRIGGER POINTERS (for execution agents) ===\n- TriggerType: email\n  Subject: Re: Premier R&D Tax Credit \u2013 FY2025 Project Qualification & Documentation Request\n  From: McCleary, Scott <Scott_McCleary@PremierInc.com>\n  Received: 2026-01-28 17:28\n  MessageId: AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4-xIVEVaBwAmYvJHuYjqQbIghoy3jqM-AAejyLKGAAAmYvJHuYjqQbIghoy3jqM-AAl5d2SfAAA=\n  ConversationId: AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE4zCBOUh0smsRZTgMs-DWY=\n  WebLink: https://outlook.office365.com/owa/?ItemID=AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4%2FxIVEVaBwAmYvJHuYjqQbIghoy3jqM%2FAAejyLKGAAAmYvJHuYjqQbIghoy3jqM%2FAAl5d2SfAAA%3D&exvsurl=1&viewmodel=ReadMessageItem\n",
+      "created": "2026-01-29T12:33:26.7072508Z",
+      "modified": "2026-02-23T16:05:52.0070144Z",
+      "categories": [],
+      "has_attachments": false,
+      "list_name": "Tasks",
+      "is_my_day": false
+    },
+    {
+      "id": "AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4-xIVEVaBwCtC60M6iwCT6oV7C2g6lbxAAAAQ-5DAAAmYvJHuYjqQbIghoy3jqM-AAmAaDDgAAA=",
+      "title": "IRS audit: Coordinate ABI Platform experimentation artifacts (FY2023) for Forvis",
+      "status": "notStarted",
+      "importance": "normal",
+      "due_date": "2026-03-01",
+      "body_preview": "Coordinate with ABI engineering leads to gather documentation artifacts (spikes, QA testing, experimentation notes) for FY2023 (7/1/2022\u20136/30/2023) to satisfy IRS audit request. Ensure initial submission by Monday 2/2 and propose availability for a live meeting on 2/4 or 2/5.\n\n---\nMETADATA:\nPrimary BigRock: BR6 - Forvis/IRS Compliance Packet Catch-up\nTrue Deadline: 2026-02-02 (hard) - IRS audit initial response requested by Forvis\nEstimated Effort: \n  - value: 1.5 hours - Organize requests, conf",
+      "body_full": "Coordinate with ABI engineering leads to gather documentation artifacts (spikes, QA testing, experimentation notes) for FY2023 (7/1/2022\u20136/30/2023) to satisfy IRS audit request. Ensure initial submission by Monday 2/2 and propose availability for a live meeting on 2/4 or 2/5.\n\n---\nMETADATA:\nPrimary BigRock: BR6 - Forvis/IRS Compliance Packet Catch-up\nTrue Deadline: 2026-02-02 (hard) - IRS audit initial response requested by Forvis\nEstimated Effort: \n  - value: 1.5 hours - Organize requests, confirm artifacts, upload, and share availability\n  - confidence: medium\nDependencies:\n  - value: Artifact collection from ABI engineering (Sri, Sandeep, Anthony, etc.)\n  - confidence: high\nPrimary Stakeholders: Srikanth (Sri) Ramayanam (Engineering lead), Forvis Mazars team (External auditor), Justin Corwin (Tax Director - Internal)\nStrategic Alignment: \n  - value: Goal 4b - Compliance support and organizational readiness\n  - confidence: medium\n---\n=== TRIGGER POINTERS (for execution agents) ===\n- TriggerType: email\n  Subject: FW: ABI Platform - Experimentation Artifact Request\n  From: Ramayanam, Srikanth <Srikanth_Ramayanam@PremierInc.com>\n  Received: 2026-01-28 19:58\n  MessageId: AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4-xIVEVaBwAmYvJHuYjqQbIghoy3jqM-AAejyLKGAAAmYvJHuYjqQbIghoy3jqM-AAl5d2SlAAA=\n  ConversationId: AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQANdAsj-WkhdFgJHdMJx92R0=\n  WebLink: https://outlook.office365.com/owa/?ItemID=AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4%2FxIVEVaBwAmYvJHuYjqQbIghoy3jqM%2FAAejyLKGAAAmYvJHuYjqQbIghoy3jqM%2FAAl5d2SlAAA%3D&exvsurl=1&viewmodel=ReadMessageItem\n",
+      "created": "2026-01-29T12:32:49.661821Z",
+      "modified": "2026-03-02T18:49:26.8413369Z",
+      "categories": [],
+      "has_attachments": false,
+      "list_name": "Tasks",
+      "is_my_day": false
+    }
+  ],
+  "relevant_message_count": 7,
+  "relevant_thread_count": 3,
+  "open_action_count": 0,
+  "open_actions": [],
+  "thread_summaries": [
+    {
+      "conversation_id": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAMS1j4MVE0r4ojtXuSuNewU=",
+      "subject_latest": "RE: Premier R&D Tax Credit \u2013 FY2025 Project Qualification & Documentation Request",
+      "latest_datetime": "2026-02-27T11:28:41Z",
+      "latest_from": "",
+      "message_count": 16
+    },
+    {
+      "conversation_id": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQANdAsj-WkhdFgJHdMJx92R0=",
+      "subject_latest": "FW: ABI Platform - Experimentation Artifact Request",
+      "latest_datetime": "2026-01-28T19:58:55Z",
+      "latest_from": "",
+      "message_count": 1
+    },
+    {
+      "conversation_id": "AAQkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwAQAE4zCBOUh0smsRZTgMs-DWY=",
+      "subject_latest": "Re: Premier R&D Tax Credit \u2013 FY2025 Project Qualification & Documentation Request",
+      "latest_datetime": "2026-01-28T17:28:14Z",
+      "latest_from": "",
+      "message_count": 1
+    }
+  ]
+}

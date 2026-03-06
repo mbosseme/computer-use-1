@@ -1,0 +1,50 @@
+[
+  {
+    "id": "AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4-xIVEVaBwCtC60M6iwCT6oV7C2g6lbxAAAAQ-5DAAAmYvJHuYjqQbIghoy3jqM-AAk6VjPeAAA=",
+    "title": "B. Braun: Schedule 30-min call to align on minimal pilot scope (Jen/Tracy + team)",
+    "status": "notStarted",
+    "importance": "high",
+    "due_date": "2026-03-03",
+    "body_preview": "Schedule a short Teams call to align on a very limited, category-specific exploratory pilot (facility-level). Confirm objectives, single category focus, validation approach, and next steps. Propose a few slots next week and include Lindsay/Anita/Sachin as needed.\n\n---\nMETADATA:\nTrue Deadline: 2026-03-06 (soft) - BR2 target to get pilot scope call scheduled\nEstimated Effort: \n  - value: 1.0 hours - Outreach, scheduling, and brief scope confirmation\n  - confidence: medium\nDependencies:\n  - value: ",
+    "body_full": "Schedule a short Teams call to align on a very limited, category-specific exploratory pilot (facility-level). Confirm objectives, single category focus, validation approach, and next steps. Propose a few slots next week and include Lindsay/Anita/Sachin as needed.\n\n---\nMETADATA:\nTrue Deadline: 2026-03-06 (soft) - BR2 target to get pilot scope call scheduled\nEstimated Effort: \n  - value: 1.0 hours - Outreach, scheduling, and brief scope confirmation\n  - confidence: medium\nDependencies:\n  - value: Dependent: Pilot planning and ROI analysis proceed after scope alignment\n  - confidence: medium\nPrimary Stakeholders: Jen (External - B. Braun), Tracy (External - B. Braun), Lindsay Schmidt (Key internal collaborator), Anita Mouroutsos (Key internal collaborator), Sachin (Key internal collaborator)\nStrategic Alignment: \n  - value: Goal 2a/b - Drives pilot adoption and pipeline momentum\n  - confidence: high\nPrimary BigRock: BR2 - Market Insights Pipeline and GPO Strategy Alignment Sprint\nPrimary BigRock Confidence: high",
+    "created": "2026-01-16T12:17:18.6094575Z",
+    "modified": "2026-03-03T14:03:40.3676113Z",
+    "categories": [],
+    "has_attachments": false,
+    "list_name": "Tasks",
+    "is_my_day": true,
+    "my_day_inferred": true
+  },
+  {
+    "id": "AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4-xIVEVaBwCtC60M6iwCT6oV7C2g6lbxAAAAQ-5DAAAmYvJHuYjqQbIghoy3jqM-AAkviw9rAAA=",
+    "title": "Review revised Contract Performance deck; integrate with MI analysis for Joe/Nicole briefing",
+    "status": "notStarted",
+    "importance": "normal",
+    "due_date": "2026-03-03",
+    "body_preview": "Review Tiffany\u2019s revised deck and align with Market Insights analysis on conversion speed and market share shifts post-award. Draft 3\u20134 key messages, confirm the \u201cThe Ask/The How/The What/The Why\u201d flow, and identify 1\u20132 visuals supporting the narrative for the briefing with Joe Bichler and Nicole Maven.\n\n---\nMETADATA:\nTrue Deadline: 2026-03-05 (soft) - Prepare integrated messages before Joe/Nicole briefing\nEstimated Effort: \n  - value: 1.5 hours - Review and synthesis into executive-ready key me",
+    "body_full": "Review Tiffany\u2019s revised deck and align with Market Insights analysis on conversion speed and market share shifts post-award. Draft 3\u20134 key messages, confirm the \u201cThe Ask/The How/The What/The Why\u201d flow, and identify 1\u20132 visuals supporting the narrative for the briefing with Joe Bichler and Nicole Maven.\n\n---\nMETADATA:\nTrue Deadline: 2026-03-05 (soft) - Prepare integrated messages before Joe/Nicole briefing\nEstimated Effort: \n  - value: 1.5 hours - Review and synthesis into executive-ready key messages\n  - confidence: medium\nDependencies:\n  - value: Dependent: Joe/Nicole briefing relies on integrated narrative and visuals\n  - confidence: high\nPrimary Stakeholders: Tiffany (Internal collaborator - deck author), Joe Bichler (Senior leadership), Nicole Maven (Senior leadership)\nStrategic Alignment: \n  - value: Goal 2a/b - MI analysis integration to support executive decisions and adoption\n  - confidence: high\nPrimary BigRock: BR1 - Contract Performance Executive Readout \u2013 Finalize Narrative and Stakeholder Briefings\nPrimary BigRock Confidence: high",
+    "created": "2026-01-12T13:53:27.5422464Z",
+    "modified": "2026-03-03T14:03:36.5877203Z",
+    "categories": [],
+    "has_attachments": false,
+    "list_name": "Tasks",
+    "is_my_day": true,
+    "my_day_inferred": true
+  },
+  {
+    "id": "AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4-xIVEVaBwAmYvJHuYjqQbIghoy3jqM-AAd1gpkvAAAmYvJHuYjqQbIghoy3jqM-AAmO2_gvAAA=",
+    "title": "Migrate data model behind FDA dashboard to dataform prod project & have Eng schedule",
+    "status": "notStarted",
+    "importance": "normal",
+    "due_date": "2026-03-03",
+    "body_preview": "https://dev.azure.com/premierinc/MII/_workitems/edit/1331941\r\n\r\n3 pts set for Sprint 17\r\n",
+    "body_full": "https://dev.azure.com/premierinc/MII/_workitems/edit/1331941\r\n\r\n3 pts set for Sprint 17\r\n",
+    "created": "2026-01-31T13:23:13.4344353Z",
+    "modified": "2026-02-05T20:03:02.9780109Z",
+    "categories": [],
+    "has_attachments": true,
+    "list_name": "Jesse",
+    "is_my_day": true,
+    "my_day_inferred": true
+  }
+]

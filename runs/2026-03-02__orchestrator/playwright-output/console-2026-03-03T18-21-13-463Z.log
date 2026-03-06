@@ -1,0 +1,24 @@
+[    1879ms] [WARNING] AI (Internal): 505 message:"Browser does not support local storage. Session durations will be inaccurate." @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.fffa6b0bb2e8b899.chunk.js:1
+[    2201ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://m365.cloud.microsoft/api/userstorage/AppBarUserData/?workload=officehomereact&auth=2:0
+[    2209ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://m365.cloud.microsoft/api/userstorage/ThemeMode/?workload=officehomereact&auth=2:0
+[  157722ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+ChevronDown, Edit, Add, Cancel, More, Mail, Filter, Share, FavoriteStar, CheckMark (+ 62 more) @ https://res.cdn.office.net/admincenter/admin-main/2026.2.23.3/floodgate.en.bundle.js:32
+[  180074ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186604
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186537
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188187
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188859)
+[  309453ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186604
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186537
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188187
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188859)
+[  601958ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.fffa6b0bb2e8b899.chunk.js:1
+[ 1201953ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.fffa6b0bb2e8b899.chunk.js:1
+[ 1801954ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.fffa6b0bb2e8b899.chunk.js:1
+[ 2401955ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.fffa6b0bb2e8b899.chunk.js:1
+[ 3001958ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.fffa6b0bb2e8b899.chunk.js:1
+[ 3602309ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.fffa6b0bb2e8b899.chunk.js:1
+[ 4201963ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.fffa6b0bb2e8b899.chunk.js:1

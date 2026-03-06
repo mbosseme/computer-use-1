@@ -1,0 +1,364 @@
+{
+  "history": {
+    "pages_fetched": 24,
+    "messages_fetched": 6000,
+    "oldest_message_dt": "2025-12-12T16:23:31+00:00",
+    "newest_message_dt": "2026-03-05T14:13:42+00:00",
+    "sample_subjects": [
+      "[Action Required] Add a billing account to continue using BigQuery Migration Service",
+      "FW: 'Growth' Project: Analysis Primers Workshop (Non-Clinical + Food)",
+      "FW: 'Growth' Project: Analysis Primers Workshop (Rx + Clinical)",
+      "[Action Required] Add a billing account to continue using BigQuery Migration Service",
+      "RE: How other business teams use Semantic Layer for deeper insights"
+    ]
+  },
+  "long_history_probe": {
+    "pages_fetched": 108,
+    "messages_fetched": 26815,
+    "oldest_message_dt": "2022-02-15T21:25:48+00:00"
+  },
+  "older_date_slice": {
+    "before_iso": "2024-01-01T00:00:00Z",
+    "count": 26,
+    "sample_subjects": [
+      "Weekly 1:1 - Audrey",
+      "Weekly 1:1 - Audrey",
+      "Weekly 1:1 - Audrey",
+      "Weekly 1:1 - Audrey",
+      "Weekly 1:1 - Audrey",
+      "Weekly 1:1 - Audrey",
+      "Weekly 1:1 - Audrey",
+      "Weekly 1:1 - Audrey"
+    ],
+    "sample_dates": [
+      "2023-02-14T10:28:07Z",
+      "2023-02-14T10:28:07Z",
+      "2023-02-14T10:28:07Z",
+      "2023-02-14T10:28:07Z",
+      "2023-02-14T10:28:07Z",
+      "2023-02-14T10:28:07Z",
+      "2023-02-14T10:28:07Z",
+      "2023-02-14T10:28:07Z"
+    ]
+  },
+  "aqs_search_tests": [
+    {
+      "query": "\"Clarivate\"",
+      "folder": null,
+      "count": 60,
+      "unique_ids": 60,
+      "sample_subjects": [
+        "Quick heads\u2011up on market intelligence coverage",
+        "Re: Reaching Out to Carrie",
+        "RE: Reaching Out to Carrie",
+        "Re: Reaching Out to Carrie",
+        "Re: Reaching Out to Carrie"
+      ],
+      "sample_dates": [
+        "2026-02-27T21:49:46Z",
+        "2026-02-27T21:44:28Z",
+        "2026-02-27T21:43:00Z",
+        "2026-02-27T21:19:46Z",
+        "2026-02-27T21:15:22Z"
+      ]
+    },
+    {
+      "query": "\"forvis\"",
+      "folder": null,
+      "count": 25,
+      "unique_ids": 25,
+      "sample_subjects": [
+        "Re: ABI Platform - Experimentation Artifact Request",
+        "RE: ABI Platform - Experimentation Artifact Request",
+        "RE: Premier R&D Tax Credit \u2013 FY2025 Project Qualification & Documentation Request",
+        "Re: ABI Platform - Experimentation Artifact Request",
+        "FW: ABI Platform - Experimentation Artifact Request"
+      ],
+      "sample_dates": [
+        "2026-03-04T14:48:23Z",
+        "2026-03-04T14:42:03Z",
+        "2026-03-04T12:30:17Z",
+        "2026-03-03T16:38:43Z",
+        "2026-03-03T16:28:22Z"
+      ]
+    },
+    {
+      "query": "\"Revenue AI Agent\"",
+      "folder": null,
+      "count": 60,
+      "unique_ids": 60,
+      "sample_subjects": [
+        "End User Digest: 13 New Messages ",
+        "Re: McKinsey Product Codes",
+        "RE: McKinsey Product Codes",
+        "Re: McKinsey Product Codes",
+        "BigQuery + Copilot setup package (Windows quick start)"
+      ],
+      "sample_dates": [
+        "2026-02-26T19:02:11Z",
+        "2026-02-25T21:47:02Z",
+        "2026-02-25T21:17:15Z",
+        "2026-02-25T21:13:48Z",
+        "2026-02-25T16:57:42Z"
+      ]
+    },
+    {
+      "query": "subject:\"Revenue AI Agent\"",
+      "folder": null,
+      "count": 0,
+      "unique_ids": 0,
+      "sample_subjects": [],
+      "sample_dates": [],
+      "error": "Graph GET me/messages failed: 400 {\"error\":{\"code\":\"BadRequest\",\"message\":\"Syntax error: character ':' is not valid at position 7 in 'subject:\\\"Revenue AI Agent\\\"'.\",\"innerError\":{\"date\":\"2026-03-05T14:15:41\",\"request-id\":\"7fae739c-c1d0-4ae7-8dcb-8466cc014ef1\",\"client-request-id\":\"7fae739c-c1d0-4ae7-8dcb-8466cc014ef1\"}}}"
+    },
+    {
+      "query": "\"Copilot\"",
+      "folder": "Inbox",
+      "count": 60,
+      "unique_ids": 60,
+      "sample_subjects": [
+        "Re: GitHub Copilot Workshop #1",
+        "Re: GitHub Copilot Workshop #1",
+        "Re: GitHub Copilot Workshop #1",
+        "Re: GitHub Copilot Workshop #1",
+        "Re: ABI Platform - Experimentation Artifact Request"
+      ],
+      "sample_dates": [
+        "2026-03-04T15:31:41Z",
+        "2026-03-04T14:57:38Z",
+        "2026-03-04T14:53:15Z",
+        "2026-03-04T14:52:03Z",
+        "2026-03-04T14:48:23Z"
+      ]
+    },
+    {
+      "query": "\"Copilot\"",
+      "folder": "SentItems",
+      "count": 60,
+      "unique_ids": 60,
+      "sample_subjects": [
+        "Re: GitHub Copilot Workshop #1",
+        "Re: GitHub Copilot Workshop #1",
+        "Re: GitHub Copilot Workshop #1",
+        "RE: ABI Platform - Experimentation Artifact Request",
+        "Re: Cardiac Rhythm Management - Sourcing Prep"
+      ],
+      "sample_dates": [
+        "2026-03-04T14:54:03Z",
+        "2026-03-04T14:52:28Z",
+        "2026-03-04T14:44:33Z",
+        "2026-03-04T14:42:03Z",
+        "2026-03-04T14:12:03Z"
+      ]
+    }
+  ],
+  "search_api_message_tests": [
+    {
+      "query": "Clarivate",
+      "count": 25,
+      "sample_subjects": [
+        "Quick heads\u2011up on market intelligence coverage",
+        "Re: Reaching Out to Carrie",
+        "RE: Reaching Out to Carrie",
+        "Re: Reaching Out to Carrie",
+        "Re: Reaching Out to Carrie"
+      ],
+      "sample_dates": [
+        "2026-02-27T21:49:46Z",
+        "2026-02-27T21:44:28Z",
+        "2026-02-27T21:43:00Z",
+        "2026-02-27T21:19:46Z",
+        "2026-02-27T21:15:22Z"
+      ]
+    },
+    {
+      "query": "Revenue AI Agent",
+      "count": 25,
+      "sample_subjects": [
+        "End User Digest: 13 New Messages ",
+        "Re: McKinsey Product Codes",
+        "RE: McKinsey Product Codes",
+        "Re: McKinsey Product Codes",
+        "BigQuery + Copilot setup package (Windows quick start)"
+      ],
+      "sample_dates": [
+        "2026-02-26T19:02:11Z",
+        "2026-02-25T21:47:02Z",
+        "2026-02-25T21:17:15Z",
+        "2026-02-25T21:13:48Z",
+        "2026-02-25T16:57:42Z"
+      ]
+    },
+    {
+      "query": "Forvis IRS",
+      "count": 5,
+      "sample_subjects": [
+        "Re: ABI Platform - Experimentation Artifact Request",
+        "RE: ABI Platform - Experimentation Artifact Request",
+        "Re: ABI Platform - Experimentation Artifact Request",
+        "FW: ABI Platform - Experimentation Artifact Request",
+        "FW: ABI Platform - Experimentation Artifact Request"
+      ],
+      "sample_dates": [
+        "2026-03-04T14:48:23Z",
+        "2026-03-04T14:42:03Z",
+        "2026-03-03T16:38:43Z",
+        "2026-03-03T16:28:22Z",
+        "2026-01-28T19:58:55Z"
+      ]
+    }
+  ],
+  "search_api_event_tests": [
+    {
+      "query": "Clarivate",
+      "count": 18,
+      "sample_subjects": [
+        "Re: Clarivate: Enterprise Bundle: Guidance & Review (Final Pass)",
+        "Premier x Clarivate Discussion ",
+        "Clarivate Negotiation",
+        "Quick Catchup: Clarivate Response 8 CST/9 EST ",
+        "Premier x Clarivate: Data Proposal Discussion (11:30 EST)",
+        "Canceled: Clarivate x Premier: Advancing toward an Enterprise Data Solution (Series) ",
+        "Clarivate x Premier: Advancing toward an Enterprise Data Solution (Series) ",
+        "Canceled: Clarivate x Premier: Advancing toward an Enterprise Data Solution (Series) "
+      ]
+    },
+    {
+      "query": "Copilot",
+      "count": 24,
+      "sample_subjects": [
+        "Copilot Studio Lite & SharePoint Agents",
+        "Microsoft Copilot : Introduction to First Party Agents",
+        "Copilot Chat Training #3",
+        "M365 Copilot \u2013 Excel",
+        "Databricks access & orientation (Yi + Megha w/ Srikanth)",
+        "M365 Copilot \u2013 Word & PowerPoint",
+        "M365 Copilot \u2013 Teams & Outlook",
+        "Copilot Chat Training #1"
+      ]
+    },
+    {
+      "query": "Forvis",
+      "count": 0,
+      "sample_subjects": []
+    }
+  ],
+  "meeting_invite_messages": {
+    "count": 0,
+    "error": "Graph GET me/messages failed: 400 {\"error\":{\"code\":\"RequestBroker--ParseUri\",\"message\":\"Could not find a property named 'messageClass' on type 'Microsoft.OutlookServices.Message'.\",\"innerError\":{\"date\":\"2026-03-05T14:15:53\",\"request-id\":\"29e86a27-97c8-4ea2-b6ae-0550697cae6a\",\"client-request-id\":\"29e86a27-97c8-4ea2-b6ae-0550697cae6a\"}}}"
+  },
+  "calendar_event_bodies": {
+    "count": 100,
+    "with_body_preview": 87,
+    "sample_subjects": [
+      "'Growth' Project: Analysis Primers Workshop (Rx + Clinical)",
+      "'Growth' Project: Analysis Primers Workshop (Non-Clinical + Food)",
+      "*PLACEHOLD* 'Growth' Project: Analysis Primers Workshop (Final Group)",
+      "Project Catalyst - Team Status Update (Bi-Weekly)",
+      "Watch Kids",
+      "HOLD",
+      "HOLD - Deep Work",
+      "More Time",
+      "HOLD",
+      "Weekly 1:1 - Stephen"
+    ]
+  },
+  "local_keyword_scan": {
+    "pages_scanned": 108,
+    "messages_scanned": 26815,
+    "queries": {
+      "revenue ai agent": {
+        "count": 2,
+        "samples": [
+          {
+            "date": "2025-11-20T21:28:14Z",
+            "subject": "Re: Revenue AI Agent - Demo "
+          },
+          {
+            "date": "2025-11-20T20:08:21Z",
+            "subject": "RE: Revenue AI Agent - Demo "
+          }
+        ]
+      },
+      "forvis": {
+        "count": 5,
+        "samples": [
+          {
+            "date": "2026-03-04T14:42:03Z",
+            "subject": "RE: ABI Platform - Experimentation Artifact Request"
+          },
+          {
+            "date": "2026-03-04T14:22:59Z",
+            "subject": "RE: ABI Platform - Experimentation Artifact Request"
+          },
+          {
+            "date": "2026-03-03T16:28:22Z",
+            "subject": "FW: ABI Platform - Experimentation Artifact Request"
+          },
+          {
+            "date": "2026-02-26T13:18:19Z",
+            "subject": "Re: Premier R&D Tax Credit \u2013 FY2025 Project Qualification & Documentation Request"
+          },
+          {
+            "date": "2026-01-28T19:58:55Z",
+            "subject": "FW: ABI Platform - Experimentation Artifact Request"
+          }
+        ]
+      },
+      "irs audit": {
+        "count": 0,
+        "samples": []
+      },
+      "clarivate": {
+        "count": 5,
+        "samples": [
+          {
+            "date": "2026-02-27T19:54:33Z",
+            "subject": ""
+          },
+          {
+            "date": "2026-02-23T19:45:30Z",
+            "subject": "Re: Clarivate: what they likely do today with Premier MI purchasing + item master feeds (and why it matters for Mar 31 cutover)"
+          },
+          {
+            "date": "2026-02-23T19:26:53Z",
+            "subject": "Re: Clarivate: what they likely do today with Premier MI purchasing + item master feeds (and why it matters for Mar 31 cutover)"
+          },
+          {
+            "date": "2026-02-13T23:39:26Z",
+            "subject": "Re: Clarivate: what they likely do today with Premier MI purchasing + item master feeds (and why it matters for Mar 31 cutover)"
+          },
+          {
+            "date": "2026-02-13T18:52:47Z",
+            "subject": "Re: Clarivate: what they likely do today with Premier MI purchasing + item master feeds (and why it matters for Mar 31 cutover)"
+          }
+        ]
+      },
+      "copilot workshop": {
+        "count": 5,
+        "samples": [
+          {
+            "date": "2026-03-04T15:31:41Z",
+            "subject": "Re: GitHub Copilot Workshop #1"
+          },
+          {
+            "date": "2026-03-04T14:57:38Z",
+            "subject": "Re: GitHub Copilot Workshop #1"
+          },
+          {
+            "date": "2026-03-04T14:54:03Z",
+            "subject": "Re: GitHub Copilot Workshop #1"
+          },
+          {
+            "date": "2026-03-04T14:53:15Z",
+            "subject": "Re: GitHub Copilot Workshop #1"
+          },
+          {
+            "date": "2026-03-04T14:52:28Z",
+            "subject": "Re: GitHub Copilot Workshop #1"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+[    1015ms] [WARNING] AI (Internal): 505 message:"Browser does not support local storage. Session durations will be inaccurate." @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:1
+[    1025ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-msal.3277e5c2dbee76da.chunk.js:1
+[    1364ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://m365.cloud.microsoft/api/userstorage/AppBarUserData/?workload=officehomereact&auth=2:0
+[    1376ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://m365.cloud.microsoft/api/userstorage/ThemeMode/?workload=officehomereact&auth=2:0
+[    1792ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://m365.cloud.microsoft/spalanding#code=1.AXUA3-0Qsa4jfEWm83NNWSsoR1tEZUfGMrBJg-Ydk3ZSdsoAAFt1AA.BQABBAIAAAADAOz_BQD0_0V2b1N0c0FydGlmYWN0cwIAAAAAAN0qZe6jiOwOdQ0-S5wIPbDHdvwxvJIwtGzPYXPr92EGD77QwD1tt1XOgikLcvOAoGl5eUwk8GtsBUZAOmD6RJbNLP0xDCSB-jQizhipPimEGiJ-pCRK0GvxWln-4wqdB7CCgfB6E0FhVjMZgMxlWdOIIUwMLtaS89IwX1d6DwrwInSsgP6POIqNYwMa2t0mRjHZxO-IwAGS10ou0R7LOJTqjoxZZr5yjGmP6SHWF1iYPrMncMNIc06Hi3GXjTGWn2x2Ost6vwlWjIniw-gOuqt8JZ5Vs2BylM2QeQcv7ZqWSmXgE1wgEvJOonvuzVOCCv8mKjzph7gK3j_Lljc_zRBkXJrmdiFwr3iGKFC85pZTsgfCRCtTHuwYRq3w3UuWHlX5Mk01xMmf1f9zb8IbYxnzTmMKq1Vx1dYt9w7VGTXBM2umWW58M3IwrTsOEZs33NCx1OmvhXVWBFU370hisSuGjJqgnhx_QBeJhK6u4a8KT1fChUSm_UUSrdeR4VHji1Bje0gSZy3zJyakOAjFyChk6n2xRb1x0ta1tY0LA2wKaC723WXDUv4NlYqn5Fs1zfzpd2NwswZYg0nFXMRDnsVawp0h4Y9ULlWt-znpPiBTCffaLIoUIPS4PFgVXlEKveYBrSbzt7l1LJiMpKJ5M554OtWIR_HC6vlsrtdYWrbbERTpYRjv3Ix1fYxx4HDa__gedrGEwkOMFveETHiLPna7Z78xKO2_YoL7-ZaPeULYb5BzYgDc6Uep4E5vntwyL-tscdxqSGCsncRd5m2B-6TSTi-Wg0HZasyM0E-wzaOnSKTY0aYZOPBnKSsiStQr8Tau3KUf3UNDAdKRyiGPaocqiaVX4AgbcFUEhfQ3PkYdQQ11pznkvL2N2dq2mfQy-JjF_FmB_LZrgEuYrvcZsegeUr5l0zTqptcEFBGK_mZw8JusTr42ZQtoWdylaC0UWohveJwuNjVEbI8O3NC6Zt6XA0n8Q_1TgM4BsWkuaAKSM91gwkVcM6TrxuLAF3WnYhK1-dt4oY39RM7fposHAo--HQR8XxYBDRuDv_Hzjl_kst-jZRrk5PxX4Jlj-VowWZEuCyg5UTXFdzANC7jAE0JT_pbmQl12rBZBVmpAYtlZkrZmMePS3rWUTNHkXMLYLQthquUw-ZzbseFuK_ynJeucLlQg5nEk8syjcX_2MKUxQGK_VIkvEoKnonn6diUIGoVYRONL_kzwMMknJNkfGyvh5yJmRr6K_qlBOTwwHeXx5P-aOwZU7rnGiUxp9Z2FCul5V1b31xSAL_82ByvLODEAeYulsiy9LJueO99kQD-HmeYvGyvxt4irNcR1TM0ZzVXYnBuWQ5XsnuuhyLEPpW-zvCdCLa5zyASrs7j07edR7MQUDWI1tcIYDQXjojKYZYErE7YINZPijQvJA4sBTlYLSr_h_8RgUhirt0m0_D6q-Y2SX3AGMi5ZPBfzq8T8_yARSDUCx0frdY6TQvOw8s2VkPBdSsU&client_info=eyJ1aWQiOiJiMWU4YTNkYi0xOTEyLTQwMjUtODhjYi0xOTliZjY4ODIzZjQiLCJ1dGlkIjoiYjExMGVkZGYtMjNhZS00NTdjLWE2ZjMtNzM0ZDU5MmIyODQ3In0&state=eyJpZCI6IjAxOWNhZmM3LTgxMTAtNzc3Ni04NzgzLTAyYzdiNjI0ZmY0OSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoic2lsZW50In19&session_state=002e1cca-d19c-4906-8831-39150b955d54&correlation_id=019cafc7-8110-7ca2-a609-304e22e2ee13:0
+[    9034ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ https://shellprod.msocdn.com/api/shellbootstrapper/business/oneshell:0
+[   23199ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-2224_c05d0b4135861834d183.js:0
+[  126887ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+ChevronDown, Edit, Add, Cancel, More, Mail, Filter, Share, FavoriteStar, CheckMark (+ 62 more) @ https://res.cdn.office.net/admincenter/admin-main/2026.2.23.3/floodgate.en.bundle.js:32
+[  151372ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186604
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186537
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188187
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188859)
+[  171651ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-2224_c05d0b4135861834d183.js:0
+[  211223ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:1
+[  211223ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:1
+[  413435ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186604
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186537
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188187
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188859)
+[  690791ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186604
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:186537
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188187
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_52e9ff5cb84af8fdd2af.js:1:188859)
+[ 1051280ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://loki.delve.office.com/api/v2/graphql/?operationName=EmailPromptsQuery&ConvertSimpleRequest=POST:0
+[ 2272836ms] TypeError: Cannot read properties of undefined (reading 'mostRecentGptIds')
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/app.497dc452bf19d5b7.chunk.js:1:152252
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/app.497dc452bf19d5b7.chunk.js:1:157031
+    at r (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/app.497dc452bf19d5b7.chunk.js:1:167194)
+    at Object.defaultInterceptor [as current] (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/app.497dc452bf19d5b7.chunk.js:1:167353)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:2:677451
+    at Generator.next (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:2:675180
+    at new Promise (<anonymous>)
+    at h (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:2:674999)
+    at w (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:2:677366)
+[ 5653648ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:1
+[ 5653649ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.a36598901c1bee0c.chunk.js:1
+[ 5653820ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://loki.delve.office.com/api/v2/graphql/?operationName=EmailPromptsQuery&ConvertSimpleRequest=POST:0
+[ 5654093ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://loki.delve.office.com/api/v2/graphql/?operationName=EmailPromptsQuery&ConvertSimpleRequest=POST:0
