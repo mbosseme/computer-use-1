@@ -35,7 +35,7 @@ Skills are on-demand memory and only apply when opened.
 - Open 1–3 relevant skills (max 3) before acting
 
 ## M365 Copilot model default (required for chat tasks)
-- For M365 Copilot chat interactions, set the top-right model/mode selector to **`GPT-5.2 Think`** before sending prompts.
+- For M365 Copilot chat interactions, set the top-right model/mode selector to **`GPT-5.4 Think`** before sending prompts.
 - Re-check after navigation/refresh because the selector can revert to `Auto`.
 - Use quick-response modes only for trivial lookups where latency matters more than depth.
 

@@ -100,7 +100,7 @@ OPERATING RULES (must follow)
    - Do not load more than 3 skills unless explicitly instructed.
 
 1a) M365 Copilot mode default (when applicable)
-   - If the task involves M365 Copilot chat in browser, set model/mode to `GPT-5.2 Think` before sending prompts.
+   - If the task involves M365 Copilot chat in browser, set model/mode to `GPT-5.4 Think` before sending prompts.
    - Re-check after navigation/refresh because the selector may revert to `Auto`.
    - Use quick-response mode only for trivial lookups.
 

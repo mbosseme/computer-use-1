@@ -1,8 +1,8 @@
-# GPT-5.2 Integration Implementation Guide (Azure OpenAI Responses API)
+# GPT-5.4 Integration Implementation Guide (Azure OpenAI Responses API)
 
-This document describes **exactly how this repository currently integrates Azure OpenAI GPT‑5.2** (via the Azure OpenAI **Responses API**) including:
+This document describes **exactly how this repository currently integrates Azure OpenAI GPT‑5.4** (via the Azure OpenAI **Responses API**) including:
 
-- Where GPT‑5.2 is configured
+- Where GPT‑5.4 is configured
 - How the backend decides to use the Responses API vs Chat Completions
 - The precise request payload and headers we send to Azure
 - Where credentials come from (and which files/vars you must provide)
@@ -27,20 +27,20 @@ This is intended as a “copy/paste to another repo” guide.
 
 **Source of truth:** `config/models.json`
 
-GPT‑5.2 is configured under the model key:
+GPT‑5.4 is configured under the model key:
 
-- `azure-gpt-5.2`
+- `azure-gpt-5.4`
 
 Current shape (representative — keep values accurate for your Azure resource):
 
 ```json
 {
-  "azure-gpt-5.2": {
+  "azure-gpt-5.4": {
     "provider": "azure_openai",
-    "model": "gpt-5.2",
-    "deployment_name": "<your-gpt-5.2-deployment>",
+    "model": "gpt-5.4",
+    "deployment_name": "<your-gpt-5.4-deployment>",
     "api_url": "https://<your-resource>.openai.azure.com/openai/responses?api-version=2025-04-01-preview",
-    "display_name": "Azure GPT-5.2",
+    "display_name": "Azure GPT-5.4",
     "max_output_tokens": 16384,
     "reasoning_effort": "medium",
     "supports_temperature": false,
@@ -55,7 +55,7 @@ Key points:
   - If the URL contains `/openai/responses`, it uses the Responses API request format.
 - `deployment_name` is used as the `model` field in the Responses API payload.
   - In Azure OpenAI, the request `model` is typically your **deployment name**, not a public model ID.
-- GPT‑5.2 uses `max_output_tokens` (not `max_completion_tokens`).
+- GPT‑5.4 uses `max_output_tokens` (not `max_completion_tokens`).
 
 ---
 
@@ -94,7 +94,7 @@ Example `.env` (DO NOT commit real secrets):
 ```bash
 AZURE_OPENAI_KEY=<your-azure-openai-key>
 AZURE_OPENAI_RESPONSES_URL=https://<your-resource>.openai.azure.com/openai/responses?api-version=2025-04-01-preview
-AZURE_OPENAI_DEPLOYMENT=<your-gpt-5.2-deployment-name>
+AZURE_OPENAI_DEPLOYMENT=<your-gpt-5.4-deployment-name>
 ```
 
 ### Exactly how we authenticate to Azure
@@ -113,18 +113,18 @@ Important:
 
 ### “Credential files”
 
-For Azure OpenAI GPT‑5.2 specifically:
+For Azure OpenAI GPT‑5.4 specifically:
 
 - There is **no** JSON credential file.
 - The only required secret is the value of `AZURE_OPENAI_KEY`.
 
-(Separately, Google Vertex uses `GOOGLE_APPLICATION_CREDENTIALS`, which points at a JSON file. That’s unrelated to Azure GPT‑5.2 but is supported by the app.)
+(Separately, Google Vertex uses `GOOGLE_APPLICATION_CREDENTIALS`, which points at a JSON file. That’s unrelated to Azure GPT‑5.4 but is supported by the app.)
 
 ---
 
 ## 3. Azure OpenAI Client Implementation (`agent_tools/llm/azure_openai_responses.py`)
 
-### Where GPT‑5.2 is detected
+### Where GPT‑5.4 is detected
 
 The Azure Responses client is:
 
@@ -136,17 +136,27 @@ Configuration is typically loaded from:
 
 The smoke test (and most starter usage) requires the URL to contain `/openai/responses`.
 
-### Request payload for GPT‑5.2 (Responses API)
+### Request payload for GPT‑5.4 (Responses API)
 
 We send a payload shaped like:
 
 ```python
 payload = {
     "model": self.deployment_name,
-    "input": input_text,
+    "input": input_data, # Can be a string or a list of multi-modal dicts
     "max_output_tokens": effective_max_output_tokens,
     "stream": False,
 }
+```
+
+The `input` array supports multimodality, e.g.:
+```python
+"input": [
+    {"type": "message", "role": "user", "content": [
+        {"type": "input_text", "text": "Describe this document."},
+        {"type": "input_file", "file_data": "data:application/pdf;base64,...", "filename": "example.pdf"}
+    ]}
+]
 ```
 
 Additional fields:
@@ -175,9 +185,7 @@ The repo’s prompt builder produces chat-style messages (`[{role, content}, ...
 For Responses API, the Azure client converts:
 
 - First `system` message → `instructions`
-- Remaining conversation → a plain text transcript (`input`), formatted as:
-  - `User: ...`
-  - `Assistant: ...`
+- Remaining conversation → a multi-modal data array (`input_data`), retaining original chat objects `{"type": "input_text", "text": "..."}` or `{"type": "input_file", "file_data": "..."}`.
 
 This logic is implemented in:
 
@@ -201,7 +209,7 @@ This logic is implemented in:
 This repo provides a simple smoke test to validate credentials + connectivity:
 
 ```bash
-python -m agent_tools.llm.smoketest --model azure-gpt-5.2 --prompt "hello"
+python -m agent_tools.llm.smoketest --model azure-gpt-5.4 --prompt "hello"
 ```
 
 Optionally write a run artifact (append-only JSONL) under `runs/<RUN_ID>/exports/llm/`:
@@ -227,7 +235,7 @@ If you want another repo/environment to reproduce this integration, you need:
 
 ### Files
 
-Minimum (Azure GPT‑5.2 only):
+Minimum (Azure GPT‑5.4 only):
 
 - `config/models.json`
 - `agent_tools/llm/azure_openai_responses.py`
@@ -248,7 +256,7 @@ Optional (recommended):
 ### Non-secret but required config details
 
 - The Azure OpenAI resource hostname (for your `api_url`)
-- Your GPT‑5.2 deployment name (for `deployment_name`)
+- Your GPT‑5.4 deployment name (for `deployment_name`)
 - The correct API version (embedded in `api_url`)
 
 ---

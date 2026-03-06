@@ -185,7 +185,7 @@ def sanitize_text(text: str) -> str:
 
 def call_with_retry(
     client: Any,
-    input_text: str,
+    input_data: str | list[Any],
     instructions: Optional[str] = None,
     *,
     max_retries: int = 5,
@@ -200,7 +200,7 @@ def call_with_retry(
 
     Args:
         client: An AzureOpenAIResponsesClient (or compatible) with create_response method.
-        input_text: The input text to send.
+        input_data: The input text or data array to send.
         instructions: Optional system instructions.
         max_retries: Maximum retry attempts.
         initial_delay: Initial delay in seconds before first retry.
@@ -217,7 +217,7 @@ def call_with_retry(
     for attempt in range(max_retries):
         try:
             result = client.create_response(
-                input_text=input_text,
+                input_data=input_data,
                 instructions=instructions,
                 timeout_s=current_timeout,
             )
@@ -267,3 +267,28 @@ def check_pdf_redundancy(file_path: Path, threshold_chars_per_page: int = 50000)
         avg_chars_per_page = total_chars / num_pages
 
     return avg_chars_per_page > threshold_chars_per_page
+
+import base64
+import mimetypes
+
+def encode_file_for_api(file_path: Path) -> dict[str, Any]:
+    """Encode a file (PDF, image, etc.) as a base64 data URI for the Responses API.
+
+    Returns the dictionary structure expected by the API:
+    {"type": "input_file", "file_data": "data:<mime-type>;base64,<base64>"}
+    """
+    mime_type, _ = mimetypes.guess_type(str(file_path))
+    if not mime_type:
+        mime_type = "application/octet-stream"
+    
+    # Azure OpenAI Responses API might not like application/octet-stream or text/markdown
+    if "markdown" in mime_type or str(file_path).endswith((".md", ".txt")):
+        mime_type = "text/plain"
+        
+    with open(file_path, "rb") as f:
+        base64_data = base64.b64encode(f.read()).decode("utf-8")
+    return {
+        "type": "input_file",
+        "file_data": f"data:{mime_type};base64,{base64_data}",
+        "filename": str(file_path.name)
+    }

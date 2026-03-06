@@ -36,8 +36,8 @@ tools:
 - **If navigation overshoots**, reset with an explicit date selection instead of incremental correction loops.
 
 ## M365 Copilot Model Heuristic
-- When automating M365 Copilot chat tasks, set the top-right model selector to **`GPT-5.2 Think`** before prompting.
-- Verify the selector label after setting (it should show `GPT-5.2 Think`, not `Auto`).
+- When automating M365 Copilot chat tasks, set the top-right model selector to **`GPT-5.4 Think`** before prompting.
+- Verify the selector label after setting (it should show `GPT-5.4 Think`, not `Auto`).
 - Re-verify after refresh/navigation because the mode can revert.
 - Use `Quick response` only for low-risk, simple retrieval tasks where latency matters more than depth.
 

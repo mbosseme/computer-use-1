@@ -26,7 +26,7 @@ If using this route, explicitly state in output that this is a **secondary-resea
 1. Start/confirm `RUN_ID` and output target under `runs/<RUN_ID>/exports/`.
 2. Open M365 Copilot chat in browser.
 3. Ensure mode is **Work** (not Web).
-4. Set model selector to **GPT-5.2 Think** (or closest available equivalent), and re-check after navigation refresh.
+4. Set model selector to **GPT-5.4 Think** (or closest available equivalent), and re-check after navigation refresh.
 5. Start a **New chat** before submitting the task prompt.
 
 ## 4) Prompting pattern (concise + decision-oriented)
