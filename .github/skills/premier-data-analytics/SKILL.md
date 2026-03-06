@@ -155,3 +155,50 @@ When profiling Market Insights data:
 2.  Check **weekly continuity** (for `week_xref_mfr_analysis` and `supply_signals_week_refnum`) — are all ISO weeks present with no gaps?
 3.  Compare **stable sample lag** (`ppt_stable_sample`) against live transactional data (`provider_purchasing_txn`) — the stable sample is expected to trail by ~1 month.
 4.  Validate **row count stability** — large week-over-week swings in row count may indicate feed issues.
+
+## 9. HCIQ Benchmark Matching & UOM Mismatch Detection
+When benchmarking Premier contract prices against HCIQ (`premierinc-com-data.hciq_benchmarking.received_benchmarks`), several patterns and pitfalls apply.
+
+### 9.1 HCIQ Percentile Convention (counterintuitive)
+HCIQ uses an **inverted scale**: higher percentile = better (lower cost).
+-   `hciq_low_benchmark` = 99th percentile — the **best** (lowest) price in the market
+-   `hciq_90_benchmark` = 90th percentile (comparable to internal 10th)
+-   `hciq_50_benchmark` = median
+-   `hciq_high_benchmark` = 25th percentile — the **worst** (highest) price
+
+When interpolating, a contract price near `hciq_low_benchmark` yields ~99th; near `hciq_high_benchmark` yields ~25th.
+
+### 9.2 Join Pattern
+Match transactions to benchmarks on `manufacturer_entity_code` + `manufacturer_catalog_number`. Use the **latest snapshot** per product:
+```sql
+QUALIFY ROW_NUMBER() OVER (
+  PARTITION BY manufacturer_entity_code, manufacturer_catalog_number
+  ORDER BY abi_snapshot_date DESC
+) = 1
+```
+
+### 9.3 Contract_Best_Price is the Correct Benchmark Target
+`Contract_Best_Price` represents the **best available GPO tier price** — not a ceiling. When members pay less than this, they are locally negotiating outside the GPO contract. This gap is a feature of the analysis (it quantifies local negotiation activity), not a methodology flaw.
+
+### 9.4 UOM Mismatch: The #1 Data Quality Issue
+Transaction UOMs and benchmark UOMs frequently differ (e.g., contract priced per CASE, benchmark per EACH). This can produce order-of-magnitude price ratio distortions.
+
+**Recommended 4-tier flag system:**
+
+| Flag | Condition | Benchmarked? |
+|------|-----------|-------------|
+| `PRICE_QTY_UOM_MISMATCH` | Contract_Price × Qty / Actual_Spend > 10× | No |
+| `CRITICAL_UOM_MISMATCH` | Price ratio > 10× or < 0.1× | No |
+| `HIGH_VARIANCE_EXCLUDED` | Price ratio > 3× or < ⅓ | No |
+| `MODERATE_VARIANCE` | Price ratio > 1.7× or < 0.59× | Yes (flagged) |
+| `OK` | Within bounds | Yes |
+
+The 3× / ⅓ threshold for `HIGH_VARIANCE_EXCLUDED` allows legitimate pricing variance (contract prices 70–200% above median are common in specialty categories) while excluding items where the gap almost certainly reflects a data mismatch.
+
+### 9.5 Aggregation Consistency Guard (critical)
+When excluding items from benchmarking via a flag (e.g., `is_benchmarked = FALSE`), **all dependent aggregations must also be gated by the same flag**. In particular:
+-   If `Spend_at_Best_Tier` (contract price × quantity) is summed at the contract level without gating, excluded items with inflated contract prices will inflate the numerator while contributing zero to the target spend comparison.
+-   This asymmetry silently drags contracts into worse percentile buckets.
+-   **Fix:** `SUM(CASE WHEN is_benchmarked THEN Spend_at_Best_Tier ELSE 0 END)` — never ungated `SUM(Spend_at_Best_Tier)`.
+
+This pattern generalizes: any time you exclude rows from a denominator (target/benchmark spend), ensure excluded rows are also removed from the numerator (actual/contract spend).

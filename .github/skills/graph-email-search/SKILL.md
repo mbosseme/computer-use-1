@@ -193,6 +193,32 @@ msgs = search_messages(client, query='"McKinsey" AND "sample"', folder="Inbox", 
 - Optional `folder` param (well-known name like `"SentItems"` or folder ID).
 - Handles pagination via `@odata.nextLink` automatically.
 
+## Replying to a specific message in an existing thread
+When you need to reply-all to a thread (e.g., continuing a conversation), follow this workflow:
+
+1.  **Find the thread messages** using `search_messages` with the subject or keywords, plus `ConsistencyLevel: eventual`.
+2.  **Filter by `conversationId`** locally — broad `$search` queries often return messages from unrelated threads with similar subjects.
+3.  **Reply to the latest message** (by `receivedDateTime`) to maintain proper threading. Replying to the original message instead of the latest will break the visual thread in Outlook.
+4.  **Use `create_reply_all_draft`** with the latest message ID.
+
+```python
+from agent_tools.graph.mail_search import search_messages
+from agent_tools.graph.drafts import create_reply_all_draft
+
+# Step 1–2: Find and filter
+msgs = search_messages(client, query='"HCIQ Benchmark"', top=25)
+thread_msgs = [m for m in msgs if m["conversationId"] == target_conv_id]
+
+# Step 3: Identify latest
+latest = max(thread_msgs, key=lambda m: m["receivedDateTime"])
+
+# Step 4: Create reply-all draft
+result = create_reply_all_draft(client, message_id=latest["id"], body="<p>New content</p>")
+```
+
+### Common pitfall: wrong thread
+If `$search` returns messages from the wrong thread (e.g., a 1:1 with similar keywords), and you create a draft against one of those, you'll reply to the wrong conversation. Always verify `conversationId` or inspect the `toRecipients` / `from` fields before creating the draft.
+
 ## Output hygiene
 - The exported document may contain sensitive content.
 - Do not commit exports to git.
