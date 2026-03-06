@@ -89,3 +89,7 @@ Include sections:
   - `browser-automation-core` for robust Playwright interaction and recovery
   - `research-ladder` for escalation/uncertainty handling
   - `graph-email-search` when switching back to deterministic Graph retrieval
+
+## 10) Known Limitations & Safety Mitigation
+- **Performance Ranking / Comparisons**: M365 Copilot's RAI (Responsible AI) policies will block/refuse prompts that ask to "rank" named employees by performance, or definitively compare one person's output to another's in a judgmental way.
+- **Mitigation**: Instead of asking for a ranking, ask Copilot to "extract publicly or self-attributed examples of business impact" or to neutrally "summarize explicit quantitative evidence." Perform the synthesis, comparison, or ranking locally via agent logic based on the extracted factual summaries.
