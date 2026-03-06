@@ -33,28 +33,80 @@ SELECT
   MAX(b.hciq_75_benchmark) as hciq_75_benchmark,
   MAX(b.hciq_90_benchmark) as hciq_90_benchmark,
   MAX(b.hciq_high_benchmark) as hciq_high_benchmark,
-  
-  CASE WHEN MAX(b.matched_reference_number) IS NOT NULL THEN TRUE ELSE FALSE END as is_benchmarked,
+
+  CASE 
+    -- Price-to-Quantity UOM mismatch: contract price is per-case but qty is in eaches
+    WHEN SUM(t.Base_Spend) > 0 AND SUM(t.Quantity_in_Eaches) > 0
+         AND (SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) > 10.0
+      THEN 'PRICE_QTY_UOM_MISMATCH'
+    -- Price-to-Benchmark UOM mismatch (order of magnitude)
+    WHEN MAX(b.hciq_50_benchmark) > 0 AND (MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) > 10.0 OR MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) < 0.1) 
+      THEN 'CRITICAL_UOM_MISMATCH'
+    -- High variance excluded: contract price more than 3x or less than 1/3 of benchmark
+    WHEN MAX(b.hciq_50_benchmark) > 0 AND (MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) > 3.0 OR MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) < 0.333) 
+      THEN 'HIGH_VARIANCE_EXCLUDED'
+    -- Moderate variance: flagged but still benchmarked (>70% deviation from 50th pctl)
+    WHEN MAX(b.hciq_50_benchmark) > 0 AND (MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) > 1.7 OR MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) < 0.59) 
+      THEN 'MODERATE_VARIANCE'
+    ELSE 'OK' 
+  END as UOM_Outlier_Flag,
+
+  CASE 
+    WHEN MAX(b.matched_reference_number) IS NULL THEN FALSE
+    WHEN COALESCE(MAX(b.hciq_50_benchmark), 0) = 0 THEN FALSE
+    -- Exclude price-qty UOM mismatches from benchmark coverage
+    WHEN SUM(t.Base_Spend) > 0 AND SUM(t.Quantity_in_Eaches) > 0
+         AND (SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) > 10.0
+      THEN FALSE
+    -- Exclude critical UOM mismatches (order of magnitude)
+    WHEN MAX(b.hciq_50_benchmark) > 0 AND (MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) > 10.0 OR MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) < 0.1) THEN FALSE
+    -- Exclude high variance items (more than 3x or less than 1/3 of benchmark)
+    WHEN MAX(b.hciq_50_benchmark) > 0 AND (MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) > 3.0 OR MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) < 0.333) THEN FALSE
+    ELSE TRUE
+  END as is_benchmarked,
   
   -- Benchmark-extended spend (Units * Benchmark Price)
-  SUM(t.Quantity_in_Eaches * b.hciq_90_benchmark) as Spend_at_HCIQ90,
-  SUM(t.Quantity_in_Eaches * b.hciq_75_benchmark) as Spend_at_HCIQ75,
-  SUM(t.Quantity_in_Eaches * b.hciq_50_benchmark) as Spend_at_HCIQ50,
-  SUM(t.Quantity_in_Eaches * b.hciq_high_benchmark) as Spend_at_High,
+  -- Guarded against BOTH price-benchmark UOM mismatches AND price-quantity UOM mismatches
+  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_low_benchmark END) as Spend_at_Low,
+  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_90_benchmark END) as Spend_at_HCIQ90,
+  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_75_benchmark END) as Spend_at_HCIQ75,
+  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_50_benchmark END) as Spend_at_HCIQ50,
+  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_high_benchmark END) as Spend_at_High,
   
   -- Actual-extended spend using the BEST PREMIER PRICE we found
-  SUM(t.Quantity_in_Eaches * cibp.Contract_Best_Price) as Spend_at_Best_Tier
+  -- Also guarded against price-qty UOM mismatch: use Base_Spend when price*qty is >10x actual
+  SUM(CASE 
+    WHEN t.Base_Spend > 0 AND t.Quantity_in_Eaches > 0 
+         AND (t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend > 10.0
+    THEN t.Base_Spend
+    ELSE t.Quantity_in_Eaches * cibp.Contract_Best_Price 
+  END) as Spend_at_Best_Tier
 
 FROM ${ref("transaction_analysis_mapped")} t
 -- Must join to cibp to only include lines that HAVE a Premier Top Tier price
 JOIN ${ref("contract_item_best_price")} cibp 
   ON t.Attributed_Contract_Number = cibp.Contract_Number 
   AND t.Reference_Number = cibp.Reference_Number
-LEFT JOIN (SELECT matched_reference_number, MAX(hciq_low_benchmark) as hciq_low_benchmark, MAX(hciq_50_benchmark) as hciq_50_benchmark, MAX(hciq_75_benchmark) as hciq_75_benchmark, MAX(hciq_90_benchmark) as hciq_90_benchmark, MAX(hciq_high_benchmark) as hciq_high_benchmark FROM ${ref("received_benchmarks_stg_add_refnum")} WHERE matched_reference_number IS NOT NULL GROUP BY 1) b
-  ON t.Reference_Number = b.matched_reference_number
+LEFT JOIN (
+  SELECT 
+    matched_reference_number, 
+    manufacturer_catalog_number, 
+    MAX(hciq_low_benchmark) as hciq_low_benchmark, 
+    MAX(hciq_50_benchmark) as hciq_50_benchmark, 
+    MAX(hciq_75_benchmark) as hciq_75_benchmark, 
+    MAX(hciq_90_benchmark) as hciq_90_benchmark, 
+    MAX(hciq_high_benchmark) as hciq_high_benchmark 
+  FROM ${ref("received_benchmarks_stg_add_refnum")} 
+  WHERE matched_reference_number IS NOT NULL 
+  GROUP BY 1, 2
+) b 
+  ON t.Reference_Number = b.matched_reference_number 
+  AND t.Manufacturer_Catalog_Number = b.manufacturer_catalog_number
+
 WHERE 
   -- We only examine Premier contracts
   SUBSTR(t.Attributed_Contract_Number, 1, 2) IN ('PP', 'AD', 'SP')
+
 GROUP BY 
   t.Attributed_Contract_Number,
   SUBSTR(t.Attributed_Contract_Number, 1, 2),

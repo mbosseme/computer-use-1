@@ -1,9 +1,17 @@
 import pandas as pd
 from google.cloud import bigquery
 import os
+import re
 import openpyxl
 from openpyxl.formatting.rule import ColorScaleRule
 from openpyxl.utils import get_column_letter
+
+ILLEGAL_CHARACTERS_RE = re.compile(r'[\000-\010]|[\013-\014]|[\016-\037]')
+
+def clean_strings(df):
+    for col in df.select_dtypes(['object', 'string']).columns:
+        df[col] = df[col].apply(lambda x: ILLEGAL_CHARACTERS_RE.sub('', x) if isinstance(x, str) else x)
+    return df
 
 print("Connecting to BigQuery...")
 client = bigquery.Client()
@@ -47,9 +55,10 @@ def extract_to_excel(project_id, dataset_id, run_id):
         Contract_Total_Units,
         Benchmark_Coverage_Pct,
         Spend_at_Best_Tier,
-        Target_Spend_P10,
-        Target_Spend_P25,
-        Target_Spend_P50,
+        Target_Spend_Low,
+        Target_Spend_90th,
+        Target_Spend_75th,
+        Target_Spend_50th,
         Target_Spend_High,
         Percentile_Bucket,
         Estimated_Percentile_Linear,
@@ -73,16 +82,20 @@ def extract_to_excel(project_id, dataset_id, run_id):
         Product_Description,
         Total_Units_6mo,
         Total_Spend_6mo,
-        contract_best_tier_description as best_tier_description,
-        contract_best_price as Best_Tier_Unit_Price,
+        contract_best_tier_description,
+        contract_best_price,
+        UOM_Outlier_Flag,
         is_benchmarked,
-        hciq_90_benchmark as Benchmark_Unit_Price_P10,
-        hciq_75_benchmark as Benchmark_Unit_Price_P25,
-        hciq_50_benchmark as Benchmark_Unit_Price_P50,
+
+        hciq_low_benchmark as Benchmark_Unit_Price_Low,
+        hciq_90_benchmark as Benchmark_Unit_Price_90th,
+        hciq_75_benchmark as Benchmark_Unit_Price_75th,
+        hciq_50_benchmark as Benchmark_Unit_Price_50th,
         hciq_high_benchmark as Benchmark_Unit_Price_High,
-        Spend_at_HCIQ90 as Target_Spend_P10,
-        Spend_at_HCIQ75 as Target_Spend_P25,
-        Spend_at_HCIQ50 as Target_Spend_P50,
+        Spend_at_Low as Target_Spend_Low,
+        Spend_at_HCIQ90 as Target_Spend_90th,
+        Spend_at_HCIQ75 as Target_Spend_75th,
+        Spend_at_HCIQ50 as Target_Spend_50th,
         Spend_at_High as Target_Spend_High,
         Spend_at_Best_Tier,
         contract_type_context,
@@ -137,6 +150,12 @@ def extract_to_excel(project_id, dataset_id, run_id):
     df_d = client.query(tab_d_query).to_dataframe()
     print(f"Tab D loaded: {len(df_d)} rows.")
 
+    df_a = clean_strings(df_a)
+    df_b = clean_strings(df_b)
+    df_c = clean_strings(df_c)
+    df_d = clean_strings(df_d)
+    df_e = clean_strings(df_e)
+
     print(f"Writing to {out_file}...")
     with pd.ExcelWriter(out_file, engine='openpyxl') as writer:
         df_a.to_excel(writer, sheet_name='Tab A - Program Summary', index=False)
@@ -148,6 +167,7 @@ def extract_to_excel(project_id, dataset_id, run_id):
         workbook = writer.book
         
         dollar_format = '_($* #,##0_);_($* (#,##0);_($* "-"_);_(@_)'
+        price_format = '_($* #,##0.000_);_($* (#,##0.000);_($* "-"_);_(@_)'
         pct_format = '0%'
         pctl_format = '0'
         
@@ -161,7 +181,9 @@ def extract_to_excel(project_id, dataset_id, run_id):
                     col_name_lower = col_name.lower()
                     
                     cell_format = None
-                    if 'price' in col_name_lower or 'spend' in col_name_lower:
+                    if 'price' in col_name_lower or 'benchmark_unit' in col_name_lower:
+                        cell_format = price_format
+                    elif 'spend' in col_name_lower:
                         cell_format = dollar_format
                     elif 'pct' in col_name_lower or 'percentage' in col_name_lower:
                         cell_format = pct_format
