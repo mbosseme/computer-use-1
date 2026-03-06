@@ -147,7 +147,7 @@ def _build_index_payload(
     return payload
 
 
-def _resolve_azure_config(*, model_name: str = "azure-gpt-5.2") -> AzureResponsesClientConfig:
+def _resolve_azure_config(*, model_name: str = "azure-gpt-5.4") -> AzureResponsesClientConfig:
     repo_root = Path(__file__).resolve().parents[2]
     load_repo_dotenv(repo_root)
 
@@ -271,8 +271,8 @@ def _build_combined_synthesis(
         {"role": "user", "content": final_prompt},
     ]
 
-    instructions, input_text = client.conversation_to_responses_input(messages)
-    result = call_with_retry(client, input_text, instructions, max_retries=6, initial_delay=2.0, timeout_s=300.0)
+    instructions, input_data = client.conversation_to_responses_input(messages)
+    result = call_with_retry(client, input_data, instructions, max_retries=6, initial_delay=2.0, timeout_s=300.0)
     synthesis = client.extract_output_text(result).strip()
 
     out_md_content = "\n".join(
@@ -519,7 +519,7 @@ def main() -> int:
     parser.add_argument("--index", required=True, type=Path)
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--manifest", required=True, type=Path)
-    parser.add_argument("--model", default="azure-gpt-5.2")
+    parser.add_argument("--model", default="azure-gpt-5.4")
     parser.add_argument(
         "--detect-mode",
         choices=["mtime-size", "content-hash"],

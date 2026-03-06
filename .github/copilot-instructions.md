@@ -31,7 +31,7 @@ If the task involves web research, consult `docs/Copilot Web Search Configuratio
 - Keep workflows deterministic: explicit waits, stable selectors, and clear stop conditions.
 
 ## M365 Copilot Model Selection (default)
-- For M365 Copilot chat tasks, set the model/mode selector to **`GPT-5.2 Think`** at the start of the interaction.
+- For M365 Copilot chat tasks, set the model/mode selector to **`GPT-5.4 Think`** at the start of the interaction.
 - Re-check the selector after navigation or page refresh, since UI state can reset to `Auto`.
 - Use `Quick response` only for trivial lookups where speed is more important than depth.
 - If the selector is unavailable or policy-locked, continue with the default mode and note that constraint.

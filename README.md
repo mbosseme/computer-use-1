@@ -29,10 +29,10 @@ Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_RE
 
 This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
 
-## Azure OpenAI (GPT-5.2)
-- Guide: [docs/GPT_5_2_INTEGRATION_GUIDE.md](docs/GPT_5_2_INTEGRATION_GUIDE.md)
+## Azure OpenAI (GPT-5.4)
+- Guide: [docs/GPT_5_4_INTEGRATION_GUIDE.md](docs/GPT_5_4_INTEGRATION_GUIDE.md)
 - Create a local `.env` from [.env.example](.env.example) (do not commit secrets)
-- Quick smoke test: `python -m agent_tools.llm.smoketest --model azure-gpt-5.2 --prompt "hello"`
+- Quick smoke test: `python -m agent_tools.llm.smoketest --model azure-gpt-5.4 --prompt "hello"`
 
 ## Document synthesis (chunked, with coverage warnings)
 This repo includes local-first synthesis tooling that avoids silent truncation by using chunked map-reduce, and always emits a **Coverage / Limit Warnings** section.
@@ -69,7 +69,7 @@ python -m agent_tools.llm.summarize_incremental \
   --index "runs/<RUN_ID>/exports/folder_synthesis.index.json" \
   --out "runs/<RUN_ID>/exports/folder_synthesis.md" \
   --manifest "runs/<RUN_ID>/exports/folder_synthesis.manifest.json" \
-  --model "azure-gpt-5.2" \
+  --model "azure-gpt-5.4" \
   --detect-mode mtime-size
 ```
 

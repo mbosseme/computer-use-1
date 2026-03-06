@@ -46,7 +46,7 @@ def _repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
-def _resolve_azure_config(*, model_name: str = "azure-gpt-5.2") -> AzureResponsesClientConfig:
+def _resolve_azure_config(*, model_name: str = "azure-gpt-5.4") -> AzureResponsesClientConfig:
     repo_root = _repo_root()
     load_repo_dotenv(repo_root)
 
@@ -312,7 +312,7 @@ def synthesize_text(
     text: str,
     out_md_path: Path,
     manifest_path: Optional[Path] = None,
-    model_name: str = "azure-gpt-5.2",
+    model_name: str = "azure-gpt-5.4",
     target_chunk_chars: int = 30_000,
     max_chunk_chars: int = 45_000,
     max_reduction_passes: int = 3,
@@ -476,14 +476,14 @@ def _call_llm(
         {"role": "user", "content": user_prompt},
     ]
 
-    instructions, input_text = client.conversation_to_responses_input(messages)
+    instructions, input_data = client.conversation_to_responses_input(messages)
 
     # Inline retry/backoff (avoid importing older run-local helpers)
     delay = 2.0
     for attempt in range(max_retries):
         try:
             result = client.create_response(
-                input_text=input_text,
+                input_data=input_data,
                 instructions=instructions,
                 timeout_s=timeout_s,
             )
@@ -507,7 +507,7 @@ def synthesize_pdf(
     pdf_path: Path,
     out_md_path: Path,
     manifest_path: Optional[Path] = None,
-    model_name: str = "azure-gpt-5.2",
+    model_name: str = "azure-gpt-5.4",
     target_chunk_chars: int = 30_000,
     max_chunk_chars: int = 45_000,
     overlap_pages: int = 1,
@@ -718,7 +718,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     parser.add_argument("--pdf", required=True, help="Path to a PDF to synthesize")
     parser.add_argument("--out", required=True, help="Output markdown path")
     parser.add_argument("--manifest", required=False, help="Optional JSON manifest output path")
-    parser.add_argument("--model", default="azure-gpt-5.2", help="Model name from config/models.json")
+    parser.add_argument("--model", default="azure-gpt-5.4", help="Model name from config/models.json")
     parser.add_argument("--target-chunk-chars", type=int, default=30000)
     parser.add_argument("--max-chunk-chars", type=int, default=45000)
     parser.add_argument("--overlap-pages", type=int, default=1)

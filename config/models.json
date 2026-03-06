@@ -1,10 +1,10 @@
 {
-  "azure-gpt-5.2": {
+  "azure-gpt-5.4": {
     "provider": "azure_openai",
-    "model": "gpt-5.2",
-    "deployment_name": "<your-gpt-5.2-deployment>",
-    "api_url": "https://<your-resource>.openai.azure.com/openai/responses?api-version=2025-04-01-preview",
-    "display_name": "Azure GPT-5.2",
+    "model": "gpt-5.4",
+    "deployment_name": "gpt-5.4-mv-2026-03-05",
+    "api_url": "https://abi-openai-np2.openai.azure.com/openai/responses?api-version=2025-04-01-preview",
+    "display_name": "Azure GPT-5.4",
     "max_output_tokens": 16384,
     "reasoning_effort": "medium",
     "supports_temperature": false,
