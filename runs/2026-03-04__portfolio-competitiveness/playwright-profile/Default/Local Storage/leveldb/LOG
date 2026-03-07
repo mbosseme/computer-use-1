@@ -1,0 +1,53 @@
+2026/03/04-20:55:53.812 709a96 Creating DB /Users/matt_bossemeyer/Projects/wt-2026-03-04__portfolio-competitiveness/runs/2026-03-04__portfolio-competitiveness/playwright-profile/Default/Local Storage/leveldb since it was missing.
+2026/03/04-20:55:53.822 709a96 Reusing MANIFEST /Users/matt_bossemeyer/Projects/wt-2026-03-04__portfolio-competitiveness/runs/2026-03-04__portfolio-competitiveness/playwright-profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/03/04-20:56:53.827 709a9d Level-0 table #5: started
+2026/03/04-20:56:53.834 709a9d Level-0 table #5: 220153 bytes OK
+2026/03/04-20:56:53.841 709a9d Delete type=0 #3
+2026/03/04-21:01:35.082 709a9d Level-0 table #7: started
+2026/03/04-21:01:35.092 709a9d Level-0 table #7: 40590 bytes OK
+2026/03/04-21:01:35.095 709a9d Delete type=0 #4
+2026/03/04-21:01:35.624 709a9d Level-0 table #9: started
+2026/03/04-21:01:35.630 709a9d Level-0 table #9: 311718 bytes OK
+2026/03/04-21:01:35.632 709a9d Delete type=0 #6
+2026/03/04-21:02:29.931 709a9d Level-0 table #11: started
+2026/03/04-21:02:29.940 709a9d Level-0 table #11: 92907 bytes OK
+2026/03/04-21:02:29.943 709a9d Delete type=0 #8
+2026/03/04-21:02:40.615 709a9d Level-0 table #13: started
+2026/03/04-21:02:40.618 709a9d Level-0 table #13: 18207 bytes OK
+2026/03/04-21:02:40.621 709a9d Delete type=0 #10
+2026/03/04-21:03:29.930 709a9d Level-0 table #15: started
+2026/03/04-21:03:29.942 709a9d Level-0 table #15: 148179 bytes OK
+2026/03/04-21:03:29.945 709a9d Delete type=0 #12
+2026/03/04-21:03:29.947 709a9d Compacting 4@0 + 1@1 files
+2026/03/04-21:03:29.955 709a9d Generated table #16@0: 142 keys, 445337 bytes
+2026/03/04-21:03:29.955 709a9d Compacted 4@0 + 1@1 files => 445337 bytes
+2026/03/04-21:03:29.957 709a9d compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/04-21:03:29.957 709a9d Delete type=2 #15
+2026/03/04-21:03:29.957 709a9d Delete type=2 #7
+2026/03/04-21:03:29.957 709a9d Delete type=2 #13
+2026/03/04-21:03:29.957 709a9d Delete type=2 #11
+2026/03/04-21:03:29.957 709a9d Delete type=2 #9
+2026/03/04-21:03:31.108 709a9d Level-0 table #18: started
+2026/03/04-21:03:31.114 709a9d Level-0 table #18: 63366 bytes OK
+2026/03/04-21:03:31.116 709a9d Delete type=0 #14
+2026/03/04-21:06:43.365 709a9d Level-0 table #20: started
+2026/03/04-21:06:43.371 709a9d Level-0 table #20: 50356 bytes OK
+2026/03/04-21:06:43.373 709a9d Delete type=0 #17
+2026/03/04-21:07:00.355 709a9d Level-0 table #22: started
+2026/03/04-21:07:00.363 709a9d Level-0 table #22: 40713 bytes OK
+2026/03/04-21:07:00.365 709a9d Delete type=0 #19
+2026/03/04-21:16:43.474 709a9d Level-0 table #24: started
+2026/03/04-21:16:43.480 709a9d Level-0 table #24: 53591 bytes OK
+2026/03/04-21:16:43.485 709a9d Delete type=0 #21
+2026/03/04-21:16:43.486 709a9d Compacting 4@0 + 1@1 files
+2026/03/04-21:16:43.500 709a9d Generated table #25@0: 161 keys, 500440 bytes
+2026/03/04-21:16:43.500 709a9d Compacted 4@0 + 1@1 files => 500440 bytes
+2026/03/04-21:16:43.502 709a9d compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/03/04-21:16:43.503 709a9d Delete type=2 #16
+2026/03/04-21:16:43.503 709a9d Delete type=2 #20
+2026/03/04-21:16:43.503 709a9d Delete type=2 #22
+2026/03/04-21:16:43.503 709a9d Delete type=2 #18
+2026/03/04-21:16:43.503 709a9d Delete type=2 #24
+2026/03/04-21:56:15.996 709a9d Level-0 table #27: started
+2026/03/04-21:56:16.001 709a9d Level-0 table #27: 40614 bytes OK
+2026/03/04-21:56:16.005 709a9d Delete type=0 #23

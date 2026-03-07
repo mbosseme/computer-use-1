@@ -1,0 +1,1764 @@
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e1105] [cursor=pointer]:
+    - /url: "#officehome-scroll-container"
+  - generic:
+    - generic:
+      - generic:
+        - navigation [ref=e5]:
+          - generic [ref=e6]:
+            - link "M365 Copilot" [ref=e1106] [cursor=pointer]:
+              - img [ref=e9]
+            - button "Collapse side navigation panel" [expanded] [ref=e1107]:
+              - img [ref=e13]
+          - generic [ref=e15]:
+            - generic [ref=e17]:
+              - button "New chat" [ref=e1108] [cursor=pointer]:
+                - img [ref=e753]
+                - text: New chat
+              - button "Search" [ref=e1109] [cursor=pointer]:
+                - img [ref=e755]
+                - text: Search
+              - button "Library" [ref=e1110] [cursor=pointer]:
+                - img [ref=e757]
+                - text: Library
+              - button "Create" [ref=e1111] [cursor=pointer]:
+                - img [ref=e759]
+                - text: Create
+            - generic [ref=e33]:
+              - generic [ref=e35]:
+                - generic "Agents" [ref=e1112]:
+                  - button "Agents" [expanded] [ref=e1113]
+                  - button "New agent" [ref=e1114]:
+                    - img [ref=e42]
+                  - img [ref=e45]
+                - generic [ref=e48]:
+                  - generic "Researcher" [ref=e1115] [cursor=pointer]:
+                    - button "Researcher pinned" [ref=e1116]:
+                      - img [ref=e54]
+                      - generic [ref=e58]: Researcher
+                    - button "This was pinned by Microsoft and can't be unpinned." [disabled] [pressed]:
+                      - generic:
+                        - img
+                    - button "More":
+                      - generic:
+                        - img
+                  - generic "Analyst" [ref=e1117] [cursor=pointer]:
+                    - button "Analyst pinned" [ref=e1118]:
+                      - img [ref=e65]
+                      - generic [ref=e69]: Analyst
+                    - button "This was pinned by Microsoft and can't be unpinned." [disabled] [pressed]:
+                      - generic:
+                        - img
+                    - button "More":
+                      - generic:
+                        - img
+                  - generic "PowerPoint" [ref=e1119] [cursor=pointer]:
+                    - button "PowerPoint" [ref=e1120]:
+                      - img [ref=e76]
+                      - generic [ref=e80]: PowerPoint
+                    - button "Pin":
+                      - generic:
+                        - img
+                    - button "More":
+                      - generic:
+                        - img
+                  - generic "Excel" [ref=e1121] [cursor=pointer]:
+                    - button "Excel" [ref=e1122]:
+                      - img [ref=e87]
+                      - generic [ref=e91]: Excel
+                    - button "Pin":
+                      - generic:
+                        - img
+                    - button "More":
+                      - generic:
+                        - img
+                  - button "New agent" [ref=e1123] [cursor=pointer]:
+                    - img [ref=e95]
+                    - generic [ref=e97]: New agent
+                  - button "All agents" [ref=e1124] [cursor=pointer]:
+                    - img [ref=e100]
+                    - generic [ref=e102]: All agents
+              - generic [ref=e103]:
+                - generic "Notebooks" [ref=e1125]:
+                  - button "Notebooks" [expanded] [ref=e1126]
+                  - button "New notebook" [ref=e1127]:
+                    - img [ref=e109]
+                  - img [ref=e112]
+                - button "All notebooks" [ref=e1128] [cursor=pointer]:
+                  - img [ref=e118]
+                  - text: All notebooks
+              - generic [ref=e120]:
+                - generic "Chats" [ref=e1129] [cursor=pointer]:
+                  - button "Chats" [ref=e1130]:
+                    - generic [ref=e124]: Chats
+                  - button "Search chats":
+                    - generic:
+                      - generic:
+                        - img
+                - generic "Premier Contract Types and Benchmark Analysis Context" [ref=e1131] [cursor=pointer]:
+                  - button "Premier Contract Types and Benchmark Analysis Context" [ref=e1132]:
+                    - generic [ref=e764]: Premier Contract Types and Benchmark Analysis Context
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Transaction Analysis Export Documentation Request" [ref=e1133] [cursor=pointer]:
+                  - button "Transaction Analysis Export Documentation Request" [ref=e1134]:
+                    - generic [ref=e129]: Transaction Analysis Export Documentation Request
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Recent Interactions with Jesse Plous Summary" [ref=e1135] [cursor=pointer]:
+                  - button "Recent Interactions with Jesse Plous Summary" [ref=e1136]:
+                    - generic [ref=e134]: Recent Interactions with Jesse Plous Summary
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Clarivate Data Contract and Cutover Briefing" [ref=e1137] [cursor=pointer]:
+                  - button "Clarivate Data Contract and Cutover Briefing" [ref=e1138]:
+                    - generic [ref=e139]: Clarivate Data Contract and Cutover Briefing
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Summary of Recent One-on-One with Jonathan Pruitt" [ref=e1139] [cursor=pointer]:
+                  - button "Summary of Recent One-on-One with Jonathan Pruitt" [ref=e1140]:
+                    - generic [ref=e144]: Summary of Recent One-on-One with Jonathan Pruitt
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Summary of Conversations on B. Braun Strategies" [ref=e1141] [cursor=pointer]:
+                  - button "Summary of Conversations on B. Braun Strategies" [ref=e1142]:
+                    - generic [ref=e149]: Summary of Conversations on B. Braun Strategies
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Information About Tyson Hofeling" [ref=e1143] [cursor=pointer]:
+                  - button "Information About Tyson Hofeling" [ref=e1144]:
+                    - generic [ref=e154]: Information About Tyson Hofeling
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Latest Email Thread with Jenn Gotto" [ref=e1145] [cursor=pointer]:
+                  - button "Latest Email Thread with Jenn Gotto" [ref=e1146]:
+                    - generic [ref=e159]: Latest Email Thread with Jenn Gotto
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Document Summary Request" [ref=e1147] [cursor=pointer]:
+                  - button "Document Summary Request" [ref=e1148]:
+                    - generic [ref=e164]: Document Summary Request
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Summary of Recent Interactions with Matt Shimshock" [ref=e1149] [cursor=pointer]:
+                  - button "Summary of Recent Interactions with Matt Shimshock" [ref=e1150]:
+                    - generic [ref=e169]: Summary of Recent Interactions with Matt Shimshock
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Summary of Jonathan Pruitt's Work and Background" [ref=e1151] [cursor=pointer]:
+                  - button "Summary of Jonathan Pruitt's Work and Background" [ref=e1152]:
+                    - generic [ref=e174]: Summary of Jonathan Pruitt's Work and Background
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Stephen's emails like this from member support. I" [ref=e1153] [cursor=pointer]:
+                  - button "Stephen's emails like this from member support. I" [ref=e1154]:
+                    - generic [ref=e179]: Stephen's emails like this from member support. I
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Open Asks on Forvis, IRS Audit, R&D Credit" [ref=e1155] [cursor=pointer]:
+                  - button "Open Asks on Forvis, IRS Audit, R&D Credit" [ref=e1156]:
+                    - generic [ref=e184]: Open Asks on Forvis, IRS Audit, R&D Credit
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Fusion Team Kickoff Summary and Rescheduling" [ref=e1157] [cursor=pointer]:
+                  - button "Fusion Team Kickoff Summary and Rescheduling" [ref=e1158]:
+                    - generic [ref=e189]: Fusion Team Kickoff Summary and Rescheduling
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Read the latest email thread with Chris Maskeri" [ref=e1159] [cursor=pointer]:
+                  - button "Read the latest email thread with Chris Maskeri" [ref=e1160]:
+                    - generic [ref=e194]: Read the latest email thread with Chris Maskeri
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Context Gathering for Google Enterprise Email Thread" [ref=e1161] [cursor=pointer]:
+                  - button "Context Gathering for Google Enterprise Email Thread" [ref=e1162]:
+                    - generic [ref=e199]: Context Gathering for Google Enterprise Email Thread
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Bruce Radcliffe’s Administrative Assistant Inquiry" [ref=e1163] [cursor=pointer]:
+                  - button "Bruce Radcliffe’s Administrative Assistant Inquiry" [ref=e1164]:
+                    - generic [ref=e204]: Bruce Radcliffe’s Administrative Assistant Inquiry
+                  - button "More":
+                    - generic:
+                      - img
+                - generic "Evaluation of Prophecy Tool Migration Challenges" [ref=e1165] [cursor=pointer]:
+                  - button "Evaluation of Prophecy Tool Migration Challenges" [ref=e1166]:
+                    - generic [ref=e209]: Evaluation of Prophecy Tool Migration Challenges
+                  - button "More":
+                    - generic:
+                      - img
+                - button "All chats" [ref=e1191] [cursor=pointer]:
+                  - img [ref=e278]
+                  - generic [ref=e280]: All chats
+          - generic [ref=e282]:
+            - generic [ref=e285] [cursor=pointer]:
+              - button "Apps" [ref=e1192]:
+                - img [ref=e766]
+                - text: Apps
+              - button:
+                - generic:
+                  - img
+            - generic [ref=e291]:
+              - generic [ref=e292]:
+                - button "Matt Bossemeyer Matt Bossemeyer" [ref=e1193] [cursor=pointer]:
+                  - img "Matt Bossemeyer" [ref=e1194]:
+                    - generic [ref=e295]: MB
+                    - img [ref=e296]
+                  - generic: Matt Bossemeyer
+                - button "Settings and more" [ref=e1195]:
+                  - img [ref=e300]
+              - generic [ref=e305]:
+                - generic [ref=e306]: M365 Copilot (Premium)
+                - button "M365 Copilot (Premium) information" [ref=e1196]:
+                  - img [ref=e308]
+        - application [ref=e311]:
+          - main [ref=e321]:
+            - generic [ref=e324]:
+              - generic [ref=e327]:
+                - generic "Premier Contract Types and Benchmark Analysis Cont..." [ref=e2003]
+                - generic [ref=e331]:
+                  - button "Work" [pressed] [ref=e1197]
+                  - button "Web" [ref=e1198]
+                - generic [ref=e335]:
+                  - button "GPT-5.2 Think" [ref=e1199]:
+                    - generic [ref=e337]: GPT-5.2 Think
+                    - img [ref=e339]
+                  - generic [ref=e341]:
+                    - button "New chat" [ref=e1200]:
+                      - img [ref=e344]
+                    - button "Temporary chat" [ref=e1201]:
+                      - img [ref=e348]
+                  - button "Commercial data protection badge." [ref=e1202]:
+                    - img [ref=e352]
+                  - button "OpenCopilot chats and more" [ref=e1203]:
+                    - img [ref=e357]
+              - generic [ref=e362]:
+                - feed [ref=e502]:
+                  - generic [ref=e505]:
+                    - generic [ref=e507]:
+                      - generic [ref=e508]:
+                        - heading "Today" [level=4] [ref=e1204]
+                        - separator [ref=e510]
+                      - 'article "You said: I am working on an analysis of Premier''s contract-level percentile positioning vs Healthcare IQ benchmarks for National (PP), Ascend Drive (AD), and Surpass (SP) portfolios. I used the transaction_analysis_expanded bigquery dataset. Can you provide business context on how these contracts are structured, what the difference between REGIONAL, LOCAL, and PREMIER contract types actually means in this dataset, and whether my assumption to strictly exclude LOCAL and REGIONAL contracts to find the \"best premier tier price\" is correct? Also, are there considerations around member rebates missing from the HCIQ benchmark data that impact this positioning? please format output nicely" [ref=e1205]':
+                        - heading "You said:" [level=5] [ref=e1206]
+                        - button "More actions" [ref=e1207]
+                        - generic [ref=e518]: I am working on an analysis of Premier's contract-level percentile positioning vs Healthcare IQ benchmarks for National (PP), Ascend Drive (AD), and Surpass (SP) portfolios. I used the transaction_analysis_expanded bigquery dataset. Can you provide business context on how these contracts are structured, what the difference between REGIONAL, LOCAL, and PREMIER contract types actually means in this dataset, and whether my assumption to strictly exclude LOCAL and REGIONAL contracts to find the "best premier tier price" is correct? Also, are there considerations around member rebates missing from the HCIQ benchmark data that impact this positioning? please format output nicely
+                      - article [ref=e1208]:
+                        - generic [ref=e525]:
+                          - heading "Copilot said:" [level=6] [ref=e1209]
+                          - img "Copilot's Logo" [ref=e1210]
+                          - generic [ref=e532]: Copilot
+                          - button "Confidential" [ref=e1211]:
+                            - generic "Confidential" [ref=e1212]:
+                              - img [ref=e560]
+                              - img [ref=e562]
+                        - generic [ref=e568]:
+                          - paragraph [ref=e569]:
+                            - text: Below is a
+                            - strong [ref=e570]: business‑context framing
+                            - text: of Premier contract structures and how they interact with
+                            - strong [ref=e571]: Healthcare IQ (HCIQ) benchmark positioning
+                            - text: ", grounded where possible in internal Premier materials and clearly separated from"
+                            - strong [ref=e572]: analytical guidance / interpretation
+                            - text: so you can align this to your percentile work confidently.
+                          - separator [ref=e573]
+                          - heading "Premier Contract Structures & Benchmarking Context" [level=1] [ref=e1213]
+                          - paragraph [ref=e575]:
+                            - emphasis [ref=e576]: (National / PP, Ascend Drive (AD), Surpass (SP))
+                          - separator [ref=e577]
+                          - heading "1. How Premier Contracts Are Structured (Business Reality)" [level=2] [ref=e1214]
+                          - heading "Performance Group Model (PP, AD, SP)" [level=3] [ref=e1215]
+                          - paragraph [ref=e580]:
+                            - text: Premier’s contracting ecosystem is intentionally
+                            - strong [ref=e581]: tiered by commitment and performance expectations
+                            - text: ", rather than being a single uniform “national contract” construct."
+                          - paragraph [ref=e582]: "From Premier Market Insights materials and performance‑group discussions, the core structures are:"
+                          - heading "National / Performance Program (PP)" [level=3] [ref=e1216]:
+                            - strong [ref=e584]: National / Performance Program (PP)
+                          - list [ref=e585]:
+                            - listitem [ref=e586]: Baseline national GPO contract access.
+                            - listitem [ref=e587]: Broad eligibility across Premier members.
+                            - listitem [ref=e588]: Lower compliance thresholds and fewer behavioral requirements.
+                            - listitem [ref=e589]:
+                              - text: Functions as the
+                              - strong [ref=e590]: price floor reference
+                              - text: ", not necessarily the most aggressive net price."
+                            - listitem [ref=e591]:
+                              - text: Used as the “default” when members are not aligned to higher‑performance tiers.
+                              - 'button "Citation: Premier''s Market Insights & Digital Supply Chain Initiative - A Strategic Analysis (Notebook LM Briefing Doc - Jan 6 2026) plus 1 more" [ref=e1217] [cursor=pointer]':
+                                - img [ref=e594]
+                                - generic [ref=e596]: Premier's Market Insights & Digital Supply Chain Initiative - A Strategic Analysis (Notebook LM Briefing Doc - Jan 6 2026)
+                                - generic [ref=e597]: "+1"
+                          - separator [ref=e598]
+                          - heading "Ascend Drive (AD)" [level=3] [ref=e1218]:
+                            - strong [ref=e600]: Ascend Drive (AD)
+                          - list [ref=e601]:
+                            - listitem [ref=e602]: Mid‑tier performance group.
+                            - listitem [ref=e603]:
+                              - text: "Often includes:"
+                              - list [ref=e604]:
+                                - listitem [ref=e605]: Dual‑award scenarios.
+                                - listitem [ref=e606]: Ramp‑up periods.
+                                - listitem [ref=e607]: Combined compliance calculations across awarded suppliers.
+                            - listitem [ref=e608]:
+                              - text: Members may be contract‑compliant without allocating 100% share to a single supplier, which creates
+                              - strong [ref=e609]: price dispersion at the transaction level
+                              - text: .
+                            - listitem [ref=e610]:
+                              - text: AD pricing is typically
+                              - strong [ref=e611]: better than PP
+                              - text: ", but not always the best observable price due to dual awards and partial activations."
+                              - 'button "Citation: Market Insights Performance Groups – Solventum Monthly Meeting-20260213_100039-Meeting Transcript plus 1 more" [ref=e1219] [cursor=pointer]':
+                                - img [ref=e614]
+                                - generic [ref=e616]: Market Insights Performance Groups – Solventum Monthly Meeting-20260213_100039-Meeting Transcript
+                                - generic [ref=e617]: "+1"
+                          - separator [ref=e618]
+                          - heading "Surpass (SP)" [level=3] [ref=e1220]:
+                            - strong [ref=e620]: Surpass (SP)
+                          - list [ref=e621]:
+                            - listitem [ref=e622]: Highest commitment tier.
+                            - listitem [ref=e623]: Strongest compliance requirements.
+                            - listitem [ref=e624]: Often single‑award or dominant‑share structures.
+                            - listitem [ref=e625]:
+                              - text: Designed to drive
+                              - strong [ref=e626]: predictable demand and value‑aggregated pricing
+                              - text: .
+                            - listitem [ref=e627]:
+                              - text: This is where Premier and suppliers expect
+                              - strong [ref=e628]: best‑in‑class contract pricing
+                              - text: to appear at the invoice level.
+                              - 'button "Citation: Premier''s Market Insights & Digital Supply Chain Initiative - A Strategic Analysis (Notebook LM Briefing Doc - Jan 6 2026) plus 1 more" [ref=e1221] [cursor=pointer]':
+                                - img [ref=e631]
+                                - generic [ref=e633]: Premier's Market Insights & Digital Supply Chain Initiative - A Strategic Analysis (Notebook LM Briefing Doc - Jan 6 2026)
+                                - generic [ref=e634]: "+1"
+                          - separator [ref=e635]
+                          - heading "2. What REGIONAL, LOCAL, and PREMIER Mean in the Dataset" [level=2] [ref=e1222]
+                          - paragraph [ref=e637]:
+                            - text: Within
+                            - strong [ref=e638]:
+                              - code [ref=e639]: transaction_analysis_expanded
+                            - text: ", the contract_type field reflects"
+                            - strong [ref=e640]: scope of applicability
+                            - text: ", not performance tier."
+                          - heading "PREMIER" [level=3] [ref=e1223]:
+                            - strong [ref=e642]: PREMIER
+                          - list [ref=e643]:
+                            - listitem [ref=e644]: Nationally negotiated Premier contracts.
+                            - listitem [ref=e645]: Includes PP, AD, and SP performance groups.
+                            - listitem [ref=e646]: Pricing reflects formal GPO agreements.
+                            - listitem [ref=e647]: Eligible for performance incentives, rebates, and compliance tracking.
+                          - heading "REGIONAL" [level=3] [ref=e1224]:
+                            - strong [ref=e649]: REGIONAL
+                          - list [ref=e650]:
+                            - listitem [ref=e651]:
+                              - text: "Sub‑national contracts negotiated for:"
+                              - list [ref=e652]:
+                                - listitem [ref=e653]: IDNs
+                                - listitem [ref=e654]: Regional coalitions
+                                - listitem [ref=e655]: Specific health system groupings
+                            - listitem [ref=e656]:
+                              - text: Pricing may be
+                              - strong [ref=e657]: better or worse
+                              - text: than national Premier pricing depending on leverage and local strategy.
+                            - listitem [ref=e658]: Not intended to represent a national benchmark price.
+                          - heading "LOCAL" [level=3] [ref=e1225]:
+                            - strong [ref=e660]: LOCAL
+                          - list [ref=e661]:
+                            - listitem [ref=e662]: Facility‑specific or system‑specific pricing.
+                            - listitem [ref=e663]:
+                              - text: "Often influenced by:"
+                              - list [ref=e664]:
+                                - listitem [ref=e665]: Direct negotiations
+                                - listitem [ref=e666]: Legacy agreements
+                                - listitem [ref=e667]: Conversion protections
+                            - listitem [ref=e668]:
+                              - text: Can appear as
+                              - strong [ref=e669]: extreme low prices
+                              - text: but are
+                              - strong [ref=e670]: not broadly replicable
+                              - text: across the Premier membership.
+                          - paragraph [ref=e671]:
+                            - strong [ref=e672]: "Key point:"
+                            - text: REGIONAL and LOCAL are
+                            - strong [ref=e673]: real prices
+                            - text: ", but they are"
+                            - strong [ref=e674]: not scalable national reference prices
+                            - text: .
+                          - separator [ref=e675]
+                          - heading "3. Is Excluding LOCAL and REGIONAL Contracts Correct for “Best Premier Tier Price”?" [level=2] [ref=e1226]
+                          - heading "Short Answer:" [level=3] [ref=e1227]:
+                            - strong [ref=e678]: "Short Answer:"
+                          - paragraph [ref=e679]:
+                            - text: ✅
+                            - strong [ref=e680]: Yes — for a national Premier‑vs‑HCIQ positioning analysis, this assumption is directionally correct.
+                          - heading "Why this holds analytically" [level=3] [ref=e1228]:
+                            - strong [ref=e682]: Why this holds analytically
+                          - paragraph [ref=e683]: "If your stated objective is:"
+                          - blockquote [ref=e684]:
+                            - paragraph [ref=e685]:
+                              - emphasis [ref=e686]: “What is the best price a Premier member can reasonably expect by aligning to the highest Premier tier?”
+                          - paragraph [ref=e687]: "Then:"
+                          - list [ref=e688]:
+                            - listitem [ref=e689]:
+                              - text: LOCAL prices introduce
+                              - strong [ref=e690]: one‑off negotiation noise
+                            - listitem [ref=e691]:
+                              - text: REGIONAL prices reflect
+                              - strong [ref=e692]: sub‑national leverage not accessible to all members
+                            - listitem [ref=e693]:
+                              - text: Including them would
+                              - strong [ref=e694]: artificially compress percentiles downward
+                              - text: ", making Premier appear less competitive at the national level"
+                          - heading "Best‑practice framing" [level=3] [ref=e1229]:
+                            - strong [ref=e696]: Best‑practice framing
+                          - list [ref=e697]:
+                            - listitem [ref=e698]:
+                              - text: ✅
+                              - strong [ref=e699]: Exclude LOCAL and REGIONAL
+                              - text: "when defining:"
+                              - list [ref=e700]:
+                                - listitem [ref=e701]: “Best Premier tier price”
+                                - listitem [ref=e702]: National benchmark positioning
+                            - listitem [ref=e703]:
+                              - text: ✅
+                              - strong [ref=e704]: Limit to PREMIER contracts
+                            - listitem [ref=e705]:
+                              - text: ✅
+                              - strong [ref=e706]: Stratify within PREMIER
+                              - text: "by:"
+                              - list [ref=e707]:
+                                - listitem [ref=e708]: PP vs AD vs SP (if available)
+                                - listitem [ref=e709]: Or infer tier via compliance / award indicators
+                          - heading "Important caveat" [level=3] [ref=e1230]:
+                            - strong [ref=e711]: Important caveat
+                          - paragraph [ref=e712]:
+                            - text: Excluding LOCAL and REGIONAL is appropriate
+                            - strong [ref=e713]: only if you explicitly state
+                            - text: ":"
+                          - blockquote [ref=e714]:
+                            - paragraph [ref=e715]: “This analysis reflects nationally available Premier pricing, not localized exceptions.”
+                          - separator [ref=e716]
+                          - heading "4. Healthcare IQ (HCIQ) Benchmark Limitations — Rebates Matter" [level=2] [ref=e1231]
+                          - heading "What HCIQ Data Represents" [level=3] [ref=e1232]
+                          - paragraph [ref=e719]: "From internal compliance and contracting communications:"
+                          - list [ref=e720]:
+                            - listitem [ref=e721]:
+                              - text: "HCIQ benchmarks are derived from:"
+                              - list [ref=e722]:
+                                - listitem [ref=e723]:
+                                  - strong [ref=e724]: PO / AP transaction data
+                                - listitem [ref=e725]: Invoice‑level unit prices
+                            - listitem [ref=e726]:
+                              - text: They
+                              - strong [ref=e727]: explicitly focus on price benchmarking
+                              - text: and
+                              - strong [ref=e728]: do not include post‑invoice economics
+                              - text: "such as:"
+                              - list [ref=e729]:
+                                - listitem [ref=e730]: Member‑specific rebates
+                                - listitem [ref=e731]: Performance incentives
+                                - listitem [ref=e732]:
+                                  - text: Tier‑based back‑end payments
+                                  - 'button "Citation: FW: HealthCare IQ - PIA Review - RITM0446298" [ref=e1233] [cursor=pointer]':
+                                    - img [ref=e735]
+                                    - generic [ref=e737]: "FW: HealthCare IQ - PIA Review - RITM0446298"
+                          - separator [ref=e738]
+                          - heading "Impact on Percentile Positioning" [level=3] [ref=e1234]
+                          - paragraph [ref=e740]:
+                            - text: This has
+                            - strong [ref=e741]: material implications
+                            - text: "for your analysis:"
+                          - list [ref=e742]:
+                            - listitem [ref=e743]:
+                              - text: "Premier SP and AD contracts often rely on:"
+                              - list [ref=e744]:
+                                - listitem [ref=e745]: Back‑end rebates
+                                - listitem [ref=e746]: Compliance‑based earn‑backs
+                            - listitem [ref=e747]:
+                              - text: These economics
+                              - strong [ref=e748]: improve net cost
+                              - text: but are
+                              - strong [ref=e749]: invisible in HCIQ
+                            - listitem [ref=e750]:
+                              - text: "As a result:"
+                              - list [ref=e751]:
+                                - listitem [ref=e752]:
+                                  - text: Premier may appear
+                                  - strong [ref=e791]: worse than reality
+                                  - text: at the invoice level
+                                - listitem [ref=e792]: Especially in mid‑to‑upper percentiles where rebate value is highest
+                          - heading "Recommended Interpretation Language" [level=3] [ref=e1235]
+                          - paragraph [ref=e794]: "When presenting results:"
+                          - blockquote [ref=e795]:
+                            - paragraph [ref=e796]:
+                              - text: “Percentile positioning reflects
+                              - strong [ref=e797]: invoice‑level pricing only
+                              - text: and does not capture Premier member rebates or performance incentives, which may materially improve net effective cost relative to external benchmarks.”
+                          - separator [ref=e798]
+                          - heading "5. Practical Recommendations for Your Analysis" [level=2] [ref=e1236]
+                          - heading "✅ What You Did Right" [level=3] [ref=e1237]
+                          - list [ref=e801]:
+                            - listitem [ref=e802]:
+                              - text: Using
+                              - code [ref=e803]: transaction_analysis_expanded
+                            - listitem [ref=e804]: Excluding LOCAL and REGIONAL for national benchmarking
+                            - listitem [ref=e805]: Focusing on contract‑level percentiles rather than simple averages
+                          - heading "🔧 Suggested Enhancements" [level=3] [ref=e1238]
+                          - list [ref=e807]:
+                            - listitem [ref=e808]:
+                              - text: Report
+                              - strong [ref=e809]: two views
+                              - text: "if possible:"
+                              - list [ref=e810]:
+                                - listitem [ref=e811]:
+                                  - strong [ref=e812]: Premier‑only (clean national comparison)
+                                - listitem [ref=e813]:
+                                  - strong [ref=e814]: All‑contracts (to show price dispersion context)
+                            - listitem [ref=e815]:
+                              - text: Add an
+                              - strong [ref=e816]: explicit rebate disclaimer
+                            - listitem [ref=e817]:
+                              - text: "Where possible, annotate:"
+                              - list [ref=e818]:
+                                - listitem [ref=e819]: SP‑like pricing clusters vs PP‑like clusters within PREMIER
+                          - separator [ref=e820]
+                          - heading "6. Bottom Line" [level=2] [ref=e1239]
+                          - list [ref=e822]:
+                            - listitem [ref=e823]:
+                              - strong [ref=e824]: PREMIER ≠ best price by default
+                              - text: — SP contracts are
+                            - listitem [ref=e825]:
+                              - strong [ref=e826]: LOCAL / REGIONAL ≠ invalid
+                              - text: ", but"
+                              - strong [ref=e827]: not appropriate
+                              - text: for national tier benchmarking
+                            - listitem [ref=e828]:
+                              - strong [ref=e829]: HCIQ under‑represents Premier value
+                              - text: due to missing rebates
+                            - listitem [ref=e830]:
+                              - text: Your exclusion logic is
+                              - strong [ref=e831]: methodologically sound
+                              - text: as long as scope is clearly stated
+                          - separator [ref=e832]
+                          - paragraph [ref=e833]: "If you want, I can help you:"
+                          - list [ref=e834]:
+                            - listitem [ref=e835]:
+                              - text: Draft
+                              - strong [ref=e836]: exact language
+                              - text: for an exec slide
+                            - listitem [ref=e837]:
+                              - text: Define
+                              - strong [ref=e838]: logic to infer SP vs AD vs PP
+                              - text: from transactions
+                            - listitem [ref=e839]: Stress‑test percentile sensitivity with and without exclusions
+                        - button "Sources" [ref=e1240] [cursor=pointer]:
+                          - generic [ref=e843]:
+                            - generic [ref=e844]: Sources
+                            - generic [ref=e845]:
+                              - img "docx" [ref=e1241]
+                              - img [ref=e847]
+                              - img "mp4" [ref=e1242]
+                            - img [ref=e851]
+                        - toolbar [ref=e853]:
+                          - generic [ref=e856]:
+                            - generic [ref=e859]:
+                              - button "Copy Response" [ref=e1243]:
+                                - img [ref=e2381]
+                              - region "Provide your feedback on BizChat" [ref=e1244]:
+                                - group "Provide your feedback on BizChat" [ref=e1245]:
+                                  - generic [ref=e866]:
+                                    - button "I like something" [ref=e1246]:
+                                      - img [ref=e869]
+                                    - button "I don't like something" [ref=e1247]:
+                                      - img [ref=e873]
+                              - button "Share prompt and copy with response" [ref=e1248]:
+                                - img [ref=e877]
+                              - button "Schedule this prompt" [ref=e1249]:
+                                - img [ref=e2383]
+                              - generic [ref=e883]:
+                                - button "Edit in Pages" [ref=e1250]:
+                                  - img [ref=e886]
+                                - button "Pages options" [ref=e1251]:
+                                  - img [ref=e890]
+                            - button "More options" [ref=e1252]:
+                              - img [ref=e895]
+                    - generic [ref=e1268]:
+                      - 'article "You said: Two follow-up questions: (1) In transaction_analysis_expanded, what fields or field values could I use to infer whether a transaction is Surpass (SP), AscenDrive (AD), or Performance Program (PP)? Be specific about column names and values if you can find them. (2) What does the HCIQ PIA Review (FW: HealthCare IQ - PIA Review - RITM0446298) say about how HCIQ collects its price data and what definitions they use? I need to understand the key methodological differences that make a direct Premier-vs-HCIQ comparison imperfect. Please be thorough and cite your sources." [ref=e1272]':
+                        - heading "You said:" [level=5] [ref=e1273]
+                        - button "More actions" [ref=e1274]
+                        - generic [ref=e1276]: "Two follow-up questions: (1) In transaction_analysis_expanded, what fields or field values could I use to infer whether a transaction is Surpass (SP), AscenDrive (AD), or Performance Program (PP)? Be specific about column names and values if you can find them. (2) What does the HCIQ PIA Review (FW: HealthCare IQ - PIA Review - RITM0446298) say about how HCIQ collects its price data and what definitions they use? I need to understand the key methodological differences that make a direct Premier-vs-HCIQ comparison imperfect. Please be thorough and cite your sources."
+                      - article [ref=e2008]:
+                        - generic [ref=e1283]:
+                          - heading "Copilot said:" [level=6] [ref=e1284]
+                          - img "Copilot's Logo" [ref=e1288]
+                          - generic [ref=e1290]: Copilot
+                          - button "Restricted Internal" [ref=e1646]:
+                            - generic "Restricted Internal" [ref=e1647]:
+                              - img [ref=e1335]
+                              - img [ref=e1337]
+                        - generic [ref=e1292]:
+                          - button "Reasoning completed in 16 steps" [ref=e1339]:
+                            - generic [ref=e1316]: Reasoning completed in 16 steps
+                            - img [ref=e1318]
+                          - generic [ref=e1344]:
+                            - paragraph [ref=e1345]:
+                              - text: Below are
+                              - strong [ref=e1346]: specific, dataset‑level hooks
+                              - text: you can use to distinguish
+                              - strong [ref=e1347]: Surpass (SP)
+                              - text: vs
+                              - strong [ref=e1348]: AscenDrive (AD)
+                              - text: vs
+                              - strong [ref=e1349]: Performance Program / National (PP)
+                              - text: in
+                              - code [ref=e1350]: transaction_analysis_expanded
+                              - text: ", plus a"
+                              - strong [ref=e1351]: thorough, source‑cited
+                              - text: rundown of what the
+                              - strong [ref=e1352]: HCIQ PIA / project package
+                              - text: says about
+                              - strong [ref=e1353]: how HCIQ ingests/defines price data
+                              - text: and why a direct Premier‑vs‑HCIQ comparison is imperfect.
+                            - separator [ref=e1354]
+                            - heading "(1) Inferring SP vs AD vs PP in transaction_analysis_expanded" [level=1] [ref=e2009]:
+                              - text: (1) Inferring SP vs AD vs PP in
+                              - code [ref=e1356]: transaction_analysis_expanded
+                            - 'heading "A. The most reliable indicator: Contract_Number prefix (SP‑ / AD‑ / PP‑)" [level=2] [ref=e2010]':
+                              - text: "A. The most reliable indicator:"
+                              - code [ref=e1358]: Contract_Number
+                              - text: prefix (SP‑ / AD‑ / PP‑)
+                            - heading "Column" [level=3] [ref=e2011]:
+                              - strong [ref=e1360]: Column
+                            - list [ref=e1361]:
+                              - listitem [ref=e1362]:
+                                - code [ref=e1363]: Contract_Number
+                                - text: (present in the Transaction Analysis schema exports)
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2012] [cursor=pointer]':
+                                  - img [ref=e1366]
+                                  - generic [ref=e1368]: "Re: Baxter Next Steps"
+                            - heading "How to use it" [level=3] [ref=e2013]:
+                              - strong [ref=e1370]: How to use it
+                            - paragraph [ref=e1371]:
+                              - text: When a transaction is matched to a contract (i.e., the contract fields are populated), the
+                              - strong [ref=e1372]: contract number prefix
+                              - text: "is a direct program signal:"
+                            - list [ref=e1373]:
+                              - listitem [ref=e1374]:
+                                - strong [ref=e1375]: Surpass
+                                - text: → contract numbers commonly start with
+                                - strong [ref=e1376]:
+                                  - code [ref=e1377]: SP-
+                                - list [ref=e1378]:
+                                  - listitem [ref=e1379]:
+                                    - text: "Example contract number shown in internal materials:"
+                                    - strong [ref=e1380]:
+                                      - code [ref=e1381]: SP-OR-2538
+                                    - 'button "Citation: Re: Confirmed-BBraun MI Demo - virtual plus 1 more" [ref=e2014] [cursor=pointer]':
+                                      - img [ref=e1384]
+                                      - generic [ref=e1386]: "Re: Confirmed-BBraun MI Demo - virtual"
+                                      - generic [ref=e1387]: "+1"
+                              - listitem [ref=e1388]:
+                                - strong [ref=e1389]: AscenDrive
+                                - text: → contract numbers commonly start with
+                                - strong [ref=e1390]:
+                                  - code [ref=e1391]: AD-
+                                - list [ref=e1392]:
+                                  - listitem [ref=e1393]:
+                                    - text: "Example:"
+                                    - strong [ref=e1394]:
+                                      - code [ref=e1395]: AD-NS-2112
+                                    - 'button "Citation: Re: Confirmed-BBraun MI Demo - virtual plus 1 more" [ref=e2015] [cursor=pointer]':
+                                      - img [ref=e1398]
+                                      - generic [ref=e1400]: "Re: Confirmed-BBraun MI Demo - virtual"
+                                      - generic [ref=e1401]: "+1"
+                              - listitem [ref=e1402]:
+                                - strong [ref=e1403]: Performance Program / National
+                                - text: → contract numbers commonly start with
+                                - strong [ref=e1404]:
+                                  - code [ref=e1405]: PP-
+                                - list [ref=e1406]:
+                                  - listitem [ref=e1407]:
+                                    - text: Examples of PP‑prefixed contract numbers appear in Transaction Analysis extracts (e.g.,
+                                    - strong [ref=e1408]:
+                                      - code [ref=e1409]: PP-FA-439
+                                    - text: ","
+                                    - strong [ref=e1410]:
+                                      - code [ref=e1411]: PP-MM-234
+                                    - text: )
+                                    - 'button "Citation: Transaction Analysis" [ref=e2016] [cursor=pointer]':
+                                      - img [ref=e1414]
+                                      - generic [ref=e1416]: Transaction Analysis
+                            - paragraph [ref=e1417]:
+                              - text: ✅
+                              - strong [ref=e1418]: Practical rule
+                              - text: "(robust to optional prefixes):"
+                            - list [ref=e1419]:
+                              - listitem [ref=e1420]:
+                                - text: If
+                                - code [ref=e1421]: Contract_Number
+                                - text: contains
+                                - code [ref=e1422]: SP-
+                                - text: → classify as
+                                - strong [ref=e1423]: SP
+                              - listitem [ref=e1424]:
+                                - text: Else if contains
+                                - code [ref=e1425]: AD-
+                                - text: → classify as
+                                - strong [ref=e1426]: AD
+                              - listitem [ref=e1427]:
+                                - text: Else if contains
+                                - code [ref=e1428]: PP-
+                                - text: → classify as
+                                - strong [ref=e1429]: PP / National
+                              - listitem [ref=e1430]: Else → unknown / other program line
+                            - blockquote [ref=e1431]:
+                              - paragraph [ref=e1432]:
+                                - text: "Note: You may encounter “decorated” contract numbers in other internal trackers (e.g., strings that"
+                                - emphasis [ref=e1433]: contain
+                                - code [ref=e1434]: PP-
+                                - text: as a substring). For example, rebate trackers show values like
+                                - code [ref=e1435]: ACU Enhancement-PP-NS-1783
+                                - text: (i.e., PP embedded). Treat those as
+                                - strong [ref=e1436]: PP
+                                - text: if your dataset carries that style.
+                                - 'button "Citation: Rebate Tracker" [ref=e2017] [cursor=pointer]':
+                                  - img [ref=e1439]
+                                  - generic [ref=e1441]: Rebate Tracker
+                            - separator [ref=e1442]
+                            - heading "B. Cross‑check columns that often travel with Contract_Number" [level=2] [ref=e2018]:
+                              - text: B. Cross‑check columns that often travel with
+                              - code [ref=e1444]: Contract_Number
+                            - paragraph [ref=e1445]: These are helpful for sanity checks and for filtering to “contract‑matched” transactions.
+                            - heading "Columns present in the Transaction Analysis schema export" [level=3] [ref=e2019]:
+                              - strong [ref=e1447]: Columns present in the Transaction Analysis schema export
+                            - paragraph [ref=e1448]:
+                              - text: From the field listing captured in the email thread,
+                              - code [ref=e1449]: transaction_analysis
+                              - text: "(and typically the expanded variant) includes:"
+                            - list [ref=e1450]:
+                              - listitem [ref=e1451]:
+                                - code [ref=e1452]: Contract_Name
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2020] [cursor=pointer]':
+                                  - img [ref=e1455]
+                                  - generic [ref=e1457]: "Re: Baxter Next Steps"
+                              - listitem [ref=e1458]:
+                                - code [ref=e1459]: Contract_Number
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2021] [cursor=pointer]':
+                                  - img [ref=e1462]
+                                  - generic [ref=e1464]: "Re: Baxter Next Steps"
+                              - listitem [ref=e1465]:
+                                - code [ref=e1466]: Contract_Type
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2022] [cursor=pointer]':
+                                  - img [ref=e1469]
+                                  - generic [ref=e1471]: "Re: Baxter Next Steps"
+                              - listitem [ref=e1472]:
+                                - code [ref=e1473]: Contract_Price_Found
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2023] [cursor=pointer]':
+                                  - img [ref=e1476]
+                                  - generic [ref=e1478]: "Re: Baxter Next Steps"
+                              - listitem [ref=e1479]:
+                                - code [ref=e1480]: Contract_Pkg_Best_Price
+                                - text: ","
+                                - code [ref=e1481]: Contract_Pkg_Access_Price
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2024] [cursor=pointer]':
+                                  - img [ref=e1484]
+                                  - generic [ref=e1486]: "Re: Baxter Next Steps"
+                            - heading "How to use them" [level=3] [ref=e2025]:
+                              - strong [ref=e1488]: How to use them
+                            - list [ref=e1489]:
+                              - listitem [ref=e1490]:
+                                - text: Use
+                                - code [ref=e1491]: Contract_Price_Found
+                                - text: to filter down to rows where the contract match logic succeeded (so your prefix logic above is valid).
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2026] [cursor=pointer]':
+                                  - img [ref=e1494]
+                                  - generic [ref=e1496]: "Re: Baxter Next Steps"
+                              - listitem [ref=e1497]:
+                                - text: Use
+                                - code [ref=e1498]: Contract_Type
+                                - text: only as a
+                                - emphasis [ref=e1499]: secondary
+                                - text: attribute (it’s not the same as SP/AD/PP; it can refer to the contract’s structural type).
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2027] [cursor=pointer]':
+                                  - img [ref=e1502]
+                                  - generic [ref=e1504]: "Re: Baxter Next Steps"
+                            - separator [ref=e1505]
+                            - 'heading "C. A direct “program” field may exist: Program_Line (verify values in your data)" [level=2] [ref=e2028]':
+                              - text: "C. A direct “program” field may exist:"
+                              - code [ref=e1507]: Program_Line
+                              - text: (verify values in your data)
+                            - paragraph [ref=e1508]:
+                              - text: A schema excerpt shows a
+                              - code [ref=e1509]: Program_Line
+                              - text: field exists in the Transaction Analysis data structure.
+                              - 'button "Citation: Fw: Phys Mon question" [ref=e2029] [cursor=pointer]':
+                                - img [ref=e1512]
+                                - generic [ref=e1514]: "Fw: Phys Mon question"
+                            - list [ref=e1515]:
+                              - listitem [ref=e1516]:
+                                - strong [ref=e1517]: "Column:"
+                                - code [ref=e1518]: Program_Line
+                                - 'button "Citation: Fw: Phys Mon question" [ref=e2030] [cursor=pointer]':
+                                  - img [ref=e1521]
+                                  - generic [ref=e1523]: "Fw: Phys Mon question"
+                              - listitem [ref=e1524]:
+                                - strong [ref=e1525]: "What I can and cannot assert from sources:"
+                                - text: I can confirm the column name exists; the sources I found do
+                                - strong [ref=e1526]: not
+                                - text: enumerate the exact values it takes (e.g., whether it literally equals
+                                - code [ref=e1527]: "\"SURPASS\""
+                                - text: /
+                                - code [ref=e1528]: "\"ASCENDRIVE\""
+                                - text: /
+                                - code [ref=e1529]: "\"NATIONAL\""
+                                - text: ).
+                                - 'button "Citation: Fw: Phys Mon question" [ref=e2031] [cursor=pointer]':
+                                  - img [ref=e1532]
+                                  - generic [ref=e1534]: "Fw: Phys Mon question"
+                            - paragraph [ref=e1535]:
+                              - strong [ref=e1536]: "Recommended use in practice (no speculation):"
+                            - list [ref=e1537]:
+                              - listitem [ref=e1538]:
+                                - text: Treat
+                                - code [ref=e1539]: Program_Line
+                                - text: as a convenient
+                                - strong [ref=e1540]: direct label
+                                - emphasis [ref=e1541]: if
+                                - text: you observe consistent values in your extract.
+                              - listitem [ref=e1542]:
+                                - text: Still keep the
+                                - code [ref=e1543]: Contract_Number
+                                - text: prefix logic as the canonical classification, because the prefix examples are explicitly documented.
+                                - 'button "Citation: Re: Confirmed-BBraun MI Demo - virtual plus 2 more" [ref=e2032] [cursor=pointer]':
+                                  - img [ref=e1546]
+                                  - generic [ref=e1548]: "Re: Confirmed-BBraun MI Demo - virtual"
+                                  - generic [ref=e1549]: "+2"
+                            - separator [ref=e1550]
+                            - heading "D. Edge cases you should expect (and how to handle)" [level=2] [ref=e2033]
+                            - heading "1) Transactions not matched to a contract" [level=3] [ref=e2034]
+                            - paragraph [ref=e1553]:
+                              - text: If
+                              - code [ref=e1554]: Contract_Price_Found
+                              - text: is false/blank or
+                              - code [ref=e1555]: Contract_Number
+                              - text: is null, you
+                              - strong [ref=e1556]: cannot
+                              - text: classify SP/AD/PP from contract number prefix—those are “off‑contract” or “unmatched” rows by definition.
+                              - 'button "Citation: Re: Baxter Next Steps" [ref=e2035] [cursor=pointer]':
+                                - img [ref=e1559]
+                                - generic [ref=e1561]: "Re: Baxter Next Steps"
+                            - paragraph [ref=e1562]:
+                              - strong [ref=e1563]: "What to do instead (in this dataset):"
+                            - list [ref=e1564]:
+                              - listitem [ref=e1565]:
+                                - text: Keep them as
+                                - strong [ref=e1566]: Unclassified / No Contract Match
+                              - listitem [ref=e1567]:
+                                - text: Or classify them only at the
+                                - strong [ref=e1568]: member/program enrollment
+                                - text: level (which is
+                                - emphasis [ref=e1569]: not
+                                - text: the same as “this transaction is SP pricing”).
+                            - heading "2) Multi‑award / dual‑award logic" [level=3] [ref=e2036]
+                            - paragraph [ref=e1571]:
+                              - text: Even when a member is in AD, dual awards can cause the contract compliance logic to count combined spend; that doesn’t change the contract prefix but can affect interpretations of “best price” and “compliance.”
+                              - 'button "Citation: Market Insights Performance Groups – Solventum Monthly Meeting-20260213_100039-Meeting Transcript plus 1 more" [ref=e2037] [cursor=pointer]':
+                                - img [ref=e1574]
+                                - generic [ref=e1576]: Market Insights Performance Groups – Solventum Monthly Meeting-20260213_100039-Meeting Transcript
+                                - generic [ref=e1577]: "+1"
+                            - separator [ref=e1578]
+                            - heading "(2) What the HCIQ PIA / Project package says about HCIQ price data & definitions (and why comparisons are imperfect)" [level=1] [ref=e2038]
+                            - paragraph [ref=e1580]:
+                              - text: You asked specifically about
+                              - strong [ref=e1581]: "“FW: HealthCare IQ - PIA Review - RITM0446298”"
+                              - text: and the HCIQ project artifacts attached to the follow‑on email. Here’s what they explicitly state.
+                            - separator [ref=e1582]
+                            - heading "A. What data Premier/Acurity provides to HCIQ (PIA thread)" [level=2] [ref=e2039]
+                            - heading "1) No PHI/PII; focus is price benchmarking" [level=3] [ref=e2040]:
+                              - text: 1)
+                              - strong [ref=e1585]: No PHI/PII; focus is price benchmarking
+                            - paragraph [ref=e1586]: "In the PIA email chain, Hall, Brian states:"
+                            - list [ref=e1587]:
+                              - listitem [ref=e1588]:
+                                - strong [ref=e1589]: “PHI/PII will NOT be shared”
+                                - text: and
+                              - listitem [ref=e1590]:
+                                - strong [ref=e1591]: “We are only focused on price benchmarking through purchase history data (PO/AP) … shared … through the data acquisition template.”
+                                - 'button "Citation: FW: HealthCare IQ - PIA Review - RITM0446298" [ref=e2041] [cursor=pointer]':
+                                  - img [ref=e1594]
+                                  - generic [ref=e1596]: "FW: HealthCare IQ - PIA Review - RITM0446298"
+                            - paragraph [ref=e1597]: "That statement matters methodologically because it defines:"
+                            - list [ref=e1598]:
+                              - listitem [ref=e1599]:
+                                - text: the
+                                - strong [ref=e1600]: data type
+                                - text: (PO/AP purchase history), and
+                              - listitem [ref=e1601]:
+                                - text: the
+                                - strong [ref=e1602]: exclusion of clinical/PHI‑linked modules
+                                - text: ", even if HCIQ offers them."
+                                - 'button "Citation: FW: HealthCare IQ - PIA Review - RITM0446298" [ref=e2042] [cursor=pointer]':
+                                  - img [ref=e1605]
+                                  - generic [ref=e1607]: "FW: HealthCare IQ - PIA Review - RITM0446298"
+                            - heading "2) Data is de‑identified (“blinded”)" [level=3] [ref=e2043]
+                            - paragraph [ref=e1609]:
+                              - text: The same thread describes sending
+                              - strong [ref=e1610]: de‑identified / blinded health system and facility identifiers
+                              - text: ", similar to other external data sharing patterns."
+                              - 'button "Citation: FW: HealthCare IQ - PIA Review - RITM0446298 plus 1 more" [ref=e2044] [cursor=pointer]':
+                                - img [ref=e1613]
+                                - generic [ref=e1615]: "FW: HealthCare IQ - PIA Review - RITM0446298"
+                                - generic [ref=e1616]: "+1"
+                            - separator [ref=e1617]
+                            - 'heading "B. HCIQ’s ingestion definitions: the Data Specification attachment" [level=2] [ref=e2045]':
+                              - text: "B. HCIQ’s ingestion definitions: the"
+                              - strong [ref=e1619]: Data Specification
+                              - text: attachment
+                            - paragraph [ref=e1620]:
+                              - text: The email
+                              - 'link "FW: HCIQ Project - Data Spec and Final Member List" [ref=e2092] [cursor=pointer]':
+                                - /url: https://outlook.office365.com/owa/?ItemID=AAMkADBjZWQ3N2FjLWNmNWMtNGYzOC05MmM4LWVmNTIxNmE0MDhiMwBGAAAAAAAlR3BCNHUoR42P4%2fxIVEVaBwCtC60M6iwCT6oV7C2g6lbxAAAAQ%2f41AAAmYvJHuYjqQbIghoy3jqM%2fAAf39XXoAAA%3d&exvsurl=1&viewmodel=ReadMessageItem
+                              - text: "includes the file:"
+                            - list [ref=e1622]:
+                              - listitem [ref=e1623]:
+                                - text: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier.xlsx
+                                - 'button "Citation: FW: HCIQ Project - Data Spec and Final Member List plus 1 more" [ref=e2047] [cursor=pointer]':
+                                  - img [ref=e1626]
+                                  - generic [ref=e1628]: "FW: HCIQ Project - Data Spec and Final Member List"
+                                  - generic [ref=e1629]: "+1"
+                            - paragraph [ref=e1630]:
+                              - text: This spreadsheet is the
+                              - strong [ref=e1631]: best “methodology source of truth”
+                              - text: I found because it defines what they mean by
+                              - strong [ref=e1632]: Purchase History
+                              - text: ","
+                              - strong [ref=e1633]: Invoice History
+                              - text: ", costs, statuses, etc."
+                            - heading "1) Purchase History (PO) selection criteria" [level=3] [ref=e2048]:
+                              - text: 1)
+                              - strong [ref=e1635]: Purchase History (PO) selection criteria
+                            - paragraph [ref=e1636]: "The spec says the Purchase History file:"
+                            - list [ref=e1637]:
+                              - listitem [ref=e1638]:
+                                - text: is used to determine
+                                - strong [ref=e1639]: type, date, quantity, and cost
+                                - text: of purchases, and
+                              - listitem [ref=e1640]:
+                                - text: selection criteria are
+                                - strong [ref=e1641]: “Purchase Orders that have been sent to the Vendor.”
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2049] [cursor=pointer]':
+                                  - img [ref=e1650]
+                                  - generic [ref=e1652]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - paragraph [ref=e1653]:
+                              - text: It also requires a
+                              - strong [ref=e1654]: legend
+                              - text: for PO status fields.
+                              - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2050] [cursor=pointer]':
+                                - img [ref=e1657]
+                                - generic [ref=e1659]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - paragraph [ref=e1660]:
+                              - strong [ref=e1661]: "Implication for Premier vs HCIQ comparison:"
+                              - text: Premier’s transaction tables may include broader PO states or invoice‑derived transactions; HCIQ’s PO view (per this spec) is explicitly constrained to “POs sent to vendor.”
+                              - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2051] [cursor=pointer]':
+                                - img [ref=e1664]
+                                - generic [ref=e1666]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - heading "2) Invoice History selection criteria" [level=3] [ref=e2052]:
+                              - text: 2)
+                              - strong [ref=e1668]: Invoice History selection criteria
+                            - paragraph [ref=e1669]: "The spec defines Invoice History as:"
+                            - list [ref=e1670]:
+                              - listitem [ref=e1671]:
+                                - strong [ref=e1672]: “Paid invoices”
+                                - text: "(explicit: selection criteria is"
+                                - strong [ref=e1673]: Paid invoices
+                                - text: ) and
+                              - listitem [ref=e1674]:
+                                - text: requires legends for invoice status fields.
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2053] [cursor=pointer]':
+                                  - img [ref=e1677]
+                                  - generic [ref=e1679]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - paragraph [ref=e1680]:
+                              - strong [ref=e1681]: "Implication:"
+                              - text: If your Premier analysis uses invoice price (or landed spend) irrespective of payment status, HCIQ’s “Invoice History” concept is narrower and timing‑shifted (payment date vs invoice date vs PO date).
+                              - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2054] [cursor=pointer]':
+                                - img [ref=e1684]
+                                - generic [ref=e1686]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - heading "3) Cost definitions exclude shipping / add‑ons" [level=3] [ref=e2055]:
+                              - text: 3)
+                              - strong [ref=e1688]: Cost definitions exclude shipping / add‑ons
+                            - paragraph [ref=e1689]: "The spec defines:"
+                            - list [ref=e1690]:
+                              - listitem [ref=e1691]:
+                                - code [ref=e1692]: TOTAL_COST
+                                - text: ": “"
+                                - strong [ref=e1693]: The Total Cost without shipping or additional charges
+                                - text: ”
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2056] [cursor=pointer]':
+                                  - img [ref=e1696]
+                                  - generic [ref=e1698]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                              - listitem [ref=e1699]:
+                                - code [ref=e1700]: UNIT_COST
+                                - text: ": “"
+                                - strong [ref=e1701]: purchase price … without shipping or any additional charges
+                                - text: ”
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2057] [cursor=pointer]':
+                                  - img [ref=e1704]
+                                  - generic [ref=e1706]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - paragraph [ref=e1707]:
+                              - strong [ref=e1708]: "Implication:"
+                              - text: If Premier’s unit economics in your analysis are effectively “landed” or include freight/fees in the numerator, you will see systematic deltas versus HCIQ’s definition, which is explicitly excluding shipping/additional charges in these fields. (I’m not asserting what Premier includes—only what HCIQ excludes.)
+                              - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2058] [cursor=pointer]':
+                                - img [ref=e1711]
+                                - generic [ref=e1713]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - heading "4) UOM normalization is first‑class" [level=3] [ref=e2059]:
+                              - text: 4)
+                              - strong [ref=e1715]: UOM normalization is first‑class
+                            - paragraph [ref=e1716]: "HCIQ requires:"
+                            - list [ref=e1717]:
+                              - listitem [ref=e1718]:
+                                - code [ref=e1719]: UOM
+                                - text: and
+                                - code [ref=e1720]: UOM_FACTOR
+                                - text: (quantity contained in the UOM)
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2060] [cursor=pointer]':
+                                  - img [ref=e1723]
+                                  - generic [ref=e1725]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - paragraph [ref=e1726]:
+                              - text: This is a strong indicator that HCIQ’s price comparisons are built around
+                              - strong [ref=e1727]: cost‑to‑each normalization
+                              - text: ", and errors in UOM_factor propagate directly into benchmarks."
+                              - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2061] [cursor=pointer]':
+                                - img [ref=e1730]
+                                - generic [ref=e1732]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - 'heading "5) Contract data in the spec: optional contract eligibility & item pricing" [level=3] [ref=e2062]'
+                            - paragraph [ref=e1734]: "The spec lists optional files including:"
+                            - list [ref=e1735]:
+                              - listitem [ref=e1736]:
+                                - strong [ref=e1737]: Contract Eligibility
+                                - text: (to grant facilities access to tiers over time)
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2063] [cursor=pointer]':
+                                  - img [ref=e1740]
+                                  - generic [ref=e1742]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                              - listitem [ref=e1743]:
+                                - strong [ref=e1744]: Contract Items
+                                - text: (to track contract prices by tier)
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2064] [cursor=pointer]':
+                                  - img [ref=e1747]
+                                  - generic [ref=e1749]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - paragraph [ref=e1750]: "It also defines contract fields such as:"
+                            - list [ref=e1751]:
+                              - listitem [ref=e1752]:
+                                - code [ref=e1753]: CONTRACT_GROUP_NAME
+                                - text: with examples of sources like “
+                                - strong [ref=e1754]: Premier, Vizient, Directly Negotiated
+                                - text: ”
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2065] [cursor=pointer]':
+                                  - img [ref=e1757]
+                                  - generic [ref=e1759]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                              - listitem [ref=e1760]:
+                                - text: Tier fields (
+                                - code [ref=e1761]: TIER_CODE
+                                - text: ","
+                                - code [ref=e1762]: TIER_NAME
+                                - text: ","
+                                - code [ref=e1763]: TIER_DESCRIPTION
+                                - text: )
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2066] [cursor=pointer]':
+                                  - img [ref=e1766]
+                                  - generic [ref=e1768]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - paragraph [ref=e1769]:
+                              - strong [ref=e1770]: "Implication:"
+                              - text: HCIQ’s architecture supports multi‑contract‑source analytics, which can blur a “Premier‑only vs benchmark” narrative unless your HCIQ benchmark slice is constrained to comparable contract sources.
+                              - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2067] [cursor=pointer]':
+                                - img [ref=e1773]
+                                - generic [ref=e1775]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - separator [ref=e1776]
+                            - heading "C. What HCIQ’s contract/SOW says about what they actually ingest for this engagement" [level=2] [ref=e2068]:
+                              - text: C. What HCIQ’s contract/SOW says about what they actually ingest for
+                              - emphasis [ref=e1778]: this
+                              - text: engagement
+                            - paragraph [ref=e1779]: "Two more attachments in the same email package add crucial nuance:"
+                            - heading "1) The Software License Agreement defines “Baseline” concepts and savings math" [level=3] [ref=e2069]:
+                              - text: 1) The
+                              - strong [ref=e1781]: Software License Agreement
+                              - text: defines “Baseline” concepts and savings math
+                            - paragraph [ref=e1782]: "In Healthcare-IQ, LLC-HCIQ Software License Agreement 7.1.2025 FE.pdf, definitions include:"
+                            - list [ref=e1783]:
+                              - listitem [ref=e1784]:
+                                - strong [ref=e1785]: “Baseline Data”
+                                - text: includes “prices paid … during the twelve (12) month period prior to the Agreement Effective Date” [12](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEAA6bvbuWZnHR7q1zzX5fuJG&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare-IQ, LLC-HCIQ Software License Agreement 7.1.2025 FE.pdf&web=1)
+                              - listitem [ref=e1786]:
+                                - strong [ref=e1787]: “Baseline Price”
+                                - text: is “the last price paid … for each item” [12](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEAA6bvbuWZnHR7q1zzX5fuJG&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare-IQ, LLC-HCIQ Software License Agreement 7.1.2025 FE.pdf&web=1)
+                              - listitem [ref=e1788]:
+                                - strong [ref=e1789]: “Potential Savings”
+                                - text: is calculated as
+                                - emphasis [ref=e1790]: (Baseline Price – identified price) × projected quantity
+                                - text: "[12](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEAA6bvbuWZnHR7q1zzX5fuJG&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare-IQ, LLC-HCIQ Software License Agreement 7.1.2025 FE.pdf&web=1)"
+                            - paragraph [ref=e1791]:
+                              - strong [ref=e1792]: "Implication:"
+                              - text: HCIQ’s benchmark‑driven savings constructs are framed around “last price paid” baselines and projected usage, which is a different lens than a contract‑tier percentile positioning analysis.
+                            - heading "2) The Statement of Work indicates some contract files may be omitted in spend analytics" [level=3] [ref=e2070]:
+                              - text: 2) The
+                              - strong [ref=e1794]: Statement of Work
+                              - text: indicates some contract files may be omitted in spend analytics
+                            - paragraph [ref=e1795]:
+                              - text: In Exhibit A of that same license agreement, under
+                              - strong [ref=e1796]: “Source Data Files”
+                              - text: ", it states:"
+                            - list [ref=e1797]:
+                              - listitem [ref=e1798]:
+                                - text: Spend Analytics uses
+                                - strong [ref=e1799]: Purchase Order and Invoice files
+                              - listitem [ref=e1800]:
+                                - text: and explicitly marks
+                                - strong [ref=e1801]: contract files (including eligibility) as “Intentionally Omitted”
+                                - text: in that section. [12](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEAA6bvbuWZnHR7q1zzX5fuJG&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare-IQ, LLC-HCIQ Software License Agreement 7.1.2025 FE.pdf&web=1)
+                            - paragraph [ref=e1802]:
+                              - text: This is important because it can differ from the broader Data Spec spreadsheet (which describes contract eligibility/items as optional).[12](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEAA6bvbuWZnHR7q1zzX5fuJG&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare-IQ, LLC-HCIQ Software License Agreement 7.1.2025 FE.pdf&web=1)
+                              - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2071] [cursor=pointer]':
+                                - img [ref=e1805]
+                                - generic [ref=e1807]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - paragraph [ref=e1808]:
+                              - strong [ref=e1809]: "Implication:"
+                              - text: If contract eligibility/pricing feeds were not included for this implementation, HCIQ’s “on‑contract vs off‑contract” might be inferred differently (or not available in the same way) compared to Premier’s contract‑matched transaction model.
+                            - separator [ref=e1810]
+                            - heading "D. What HCIQ says they do with data (proposal language)" [level=2] [ref=e2072]
+                            - paragraph [ref=e1812]: "The proposal (Healthcare IQ-HCIQ - Premier Acurity Contract - Strategic Alliance Proposal 6.10.2025 FE.pdf) describes:"
+                            - list [ref=e1813]:
+                              - listitem [ref=e1814]:
+                                - text: “
+                                - strong [ref=e1815]: semantic data ingestion
+                                - text: ” (SETL) and an approach that “compartmentalized customer data” [13](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEADJUMo10jspSphrvLdQgi4i&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare IQ-HCIQ - Premier Acurity Contract - Strategic Alliance Proposal 6.10.2025 FE.pdf&web=1)
+                              - listitem [ref=e1816]: “AI‑enhanced Product Recognition” and “machine‑learning‑driven catalog attribution” to improve “cost‑to‑each and benchmark pricing” [13](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEADJUMo10jspSphrvLdQgi4i&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare IQ-HCIQ - Premier Acurity Contract - Strategic Alliance Proposal 6.10.2025 FE.pdf&web=1)
+                              - listitem [ref=e1817]:
+                                - text: An implementation flow including
+                                - strong [ref=e1818]: data normalization
+                                - text: ","
+                                - strong [ref=e1819]: data enrichment
+                                - text: ", and"
+                                - strong [ref=e1820]: data validation
+                                - text: "[13](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEADJUMo10jspSphrvLdQgi4i&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare IQ-HCIQ - Premier Acurity Contract - Strategic Alliance Proposal 6.10.2025 FE.pdf&web=1)"
+                            - paragraph [ref=e1821]: "This helps explain why HCIQ benchmarks can diverge from Premier’s:"
+                            - list [ref=e1822]:
+                              - listitem [ref=e1823]: their normalization/catalog mapping may bucket products differently,
+                              - listitem [ref=e1824]: their UOM normalization and “cost‑to‑each” assumptions may differ,
+                              - listitem [ref=e1825]: and their benchmark universe (their “depository trust” + customer data) is not necessarily aligned to Premier contract constructs. [13](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEADJUMo10jspSphrvLdQgi4i&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare IQ-HCIQ - Premier Acurity Contract - Strategic Alliance Proposal 6.10.2025 FE.pdf&web=1)[12](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEAA6bvbuWZnHR7q1zzX5fuJG&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare-IQ, LLC-HCIQ Software License Agreement 7.1.2025 FE.pdf&web=1)
+                            - separator [ref=e1826]
+                            - 'heading "Summary: the key methodological differences that make Premier vs HCIQ imperfect" [level=1] [ref=e2073]'
+                            - list [ref=e1828]:
+                              - listitem [ref=e1829]:
+                                - strong [ref=e1830]: Different “eligible transaction” definitions
+                            - list [ref=e1831]:
+                              - listitem [ref=e1832]:
+                                - text: "HCIQ PO selection:"
+                                - strong [ref=e1833]: POs sent to vendor
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2074] [cursor=pointer]':
+                                  - img [ref=e1836]
+                                  - generic [ref=e1838]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                              - listitem [ref=e1839]:
+                                - text: "HCIQ invoice selection:"
+                                - strong [ref=e1840]: paid invoices
+                                - text: Premier transaction extracts often blend PO/AP concepts; timing and inclusion criteria can differ (and this can move percentiles).
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2075] [cursor=pointer]':
+                                  - img [ref=e1843]
+                                  - generic [ref=e1845]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - list [ref=e1846]:
+                              - listitem [ref=e1847]:
+                                - strong [ref=e1848]: Different cost basis
+                            - list [ref=e1849]:
+                              - listitem [ref=e1850]:
+                                - text: HCIQ
+                                - code [ref=e1851]: UNIT_COST
+                                - text: /
+                                - code [ref=e1852]: TOTAL_COST
+                                - text: explicitly exclude shipping/additional charges
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2076] [cursor=pointer]':
+                                  - img [ref=e1855]
+                                  - generic [ref=e1857]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - list [ref=e1858]:
+                              - listitem [ref=e1859]:
+                                - strong [ref=e1860]: UOM normalization assumptions
+                            - list [ref=e1861]:
+                              - listitem [ref=e1862]:
+                                - text: HCIQ requires
+                                - code [ref=e1863]: UOM_FACTOR
+                                - text: and uses it to normalize cost‑to‑each
+                                - text: UOM factor differences alone can shift benchmark percentiles materially.
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2077] [cursor=pointer]':
+                                  - img [ref=e1866]
+                                  - generic [ref=e1868]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - list [ref=e1869]:
+                              - listitem [ref=e1870]:
+                                - strong [ref=e1871]: Contract constructs may not align 1:1
+                            - list [ref=e1872]:
+                              - listitem [ref=e1873]:
+                                - text: HCIQ supports multi‑contract sources (e.g., Premier/Vizient/Direct) via
+                                - code [ref=e1874]: CONTRACT_GROUP_NAME
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2078] [cursor=pointer]':
+                                  - img [ref=e1877]
+                                  - generic [ref=e1879]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                              - listitem [ref=e1880]: For this engagement, contract eligibility files may be “intentionally omitted” from spend analytics in the SOW [12](https://outlook.office.com/owa/?viewmodel=IAttachmentViewModelPopoutFactory&AttachmentId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAAARIAEAA6bvbuWZnHR7q1zzX5fuJG&ItemId=AAkALgAAAAAAHYQDEapmEc2byACqAC-EWg0AJmLyR7mI6kGyIIaMt46jPwAHw3VudgAA&AttachmentName=Healthcare-IQ, LLC-HCIQ Software License Agreement 7.1.2025 FE.pdf&web=1)
+                            - list [ref=e1881]:
+                              - listitem [ref=e1882]:
+                                - strong [ref=e1883]: Rebates / post‑invoice economics are not addressed in these specs
+                            - list [ref=e1884]:
+                              - listitem [ref=e1885]:
+                                - text: The PIA thread frames the scope as
+                                - strong [ref=e1886]: PO/AP purchase history price benchmarking
+                                - text: without PHI/PII
+                                - 'button "Citation: FW: HealthCare IQ - PIA Review - RITM0446298" [ref=e2079] [cursor=pointer]':
+                                  - img [ref=e1889]
+                                  - generic [ref=e1891]: "FW: HealthCare IQ - PIA Review - RITM0446298"
+                              - listitem [ref=e1892]:
+                                - text: The data spec focuses on PO/invoice cost fields and contract price fields; it does not define rebate ingestion in the provided excerpts
+                                - 'button "Citation: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier" [ref=e2080] [cursor=pointer]':
+                                  - img [ref=e1895]
+                                  - generic [ref=e1897]: HCIQ_Data_Specification_Spend_Contracts_FastTrack_20250207_Premier
+                            - separator [ref=e1898]
+                            - heading "If you want one “best‑effort” classification recipe (grounded in what we can prove)" [level=2] [ref=e2081]
+                            - paragraph [ref=e1900]: "Use this hierarchy:"
+                            - list [ref=e1901]:
+                              - listitem [ref=e1902]:
+                                - text: If
+                                - code [ref=e1903]: Contract_Number
+                                - text: contains
+                                - code [ref=e1904]: SP-
+                                - text: → SP
+                              - listitem [ref=e1905]:
+                                - text: Else if contains
+                                - code [ref=e1906]: AD-
+                                - text: → AD
+                              - listitem [ref=e1907]:
+                                - text: Else if contains
+                                - code [ref=e1908]: PP-
+                                - text: → PP
+                              - listitem [ref=e1909]:
+                                - text: Else if
+                                - code [ref=e1910]: Program_Line
+                                - text: is populated → use observed values in your extract (validate empirically)
+                                - 'button "Citation: Fw: Phys Mon question" [ref=e2082] [cursor=pointer]':
+                                  - img [ref=e1913]
+                                  - generic [ref=e1915]: "Fw: Phys Mon question"
+                              - listitem [ref=e1916]:
+                                - text: Else → unclassified (likely off‑contract/unmatched) using
+                                - code [ref=e1917]: Contract_Price_Found
+                                - text: as the marker
+                                - 'button "Citation: Re: Baxter Next Steps" [ref=e2083] [cursor=pointer]':
+                                  - img [ref=e1920]
+                                  - generic [ref=e1922]: "Re: Baxter Next Steps"
+                            - separator [ref=e1923]
+                            - paragraph [ref=e1924]:
+                              - text: If you paste (or upload) a
+                              - strong [ref=e1925]: small schema dump
+                              - text: (column list + a few distinct values for
+                              - code [ref=e1926]: Program_Line
+                              - text: and
+                              - code [ref=e1927]: Contract_Number
+                              - text: ), I can help you write a
+                              - strong [ref=e1928]: tight, reproducible rule set
+                              - text: (SQL or pseudocode) that classifies SP/AD/PP and flags edge cases cleanly—without relying on any unverified assumptions.
+                        - button "Sources" [ref=e1931] [cursor=pointer]:
+                          - generic [ref=e1932]:
+                            - generic [ref=e1933]: Sources
+                            - generic [ref=e1934]:
+                              - img [ref=e1935]
+                              - img "xls" [ref=e1937]
+                              - img "mp4" [ref=e1938]
+                            - img [ref=e1940]
+                        - toolbar [ref=e1942]:
+                          - generic [ref=e1945]:
+                            - generic [ref=e1948]:
+                              - button "Copy Response" [ref=e1949]:
+                                - img [ref=e2385]
+                              - region "Provide your feedback on BizChat" [ref=e1953]:
+                                - group "Provide your feedback on BizChat" [ref=e1954]:
+                                  - generic [ref=e1955]:
+                                    - button "I like something" [ref=e1956]:
+                                      - img [ref=e1958]
+                                    - button "I don't like something" [ref=e1960]:
+                                      - img [ref=e1962]
+                              - button "Share prompt and copy with response" [ref=e1964]:
+                                - img [ref=e1966]
+                              - button "Schedule this prompt" [ref=e1968]:
+                                - img [ref=e2387]
+                              - generic [ref=e1972]:
+                                - button "Edit in Pages" [ref=e1973]:
+                                  - img [ref=e1975]
+                                - button "Pages options" [ref=e1977]:
+                                  - img [ref=e1979]
+                            - button "More options" [ref=e1982]:
+                              - img [ref=e1984]
+                    - generic [ref=e2098]:
+                      - 'article "You said: One more question: The briefing document mentions Premier is transitioning from a \"National Admin Fee\" model to a \"Supplier Technology Fee\" model. How does the admin fee structure work in the context of Premier contract pricing? Specifically: (1) Are the prices in transaction_analysis_expanded gross of or net of admin fees? (2) Does HCIQ''s benchmark pricing include or exclude admin fees embedded in Premier contract pricing? (3) What is the typical admin fee % range on PREMIER contracts, and does it vary by SP/AD/PP tier? I want to understand whether admin fee economics affect the fairness of a Premier-vs-HCIQ percentile comparison." [ref=e2102]':
+                        - heading "You said:" [level=5] [ref=e2103]
+                        - button "More actions" [ref=e2104]
+                        - generic [ref=e2106]: "One more question: The briefing document mentions Premier is transitioning from a \"National Admin Fee\" model to a \"Supplier Technology Fee\" model. How does the admin fee structure work in the context of Premier contract pricing? Specifically: (1) Are the prices in transaction_analysis_expanded gross of or net of admin fees? (2) Does HCIQ's benchmark pricing include or exclude admin fees embedded in Premier contract pricing? (3) What is the typical admin fee % range on PREMIER contracts, and does it vary by SP/AD/PP tier? I want to understand whether admin fee economics affect the fairness of a Premier-vs-HCIQ percentile comparison."
+                      - generic [ref=e2109]:
+                        - article [ref=e2389]:
+                          - generic [ref=e2113]:
+                            - heading "Copilot said:" [level=6] [ref=e2114]
+                            - img "Copilot's Logo" [ref=e2118]
+                            - generic [ref=e2120]: Copilot
+                            - generic [ref=e2143]:
+                              - button "Restricted Internal" [ref=e2144]:
+                                - generic "Restricted Internal" [ref=e2145]:
+                                  - img [ref=e2146]
+                                  - img [ref=e2148]
+                              - button "information" [ref=e2392]:
+                                - img "information" [ref=e2393]
+                          - generic [ref=e2122]:
+                            - button "Reasoning completed in 11 steps" [ref=e2395]:
+                              - generic [ref=e2153]: Reasoning completed in 11 steps
+                              - img [ref=e2155]
+                            - generic [ref=e2161]:
+                              - paragraph [ref=e2162]:
+                                - text: Below is what I can support
+                                - strong [ref=e2163]: from Premier internal artifacts + the HCIQ data specifications
+                                - text: ", with clear boundaries where the sources"
+                                - strong [ref=e2164]: do not
+                                - text: explicitly say something.
+                              - separator [ref=e2165]
+                              - 'heading "Context: “National Admin Fee” → “Supplier Technology Fee”" [level=1] [ref=e2396]'
+                              - paragraph [ref=e2167]:
+                                - text: Premier’s internal strategy framing describes a
+                                - strong [ref=e2168]: two‑layer model
+                                - text: ":"
+                              - list [ref=e2169]:
+                                - listitem [ref=e2170]:
+                                  - strong [ref=e2171]: "Layer 1: Access / “The Toll”"
+                                  - text: = base administrative fees associated with the core GPO access model.
+                                  - 'button "Citation: Premier Strategy Briefing" [ref=e2397] [cursor=pointer]':
+                                    - img [ref=e2174]
+                                    - generic [ref=e2176]: Premier Strategy Briefing
+                                - listitem [ref=e2177]:
+                                  - strong [ref=e2178]: "Layer 2: Performance / “Quantified Lift”"
+                                  - text: = paid data/tech/services (what your briefing calls the shift toward a “Supplier Technology Fee” construct).
+                                  - 'button "Citation: Premier Strategy Briefing plus 2 more" [ref=e2398] [cursor=pointer]':
+                                    - img [ref=e2181]
+                                    - generic [ref=e2183]: Premier Strategy Briefing
+                                    - generic [ref=e2184]: "+2"
+                              - paragraph [ref=e2185]:
+                                - text: Separately, internal “Supplier Tech Fee Model” decks explicitly show
+                                - strong [ref=e2186]: "Admin Fee: 2–3%"
+                                - text: and an additional
+                                - strong [ref=e2187]: "Tech Fee: X%"
+                                - text: layered on top (conceptually), reinforcing the “admin fee + tech fee” stacking idea.
+                                - 'button "Citation: Supplier Tech Fee Model - Dec 2023 plus 2 more" [ref=e2399] [cursor=pointer]':
+                                  - img [ref=e2190]
+                                  - generic [ref=e2192]: Supplier Tech Fee Model - Dec 2023
+                                  - generic [ref=e2193]: "+2"
+                              - separator [ref=e2194]
+                              - heading "(1) Are prices in transaction_analysis_expanded gross of or net of admin fees?" [level=1] [ref=e2400]:
+                                - text: (1) Are prices in
+                                - code [ref=e2196]: transaction_analysis_expanded
+                                - text: gross of or net of admin fees?
+                              - heading "What the sources explicitly support" [level=2] [ref=e2401]
+                              - paragraph [ref=e2198]:
+                                - text: The Transaction Analysis data source is described as providing
+                                - strong [ref=e2199]: PO or invoice data with item, price, quantity, date
+                                - text: (i.e., the price paid/recorded in the provider’s transactional system).
+                                - 'button "Citation: Pitch Deck_AscenDrive and SURPASS" [ref=e2402] [cursor=pointer]':
+                                  - img [ref=e2202]
+                                  - generic [ref=e2204]: Pitch Deck_AscenDrive and SURPASS
+                              - paragraph [ref=e2205]:
+                                - text: Separately, Premier’s admin fee workstream documentation describes admin fees as something Premier
+                                - strong [ref=e2206]: calculates from invoice/sales data
+                                - text: and then generates an
+                                - strong [ref=e2207]: admin fee invoice file
+                                - text: (i.e., an administrative-fee billing process that is
+                                - emphasis [ref=e2208]: derived from
+                                - text: transaction/sales activity, not a line embedded as a separate transaction “charge” in the PO/invoice feed).
+                                - 'button "Citation: Admin Fee Workstream SLT Readout 053024 plus 2 more" [ref=e2403] [cursor=pointer]':
+                                  - img [ref=e2211]
+                                  - generic [ref=e2213]: Admin Fee Workstream SLT Readout 053024
+                                  - generic [ref=e2214]: "+2"
+                              - heading "What that means for your question (stated carefully)" [level=2] [ref=e2404]
+                              - list [ref=e2216]:
+                                - listitem [ref=e2217]:
+                                  - text: The
+                                  - strong [ref=e2218]: transaction prices
+                                  - text: in
+                                  - code [ref=e2219]: transaction_analysis_expanded
+                                  - text: are the
+                                  - strong [ref=e2220]: provider PO/invoice prices
+                                  - text: (“item, price, quantity, date”) as captured in the transaction feed.
+                                  - 'button "Citation: Pitch Deck_AscenDrive and SURPASS" [ref=e2405] [cursor=pointer]':
+                                    - img [ref=e2223]
+                                    - generic [ref=e2225]: Pitch Deck_AscenDrive and SURPASS
+                                - listitem [ref=e2226]:
+                                  - text: The
+                                  - strong [ref=e2227]: admin fee
+                                  - text: is treated as a
+                                  - strong [ref=e2228]: separate supplier-to-Premier (and shareback) economics process
+                                  - text: that Premier calculates/invoices based on sales/invoice data.
+                                  - 'button "Citation: Admin Fee Workstream SLT Readout 053024 plus 2 more" [ref=e2406] [cursor=pointer]':
+                                    - img [ref=e2231]
+                                    - generic [ref=e2233]: Admin Fee Workstream SLT Readout 053024
+                                    - generic [ref=e2234]: "+2"
+                              - paragraph [ref=e2235]:
+                                - text: ✅
+                                - strong [ref=e2236]: "Therefore, in the dataset sense:"
+                                - text: the transaction price fields are
+                                - strong [ref=e2237]: not “net of admin fees”
+                                - text: (there’s no evidence in the cited materials that the transaction unit cost is reduced by an admin fee deduction). They are the recorded PO/invoice prices.
+                                - 'button "Citation: Pitch Deck_AscenDrive and SURPASS plus 1 more" [ref=e2407] [cursor=pointer]':
+                                  - img [ref=e2240]
+                                  - generic [ref=e2242]: Pitch Deck_AscenDrive and SURPASS
+                                  - generic [ref=e2243]: "+1"
+                              - paragraph [ref=e2244]:
+                                - text: ⚠️
+                                - strong [ref=e2245]: "Important nuance (not directly resolvable from sources):"
+                                - text: whether suppliers
+                                - emphasis [ref=e2246]: strategically set
+                                - text: contract prices higher/lower because of admin fee obligations is a commercial behavior question; none of the sources explicitly quantify “price includes admin fee markup.” So we can’t prove that aspect from the artifacts retrieved.
+                              - separator [ref=e2247]
+                              - heading "(2) Does HCIQ benchmark pricing include or exclude admin fees embedded in Premier contract pricing?" [level=1] [ref=e2408]
+                              - heading "What HCIQ explicitly collects/defines" [level=2] [ref=e2409]
+                              - paragraph [ref=e2250]: "From the HCIQ data spec attachment:"
+                              - list [ref=e2251]:
+                                - listitem [ref=e2252]:
+                                  - text: “Purchase History” selection is
+                                  - strong [ref=e2253]: POs that have been sent to the vendor
+                                  - text: .
+                                - listitem [ref=e2254]:
+                                  - text: “Invoice History” selection is
+                                  - strong [ref=e2255]: Paid invoices
+                                  - text: .
+                                - listitem [ref=e2256]:
+                                  - code [ref=e2257]: UNIT_COST
+                                  - text: and
+                                  - code [ref=e2258]: TOTAL_COST
+                                  - text: are defined as purchase cost
+                                  - strong [ref=e2259]: without shipping or additional charges
+                                  - text: .
+                                - listitem [ref=e2260]:
+                                  - text: The PIA thread confirms the scope is
+                                  - strong [ref=e2261]: price benchmarking through purchase history data (PO/AP)
+                                  - text: and explicitly says
+                                  - strong [ref=e2262]: PHI/PII will not be shared
+                                  - text: .
+                                  - 'button "Citation: Transaction Analysis Grid" [ref=e2410] [cursor=pointer]':
+                                    - img [ref=e2265]
+                                    - generic [ref=e2267]: Transaction Analysis Grid
+                              - heading "What the spec does not say" [level=2] [ref=e2411]:
+                                - text: What the spec does
+                                - strong [ref=e2269]: not
+                                - text: say
+                              - paragraph [ref=e2270]:
+                                - text: The HCIQ spec excerpt does
+                                - strong [ref=e2271]: not
+                                - text: "mention:"
+                              - list [ref=e2272]:
+                                - listitem [ref=e2273]: “administrative fee” fields,
+                                - listitem [ref=e2274]: subtracting supplier admin fees from price,
+                                - listitem [ref=e2275]:
+                                  - text: or any explicit “admin fee adjustment” in benchmark construction.
+                                  - 'button "Citation: Transaction Analysis Grid" [ref=e2412] [cursor=pointer]':
+                                    - img [ref=e2278]
+                                    - generic [ref=e2280]: Transaction Analysis Grid
+                              - heading "Best-supported conclusion" [level=2] [ref=e2413]
+                              - list [ref=e2282]:
+                                - listitem [ref=e2283]:
+                                  - text: HCIQ’s benchmark is built from
+                                  - strong [ref=e2284]: transactional PO / paid-invoice costs
+                                  - text: (unit cost / total cost) as defined above.
+                                  - 'button "Citation: Transaction Analysis Grid" [ref=e2414] [cursor=pointer]':
+                                    - img [ref=e2287]
+                                    - generic [ref=e2289]: Transaction Analysis Grid
+                                - listitem [ref=e2290]:
+                                  - text: Since the spec contains
+                                  - strong [ref=e2291]: no admin-fee adjustment fields or rules
+                                  - text: ", HCIQ benchmark pricing"
+                                  - strong [ref=e2292]: does not explicitly subtract supplier admin fees
+                                  - text: from transaction prices in the documented ingestion definitions.
+                              - paragraph [ref=e2293]:
+                                - text: "✅ So for your fairness question:"
+                                - strong [ref=e2294]: HCIQ and Premier TSA are aligned at the “price paid on the PO/invoice” layer
+                                - text: ", not at the “supplier net revenue after fees” layer."
+                                - 'button "Citation: Pitch Deck_AscenDrive and SURPASS plus 1 more" [ref=e2415] [cursor=pointer]':
+                                  - img [ref=e2297]
+                                  - generic [ref=e2299]: Pitch Deck_AscenDrive and SURPASS
+                                  - generic [ref=e2300]: "+1"
+                              - paragraph [ref=e2301]:
+                                - text: "⚠️ Same nuance as above: if admin fee economics are"
+                                - strong [ref=e2302]: embedded indirectly
+                                - text: in the negotiated contract price (supplier sets a higher gross price to offset expected fees), that embedded effect would be present in both Premier transaction prices and HCIQ’s benchmark transaction prices—but
+                                - strong [ref=e2303]: neither system’s documented methodology isolates it
+                                - text: .
+                              - separator [ref=e2304]
+                              - heading "(3) Typical admin fee % range on PREMIER contracts—and does it vary by SP/AD/PP?" [level=1] [ref=e2416]
+                              - heading "What Premier internal sources show about the % range" [level=2] [ref=e2417]
+                              - paragraph [ref=e2307]: "You have multiple internal artifacts giving explicit ranges/examples:"
+                              - 'heading "A. Common “anchor” range: 2–3%" [level=3] [ref=e2418]':
+                                - text: "A. Common “anchor” range:"
+                                - strong [ref=e2309]: 2–3%
+                              - paragraph [ref=e2310]:
+                                - text: Internal “Supplier Tech Fee Model” slides show
+                                - strong [ref=e2311]: "Admin Fee: 2–3%"
+                                - text: as the standard baseline in the modeled construct.
+                                - 'button "Citation: Supplier Tech Fee Model - Dec 2023 plus 2 more" [ref=e2419] [cursor=pointer]':
+                                  - img [ref=e2314]
+                                  - generic [ref=e2316]: Supplier Tech Fee Model - Dec 2023
+                                  - generic [ref=e2317]: "+2"
+                              - 'heading "B. Documented real-world variability: can be much lower or much higher" [level=3] [ref=e2420]':
+                                - text: "B. Documented real-world variability:"
+                                - strong [ref=e2319]: can be much lower or much higher
+                              - list [ref=e2320]:
+                                - listitem [ref=e2321]:
+                                  - text: An email example (Stryker) cites a
+                                  - strong [ref=e2322]: current rate of 0.3%
+                                  - text: and an
+                                  - strong [ref=e2323]: average rate of 2.6%
+                                  - text: (for that context).
+                                  - 'button "Citation: RE: Stryker Trauma Project Update Nov 2024" [ref=e2421] [cursor=pointer]':
+                                    - img [ref=e2326]
+                                    - generic [ref=e2328]: "RE: Stryker Trauma Project Update Nov 2024"
+                                - listitem [ref=e2329]:
+                                  - text: "A member RFP draft states: “"
+                                  - strong [ref=e2330]: Admin fees vary by contract and go up to 9%
+                                  - text: based on category, commitment and program,” and gives an example
+                                  - strong [ref=e2331]: blended rate ~1.6%
+                                  - text: for a member.
+                                  - 'button "Citation: LVH_Jefferson RFP DRAFT" [ref=e2422] [cursor=pointer]':
+                                    - img [ref=e2334]
+                                    - generic [ref=e2336]: LVH_Jefferson RFP DRAFT
+                              - paragraph [ref=e2337]:
+                                - strong [ref=e2338]: "Therefore, supported by internal sources:"
+                                - text: admin fees can range roughly from
+                                - strong [ref=e2339]: ~0.3% (example)
+                                - text: up to
+                                - strong [ref=e2340]: ~9% (stated max in that document)
+                                - text: ", with a common modeled baseline of"
+                                - strong [ref=e2341]: 2–3%
+                                - text: .
+                                - 'button "Citation: RE: Stryker Trauma Project Update Nov 2024 plus 2 more" [ref=e2423] [cursor=pointer]':
+                                  - img [ref=e2344]
+                                  - generic [ref=e2346]: "RE: Stryker Trauma Project Update Nov 2024"
+                                  - generic [ref=e2347]: "+2"
+                              - heading "C. External (industry) context (not Premier-specific)" [level=3] [ref=e2424]
+                              - paragraph [ref=e2349]:
+                                - text: A healthcare supply-chain association explainer states administrative fees are
+                                - strong [ref=e2350]: generally less than 3%
+                                - text: (industry framing).
+                                - text: A legal analysis notes the federal GPO safe harbor often references
+                                - strong [ref=e2351]: 3% or less
+                                - text: ", unless the contract specifies the amount/maximum."
+                                - 'button "Citation: hiscionline" [ref=e2425] [cursor=pointer]':
+                                  - generic [ref=e2353]: hiscionline
+                                - 'button "Citation: natlawreview" [ref=e2426] [cursor=pointer]':
+                                  - generic [ref=e2355]: natlawreview
+                              - paragraph [ref=e2356]:
+                                - text: These help contextualize why 2–3% shows up repeatedly as a “standard,” even though Premier internal docs show exceptions above that in some cases.
+                                - 'button "Citation: hiscionline plus 1 more" [ref=e2427] [cursor=pointer]':
+                                  - generic [ref=e2358]: hiscionline
+                                  - generic [ref=e2359]: "+1"
+                              - separator [ref=e2360]
+                              - heading "Does the admin fee % vary by SP/AD/PP tier?" [level=2] [ref=e2428]:
+                                - text: Does the admin fee % vary by
+                                - strong [ref=e2362]: SP/AD/PP
+                                - text: tier?
+                              - heading "What we can say with sources" [level=3] [ref=e2429]
+                              - list [ref=e2364]:
+                                - listitem [ref=e2365]:
+                                  - text: Premier internal admin-fee materials explicitly say admin fees vary by
+                                  - strong [ref=e2366]: category, commitment, and program
+                                  - text: (which would include committed programs like Surpass/AscenDrive).
+                                  - 'button "Citation: LVH_Jefferson RFP DRAFT plus 1 more" [ref=e2430] [cursor=pointer]':
+                                    - img [ref=e2369]
+                                    - generic [ref=e2371]: LVH_Jefferson RFP DRAFT
+                                    - generic [ref=e2372]: "+1"
+                                - listitem [ref=e2373]:
+                                  - text: A concrete contract-by-contract worksheet example shows
+                                  - strong [ref=e2374]: different admin fee rates
+                                  - text: on contracts labeled with PP/AD/SP contract numbers (so
+                                  - strong [ref=e2375]: variation across programs exists in practice
+                                  - text: ), e.g. PP rows with 0.03–0.04, AD rows with 0.04–0.06, SP rows with ~0.04 in that sample.
+                                  - 'button "Citation: Ambu Math Aug 2025" [ref=e2431] [cursor=pointer]':
+                                    - img [ref=e2378]
+                                    - generic [ref=e2380]: Ambu Math Aug 2025
+                              - heading "What we cannot claim from sources" [level=3] [ref=e2432]
+                              - list [ref=e2433]:
+                                - listitem [ref=e2434]:
+                                  - text: We do
+                                  - strong [ref=e2435]: not
+                                  - text: have a definitive policy statement that “SP always has higher admin fee than PP” or a systematic table of admin-fee-by-tier across the portfolio in the retrieved sources.
+                                - listitem [ref=e2436]: Therefore, I cannot claim a universal tier ordering (SP > AD > PP) as a rule.
+                              - paragraph [ref=e2437]:
+                                - text: ✅
+                                - strong [ref=e2438]: "Best-supported interpretation:"
+                                - text: Admin fee %
+                                - strong [ref=e2439]: can vary by program/tier
+                                - text: ", but it’s not documented in the sources as a simple fixed mapping; it appears to vary at least by"
+                                - strong [ref=e2440]: contract/category/commitment/program
+                                - text: and can differ even within the same supplier across PP/AD/SP contracts.
+                                - 'button "Citation: LVH_Jefferson RFP DRAFT plus 2 more" [ref=e2441] [cursor=pointer]':
+                                  - img [ref=e2443]
+                                  - generic [ref=e2445]: LVH_Jefferson RFP DRAFT
+                                  - generic [ref=e2446]: "+2"
+                              - separator [ref=e2447]
+                              - heading "So… do admin fee economics affect the “fairness” of Premier-vs-HCIQ percentile comparisons?" [level=1] [ref=e2448]
+                              - heading "What’s “fair” at the transaction-price layer" [level=2] [ref=e2449]
+                              - paragraph [ref=e2450]:
+                                - text: Because both Premier TSA and HCIQ ingestion are anchored on
+                                - strong [ref=e2451]: PO/invoice transaction costs
+                                - text: ", a percentile comparison is"
+                                - strong [ref=e2452]: directionally fair
+                                - text: "if you are careful to:"
+                              - list [ref=e2453]:
+                                - listitem [ref=e2454]:
+                                  - text: "compare like-for-like transaction types/time basis (HCIQ: “POs sent” and/or “paid invoices”; Premier: whatever your extract uses),"
+                                  - 'button "Citation: Pitch Deck_AscenDrive and SURPASS" [ref=e2455] [cursor=pointer]':
+                                    - img [ref=e2457]
+                                    - generic [ref=e2459]: Pitch Deck_AscenDrive and SURPASS
+                                - listitem [ref=e2460]: and align cost definition differences (HCIQ unit cost excludes shipping/additional charges).
+                              - heading "Where admin fees can distort interpretation (but not directly measurable here)" [level=2] [ref=e2461]:
+                                - text: Where admin fees
+                                - emphasis [ref=e2462]: can
+                                - text: distort interpretation (but not directly measurable here)
+                              - paragraph [ref=e2463]:
+                                - text: Admin fees matter primarily in the
+                                - strong [ref=e2464]: supplier economics
+                                - text: and
+                                - strong [ref=e2465]: member shareback
+                                - text: layers (GAF/NAF/WAAF concepts), not as a line-item subtraction from the transaction prices in these extracts.
+                                - 'button "Citation: Internal analytics requirement - Jan 26 - measures tab plus 2 more" [ref=e2466] [cursor=pointer]':
+                                  - img "PDF type" [ref=e2468]
+                                  - generic [ref=e2469]: Internal analytics requirement - Jan 26 - measures tab
+                                  - generic [ref=e2470]: "+2"
+                              - paragraph [ref=e2471]: "So admin fees can make comparisons “imperfect” in this way:"
+                              - list [ref=e2472]:
+                                - listitem [ref=e2473]:
+                                  - text: Two GPOs could show identical invoice pricing, but the supplier’s net revenue (after fees) differs, influencing willingness to offer that price—yet neither TSA nor HCIQ (per the found specs) adjusts prices to net-of-fee.
+                                  - 'button "Citation: Admin Fee Workstream SLT Readout 053024" [ref=e2474] [cursor=pointer]':
+                                    - img [ref=e2476]
+                                    - generic [ref=e2478]: Admin Fee Workstream SLT Readout 053024
+                              - paragraph [ref=e2479]:
+                                - strong [ref=e2480]: "Practical guidance for your deck/analysis write-up:"
+                                - text: "Add an explicit caveat like:"
+                              - blockquote [ref=e2481]:
+                                - paragraph [ref=e2482]:
+                                  - text: “Percentiles reflect
+                                  - strong [ref=e2483]: invoice/PO transaction prices
+                                  - text: and do not adjust for supplier-side administrative fee economics or member fee shareback structures; these factors can influence negotiated pricing but are not separately observable in the benchmarked unit-cost fields.”
+                                  - 'button "Citation: Pitch Deck_AscenDrive and SURPASS plus 1 more" [ref=e2484] [cursor=pointer]':
+                                    - img [ref=e2486]
+                                    - generic [ref=e2488]: Pitch Deck_AscenDrive and SURPASS
+                                    - generic [ref=e2489]: "+1"
+                              - separator [ref=e2490]
+                              - heading "Quick “answer key” (one-liners)" [level=2] [ref=e2491]
+                              - list [ref=e2492]:
+                                - listitem [ref=e2493]:
+                                  - strong [ref=e2494]: TSA transaction prices
+                                  - text: ": appear to be"
+                                  - strong [ref=e2495]: provider PO/invoice prices
+                                  - text: ","
+                                  - strong [ref=e2496]: not net-of-admin-fee deductions
+                                  - text: in the dataset definition.
+                                  - 'button "Citation: Pitch Deck_AscenDrive and SURPASS plus 1 more" [ref=e2497] [cursor=pointer]':
+                                    - img [ref=e2499]
+                                    - generic [ref=e2501]: Pitch Deck_AscenDrive and SURPASS
+                                    - generic [ref=e2502]: "+1"
+                                - listitem [ref=e2503]:
+                                  - strong [ref=e2504]: HCIQ benchmarks
+                                  - text: ": built from PO/payed-invoice unit costs and do"
+                                  - strong [ref=e2505]: not document an admin-fee subtraction
+                                  - text: ", so they reflect transaction cost as provided."
+                                  - 'button "Citation: Transaction Analysis Grid" [ref=e2506] [cursor=pointer]':
+                                    - img [ref=e2508]
+                                    - generic [ref=e2510]: Transaction Analysis Grid
+                                - listitem [ref=e2511]:
+                                  - strong [ref=e2512]: Admin fee range
+                                  - text: ": internal docs show common"
+                                  - strong [ref=e2513]: 2–3%
+                                  - text: ", with examples as low as"
+                                  - strong [ref=e2514]: 0.3%
+                                  - text: and language stating some contracts can go
+                                  - strong [ref=e2515]: up to 9%
+                                  - text: ; variability can occur across PP/AD/SP but isn’t documented as a fixed tier rule.
+                                  - 'button "Citation: Supplier Tech Fee Model - Dec 2023 plus 3 more" [ref=e2516] [cursor=pointer]':
+                                    - img [ref=e2518]
+                                    - generic [ref=e2520]: Supplier Tech Fee Model - Dec 2023
+                                    - generic [ref=e2521]: "+3"
+                              - separator [ref=e2522]
+                              - paragraph [ref=e2523]:
+                                - text: If you’d like, I can also translate this into a
+                                - strong [ref=e2524]: single slide
+                                - text: “Methodology & Caveats” box for your Premier-vs-HCIQ percentile deck (tight wording, 5–7 bullets), using only the statements above that we can cite.
+                          - button "Sources" [ref=e2527] [cursor=pointer]:
+                            - generic [ref=e2528]:
+                              - generic [ref=e2529]: Sources
+                              - generic [ref=e2530]:
+                                - img "pptx" [ref=e2531]
+                                - img "docx" [ref=e2532]
+                                - img [ref=e2533]
+                              - img [ref=e2536]
+                          - toolbar [ref=e2538]:
+                            - generic [ref=e2541]:
+                              - generic [ref=e2544]:
+                                - button "Copy Response" [ref=e2545]:
+                                  - img [ref=e2547]
+                                - region "Provide your feedback on BizChat" [ref=e2549]:
+                                  - group "Provide your feedback on BizChat" [ref=e2550]:
+                                    - generic [ref=e2551]:
+                                      - button "I like something" [ref=e2552]:
+                                        - img [ref=e2554]
+                                      - button "I don't like something" [ref=e2556]:
+                                        - img [ref=e2558]
+                                - button "Share prompt and copy with response" [ref=e2560]:
+                                  - img [ref=e2562]
+                                - button "Schedule this prompt" [ref=e2564]:
+                                  - img [ref=e2566]
+                                - generic [ref=e2568]:
+                                  - button "Edit in Pages" [ref=e2569]:
+                                    - img [ref=e2571]
+                                  - button "Pages options" [ref=e2573]:
+                                    - img [ref=e2575]
+                              - button "More options" [ref=e2578]:
+                                - img [ref=e2580]
+                        - toolbar "suggestions" [ref=e2583]:
+                          - button "Draft a slide summarizing admin fee impact on Premier vs HCIQ analysis" [ref=e2584]:
+                            - generic [ref=e2585]: Draft a slide summarizing admin fee impact on Premier vs HCIQ analysis
+                          - button "Explain how to adjust percentile comparisons for admin fee variability" [ref=e2586]:
+                            - generic [ref=e2587]: Explain how to adjust percentile comparisons for admin fee variability
+                          - button "Provide SQL logic to classify contracts by SP/AD/PP tiers" [ref=e2588]:
+                            - generic [ref=e2589]: Provide SQL logic to classify contracts by SP/AD/PP tiers
+                - generic [ref=e373]:
+                  - status [ref=e374]
+                  - generic [ref=e378]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - toolbar "Attachments"
+                    - generic [ref=e381]:
+                      - combobox "Message Copilot" [active] [ref=e1257]
+                      - generic [ref=e2131]: Message Copilot
+                    - generic [ref=e387]:
+                      - button "Add content" [ref=e1258]:
+                        - img [ref=e392]
+                      - button "Tools" [ref=e1259]:
+                        - img [ref=e397]
+                        - text: Tools
+                    - generic [ref=e399]:
+                      - button "Start dictation" [ref=e1260]:
+                        - img "Mic-Regular" [ref=e1261]
+                      - button "Send" [disabled] [ref=e2590]:
+                        - img [ref=e2592]
+                - generic [ref=e552]: AI-generated content may be incorrect

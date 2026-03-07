@@ -1,0 +1,24 @@
+Compiling...
+
+[32mCompiled successfully.
+[0m
+Running...
+
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_6mo[0m [view] 
+ 	 jobId: dataform-57af37a2-1863-4674-9fde-04307b72f74b,
+ 	 Bytes billed: 0 B
+[32mTable created: [0m [36mdataform_hciq.received_benchmarks_stg[0m [table] 
+ 	 jobId: dataform-74472c40-e283-4a22-95b6-f9abd94ed94f,
+ 	 Bytes billed: 324.00 MiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_best_price[0m [table] 
+ 	 jobId: dataform-d18fbeb9-f23a-4da5-825a-8dbd89ccb617,
+ 	 Bytes billed: 9.78 GiB
+[32mTable created: [0m [36mdataform_hciq.facility_program_map[0m [table] 
+ 	 jobId: dataform-681ffa20-e2aa-423f-9cde-2f7fa1151d52,
+ 	 Bytes billed: 4.37 GiB
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_mapped[0m [table] 
+ 	 jobId: dataform-2626f158-a144-49a0-9220-66cbac8a21a5,
+ 	 Bytes billed: 14.93 GiB
+[93mSkipping dataset creation: [0m [36mdataform_hciq.contract_benchmark_summary[0m [table]
+[93mSkipping dataset creation: [0m [36mdataform_hciq.contract_item_benchmark_summary[0m [table]
+[93mSkipping dataset creation: [0m [36mdataform_hciq.program_benchmark_summary[0m [table]

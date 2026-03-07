@@ -1,0 +1,51 @@
+[     700ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://login.microsoftonline.com/favicon.ico:0
+[   12336ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://autologon.microsoftazuread-sso.com/premierinc.com/winauth/ssoprobe?client-request-id=16da8487-379b-4a87-ae0b-094b4cd84251&_=1772675766508:0
+[   43257ms] [WARNING] AI (Internal): 505 message:"Browser does not support local storage. Session durations will be inaccurate." @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.9adc09015433570d.chunk.js:1
+[   43355ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://m365.cloud.microsoft/api/userstorage/AppBarUserData/?workload=officehomereact&auth=2:0
+[   43626ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://m365.cloud.microsoft/api/userstorage/ThemeMode/?workload=officehomereact&auth=2:0
+[   47453ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+ChevronDown, Edit, Add, Cancel, More, Mail, Filter, Share, FavoriteStar, CheckMark (+ 62 more) @ https://res.cdn.office.net/admincenter/admin-main/2026.2.26.7/floodgate.en.bundle.js:32
+[  174020ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183147
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183080
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:184730
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:185402)
+[  537978ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ https://shellprod.msocdn.com/api/shellbootstrapper/business/oneshell:0
+[  643421ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.9adc09015433570d.chunk.js:1
+[  659623ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183147
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183080
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:184730
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:185402)
+[  664622ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183147
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183080
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:184730
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:185402)
+[  943149ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183147
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183080
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:184730
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:185402)
+[  948150ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183147
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183080
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:184730
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:185402)
+[  948935ms] TypeError: r?.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183147
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:183080
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:184730
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/dty-274d7ae9-e5e0-48eb-80db-f8daf26a8d1b-default-prod-m365chat-postload_501377e8d304da494a4f.js:1:185402)
+[ 1243359ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.9adc09015433570d.chunk.js:1
+[ 1843354ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.9adc09015433570d.chunk.js:1
+[ 2443356ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.9adc09015433570d.chunk.js:1
+[ 3043355ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.9adc09015433570d.chunk.js:1
+[ 3643365ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.9adc09015433570d.chunk.js:1
+[ 4243367ms] [ERROR] Refused to set unsafe header "Origin" @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/officestartbundles/vendors-app.9adc09015433570d.chunk.js:1

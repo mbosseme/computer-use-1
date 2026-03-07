@@ -1,0 +1,1 @@
+SELECT parameter_name, data_type FROM `premierinc-com-data.stored_procedures_premier_master_data.INFORMATION_SCHEMA.PARAMETERS` WHERE specific_name = (SELECT specific_name FROM `premierinc-com-data.stored_procedures_premier_master_data.INFORMATION_SCHEMA.ROUTINES` WHERE routine_name = 'getReferenceNumberForSupplierNameAndPartNumber' LIMIT 1)

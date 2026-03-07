@@ -1,0 +1,550 @@
+- iframe [active] [ref=e2]:
+  - application [ref=f1e1]:
+    - generic [ref=f1e7]:
+      - generic [ref=f1e9]:
+        - toolbar "Header" [ref=f1e12]:
+          - banner [ref=f1e15]:
+            - button "App launcher" [ref=f1e18] [cursor=pointer]: 
+            - generic [ref=f1e26]:
+              - link "Word, click to open Word home page" [ref=f1e32] [cursor=pointer]:
+                - /url: https://word.cloud.microsoft?wdOrigin=WAC.WORD.HOME-BUTTON&wdPreviousSession=8949ec78-18b3-a0bf-1c09-a415b0334dbe&wdPreviousSessionSrc=WAC
+                - img [ref=f1e35]
+              - generic [ref=f1e42]:
+                - generic [ref=f1e50]:
+                  - generic "Rename file" [ref=f1e52]: Premier's Market Insights & Digital Supply Chain Initiative - A Strategic Analysis (Notebook LM Briefing Doc - Jan 6 2026)
+                  - button "Confidential" [ref=f1e54]:
+                    - img [ref=f1e57]
+                    - generic [ref=f1e62]: Default label to use for business communications that have information/documents that can be accessed or used by Premier employees and authorized third parties for work-related services.
+                  - button "Saved Click the cloud icon to view file location" [ref=f1e63] [cursor=pointer]:
+                    - img [ref=f1e66]
+                - generic [ref=f1e76]:
+                  - generic [ref=f1e77]: 
+                  - textbox "Search for tools, help, and more (Option + Q)" [ref=f1e78]
+                  - marquee
+              - button "Settings" [ref=f1e82] [cursor=pointer]:
+                - generic [ref=f1e83]: 
+            - generic [ref=f1e84]:
+              - button "Account manager for Bossemeyer, Matthew" [ref=f1e86] [cursor=pointer]:
+                - generic [ref=f1e87]:
+                  - generic [ref=f1e88]: Bossemeyer, Matthew
+                  - generic [ref=f1e96]:
+                    - generic [ref=f1e97]: MB
+                    - img "MB" [ref=f1e99]
+              - generic: 
+        - toolbar "Ribbon" [ref=f1e112]:
+          - generic [ref=f1e113]:
+            - generic [ref=f1e117]:
+              - generic [ref=f1e118]:
+                - button "File" [ref=f1e121]:
+                  - generic [ref=f1e122]: File
+                - generic "Ribbon Tabs" [ref=f1e125]:
+                  - tablist [ref=f1e126]:
+                    - tab "Home" [selected] [ref=f1e127]:
+                      - generic [ref=f1e130]: Home
+                    - tab "Insert" [ref=f1e131]:
+                      - generic [ref=f1e134]: Insert
+                    - tab "Layout" [ref=f1e135]:
+                      - generic [ref=f1e138]: Layout
+                    - tab "References" [ref=f1e139]:
+                      - generic [ref=f1e142]: References
+                    - tab "Review" [ref=f1e143]:
+                      - generic [ref=f1e146]: Review
+                    - tab "View" [ref=f1e147]:
+                      - generic [ref=f1e150]: View
+                    - tab "Help" [ref=f1e151]:
+                      - generic [ref=f1e154]: Help
+              - toolbar "Additional Controls" [ref=f1e157]:
+                - group [ref=f1e160]:
+                  - button "Comments" [ref=f1e161]:
+                    - img [ref=f1e164]
+                    - generic [ref=f1e167]: Comments
+                  - button "Catch up" [ref=f1e168]:
+                    - img [ref=f1e171]
+                    - generic [ref=f1e174]: Catch up
+                  - button "Mode Menu;Editing Selected" [ref=f1e177]:
+                    - img [ref=f1e180]
+                    - generic [ref=f1e183]: Editing
+                    - generic [ref=f1e184]: Mode
+                    - img [ref=f1e187]
+                  - button "Share" [ref=f1e191]:
+                    - img [ref=f1e194]
+                    - generic [ref=f1e197]: Share
+                    - img [ref=f1e200]
+            - tabpanel "Home" [ref=f1e204]:
+              - generic [ref=f1e209]:
+                - group "Undo/Clipboard" [ref=f1e213]:
+                  - group [ref=f1e214]:
+                    - button "Undo" [disabled]:
+                      - generic:
+                        - generic:
+                          - img
+                      - generic: (⌘+Z)
+                    - button "Undo Show More Options" [disabled]:
+                      - generic:
+                        - generic:
+                          - img
+                  - button "Clipboard" [ref=f1e216]:
+                    - img [ref=f1e219]
+                    - img [ref=f1e224]
+                  - button "Format Painter" [ref=f1e227]:
+                    - img [ref=f1e230]
+                    - generic [ref=f1e236]: (⌘+Option+C, ⌘+Option+V) To apply the formatting in multiple places, double-click Format Painter.
+                - group "Font" [ref=f1e242]:
+                  - generic [ref=f1e244]:
+                    - combobox "Font Name" [ref=f1e245]: Times New Roman Bold
+                    - button [ref=f1e246] [cursor=pointer]:
+                      - img [ref=f1e249]
+                  - generic [ref=f1e254]:
+                    - combobox "Font Size" [ref=f1e255]: "24"
+                    - button "Font Size" [ref=f1e256]:
+                      - img [ref=f1e259]
+                  - button "Bold" [pressed] [ref=f1e262]:
+                    - img [ref=f1e265]
+                    - generic [ref=f1e268]: (⌘+B)
+                  - button "Italic" [ref=f1e269]:
+                    - img [ref=f1e272]
+                    - generic [ref=f1e275]: (⌘+I)
+                  - button "Underline" [ref=f1e276]:
+                    - img [ref=f1e279]
+                    - generic [ref=f1e282]: (⌘+U)
+                  - group [ref=f1e283]:
+                    - button "Text Highlight Color Yellow" [ref=f1e284]:
+                      - img [ref=f1e287]
+                    - button "Text Highlight Color Yellow Show More Options" [ref=f1e291]:
+                      - img [ref=f1e294]
+                  - group [ref=f1e297]:
+                    - button "Font Color Red" [ref=f1e298]:
+                      - img [ref=f1e301]
+                    - button "Font Color Red Show More Options" [ref=f1e305]:
+                      - img [ref=f1e308]
+                - group "Paragraph" [ref=f1e316]:
+                  - group [ref=f1e317]:
+                    - button "Bullets" [ref=f1e318]:
+                      - img [ref=f1e321]
+                      - generic [ref=f1e325]: (⌘+.)
+                    - button "Bullets Show More Options" [ref=f1e326]:
+                      - img [ref=f1e330]
+                  - button "Text Alignment" [ref=f1e334]:
+                    - img [ref=f1e337]
+                    - img [ref=f1e342]
+                - group "Styles" [ref=f1e350]:
+                  - generic "Styles" [ref=f1e352]:
+                    - radio "Normal" [checked] [ref=f1e353]:
+                      - generic [ref=f1e354]: Normal
+                    - button "Headings and Other Styles" [ref=f1e357]:
+                      - img [ref=f1e360]
+                - group "Editing" [ref=f1e368]:
+                  - group [ref=f1e369]:
+                    - button "Find" [ref=f1e370]:
+                      - img [ref=f1e373]
+                      - generic [ref=f1e376]: (⌘+F)
+                    - button "Find Show More Options" [ref=f1e377]:
+                      - img [ref=f1e381]
+                - group "Voice" [ref=f1e389]:
+                  - group [ref=f1e390]:
+                    - button "Dictate" [ref=f1e391]:
+                      - img [ref=f1e394]
+                      - generic [ref=f1e399]: "(Option+`)"
+                    - button "Dictate Show More Options" [ref=f1e400]:
+                      - img [ref=f1e404]
+                - group "Sensitivity" [ref=f1e412]:
+                  - button "Sensitivity" [ref=f1e414]:
+                    - img [ref=f1e417]
+                    - img [ref=f1e424]
+                - group "Proofing" [ref=f1e432]:
+                  - button "Editor" [ref=f1e433]:
+                    - img [ref=f1e436]
+                - generic:
+                  - generic:
+                    - generic:
+                      - group "Add-ins"
+                - group "Copilot" [ref=f1e445]:
+                  - button "Copilot" [ref=f1e446]:
+                    - img [ref=f1e449]
+                - group "More Options" [ref=f1e463]:
+                  - button "More Options" [ref=f1e466]:
+                    - img [ref=f1e469]
+              - button "Ribbon Display Options" [ref=f1e476]:
+                - img [ref=f1e479]
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - status
+                        - generic:
+                          - status
+        - generic [ref=f1e487]:
+          - table "Loading additional document content" [ref=f1e488]:
+            - row
+          - link "Loading additional document content":
+            - /url: "#"
+          - heading "Loading additional document content" [level=1]
+          - heading "Loading additional document content" [level=2]
+          - heading "Loading additional document content" [level=3]
+          - heading "Loading additional document content" [level=4]
+          - heading "Loading additional document content" [level=5]
+          - heading "Loading additional document content" [level=6]
+          - heading "Loading additional document content" [level=7]
+          - heading "Loading additional document content" [level=8]
+          - heading "Loading additional document content" [level=9]
+          - generic [ref=f1e491]:
+            - generic "Document Contents" [ref=f1e492]:
+              - generic [ref=f1e496]:
+                - document [ref=f1e505] [cursor=pointer]:
+                  - banner [ref=f1e507]:
+                    - img [ref=f1e510]
+                    - document [ref=f1e513]:
+                      - heading "Summary" [ref=f1e514]
+                      - generic [ref=f1e515]:
+                        - paragraph [ref=f1e516]: Premier Inc.'s Market Insights (MI) and Digital Supply Chain (DSC) initiatives deliver advanced data analytics solutions leveraging provider-side supply chain data to support medical device and pharmaceutical suppliers in addressing critical strategic challenges.
+                        - list [ref=f1e517]:
+                          - listitem [ref=f1e518]:
+                            - paragraph [ref=f1e519]:
+                              - text: "Market Insights core value: MI offers suppliers detailed visibility into contract compliance, market share, competitive dynamics, and supply chain risks, based on data sourced directly from ERP systems covering about 25% of the U.S. acute care market. This data is low-latency, granular, and validated by healthcare providers, distinguishing it from competitors."
+                              - button "1" [ref=f1e520]
+                          - listitem [ref=f1e521]:
+                            - paragraph [ref=f1e522]:
+                              - text: "Key MI capabilities: The solution includes contract performance monitoring, comprehensive market intelligence, supply chain resiliency insights, and integration of supply and clinical data to support value-based contracting."
+                              - button "2" [ref=f1e523]
+                              - button "3" [ref=f1e524]
+                          - listitem [ref=f1e525]:
+                            - paragraph [ref=f1e526]:
+                              - text: "Data strength and differentiation: Premier's direct sourcing from provider ERP systems provides superior data fidelity, scale, and timeliness compared to providers like IQVIA, with over $150 billion in annual spend data and 10+ years of history."
+                              - button "4" [ref=f1e527]
+                              - button "5" [ref=f1e528]
+                          - listitem [ref=f1e529]:
+                            - paragraph [ref=f1e530]:
+                              - text: "Flexible service models: Premier offers tiered delivery options ranging from raw data feeds to full custom analytics and consulting services, enabling suppliers to scale engagements from short-term projects to comprehensive partnerships."
+                              - button "6" [ref=f1e531]
+                              - button "7" [ref=f1e532]
+                          - listitem [ref=f1e533]:
+                            - paragraph [ref=f1e534]:
+                              - text: "Supplier use cases: Suppliers primarily use MI for contract compliance monitoring, gaining competitive intelligence, supply chain disruption prediction, linking supply data to clinical outcomes for value demonstration, and targeting new product launches and market expansion."
+                              - button "8" [ref=f1e535]
+                              - button "9" [ref=f1e536]
+                          - listitem [ref=f1e537]:
+                            - paragraph [ref=f1e538]:
+                              - text: "Challenges in supplier engagement: The sales process is complex, requiring navigation of multiple buyer personas and demonstrating clear ROI to upsell beyond contract compliance services. Smaller suppliers receive lighter-touch solutions."
+                              - button "10" [ref=f1e539]
+                              - button "11" [ref=f1e540]
+                          - listitem [ref=f1e541]:
+                            - paragraph [ref=f1e542]:
+                              - text: "Product and engineering focus: User experience improvements are needed to enhance application speed and usability. Demand for custom analytics is rising, prompting formalization of a dedicated services group. Engineering resources are being realigned towards AI capabilities and cloud optimization."
+                              - button "12" [ref=f1e543]
+                              - button "13" [ref=f1e544]
+                          - listitem [ref=f1e545]:
+                            - paragraph [ref=f1e546]:
+                              - text: "Business model evolution: Premier is transitioning from a traditional transaction-based National Admin Fee to a Supplier Technology Fee model, aiming to replace lost revenue with increased performanceservices revenue and bundling clinical data insights for a holistic value proposition."
+                              - button "14" [ref=f1e547]
+                              - button "15" [ref=f1e548]
+                          - listitem [ref=f1e549]:
+                            - paragraph [ref=f1e550]:
+                              - text: "Extensive data assets and key personnel: Premier’s data covers 25% of the U.S. acute care market with billions in spend and transactions, supported by a team of analytics, product, and sales leaders engaging with major suppliers across the healthcare sector."
+                              - button "16" [ref=f1e551]
+                              - button "17" [ref=f1e552]
+                    - button "View more" [ref=f1e554]
+                - generic [ref=f1e556]:
+                  - paragraph [ref=f1e559]:
+                    - generic [ref=f1e560]: "Premier's Market Insights & Digital Supply Chain Initiative: A Strategic Analysis"
+                  - generic "Page 1" [ref=f1e561]:
+                    - generic [ref=f1e563]:
+                      - generic [ref=f1e564]:
+                        - paragraph [ref=f1e568]:
+                          - generic [ref=f1e569]: Executive Summary
+                        - paragraph [ref=f1e572]:
+                          - generic [ref=f1e573]: This document provides a comprehensive analysis of Premier Inc.'s Market Insights (MI) and Digital Supply Chain (DSC) initiatives, synthesizing extensive source material from internal meetings, supplier presentations, and strategic notes. The core of the initiative is a sophisticated data analytics solution that leverages Premier's unique access to provider-side supply chain data to address critical strategic needs for medical device and pharmaceutical suppliers.
+                        - paragraph [ref=f1e576]:
+                          - generic [ref=f1e577]: The Market Insights platform offers suppliers unprecedented visibility into contract compliance, market share dynamics, competitive landscapes, and supply chain vulnerabilities. Its primary value proposition stems from its data foundation—sourced directly from the ERP systems of approximately 25% of the U.S. acute care market—which provides low-latency, high-granularity, and high-fidelity data that is actively used and validated by healthcare providers themselves. This differentiates it from competitors like IQVIA and Vizient, who are often further removed from the data source.
+                        - paragraph [ref=f1e580]:
+                          - generic [ref=f1e581]: Suppliers engage with Premier's MI solution to solve a range of pressing business challenges. The most common entry point is
+                          - generic [ref=f1e582]: contract compliance monitoring
+                          - generic [ref=f1e583]: for performance groups like SURPASS and AscenDrive. Beyond this, suppliers seek
+                          - generic [ref=f1e584]: competitive intelligence
+                          - generic [ref=f1e585]: to understand market share erosion, identify portfolio gaps, track new product launches, and inform M&A strategy.
+                          - generic [ref=f1e586]: Supply chain resiliency
+                          - generic [ref=f1e587]: has emerged as a critical use case, with suppliers leveraging Premier's data to predict and model the impact of competitor shortages. A key strategic thrust for Premier is the integration of this supply chain data with its vast clinical datasets (Premier Healthcare Database) to support
+                          - generic [ref=f1e588]: Value-Based Contracting (VBC)
+                          - generic [ref=f1e589]: and demonstrate a product's impact on total cost of care and patient outcomes.
+                        - paragraph [ref=f1e592]:
+                          - generic [ref=f1e593]: The initiative faces both opportunities and challenges. The sales process is complex, often requiring tailored solutions and navigating different buyer personas within large supplier organizations, with National Accounts teams serving as the primary channel. While the contract compliance module is a successful entry point, upselling to broader application usage and custom data services requires demonstrating clear ROI. Internally, Premier is navigating a strategic shift from a traditional GPO admin fee model to a more value-added technology fee, which requires careful financial modeling and a unified sales approach. The success of the Market Insights and DSC initiatives is pivotal to Premier's growth, reinforcing the value of its GPO and creating a powerful, data-driven ecosystem connecting providers and suppliers.
+                        - paragraph [ref=f1e596]:
+                          - generic [ref=f1e597]: I. Overview of Premier's Market Insights (MI) Solution
+                        - paragraph [ref=f1e600]:
+                          - generic [ref=f1e601]: A. Core Offering and Value Proposition
+                      - button [ref=f1e608]:
+                        - img [ref=f1e610]
+                    - generic [ref=f1e612]: "1"
+                  - generic "Page 3" [ref=f1e797]:
+                    - generic [ref=f1e800]:
+                      - paragraph [ref=f1e803]:
+                        - generic [ref=f1e804]: C. Service Tiers and Delivery Models
+                      - paragraph [ref=f1e807]:
+                        - generic [ref=f1e808]: "Premier offers a flexible, tiered approach to meet varying supplier needs and budgets:"
+                      - listitem [level=1] [ref=f1e809]:
+                        - paragraph [ref=f1e811]:
+                          - generic [ref=f1e813]: 
+                          - generic [ref=f1e814]: "Tier 1: Data Feeds:"
+                          - generic [ref=f1e815]: Direct data feeds for integration into a supplier's own Business Intelligence (BI) environment (e.g., Power BI, Tableau, Microsoft Fabric). This is for data-savvy organizations that prefer to conduct their own analysis.
+                      - listitem [level=1] [ref=f1e816]:
+                        - paragraph [ref=f1e818]:
+                          - generic [ref=f1e820]: 
+                          - generic [ref=f1e821]: "Tier 2: Data + Application:"
+                          - generic [ref=f1e822]: Access to Premier's web-based analytics application, which includes pre-built dashboards, reporting, and visualization tools, along with training and support.
+                      - listitem [level=1] [ref=f1e823]:
+                        - paragraph [ref=f1e825]:
+                          - generic [ref=f1e827]: 
+                          - generic [ref=f1e828]: "Tier 3: Data + Application + Custom Services:"
+                          - generic [ref=f1e829]: A full-service model that includes custom analytics, consulting engagements, dedicated project management, and strategic support from Premier's teams.
+                      - paragraph [ref=f1e832]:
+                        - generic [ref=f1e833]: Engagements can be scaled, allowing suppliers to start with a single product category or a short-term custom project and expand into a longer-term, more comprehensive partnership.
+                      - paragraph [ref=f1e836]:
+                        - generic [ref=f1e837]: II. Key Supplier Use Cases and Pain Points
+                      - paragraph [ref=f1e840]:
+                        - generic [ref=f1e841]: Suppliers engage with the Market Insights solution to address a wide array of strategic and operational challenges.
+                      - paragraph [ref=f1e844]:
+                        - generic [ref=f1e845]: A. Contract Compliance and Performance Monitoring
+                      - listitem [level=1] [ref=f1e846]:
+                        - paragraph [ref=f1e848]:
+                          - generic [ref=f1e850]: 
+                          - generic [ref=f1e851]: "Core Need:"
+                          - generic [ref=f1e852]: The most frequent driver for engagement is the need to monitor hospital compliance with GPO contracts, particularly within performance groups like
+                          - generic [ref=f1e853]: SURPASS
+                          - generic [ref=f1e854]: and
+                          - generic [ref=f1e855]: AscenDrive
+                          - generic [ref=f1e856]: .
+                      - listitem [level=1] [ref=f1e857]:
+                        - paragraph [ref=f1e859]:
+                          - generic [ref=f1e861]: 
+                          - generic [ref=f1e862]: "Supplier Challenge:"
+                          - generic [ref=f1e863]: Suppliers lack timely and granular visibility into whether contracted hospitals are meeting their purchasing commitments. It is difficult to identify non-compliant facilities and the specific competitive products they are purchasing instead. Bill Miller of B. Braun noted the difficulty reps have conducting compliance reviews when hospitals are not fully transparent.
+                      - listitem [level=1] [ref=f1e864]:
+                        - paragraph [ref=f1e866]:
+                          - generic [ref=f1e868]: 
+                          - generic [ref=f1e869]: "MI Solution:"
+                          - generic [ref=f1e870]: The MI platform provides detailed, hospital- and department-level data on all purchases within a contract category, showing a supplier's products alongside competitive SKUs. This allows suppliers to "quickly land the best targets" and proactively address compliance gaps.
+                      - paragraph [ref=f1e873]:
+                        - generic [ref=f1e874]: B. Market Share, Segmentation, and Competitive Intelligence
+                      - listitem [level=1] [ref=f1e875]:
+                        - paragraph [ref=f1e877]:
+                          - generic [ref=f1e879]: 
+                          - generic [ref=f1e880]: "Core Need:"
+                          - generic [ref=f1e881]: "Suppliers require an accurate, independent source of truth for market share, size, and growth trends to validate internal data and inform commercial strategy. As Pam from Premier noted, suppliers ask: \"is my product outperforming my competitors, and what is my market share, and what is my opportunity\"."
+                    - generic [ref=f1e886]: "3"
+                  - generic "Page 4" [ref=f1e887]:
+                    - generic [ref=f1e890]:
+                      - listitem [level=1] [ref=f1e891]:
+                        - paragraph [ref=f1e893]:
+                          - generic [ref=f1e895]: 
+                          - generic [ref=f1e896]: "Supplier Challenge:"
+                          - generic [ref=f1e897]: Internal sales data and distributor tracings are often incomplete, lagged, or biased. They provide a limited view of the total market, especially in non-acute settings or outside of primary distribution channels. Competitors like SmartTRAK are considered the "gold standard" by some but are seen as providing higher-level, global estimates rather than granular U.S. purchasing data.
+                      - listitem [level=1] [ref=f1e898]:
+                        - paragraph [ref=f1e900]:
+                          - generic [ref=f1e902]: 
+                          - generic [ref=f1e903]: "MI Solution:"
+                          - generic [ref=f1e904]: MI provides SKU-level visibility into competitor sales, allowing for precise market share calculations by product subcategory, geography, and facility type. This helps suppliers identify competitive threats (e.g., Philips tracking MindRay), pinpoint portfolio gaps, and arm sales reps with objective data.
+                      - paragraph [ref=f1e907]:
+                        - generic [ref=f1e908]: C. Supply Chain Resiliency and Demand Forecasting
+                      - listitem [level=1] [ref=f1e909]:
+                        - paragraph [ref=f1e911]:
+                          - generic [ref=f1e913]: 
+                          - generic [ref=f1e914]: "Core Need:"
+                          - generic [ref=f1e915]: In an era of frequent disruptions, suppliers need to predict and respond to shortages (both their own and competitors') and improve demand forecasting accuracy.
+                      - listitem [level=1] [ref=f1e916]:
+                        - paragraph [ref=f1e918]:
+                          - generic [ref=f1e920]: 
+                          - generic [ref=f1e921]: "Supplier Challenge:"
+                          - generic [ref=f1e922]: Lack of market-wide visibility makes it difficult to anticipate demand surges caused by competitor disruptions. A supplier noted they used MI data to model the potential volume of a competitor's announced shortage of CHG skin preps, allowing them to increase their own production to fill the anticipated gap.
+                      - listitem [level=1] [ref=f1e923]:
+                        - paragraph [ref=f1e925]:
+                          - generic [ref=f1e927]: 
+                          - generic [ref=f1e928]: "MI Solution:"
+                          - generic [ref=f1e929]: The "Supply Signals" data model is designed to predict national supply disruptions by analyzing metrics like lead times, backorders, and cancellations. The Bracco/Shanghai contrast shortage was a frequently cited example that resonated with GE Healthcare. The data also helps suppliers identify distributor substitutions of private-label products.
+                      - paragraph [ref=f1e932]:
+                        - generic [ref=f1e933]: D. Linking Supply Chain Data to Clinical Outcomes (Value-Based Contracting)
+                      - listitem [level=1] [ref=f1e934]:
+                        - paragraph [ref=f1e936]:
+                          - generic [ref=f1e938]: 
+                          - generic [ref=f1e939]: "Core Need:"
+                          - generic [ref=f1e940]: Suppliers are increasingly required to demonstrate their product's value beyond price, linking its use to improved patient outcomes and lower total cost of care.
+                      - listitem [level=1] [ref=f1e941]:
+                        - paragraph [ref=f1e943]:
+                          - generic [ref=f1e945]: 
+                          - generic [ref=f1e946]: "Supplier Challenge:"
+                          - generic [ref=f1e947]: Connecting purchasing data with clinical results is technically difficult. Suppliers struggle to build a data-backed narrative showing their product is "more expensive, but better from an overall VALUE perspective." Legal teams can also be challenged by the term "value based contract" if there isn't a direct clinical element.
+                      - listitem [level=1] [ref=f1e948]:
+                        - paragraph [ref=f1e950]:
+                          - generic [ref=f1e952]: 
+                          - generic [ref=f1e953]: "MI Solution:"
+                          - generic [ref=f1e954]: Premier's strategy is to integrate MI (commercial/ERP data) with its
+                          - generic [ref=f1e955]: Premier Healthcare Database (PHD)
+                          - generic [ref=f1e956]: (clinical/EHR outcomes data) via its "Unified Intelligence Platform." This allows for analyses that correlate supplier choice with performance metrics (e.g., infection rates), identify hospitals struggling with outcomes a product can improve, and support the tracking of VBCs.
+                      - paragraph [ref=f1e959]:
+                        - generic [ref=f1e960]: E. New Product Launches and Market Expansion
+                      - listitem [level=1] [ref=f1e961]:
+                        - paragraph [ref=f1e963]:
+                          - generic [ref=f1e965]: 
+                          - generic [ref=f1e966]: "Core Need:"
+                          - generic [ref=f1e967]: Suppliers need to effectively target customers for new product introductions (NPIs) and identify opportunities in adjacent markets or care settings.
+                      - listitem [level=1] [ref=f1e968]:
+                        - paragraph [ref=f1e970]:
+                          - generic [ref=f1e972]: 
+                          - generic [ref=f1e973]: "Supplier Challenge:"
+                          - generic [ref=f1e974]: Identifying the right facilities and physicians for an NPI is critical but often based on incomplete information. Understanding the continuum of care (CoC)
+                    - generic [ref=f1e978]: "4"
+                  - generic "Page 5" [ref=f1e979]:
+                    - generic [ref=f1e982]:
+                      - listitem [level=1] [ref=f1e983]:
+                        - paragraph [ref=f1e985]:
+                          - generic [ref=f1e986]: and where products could be used in settings like Ambulatory Surgery Centers (ASCs) is a growing priority.
+                      - listitem [level=1] [ref=f1e987]:
+                        - paragraph [ref=f1e989]:
+                          - generic [ref=f1e991]: 
+                          - generic [ref=f1e992]: "MI Solution:"
+                          - generic [ref=f1e993]: The data helps suppliers identify facilities with high usage of competitive products that an NPI is designed to displace. It can also help characterize care paths to find adjacency opportunities. For example, Airlife planned to use MI for an upcoming active humidification launch to track adoption and prioritize target accounts.
+                      - paragraph [ref=f1e996]:
+                        - generic [ref=f1e997]: III. Analysis of Key Supplier Engagements
+                      - paragraph [ref=f1e1000]:
+                        - generic [ref=f1e1001]: The source documents detail numerous interactions with key suppliers, each with unique objectives and priorities.
+                      - table [ref=f1e1003]:
+                        - rowgroup [ref=f1e1009]:
+                          - row "Supplier Key Contacts / Team Primary Interests & Use Cases Key Quotes & Insights" [ref=f1e1010]:
+                            - rowheader "Supplier" [ref=f1e1011]:
+                              - paragraph [ref=f1e1018]:
+                                - generic [ref=f1e1019]: Supplier
+                            - columnheader "Key Contacts / Team" [ref=f1e1020]:
+                              - paragraph [ref=f1e1027]:
+                                - generic [ref=f1e1028]: Key Contacts / Team
+                            - columnheader "Primary Interests & Use Cases" [ref=f1e1029]:
+                              - paragraph [ref=f1e1036]:
+                                - generic [ref=f1e1037]: Primary Interests & Use Cases
+                            - columnheader "Key Quotes & Insights" [ref=f1e1038]:
+                              - paragraph [ref=f1e1045]:
+                                - generic [ref=f1e1046]: Key Quotes & Insights
+                          - row "B. Braun Ellen, Lindsay Schmidt, Jeremy Contract compliance (regional anesthesia trays, safety IV catheters); Market sizing for specific pharma products; In-market pricing confirmation; Transitioning a 6-month custom IV analytics engagement to a long-term partnership. Ellen raised concerns about the \"challenges of verifying compliance and building trust with hospitals.\" Discussed a longer-term partnership for a \"better deal\" than a short-term engagement." [ref=f1e1047]:
+                            - rowheader "B. Braun" [ref=f1e1048]:
+                              - paragraph [ref=f1e1055]:
+                                - generic [ref=f1e1056]: B. Braun
+                            - cell "Ellen, Lindsay Schmidt, Jeremy" [ref=f1e1057]:
+                              - paragraph [ref=f1e1064]:
+                                - generic [ref=f1e1065]: Ellen, Lindsay Schmidt, Jeremy
+                            - cell "Contract compliance (regional anesthesia trays, safety IV catheters); Market sizing for specific pharma products; In-market pricing confirmation; Transitioning a 6-month custom IV analytics engagement to a long-term partnership." [ref=f1e1066]:
+                              - paragraph [ref=f1e1073]:
+                                - generic [ref=f1e1074]: Contract compliance (regional anesthesia trays, safety IV catheters); Market sizing for specific pharma products; In-market pricing confirmation; Transitioning a 6-month custom IV analytics engagement to a long-term partnership.
+                            - cell "Ellen raised concerns about the \"challenges of verifying compliance and building trust with hospitals.\" Discussed a longer-term partnership for a \"better deal\" than a short-term engagement." [ref=f1e1075]:
+                              - paragraph [ref=f1e1082]:
+                                - generic [ref=f1e1083]: Ellen raised concerns about the "challenges of verifying compliance and building trust with hospitals." Discussed a longer-term partnership for a "better deal" than a short-term engagement.
+                          - row "GE Healthcare Selina Singh (GM, GPOs), Casey Mchargue (VP National Accounts) Understanding channel share (Premier vs. non-Premier); Shortage prediction (the Bracco example \"landed well\"); Scoping a pilot for Contrast media. GE designated their National Accounts team as the \"front door & routing\" point for Premier. They want to connect MI (commercial) with PHD (clinical) data in the future." [ref=f1e1084]:
+                            - rowheader "GE Healthcare" [ref=f1e1085]:
+                              - paragraph [ref=f1e1092]:
+                                - generic [ref=f1e1093]: GE Healthcare
+                            - cell "Selina Singh (GM, GPOs), Casey Mchargue (VP National Accounts)" [ref=f1e1094]:
+                              - paragraph [ref=f1e1101]:
+                                - generic [ref=f1e1102]: Selina Singh (GM, GPOs), Casey Mchargue (VP National Accounts)
+                            - cell "Understanding channel share (Premier vs. non-Premier); Shortage prediction (the Bracco example \"landed well\"); Scoping a pilot for Contrast media." [ref=f1e1103]:
+                              - paragraph [ref=f1e1110]:
+                                - generic [ref=f1e1111]: Understanding channel share (Premier vs. non-Premier); Shortage prediction (the Bracco example "landed well"); Scoping a pilot for Contrast media.
+                            - cell "GE designated their National Accounts team as the \"front door & routing\" point for Premier. They want to connect MI (commercial) with PHD (clinical) data in the future." [ref=f1e1112]:
+                              - paragraph [ref=f1e1119]:
+                                - generic [ref=f1e1120]: GE designated their National Accounts team as the "front door & routing" point for Premier. They want to connect MI (commercial) with PHD (clinical) data in the future.
+                          - row "Johnson & Johnson Tim Hinueber, Rick Blockinger, Randy Bell, Amber Edwards Extending compliance monitoring from SURPASS to AscenDrive; Understanding the erosion of legacy business to robotic-native devices; Piloting more granular data with field teams; Desire for data feeds into their internal BI systems. \"how do we turn this into more leading indicators as we connect with our customers.\" - Randy Bell. J&J expressed interest in a custom analytics project to replicate their internal dollar-based compliance methodology on the full market dataset." [ref=f1e1121]:
+                            - rowheader "Johnson & Johnson" [ref=f1e1122]:
+                              - paragraph [ref=f1e1129]:
+                                - generic [ref=f1e1130]: Johnson & Johnson
+                            - cell "Tim Hinueber, Rick Blockinger, Randy Bell, Amber Edwards" [ref=f1e1131]:
+                              - paragraph [ref=f1e1138]:
+                                - generic [ref=f1e1139]: Tim Hinueber, Rick Blockinger, Randy Bell, Amber Edwards
+                            - cell "Extending compliance monitoring from SURPASS to AscenDrive; Understanding the erosion of legacy business to robotic-native devices; Piloting more granular data with field teams; Desire for data feeds into their internal BI systems." [ref=f1e1140]:
+                              - paragraph [ref=f1e1147]:
+                                - generic [ref=f1e1148]: Extending compliance monitoring from SURPASS to AscenDrive; Understanding the erosion of legacy business to robotic-native devices; Piloting more granular data with field teams; Desire for data feeds into their internal BI systems.
+                            - cell "\"how do we turn this into more leading indicators as we connect with our customers.\" - Randy Bell. J&J expressed interest in a custom analytics project to replicate their internal dollar-based compliance methodology on the full market dataset." [ref=f1e1149]:
+                              - paragraph [ref=f1e1156]:
+                                - generic [ref=f1e1157]: "\"how do we turn this into more leading indicators as we connect with our customers.\" - Randy Bell. J&J expressed interest in a custom analytics project to replicate their internal dollar-based compliance methodology on the full market dataset."
+                          - row "Stryker / Sage Greg Corbett (Director Strategic Sales), Chad Bedley, Ed Harris Targeting hospitals for growth using a \"propensity to buy\" model; Inventory and conversion optimization; Challenging BD's bundled pricing for urinary collection products; Addressing philosophical objections to Greg Corbett was interested in insights about \"competitive brands gaining traction\" and demonstrating \"lower total utilization per patient.\"" [ref=f1e1158]:
+                            - rowheader "Stryker / Sage" [ref=f1e1159]:
+                              - paragraph [ref=f1e1165]:
+                                - generic [ref=f1e1166]: Stryker / Sage
+                            - cell "Greg Corbett (Director Strategic Sales), Chad Bedley, Ed Harris" [ref=f1e1167]:
+                              - paragraph [ref=f1e1173]:
+                                - generic [ref=f1e1174]: Greg Corbett (Director Strategic Sales), Chad Bedley, Ed Harris
+                            - cell "Targeting hospitals for growth using a \"propensity to buy\" model; Inventory and conversion optimization; Challenging BD's bundled pricing for urinary collection products; Addressing philosophical objections to" [ref=f1e1175]:
+                              - paragraph [ref=f1e1181]:
+                                - generic [ref=f1e1182]: Targeting hospitals for growth using a "propensity to buy" model; Inventory and conversion optimization; Challenging BD's bundled pricing for urinary collection products; Addressing philosophical objections to
+                            - cell "Greg Corbett was interested in insights about \"competitive brands gaining traction\" and demonstrating \"lower total utilization per patient.\"" [ref=f1e1183]:
+                              - paragraph [ref=f1e1189]:
+                                - generic [ref=f1e1190]: Greg Corbett was interested in insights about "competitive brands gaining traction" and demonstrating "lower total utilization per patient."
+                        - generic "Select table" [ref=f1e1191] [cursor=pointer]
+                    - generic [ref=f1e1193]: "5"
+            - img [ref=f1e705]
+          - table "Loading additional document content" [ref=f1e710]:
+            - row
+          - link "Loading additional document content":
+            - /url: "#"
+          - heading "Loading additional document content" [level=1]
+          - heading "Loading additional document content" [level=2]
+          - heading "Loading additional document content" [level=3]
+          - heading "Loading additional document content" [level=4]
+          - heading "Loading additional document content" [level=5]
+          - heading "Loading additional document content" [level=6]
+          - heading "Loading additional document content" [level=7]
+          - heading "Loading additional document content" [level=8]
+          - heading "Loading additional document content" [level=9]
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - status
+                        - generic:
+                          - status
+        - generic [ref=f1e729]:
+          - generic [ref=f1e730]:
+            - button "Page 3 of 9" [ref=f1e1196]:
+              - generic [ref=f1e732]: Page 3 of 9
+              - generic [ref=f1e733]: The current page number in the document. Click or tap to open the Navigation Pane.
+            - button "2,991 words" [ref=f1e734]:
+              - generic [ref=f1e735]: 2,991 words
+              - generic [ref=f1e736]: The number of words in the selection or document. Click or tap to open the word count dialog box.
+            - button "English (U.S.)" [ref=f1e737]:
+              - generic [ref=f1e738]: English (U.S.)
+              - generic [ref=f1e739]: Set Proofing Language
+            - 'button "Text Predictions: On" [ref=f1e740]':
+              - generic [ref=f1e741]: "Text Predictions: On"
+              - generic [ref=f1e742]: Switch text predictions on or off. Click or tap here to open settings for text predictions.
+            - 'button "Editor Suggestions: Showing" [ref=f1e743]':
+              - generic [ref=f1e744]: "Editor Suggestions: Showing"
+              - generic [ref=f1e745]: Editor is underlining text when it has a suggestion. Click underlined words to see suggestions for spelling, grammar, and more.
+          - generic [ref=f1e746]:
+            - button "Separate Pages" [pressed] [ref=f1e747]:
+              - img [ref=f1e750]
+            - button "Zoom Out" [ref=f1e753]:
+              - img [ref=f1e756]
+            - slider "Zoom" [ref=f1e761] [cursor=pointer]: "100"
+            - button "Zoom In" [ref=f1e762]:
+              - img [ref=f1e765]
+            - button "100%" [ref=f1e768]:
+              - generic [ref=f1e769]: 100%
+              - generic [ref=f1e770]: Zoom Level
+            - button "Fit" [ref=f1e771]:
+              - img [ref=f1e774]
+              - generic [ref=f1e777]: Fit
+              - generic [ref=f1e778]: Zoom to fit page width
+            - button "Give Feedback to Microsoft" [ref=f1e779]:
+              - generic [ref=f1e780]: Give Feedback to Microsoft
+              - generic [ref=f1e781]: Help Improve Office
+      - marquee: Press Alt Shift A for accessibility help.
+    - generic:
+      - generic:
+        - generic:
+          - region
+    - generic [ref=f1e1202]: Rename file
+    - iframe [ref=f1e795]:
+      
+    - iframe [ref=f1e1203]:
+      

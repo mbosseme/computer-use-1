@@ -173,3 +173,50 @@ Performed a deep critical review of the deliverable, refined the UOM flagging me
 - Fixed an aggregation bug in `contract_item_benchmark_summary.sqlx` where matched items with a /bin/zsh benchmark falsely inflated best-tier spend rollup.
 - Fixed an XML corruption bug in the Python export logic by stripping illegal hex characters from text fields in dataframes.
 - Emailed Joe an explanation on the shifting percentiles and the state of recent pipeline data.
+
+## 2026-03-06 Session 3: Strategic Planning + Data Model Assessment
+
+### Context
+- Synced corpus with 3 new OneDrive documents (kick-off meeting transcript, Joe's email, Healthcare IQ email) using GPT-5.4 incremental synthesis.
+- Reviewed all 5 per-doc syntheses + master synthesis to develop strategic recommendations.
+- Boss's guidance: "wow Bruce with an output, not an approach."
+
+### Decision: July 1+ Contract Competitive Heat Map
+Selected Option 1 from 3 candidates — a competitive positioning view of contracts expiring July 1+ with dollar-valued pricing gaps. Rationale: directly answers what Bruce asked his task force to figure out; delivering fast demonstrates speed > methodology.
+
+### Data Model Assessment (Completed)
+**Tables needed:** `transaction_analysis_expanded` + `received_benchmarks` — no additional models required.
+
+**Scope: Jul-Dec 2026 Expiring Contracts**
+
+| Program | Contracts | w/ Benchmarks | 6mo Spend | Benchmarked Spend | Coverage |
+|---------|-----------|---------------|-----------|-------------------|----------|
+| National (PP-) | 302 | 293 | $1,413M | $1,308M | 92.6% |
+| ASCENDRIVE (AD-) | 38 | 38 | $114M | $103M | 91.0% |
+| Surpass (SP-) | 18 | 18 | $80M | $80M | 99.8% |
+| **Total** | **358** | **349** | **$1,607M** | **$1,491M** | **92.8%** |
+
+**Key data elements confirmed:**
+- `Contract_Expiration_Date` — 0 nulls, range 2025-09-30 to 2032-10-31
+- `Contract_Best_Price` — contract tier price per unit
+- `Base_Each_Price` — actual price paid per unit per transaction
+- `hciq_low/90/75/50/high_benchmark` — 5 percentile tiers from HCIQ
+- Contract metadata (Number, Name, Type, Category, Supplier) — all populated
+- Spend/volume (`Base_Spend`, `Quantity`) — all populated
+
+**Nuances discovered:**
+- ASCEND type is stored as `ASCENDRIVE` (not `ASCEND`) — use `Contract_Number LIKE 'AD-%'` or `Contract_Type = 'ASCENDRIVE'`
+- Custom Procedure Trays (PP-OR-1967, Medline, $168M) only 66% benchmark coverage — inherently hard to benchmark
+- `Contract_Best_Price` has 36.6% nulls overall but coverage is strong within scope
+- End-to-end item-level pricing vs. benchmark join confirmed working (tested on PP-OR-2234 Stryker Ortho Trauma)
+
+**Joe's proposed targets (from email synthesis):**
+- Surpass: at HCIQ low benchmark
+- ASCENDRIVE: at 10th percentile
+- National (PP-): at 25th percentile
+
+### Next Step: Build the Heat Map
+Pipeline work to: filter Jul-Dec 2026 expiring contracts → join with HCIQ benchmarks → calculate current percentile position → calculate gap to Joe's proposed targets → quantify dollar-valued pricing opportunity → rank by opportunity size → format as a tight visual deliverable (top 20-30 contracts ranked by dollar gap).
+
+## 2026-03-07 Session
+Created BigQuery-based python pipeline `scripts/export_heat_map.py` to extract Jul-Dec 2026 expiries and apply Joe's percentile targets (Surpass -> HCIQ_Low, AD -> 10th/90_benchmark, National -> 25th/75_benchmark). Total estimated portfolio impact: $415M in annualized savings opportunity. Output formatted and saved as `runs/2026-03-04__portfolio-competitiveness/Contract_Competitive_Heat_Map.xlsx`.
