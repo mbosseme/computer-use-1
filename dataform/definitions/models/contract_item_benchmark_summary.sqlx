@@ -37,7 +37,7 @@ SELECT
   CASE 
     -- Price-to-Quantity UOM mismatch: contract price is per-case but qty is in eaches
     WHEN SUM(t.Base_Spend) > 0 AND SUM(t.Quantity_in_Eaches) > 0
-         AND ((SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) >= 1.5 OR (SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) <= 0.6)
+         AND ((SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) >= 3.0 OR (SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) <= 0.333)
       THEN 'PRICE_QTY_UOM_MISMATCH'
     -- Price-to-Benchmark UOM mismatch (order of magnitude)
     WHEN MAX(b.hciq_50_benchmark) > 0 AND (MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) > 10.0 OR MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) < 0.1) 
@@ -56,7 +56,7 @@ SELECT
     WHEN COALESCE(MAX(b.hciq_50_benchmark), 0) = 0 THEN FALSE
     -- Exclude price-qty UOM mismatches from benchmark coverage
     WHEN SUM(t.Base_Spend) > 0 AND SUM(t.Quantity_in_Eaches) > 0
-         AND ((SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) >= 1.5 OR (SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) <= 0.6)
+         AND ((SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) >= 3.0 OR (SUM(t.Quantity_in_Eaches) * MAX(cibp.Contract_Best_Price)) / SUM(t.Base_Spend) <= 0.333)
       THEN FALSE
     -- Exclude critical UOM mismatches (order of magnitude)
     WHEN MAX(b.hciq_50_benchmark) > 0 AND (MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) > 10.0 OR MAX(cibp.Contract_Best_Price) / MAX(b.hciq_50_benchmark) < 0.1) THEN FALSE
@@ -77,7 +77,7 @@ SELECT
   -- Also guarded against price-qty UOM mismatch: use Base_Spend when price*qty is wildly different from actual
   SUM(CASE 
     WHEN t.Base_Spend > 0 AND t.Quantity_in_Eaches > 0 
-         AND ((t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend >= 1.5 OR (t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend <= 0.6)
+         AND ((t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend >= 3.0 OR (t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend <= 0.333)
     THEN t.Base_Spend
     ELSE t.Quantity_in_Eaches * cibp.Contract_Best_Price 
   END) as Spend_at_Best_Tier
