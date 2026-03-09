@@ -42,7 +42,7 @@ item_gaps AS (
     LEFT JOIN expiration_dates e ON c.Contract_Number = e.Contract_Number
     WHERE 
         c.is_benchmarked = TRUE
-        AND e.Expiration_Date BETWEEN '2026-07-01' AND '2026-12-31'
+        AND e.Expiration_Date BETWEEN '2026-07-01' AND '2027-06-30'
 ),
 item_opportunities AS (
     SELECT
