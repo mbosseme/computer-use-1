@@ -67,11 +67,40 @@ SELECT
   
   -- Benchmark-extended spend (Units * Benchmark Price)
   -- Guarded against BOTH price-benchmark UOM mismatches AND price-quantity UOM mismatches
-  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_low_benchmark END) as Spend_at_Low,
-  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_90_benchmark END) as Spend_at_HCIQ90,
-  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_75_benchmark END) as Spend_at_HCIQ75,
-  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_50_benchmark END) as Spend_at_HCIQ50,
-  SUM(CASE WHEN (b.hciq_50_benchmark > 0 AND (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333)) THEN 0 ELSE t.Quantity_in_Eaches * b.hciq_high_benchmark END) as Spend_at_High,
+  SUM(CASE 
+    WHEN COALESCE(b.hciq_50_benchmark, 0) = 0 THEN NULL
+    WHEN t.Base_Spend > 0 AND t.Quantity_in_Eaches > 0 AND ((t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend >= 3.0 OR (t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend <= 0.333) THEN NULL
+    WHEN (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333) THEN NULL 
+    ELSE t.Quantity_in_Eaches * b.hciq_low_benchmark 
+  END) as Spend_at_Low,
+  
+  SUM(CASE 
+    WHEN COALESCE(b.hciq_50_benchmark, 0) = 0 THEN NULL
+    WHEN t.Base_Spend > 0 AND t.Quantity_in_Eaches > 0 AND ((t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend >= 3.0 OR (t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend <= 0.333) THEN NULL
+    WHEN (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333) THEN NULL 
+    ELSE t.Quantity_in_Eaches * b.hciq_90_benchmark 
+  END) as Spend_at_HCIQ90,
+  
+  SUM(CASE 
+    WHEN COALESCE(b.hciq_50_benchmark, 0) = 0 THEN NULL
+    WHEN t.Base_Spend > 0 AND t.Quantity_in_Eaches > 0 AND ((t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend >= 3.0 OR (t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend <= 0.333) THEN NULL
+    WHEN (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333) THEN NULL 
+    ELSE t.Quantity_in_Eaches * b.hciq_75_benchmark 
+  END) as Spend_at_HCIQ75,
+  
+  SUM(CASE 
+    WHEN COALESCE(b.hciq_50_benchmark, 0) = 0 THEN NULL
+    WHEN t.Base_Spend > 0 AND t.Quantity_in_Eaches > 0 AND ((t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend >= 3.0 OR (t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend <= 0.333) THEN NULL
+    WHEN (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333) THEN NULL 
+    ELSE t.Quantity_in_Eaches * b.hciq_50_benchmark 
+  END) as Spend_at_HCIQ50,
+  
+  SUM(CASE 
+    WHEN COALESCE(b.hciq_50_benchmark, 0) = 0 THEN NULL
+    WHEN t.Base_Spend > 0 AND t.Quantity_in_Eaches > 0 AND ((t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend >= 3.0 OR (t.Quantity_in_Eaches * cibp.Contract_Best_Price) / t.Base_Spend <= 0.333) THEN NULL
+    WHEN (cibp.Contract_Best_Price / b.hciq_50_benchmark > 3.0 OR cibp.Contract_Best_Price / b.hciq_50_benchmark < 0.333) THEN NULL 
+    ELSE t.Quantity_in_Eaches * b.hciq_high_benchmark 
+  END) as Spend_at_High,
   
   -- Actual-extended spend using the BEST PREMIER PRICE we found
   -- Also guarded against price-qty UOM mismatch: use Base_Spend when price*qty is wildly different from actual

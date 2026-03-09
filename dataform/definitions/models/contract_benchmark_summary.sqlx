@@ -19,8 +19,7 @@ WITH agg AS (
     SUM(CASE WHEN is_benchmarked THEN Total_Spend_6mo ELSE 0 END) as Benchmarked_Spend,
     
     -- Rollup benchmark spend vs best tier spend
-    SUM(Spend_at_Best_Tier) as Spend_at_Best_Tier,
-  Target_Spend_Low,
+    SUM(CASE WHEN is_benchmarked THEN Spend_at_Best_Tier ELSE 0 END) as Spend_at_Best_Tier,
     
     -- We map HCIQ column outputs correctly
     SUM(Spend_at_Low) as Target_Spend_Low,

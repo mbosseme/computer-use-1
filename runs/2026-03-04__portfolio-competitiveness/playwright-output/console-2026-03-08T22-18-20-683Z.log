@@ -1,0 +1,79 @@
+[     767ms] [WARNING] [zustand devtools middleware] Please install/enable Redux devtools extension @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/main.vendors.8f0ad6c7.js:0
+[    1072ms] [WARNING] [zustand devtools middleware] Please install/enable Redux devtools extension @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/main.vendors.8f0ad6c7.js:0
+[    1505ms] [WARNING] WARNING: OfficeBrowserFeedback is no longer supporting the host application setting the styles for the surveys. 
+			Please use the default styling. @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/62431.565f0cea.chunk.js:0
+[    2020ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://nam.loki.delve.office.com/api/v2/personaphoto?clientFeature=BizChatCatchup&clientType=Bizchat&personaType=User&smtp=UdayKumar_Kapu%40PremierInc.com:0
+[    2150ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ https://m365.cloud.microsoft/chat:0
+[   34018ms] [WARNING] Virtualizer index less than zero, cannot render child rows @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:0
+[   34022ms] [WARNING] Virtualizer index less than zero, cannot update child array @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:0
+[   34024ms] [WARNING] Virtualizer index less than zero, cannot render child rows @ https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:0
+[   36455ms] [WARNING] Some icons were re-registered. Applications should only call registerIcons for any given icon once. Redefining what an icon is may have unintended consequences. Duplicates include: 
+vNextContactCard, vNextOpen @ https://res-1.cdn.office.net/midgard/versionless/livepersonacard_with-react_024a7cf197d6f87d2fc0.js:1
+[  409067ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)
+[  414065ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)
+[  419066ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)
+[  508020ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)
+[  856081ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)
+[  857732ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)
+[  862733ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)
+[  914406ms] [ERROR] Access to XMLHttpRequest at 'https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009214849&time-delta-to-apply-millis=338' from origin 'https://m365.cloud.microsoft' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://m365.cloud.microsoft/chat/conversation/a0d39f5e-83f6-45cc-a58b-8c1c59dea028:0
+[  914406ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009214849&time-delta-to-apply-millis=338:0
+[  914644ms] [ERROR] Access to XMLHttpRequest at 'https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009215074&time-delta-to-apply-millis=338' from origin 'https://m365.cloud.microsoft' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://m365.cloud.microsoft/chat/conversation/a0d39f5e-83f6-45cc-a58b-8c1c59dea028:0
+[  914644ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009215074&time-delta-to-apply-millis=338:0
+[  917434ms] [ERROR] Access to XMLHttpRequest at 'https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009218021&time-delta-to-apply-millis=338' from origin 'https://m365.cloud.microsoft' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://m365.cloud.microsoft/chat/conversation/a0d39f5e-83f6-45cc-a58b-8c1c59dea028:0
+[  917434ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009218021&time-delta-to-apply-millis=338:0
+[  918199ms] [ERROR] Access to XMLHttpRequest at 'https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009218786&time-delta-to-apply-millis=338' from origin 'https://m365.cloud.microsoft' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://m365.cloud.microsoft/chat/conversation/a0d39f5e-83f6-45cc-a58b-8c1c59dea028:0
+[  918199ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009218786&time-delta-to-apply-millis=338:0
+[  922439ms] [ERROR] Access to XMLHttpRequest at 'https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009223000&time-delta-to-apply-millis=338' from origin 'https://m365.cloud.microsoft' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://m365.cloud.microsoft/chat/conversation/a0d39f5e-83f6-45cc-a58b-8c1c59dea028:0
+[  922439ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009223000&time-delta-to-apply-millis=338:0
+[  922617ms] [ERROR] Access to XMLHttpRequest at 'https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009223015&time-delta-to-apply-millis=338' from origin 'https://m365.cloud.microsoft' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://m365.cloud.microsoft/chat/conversation/a0d39f5e-83f6-45cc-a58b-8c1c59dea028:0
+[  922617ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009223015&time-delta-to-apply-millis=338:0
+[  924989ms] [ERROR] Access to XMLHttpRequest at 'https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009225577&time-delta-to-apply-millis=338' from origin 'https://m365.cloud.microsoft' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://m365.cloud.microsoft/chat/conversation/a0d39f5e-83f6-45cc-a58b-8c1c59dea028:0
+[  924989ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://browser.pipe.aria.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.6&x-apikey=91e6bb9f0cc74e2d8c7f29478edfb940-0177707a-c79c-405a-802e-05ed1b85896a-6986&client-time-epoch-millis=1773009225577&time-delta-to-apply-millis=338:0
+[  939043ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)
+[  942927ms] TypeError: a.hasAttribute is not a function
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217105
+    at Array.filter (<anonymous>)
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:217002
+    at https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219135
+    at MutationObserver.<anonymous> (https://res.public.onecdn.static.microsoft/midgard/versionless-v2/m365chat-copilot-responsesection.1a622b82.chunk.js:1:219887)

@@ -1,0 +1,86 @@
+{
+  "reconciliation": {
+    "total_spend_item_drilldown": 8574648895.200999,
+    "total_spend_contract_summary": 8574648895.200999,
+    "total_spend_program_summary": null,
+    "item_vs_contract_diff": 0.0
+  },
+  "benchmark_integrity": {
+    "total_benchmarked_rows": 115172,
+    "rows_missing_or_zero_benchmark": 0,
+    "spend_with_missing_benchmark": 0.0
+  },
+  "uom_outliers": {
+    "total_uom_outlier_rows": 0,
+    "spend_with_uom_outliers": 0.0,
+    "pct_spend_flagged_as_uom": 0.0
+  },
+  "implausible_savings_contracts_gt_50pct": {
+    "count_implausible_contracts": 8,
+    "total_implausible_spend": 26248827.884,
+    "top_offenders": [
+      {
+        "contract_number": "PP-CA-612",
+        "total_spend": 13947259.3,
+        "spend_at_best_tier": 32431822.0,
+        "target_spend_50th": 14457029.5,
+        "savings_pct": 0.5542332003425524
+      },
+      {
+        "contract_number": "PP-CA-591",
+        "total_spend": 1992801.039999999,
+        "spend_at_best_tier": 4512725.0,
+        "target_spend_50th": 2171092.0,
+        "savings_pct": 0.5188955675340288
+      },
+      {
+        "contract_number": "PP-CA-583",
+        "total_spend": 2024831.91,
+        "spend_at_best_tier": 2376189.4,
+        "target_spend_50th": 1004375.0,
+        "savings_pct": 0.577316942832924
+      },
+      {
+        "contract_number": "PP-CA-610",
+        "total_spend": 5650724.24,
+        "spend_at_best_tier": 1924340.0,
+        "target_spend_50th": 647658.75,
+        "savings_pct": 0.6634385035908416
+      },
+      {
+        "contract_number": "PP-CA-696",
+        "total_spend": 1433693.27,
+        "spend_at_best_tier": 375492.0,
+        "target_spend_50th": 171677.943,
+        "savings_pct": 0.5427920088843438
+      },
+      {
+        "contract_number": "AD-OR-1964",
+        "total_spend": 517330.1550000001,
+        "spend_at_best_tier": 4662.839999999998,
+        "target_spend_50th": 1555.26,
+        "savings_pct": 0.6664564943253466
+      },
+      {
+        "contract_number": "PP-OR-1964",
+        "total_spend": 604208.0820000002,
+        "spend_at_best_tier": 4091.880000000001,
+        "target_spend_50th": 1364.82,
+        "savings_pct": 0.6664564943253469
+      },
+      {
+        "contract_number": "PP-LA-679",
+        "total_spend": 77979.887,
+        "spend_at_best_tier": 3874.5700056,
+        "target_spend_50th": 1586.088,
+        "savings_pct": 0.5906415427498812
+      }
+    ]
+  },
+  "overall_shape": {
+    "total_contracts": 1781,
+    "total_items": 198375,
+    "total_spend_at_best_tier": 7219982663.843487,
+    "total_target_spend_50th": 9097370566.96146
+  }
+}

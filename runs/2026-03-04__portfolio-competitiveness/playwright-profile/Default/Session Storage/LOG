@@ -1,8 +1,3 @@
-2026/03/04-20:55:53.943 709a96 Creating DB /Users/matt_bossemeyer/Projects/wt-2026-03-04__portfolio-competitiveness/runs/2026-03-04__portfolio-competitiveness/playwright-profile/Default/Session Storage since it was missing.
-2026/03/04-20:55:53.950 709a96 Reusing MANIFEST /Users/matt_bossemeyer/Projects/wt-2026-03-04__portfolio-competitiveness/runs/2026-03-04__portfolio-competitiveness/playwright-profile/Default/Session Storage/MANIFEST-000001
-2026/03/04-21:01:37.585 709a9d Level-0 table #5: started
-2026/03/04-21:01:37.590 709a9d Level-0 table #5: 68158 bytes OK
-2026/03/04-21:01:37.591 709a9d Delete type=0 #3
-2026/03/04-21:01:50.564 709a9d Level-0 table #7: started
-2026/03/04-21:01:50.567 709a9d Level-0 table #7: 69412 bytes OK
-2026/03/04-21:01:50.576 709a9d Delete type=0 #4
+2026/03/08-18:18:21.410 3f90e6 Reusing MANIFEST /Users/matt_bossemeyer/Projects/wt-2026-03-04__portfolio-competitiveness/runs/2026-03-04__portfolio-competitiveness/playwright-profile/Default/Session Storage/MANIFEST-000001
+2026/03/08-18:18:21.412 3f90e6 Recovering log #13
+2026/03/08-18:18:21.413 3f90e6 Reusing old log /Users/matt_bossemeyer/Projects/wt-2026-03-04__portfolio-competitiveness/runs/2026-03-04__portfolio-competitiveness/playwright-profile/Default/Session Storage/000013.log 

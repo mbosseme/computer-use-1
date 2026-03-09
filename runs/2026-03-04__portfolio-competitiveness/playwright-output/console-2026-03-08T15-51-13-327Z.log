@@ -1,0 +1,3 @@
+[     771ms] [ERROR] [Microsoft_Azure_CreateUIDef]  11:51:14 AM MsPortalFx.Base.Diagnostics.Telemetry MsPortalFx.Base.Diagnostics.Telemetry: Telemetry data length exceeded the maximum size of 15000. (ViewPropertyUsageByDxBlade) {error: Object} {originalEvent: Object, serializedSize: 20234} @ https://portal.azure.com/Content/Dynamic/Dzkgqd4Ddgq1.js:0
+[  178691ms] [WARNING] Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'. @ :0
+[  178691ms] [WARNING] Error with Permissions-Policy header: Unrecognized feature: 'battery'. @ :0

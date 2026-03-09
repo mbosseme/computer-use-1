@@ -12,7 +12,7 @@ SELECT
   IF(SUM(Contract_Total_Spend) > 0, SUM(Benchmarked_Spend) / SUM(Contract_Total_Spend), 0) as Benchmark_Coverage_Pct,
   SUM(Spend_at_Best_Tier) as Total_Spend_at_Best_Tier,
   AVG(Estimated_Percentile_Linear) as Avg_Program_Percentile,
-  SUM(Estimated_Percentile_Linear * Contract_Total_Spend) / NULLIF(SUM(CASE WHEN Estimated_Percentile_Linear IS NOT NULL THEN Contract_Total_Spend ELSE 0 END), 0) as Weighted_Avg_Program_Percentile
+  SUM(Estimated_Percentile_Linear * Benchmarked_Spend) / NULLIF(SUM(CASE WHEN Estimated_Percentile_Linear IS NOT NULL THEN Benchmarked_Spend ELSE 0 END), 0) as Weighted_Avg_Program_Percentile
 FROM ${ref("contract_benchmark_summary")}
 GROUP BY Portfolio
 ORDER BY 
