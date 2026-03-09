@@ -18,6 +18,7 @@ SELECT
   -- Spend and Volume from transactions
   SUM(t.Quantity_in_Eaches) as Total_Units_6mo,
   SUM(t.Base_Spend) as Total_Spend_6mo,
+  SAFE_DIVIDE(SUM(t.Base_Spend), SUM(t.Quantity_in_Eaches)) as Average_Purchase_Price_6mo,
   
   -- The tier description & best price used
   MAX(cibp.Contract_Best_Tier_Description) as contract_best_tier_description,

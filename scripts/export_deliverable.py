@@ -82,6 +82,7 @@ def extract_to_excel(project_id, dataset_id, run_id):
         Product_Description,
         Total_Units_6mo,
         Total_Spend_6mo,
+        Average_Purchase_Price_6mo,
         contract_best_tier_description,
         contract_best_price,
         UOM_Outlier_Flag,

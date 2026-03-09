@@ -220,3 +220,35 @@ Pipeline work to: filter Jul-Dec 2026 expiring contracts → join with HCIQ benc
 
 ## 2026-03-07 Session
 Created BigQuery-based python pipeline `scripts/export_heat_map.py` to extract Jul-Dec 2026 expiries and apply Joe's percentile targets (Surpass -> HCIQ_Low, AD -> 10th/90_benchmark, National -> 25th/75_benchmark). Total estimated portfolio impact: $415M in annualized savings opportunity. Output formatted and saved as `runs/2026-03-04__portfolio-competitiveness/Contract_Competitive_Heat_Map.xlsx`.
+
+## 2026-03-09 Wrap-Up (QA Defect Fixes & Agent Generalization)
+
+- **Pipeline Math Corrections (Dataform)**: Addressed critical aggregation anomalies identified by the Skeptical QA Agent.
+  - *Zero-Dollar Target Masking*: Nullified extended targets where benchmarks were $0.00 to prevent artificial 100% savings inflation (`contract_item_benchmark_summary.sqlx`).
+  - *UOM Mismatches*: Enforced bounding thresholds (0.33x -> 3.0x). Transactions outside logic bounds are now explicitly `NULL`ed instead of blowing up Multi-Million dollar variances.
+  - *Program Summary Weighting*: Weighted average percentiles mapped firmly against `Benchmarked_Spend` instead of the unfiltered denominator (`program_benchmark_summary.sqlx`).
+- **Deliverable Enhancements**:
+  - Inserted `Average_Purchase_Price_6mo` into Tab C so hospital purchasing values can be immediately cross-referenced against `contract_best_price` and outlier flags.
+  - Completely rewrote Dataform Methodology (`METHODOLOGY.md`) to explicitly document the zero-dollar masking, UOM outlier guarding, and weighted benchmark subsets. 
+  - Rendered fresh `HCIQ_Benchmark_Analysis_Deliverable.xlsx`.
+- **System Architecture**: Promoted the one-off interpreter agent into a permanent, mult-tree capability.
+  - Created `tools/validation_agent/runner.py` with parameter-based CLI architecture.
+  - Implemented persistent QA learning memory (`tools/validation_agent/known_traps.md`).
+  - Authored `.github/skills/out-of-band-validation/SKILL.md`.
+  - Merged cleanly back to `main` via core promotion PR and synced back to `run/2026-03-04__portfolio-competitiveness`.
+
+## 2026-03-09 Wrap-Up (QA Defect Fixes & Agent Generalization)
+
+- **Pipeline Math Corrections (Dataform)**: Addressed critical aggregation anomalies identified by the Skeptical QA Agent.
+  - *Zero-Dollar Target Masking*: Nullified extended targets where benchmarks were $0.00 to prevent artificial 100% savings inflation (`contract_item_benchmark_summary.sqlx`).
+  - *UOM Mismatches*: Enforced bounding thresholds (0.33x -> 3.0x). Transactions outside logic bounds are now explicitly `NULL`ed instead of blowing up Multi-Million dollar variances.
+  - *Program Summary Weighting*: Weighted average percentiles mapped firmly against `Benchmarked_Spend` instead of the unfiltered denominator (`program_benchmark_summary.sqlx`).
+- **Deliverable Enhancements**:
+  - Inserted `Average_Purchase_Price_6mo` into Tab C so hospital purchasing values can be immediately cross-referenced against `contract_best_price` and outlier flags.
+  - Completely rewrote Dataform Methodology (`METHODOLOGY.md`) to explicitly document the zero-dollar masking, UOM outlier guarding, and weighted benchmark subsets. 
+  - Rendered fresh `HCIQ_Benchmark_Analysis_Deliverable.xlsx`.
+- **System Architecture**: Promoted the one-off interpreter agent into a permanent, mult-tree capability.
+  - Created `tools/validation_agent/runner.py` with parameter-based CLI architecture.
+  - Implemented persistent QA learning memory (`tools/validation_agent/known_traps.md`).
+  - Authored `.github/skills/out-of-band-validation/SKILL.md`.
+  - Merged cleanly back to `main` via core promotion PR and synced back to `run/2026-03-04__portfolio-competitiveness`.
