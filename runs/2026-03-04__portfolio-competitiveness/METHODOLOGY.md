@@ -29,6 +29,8 @@ Provide an executive-level benchmark positioning that maps 6 months of transacti
 - **Tab A (Contract Summary)**: Aggregated item-level spend to the contract level. Contracts were assigned a `Percentile_Bucket` based on where the `Spend_at_Best_Tier` fell along the HCIQ target spend curve.
   - **Buckets**: `<=10th`, `10-25`, `25-50`, `50-90`, `>=90th`.
   - **Estimated Percentile (Linear)**: Used linear interpolation between the benchmark spend tiers to estimate an exact percentile metric.
+- **Program Summary Weighting**: When aggregating metrics to the broader Program portfolio level (National, Ascend Drive, Surpass), the average percentile is weighted entirely against **Benchmarked Spend** (the volume of spend explicitly successfully mapped to HCIQ benchmark items), ignoring unknown un-benchmarked items to prevent dilution.
+
 
 ## 6. QA Flags and Coverage
 - **Coverage Minimum**: Identified contracts where total spend matching an HCIQ benchmark accounted for fewer than 80% of total spend. Flagged as `LOW_COVERAGE`.
