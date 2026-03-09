@@ -1,0 +1,33 @@
+Compiling...
+
+[32mCompiled successfully.
+[0m
+Running...
+
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_6mo[0m [view] 
+ 	 jobId: dataform-9b346c3e-20f5-4951-b768-d784677775a0,
+ 	 Bytes billed: 0 B
+[32mTable created: [0m [36mdataform_hciq.received_benchmarks_stg[0m [table] 
+ 	 jobId: dataform-ade0c660-bfae-4580-a8b8-76c90750876c,
+ 	 Bytes billed: 324.00 MiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_best_price[0m [table] 
+ 	 jobId: dataform-cc95c86c-f236-480c-a0b6-e7dbdf37f350,
+ 	 Bytes billed: 9.78 GiB
+[32mTable created: [0m [36mdataform_hciq.facility_program_map[0m [table] 
+ 	 jobId: dataform-1cf57b36-b661-48d5-a5bd-f92e1bed9593,
+ 	 Bytes billed: 4.37 GiB
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_mapped[0m [table] 
+ 	 jobId: dataform-6e73934b-9292-48d5-8994-aeefd4ec46fc,
+ 	 Bytes billed: 14.93 GiB
+[32mOperation completed successfully: [0m [36mdataform_hciq.received_benchmarks_stg_add_refnum[0m 
+ 	 jobId: dataform-be6a0b21-d7f4-435e-ba9f-d83d733e64ca,
+ 	 Bytes billed: 14.64 GiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_benchmark_summary[0m [table] 
+ 	 jobId: dataform-ba89f121-c75c-4369-8b87-803807522189,
+ 	 Bytes billed: 12.39 GiB
+[32mTable created: [0m [36mdataform_hciq.contract_benchmark_summary[0m [table] 
+ 	 jobId: dataform-daeeb119-87c9-48ad-ab47-9693d539ebc7,
+ 	 Bytes billed: 46.00 MiB
+[32mTable created: [0m [36mdataform_hciq.program_benchmark_summary[0m [table] 
+ 	 jobId: dataform-ee848e25-c6bf-4966-9de6-c7129feb0570,
+ 	 Bytes billed: 10.00 MiB

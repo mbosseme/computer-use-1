@@ -1,0 +1,142 @@
+Compiling...
+
+[32mCompiled successfully.
+[0m
+Running...
+
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_6mo[0m [view] 
+ 	 jobId: dataform-6b4630a1-4504-44c8-83f4-bf48a0f89d62,
+ 	 Bytes billed: 0 B
+[32mTable created: [0m [36mdataform_hciq.contract_item_best_price[0m [table] 
+ 	 jobId: dataform-3166876c-446d-431d-a338-c7871d3bec64,
+ 	 Bytes billed: 9.78 GiB
+[32mTable created: [0m [36mdataform_hciq.facility_program_map[0m [table] 
+ 	 jobId: dataform-e8d7e6f8-8e3d-4154-9787-a4d0573c976f,
+ 	 Bytes billed: 4.37 GiB
+[32mTable created: [0m [36mdataform_hciq.received_benchmarks_stg[0m [table] 
+ 	 jobId: dataform-265f1e27-bd50-46ef-9902-ada529d3ed2c,
+ 	 Bytes billed: 324.00 MiB
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_mapped[0m [table] 
+ 	 jobId: dataform-3c23ced6-cf0c-4766-8fdb-a14231591966,
+ 	 Bytes billed: 14.93 GiB
+[32mOperation completed successfully: [0m [36mdataform_hciq.received_benchmarks_stg_add_refnum[0m 
+ 	 jobId: dataform-35644573-c980-49a8-8bfd-368d68a71fa4,
+ 	 Bytes billed: 14.64 GiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_benchmark_summary[0m [table] 
+ 	 jobId: dataform-9a376373-505d-4a91-988f-b9d39ee53161,
+ 	 Bytes billed: 12.39 GiB
+[91mDataset creation failed: [0m [36mdataform_hciq.contract_benchmark_summary[0m [table] 
+ 	 jobId: dataform-251f6c99-04ce-4860-a367-4707e43dc739,
+ 	 Bytes billed: 0 B
+  > create or replace table `matthew-bossemeyer.dataform_hciq.contract_benchmark_summary` as 
+  > 
+  > WITH agg AS (
+  >   SELECT
+  >     Contract_Number,
+  >     MAX(Contract_Name) as Contract_Name,
+  >     APPROX_TOP_COUNT(Contracted_Supplier, 1)[OFFSET(0)].value as Contracted_Supplier,
+  >     MAX(Portfolio_Prefix) as Portfolio_Prefix,
+  >     
+  >     SUM(Total_Units_6mo) as Contract_Total_Units,
+  >     SUM(Total_Spend_6mo) as Contract_Total_Spend,
+  >     
+  >     -- Coverage stats
+  >     SUM(CASE WHEN is_benchmarked THEN Total_Units_6mo ELSE 0 END) as Benchmarked_Units,
+  >     SUM(CASE WHEN is_benchmarked THEN Total_Spend_6mo ELSE 0 END) as Benchmarked_Spend,
+  >     
+  >     -- Rollup benchmark spend vs best tier spend
+  >     SUM(CASE WHEN is_benchmarked THEN Spend_at_Best_Tier ELSE 0 END) as Spend_at_Best_Tier,
+  >   Target_Spend_Low,
+  >     
+  >     -- We map HCIQ column outputs correctly
+  >     SUM(Spend_at_Low) as Target_Spend_Low,
+  >     SUM(Spend_at_HCIQ90) as Target_Spend_90th,
+  >     SUM(Spend_at_HCIQ75) as Target_Spend_75th,
+  >     SUM(Spend_at_HCIQ50) as Target_Spend_50th,
+  >     SUM(Spend_at_High)   as Target_Spend_High,
+  >     
+  >     -- Pick arbitrary example of the price used for spot check
+  >     MAX(contract_best_price) as sample_contract_best_price,
+  >     MAX(contract_best_tier_description) as best_tier_description,
+  >     MAX(CAST(flag_multiple_best_prices AS INT64)) as has_multiple_best_prices
+  >   FROM `matthew-bossemeyer.dataform_hciq.contract_item_benchmark_summary`
+  >   GROUP BY 1
+  > )
+  > 
+  > SELECT
+  >   Contract_Number,
+  >   Contract_Name,
+  >   Contracted_Supplier,
+  >   CASE 
+  >     WHEN Portfolio_Prefix = 'PP' THEN 'National'
+  >     WHEN Portfolio_Prefix = 'AD' THEN 'Ascend Drive'
+  >     WHEN Portfolio_Prefix = 'SP' THEN 'Surpass'
+  >     ELSE 'Unknown'
+  >   END as Portfolio,
+  >   
+  >   Contract_Total_Spend,
+  >   Contract_Total_Units,
+  >   Benchmarked_Spend,
+  >   
+  >   -- Coverage metrics
+  >   IF(Contract_Total_Spend > 0, Benchmarked_Spend / Contract_Total_Spend, 0) as Benchmark_Coverage_Pct,
+  >   
+  >   Spend_at_Best_Tier,
+  >   Target_Spend_Low,
+  >   Target_Spend_90th,
+  >   Target_Spend_75th,
+  >   Target_Spend_50th,
+  >   Target_Spend_High,
+  >   
+  >   -- Percentile Bucketing
+  >   CASE
+  >     WHEN Spend_at_Best_Tier <= Target_Spend_Low THEN 'Best in Market'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_Low AND Spend_at_Best_Tier <= Target_Spend_90th THEN '90th-Best'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_90th AND Spend_at_Best_Tier <= Target_Spend_75th THEN '75th-90th'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_75th AND Spend_at_Best_Tier <= Target_Spend_50th THEN '50th-75th'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_50th AND Spend_at_Best_Tier <= Target_Spend_High THEN '25th-50th'
+  >     WHEN Spend_at_Best_Tier > Target_Spend_High THEN '<25th'
+  >     ELSE 'Unknown'
+  >   END as Percentile_Bucket,
+  >   
+  >   -- Rough Interpolation (Estimated Percentile where Higher = Better/Lower Cost)
+  >   CASE
+  >     WHEN Spend_at_Best_Tier <= Target_Spend_Low THEN 99.0
+  >     WHEN Spend_at_Best_Tier > Target_Spend_Low AND Spend_at_Best_Tier <= Target_Spend_90th
+  >       THEN 99.0 - (9.0 * ((Spend_at_Best_Tier - Target_Spend_Low) / NULLIF(Target_Spend_90th - Target_Spend_Low, 0)))
+  >     WHEN Spend_at_Best_Tier > Target_Spend_90th AND Spend_at_Best_Tier <= Target_Spend_75th
+  >       THEN 90.0 - (15.0 * ((Spend_at_Best_Tier - Target_Spend_90th) / NULLIF(Target_Spend_75th - Target_Spend_90th, 0)))
+  >     WHEN Spend_at_Best_Tier > Target_Spend_75th AND Spend_at_Best_Tier <= Target_Spend_50th
+  >       THEN 75.0 - (25.0 * ((Spend_at_Best_Tier - Target_Spend_75th) / NULLIF(Target_Spend_50th - Target_Spend_75th, 0)))
+  >     WHEN Spend_at_Best_Tier > Target_Spend_50th AND Spend_at_Best_Tier <= Target_Spend_High
+  >       THEN 50.0 - (25.0 * ((Spend_at_Best_Tier - Target_Spend_50th) / NULLIF(Target_Spend_High - Target_Spend_50th, 0)))
+  >     WHEN Spend_at_Best_Tier > Target_Spend_High THEN 10.0
+  >     ELSE NULL
+  >   END as Estimated_Percentile_Linear,
+  >   
+  >   -- QA Flags
+  >   CASE 
+  >     WHEN IF(Contract_Total_Spend > 0, Benchmarked_Spend / Contract_Total_Spend, 0) < 0.8 THEN 'LOW_COVERAGE' 
+  >     ELSE 'OK' 
+  >   END as Flag_Coverage,
+  >   
+  >   CASE 
+  >     WHEN has_multiple_best_prices > 0 THEN 'MULTIPLE_BEST_PRICES'
+  >     ELSE 'OK'
+  >   END as Flag_Ambiguity,
+  >   
+  >   best_tier_description
+  > FROM agg
+  [91mbigquery error: Unrecognized name: Target_Spend_Low at [19:3][0m
+[93mSkipping dataset creation: [0m [36mdataform_hciq.program_benchmark_summary[0m [table]
+/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Connecting to BigQuery...
+Exporting data to Excel...
+Executing queries...
+Tab A loaded: 3 rows.
+Tab B loaded: 1781 rows.
+Tab C loaded: 198270 rows.
+Tab D loaded: 911 rows.
+Writing to runs/2026-03-04__portfolio-competitiveness/HCIQ_Benchmark_Analysis_Deliverable.xlsx...
+Done! ✅

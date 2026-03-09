@@ -1,0 +1,51 @@
+Compiling...
+
+[32mCompiled successfully.
+[0m
+Running...
+
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_6mo[0m [view] 
+ 	 jobId: dataform-ab43e4d0-aaad-4fd4-9dd8-de8a63f4cfa2,
+ 	 Bytes billed: 0 B
+[32mTable created: [0m [36mdataform_hciq.received_benchmarks_stg[0m [table] 
+ 	 jobId: dataform-3dff37a8-db69-470d-bee8-b36ceaaf1c11,
+ 	 Bytes billed: 324.00 MiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_best_price[0m [table] 
+ 	 jobId: dataform-56d4e672-54f7-49fb-bd94-60c05fc32958,
+ 	 Bytes billed: 9.78 GiB
+[32mTable created: [0m [36mdataform_hciq.facility_program_map[0m [table] 
+ 	 jobId: dataform-a65f887f-63be-4321-9440-3689ea2b4378,
+ 	 Bytes billed: 4.37 GiB
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_mapped[0m [table] 
+ 	 jobId: dataform-4a599bef-48f6-4c7a-82cf-7e52e88b1668,
+ 	 Bytes billed: 14.93 GiB
+[93mSkipping dataset creation: [0m [36mdataform_hciq.contract_benchmark_summary[0m [table]
+[93mSkipping dataset creation: [0m [36mdataform_hciq.contract_item_benchmark_summary[0m [table]
+[93mSkipping dataset creation: [0m [36mdataform_hciq.program_benchmark_summary[0m [table]
+/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Connecting to BigQuery...
+Exporting data to Excel...
+Executing queries...
+Tab A loaded: 3 rows.
+Tab B loaded: 1781 rows.
+Traceback (most recent call last):
+  File "/Users/matt_bossemeyer/Projects/wt-2026-03-04__portfolio-competitiveness/scripts/export_deliverable.py", line 215, in <module>
+    extract_to_excel(project_id, dataset_id, run_id)
+  File "/Users/matt_bossemeyer/Projects/wt-2026-03-04__portfolio-competitiveness/scripts/export_deliverable.py", line 147, in extract_to_excel
+    df_c = client.query(tab_c_query).to_dataframe()
+  File "/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/google/cloud/bigquery/job/query.py", line 2084, in to_dataframe
+    return query_result.to_dataframe(
+  File "/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/google/cloud/bigquery/table.py", line 2660, in to_dataframe
+    record_batch = self.to_arrow(
+  File "/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/google/cloud/bigquery/table.py", line 2209, in to_arrow
+    for record_batch in self.to_arrow_iterable(
+  File "/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/google/cloud/bigquery/table.py", line 2054, in _to_page_iterable
+    yield from result_pages
+  File "/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/google/cloud/bigquery/_pandas_helpers.py", line 1009, in _download_table_bqstorage
+    frame = worker_queue.get(timeout=_PROGRESS_INTERVAL)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 316, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

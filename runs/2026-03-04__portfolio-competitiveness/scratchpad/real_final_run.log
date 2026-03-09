@@ -1,0 +1,49 @@
+Compiling...
+
+[32mCompiled successfully.
+[0m
+Running...
+
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_6mo[0m [view] 
+ 	 jobId: dataform-7f5685bc-b0c1-4b07-b3b2-8416454e5848,
+ 	 Bytes billed: 0 B
+[32mTable created: [0m [36mdataform_hciq.received_benchmarks_stg[0m [table] 
+ 	 jobId: dataform-fa7b5b08-e8ba-4e6c-8dc6-a29b39fb4eac,
+ 	 Bytes billed: 324.00 MiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_best_price[0m [table] 
+ 	 jobId: dataform-02516272-15a6-4d1b-b4a8-dd56a2688974,
+ 	 Bytes billed: 9.78 GiB
+[32mTable created: [0m [36mdataform_hciq.facility_program_map[0m [table] 
+ 	 jobId: dataform-b7bc5720-f89b-485c-b418-2ed9ec76f274,
+ 	 Bytes billed: 4.37 GiB
+[32mTable created: [0m [36mdataform_hciq.transaction_analysis_mapped[0m [table] 
+ 	 jobId: dataform-eb641057-74dd-4cc9-a092-674e76453fea,
+ 	 Bytes billed: 14.93 GiB
+[32mOperation completed successfully: [0m [36mdataform_hciq.received_benchmarks_stg_add_refnum[0m 
+ 	 jobId: dataform-7bea1a6d-618d-4500-996f-3b4ddbd3f095,
+ 	 Bytes billed: 14.64 GiB
+[32mTable created: [0m [36mdataform_hciq.contract_item_benchmark_summary[0m [table] 
+ 	 jobId: dataform-777a4e28-1ca0-448b-9658-c6f3c3472bc1,
+ 	 Bytes billed: 12.39 GiB
+[32mTable created: [0m [36mdataform_hciq.contract_benchmark_summary[0m [table] 
+ 	 jobId: dataform-4cfd2e0b-82f6-485d-8593-4c1fe86178ba,
+ 	 Bytes billed: 46.00 MiB
+[32mTable created: [0m [36mdataform_hciq.program_benchmark_summary[0m [table] 
+ 	 jobId: dataform-2a5e2421-5407-4611-90f7-3857ee552fff,
+ 	 Bytes billed: 10.00 MiB
+/Users/matt_bossemeyer/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Connecting to BigQuery...
+Exporting data to Excel...
+Executing queries...
+Tab A loaded: 3 rows.
+Tab B loaded: 1782 rows.
+Tab C loaded: 198270 rows.
+Tab D loaded: 942 rows.
+Writing to runs/2026-03-04__portfolio-competitiveness/HCIQ_Benchmark_Analysis_Deliverable.xlsx...
+Done! ✅
+Running Dataform...
+Dataform OK.
+
+Running Export...
+Export OK.
