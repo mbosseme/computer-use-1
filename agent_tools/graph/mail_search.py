@@ -71,6 +71,7 @@ def search_messages(
     client: GraphAPIClient,
     *,
     query: str,
+    auto_escape: bool = True,
     folder: Optional[str] = None,
     top: int = 50,
     select: Optional[str] = None,
@@ -86,6 +87,8 @@ def search_messages(
         client: Authenticated GraphAPIClient.
         query: OData ``$search`` expression.  Wrap phrases in double-quotes
             inside the string, e.g. ``'"McKinsey" AND "sample"'``.
+        auto_escape: If True, automatically wrap the query in double-quotes 
+            if it lacks them, preventing KQL 400 BadRequest syntax errors from hyphens and special chars.
         folder: Optional mail folder ID or well-known name (e.g.
             ``"SentItems"``, ``"Inbox"``).  If None, searches the entire
             mailbox (``me/messages``).
@@ -97,6 +100,9 @@ def search_messages(
     Returns:
         List of message dicts sorted by receivedDateTime descending.
     """
+    if auto_escape and not query.startswith('"'):
+        query = f'"{query}"'
+
     if folder:
         path = f"me/mailFolders/{folder}/messages"
     else:
@@ -507,3 +513,15 @@ def get_latest_human_reply(
         return msg
         
     return None
+
+def get_clean_body(msg: Dict[str, Any]) -> str:
+    """Helper to extract and clean the HTML body content from a message dict."""
+    body_payload = msg.get("body", {})
+    if isinstance(body_payload, dict) and body_payload.get("content"):
+        return html_to_text(body_payload["content"])
+        
+    unique_payload = msg.get("uniqueBody", {})
+    if isinstance(unique_payload, dict) and unique_payload.get("content"):
+        return html_to_text(unique_payload["content"])
+        
+    return msg.get("bodyPreview", "")

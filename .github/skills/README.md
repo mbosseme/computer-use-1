@@ -23,6 +23,7 @@ This directory contains reusable "skills" (workflows, heuristics, and recovery r
 - **[pptx-deck-generation](pptx-deck-generation/SKILL.md)**: **(Start here for presentations)** Build branded PowerPoint decks with python-pptx, charts, and PDF export.
 
 ### Email & Integrations
+- **[ms-graph-api](ms-graph-api/SKILL.md)**: **(Start here for MS Graph API)** Interacting safely with the Microsoft Graph API using the local agent wrappers (emails, searching, attachments). Crucial for KQL escaping, exact kwargs, and body parsing.
 - **[graph-email-search](graph-email-search/SKILL.md)**: Microsoft Graph mail search/export patterns (SentItems, $filter → $search fallback, paging, safety).
 - **[graph-calendar-scheduling](graph-calendar-scheduling/SKILL.md)**: Read calendars, find availability, and analyze meeting history (default guardrail: schedule only Mon–Fri, 08:30–16:30 Eastern unless user explicitly overrides).
 - **[tools/graph](../../tools/graph/README.md)**: Reusable Graph CLI utilities for mutual slot finding and structured draft-email creation.
