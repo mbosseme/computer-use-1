@@ -266,3 +266,10 @@ Created BigQuery-based python pipeline `scripts/export_heat_map.py` to extract J
   - Acknowledged and tabled the "recent contract launch" nuance for later manager-level rollouts.
   - User successfully verified and sent the communication. 
 - **Workspace Status**: Ready for the next phase, which will likely involve fielding subsequent feedback from Joe or pivoting to cut these dashboards down for individual contract managers.
+
+## 2026-03-09 Session 3: Data Grain Restructuring & Workspace Cleanup
+- **Categorical Collision Fixed**: Traced missing ~$35M CRM savings volume to an alphabetical grouping tie-breaker under multi-category contract `PP-CA-659`. 
+- **Refactored Data Exports**: Consolidated disparate BigQuery export scripts into a single golden source (`scripts/export_heat_map.py`) that strictly groups by `Contract_Name` and uses `ARRAY_AGG` to identify the dominant supplier accurately. This outputs `Contract_Competitive_Heat_Map_All_Programs_and_Categories.xlsx`.
+- **Refined Chart Visualization**: Enhanced `generate_opportunity_viz.py` so it accepts the new unified heat map data, generates both All Programs (`Opportunity_Timing_Bubble_Chart_All_Programs.png`) and National-only versions, explicitly excludes Orthopedic Trauma visually, and labels bubbles cleanly by category without misleading single-supplier associations.
+- **Workspace Cleanup**: Deleted an excess of exploratory QA scripts (`test_crm*.py`, `check_*.py`), superseded `.xlsx` and `.png` drafts, and localized documentation tools, leaving a streamlined root run directory focused aggressively on current state charts and valid templates.
+- **Future Ready**: Core dataform architecture remains untouched; the python extraction layer is heavily standardized; run states committed; workspace is clean.
