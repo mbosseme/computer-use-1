@@ -32,7 +32,7 @@ This repo configures Playwright MCP out of the box; additional MCP servers (e.g.
 ## Azure OpenAI (GPT-5.4)
 - Guide: [docs/GPT_5_4_INTEGRATION_GUIDE.md](docs/GPT_5_4_INTEGRATION_GUIDE.md)
 - Create a local `.env` from [.env.example](.env.example) (do not commit secrets)
-- Quick smoke test: `python -m agent_tools.llm.smoketest --model azure-gpt-5.4 --prompt "hello"`
+- Quick smoke test: `python -m agent_lib.llm.smoketest --model azure-gpt-5.4 --prompt "hello"`
 
 ## Document synthesis (chunked, with coverage warnings)
 This repo includes local-first synthesis tooling that avoids silent truncation by using chunked map-reduce, and always emits a **Coverage / Limit Warnings** section.
@@ -40,7 +40,7 @@ This repo includes local-first synthesis tooling that avoids silent truncation b
 - Single PDF synthesis (writes Markdown + optional JSON manifest):
 
 ```bash
-python -m agent_tools.llm.summarize_file \
+python -m agent_lib.llm.summarize_file \
   --pdf "/path/to/file.pdf" \
   --out "runs/<RUN_ID>/exports/<slug>__synthesis.md" \
   --manifest "runs/<RUN_ID>/exports/<slug>__synthesis.manifest.json" \
@@ -50,7 +50,7 @@ python -m agent_tools.llm.summarize_file \
 - Full folder synthesis (PDF/EML/TXT/MD) + per-doc outputs:
 
 ```bash
-python -m agent_tools.llm.summarize_folder \
+python -m agent_lib.llm.summarize_folder \
   --dir "/path/to/folder" \
   --out "runs/<RUN_ID>/exports/folder_synthesis.md" \
   --manifest "runs/<RUN_ID>/exports/folder_synthesis.manifest.json" \
@@ -61,7 +61,7 @@ python -m agent_tools.llm.summarize_folder \
 - Incremental folder synthesis (recommended for recurring updates):
 
 ```bash
-python -m agent_tools.llm.summarize_incremental \
+python -m agent_lib.llm.summarize_incremental \
   --source-dir "/path/to/folder" \
   --staging-dir "runs/<RUN_ID>/tmp/staging" \
   --per-doc-dir "runs/<RUN_ID>/exports/docs" \
@@ -81,10 +81,10 @@ Notes:
 ## Microsoft Graph (Office 365)
 - Guide: [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](docs/GRAPH_AUTH_REPLICATION_GUIDE.md)
 - Create a local `.env` from [.env.example](.env.example) (do not commit secrets)
-- Validate auth + access (interactive loopback + cache): `python -m agent_tools.graph.validate`
-- List next workweek events (Eastern): `python -m agent_tools.graph.validate --next-workweek --list-events --outlook-timezone "Eastern Standard Time" --display-timezone "America/New_York"`
-- Verified 30-min availability next workweek (8:30 AM–4:30 PM Eastern): `python -m agent_tools.graph.validate --next-workweek --availability --outlook-timezone "Eastern Standard Time" --display-timezone "America/New_York"`
-- Export sent mail compiled to a recipient (writes to ignored `tmp/` by default): `python -m agent_tools.graph.export_sent_mail --to <RECIPIENT_EMAIL> --include-cc --out-dir tmp/mail_exports_<slug>`
+- Validate auth + access (interactive loopback + cache): `python -m agent_lib.graph.validate`
+- List next workweek events (Eastern): `python -m agent_lib.graph.validate --next-workweek --list-events --outlook-timezone "Eastern Standard Time" --display-timezone "America/New_York"`
+- Verified 30-min availability next workweek (8:30 AM–4:30 PM Eastern): `python -m agent_lib.graph.validate --next-workweek --availability --outlook-timezone "Eastern Standard Time" --display-timezone "America/New_York"`
+- Export sent mail compiled to a recipient (writes to ignored `tmp/` by default): `python -m agent_lib.graph.export_sent_mail --to <RECIPIENT_EMAIL> --include-cc --out-dir tmp/mail_exports_<slug>`
 
 ## Web search (Bing + Tavily)
 - **Bing (native)**: Use for quick lookups and broad discovery. It’s built into Copilot and is policy-controlled (no local MCP server to install).
@@ -139,7 +139,7 @@ The bootstrap prompt initializes a standard structure for each run:
 
 Notes:
 - Do not store sensitive URLs/tokens/secrets in any run files; use placeholders like `<TRAINING_URL>`.
-- `notes/**`, `scripts/**`, `requirements.txt`, and `.vscode/**` are treated as non-core by default (see Core vs run-local below).
+- `notes/**`, `requirements.txt`, and `.vscode/**` are treated as non-core by default (see Core vs run-local below).
 
 Tracking note:
 - By default, run artifacts under `runs/` are tracked so run branches can fully capture state for rollback/continuity.
@@ -193,7 +193,7 @@ Note: Playwright isolation is critical for parallel runs; Tavily is usually conf
 
 **Core vs run-local (short)**
 - Core/shared paths (eligible to promote to `main`): `AGENTS.md`, `README.md`, `.github/**`, `docs/**`, `tools/**`.
-- Non-core by default (do not promote to `main`): `runs/<RUN_ID>/**`, `notes/**`, `scripts/**`, `requirements.txt`, `.vscode/**`.
+- Non-core by default (do not promote to `main`): `runs/<RUN_ID>/**`, `notes/**`, `requirements.txt`, `.vscode/**`.
 
 Note: `.vscode/mcp.json` is committed to `main` as a baseline, but during a run it often becomes worktree-specific (e.g., per-run `--user-data-dir` / `--output-dir`). Treat run-specific edits as non-core unless you are intentionally updating the shared baseline.
 

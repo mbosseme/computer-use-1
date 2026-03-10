@@ -5,7 +5,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from agent_tools.images.dashboard_crop import DashboardCropConfig, autocrop_dashboard_content
+from agent_lib.images.dashboard_crop import DashboardCropConfig, autocrop_dashboard_content
 
 
 def _iter_inputs(input_paths: list[str]) -> list[Path]:

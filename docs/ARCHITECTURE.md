@@ -41,13 +41,13 @@ This repo does not commit third-party API-key-backed MCP servers. Configure Tavi
 
 ### LLM access (Azure OpenAI GPT-5.4)
 - This repo includes a starter Azure OpenAI **Responses API** client intended for reuse across runs.
-- Implementation lives under [agent_tools/llm/](../agent_tools/llm/).
+- Implementation lives under [agent_lib/llm/](../agent_lib/llm/).
 - Setup uses local environment variables via a repo-root `.env` (never commit secrets). See [.env.example](../.env.example).
 - Guide and usage notes: [docs/GPT_5_4_INTEGRATION_GUIDE.md](GPT_5_4_INTEGRATION_GUIDE.md).
 
 Document synthesis utilities:
-- `python -m agent_tools.llm.summarize_file`: chunked map-reduce synthesis for a single PDF (or text) with **Coverage / Limit Warnings** and an optional JSON manifest.
-- `python -m agent_tools.llm.summarize_folder`: one-command folder synthesis (PDF/EML/TXT/MD) that writes per-doc outputs + a folder-level synthesis.
+- `python -m agent_lib.llm.summarize_file`: chunked map-reduce synthesis for a single PDF (or text) with **Coverage / Limit Warnings** and an optional JSON manifest.
+- `python -m agent_lib.llm.summarize_folder`: one-command folder synthesis (PDF/EML/TXT/MD) that writes per-doc outputs + a folder-level synthesis.
 
 ### Deterministic local transforms
 - Prefer scripted, deterministic transforms over manual UI operations.
@@ -73,7 +73,7 @@ Best practices:
 
 ### Microsoft Graph (Office 365)
 - This repo supports delegated Microsoft Graph access via MSAL public client + interactive loopback auth.
-- Implementation lives under [agent_tools/graph/](../agent_tools/graph/).
+- Implementation lives under [agent_lib/graph/](../agent_lib/graph/).
 - See [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](GRAPH_AUTH_REPLICATION_GUIDE.md) and [.env.example](../.env.example).
 - Calendar support includes both event reads (`calendarView`) and verified free/busy via `calendar/getSchedule`.
 - Mail support includes a small, read-focused export utility (compiled sent mail to a recipient) for repeatable workflows.

@@ -9,13 +9,13 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Iterable, Optional
 
-from agent_tools.llm.azure_openai_responses import (
+from agent_lib.llm.azure_openai_responses import (
     AzureOpenAIResponsesClient,
     AzureResponsesClientConfig,
 )
-from agent_tools.llm.document_extraction import PdfPageExtraction, extract_pdf_pages, sanitize_text
-from agent_tools.llm.env import load_repo_dotenv, read_azure_openai_env
-from agent_tools.llm.model_registry import load_models_config
+from agent_lib.llm.document_extraction import PdfPageExtraction, extract_pdf_pages, sanitize_text
+from agent_lib.llm.env import load_repo_dotenv, read_azure_openai_env
+from agent_lib.llm.model_registry import load_models_config
 
 
 @dataclass(frozen=True)

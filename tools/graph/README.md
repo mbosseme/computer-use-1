@@ -9,7 +9,7 @@ Reusable CLI scripts for Graph-based mailbox and scheduling workflows across wor
 ## 1) Find mutual slots
 `find_mutual_slots.py` computes overlap via `POST /me/calendar/getSchedule`.
 
-Use this for **multi-attendee overlap lookups** across runs/worktrees. For auth/config diagnostics, use `python -m agent_tools.graph.validate`.
+Use this for **multi-attendee overlap lookups** across runs/worktrees. For auth/config diagnostics, use `python -m agent_lib.graph.validate`.
 
 Example:
 
@@ -30,7 +30,7 @@ Notes:
 ## 2) Draft structured email
 `draft_structured_email.py` creates a mailbox draft from a JSON template.
 
-Use this for **repeatable multi-section request emails**. For simple markdown-driven drafts/replies, use `python -m agent_tools.graph.create_draft_from_md`.
+Use this for **repeatable multi-section request emails**. For simple markdown-driven drafts/replies, use `python -m agent_lib.graph.create_draft_from_md`.
 
 Example:
 

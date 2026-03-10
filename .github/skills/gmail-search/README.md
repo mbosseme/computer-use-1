@@ -18,10 +18,10 @@ This skill allows the agent to search for and read emails from the user's Gmail 
     *   `google-auth-httplib2`
 
 ## Usage (Python Tool)
-The tool is located in `agent_tools.gmail.GmailClient`.
+The tool is located in `agent_lib.gmail.GmailClient`.
 
 ```python
-from agent_tools.gmail import GmailClient
+from agent_lib.gmail import GmailClient
 
 # Configuration
 CREDENTIALS_PATH = 'runs/CURRENT_RUN/inputs/credentials.json'

@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
-from agent_tools.graph.client import GraphAPIClient
+from agent_lib.graph.client import GraphAPIClient
 
 
 def strip_markdown_to_text(text: str) -> str:
@@ -336,7 +336,7 @@ def update_draft_body(
     """
     if preserve_quoted:
         # Lazy import to avoid circular dependency.
-        from agent_tools.graph.inline_images import split_quoted_tail
+        from agent_lib.graph.inline_images import split_quoted_tail
 
         current = client.get(f"me/messages/{draft_id}", timeout=timeout_s)
         current_html = (current.get("body") or {}).get("content", "")

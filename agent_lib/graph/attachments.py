@@ -5,7 +5,7 @@ from existing messages. For inline (CID) image attachments, see inline_images.py
 
 Typical usage (agent context)::
 
-    from agent_tools.graph.attachments import attach_file, download_attachments
+    from agent_lib.graph.attachments import attach_file, download_attachments
 
     # Attach a PDF to an existing draft
     info = attach_file(client, draft_id, Path("report.pdf"))
@@ -22,10 +22,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Sequence
 
-from agent_tools.graph.client import GraphAPIClient
+from agent_lib.graph.client import GraphAPIClient
 
 # Re-export from inline_images for convenience — callers can import from either module.
-from agent_tools.graph.inline_images import AttachmentInfo, list_attachments  # noqa: F401
+from agent_lib.graph.inline_images import AttachmentInfo, list_attachments  # noqa: F401
 
 
 @dataclass(frozen=True)

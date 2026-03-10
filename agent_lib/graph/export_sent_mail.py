@@ -12,9 +12,9 @@ try:
 except Exception:  # pragma: no cover
     ZoneInfo = None  # type: ignore
 
-from agent_tools.graph.auth import GraphAuthenticator
-from agent_tools.graph.client import GraphAPIClient, GraphClientConfig
-from agent_tools.graph.env import load_graph_env
+from agent_lib.graph.auth import GraphAuthenticator
+from agent_lib.graph.client import GraphAPIClient, GraphClientConfig
+from agent_lib.graph.env import load_graph_env
 
 
 def _repo_root() -> Path:

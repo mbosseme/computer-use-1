@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
-from agent_tools.graph.client import GraphAPIClient
+from agent_lib.graph.client import GraphAPIClient
 
 
 @dataclass(frozen=True)

@@ -18,10 +18,10 @@ This skill allows the agent to download files from Google Drive, including expor
     *   `google-auth-httplib2`
 
 ## Usage (Python Tool)
-The tool is located in `agent_tools.google_drive.GoogleDriveClient`.
+The tool is located in `agent_lib.google_drive.GoogleDriveClient`.
 
 ```python
-from agent_tools.google_drive import GoogleDriveClient
+from agent_lib.google_drive import GoogleDriveClient
 
 # Configuration
 CREDENTIALS_PATH = 'runs/CURRENT_RUN/inputs/credentials.json'

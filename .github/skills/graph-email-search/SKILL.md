@@ -20,7 +20,7 @@ tools:
   - Repo-root temp: `tmp/...` (ignored)
   - Run-local: `runs/<RUN_ID>/exports/...`
 - Use the repo utility:
-  - `python -m agent_tools.graph.export_sent_mail --to <RECIPIENT_EMAIL> --include-cc --out-dir tmp/mail_exports_<slug>`
+  - `python -m agent_lib.graph.export_sent_mail --to <RECIPIENT_EMAIL> --include-cc --out-dir tmp/mail_exports_<slug>`
 
 ## Query strategy
 ### Sent mail to a recipient
@@ -51,7 +51,7 @@ tools:
   - This creates a message in **Drafts** by default.
 - Keep **HITL** for sending: do not send mail without explicit user confirmation.
 - Recommended helper (repo utility):
-  - `python -m agent_tools.graph.create_draft_from_md --md <path/to/draft.md> --resolve-to-name "First Last"`
+  - `python -m agent_lib.graph.create_draft_from_md --md <path/to/draft.md> --resolve-to-name "First Last"`
   - If name resolution is ambiguous, the tool will list candidates and still create a draft with no recipient.
 - Reusable structured-draft utility (for multi-section request emails):
   - `python tools/graph/draft_structured_email.py --input <spec.json> [--fallbacks <fallbacks.json>]`
@@ -77,7 +77,7 @@ When the user wants a draft that “reads like a clear explanation supported by 
 
 ### Repo tool (starter)
 - Update an existing draft with inline images (NOT SENT):
-  - `python scripts/update_outlook_draft_inline_evidence.py --draft-id <DRAFT_MESSAGE_ID> --images-json <PATH> --preserve-quoted --body-html <OPTIONAL_HTML>`
+  - `python tools/update_outlook_draft_inline_evidence.py --draft-id <DRAFT_MESSAGE_ID> --images-json <PATH> --preserve-quoted --body-html <OPTIONAL_HTML>`
 
 ### Common pitfalls
 - If images don’t render:
@@ -97,14 +97,14 @@ Two modules handle attachments — use the right one for the job:
 
 | Module | Use Case |
 |--------|----------|
-| `agent_tools.graph.attachments` | Regular file attachments (PDF, XLSX, etc.) — attach, download, list |
-| `agent_tools.graph.inline_images` | CID inline images in HTML body — add, replace, delete |
+| `agent_lib.graph.attachments` | Regular file attachments (PDF, XLSX, etc.) — attach, download, list |
+| `agent_lib.graph.inline_images` | CID inline images in HTML body — add, replace, delete |
 
 Both re-export `AttachmentInfo` and `list_attachments`, so you can import from either.
 
 ### Attaching a file to a draft
 ```python
-from agent_tools.graph.attachments import attach_file
+from agent_lib.graph.attachments import attach_file
 info = attach_file(client, draft_id, Path("report.pdf"), skip_if_exists=True)
 ```
 - Uses the small-file upload path (< 3 MB base64).
@@ -112,7 +112,7 @@ info = attach_file(client, draft_id, Path("report.pdf"), skip_if_exists=True)
 
 ### Downloading attachments from a message
 ```python
-from agent_tools.graph.attachments import download_attachments
+from agent_lib.graph.attachments import download_attachments
 paths = download_attachments(client, message_id, Path("tmp/downloads"))
 ```
 - By default skips inline (CID) attachments; pass `include_inline=True` to get everything.
@@ -120,14 +120,14 @@ paths = download_attachments(client, message_id, Path("tmp/downloads"))
 
 ### Listing attachments
 ```python
-from agent_tools.graph.attachments import list_attachments, AttachmentInfo
+from agent_lib.graph.attachments import list_attachments, AttachmentInfo
 atts = list_attachments(client, message_id)
 ```
 
 ## Reply-all drafts
 When the original message has multiple recipients and you need to keep everyone on the thread:
 ```python
-from agent_tools.graph.drafts import create_reply_all_draft
+from agent_lib.graph.drafts import create_reply_all_draft
 result = create_reply_all_draft(client, message_id=msg_id, body="<p>New content</p>")
 ```
 - Uses `POST /me/messages/{id}/createReplyAll` (empty body), then PATCHes new content above the quoted history.
@@ -138,7 +138,7 @@ result = create_reply_all_draft(client, message_id=msg_id, body="<p>New content<
 
 ### Finding an existing draft by subject
 ```python
-from agent_tools.graph.drafts import find_draft_by_subject
+from agent_lib.graph.drafts import find_draft_by_subject
 draft = find_draft_by_subject(client, subject="Q4 spending review")
 if draft:
     draft_id = draft["id"]
@@ -148,14 +148,14 @@ if draft:
 
 ### Updating a draft's body
 ```python
-from agent_tools.graph.drafts import update_draft_body
+from agent_lib.graph.drafts import update_draft_body
 update_draft_body(client, draft_id, "<p>New HTML content</p>", preserve_quoted=True)
 ```
 - `preserve_quoted=True` keeps the existing quoted reply tail and only replaces the top portion.
 
 ### Verifying a draft against expected content
 ```python
-from agent_tools.graph.drafts import verify_draft
+from agent_lib.graph.drafts import verify_draft
 result = verify_draft(client, draft_id, expected_phrases=["spend analysis", "facility breakdown"])
 print(f"{result.passed_count}/{result.total_count} checks passed")
 assert result.all_passed
@@ -167,7 +167,7 @@ assert result.all_passed
 ## Thread export to Markdown
 Export an entire conversation thread (by subject) to a chronologically-ordered Markdown file:
 ```python
-from agent_tools.graph.mail_search import export_thread_markdown
+from agent_lib.graph.mail_search import export_thread_markdown
 export_thread_markdown(client, subject="McKinsey product codes", out_path=Path("tmp/thread.md"))
 ```
 - Searches mailbox-wide via `$search`, filters client-side by subject substring.
@@ -176,7 +176,7 @@ export_thread_markdown(client, subject="McKinsey product codes", out_path=Path("
 
 ## Finding the latest message from a sender
 ```python
-from agent_tools.graph.mail_search import find_latest_from_sender
+from agent_lib.graph.mail_search import find_latest_from_sender
 msg = find_latest_from_sender(client, '"Itani"', with_attachments=True)
 if msg:
     print(msg["subject"], msg["receivedDateTime"])
@@ -186,7 +186,7 @@ if msg:
 
 ## General-purpose mail search
 ```python
-from agent_tools.graph.mail_search import search_messages
+from agent_lib.graph.mail_search import search_messages
 msgs = search_messages(client, query='"McKinsey" AND "sample"', folder="Inbox", top=25)
 ```
 - Wraps `$search` + `ConsistencyLevel: eventual` + local sort by date.
@@ -202,8 +202,8 @@ When you need to reply-all to a thread (e.g., continuing a conversation), follow
 4.  **Use `create_reply_all_draft`** with the latest message ID.
 
 ```python
-from agent_tools.graph.mail_search import search_messages
-from agent_tools.graph.drafts import create_reply_all_draft
+from agent_lib.graph.mail_search import search_messages
+from agent_lib.graph.drafts import create_reply_all_draft
 
 # Step 1–2: Find and filter
 msgs = search_messages(client, query='"HCIQ Benchmark"', top=25)
@@ -231,8 +231,8 @@ If `$search` returns messages from the wrong thread (e.g., a 1:1 with similar ke
 
 ## Advanced Search (`/search/query`)
 If `$search` on `/me/messages` is failing or returning inconsistent results across mailbox folders, or if you need to search events (meeting invites), use the Microsoft Graph Search API (`/search/query`):
-- `agent_tools.graph.mail_search.search_messages_query_api`
-- `agent_tools.graph.mail_search.search_events_query_api`
+- `agent_lib.graph.mail_search.search_messages_query_api`
+- `agent_lib.graph.mail_search.search_events_query_api`
 
 **Important Note for `/search/query`**:
 Depending on the tenant projection, the `resource` objects returned inside the `hits` array may occasionally be missing the `id` field. When performing operations that require deduplication, you must implement a robust fallback deduplication key (e.g., combining `receivedDateTime`, `subject`, and `sender` or `organizer`) rather than strictly relying on `id`.

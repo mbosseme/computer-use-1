@@ -6,10 +6,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-from agent_tools.graph.auth import GraphAuthenticator
-from agent_tools.graph.client import GraphAPIClient, GraphClientConfig
-from agent_tools.graph.env import load_graph_env
-from agent_tools.graph.inline_images import replace_inline_attachments, split_quoted_tail
+from agent_lib.graph.auth import GraphAuthenticator
+from agent_lib.graph.client import GraphAPIClient, GraphClientConfig
+from agent_lib.graph.env import load_graph_env
+from agent_lib.graph.inline_images import replace_inline_attachments, split_quoted_tail
 
 
 def _escape_html(text: str) -> str:

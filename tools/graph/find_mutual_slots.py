@@ -14,9 +14,9 @@ except Exception:
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
-from agent_tools.graph.auth import GraphAuthenticator
-from agent_tools.graph.client import GraphAPIClient, GraphClientConfig
-from agent_tools.graph.env import load_graph_env
+from agent_lib.graph.auth import GraphAuthenticator
+from agent_lib.graph.client import GraphAPIClient, GraphClientConfig
+from agent_lib.graph.env import load_graph_env
 
 
 def _normalize_tz(tz_name: Optional[str]) -> str:
