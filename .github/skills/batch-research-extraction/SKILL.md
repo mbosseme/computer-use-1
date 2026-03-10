@@ -47,7 +47,7 @@ When using `mcp_tavily_tavily-search` or similar tools:
   - *Bad:* "Find emails for Acme, Globex, Soylent... [20 more]"
 
 ### 3. The "Append Script" Pattern
-After gathering research data, create a temporary script (e.g., `scripts/update_batch.py`) to safely write to the file.
+After gathering research data, create a temporary script (e.g., `runs/<RUN_ID>/scripts/update_batch.py`) to safely write to the file.
 
 ```python
 import pandas as pd

@@ -14,14 +14,14 @@ from pathlib import Path
 from shutil import which
 from typing import Any, Literal, Optional
 
-from agent_tools.llm.azure_openai_responses import (
+from agent_lib.llm.azure_openai_responses import (
     AzureOpenAIResponsesClient,
     AzureResponsesClientConfig,
 )
-from agent_tools.llm.document_extraction import call_with_retry, extract_eml_text, sanitize_text
-from agent_tools.llm.env import load_repo_dotenv, read_azure_openai_env
-from agent_tools.llm.model_registry import load_models_config
-from agent_tools.llm.summarize_file import synthesize_pdf, synthesize_text
+from agent_lib.llm.document_extraction import call_with_retry, extract_eml_text, sanitize_text
+from agent_lib.llm.env import load_repo_dotenv, read_azure_openai_env
+from agent_lib.llm.model_registry import load_models_config
+from agent_lib.llm.summarize_file import synthesize_pdf, synthesize_text
 
 
 DetectMode = Literal["mtime-size", "content-hash"]

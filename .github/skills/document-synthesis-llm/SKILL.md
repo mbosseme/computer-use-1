@@ -13,7 +13,7 @@ Synthesize a folder of documents (PDF, EML, etc.) into a structured summary usin
 ### Phase 1: Inventory & Extract
 1. **Inventory the folder**: List all files, noting extensions (`.pdf`, `.eml`, `.docx`, etc.).
 2. **Extract text locally** (do NOT send binaries to the LLM):
-   - **PDF**: Use `PyPDF2` (see `agent_tools/llm/document_extraction.py`).
+   - **PDF**: Use `PyPDF2` (see `agent_lib/llm/document_extraction.py`).
    - **EML**: Use Python's `email` module with `BytesParser`.
    - **Other**: Extend as needed (e.g., `python-docx` for Word).
 3. **Sanitize**: Remove potential secrets (API keys, tokens, passwords) before sending to LLM.
@@ -46,10 +46,10 @@ Concept:
 - Only re-synthesize files that are new or changed, then rebuild the folder-level synthesis.
 
 Recommended tool:
-- `python -m agent_tools.llm.summarize_incremental` (core, reusable)
+- `python -m agent_lib.llm.summarize_incremental` (core, reusable)
 
 Example:
-- `python -m agent_tools.llm.summarize_incremental \
+- `python -m agent_lib.llm.summarize_incremental \
   --source-dir <SOURCE_FOLDER> \
   --staging-dir runs/<RUN_ID>/tmp/staging \
   --per-doc-dir runs/<RUN_ID>/exports/docs \
@@ -78,15 +78,15 @@ Resilience defaults:
 - Avoid `--rebuild-if-no-changes` unless you explicitly need a forced refresh.
 
 ## Recommended implementation
-- Use `agent_tools/llm/summarize_file.py` for chunked PDF synthesis (map-reduce) with coverage warnings and an optional JSON manifest.
+- Use `agent_lib/llm/summarize_file.py` for chunked PDF synthesis (map-reduce) with coverage warnings and an optional JSON manifest.
 
 ## Key code patterns
 
 ### Resolving Azure config
 ```python
-from agent_tools.llm.azure_openai_responses import AzureOpenAIResponsesClient, AzureResponsesClientConfig
-from agent_tools.llm.env import load_repo_dotenv, read_azure_openai_env
-from agent_tools.llm.model_registry import load_models_config
+from agent_lib.llm.azure_openai_responses import AzureOpenAIResponsesClient, AzureResponsesClientConfig
+from agent_lib.llm.env import load_repo_dotenv, read_azure_openai_env
+from agent_lib.llm.model_registry import load_models_config
 
 def _resolve_azure_config(*, model_name: str = "azure-gpt-5.4") -> AzureResponsesClientConfig:
     repo_root = Path(__file__).resolve().parents[3]
@@ -105,14 +105,14 @@ def _resolve_azure_config(*, model_name: str = "azure-gpt-5.4") -> AzureResponse
 
 ### Retry with exponential backoff
 ```python
-from agent_tools.llm.document_extraction import call_with_retry
+from agent_lib.llm.document_extraction import call_with_retry
 
 result = call_with_retry(client, input_text, instructions, max_retries=5, initial_delay=2)
 ```
 
 ### Text extraction
 ```python
-from agent_tools.llm.document_extraction import extract_pdf_text, extract_eml_text, sanitize_text
+from agent_lib.llm.document_extraction import extract_pdf_text, extract_eml_text, sanitize_text
 
 pdf_content = extract_pdf_text(Path("/path/to/file.pdf"))
 eml_content = extract_eml_text(Path("/path/to/file.eml"))
@@ -144,7 +144,7 @@ safe_content = sanitize_text(pdf_content)
   1. Re-run `summarize_incremental` using the same `--index` and output paths.
   2. Check endpoint reachability (`nslookup` / `curl -I`) before retrying large batches.
   3. If one file is urgent, run `summarize_file` for that file while folder synthesis is retried.
-- **Prevention**: Use the hardened transport retries in `agent_tools/llm/azure_openai_responses.py` and checkpointed incremental index writes.
+- **Prevention**: Use the hardened transport retries in `agent_lib/llm/azure_openai_responses.py` and checkpointed incremental index writes.
 
 ### PDF quirks (repeated content per page)
 - **Detection**: `len(full_text) / num_pages > 50000` (suspiciously large per-page average).
@@ -163,18 +163,18 @@ safe_content = sanitize_text(pdf_content)
 - Azure OpenAI Responses API access (configured in `.env` + `config/models.json`)
 
 ## Related utilities
-- [agent_tools/llm/azure_openai_responses.py](../../../agent_tools/llm/azure_openai_responses.py): Core Responses API client.
-- [agent_tools/llm/document_extraction.py](../../../agent_tools/llm/document_extraction.py): PDF/EML extraction + retry logic.
-- [agent_tools/llm/summarize_file.py](../../../agent_tools/llm/summarize_file.py): Chunked map-reduce synthesis for PDFs and text, with coverage warnings.
-- [agent_tools/llm/summarize_folder.py](../../../agent_tools/llm/summarize_folder.py): One-command folder synthesis (PDF/EML/text).
-- [agent_tools/llm/summarize_incremental.py](../../../agent_tools/llm/summarize_incremental.py): Incremental re-synthesis with change detection and an index file.
-- [agent_tools/llm/env.py](../../../agent_tools/llm/env.py): Environment variable loading.
-- [agent_tools/llm/model_registry.py](../../../agent_tools/llm/model_registry.py): Model config from `config/models.json`.
+- [agent_lib/llm/azure_openai_responses.py](../../../agent_lib/llm/azure_openai_responses.py): Core Responses API client.
+- [agent_lib/llm/document_extraction.py](../../../agent_lib/llm/document_extraction.py): PDF/EML extraction + retry logic.
+- [agent_lib/llm/summarize_file.py](../../../agent_lib/llm/summarize_file.py): Chunked map-reduce synthesis for PDFs and text, with coverage warnings.
+- [agent_lib/llm/summarize_folder.py](../../../agent_lib/llm/summarize_folder.py): One-command folder synthesis (PDF/EML/text).
+- [agent_lib/llm/summarize_incremental.py](../../../agent_lib/llm/summarize_incremental.py): Incremental re-synthesis with change detection and an index file.
+- [agent_lib/llm/env.py](../../../agent_lib/llm/env.py): Environment variable loading.
+- [agent_lib/llm/model_registry.py](../../../agent_lib/llm/model_registry.py): Model config from `config/models.json`.
 
 ## Example run script
 If you want a one-off script for a run, create it under `runs/<RUN_ID>/scripts/`.
 
 For reusable entry points, prefer the CLIs:
-- `python -m agent_tools.llm.summarize_file` (single PDF/text)
-- `python -m agent_tools.llm.summarize_incremental` (repeatable incremental folder synthesis)
-- `python -m agent_tools.llm.summarize_folder` (first full baseline synthesis)
+- `python -m agent_lib.llm.summarize_file` (single PDF/text)
+- `python -m agent_lib.llm.summarize_incremental` (repeatable incremental folder synthesis)
+- `python -m agent_lib.llm.summarize_folder` (first full baseline synthesis)

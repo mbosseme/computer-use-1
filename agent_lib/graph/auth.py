@@ -7,7 +7,7 @@ from typing import Any, Optional
 
 from msal import PublicClientApplication, SerializableTokenCache
 
-from agent_tools.graph.env import GraphEnv
+from agent_lib.graph.env import GraphEnv
 
 
 def _jwt_claims_without_verify(access_token: str) -> dict[str, Any]:

@@ -50,7 +50,7 @@ When screenshots include large empty gutters (common with embedded BI dashboards
 - Goal: keep the dashboard content + filter state, remove browser/app chrome and big white margins.
 - Pitfall: naive “non-white bbox” cropping can fail because full-width top chrome forces the crop to remain full width.
 - Recommended tool:
-  - `python scripts/make_clean_dashboard_screenshots.py runs/<RUN_ID>/playwright-output/*.png`
+  - `python tools/make_clean_dashboard_screenshots.py runs/<RUN_ID>/playwright-output/*.png`
   - Produces `_clean.png` siblings next to originals.
 
 Notes:

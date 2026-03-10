@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Optional
 
-from agent_tools.llm.env import load_repo_dotenv
+from agent_lib.llm.env import load_repo_dotenv
 
 
 _RESERVED_SCOPES = {"offline_access", "openid", "profile"}

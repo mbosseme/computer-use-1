@@ -6,7 +6,7 @@ This module provides reusable functions for:
 - Calling LLM endpoints with retry/backoff logic
 
 Usage:
-    from agent_tools.llm.document_extraction import (
+    from agent_lib.llm.document_extraction import (
         extract_pdf_text,
         extract_eml_text,
         sanitize_text,

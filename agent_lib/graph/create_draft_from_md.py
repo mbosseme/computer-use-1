@@ -4,10 +4,10 @@ import argparse
 import sys
 from pathlib import Path
 
-from agent_tools.graph.auth import GraphAuthenticator
-from agent_tools.graph.client import GraphAPIClient, GraphClientConfig
-from agent_tools.graph.drafts import create_draft_message, create_reply_draft, parse_markdown_email, resolve_email_candidates_from_mailbox
-from agent_tools.graph.env import load_graph_env
+from agent_lib.graph.auth import GraphAuthenticator
+from agent_lib.graph.client import GraphAPIClient, GraphClientConfig
+from agent_lib.graph.drafts import create_draft_message, create_reply_draft, parse_markdown_email, resolve_email_candidates_from_mailbox
+from agent_lib.graph.env import load_graph_env
 
 
 def _repo_root() -> Path:

@@ -14,9 +14,9 @@ This is intended as a “copy/paste to another repo” guide.
 ## Table of Contents
 
 1. Model configuration (`config/models.json`)
-2. Credential & auth wiring (`.env` + `agent_tools/llm/env.py`)
-3. Azure client implementation (`agent_tools/llm/azure_openai_responses.py`)
-4. Smoke test entrypoint (`python -m agent_tools.llm.smoketest`)
+2. Credential & auth wiring (`.env` + `agent_lib/llm/env.py`)
+3. Azure client implementation (`agent_lib/llm/azure_openai_responses.py`)
+4. Smoke test entrypoint (`python -m agent_lib.llm.smoketest`)
 5. Output parsing (Responses payload → text)
 6. Setup checklist (what to provide)
 7. Troubleshooting
@@ -59,13 +59,13 @@ Key points:
 
 ---
 
-## 2. Credentials & Authentication (`.env` + `agent_tools/llm/env.py`)
+## 2. Credentials & Authentication (`.env` + `agent_lib/llm/env.py`)
 
 ### Where secrets come from
 
 This repo loads Azure credentials from environment variables. The code that loads them is:
 
-- `agent_tools/llm/env.py`
+- `agent_lib/llm/env.py`
 
 It calls `load_dotenv()` (from `python-dotenv`), which will load variables from a repo-root `.env` file if present.
 
@@ -122,17 +122,17 @@ For Azure OpenAI GPT‑5.4 specifically:
 
 ---
 
-## 3. Azure OpenAI Client Implementation (`agent_tools/llm/azure_openai_responses.py`)
+## 3. Azure OpenAI Client Implementation (`agent_lib/llm/azure_openai_responses.py`)
 
 ### Where GPT‑5.4 is detected
 
 The Azure Responses client is:
 
-- `AzureOpenAIResponsesClient` in `agent_tools/llm/azure_openai_responses.py`
+- `AzureOpenAIResponsesClient` in `agent_lib/llm/azure_openai_responses.py`
 
 Configuration is typically loaded from:
 
-- `config/models.json` via `agent_tools/llm/model_registry.py`
+- `config/models.json` via `agent_lib/llm/model_registry.py`
 
 The smoke test (and most starter usage) requires the URL to contain `/openai/responses`.
 
@@ -204,18 +204,18 @@ This logic is implemented in:
 
 ---
 
-## 4. Smoke Test Entrypoint (`python -m agent_tools.llm.smoketest`)
+## 4. Smoke Test Entrypoint (`python -m agent_lib.llm.smoketest`)
 
 This repo provides a simple smoke test to validate credentials + connectivity:
 
 ```bash
-python -m agent_tools.llm.smoketest --model azure-gpt-5.4 --prompt "hello"
+python -m agent_lib.llm.smoketest --model azure-gpt-5.4 --prompt "hello"
 ```
 
 Optionally write a run artifact (append-only JSONL) under `runs/<RUN_ID>/exports/llm/`:
 
 ```bash
-python -m agent_tools.llm.smoketest --run-id "YYYY-MM-DD__short-slug" --prompt "hello"
+python -m agent_lib.llm.smoketest --run-id "YYYY-MM-DD__short-slug" --prompt "hello"
 ```
 
 ---
@@ -238,9 +238,9 @@ If you want another repo/environment to reproduce this integration, you need:
 Minimum (Azure GPT‑5.4 only):
 
 - `config/models.json`
-- `agent_tools/llm/azure_openai_responses.py`
-- `agent_tools/llm/env.py`
-- `agent_tools/llm/smoketest.py`
+- `agent_lib/llm/azure_openai_responses.py`
+- `agent_lib/llm/env.py`
+- `agent_lib/llm/smoketest.py`
 - `requirements.txt`
 
 Optional (recommended):

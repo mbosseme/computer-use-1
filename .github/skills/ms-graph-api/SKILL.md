@@ -5,9 +5,9 @@ The `GraphAuthenticator` and `GraphAPIClient` wrappers require strict explicit k
 
 ```python
 from pathlib import Path
-from agent_tools.graph.client import GraphAPIClient, GraphClientConfig
-from agent_tools.graph.auth import GraphAuthenticator
-from agent_tools.graph.env import load_graph_env
+from agent_lib.graph.client import GraphAPIClient, GraphClientConfig
+from agent_lib.graph.auth import GraphAuthenticator
+from agent_lib.graph.env import load_graph_env
 
 repo_root = Path('.')
 env = load_graph_env(repo_root)
@@ -25,4 +25,4 @@ The Graph API uses Keyword Query Language (KQL) for the `$search` parameter. If 
 ### Email Body Extraction
 Do not rely on `bodyPreview` as it truncates text. Extract the raw HTML from `msg['body']['content']` and use `bs4.BeautifulSoup` or the local wrapper `html_to_text(html_str)` to strip it down to plain text. Always write giant payloads to a temporary file via `.txt` and read it rather than printing to stdout.
 
-You can also use the helper function `get_clean_body(msg)` available in `agent_tools.graph.mail_search` which safely extracts and cleans the text natively without boilerplate.
+You can also use the helper function `get_clean_body(msg)` available in `agent_lib.graph.mail_search` which safely extracts and cleans the text natively without boilerplate.

@@ -38,17 +38,17 @@ Recommended locations:
 - **Workflow-specific utilities**: co-locate under the relevant skill folder (e.g., `.github/skills/<skill>/`)
 
 This repo also uses:
-- **Reusable Python utilities for runs**: `agent_tools/` (e.g., the Azure OpenAI GPT-5.4 starter client under `agent_tools/llm/`)
+- **Reusable Python utilities for runs**: `agent_lib/` (e.g., the Azure OpenAI GPT-5.4 starter client under `agent_lib/llm/`)
 - **Reusable Graph CLIs for scheduling/drafts**: `tools/graph/` (cross-worktree utilities for mutual slot finding and structured draft email creation)
 
 ### Screenshot / image utilities
 This repo includes deterministic image transforms used to prepare evidence (e.g., cropping BI dashboard screenshots to remove empty gutters).
 
-- Utility module: `agent_tools/images/dashboard_crop.py`
-- CLI helper: `scripts/make_clean_dashboard_screenshots.py`
+- Utility module: `agent_lib/images/dashboard_crop.py`
+- CLI helper: `tools/make_clean_dashboard_screenshots.py`
 - Dependency: `Pillow` (installed via `requirements.txt`)
 
-### Current `agent_tools/llm/` modules
+### Current `agent_lib/llm/` modules
 | Module | Purpose |
 |--------|---------|
 | `azure_openai_responses.py` | Core Azure OpenAI Responses API client |

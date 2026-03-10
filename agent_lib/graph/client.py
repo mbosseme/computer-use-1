@@ -5,7 +5,7 @@ from typing import Any, Dict, Optional
 
 import requests
 
-from agent_tools.graph.auth import GraphAuthenticator
+from agent_lib.graph.auth import GraphAuthenticator
 
 
 @dataclass

@@ -5,7 +5,7 @@ conversation threads to Markdown.
 
 Typical usage (agent context)::
 
-    from agent_tools.graph.mail_search import search_messages, export_thread_markdown
+    from agent_lib.graph.mail_search import search_messages, export_thread_markdown
 
     # Find recent messages from a sender
     msgs = search_messages(client, query='"from:sender@example.com"', top=10)
@@ -27,8 +27,8 @@ try:
 except Exception:  # pragma: no cover
     ZoneInfo = None  # type: ignore
 
-from agent_tools.graph.client import GraphAPIClient
-from agent_tools.graph.drafts import _emails_from_recipients, iter_graph_paged
+from agent_lib.graph.client import GraphAPIClient
+from agent_lib.graph.drafts import _emails_from_recipients, iter_graph_paged
 
 
 # ---------------------------------------------------------------------------
