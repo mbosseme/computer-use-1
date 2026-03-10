@@ -31,6 +31,7 @@ candidate_contracts AS (
 
 SELECT
   tb.Contract_Number as Original_Contract_Number,
+  tb.Contract_Category,
   tb.Contract_Type as Original_Contract_Type,
   tb.is_local_remap,
   tb.inferred_prefix,

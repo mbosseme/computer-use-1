@@ -7,6 +7,7 @@ config {
 SELECT
   Contract_Number,
   Contract_Name,
+  Contract_Category,
   Contract_Type,
   Reference_Number,
   Base_Spend,

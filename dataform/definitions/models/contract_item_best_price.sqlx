@@ -8,6 +8,7 @@ WITH base_prices AS (
   SELECT
     Contract_Number,
     MAX(Contract_Name) as Contract_Name,
+    MAX(Contract_Category) as Contract_Category,
     Reference_Number,
     Contract_Best_Price,
     Contract_Best_Tier_Description,
@@ -29,6 +30,7 @@ ranked_prices AS (
   SELECT
     Contract_Number,
     Contract_Name,
+    Contract_Category,
     Reference_Number,
     Contract_Best_Price,
     Contract_Best_Tier_Description,
@@ -42,6 +44,7 @@ ranked_prices AS (
 SELECT
   Contract_Number,
   Contract_Name,
+  Contract_Category,
   Reference_Number,
   Contract_Best_Price,
   Contract_Best_Tier_Description,

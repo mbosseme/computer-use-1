@@ -128,9 +128,6 @@ def main():
     df = pd.read_excel(file_path, sheet_name="All Opportunities")
     output_dir = 'runs/2026-03-04__portfolio-competitiveness/'
     
-    # Exclude Ortho Trauma temporarily based on previous discussions
-    df = df[~df['Contract_Name'].astype(str).str.contains("ORTHOPEDIC TRAUMA", na=False, case=False)]
-
     print(f"Generating All Programs Chart...")
     generate_chart(
         df=df, 
