@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Word lock files
+~$*
+
 # Node
 node_modules/
 
@@ -25,6 +28,8 @@ __pycache__/
 /playwright-report/
 /test-results/
 /blob-report/
+**/playwright-profile/
+**/playwright-output/
 # (Optional) downloads directory if created by automation at repo root
 /downloads/
 

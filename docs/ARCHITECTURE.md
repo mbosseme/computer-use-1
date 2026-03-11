@@ -123,3 +123,7 @@ Note:
 - DB MCP: which backends are expected (BigQuery, Snowflake, etc.) and how should their MCP servers be configured?
 - Standard run folder layout: should we commit a `runs/_template/` directory or keep it purely documented?
 - Dependency packs: do we want optional requirements files (e.g., `requirements-excel.txt`) or keep guidance-only?
+## Agent Notes / Daily Automations
+- **Meeting Notes Pipeline**: Daily sync between Outlook Calendar and local Word Documents with LLM-matched embedded Otter transcripts. See [MEETING_NOTES_PIPELINE.md](MEETING_NOTES_PIPELINE.md).
+
+- [MEETING_NOTES_PIPELINE.md](MEETING_NOTES_PIPELINE.md) - Details on the specific `tools/meeting_notes.py` daily pipeline for integrating Graph Calendar events with Otter.ai transcripts.
