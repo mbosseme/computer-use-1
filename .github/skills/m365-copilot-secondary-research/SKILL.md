@@ -26,7 +26,7 @@ If using this route, explicitly state in output that this is a **secondary-resea
 1. Start/confirm `RUN_ID` and output target under `runs/<RUN_ID>/exports/`.
 2. Open M365 Copilot chat in browser.
 3. Ensure mode is **Work** (not Web).
-4. Set model selector to **GPT-5.4 Think** (or closest available equivalent), and re-check after navigation refresh.
+4. **CRITICAL:** Set model selector (top right) to **GPT-5.2 Think deeper** (or closest available equivalent). This MUST be done programmatically via Playwright by finding the model drop-down button (e.g. "Auto") and explicitly selecting the deeper/expert reasoning model before sending the first prompt. Re-check after navigation refresh, since the UI often resets to "Auto".
 5. Start a **New chat** before submitting the task prompt.
 
 ## 4) Prompting pattern (concise + decision-oriented)
