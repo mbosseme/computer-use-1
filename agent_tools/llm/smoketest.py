@@ -74,8 +74,8 @@ def _write_run_artifact(*, run_id: str, record: dict[str, Any]) -> Path:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Azure OpenAI GPT-5.2 smoke test (Responses API)")
-    parser.add_argument("--model", default="azure-gpt-5.2", help="Model key in config/models.json")
+    parser = argparse.ArgumentParser(description="Azure OpenAI GPT-5.4 smoke test (Responses API)")
+    parser.add_argument("--model", default="azure-gpt-5.4", help="Model key in config/models.json")
     parser.add_argument("--prompt", help="User prompt. If omitted, reads from stdin.")
     parser.add_argument("--instructions", help="Optional system instructions")
     parser.add_argument(
@@ -103,10 +103,10 @@ def main() -> int:
         messages.append({"role": "system", "content": args.instructions})
     messages.append({"role": "user", "content": prompt})
 
-    instructions, input_text = client.conversation_to_responses_input(messages)
+    instructions, input_data = client.conversation_to_responses_input(messages)
 
     result = client.create_response(
-        input_text=input_text,
+        input_data=input_data,
         instructions=instructions,
         max_output_tokens=cfg.max_output_tokens,
         reasoning_effort=cfg.reasoning_effort,

@@ -1,7 +1,7 @@
 # Skill: Document Synthesis via LLM
 
 ## Purpose
-Synthesize a folder of documents (PDF, EML, etc.) into a structured summary using an LLM endpoint (Azure OpenAI GPT-5.2 Responses API or similar).
+Synthesize a folder of documents (PDF, EML, etc.) into a structured summary using an LLM endpoint (Azure OpenAI GPT-5.4 Responses API or similar).
 
 ## When to use this skill
 - User asks to "summarize," "synthesize," or "extract key themes" from a set of documents.
@@ -57,7 +57,7 @@ Example:
   --index runs/<RUN_ID>/exports/folder_synthesis.index.json \
   --out runs/<RUN_ID>/exports/folder_synthesis.md \
   --manifest runs/<RUN_ID>/exports/folder_synthesis.manifest.json \
-  --model azure-gpt-5.2 \
+  --model azure-gpt-5.4 \
   --detect-mode mtime-size`
 
 Verification:
@@ -88,7 +88,7 @@ from agent_tools.llm.azure_openai_responses import AzureOpenAIResponsesClient, A
 from agent_tools.llm.env import load_repo_dotenv, read_azure_openai_env
 from agent_tools.llm.model_registry import load_models_config
 
-def _resolve_azure_config(*, model_name: str = "azure-gpt-5.2") -> AzureResponsesClientConfig:
+def _resolve_azure_config(*, model_name: str = "azure-gpt-5.4") -> AzureResponsesClientConfig:
     repo_root = Path(__file__).resolve().parents[3]
     load_repo_dotenv(repo_root)
     env = read_azure_openai_env()

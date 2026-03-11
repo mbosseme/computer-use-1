@@ -40,7 +40,7 @@ class AzureOpenAIResponsesClient:
     def create_response(
         self,
         *,
-        input_text: str,
+        input_data: str | list[Any],
         instructions: Optional[str] = None,
         max_output_tokens: Optional[int] = None,
         reasoning_effort: Optional[ReasoningEffort] = None,
@@ -48,7 +48,7 @@ class AzureOpenAIResponsesClient:
     ) -> dict[str, Any]:
         payload: dict[str, Any] = {
             "model": self._config.deployment_name,
-            "input": input_text,
+            "input": input_data,
             "max_output_tokens": int(max_output_tokens or self._config.max_output_tokens),
             "stream": False,
         }
@@ -135,16 +135,15 @@ class AzureOpenAIResponsesClient:
         return "".join(parts).strip()
 
     @staticmethod
-    def conversation_to_responses_input(messages: list[dict[str, Any]]) -> tuple[Optional[str], str]:
-        """Convert chat-style messages to (instructions, input transcript).
+    def conversation_to_responses_input(messages: list[dict[str, Any]]) -> tuple[Optional[str], list[dict[str, Any]]]:
+        """Convert chat-style messages to (instructions, input array) format.
 
         - First system message becomes instructions
-        - The rest become a plain text transcript:
-            User: ...\nAssistant: ...
+        - The rest are passed along as an input array supporting multi-modal content.
         """
 
         instructions: Optional[str] = None
-        transcript_lines: list[str] = []
+        input_data: list[dict[str, Any]] = []
 
         for msg in messages:
             role = msg.get("role")
@@ -155,15 +154,23 @@ class AzureOpenAIResponsesClient:
             if role == "system" and instructions is None:
                 if isinstance(content, str):
                     instructions = content
+                elif isinstance(content, list):
+                    text_parts = [p.get("text", "") for p in content if p.get("type") in ("text", "input_text")]
+                    instructions = "\n".join(text_parts).strip()
                 continue
 
-            if not isinstance(content, str):
-                continue
+            out_msg = {"type": "message", "role": role}
+            
+            if isinstance(content, str):
+                out_msg["content"] = [{"type": "input_text", "text": content}]
+            elif isinstance(content, list):
+                out_msg["content"] = content
+            else:
+                out_msg["content"] = []
 
-            prefix = "User" if role == "user" else "Assistant"
-            transcript_lines.append(f"{prefix}: {content}")
+            input_data.append(out_msg)
 
-        return instructions, "\n".join(transcript_lines).strip()
+        return instructions, input_data
 
     @staticmethod
     def _map_reasoning_effort(effort: ReasoningEffort) -> Literal["low", "medium", "high"]:
