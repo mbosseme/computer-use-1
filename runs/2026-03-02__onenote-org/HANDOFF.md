@@ -127,3 +127,12 @@ python3 runs/2026-03-02__onenote-org/scripts/inject_teams_recap.py \
 *   **Skill creation**: Consider converting the Playwright navigation steps into a `.github/skills/` file so any agent session can run it without re-reading docs.
 *   **Otter integration**: Otter transcript matching (Step 1) runs alongside scaffold. Both sources can coexist in the same doc.
 *   **Promotion candidates**: `tools/meeting_notes.py`, `.github/prompts/meeting-notes-pipeline.prompt.md`, `docs/MEETING_NOTES_PIPELINE.md`, `docs/TEAMS_COPILOT_EXTRACTION_GUIDE.md` are all candidates for merge to `main` via clean PR.
+
+## Status: 2026-03-12 — Session 8: March 12 Partial Pipeline Run (Morning Meetings)
+### What was accomplished
+*   **March 12 pipeline run**: Processed morning meetings for today. Scaffolds already generated.
+*   **Tentative MI Roadmap Follow Up (10:30 AM)**: Successfully extracted via Playwright MCP.
+    *   AI Summary: Injected rich clipboard (13 text blocks + 4 images).
+    *   Custom Summary (Loss-Less): extracted from DOM via `browser_evaluate` in chunks (due to 5583-character length) and successfully injected text string (68 lines).
+*   **Other morning meetings**: Checked and skipped (either canceled or no recap available).
+*   **Afternoon meetings**: Have not concluded as of 11:30 AM (e.g. Rx Data, 'Growth' Project, etc.), will need to be processed later in the day or tomorrow morning.
