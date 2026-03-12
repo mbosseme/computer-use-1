@@ -391,6 +391,10 @@ def main():
                         help="Only process Otter exports (skip doc creation)")
     parser.add_argument("--force", action="store_true",
                         help="Regenerate docs even if they already exist (overwrites)")
+    parser.add_argument("--mark-teams-checked", metavar="DOC_PATH",
+                        help="Mark a specific document as having its Teams recap checked.")
+    parser.add_argument("--list-pending-teams", action="store_true",
+                        help="List meetings missing a Teams recap check")
     args = parser.parse_args()
 
     tz = ZoneInfo(TZ_NAME)
@@ -404,6 +408,18 @@ def main():
 
     events_index = load_index(EVENTS_INDEX_FILE)
     transcripts_index = load_index(TRANSCRIPTS_INDEX_FILE)
+
+    if args.mark_teams_checked:
+        matched = False
+        for eid, edata in events_index.items():
+            if args.mark_teams_checked in edata.get('path', ''):
+                edata['teams_recap_checked'] = True
+                save_index(EVENTS_INDEX_FILE, events_index)
+                logger.info(f"Marked '{edata['subject']}' as Teams recap checked.")
+                matched = True
+        if not matched:
+            logger.warning(f"Could not find document {args.mark_teams_checked} in index.")
+        return
 
     if not args.append_only:
         client = get_graph_client(repo_root)
@@ -470,28 +486,53 @@ def main():
                         logger.error(f"Failed to create doc for event {eid_hash}: {ex}")
                         continue
                 
+                existing = events_index.get(eid, {})
                 events_index[eid] = {
                     "hash": eid_hash,
                     "path": str(out_path),
                     "subject": e.get('subject'),
                     "start": start_dt,
                     "end": end_dt,
-                    "attendees": e.get('attendees', [])
+                    "attendees": e.get('attendees', []),
+                    "teams_recap_checked": existing.get('teams_recap_checked', False)
                 }
             
         save_index(EVENTS_INDEX_FILE, events_index)
         
     if not args.create_only:
-        if OTTER_INBOX_DIR.exists():
-            for ext in ("*.zip", "*.txt"):
-                for zpath in OTTER_INBOX_DIR.glob(ext):
-                    try:
-                        process_otter_export(zpath, transcripts_index, events_index)
-                    except Exception as e:
-                        logger.error(f"Failed to process {zpath.name}: {e}")
+        search_dirs = [OTTER_INBOX_DIR, Path.home() / "Downloads"]
+        for sdir in search_dirs:
+            if sdir.exists():
+                for ext in ("*.zip", "*.txt"):
+                    for zpath in sdir.glob(ext):
+                        # Simple heuristic to only grab otter exports from Downloads
+                        if sdir.name == "Downloads" and "otter" not in zpath.name.lower() and "transcript" not in zpath.name.lower():
+                            continue
+                        try:
+                            process_otter_export(zpath, transcripts_index, events_index)
+                        except Exception as e:
+                            logger.error(f"Failed to process {zpath.name}: {e}")
             save_index(TRANSCRIPTS_INDEX_FILE, transcripts_index)
+
+    # Print summary of pending items
+    if args.list_pending_teams or not args.create_only:
+        pending_teams = []
+        for d in target_dates:
+            d_str = d.strftime("%Y-%m-%d")
+            for eid, edata in events_index.items():
+                if edata.get('start', '').startswith(d_str) and not edata.get('teams_recap_checked'):
+                    pending_teams.append((d_str, edata.get('subject'), edata.get('start'), edata.get('path')))
+        
+        if pending_teams:
+            print("\n" + "="*70)
+            print("PENDING TEAMS RECAP CHECKS FOR TARGET DATES:")
+            for pt in pending_teams:
+                # pt[2] looks like 2026-03-04T08:30:00.0000000
+                st = pt[2].split("T")[1][:5] if "T" in pt[2] else ""
+                print(f" - [{pt[0]} {st}] {pt[1]}\n   Run: python3 tools/meeting_notes.py --mark-teams-checked \"{pt[3]}\"\n")
+            print("="*70 + "\n")
         else:
-            logger.warning(f"Otter inbox not found at {OTTER_INBOX_DIR}")
+            print("\nAll meetings for the target dates have been checked for Teams Recaps!\n")
 
 if __name__ == "__main__":
     main()
