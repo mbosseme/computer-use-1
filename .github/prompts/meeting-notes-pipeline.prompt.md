@@ -62,12 +62,27 @@ For each meeting event button visible on the calendar day view (skip HOLDs, Watc
 1. Click the **"Custom summary"** tab/pill.
 2. A list of saved templates appears. Click the **"Loss-Less Extraction Template"** tab/button.
    - This triggers Teams Copilot to generate the exhaustive extraction. You will see "Generating your summary..." with a loading indicator.
-3. **Wait for generation to complete** (typically 10-20 seconds). Poll the snapshot until the loading indicator disappears and a **"Copy all"** button appears.
+3. **Wait for generation to complete** (typically 10-20 seconds). Use `browser_wait_for` with `textGone="Generating your summary"` to detect completion. A **"Copy all"** button appears when ready.
 4. Click the **"Copy all"** button.
-5. **Immediately save the clipboard** to a temp file:
-   ```bash
-   pbpaste > runs/<RUN_ID>/tmp/<meeting_slug>_custom_summary.txt
+5. **Extract the full text via DOM** (preferred over clipboard):
+   ```js
+   // Use browser_evaluate to extract text directly from the DOM
+   () => {
+     const regions = document.querySelectorAll('[role="region"]');
+     for (const r of regions) {
+       const text = r.innerText;
+       if (text.length > 200) return text;
+     }
+     return "NOT FOUND";
+   }
    ```
+   - If the full text exceeds ~3000 characters, extract in chunks using `text.substring(0, 2900)` and `text.substring(2900)`, then concatenate.
+   - Save the extracted text to a file using `create_file` (NOT terminal heredoc, which garbles multi-line content).
+   - Save to: `runs/<RUN_ID>/tmp/<meeting_slug>_custom_summary.txt`
+
+   **⚠️ DO NOT use `pbpaste`** for custom summaries. macOS clipboard (`pbpaste`) consistently truncates long text copied from Teams (captures only 12-23 lines instead of the full 70-100+ lines). Always use DOM extraction via `browser_evaluate` instead.
+
+   **Note**: The Teams AI generation itself may truncate very long summaries (cut off mid-sentence at the end). This is a Teams-side limitation and not fixable. Document it in the output summary if it occurs.
 
 #### 2e. Inject captured data into Word documents
 After extracting both summaries for a meeting:
@@ -80,10 +95,17 @@ runs/<RUN_ID>/scripts/inject_teams_recap.py --doc <doc_path> --custom-summary <c
 #### 2f. Return to calendar and repeat
 After processing each meeting with a recap:
 1. Click the **Calendar** sidebar button to return to the calendar view.
-2. Navigate back to the target date if needed (the calendar may reset to today).
+2. **Important: The calendar ALWAYS resets to today's date** after returning from a recap view. You MUST re-click the target date on the mini-calendar date picker (left sidebar) every time.
 3. Click the next meeting event and repeat from step 2b.
 
 **Do this for ALL meetings on the prior day, then repeat for today's date if any today-meetings have already concluded and have recaps.**
+
+### Known Issues & Workarounds
+- **`pbpaste` truncates long text from Teams clipboard**: Always use DOM extraction via `browser_evaluate` for custom summaries (see step 2d). The `pbpaste` command consistently captures only 12-23 lines instead of the full content.
+- **Playwright refs become stale after interactions**: After clicking buttons like "Copy all", element refs change. If you need to re-interact with an element, take a fresh `browser_snapshot` first.
+- **Teams AI generation may truncate**: For long meetings, the Teams Copilot may cut off its custom summary mid-sentence. This is a Teams-side limitation. Note it in your output summary.
+- **Terminal heredocs garble multi-line content**: When saving extracted text to files, use the `create_file` tool instead of shell heredocs (`cat << EOF`).
+- **Calendar resets to today**: Clicking the Calendar sidebar always navigates back to today. Re-select the target date on the mini-calendar after each recap extraction.
 
 ### 3. Review & Validate
 Once you have processed all meetings for the targeted dates, browse to verifying the result formatting is intact.
