@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import json
+import random
 import time
 from dataclasses import dataclass
 from typing import Any, Literal, Optional
 
 import requests
+from requests.exceptions import ConnectionError as RequestsConnectionError
+from requests.exceptions import SSLError, Timeout
 
 ReasoningEffort = Literal["minimal", "low", "medium", "high"]
 
@@ -19,6 +22,10 @@ class AzureResponsesClientConfig:
     # Defaults are conservative; callers can override.
     max_output_tokens: int = 2048
     reasoning_effort: ReasoningEffort = "medium"
+    max_transport_retries: int = 4
+    initial_backoff_s: float = 1.5
+    max_backoff_s: float = 20.0
+    connect_timeout_s: float = 20.0
 
 
 class AzureOpenAIResponsesClient:
@@ -33,7 +40,7 @@ class AzureOpenAIResponsesClient:
     def create_response(
         self,
         *,
-        input_text: str,
+        input_data: str | list[Any],
         instructions: Optional[str] = None,
         max_output_tokens: Optional[int] = None,
         reasoning_effort: Optional[ReasoningEffort] = None,
@@ -41,7 +48,7 @@ class AzureOpenAIResponsesClient:
     ) -> dict[str, Any]:
         payload: dict[str, Any] = {
             "model": self._config.deployment_name,
-            "input": input_text,
+            "input": input_data,
             "max_output_tokens": int(max_output_tokens or self._config.max_output_tokens),
             "stream": False,
         }
@@ -57,22 +64,47 @@ class AzureOpenAIResponsesClient:
             "Content-Type": "application/json",
         }
 
-        started = time.time()
-        resp = requests.post(
-            self._config.responses_api_url,
-            headers=headers,
-            data=json.dumps(payload),
-            timeout=timeout_s,
-        )
+        max_attempts = max(1, int(self._config.max_transport_retries) + 1)
 
-        duration_s = time.time() - started
-        if resp.status_code >= 400:
-            raise RuntimeError(
-                "Azure OpenAI request failed "
-                f"({resp.status_code}) after {duration_s:.2f}s: {resp.text}"
-            )
+        for attempt in range(max_attempts):
+            started = time.time()
+            try:
+                resp = requests.post(
+                    self._config.responses_api_url,
+                    headers=headers,
+                    data=json.dumps(payload),
+                    timeout=(float(self._config.connect_timeout_s), float(timeout_s)),
+                )
+            except (Timeout, RequestsConnectionError, SSLError) as e:
+                if attempt >= max_attempts - 1:
+                    raise RuntimeError(
+                        "Azure OpenAI transport failed after retries: "
+                        f"{type(e).__name__}: {e}"
+                    ) from e
+                self._sleep_backoff(attempt)
+                continue
 
-        return resp.json()
+            duration_s = time.time() - started
+            if resp.status_code >= 400:
+                if self._is_retriable_status(resp.status_code) and attempt < max_attempts - 1:
+                    self._sleep_backoff(attempt)
+                    continue
+                raise RuntimeError(
+                    "Azure OpenAI request failed "
+                    f"({resp.status_code}) after {duration_s:.2f}s: {resp.text}"
+                )
+
+            try:
+                return resp.json()
+            except ValueError as e:
+                if attempt >= max_attempts - 1:
+                    raise RuntimeError(
+                        "Azure OpenAI response was not valid JSON after retries: "
+                        f"{resp.text[:800]}"
+                    ) from e
+                self._sleep_backoff(attempt)
+
+        raise RuntimeError("Azure OpenAI request failed after retries")
 
     @staticmethod
     def extract_output_text(result: dict[str, Any]) -> str:
@@ -103,16 +135,15 @@ class AzureOpenAIResponsesClient:
         return "".join(parts).strip()
 
     @staticmethod
-    def conversation_to_responses_input(messages: list[dict[str, Any]]) -> tuple[Optional[str], str]:
-        """Convert chat-style messages to (instructions, input transcript).
+    def conversation_to_responses_input(messages: list[dict[str, Any]]) -> tuple[Optional[str], list[dict[str, Any]]]:
+        """Convert chat-style messages to (instructions, input array) format.
 
         - First system message becomes instructions
-        - The rest become a plain text transcript:
-            User: ...\nAssistant: ...
+        - The rest are passed along as an input array supporting multi-modal content.
         """
 
         instructions: Optional[str] = None
-        transcript_lines: list[str] = []
+        input_data: list[dict[str, Any]] = []
 
         for msg in messages:
             role = msg.get("role")
@@ -123,15 +154,23 @@ class AzureOpenAIResponsesClient:
             if role == "system" and instructions is None:
                 if isinstance(content, str):
                     instructions = content
+                elif isinstance(content, list):
+                    text_parts = [p.get("text", "") for p in content if p.get("type") in ("text", "input_text")]
+                    instructions = "\n".join(text_parts).strip()
                 continue
 
-            if not isinstance(content, str):
-                continue
+            out_msg = {"type": "message", "role": role}
+            
+            if isinstance(content, str):
+                out_msg["content"] = [{"type": "input_text", "text": content}]
+            elif isinstance(content, list):
+                out_msg["content"] = content
+            else:
+                out_msg["content"] = []
 
-            prefix = "User" if role == "user" else "Assistant"
-            transcript_lines.append(f"{prefix}: {content}")
+            input_data.append(out_msg)
 
-        return instructions, "\n".join(transcript_lines).strip()
+        return instructions, input_data
 
     @staticmethod
     def _map_reasoning_effort(effort: ReasoningEffort) -> Literal["low", "medium", "high"]:
@@ -143,3 +182,15 @@ class AzureOpenAIResponsesClient:
         if effort == "high":
             return "high"
         return "medium"
+
+    @staticmethod
+    def _is_retriable_status(status_code: int) -> bool:
+        return status_code in {408, 409, 425, 429} or status_code >= 500
+
+    def _sleep_backoff(self, attempt: int) -> None:
+        delay = min(
+            float(self._config.max_backoff_s),
+            float(self._config.initial_backoff_s) * (2**attempt),
+        )
+        jitter = random.uniform(0.0, min(0.5, delay * 0.2))
+        time.sleep(delay + jitter)

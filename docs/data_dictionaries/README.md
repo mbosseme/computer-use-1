@@ -16,7 +16,7 @@ For filtered/scoped versions of tables:
 
 Examples:
 - `abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded.md`
-- `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join__dhc_firm_type=Hospital.md`
+- `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join__dhc_firm_type=Hospital.md`
 
 ## Structure of Each Dictionary
 
@@ -53,7 +53,7 @@ For MCP toolbox interaction patterns and authentication setup, see:
 |-------|-----------------|-------------|
 | Transaction Analysis Expanded | [abi-inbound-prod...transaction_analysis_expanded.md](abi-inbound-prod.abi_inbound_bq_stg_purchasing_provider_transaction.transaction_analysis_expanded.md) | Provider-submitted POs/Invoices (~820M rows); 7-year rolling transactional purchase feed |
 | Supplier Spend | [abi-inbound-prod...supplier_spend.md](abi-inbound-prod.abi_inbound_bq_stg_purchasing_supplier_sales.supplier_spend.md) | Manufacturer-reported contract sales tracings (~87M rows); comprehensive scope including non-acute |
-| SASF DHC Join (Hospitals) | [matthew-bossemeyer...sa_sf_dhc_join__dhc_firm_type=Hospital.md](matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join__dhc_firm_type=Hospital.md) | Definitive Healthcare hospital enrichment (~7K hospitals); IDN rollups, bed counts, facility metadata |
+| SASF DHC Join (Hospitals) | [abi-xform-dataform-prod...sa_sf_dhc_join__dhc_firm_type=Hospital.md](abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join__dhc_firm_type=Hospital.md) | Definitive Healthcare hospital enrichment (~7K hospitals); IDN rollups, bed counts, facility metadata |
 | Report Builder (Pharma) | [abi-inbound-prod...report_builder.md](abi-inbound-prod.abi_inbound_bq_stg_purchasing_rx_wholesaler_sales.report_builder.md) | Pharma wholesaler tracings (~690M rows); Acute & Non-Acute purchasing view |
 
 ---

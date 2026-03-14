@@ -17,6 +17,30 @@ tools:
 - **Bounded Polling**: If no clear signal exists, use a loop with a short sleep (1-2s) and a max retry count.
 - **Avoid**: Long blind sleeps (e.g., `sleep(5000)`).
 
+## Structured Data-Grid Interaction (General)
+- **Activate before edit**: Some apps render grid cells as read-only labels until a specific row/cell is activated. Click the target row/cell first, then edit.
+- **Row-scoped editing**: Resolve the target row first, then interact with child cells/inputs inside that row to avoid cross-row mistakes.
+- **Prefer materialized inputs when available**: If edit mode creates real inputs, write through those inputs; otherwise use click + keyboard entry on editable cells.
+- **Re-select between row edits**: Re-activate each row before filling values because focus/edit context can collapse after Enter/save.
+- **Handle duplicate-like rows safely**: Match full row identity text (entire label/worktag path), not prefixes.
+
+## Verification-First Completion Pattern
+- **Treat confirmation summaries as source of truth**: Prefer review/submit modals and totals panels over intermediate grid state.
+- **Use multi-level checks**: verify row-level values, day-level totals, and final weekly/period totals.
+- **Save then re-verify**: After `Save` or `Save and Close`, confirm values again because apps may refresh or route to another view.
+- **Do not execute irreversible final actions** (Submit/Approve/etc.) without explicit user confirmation, even when totals look correct.
+
+## Date Navigation Reliability
+- **Prefer direct date picker jumps** for large date moves instead of many next/previous clicks.
+- **After each jump, verify the visible date header** before entering data.
+- **If navigation overshoots**, reset with an explicit date selection instead of incremental correction loops.
+
+## M365 Copilot Model Heuristic
+- When automating M365 Copilot chat tasks, set the top-right model selector to **`GPT-5.4 Think`** before prompting.
+- Verify the selector label after setting (it should show `GPT-5.4 Think`, not `Auto`).
+- Re-verify after refresh/navigation because the mode can revert.
+- Use `Quick response` only for low-risk, simple retrieval tasks where latency matters more than depth.
+
 ## Evidence Capture Hygiene
 - When a tool accepts a `filename`, prefer a **simple filename** (e.g., `tab2-detail-limit-200.png`) rather than passing a full/relative directory path; some environments will prepend their own output directory and can accidentally create nested paths.
 
@@ -101,6 +125,12 @@ Notes:
 - **Visible text not found (canvas / viz rendering)**:
   - Assume the text may not exist in the DOM.
   - Re-target via accessibility roles (e.g., `treegrid`/`gridcell`) or use a “show more rows”/limit control to surface the needed row.
+
+- **Streaming response UIs (chat agents, copilots) still generating**:
+  - Prefer waiting on a stable completion signal when available (e.g., “Stop generating” button disappears).
+  - If completion signals are unreliable, use bounded fallback: short wait (20–45s) → new snapshot → read the tail of the latest response block.
+  - Treat `Sources`/citation controls plus enabled send input as stronger completion evidence than transient narrator text.
+  - For long responses, extract in chunks (tail-first) and confirm whether content is still streaming before acting on incomplete output.
 ---
 
 ## Visual Evidence Mode

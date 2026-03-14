@@ -38,7 +38,8 @@ Recommended locations:
 - **Workflow-specific utilities**: co-locate under the relevant skill folder (e.g., `.github/skills/<skill>/`)
 
 This repo also uses:
-- **Reusable Python utilities for runs**: `agent_tools/` (e.g., the Azure OpenAI GPT-5.2 starter client under `agent_tools/llm/`)
+- **Reusable Python utilities for runs**: `agent_tools/` (e.g., the Azure OpenAI GPT-5.4 starter client under `agent_tools/llm/`)
+- **Reusable Graph CLIs for scheduling/drafts**: `tools/graph/` (cross-worktree utilities for mutual slot finding and structured draft email creation)
 
 ### Screenshot / image utilities
 This repo includes deterministic image transforms used to prepare evidence (e.g., cropping BI dashboard screenshots to remove empty gutters).
@@ -53,10 +54,16 @@ This repo includes deterministic image transforms used to prepare evidence (e.g.
 | `azure_openai_responses.py` | Core Azure OpenAI Responses API client |
 | `document_extraction.py` | PDF/EML text extraction + retry/backoff logic for synthesis workflows |
 | `summarize_file.py` | Chunked map-reduce synthesis for PDFs and text, with coverage warnings + optional manifest |
-| `summarize_folder.py` | One-command folder synthesis (PDF/EML/text) + per-doc outputs |
+| `summarize_folder.py` | One-command folder synthesis (PDF/EML/text) + per-doc outputs; atomic markdown/manifest writes |
+| `summarize_incremental.py` | Incremental folder synthesis with change detection, per-file checkpoints, and atomic index writes |
 | `env.py` | Environment variable loading from `.env` |
 | `model_registry.py` | Model config from `config/models.json` |
 | `smoketest.py` | Quick validation that LLM endpoint is reachable |
+
+### Synthesis resilience defaults
+- Prefer `summarize_incremental.py` for recurring folder updates; use `summarize_folder.py` for initial baseline runs.
+- Keep per-run paths namespaced under `runs/<RUN_ID>/...` (`tmp/staging`, `tmp/incremental`, `exports/docs`, `exports/folder_synthesis.*`).
+- On transient transport failures, rerun the same incremental command with the same `--index`; unchanged files are skipped and progress resumes.
 
 Keep utilities:
 - deterministic and reviewable

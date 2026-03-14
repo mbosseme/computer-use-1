@@ -113,11 +113,11 @@ Table info:
 ```
 Execute bounded SQL:
 ```
-/mcp bigquery callTool execute_sql sql="SELECT COUNT(*) FROM `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join` LIMIT 1"
+/mcp bigquery callTool execute_sql sql="SELECT COUNT(*) FROM `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join` LIMIT 1"
 ```
 Execute SQL with dry run:
 ```
-/mcp bigquery callTool execute_sql sql="SELECT * FROM `matthew-bossemeyer.cdx_sample_size.sa_sf_dhc_join` LIMIT 10" dry_run=true
+/mcp bigquery callTool execute_sql sql="SELECT * FROM `abi-xform-dataform-prod.cdx_sample_size.sa_sf_dhc_join` LIMIT 10" dry_run=true
 ```
 Insight question:
 ```

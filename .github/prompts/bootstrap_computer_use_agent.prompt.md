@@ -49,7 +49,16 @@ Create these folders if missing:
 - If missing, create it with a short header plus sections for: Summary / Verification / Next steps / Blockers.
 - Never store sensitive URLs/tokens/secrets; use placeholders like `<TRAINING_URL>` / `<PORTAL_URL>`.
 
-4) Playwright isolation (recommended)
+4) Environment bootstrap (required)
+- Copy the env file from:
+   - `/Users/matt_bossemeyer/Projects/computer-use-1/.env`
+- To this workspace path:
+   - `./.env`
+- Then delete `./.env.example` if it exists.
+- If the source env file is missing/unreadable, STOP and ask the user for next step (do not guess credentials).
+- Treat `./.env` as secret material: do not print values, do not commit it, and do not write secrets/tokens into logs.
+
+5) Playwright isolation (recommended)
 - If you will use Playwright MCP in this window, run:
    - `./.github/prompts/bootstrap_playwright_run_isolation.prompt.md`
 - This config changes `.vscode/**` in this worktree and creates `runs/<RUN_ID>/**` artifacts; treat those as non-core by default.
@@ -89,6 +98,11 @@ OPERATING RULES (must follow)
    - Open ./.github/skills/README.md (skills index).
    - Select and open/read 1–3 relevant skills before acting.
    - Do not load more than 3 skills unless explicitly instructed.
+
+1a) M365 Copilot mode default (when applicable)
+   - If the task involves M365 Copilot chat in browser, set model/mode to `GPT-5.4 Think` before sending prompts.
+   - Re-check after navigation/refresh because the selector may revert to `Auto`.
+   - Use quick-response mode only for trivial lookups.
 
 2) Tooling preference order
    - Prefer deterministic local transforms (Python/pandas/openpyxl/python-pptx) over UI edits.

@@ -29,10 +29,10 @@ Source of truth for scope/design: [docs/PRODUCT_REQUIREMENTS.md](docs/PRODUCT_RE
 
 This repo configures Playwright MCP out of the box; additional MCP servers (e.g., database/toolbox MCPs) are optional and should follow the same safety + `RUN_ID` isolation conventions.
 
-## Azure OpenAI (GPT-5.2)
-- Guide: [docs/GPT_5_2_INTEGRATION_GUIDE.md](docs/GPT_5_2_INTEGRATION_GUIDE.md)
+## Azure OpenAI (GPT-5.4)
+- Guide: [docs/GPT_5_4_INTEGRATION_GUIDE.md](docs/GPT_5_4_INTEGRATION_GUIDE.md)
 - Create a local `.env` from [.env.example](.env.example) (do not commit secrets)
-- Quick smoke test: `python -m agent_tools.llm.smoketest --model azure-gpt-5.2 --prompt "hello"`
+- Quick smoke test: `python -m agent_tools.llm.smoketest --model azure-gpt-5.4 --prompt "hello"`
 
 ## Document synthesis (chunked, with coverage warnings)
 This repo includes local-first synthesis tooling that avoids silent truncation by using chunked map-reduce, and always emits a **Coverage / Limit Warnings** section.
@@ -58,9 +58,25 @@ python -m agent_tools.llm.summarize_folder \
   --tmp-dir "runs/<RUN_ID>/tmp/docs"
 ```
 
+- Incremental folder synthesis (recommended for recurring updates):
+
+```bash
+python -m agent_tools.llm.summarize_incremental \
+  --source-dir "/path/to/folder" \
+  --staging-dir "runs/<RUN_ID>/tmp/staging" \
+  --per-doc-dir "runs/<RUN_ID>/exports/docs" \
+  --tmp-dir "runs/<RUN_ID>/tmp/incremental" \
+  --index "runs/<RUN_ID>/exports/folder_synthesis.index.json" \
+  --out "runs/<RUN_ID>/exports/folder_synthesis.md" \
+  --manifest "runs/<RUN_ID>/exports/folder_synthesis.manifest.json" \
+  --model "azure-gpt-5.4" \
+  --detect-mode mtime-size
+```
+
 Notes:
 - If a PDF extractor appears to duplicate identical page text (a known issue with some PDFs), the output will include a warning like `PDF_REDUNDANCY_DEDUPED`.
 - Model credentials and endpoints are always local (`.env` + `config/models.json` placeholders). Do not commit secrets or internal endpoints.
+- Incremental index and manifests now write atomically, and index progress is checkpointed per file so reruns can recover cleanly after transient API/network failures.
 
 ## Microsoft Graph (Office 365)
 - Guide: [docs/GRAPH_AUTH_REPLICATION_GUIDE.md](docs/GRAPH_AUTH_REPLICATION_GUIDE.md)
@@ -79,7 +95,7 @@ Parallel runs note:
 
 Setup and prompting guidance: [docs/Copilot Web Search Configuration and Usage.md](docs/Copilot%20Web%20Search%20Configuration%20and%20Usage.md)
 
-If the MCP server fails to start, switch the package in `.vscode/mcp.json` to `@microsoft/mcp-server-playwright` and record what worked in this README.
+If the MCP server fails to start, ensure the binary in `.vscode/mcp.json` is set to `playwright-mcp` (the command changed in newer versions of @playwright/mcp).
 
 ## Reference docs
 - [AGENTS.md](AGENTS.md)

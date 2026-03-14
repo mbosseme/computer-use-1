@@ -6,6 +6,7 @@ import json
 import os
 import re
 import subprocess
+import tempfile
 import time
 from dataclasses import asdict, dataclass
 from datetime import date, datetime
@@ -91,12 +92,62 @@ def _load_index(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _write_index(path: Path, data: dict[str, Any]) -> None:
+def _atomic_write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as tf:
+        tf.write(content)
+        temp_path = Path(tf.name)
+    temp_path.replace(path)
 
 
-def _resolve_azure_config(*, model_name: str = "azure-gpt-5.2") -> AzureResponsesClientConfig:
+def _write_index(path: Path, data: dict[str, Any]) -> None:
+    _atomic_write_text(path, json.dumps(data, indent=2) + "\n")
+
+
+def _build_index_payload(
+    *,
+    source_dir: Path,
+    staging_dir: Path,
+    per_doc_dir: Path,
+    tmp_dir: Path,
+    model_name: str,
+    detect_mode: DetectMode,
+    files_seen: int,
+    changed: int,
+    synthesized: int,
+    removed: list[str],
+    entries: dict[str, Any],
+    processed: Optional[int] = None,
+    total: Optional[int] = None,
+    in_progress: bool = False,
+) -> dict[str, Any]:
+    payload: dict[str, Any] = {
+        "generated_on": datetime.now().isoformat(timespec="seconds"),
+        "source_dir": str(source_dir),
+        "staging_dir": str(staging_dir),
+        "per_doc_dir": str(per_doc_dir),
+        "tmp_dir": str(tmp_dir),
+        "model": model_name,
+        "detect_mode": detect_mode,
+        "stats": {
+            "files_seen": files_seen,
+            "changed": changed,
+            "synthesized": synthesized,
+            "removed": len(removed),
+        },
+        "removed": removed,
+        "entries": entries,
+    }
+    if in_progress:
+        payload["progress"] = {
+            "in_progress": True,
+            "processed": int(processed or 0),
+            "total": int(total or files_seen),
+        }
+    return payload
+
+
+def _resolve_azure_config(*, model_name: str = "azure-gpt-5.4") -> AzureResponsesClientConfig:
     repo_root = Path(__file__).resolve().parents[2]
     load_repo_dotenv(repo_root)
 
@@ -220,32 +271,28 @@ def _build_combined_synthesis(
         {"role": "user", "content": final_prompt},
     ]
 
-    instructions, input_text = client.conversation_to_responses_input(messages)
-    result = call_with_retry(client, input_text, instructions, max_retries=6, initial_delay=2.0, timeout_s=300.0)
+    instructions, input_data = client.conversation_to_responses_input(messages)
+    result = call_with_retry(client, input_data, instructions, max_retries=6, initial_delay=2.0, timeout_s=300.0)
     synthesis = client.extract_output_text(result).strip()
 
-    out_md_path.parent.mkdir(parents=True, exist_ok=True)
-    out_md_path.write_text(
-        "\n".join(
-            [
-                "# Folder Synthesis",
-                "",
-                f"Generated on: {date.today().isoformat()}",
-                f"Rebuilt on: {datetime.now().isoformat(timespec='seconds')}",
-                f"Documents included: {len(docs_included)}",
-                "",
-                synthesis,
-                "",
-                "## Individual Document Syntheses",
-                "",
-                "\n\n".join([f"- {Path(e.per_doc_md).name}" for e in docs_included]),
-                "",
-            ]
-        ),
-        encoding="utf-8",
+    out_md_content = "\n".join(
+        [
+            "# Folder Synthesis",
+            "",
+            f"Generated on: {date.today().isoformat()}",
+            f"Rebuilt on: {datetime.now().isoformat(timespec='seconds')}",
+            f"Documents included: {len(docs_included)}",
+            "",
+            synthesis,
+            "",
+            "## Individual Document Syntheses",
+            "",
+            "\n\n".join([f"- {Path(e.per_doc_md).name}" for e in docs_included]),
+            "",
+        ]
     )
+    _atomic_write_text(out_md_path, out_md_content)
 
-    manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest = {
         "generated_on": date.today().isoformat(),
         "rebuilt_on": datetime.now().isoformat(timespec="seconds"),
@@ -253,7 +300,7 @@ def _build_combined_synthesis(
         "documents_included": len(docs_included),
         "documents": [asdict(e) for e in docs_included],
     }
-    manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    _atomic_write_text(manifest_path, json.dumps(manifest, indent=2) + "\n")
 
 
 def sync_incremental_synthesis(
@@ -289,11 +336,12 @@ def sync_incremental_synthesis(
             continue
         current_files.append(p)
 
-    entries: dict[str, Any] = {}
+    entries: dict[str, Any] = dict(prior_entries)
     changed = 0
     synthesized = 0
+    total_files = len(current_files)
 
-    for p in current_files:
+    for idx, p in enumerate(current_files, start=1):
         fp = _fingerprint(source_dir, p, detect_mode=detect_mode)
         key = fp.rel_path
 
@@ -392,25 +440,43 @@ def sync_incremental_synthesis(
         )
         entries[key] = asdict(entry)
 
-    removed = [k for k in prior_entries.keys() if k not in entries]
+        checkpoint = _build_index_payload(
+            source_dir=source_dir,
+            staging_dir=staging_dir,
+            per_doc_dir=per_doc_dir,
+            tmp_dir=tmp_dir,
+            model_name=model_name,
+            detect_mode=detect_mode,
+            files_seen=total_files,
+            changed=changed,
+            synthesized=synthesized,
+            removed=[],
+            entries=entries,
+            processed=idx,
+            total=total_files,
+            in_progress=True,
+        )
+        _write_index(index_path, checkpoint)
 
-    index_out = {
-        "generated_on": datetime.now().isoformat(timespec="seconds"),
-        "source_dir": str(source_dir),
-        "staging_dir": str(staging_dir),
-        "per_doc_dir": str(per_doc_dir),
-        "tmp_dir": str(tmp_dir),
-        "model": model_name,
-        "detect_mode": detect_mode,
-        "stats": {
-            "files_seen": len(current_files),
-            "changed": changed,
-            "synthesized": synthesized,
-            "removed": len(removed),
-        },
-        "removed": removed,
-        "entries": entries,
-    }
+    current_keys = {p.relative_to(source_dir).as_posix() for p in current_files}
+    removed = [k for k in prior_entries.keys() if k not in current_keys]
+    for key in removed:
+        entries.pop(key, None)
+
+    index_out = _build_index_payload(
+        source_dir=source_dir,
+        staging_dir=staging_dir,
+        per_doc_dir=per_doc_dir,
+        tmp_dir=tmp_dir,
+        model_name=model_name,
+        detect_mode=detect_mode,
+        files_seen=total_files,
+        changed=changed,
+        synthesized=synthesized,
+        removed=removed,
+        entries=entries,
+        in_progress=False,
+    )
     _write_index(index_path, index_out)
 
     if changed == 0 and not rebuild_if_no_changes and out_md_path.exists() and out_manifest_path.exists():
@@ -453,7 +519,7 @@ def main() -> int:
     parser.add_argument("--index", required=True, type=Path)
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--manifest", required=True, type=Path)
-    parser.add_argument("--model", default="azure-gpt-5.2")
+    parser.add_argument("--model", default="azure-gpt-5.4")
     parser.add_argument(
         "--detect-mode",
         choices=["mtime-size", "content-hash"],

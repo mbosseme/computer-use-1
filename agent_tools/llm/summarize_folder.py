@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import tempfile
 import time
 from dataclasses import asdict
 from datetime import date
@@ -23,7 +24,7 @@ def _repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
-def _resolve_azure_config(*, model_name: str = "azure-gpt-5.2") -> AzureResponsesClientConfig:
+def _resolve_azure_config(*, model_name: str = "azure-gpt-5.4") -> AzureResponsesClientConfig:
     repo_root = _repo_root()
     load_repo_dotenv(repo_root)
 
@@ -71,13 +72,21 @@ def _extract_body(md: str) -> str:
     return md.strip()
 
 
+def _atomic_write_text(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as tf:
+        tf.write(content)
+        temp_path = Path(tf.name)
+    temp_path.replace(path)
+
+
 def synthesize_folder(
     *,
     dir_path: Path,
     out_md_path: Path,
     per_doc_dir: Path,
     tmp_dir: Path,
-    model_name: str = "azure-gpt-5.2",
+    model_name: str = "azure-gpt-5.4",
     include_exts: tuple[str, ...] = (".pdf", ".eml", ".txt", ".md"),
     max_files: int = 0,
     target_chunk_chars: int = 30_000,
@@ -195,11 +204,12 @@ def synthesize_folder(
         {"role": "user", "content": final_prompt},
     ]
 
-    instructions, input_text = client.conversation_to_responses_input(messages)
-    result = call_with_retry(client, input_text, instructions, max_retries=6, initial_delay=2.0, timeout_s=300.0)
+    instructions, input_data = client.conversation_to_responses_input(messages)
+    result = call_with_retry(client, input_data, instructions, max_retries=6, initial_delay=2.0, timeout_s=300.0)
     synthesis = client.extract_output_text(result).strip()
 
-    out_md_path.write_text(
+    _atomic_write_text(
+        out_md_path,
         "\n".join(
             [
                 "# Folder Synthesis",
@@ -216,7 +226,6 @@ def synthesize_folder(
                 "",
             ]
         ),
-        encoding="utf-8",
     )
 
     manifest = {
@@ -246,7 +255,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     parser.add_argument("--per-doc-dir", required=True, help="Directory to write per-document syntheses")
     parser.add_argument("--tmp-dir", required=True, help="Directory to write per-document chunk artifacts")
     parser.add_argument("--manifest", default="", help="Optional JSON manifest output path")
-    parser.add_argument("--model", default="azure-gpt-5.2", help="Model name from config/models.json")
+    parser.add_argument("--model", default="azure-gpt-5.4", help="Model name from config/models.json")
     parser.add_argument("--include-exts", default=".pdf,.eml,.txt,.md", help="Comma-separated extensions")
     parser.add_argument("--max-files", type=int, default=0, help="Optional limit for number of files (0 = all)")
 
@@ -286,8 +295,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     )
 
     if manifest_path:
-        manifest_path.parent.mkdir(parents=True, exist_ok=True)
-        manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+        _atomic_write_text(manifest_path, json.dumps(manifest, indent=2) + "\n")
         print(f"Wrote: {manifest_path}")
 
     print(f"Wrote: {out_md}")

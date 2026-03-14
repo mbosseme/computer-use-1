@@ -1,7 +1,7 @@
 # Skill: Document Synthesis via LLM
 
 ## Purpose
-Synthesize a folder of documents (PDF, EML, etc.) into a structured summary using an LLM endpoint (Azure OpenAI GPT-5.2 Responses API or similar).
+Synthesize a folder of documents (PDF, EML, etc.) into a structured summary using an LLM endpoint (Azure OpenAI GPT-5.4 Responses API or similar).
 
 ## When to use this skill
 - User asks to "summarize," "synthesize," or "extract key themes" from a set of documents.
@@ -51,18 +51,31 @@ Recommended tool:
 Example:
 - `python -m agent_tools.llm.summarize_incremental \
   --source-dir <SOURCE_FOLDER> \
-  --staging-dir runs/<RUN_ID>/inputs/staging \
-  --per-doc-dir runs/<RUN_ID>/exports/per_doc \
-  --tmp-dir runs/<RUN_ID>/tmp/chunks \
-  --index runs/<RUN_ID>/exports/incremental_index.json \
+  --staging-dir runs/<RUN_ID>/tmp/staging \
+  --per-doc-dir runs/<RUN_ID>/exports/docs \
+  --tmp-dir runs/<RUN_ID>/tmp/incremental \
+  --index runs/<RUN_ID>/exports/folder_synthesis.index.json \
   --out runs/<RUN_ID>/exports/folder_synthesis.md \
-  --manifest runs/<RUN_ID>/exports/folder_synthesis.manifest.json`
+  --manifest runs/<RUN_ID>/exports/folder_synthesis.manifest.json \
+  --model azure-gpt-5.4 \
+  --detect-mode mtime-size`
+
+Verification:
+- `grep -n "<filename>" runs/<RUN_ID>/exports/folder_synthesis.index.json`
+- `head -n 10 runs/<RUN_ID>/exports/folder_synthesis.md`
 
 Notes:
 - Change detection mode is configurable:
   - Default: `--detect-mode mtime-size` (fast; usually sufficient)
   - Optional: `--detect-mode content-hash` (slower; more robust)
 - Per-doc output filenames are generated as `slug__stableId__synthesis.md` where `stableId` is derived from the file’s **relative path** within `--source-dir` to avoid collisions (e.g., multiple files that slugify similarly).
+- Index writes are checkpointed after each processed file; on failure, rerun the same command and unchanged files are skipped.
+
+Resilience defaults:
+- Prefer `summarize_incremental` for recurring folders; use `summarize_folder` mainly for first baseline builds.
+- Keep outputs under `runs/<RUN_ID>/...` so retries are isolated per worktree.
+- Use workspace venv Python (`<workspace>/.venv/bin/python`) when available.
+- Avoid `--rebuild-if-no-changes` unless you explicitly need a forced refresh.
 
 ## Recommended implementation
 - Use `agent_tools/llm/summarize_file.py` for chunked PDF synthesis (map-reduce) with coverage warnings and an optional JSON manifest.
@@ -75,7 +88,7 @@ from agent_tools.llm.azure_openai_responses import AzureOpenAIResponsesClient, A
 from agent_tools.llm.env import load_repo_dotenv, read_azure_openai_env
 from agent_tools.llm.model_registry import load_models_config
 
-def _resolve_azure_config(*, model_name: str = "azure-gpt-5.2") -> AzureResponsesClientConfig:
+def _resolve_azure_config(*, model_name: str = "azure-gpt-5.4") -> AzureResponsesClientConfig:
     repo_root = Path(__file__).resolve().parents[3]
     load_repo_dotenv(repo_root)
     env = read_azure_openai_env()
@@ -125,6 +138,14 @@ safe_content = sanitize_text(pdf_content)
 - **Recovery**: Increase `timeout_s` (e.g., +60–120s) and retry.
 - **Prevention**: Use generous initial timeout (180–300s) for large payloads.
 
+### TLS / transport instability (SSL EOF, RemoteDisconnected, Connection aborted)
+- **Detection**: Exceptions like `SSLEOFError`, `RemoteDisconnected`, `ConnectionError`, or `Max retries exceeded`.
+- **Recovery**:
+  1. Re-run `summarize_incremental` using the same `--index` and output paths.
+  2. Check endpoint reachability (`nslookup` / `curl -I`) before retrying large batches.
+  3. If one file is urgent, run `summarize_file` for that file while folder synthesis is retried.
+- **Prevention**: Use the hardened transport retries in `agent_tools/llm/azure_openai_responses.py` and checkpointed incremental index writes.
+
 ### PDF quirks (repeated content per page)
 - **Detection**: `len(full_text) / num_pages > 50000` (suspiciously large per-page average).
 - **Recovery**: Extract only page 1 for transcript-style PDFs.
@@ -133,7 +154,7 @@ safe_content = sanitize_text(pdf_content)
 ## Outputs
 - **Primary**: `runs/<RUN_ID>/exports/<synthesis_name>.md`
 - **Intermediate** (optional): Per-document summaries can be saved for debugging.
-- **Incremental index** (optional): `runs/<RUN_ID>/exports/incremental_index.json`
+- **Incremental index** (recommended): `runs/<RUN_ID>/exports/folder_synthesis.index.json`
 
 ## Dependencies
 - `PyPDF2` (Tier A base)
@@ -155,4 +176,5 @@ If you want a one-off script for a run, create it under `runs/<RUN_ID>/scripts/`
 
 For reusable entry points, prefer the CLIs:
 - `python -m agent_tools.llm.summarize_file` (single PDF/text)
-- `python -m agent_tools.llm.summarize_folder` (folder synthesis)
+- `python -m agent_tools.llm.summarize_incremental` (repeatable incremental folder synthesis)
+- `python -m agent_tools.llm.summarize_folder` (first full baseline synthesis)
