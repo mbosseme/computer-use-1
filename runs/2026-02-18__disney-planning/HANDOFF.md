@@ -40,4 +40,35 @@
 - **Time Restrictions**: Dinners cannot be booked for later than **7:30 PM**.
 - **Progress UPDATE:** User requested a summary of all booked reservations by day, so I verified against the active My Plans page.
 - **Progress UPDATE:** Consolidated ADR planning, waitlist, and constraints into docs/DISNEY_ADR_STATE.md and created .github/prompts/scan-adrs.prompt.md to act as a saved prompt for checking the list iteratively going forward.
-- **Progress UPDATE:** Consolidated ADR planning, waitlist, and constraints into docs/DISNEY_ADR_STATE.md and created .github/prompts/scan-adrs.prompt.md to act as a saved prompt for checking the list iteratively going forward.
+
+## Session 2 Wrap-up (Mar 14, 2026)
+
+### What was accomplished
+1. Ran the first routine ADR scan via `scan-adrs.prompt.md`:
+   - Sci-Fi Dine-In (Apr 10): No availability.
+   - Yak & Yeti (Apr 7): No availability.
+   - 'Ohana (Apr 5, 7, 9): Available but only at 9:20+ PM — rejected per 7:30 PM constraint.
+2. Created `docs/DISNEY_SITE_NAVIGATION.md` — Disney-specific UI patterns for efficient browser automation.
+3. Updated `scan-adrs.prompt.md` with a Pre-flight section that loads the core browser skill, Disney site reference, and ADR state before scanning.
+4. Promoted general SPA automation patterns to core (`main` via PR #60):
+   - browser-automation-core: SPA snapshot triage, accordion expansion, ref invalidation, calendar widgets, systematic scanning.
+   - copilot-instructions: MCP-first rule with escalation ladder.
+   - Local-First Briefing: auth/login protocol for MCP browser.
+
+### Key files for next session
+| File | Purpose |
+|------|---------|
+| `docs/DISNEY_ADR_STATE.md` | Single source of truth: constraints, waitlist, secured itinerary |
+| `docs/DISNEY_SITE_NAVIGATION.md` | Disney site-specific UI patterns for the agent |
+| `.github/prompts/scan-adrs.prompt.md` | Reusable prompt — just invoke it to run a scan |
+| `.github/skills/browser-automation-core/SKILL.md` | General SPA automation patterns (now on main) |
+
+### Current waitlist status (as of Mar 14)
+- **Sci-Fi Dine-In Theater** — Target: Fri Apr 10 (Lunch or Dinner) — No availability
+- **Yak & Yeti Restaurant** — Target: Tue Apr 7 (Lunch) — No availability
+- **'Ohana** — Target: Dinner on Apr 9, 7, or 5 — Only 9 PM+ slots available (violates 7:30 PM rule)
+
+### What to do next
+- Run the `scan-adrs.prompt.md` prompt again to check for new cancellations.
+- The browser may need re-authentication (login state may have expired). Expect HITL for Disney login.
+- If availability opens up for any waitlist item within constraints, the prompt will guide through booking with HITL confirmation.
