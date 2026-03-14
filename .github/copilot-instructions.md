@@ -29,6 +29,9 @@ If the task involves web research, consult `docs/Copilot Web Search Configuratio
 ## Tooling: Playwright MCP (official)
 - Use the Playwright MCP server tools for browser actions (navigate, click, fill, screenshot, etc.).
 - Keep workflows deterministic: explicit waits, stable selectors, and clear stop conditions.
+- **MCP-first rule (mandatory)**: When a Playwright MCP server is configured in `.vscode/mcp.json`, **always** use the MCP tools (`mcp_playwright_browser_navigate`, `mcp_playwright_browser_click`, `mcp_playwright_browser_snapshot`, `mcp_playwright_browser_evaluate`, etc.) for browser work. **Never** fall back to writing or running a standalone Python/Node Playwright script as a workaround — this spawns a separate browser instance that competes with the MCP-managed browser, causes ghost tabs, profile lock errors, and breaks the user's flow. The only exception is a pre-built, user-approved utility script under `tools/` that is designed to be run independently (not as a reaction to MCP difficulties).
+- **Navigation via MCP**: Use `mcp_playwright_browser_navigate` for navigation. If that tool is unavailable, use `mcp_playwright_browser_evaluate` with `window.location.href = "<URL>"` as a fallback — do **not** write a Python script to navigate.
+- **When MCP tools fail**: If an MCP tool call fails (timeout, element not found, widget won't load), follow the escalation ladder: retry with adjusted selectors/waits → reload page → try alternate URL → ask user. Do **not** pivot to a standalone script.
 
 ## M365 Copilot Model Selection (default)
 - For M365 Copilot chat tasks, set the model/mode selector to **`GPT-5.4 Think`** at the start of the interaction.

@@ -58,6 +58,16 @@ The goal is a solution that is:
 5. **Reuse**: Next time, agent loads the skill and runs the routine faster.
 6. **Log**: Every meaningful run yields a short run note for future reference.
 
+### Critical: Authentication & Login State
+This local-first model uses a **headless or headed browser controlled via MCP**, which runs distinctly from your main daily browser.
+- **Login must happen inside the Agent's window**: When you say "I'm logged in", the agent cannot see your extensive Chrome/Safari session.
+- **Protocol**:
+  1. Agent navigates to the target site.
+  2. If a login wall appears, Agent pauses and asks you to "Please log in inside the browser window."
+  3. You manually complete the login (including MFA/2FA) in that specific window.
+  4. You tell the Agent "Done" or "Logged in".
+  5. Agent verifies by reloading/checking a "My Account" or "Dashboard" element before proceeding.
+
 ---
 
 ## Parallel execution model
