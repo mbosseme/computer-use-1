@@ -109,18 +109,73 @@ Notes:
   - Send / Pay
 - **Ambiguity**: If unsure if an action is irreversible, ASK first.
 
+## Working with Large / Complex SPA Snapshots
+
+### Snapshot Triage via Terminal Grep
+When MCP snapshots are very large (10KB+), reading them inline is impractical. Use a **dump-and-grep** workflow:
+1. Let the MCP tool write its snapshot to a file (it does this automatically for large results).
+2. Use terminal `grep` to search for the element you need: `cat <snapshot_file> | grep -A 10 -i "target text"`.
+3. This is faster and more reliable than scrolling through inline YAML.
+- **Special characters**: Restaurant/business names with apostrophes, accents, or ampersands (e.g., `'Ohana`, `Café`) may need escaping or alternate grep patterns. Use `-i` for case-insensitivity.
+
+### Collapsed / Accordion / Tab-Hidden Content
+Many SPAs hide substantial content behind collapsed accordions, unexpanded tabs, or "show more" toggles. **DOM snapshots only capture what is currently expanded.**
+
+**Detection signals:**
+- You expect content (e.g., itinerary details, order history) but the snapshot shows only summary headers.
+- The page has `button` elements with `aria-expanded="false"` or similar toggle patterns.
+- Section headings are visible but their child content is missing.
+
+**Recovery pattern:**
+1. Use `browser_evaluate` with JS to find and click all collapsed toggles:
+   ```js
+   // Example: expand all accordion buttons
+   document.querySelectorAll('button[aria-expanded="false"]').forEach(b => b.click());
+   ```
+2. Wait briefly (1–2s) for the DOM to update.
+3. Re-snapshot to capture the now-visible content.
+4. If the accordion pattern is unknown, use `browser_evaluate` to dump `document.body.innerText` and search for your target text to confirm it exists on the page at all.
+
+### SPA Ref Invalidation (Critical)
+In Single Page Applications, **any interaction that triggers a state change** (selecting a date, applying a filter, switching tabs, expanding a section) will re-render parts of the DOM. This invalidates previously captured `ref` values.
+
+**Rules:**
+- **Never reuse refs from a previous snapshot** after a state-changing interaction. The tool will return "Ref not found."
+- **Always re-snapshot** (via `browser_snapshot` or the next `browser_click`) after any click that changes visible content.
+- Plan your interaction sequence: snapshot → identify target → click → snapshot again → identify next target.
+
+### Calendar / Date-Picker Widgets
+Calendar widgets are common in booking/scheduling UIs and typically use `gridcell` roles.
+
+**Reliable interaction pattern:**
+1. Open the calendar (click the date field/button).
+2. Identify the correct month grid — look for a label like `"Calendar, April"` or a heading with the month name.
+3. Find the target date as a `gridcell` with the exact day number.
+4. **Watch for duplicate day numbers**: Overflow days from adjacent months appear as `[disabled]` gridcells. Always click the **enabled** gridcell with your target number.
+5. After selecting a date, the page typically re-renders results — re-snapshot before proceeding.
+
+### Systematic Availability / Search-Result Scanning
+When checking multiple dates or search criteria for availability:
+1. **Establish a checklist** upfront (dates × restaurants × meal types).
+2. After each search, grep the snapshot for target names. Exit code 1 = not found = no availability.
+3. **Do not scroll and re-search** unless the page has explicit pagination controls. If grep finds nothing, the item is not in the results.
+4. **Change one parameter at a time** (e.g., change the date, keep party size fixed) to avoid losing track of state.
+5. Modify search parameters via the existing UI controls (Edit buttons, dropdowns) rather than navigating to a fresh URL — this preserves session state and is faster.
+
 ## Recovery Rules
 - **Element not found**:
   - Check for iframes.
   - Check for shadow DOM.
   - Check if the element is behind an overlay.
   - Scroll to bring it into view.
+  - Check if content is behind a collapsed accordion or unexpanded tab (see above).
 - **Click intercepted**:
   - Identify the obscuring element.
   - Dismiss it (if it's a modal/banner).
   - Wait for it to disappear (if it's a toast/spinner).
-- **Stale element**:
-  - Re-query the element from the DOM before interacting.
+- **Stale element / Ref not found**:
+  - Re-snapshot the page — refs from a prior snapshot are invalid after any SPA state change.
+  - Re-query the element from the new snapshot before interacting.
 
 - **Visible text not found (canvas / viz rendering)**:
   - Assume the text may not exist in the DOM.
