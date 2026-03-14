@@ -1,0 +1,495 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - banner [ref=e8]:
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - link "Visit Disney.com" [ref=e14] [cursor=pointer]:
+              - /url: https://www.disney.com/
+            - button "Skip Navigation" [ref=e15] [cursor=pointer]
+            - generic [ref=e16]:
+              - generic [ref=e17]:
+                - link "Welcome, Matt!" [ref=e18] [cursor=pointer]:
+                  - /url: /profile#nav
+                - button "1" [ref=e540]:
+                  - generic [ref=e541] [cursor=pointer]: "1"
+                - text: "|"
+              - generic [ref=e19]:
+                - link "Sign Out" [ref=e20] [cursor=pointer]:
+                  - /url: /authentication/logout/
+                - text: "|"
+              - button "United States - English. Language selector, currently set to United States - English" [ref=e22] [cursor=pointer]:
+                - menuitem [ref=e23]
+                - generic [ref=e24]: United States (English)
+            - search [ref=e25]:
+              - generic [ref=e26]:
+                - button "Search" [ref=e27] [cursor=pointer]:
+                  - generic: Search
+                - combobox "Search or ask a question" [ref=e28]
+          - generic [ref=e29]:
+            - link "Walt Disney World Logo" [ref=e30] [cursor=pointer]:
+              - /url: https://disneyworld.disney.go.com
+              - img "Walt Disney World Logo" [ref=e31]
+            - navigation "Navigation Links" [ref=e32]:
+              - menubar [ref=e33]:
+                - generic: Navigation Links
+                - group [ref=e34]:
+                  - menuitem "Tickets & Parks" [ref=e36] [cursor=pointer]:
+                    - generic [ref=e37]: Tickets & Parks
+                - group [ref=e38]:
+                  - menuitem "Places to Stay" [ref=e40] [cursor=pointer]:
+                    - generic [ref=e41]: Places to Stay
+                - group [ref=e42]:
+                  - menuitem "Things to Do" [ref=e44] [cursor=pointer]:
+                    - generic [ref=e45]: Things to Do
+                - group [ref=e46]:
+                  - menuitem "Shop" [ref=e48] [cursor=pointer]:
+                    - generic [ref=e49]: Shop
+                - group [ref=e50]:
+                  - menuitem "Help & Rules" [ref=e52] [cursor=pointer]:
+                    - generic [ref=e53]: Help & Rules
+                  - text: • • • • •
+                - group [ref=e54]:
+                  - menuitem "Cart" [ref=e56] [cursor=pointer]:
+                    - menuitem [ref=e57]
+                    - generic [ref=e58]: Cart
+                - group [ref=e59]:
+                  - menuitem "My Disney Experience" [ref=e61] [cursor=pointer]:
+                    - generic [ref=e62]: My Disney Experience
+    - main [ref=e63]:
+      - main [ref=e64]:
+        - main [ref=e66]:
+          - generic [ref=e69]:
+            - region "Media Engine" [ref=e72]:
+              - generic [ref=e73]:
+                - region "Media Engine" [ref=e74]:
+                  - generic:
+                    - listitem:
+                      - button "Load previous slide" [ref=e76] [cursor=pointer]
+                    - listitem:
+                      - button "Load next slide" [ref=e77] [cursor=pointer]
+                  - img "The Pig, one of Whispering Canyon Café signature skillets with pork ribs, pork belly, pulled pork, pig wings and side dishes at Disney's Wilderness Lodge" [ref=e79]
+                - navigation [ref=e91]:
+                  - generic [ref=e93]:
+                    - button "The Pig, one of Whispering Canyon Café signature skillets with pork ribs, pork belly, pulled pork, pig wings and side dishes at Disney's Wilderness Lodge" [ref=e94] [cursor=pointer]:
+                      - img "The Pig, one of Whispering Canyon Café signature skillets with pork ribs, pork belly, pulled pork, pig wings and side dishes at Disney's Wilderness Lodge" [ref=e95]
+                    - button "Western-themed dining room with cowboy and Indian decals on the backs of chairs" [ref=e96] [cursor=pointer]:
+                      - img "Western-themed dining room with cowboy and Indian decals on the backs of chairs" [ref=e97]
+                    - button "Dining area with blond wooden furniture next to a fireplace" [ref=e98] [cursor=pointer]:
+                      - img "Dining area with blond wooden furniture next to a fireplace" [ref=e99]
+                    - button "Section of dining room next to a wall with cowboy art and a floor-to-ceiling window" [ref=e100] [cursor=pointer]:
+                      - img "Section of dining room next to a wall with cowboy art and a floor-to-ceiling window" [ref=e101]
+                    - button "Tepee-designed light fixtures in the dining room" [ref=e102] [cursor=pointer]:
+                      - img "Tepee-designed light fixtures in the dining room" [ref=e103]
+                    - button "Dining room wall with cowboy-designed sconces and a rodeo painting" [ref=e104] [cursor=pointer]:
+                      - img "Dining room wall with cowboy-designed sconces and a rodeo painting" [ref=e105]
+                    - button "A caramel apple pie, served with a scoop of vanilla ice cream" [ref=e106] [cursor=pointer]:
+                      - img "A caramel apple pie, served with a scoop of vanilla ice cream" [ref=e107]
+                    - button "The Heritage, one of Whispering Canyon Café signature skillets with biscuits, eggs, bacon, sausages, waffles and potatoes" [ref=e108] [cursor=pointer]:
+                      - img "The Heritage, one of Whispering Canyon Café signature skillets with biscuits, eggs, bacon, sausages, waffles and potatoes" [ref=e109]
+                    - button "A Cedar Plank Salmon served with risotto and salad from Whispering Canyon Café at Disney's Wilderness Lodge" [ref=e110] [cursor=pointer]:
+                      - img "A Cedar Plank Salmon served with risotto and salad from Whispering Canyon Café at Disney's Wilderness Lodge" [ref=e111]
+                    - button "Braised pork belly, barbecued pork ribs, pulled pork and barbecued pork shank with vegetables" [ref=e112] [cursor=pointer]:
+                      - img "Braised pork belly, barbecued pork ribs, pulled pork and barbecued pork shank with vegetables" [ref=e113]
+                    - button "Barbecued jackfruit, vegan sausage, beefless tips and a vegan chicken substitute" [ref=e114] [cursor=pointer]:
+                      - img "Barbecued jackfruit, vegan sausage, beefless tips and a vegan chicken substitute" [ref=e115]
+                  - link "All (11)" [ref=e117] [cursor=pointer]:
+                    - /url: "#"
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - heading "Whispering Canyon Cafe" [level=1] [ref=e123]
+                - generic [ref=e125]:
+                  - generic [ref=e126]: Located
+                  - generic [ref=e127]: in
+                  - link "Disney's Wilderness Lodge" [ref=e129] [cursor=pointer]:
+                    - /url: /resorts/wilderness-lodge-resort/
+                - generic [ref=e130]: Round up the whole family for hearty Western fare with all-you-care-to-enjoy skillets and shenanigans!
+                - generic [ref=e131]:
+                  - list [ref=e132]:
+                    - listitem [ref=e134]:
+                      - link "View Menu" [ref=e138] [cursor=pointer]:
+                        - /url: /dining/wilderness-lodge-resort/whispering-canyon-cafe/menus/
+                  - list [ref=e140]:
+                    - listitem [ref=e141]:
+                      - list [ref=e144]:
+                        - listitem [ref=e145]: American ,
+                        - listitem [ref=e146]: Casual Dining ,
+                        - listitem [ref=e147]: a la Carte
+                - button "Open Modal for Dining Plans and Discounts" [ref=e152] [cursor=pointer]: View Dining Plans and Discounts
+              - generic [ref=e153]:
+                - separator [ref=e154]
+                - generic [ref=e155]:
+                  - generic [ref=e156]:
+                    - button "date picker" [ref=e157] [cursor=pointer]:
+                      - generic [ref=e158]: 
+                    - generic "Thursday, April 9, 2026" [ref=e159] [cursor=pointer]
+                  - text:  
+                - generic [ref=e167]:
+                  - generic [ref=e168]: Brunch – 7:30 AM to 2:00 PM
+                  - generic [ref=e169]: Dinner – 5:00 PM to 10:00 PM
+              - button "Check Available Days" [ref=e171] [cursor=pointer]: Check Available Days
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - generic [ref=e178]:
+                  - generic [ref=e179]:
+                    - heading "Meal Pricing" [level=3] [ref=e180]
+                    - button "Range reflects the average price of adult dinner entrées (breakfast and lunch generally cost less), except Character Dining locations, buffet locations, dinner shows, and special dining events where range reflects the average adult price of entire meal and non-alcoholic beverages. Range excludes alcoholic beverages, taxes and gratuities except at dinner shows where beer and wine, taxes and gratuities are included." [ref=e184] [cursor=pointer]:
+                      - tooltip "Range reflects the average price of adult dinner entrées (breakfast and lunch generally cost less), except Character Dining locations, buffet locations, dinner shows, and special dining events where range reflects the average adult price of entire meal and non-alcoholic beverages. Range excludes alcoholic beverages, taxes and gratuities except at dinner shows where beer and wine, taxes and gratuities are included."
+                  - generic [ref=e187]:
+                    - generic [ref=e189]:
+                      - link "Brunch Menu" [ref=e191] [cursor=pointer]:
+                        - /url: /dining/wilderness-lodge-resort/whispering-canyon-cafe/menus/brunch/
+                      - generic [ref=e192]: –
+                      - generic [ref=e193]: $$
+                      - generic [ref=e194]: ($15
+                      - generic [ref=e195]: to
+                      - generic [ref=e196]: $34.99
+                      - generic [ref=e197]: per
+                      - generic [ref=e198]: adult)
+                    - generic [ref=e200]:
+                      - link "Dinner Menu" [ref=e202] [cursor=pointer]:
+                        - /url: /dining/wilderness-lodge-resort/whispering-canyon-cafe/menus/dinner/
+                      - generic [ref=e203]: –
+                      - generic [ref=e204]: $$$
+                      - generic [ref=e205]: ($35
+                      - generic [ref=e206]: to
+                      - generic [ref=e207]: $59.99
+                      - generic [ref=e208]: per
+                      - generic [ref=e209]: adult)
+                - separator [ref=e210]
+              - generic [ref=e211]:
+                - generic [ref=e216]:
+                  - generic [ref=e218]:
+                    - heading "We Like to Horse Around" [level=2] [ref=e220]
+                    - generic [ref=e222]:
+                      - paragraph [ref=e223]: Gallop on over to this Old Western eatery for games and good eatin’ served with attitude.
+                      - paragraph [ref=e224]: Tether your trusty steed and mosey into this log-cabin lodge with rough-hewn charm and colorfully named Cast Members who have a reputation for sassing customers.
+                  - generic [ref=e226]:
+                    - heading "Fine Frontier Fare" [level=2] [ref=e228]
+                    - generic [ref=e230]:
+                      - paragraph [ref=e231]: Bottomless platters and chuck wagon favorites will please the whole gang.
+                      - paragraph [ref=e232]: "Come one, come all, just come hungry for the Whispering Canyon Café Brunch-B-Q! Choose from a selection of our famous all-you-care-to-enjoy signature skillets, like:"
+                      - list [ref=e233]:
+                        - listitem [ref=e234]:
+                          - strong [ref=e235]: The Heritage Skillet
+                          - text: House-made buttermilk-cheddar biscuits, sausage gravy, scrambled eggs, bacon and Mickey waffles
+                        - listitem [ref=e236]:
+                          - strong [ref=e237]: The Carnivore Skillet
+                          - text: Maple-chipotle barbecued slow-smoked pork ribs, citrus-herb chicken, country potatoes and charred carrots.
+                        - listitem [ref=e238]:
+                          - strong [ref=e239]: The Lighter Side Skillet
+                          - text: Bircher muesli, fresh fruit and yogurt with an egg white-spinach frittata, turkey bacon, turkey sausage, country potatoes and Mickey-shaped waffles
+                      - paragraph [ref=e240]: And more! Plant-based options are also available.
+                      - paragraph [ref=e241]: Corral your wild bunch later in the day for a country-style dinner to sink your teeth into even more all-you-care-to enjoy signature skillets featuring oak-smoked mustard-barbecued beef brisket, braised pork belly or house-smoked salmon. All skillets come with lip-smackin’ cowboy sides. The Plant-based skillet features maple-chipotle barbecued jackfruit, mustard-glazed beefless tips, oven-roasted carrots and charred peppers.
+                      - paragraph [ref=e242]: Before you hit the trail, get a load of our most wanted dessert—Granny Smith apple pie.
+                      - paragraph [ref=e243]: Pardners 21 years of age and older, claim a bounty of beers, wines and concoctions sure to put hair on your chest. Yeehaw!
+                  - generic [ref=e245]:
+                    - heading "Reservations" [level=2] [ref=e247]
+                    - generic [ref=e249]:
+                      - text: Advance reservations are highly recommended.
+                      - link "Learn when advance reservations can be made" [ref=e250] [cursor=pointer]:
+                        - /url: /faq/reservation-window/advance-reservations/
+                      - text: .
+                  - generic [ref=e252]:
+                    - heading "Cancellations and Modifications" [level=2] [ref=e254]
+                    - generic [ref=e256]:
+                      - text: This restaurant has a cancellation policy and a modifications policy. The credit card provided at the time of reservation will automatically be charged a per-person fee if you don’t show up for your reservation or fail to cancel in accordance with the policy, or if you fail to modify in accordance with the policy and then need to cancel. Policy details will be available when you make your reservation and in your confirmation email.
+                      - link "Learn More" [ref=e257] [cursor=pointer]:
+                        - /url: /faq/dining-reservations/restaurant-reservation-cancellation/
+                - generic [ref=e260]:
+                  - heading "Location" [level=2] [ref=e262]
+                  - link "Go to Map" [ref=e264] [cursor=pointer]:
+                    - /url: /dining/#/id=whispering-canyon-cafe/
+            - generic [ref=e268]:
+              - separator [ref=e269]
+              - generic [ref=e272]:
+                - heading "Related Activities" [level=3] [ref=e273]
+                - generic [ref=e274]:
+                  - link "Preorder a delicious surprise to make an upcoming celebration at this location extra special." [ref=e277] [cursor=pointer]:
+                    - /url: /guest-services/cake-orders/
+                    - img [ref=e280]
+                    - generic [ref=e281]:
+                      - generic "Add a Cake Order to Your Reservation" [ref=e282]:
+                        - heading "Add a Cake Order to Your Reservation" [level=4] [ref=e283]
+                      - generic [ref=e286]: Preorder a delicious surprise to make an upcoming celebration at this location extra special.
+                  - link "Savor delicious dishes inspired by cultures around the world, delicately prepared by Walt Disney World chefs." [ref=e289] [cursor=pointer]:
+                    - /url: /events-tours/celebrate-soulfully-cooking-with-soul/
+                    - img [ref=e292]
+                    - generic [ref=e293]:
+                      - generic "Cooking with Soul at Walt Disney World Resort" [ref=e294]:
+                        - heading "Cooking with Soul at Walt Disney World Resort" [level=4] [ref=e295]
+                      - generic [ref=e298]: Savor delicious dishes inspired by cultures around the world, delicately prepared by Walt Disney World chefs.
+    - contentinfo [ref=e299]:
+      - contentinfo [ref=e303]:
+        - generic [ref=e304]:
+          - generic [ref=e305]:
+            - generic [ref=e306]:
+              - heading "Plan Your Walt Disney World Vacation" [level=5] [ref=e307]
+              - generic [ref=e308]:
+                - button "Buy Tickets & Passes" [ref=e309] [cursor=pointer]:
+                  - generic [ref=e311]: Buy Tickets & Passes
+                - button "Book a Resort Hotel" [ref=e312] [cursor=pointer]:
+                  - generic [ref=e314]: Book a Resort Hotel
+            - generic [ref=e317]:
+              - generic [ref=e318]:
+                - text: For assistance with your Walt Disney World vacation, including resort/package bookings and tickets, please call (407) 939-5277.
+                - text: For Walt Disney World dining, please book your reservation
+                - link "online" [ref=e319] [cursor=pointer]:
+                  - /url: /dine-res/availability
+                - text: .
+              - generic [ref=e320]: 7:00 AM to 11:00 PM Eastern Time. Guests under 18 years of age must have parent or guardian permission to call.
+            - navigation "Footer Links" [ref=e322]:
+              - generic [ref=e323]:
+                - generic: Footer Links
+                - generic [ref=e324]:
+                  - generic [ref=e326]:
+                    - heading "Help" [level=3] [ref=e327]
+                    - list "Help" [ref=e328]:
+                      - listitem [ref=e329]:
+                        - link "Contact Us" [ref=e330] [cursor=pointer]:
+                          - /url: /help/phone/
+                          - generic [ref=e331]: Contact Us
+                      - listitem [ref=e332]:
+                        - link "Help Center" [ref=e333] [cursor=pointer]:
+                          - /url: /help/
+                          - generic [ref=e334]: Help Center
+                      - listitem [ref=e335]:
+                        - link "planDisney" [ref=e336] [cursor=pointer]:
+                          - /url: https://plandisney.disney.go.com/destinations/walt-disney-world/
+                          - generic [ref=e337]: planDisney
+                      - listitem [ref=e338]:
+                        - link "CoBrowse" [ref=e339] [cursor=pointer]:
+                          - /url: "#interstitialCobrowseModal#/help"
+                          - generic [ref=e340]: CoBrowse
+                      - listitem [ref=e341]:
+                        - link "Park Security" [ref=e342] [cursor=pointer]:
+                          - /url: /guest-services/park-security/
+                          - generic [ref=e343]: Park Security
+                      - listitem [ref=e344]:
+                        - link "Property Rules" [ref=e345] [cursor=pointer]:
+                          - /url: /park-rules/
+                          - generic [ref=e346]: Property Rules
+                      - listitem [ref=e347]:
+                        - link "Privacy & Legal" [ref=e348] [cursor=pointer]:
+                          - /url: /help/privacy-legal/
+                          - generic [ref=e349]: Privacy & Legal
+                  - generic [ref=e351]:
+                    - heading "Guest Services" [level=3] [ref=e352]
+                    - list "Guest Services" [ref=e353]:
+                      - listitem [ref=e354]:
+                        - link "Services for Guests with Disabilities" [ref=e355] [cursor=pointer]:
+                          - /url: /guest-services/guests-with-disabilities/
+                          - generic [ref=e356]: Services for Guests with Disabilities
+                      - listitem [ref=e357]:
+                        - link "Disney PhotoPass" [ref=e358] [cursor=pointer]:
+                          - /url: /guest-services/photopass-service/
+                          - generic [ref=e359]: Disney PhotoPass
+                      - listitem [ref=e360]:
+                        - link "Custom Celebrations & Gatherings" [ref=e361] [cursor=pointer]:
+                          - /url: /events-tours/custom-gatherings
+                          - generic [ref=e362]: Custom Celebrations & Gatherings
+                      - listitem [ref=e363]:
+                        - link "All Guest Services" [ref=e364] [cursor=pointer]:
+                          - /url: /guest-services/
+                          - generic [ref=e365]: All Guest Services
+                  - generic [ref=e367]:
+                    - heading "Parks & Tickets" [level=3] [ref=e368]
+                    - list "Parks & Tickets" [ref=e369]:
+                      - listitem [ref=e370]:
+                        - link "Magic Kingdom Park" [ref=e371] [cursor=pointer]:
+                          - /url: /destinations/magic-kingdom/
+                          - generic [ref=e372]: Magic Kingdom Park
+                      - listitem [ref=e373]:
+                        - link "EPCOT" [ref=e374] [cursor=pointer]:
+                          - /url: /destinations/epcot/
+                          - generic [ref=e375]: EPCOT
+                      - listitem [ref=e376]:
+                        - link "Disney's Hollywood Studios" [ref=e377] [cursor=pointer]:
+                          - /url: /destinations/hollywood-studios/
+                          - generic [ref=e378]: Disney's Hollywood Studios
+                      - listitem [ref=e379]:
+                        - link "Disney's Animal Kingdom Park" [ref=e380] [cursor=pointer]:
+                          - /url: /destinations/animal-kingdom/
+                          - generic [ref=e381]: Disney's Animal Kingdom Park
+                      - listitem [ref=e382]:
+                        - link "Water Parks" [ref=e383] [cursor=pointer]:
+                          - /url: /destinations/water-parks/
+                          - generic [ref=e384]: Water Parks
+                      - listitem [ref=e385]:
+                        - link "Park Hours" [ref=e386] [cursor=pointer]:
+                          - /url: /calendars/park-hours/
+                          - generic [ref=e387]: Park Hours
+                  - generic [ref=e388]:
+                    - generic [ref=e389]:
+                      - heading "Dining" [level=3] [ref=e390]
+                      - list "Dining" [ref=e391]:
+                        - listitem [ref=e392]:
+                          - link "Make Dining Reservations" [ref=e393] [cursor=pointer]:
+                            - /url: /dine-res/
+                            - generic [ref=e394]: Make Dining Reservations
+                        - listitem [ref=e395]:
+                          - link "About Dining" [ref=e396] [cursor=pointer]:
+                            - /url: /dining/snack-dine-enjoy/
+                            - generic [ref=e397]: About Dining
+                        - listitem [ref=e398]:
+                          - link "All Restaurants" [ref=e399] [cursor=pointer]:
+                            - /url: /dining/
+                            - generic [ref=e400]: All Restaurants
+                        - listitem [ref=e401]:
+                          - link "Dining Plans" [ref=e402] [cursor=pointer]:
+                            - /url: /dining/plans/
+                            - generic [ref=e403]: Dining Plans
+                    - generic [ref=e404]:
+                      - heading "Get Ready" [level=3] [ref=e405]
+                      - list "Get Ready" [ref=e406]:
+                        - listitem [ref=e407]:
+                          - link "Mobile App" [ref=e408] [cursor=pointer]:
+                            - /url: /plan/my-disney-experience/mobile-apps/
+                            - generic [ref=e409]: Mobile App
+                        - listitem [ref=e410]:
+                          - link "Get Ready for Your Vacation" [ref=e411] [cursor=pointer]:
+                            - /url: /guest-services/manage-plans/
+                            - generic [ref=e412]: Get Ready for Your Vacation
+                        - listitem [ref=e413]:
+                          - link "Shop Online" [ref=e414] [cursor=pointer]:
+                            - /url: "https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer "
+                            - generic [ref=e415]: Shop Online
+                - list [ref=e417]:
+                  - listitem [ref=e418]:
+                    - region "Stay Connected" [ref=e419]:
+                      - heading "Stay Connected" [level=3] [ref=e420]
+                      - generic [ref=e421]:
+                        - link "Facebook" [ref=e423] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.facebook.com/WaltDisneyWorld/"
+                          - img "Facebook" [ref=e425]
+                        - link "Twitter" [ref=e427] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://twitter.com/waltdisneyworld/"
+                          - img "Twitter" [ref=e429]
+                        - link "Pinterest" [ref=e431] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.pinterest.com/waltdisneyworld/"
+                          - img "Pinterest" [ref=e433]
+                        - link "Instagram" [ref=e435] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.instagram.com/waltdisneyworld/"
+                          - img "Instagram" [ref=e437]
+                  - listitem [ref=e438]:
+                    - region "Disney Parks" [ref=e439]:
+                      - heading "Disney Parks" [level=3] [ref=e440]
+                      - generic [ref=e441]:
+                        - link "YouTube Channel YouTube Channel" [ref=e443] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.youtube.com/DisneyParks"
+                          - img "YouTube Channel" [ref=e445]
+                          - generic [ref=e446]: YouTube Channel
+                        - link "Blog Blog" [ref=e448] [cursor=pointer]:
+                          - /url: https://disneyparksblog.com/
+                          - img "Blog" [ref=e450]
+                          - generic [ref=e451]: Blog
+                  - listitem [ref=e452]:
+                    - region "Create Disney Account" [ref=e453]:
+                      - heading "Create Disney Account" [level=3] [ref=e454]
+                      - generic [ref=e456]:
+                        - generic [ref=e457]: Register to receive the latest Disney Parks news and special offers!
+                        - link "Create Account" [ref=e458] [cursor=pointer]:
+                          - /url: /registration/
+          - generic [ref=e459]:
+            - list "Related Disney Sites" [ref=e460]:
+              - listitem [ref=e461]:
+                - heading "Related Disney Sites" [level=3] [ref=e462]
+              - listitem [ref=e463]:
+                - list [ref=e465]:
+                  - listitem [ref=e466]:
+                    - link "Disney Springs" [ref=e467] [cursor=pointer]:
+                      - /url: https://www.disneysprings.com/
+                      - generic [ref=e468]: Disney Springs
+                  - listitem [ref=e469]:
+                    - link "Disney Parks" [ref=e470] [cursor=pointer]:
+                      - /url: http://disneyparks.disney.go.com/
+                      - generic [ref=e471]: Disney Parks
+                  - listitem [ref=e472]:
+                    - link "Disney Cruise Line" [ref=e473] [cursor=pointer]:
+                      - /url: http://disneycruise.disney.go.com/
+                      - generic [ref=e474]: Disney Cruise Line
+                  - listitem [ref=e475]:
+                    - link "Disney Gift Card" [ref=e476] [cursor=pointer]:
+                      - /url: http://www.disneygiftcard.com/home/
+                      - generic [ref=e477]: Disney Gift Card
+              - listitem [ref=e478]:
+                - list [ref=e480]:
+                  - listitem [ref=e481]:
+                    - link "Disney Vacation Club" [ref=e482] [cursor=pointer]:
+                      - /url: http://disneyvacationclub.disney.go.com/
+                      - generic [ref=e483]: Disney Vacation Club
+                  - listitem [ref=e484]:
+                    - link "Disney's Fairy Tale Weddings & Honeymoons" [ref=e485] [cursor=pointer]:
+                      - /url: https://www.disneyweddings.com/
+                      - generic [ref=e486]: Disney's Fairy Tale Weddings & Honeymoons
+                  - listitem [ref=e487]:
+                    - link "planDisney" [ref=e488] [cursor=pointer]:
+                      - /url: https://plandisney.disney.go.com/
+                      - generic [ref=e489]: planDisney
+              - listitem [ref=e490]:
+                - list [ref=e492]:
+                  - listitem [ref=e493]:
+                    - link "Disney+" [ref=e494] [cursor=pointer]:
+                      - /url: https://www.disneyplus.com/
+                      - generic [ref=e495]: Disney+
+                  - listitem [ref=e496]:
+                    - link "Disney® Inspire Visa® Card" [ref=e497] [cursor=pointer]:
+                      - /url: /visa-card/?trackcode=617R01&mobtrackcode=617R01&p=1
+                      - generic [ref=e498]: Disney® Inspire Visa® Card
+                  - listitem [ref=e499]:
+                    - link "Disney Merchandise Online" [ref=e500] [cursor=pointer]:
+                      - /url: https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer
+                      - generic [ref=e501]: Disney Merchandise Online
+                  - listitem [ref=e502]:
+                    - link "Disney Meetings & Events" [ref=e503] [cursor=pointer]:
+                      - /url: https://www.disneymeetingsandevents.com/
+                      - generic [ref=e504]: Disney Meetings & Events
+              - listitem [ref=e505]:
+                - list [ref=e507]:
+                  - listitem [ref=e508]:
+                    - link "Disney Imagination Campus" [ref=e509] [cursor=pointer]:
+                      - /url: http://www.disneycampus.com/
+                      - generic [ref=e510]: Disney Imagination Campus
+                  - listitem [ref=e511]:
+                    - link "run Disney" [ref=e512] [cursor=pointer]:
+                      - /url: http://www.rundisney.com/
+                      - generic [ref=e513]:
+                        - emphasis [ref=e514]: run
+                        - text: Disney
+                  - listitem [ref=e515]:
+                    - link "Disney Institute" [ref=e516] [cursor=pointer]:
+                      - /url: https://www.disneyinstitute.com/
+                      - generic [ref=e517]: Disney Institute
+                  - listitem [ref=e518]:
+                    - link "Disney Careers" [ref=e519] [cursor=pointer]:
+                      - /url: https://jobs.disneycareers.com/
+                      - generic [ref=e520]: Disney Careers
+            - generic [ref=e521]:
+              - list "legal-links" [ref=e522]:
+                - listitem [ref=e523]:
+                  - link "Terms of Use" [ref=e524] [cursor=pointer]:
+                    - /url: http://disneytermsofuse.com/
+                - listitem [ref=e525]:
+                  - link "Legal Notices" [ref=e526] [cursor=pointer]:
+                    - /url: https://help.disney.com/articles/en_US/FAQ/Legal-Notices
+                - listitem [ref=e527]:
+                  - link "Privacy Policy" [ref=e528] [cursor=pointer]:
+                    - /url: https://disneyprivacycenter.com/
+                - listitem [ref=e529]:
+                  - link "Do Not Sell or Share My Personal Information" [ref=e530] [cursor=pointer]:
+                    - /url: "#oneTrustModal"
+                - listitem [ref=e531]:
+                  - link "Children's Online Privacy Policy" [ref=e532] [cursor=pointer]:
+                    - /url: https://disneyprivacycenter.com/kids-privacy-policy/english/
+                - listitem [ref=e533]:
+                  - link "Your US State Privacy Rights" [ref=e534] [cursor=pointer]:
+                    - /url: https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights
+                - listitem [ref=e535]:
+                  - link "Interest-Based Ads" [ref=e536] [cursor=pointer]:
+                    - /url: https://privacy.thewaltdisneycompany.com/en/privacy-controls/online-tracking-and-advertising/
+              - paragraph [ref=e537]: © Disney, All Rights Reserved
+  - iframe [ref=e538]:
+    
+  - iframe [ref=e539]:
+    

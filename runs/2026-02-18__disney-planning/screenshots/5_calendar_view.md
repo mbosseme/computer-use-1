@@ -1,0 +1,651 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - text:  
+    - generic [ref=e6]:
+      - banner [ref=e49]:
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - link "Visit Disney.com" [ref=e55] [cursor=pointer]:
+              - /url: https://www.disney.com/
+            - button "Skip Navigation" [ref=e56] [cursor=pointer]
+            - generic [ref=e57]:
+              - generic [ref=e58]:
+                - link "Welcome, Matt!" [ref=e59] [cursor=pointer]:
+                  - /url: /profile#nav
+                - button "1" [ref=e60]:
+                  - generic [ref=e61] [cursor=pointer]: "1"
+                - text: "|"
+              - generic [ref=e62]:
+                - link "Sign Out" [ref=e63] [cursor=pointer]:
+                  - /url: /authentication/logout/
+                - text: "|"
+              - button "United States - English. Language selector, currently set to United States - English" [ref=e65] [cursor=pointer]:
+                - menuitem [ref=e66]
+                - generic [ref=e67]: United States (English)
+            - search [ref=e68]:
+              - generic [ref=e69]:
+                - button "Search" [ref=e70] [cursor=pointer]:
+                  - generic: Search
+                - combobox "Search or ask a question" [ref=e71]
+          - generic [ref=e72]:
+            - link "Walt Disney World Logo" [ref=e73] [cursor=pointer]:
+              - /url: https://disneyworld.disney.go.com
+              - img "Walt Disney World Logo" [ref=e74]
+            - navigation "Navigation Links" [ref=e75]:
+              - menubar [ref=e76]:
+                - generic: Navigation Links
+                - group [ref=e77]:
+                  - menuitem "Tickets & Parks" [ref=e79] [cursor=pointer]:
+                    - generic [ref=e80]: Tickets & Parks
+                - group [ref=e81]:
+                  - menuitem "Places to Stay" [ref=e83] [cursor=pointer]:
+                    - generic [ref=e84]: Places to Stay
+                - group [ref=e85]:
+                  - menuitem "Things to Do" [ref=e87] [cursor=pointer]:
+                    - generic [ref=e88]: Things to Do
+                - group [ref=e89]:
+                  - menuitem "Shop" [ref=e91] [cursor=pointer]:
+                    - generic [ref=e92]: Shop
+                - group [ref=e93]:
+                  - menuitem "Help & Rules" [ref=e95] [cursor=pointer]:
+                    - generic [ref=e96]: Help & Rules
+                  - text: • • • • •
+                - group [ref=e97]:
+                  - menuitem "Cart" [ref=e99] [cursor=pointer]:
+                    - menuitem [ref=e100]
+                    - generic [ref=e101]: Cart
+                - group [ref=e102]:
+                  - menuitem "My Disney Experience" [ref=e104] [cursor=pointer]:
+                    - generic [ref=e105]: My Disney Experience
+      - generic [ref=e106]:
+        - generic [ref=e108]:
+          - generic:  
+          - generic [ref=e109]:
+            - generic: 
+            - generic [ref=e111]:
+              - navigation "Breadcrumb" [ref=e114]:
+                - list [ref=e115]:
+                  - listitem [ref=e419] [cursor=pointer]:
+                    - link "Home" [ref=e420]:
+                      - /url: /
+                    - generic [ref=e421]: 
+                  - listitem [ref=e422] [cursor=pointer]:
+                    - link "Dining" [ref=e423]:
+                      - /url: /dining
+                    - generic [ref=e424]: 
+                  - listitem [ref=e425] [cursor=pointer]:
+                    - link "Grand Floridian Cafe, current page" [ref=e426]:
+                      - /url: /dining/grand-floridian-resort-and-spa/grand-floridian-cafe
+                      - text: Grand Floridian Cafe
+              - generic [ref=e124]:
+                - img "A family shares a laugh, dining together in Grand Floridian Café at Walt Disney World Resort" [ref=e126]
+                - generic [ref=e127]:
+                  - region "Grand Floridian Cafe" [ref=e129]:
+                    - generic [ref=e130]:
+                      - heading "Grand Floridian Cafe" [level=1] [ref=e131]
+                      - generic [ref=e132]: For casual American dining at Disney’s Grand Floridian Resort & Spa, this elegant yet unpretentious eatery can’t be beat.
+                      - generic [ref=e133]:
+                        - generic [ref=e134]: Disney's Grand Floridian Resort & Spa
+                        - generic [ref=e135]: Disney's Grand Floridian Resort & Spa
+                        - generic [ref=e136]: American
+                  - generic [ref=e139]:
+                    - text: 
+                    - button "View Dining Plans" [ref=e140] [cursor=pointer]
+            - generic [ref=e142]:
+              - region "Party Size" [ref=e143]:
+                - heading "Select Party Size Edit Party Size 4 Guests" [level=2] [ref=e427]:
+                  - button "Select Party Size Edit Party Size 4 Guests" [ref=e428] [cursor=pointer]:
+                    - generic [ref=e146]:
+                      - generic [ref=e147]: Select
+                      - generic [ref=e148]: 
+                      - text: Party Size
+                      - button "Edit Party Size" [ref=e429]:
+                        - text: Edit
+                        - generic [ref=e430]: Party Size
+                    - generic [ref=e431]: 4 Guests
+              - region "Date" [ref=e177]:
+                - heading "Date Select between 1 to 10 days on the calendar to view dining availability." [level=2] [ref=e178]:
+                  - button "Date Select between 1 to 10 days on the calendar to view dining availability." [expanded] [ref=e179] [cursor=pointer]:
+                    - generic [ref=e180]:
+                      - generic [ref=e181]: 
+                      - text: Date
+                    - generic [ref=e183]: Select between 1 to 10 days on the calendar to view dining availability.
+                - generic [ref=e432]:
+                  - generic [ref=e436]:
+                    - button "Previous Month" [disabled] [ref=e437]:
+                      - generic [ref=e438]: 
+                    - generic [ref=e439]:
+                      - region "Calendar, February 2026" [ref=e441]:
+                        - heading "February2026" [level=3] [ref=e443]
+                        - grid "Dining Availability Calendar" [ref=e445]:
+                          - rowgroup [ref=e446]:
+                            - row "Sunday Monday Tuesday Wednesday Thursday Friday Saturday" [ref=e447]:
+                              - columnheader "Sunday" [ref=e448] [cursor=pointer]: S
+                              - columnheader "Monday" [ref=e449] [cursor=pointer]: M
+                              - columnheader "Tuesday" [ref=e450] [cursor=pointer]: T
+                              - columnheader "Wednesday" [ref=e451] [cursor=pointer]: W
+                              - columnheader "Thursday" [ref=e452] [cursor=pointer]: T
+                              - columnheader "Friday" [ref=e453] [cursor=pointer]: F
+                              - columnheader "Saturday" [ref=e454] [cursor=pointer]: S
+                          - rowgroup [ref=e455]:
+                            - row "1 2 3 4 5 6 7" [ref=e456]:
+                              - gridcell "1" [disabled] [ref=e457] [cursor=pointer]:
+                                - generic [ref=e459]: "1"
+                              - gridcell "2" [disabled] [ref=e461] [cursor=pointer]:
+                                - generic [ref=e463]: "2"
+                              - gridcell "3" [disabled] [ref=e465] [cursor=pointer]:
+                                - generic [ref=e467]: "3"
+                              - gridcell "4" [disabled] [ref=e469] [cursor=pointer]:
+                                - generic [ref=e471]: "4"
+                              - gridcell "5" [disabled] [ref=e473] [cursor=pointer]:
+                                - generic [ref=e475]: "5"
+                              - gridcell "6" [disabled] [ref=e477] [cursor=pointer]:
+                                - generic [ref=e479]: "6"
+                              - gridcell "7" [disabled] [ref=e481] [cursor=pointer]:
+                                - generic [ref=e483]: "7"
+                            - row "8 9 10 11 12 13 14" [ref=e485]:
+                              - gridcell "8" [disabled] [ref=e486] [cursor=pointer]:
+                                - generic [ref=e488]: "8"
+                              - gridcell "9" [disabled] [ref=e490] [cursor=pointer]:
+                                - generic [ref=e492]: "9"
+                              - gridcell "10" [disabled] [ref=e494] [cursor=pointer]:
+                                - generic [ref=e496]: "10"
+                              - gridcell "11" [disabled] [ref=e498] [cursor=pointer]:
+                                - generic [ref=e500]: "11"
+                              - gridcell "12" [disabled] [ref=e502] [cursor=pointer]:
+                                - generic [ref=e504]: "12"
+                              - gridcell "13" [disabled] [ref=e506] [cursor=pointer]:
+                                - generic [ref=e508]: "13"
+                              - gridcell "14" [disabled] [ref=e510] [cursor=pointer]:
+                                - generic [ref=e512]: "14"
+                            - row "15 16 17 18 19 20 21" [ref=e514]:
+                              - gridcell "15" [disabled] [ref=e515] [cursor=pointer]:
+                                - generic [ref=e517]: "15"
+                              - gridcell "16" [disabled] [ref=e519] [cursor=pointer]:
+                                - generic [ref=e521]: "16"
+                              - gridcell "17" [disabled] [ref=e523] [cursor=pointer]:
+                                - generic [ref=e525]: "17"
+                              - gridcell "18" [ref=e527] [cursor=pointer]:
+                                - generic [ref=e529]: "18"
+                                - img [ref=e531]:
+                                  - img [ref=e533]
+                              - gridcell "19" [ref=e535] [cursor=pointer]:
+                                - generic [ref=e537]: "19"
+                                - img [ref=e539]:
+                                  - img [ref=e541]
+                              - gridcell "20" [ref=e543] [cursor=pointer]:
+                                - generic [ref=e545]: "20"
+                                - img [ref=e547]:
+                                  - img [ref=e549]
+                              - gridcell "21" [ref=e551] [cursor=pointer]:
+                                - generic [ref=e553]: "21"
+                                - img [ref=e555]:
+                                  - img [ref=e557]
+                            - row "22 23 24 25 26 27 28" [ref=e559]:
+                              - gridcell "22" [ref=e560] [cursor=pointer]:
+                                - generic [ref=e562]: "22"
+                                - img [ref=e564]:
+                                  - img [ref=e566]
+                              - gridcell "23" [ref=e568] [cursor=pointer]:
+                                - generic [ref=e570]: "23"
+                                - img [ref=e572]:
+                                  - img [ref=e574]
+                              - gridcell "24" [ref=e576] [cursor=pointer]:
+                                - generic [ref=e578]: "24"
+                                - img [ref=e580]:
+                                  - img [ref=e582]
+                              - gridcell "25" [ref=e584] [cursor=pointer]:
+                                - generic [ref=e586]: "25"
+                                - img [ref=e588]:
+                                  - img [ref=e590]
+                              - gridcell "26" [ref=e592] [cursor=pointer]:
+                                - generic [ref=e594]: "26"
+                                - img [ref=e596]:
+                                  - img [ref=e598]
+                              - gridcell "27" [ref=e600] [cursor=pointer]:
+                                - generic [ref=e602]: "27"
+                                - img [ref=e604]:
+                                  - img [ref=e606]
+                              - gridcell "28" [ref=e608] [cursor=pointer]:
+                                - generic [ref=e610]: "28"
+                                - img [ref=e612]:
+                                  - img [ref=e614]
+                      - region "Calendar, March 2026" [ref=e617]:
+                        - heading "March2026" [level=3] [ref=e619]
+                        - grid "Dining Availability Calendar" [ref=e621]:
+                          - rowgroup [ref=e622]:
+                            - row "Sunday Monday Tuesday Wednesday Thursday Friday Saturday" [ref=e623]:
+                              - columnheader "Sunday" [ref=e624] [cursor=pointer]: S
+                              - columnheader "Monday" [ref=e625] [cursor=pointer]: M
+                              - columnheader "Tuesday" [ref=e626] [cursor=pointer]: T
+                              - columnheader "Wednesday" [ref=e627] [cursor=pointer]: W
+                              - columnheader "Thursday" [ref=e628] [cursor=pointer]: T
+                              - columnheader "Friday" [ref=e629] [cursor=pointer]: F
+                              - columnheader "Saturday" [ref=e630] [cursor=pointer]: S
+                          - rowgroup [ref=e631]:
+                            - row "1 2 3 4 5 6 7" [ref=e632]:
+                              - gridcell "1" [ref=e633] [cursor=pointer]:
+                                - generic [ref=e635]: "1"
+                                - img [ref=e637]:
+                                  - img [ref=e639]
+                              - gridcell "2" [ref=e641] [cursor=pointer]:
+                                - generic [ref=e643]: "2"
+                                - img [ref=e645]:
+                                  - img [ref=e647]
+                              - gridcell "3" [ref=e649] [cursor=pointer]:
+                                - generic [ref=e651]: "3"
+                                - img [ref=e653]:
+                                  - img [ref=e655]
+                              - gridcell "4" [ref=e657] [cursor=pointer]:
+                                - generic [ref=e659]: "4"
+                                - img [ref=e661]:
+                                  - img [ref=e663]
+                              - gridcell "5" [ref=e665] [cursor=pointer]:
+                                - generic [ref=e667]: "5"
+                                - img [ref=e669]:
+                                  - img [ref=e671]
+                              - gridcell "6" [ref=e673] [cursor=pointer]:
+                                - generic [ref=e675]: "6"
+                                - img [ref=e677]:
+                                  - img [ref=e679]
+                              - gridcell "7" [ref=e681] [cursor=pointer]:
+                                - generic [ref=e683]: "7"
+                                - img [ref=e685]:
+                                  - img [ref=e687]
+                            - row "8 9 10 11 12 13 14" [ref=e689]:
+                              - gridcell "8" [ref=e690] [cursor=pointer]:
+                                - generic [ref=e692]: "8"
+                                - img [ref=e694]:
+                                  - img [ref=e696]
+                              - gridcell "9" [ref=e698] [cursor=pointer]:
+                                - generic [ref=e700]: "9"
+                                - img [ref=e702]:
+                                  - img [ref=e704]
+                              - gridcell "10" [ref=e706] [cursor=pointer]:
+                                - generic [ref=e708]: "10"
+                                - img [ref=e710]:
+                                  - img [ref=e712]
+                              - gridcell "11" [ref=e714] [cursor=pointer]:
+                                - generic [ref=e716]: "11"
+                                - img [ref=e718]:
+                                  - img [ref=e720]
+                              - gridcell "12" [ref=e722] [cursor=pointer]:
+                                - generic [ref=e724]: "12"
+                                - img [ref=e726]:
+                                  - img [ref=e728]
+                              - gridcell "13" [ref=e730] [cursor=pointer]:
+                                - generic [ref=e732]: "13"
+                                - img [ref=e734]:
+                                  - img [ref=e736]
+                              - gridcell "14" [ref=e738] [cursor=pointer]:
+                                - generic [ref=e740]: "14"
+                                - img [ref=e742]:
+                                  - img [ref=e744]
+                            - row "15 16 17 18 19 20 21" [ref=e746]:
+                              - gridcell "15" [ref=e747] [cursor=pointer]:
+                                - generic [ref=e749]: "15"
+                                - img [ref=e751]:
+                                  - img [ref=e753]
+                              - gridcell "16" [ref=e755] [cursor=pointer]:
+                                - generic [ref=e757]: "16"
+                                - img [ref=e759]:
+                                  - img [ref=e761]
+                              - gridcell "17" [ref=e763] [cursor=pointer]:
+                                - generic [ref=e765]: "17"
+                                - img [ref=e767]:
+                                  - img [ref=e769]
+                              - gridcell "18" [ref=e771] [cursor=pointer]:
+                                - generic [ref=e773]: "18"
+                                - img [ref=e775]:
+                                  - img [ref=e777]
+                              - gridcell "19" [ref=e779] [cursor=pointer]:
+                                - generic [ref=e781]: "19"
+                                - img [ref=e783]:
+                                  - img [ref=e785]
+                              - gridcell "20" [ref=e787] [cursor=pointer]:
+                                - generic [ref=e789]: "20"
+                                - img [ref=e791]:
+                                  - img [ref=e793]
+                              - gridcell "21" [ref=e795] [cursor=pointer]:
+                                - generic [ref=e797]: "21"
+                                - img [ref=e799]:
+                                  - img [ref=e801]
+                            - row "22 23 24 25 26 27 28" [ref=e803]:
+                              - gridcell "22" [ref=e804] [cursor=pointer]:
+                                - generic [ref=e806]: "22"
+                                - img [ref=e808]:
+                                  - img [ref=e810]
+                              - gridcell "23" [ref=e812] [cursor=pointer]:
+                                - generic [ref=e814]: "23"
+                                - img [ref=e816]:
+                                  - img [ref=e818]
+                              - gridcell "24" [ref=e820] [cursor=pointer]:
+                                - generic [ref=e822]: "24"
+                                - img [ref=e824]:
+                                  - img [ref=e826]
+                              - gridcell "25" [ref=e828] [cursor=pointer]:
+                                - generic [ref=e830]: "25"
+                                - img [ref=e832]:
+                                  - img [ref=e834]
+                              - gridcell "26" [ref=e836] [cursor=pointer]:
+                                - generic [ref=e838]: "26"
+                                - img [ref=e840]:
+                                  - img [ref=e842]
+                              - gridcell "27" [ref=e844] [cursor=pointer]:
+                                - generic [ref=e846]: "27"
+                                - img [ref=e848]:
+                                  - img [ref=e850]
+                              - gridcell "28" [ref=e852] [cursor=pointer]:
+                                - generic [ref=e854]: "28"
+                                - img [ref=e856]:
+                                  - img [ref=e858]
+                            - row "29 30 31" [ref=e860]:
+                              - gridcell "29" [ref=e861] [cursor=pointer]:
+                                - generic [ref=e863]: "29"
+                                - img [ref=e865]:
+                                  - img [ref=e867]
+                              - gridcell "30" [ref=e869] [cursor=pointer]:
+                                - generic [ref=e871]: "30"
+                                - img [ref=e873]:
+                                  - img [ref=e875]
+                              - gridcell "31" [ref=e877] [cursor=pointer]:
+                                - generic [ref=e879]: "31"
+                                - img [ref=e881]:
+                                  - img [ref=e883]
+                              - gridcell [disabled] [ref=e885] [cursor=pointer]
+                              - gridcell [disabled] [ref=e887] [cursor=pointer]
+                              - gridcell [disabled] [ref=e889] [cursor=pointer]
+                              - gridcell [disabled] [ref=e891] [cursor=pointer]
+                    - button "Next Month" [ref=e893]:
+                      - generic [ref=e894]: 
+                    - list [ref=e896]:
+                      - listitem [ref=e897]:
+                        - img [ref=e898]:
+                          - img [ref=e900]
+                        - generic [ref=e902]: Reservations Available
+                      - listitem [ref=e903]:
+                        - img [ref=e904]:
+                          - img [ref=e906]
+                        - generic [ref=e908]: No Reservations Available
+                      - listitem [ref=e909]:
+                        - img [ref=e910]:
+                          - img [ref=e912]
+                        - generic [ref=e914]: Closed
+                  - generic [ref=e916]:
+                    - button "Next" [disabled]:
+                      - generic: Next
+              - region "Time" [ref=e184]:
+                - heading "Time" [level=2] [ref=e185]:
+                  - heading "Time":
+                    - generic:
+                      - generic: 
+                      - text: Time
+          - text:  
+        - generic:   
+      - generic [ref=e187]:
+        - separator [ref=e189]
+        - contentinfo [ref=e191]:
+          - generic [ref=e192]:
+            - generic [ref=e193]:
+              - generic [ref=e196]:
+                - generic [ref=e197]:
+                  - text: For assistance with your Walt Disney World vacation, including resort/package bookings and tickets, please call (407) 939-5277.
+                  - text: For Walt Disney World dining, please book your reservation
+                  - link "online" [ref=e198] [cursor=pointer]:
+                    - /url: /dine-res/availability
+                  - text: .
+                - generic [ref=e199]: 7:00 AM to 11:00 PM Eastern Time. Guests under 18 years of age must have parent or guardian permission to call.
+              - navigation "Footer Links" [ref=e201]:
+                - generic [ref=e202]:
+                  - generic: Footer Links
+                  - generic [ref=e203]:
+                    - generic [ref=e205]:
+                      - heading "Help" [level=3] [ref=e206]
+                      - list "Help" [ref=e207]:
+                        - listitem [ref=e208]:
+                          - link "Contact Us" [ref=e209] [cursor=pointer]:
+                            - /url: /help/phone/
+                            - generic [ref=e210]: Contact Us
+                        - listitem [ref=e211]:
+                          - link "Help Center" [ref=e212] [cursor=pointer]:
+                            - /url: /help/
+                            - generic [ref=e213]: Help Center
+                        - listitem [ref=e214]:
+                          - link "planDisney" [ref=e215] [cursor=pointer]:
+                            - /url: https://plandisney.disney.go.com/destinations/walt-disney-world/
+                            - generic [ref=e216]: planDisney
+                        - listitem [ref=e217]:
+                          - link "CoBrowse" [ref=e218] [cursor=pointer]:
+                            - /url: "#interstitialCobrowseModal#/help"
+                            - generic [ref=e219]: CoBrowse
+                        - listitem [ref=e220]:
+                          - link "Park Security" [ref=e221] [cursor=pointer]:
+                            - /url: /guest-services/park-security/
+                            - generic [ref=e222]: Park Security
+                        - listitem [ref=e223]:
+                          - link "Property Rules" [ref=e224] [cursor=pointer]:
+                            - /url: /park-rules/
+                            - generic [ref=e225]: Property Rules
+                        - listitem [ref=e226]:
+                          - link "Privacy & Legal" [ref=e227] [cursor=pointer]:
+                            - /url: /help/privacy-legal/
+                            - generic [ref=e228]: Privacy & Legal
+                    - generic [ref=e230]:
+                      - heading "Guest Services" [level=3] [ref=e231]
+                      - list "Guest Services" [ref=e232]:
+                        - listitem [ref=e233]:
+                          - link "Services for Guests with Disabilities" [ref=e234] [cursor=pointer]:
+                            - /url: /guest-services/guests-with-disabilities/
+                            - generic [ref=e235]: Services for Guests with Disabilities
+                        - listitem [ref=e236]:
+                          - link "Disney PhotoPass" [ref=e237] [cursor=pointer]:
+                            - /url: /guest-services/photopass-service/
+                            - generic [ref=e238]: Disney PhotoPass
+                        - listitem [ref=e239]:
+                          - link "Custom Celebrations & Gatherings" [ref=e240] [cursor=pointer]:
+                            - /url: /events-tours/custom-gatherings
+                            - generic [ref=e241]: Custom Celebrations & Gatherings
+                        - listitem [ref=e242]:
+                          - link "All Guest Services" [ref=e243] [cursor=pointer]:
+                            - /url: /guest-services/
+                            - generic [ref=e244]: All Guest Services
+                    - generic [ref=e246]:
+                      - heading "Parks & Tickets" [level=3] [ref=e247]
+                      - list "Parks & Tickets" [ref=e248]:
+                        - listitem [ref=e249]:
+                          - link "Magic Kingdom Park" [ref=e250] [cursor=pointer]:
+                            - /url: /destinations/magic-kingdom/
+                            - generic [ref=e251]: Magic Kingdom Park
+                        - listitem [ref=e252]:
+                          - link "EPCOT" [ref=e253] [cursor=pointer]:
+                            - /url: /destinations/epcot/
+                            - generic [ref=e254]: EPCOT
+                        - listitem [ref=e255]:
+                          - link "Disney's Hollywood Studios" [ref=e256] [cursor=pointer]:
+                            - /url: /destinations/hollywood-studios/
+                            - generic [ref=e257]: Disney's Hollywood Studios
+                        - listitem [ref=e258]:
+                          - link "Disney's Animal Kingdom Park" [ref=e259] [cursor=pointer]:
+                            - /url: /destinations/animal-kingdom/
+                            - generic [ref=e260]: Disney's Animal Kingdom Park
+                        - listitem [ref=e261]:
+                          - link "Water Parks" [ref=e262] [cursor=pointer]:
+                            - /url: /destinations/water-parks/
+                            - generic [ref=e263]: Water Parks
+                        - listitem [ref=e264]:
+                          - link "Park Hours" [ref=e265] [cursor=pointer]:
+                            - /url: /calendars/park-hours/
+                            - generic [ref=e266]: Park Hours
+                    - generic [ref=e267]:
+                      - generic [ref=e268]:
+                        - heading "Dining" [level=3] [ref=e269]
+                        - list "Dining" [ref=e270]:
+                          - listitem [ref=e271]:
+                            - link "Make Dining Reservations" [ref=e272] [cursor=pointer]:
+                              - /url: /dine-res/
+                              - generic [ref=e273]: Make Dining Reservations
+                          - listitem [ref=e274]:
+                            - link "About Dining" [ref=e275] [cursor=pointer]:
+                              - /url: /dining/snack-dine-enjoy/
+                              - generic [ref=e276]: About Dining
+                          - listitem [ref=e277]:
+                            - link "All Restaurants" [ref=e278] [cursor=pointer]:
+                              - /url: /dining/
+                              - generic [ref=e279]: All Restaurants
+                          - listitem [ref=e280]:
+                            - link "Dining Plans" [ref=e281] [cursor=pointer]:
+                              - /url: /dining/plans/
+                              - generic [ref=e282]: Dining Plans
+                      - generic [ref=e283]:
+                        - heading "Get Ready" [level=3] [ref=e284]
+                        - list "Get Ready" [ref=e285]:
+                          - listitem [ref=e286]:
+                            - link "Mobile App" [ref=e287] [cursor=pointer]:
+                              - /url: /plan/my-disney-experience/mobile-apps/
+                              - generic [ref=e288]: Mobile App
+                          - listitem [ref=e289]:
+                            - link "Get Ready for Your Vacation" [ref=e290] [cursor=pointer]:
+                              - /url: /guest-services/manage-plans/
+                              - generic [ref=e291]: Get Ready for Your Vacation
+                          - listitem [ref=e292]:
+                            - link "Shop Online" [ref=e293] [cursor=pointer]:
+                              - /url: "https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer "
+                              - generic [ref=e294]: Shop Online
+                  - list [ref=e296]:
+                    - listitem [ref=e297]:
+                      - region "Stay Connected" [ref=e298]:
+                        - heading "Stay Connected" [level=3] [ref=e299]
+                        - generic [ref=e300]:
+                          - link "Facebook" [ref=e302] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://www.facebook.com/WaltDisneyWorld/"
+                            - img "Facebook" [ref=e304]
+                          - link "Twitter" [ref=e306] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://twitter.com/waltdisneyworld/"
+                            - img "Twitter" [ref=e308]
+                          - link "Pinterest" [ref=e310] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://www.pinterest.com/waltdisneyworld/"
+                            - img "Pinterest" [ref=e312]
+                          - link "Instagram" [ref=e314] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://www.instagram.com/waltdisneyworld/"
+                            - img "Instagram" [ref=e316]
+                    - listitem [ref=e317]:
+                      - region "Disney Parks" [ref=e318]:
+                        - heading "Disney Parks" [level=3] [ref=e319]
+                        - generic [ref=e320]:
+                          - link "YouTube Channel YouTube Channel" [ref=e322] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://www.youtube.com/DisneyParks"
+                            - img "YouTube Channel" [ref=e324]
+                            - generic [ref=e325]: YouTube Channel
+                          - link "Blog Blog" [ref=e327] [cursor=pointer]:
+                            - /url: https://disneyparksblog.com/
+                            - img "Blog" [ref=e329]
+                            - generic [ref=e330]: Blog
+                    - listitem [ref=e331]:
+                      - region "Create Disney Account" [ref=e332]:
+                        - heading "Create Disney Account" [level=3] [ref=e333]
+                        - generic [ref=e335]:
+                          - generic [ref=e336]: Register to receive the latest Disney Parks news and special offers!
+                          - link "Create Account" [ref=e337] [cursor=pointer]:
+                            - /url: /registration/
+            - generic [ref=e338]:
+              - list "Related Disney Sites" [ref=e339]:
+                - listitem [ref=e340]:
+                  - heading "Related Disney Sites" [level=3] [ref=e341]
+                - listitem [ref=e342]:
+                  - list [ref=e344]:
+                    - listitem [ref=e345]:
+                      - link "Disney Springs" [ref=e346] [cursor=pointer]:
+                        - /url: https://www.disneysprings.com/
+                        - generic [ref=e347]: Disney Springs
+                    - listitem [ref=e348]:
+                      - link "Disney Parks" [ref=e349] [cursor=pointer]:
+                        - /url: http://disneyparks.disney.go.com/
+                        - generic [ref=e350]: Disney Parks
+                    - listitem [ref=e351]:
+                      - link "Disney Cruise Line" [ref=e352] [cursor=pointer]:
+                        - /url: http://disneycruise.disney.go.com/
+                        - generic [ref=e353]: Disney Cruise Line
+                    - listitem [ref=e354]:
+                      - link "Disney Gift Card" [ref=e355] [cursor=pointer]:
+                        - /url: http://www.disneygiftcard.com/home/
+                        - generic [ref=e356]: Disney Gift Card
+                - listitem [ref=e357]:
+                  - list [ref=e359]:
+                    - listitem [ref=e360]:
+                      - link "Disney Vacation Club" [ref=e361] [cursor=pointer]:
+                        - /url: http://disneyvacationclub.disney.go.com/
+                        - generic [ref=e362]: Disney Vacation Club
+                    - listitem [ref=e363]:
+                      - link "Disney's Fairy Tale Weddings & Honeymoons" [ref=e364] [cursor=pointer]:
+                        - /url: https://www.disneyweddings.com/
+                        - generic [ref=e365]: Disney's Fairy Tale Weddings & Honeymoons
+                    - listitem [ref=e366]:
+                      - link "planDisney" [ref=e367] [cursor=pointer]:
+                        - /url: https://plandisney.disney.go.com/
+                        - generic [ref=e368]: planDisney
+                - listitem [ref=e369]:
+                  - list [ref=e371]:
+                    - listitem [ref=e372]:
+                      - link "Disney+" [ref=e373] [cursor=pointer]:
+                        - /url: https://www.disneyplus.com/
+                        - generic [ref=e374]: Disney+
+                    - listitem [ref=e375]:
+                      - link "Disney® Inspire Visa® Card" [ref=e376] [cursor=pointer]:
+                        - /url: /visa-card/?trackcode=617R01&mobtrackcode=617R01&p=1
+                        - generic [ref=e377]: Disney® Inspire Visa® Card
+                    - listitem [ref=e378]:
+                      - link "Disney Merchandise Online" [ref=e379] [cursor=pointer]:
+                        - /url: https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer
+                        - generic [ref=e380]: Disney Merchandise Online
+                    - listitem [ref=e381]:
+                      - link "Disney Meetings & Events" [ref=e382] [cursor=pointer]:
+                        - /url: https://www.disneymeetingsandevents.com/
+                        - generic [ref=e383]: Disney Meetings & Events
+                - listitem [ref=e384]:
+                  - list [ref=e386]:
+                    - listitem [ref=e387]:
+                      - link "Disney Imagination Campus" [ref=e388] [cursor=pointer]:
+                        - /url: http://www.disneycampus.com/
+                        - generic [ref=e389]: Disney Imagination Campus
+                    - listitem [ref=e390]:
+                      - link "run Disney" [ref=e391] [cursor=pointer]:
+                        - /url: http://www.rundisney.com/
+                        - generic [ref=e392]:
+                          - emphasis [ref=e393]: run
+                          - text: Disney
+                    - listitem [ref=e394]:
+                      - link "Disney Institute" [ref=e395] [cursor=pointer]:
+                        - /url: https://www.disneyinstitute.com/
+                        - generic [ref=e396]: Disney Institute
+                    - listitem [ref=e397]:
+                      - link "Disney Careers" [ref=e398] [cursor=pointer]:
+                        - /url: https://jobs.disneycareers.com/
+                        - generic [ref=e399]: Disney Careers
+              - generic [ref=e400]:
+                - list "legal-links" [ref=e401]:
+                  - listitem [ref=e402]:
+                    - link "Terms of Use" [ref=e403] [cursor=pointer]:
+                      - /url: http://disneytermsofuse.com/
+                  - listitem [ref=e404]:
+                    - link "Legal Notices" [ref=e405] [cursor=pointer]:
+                      - /url: https://help.disney.com/articles/en_US/FAQ/Legal-Notices
+                  - listitem [ref=e406]:
+                    - link "Privacy Policy" [ref=e407] [cursor=pointer]:
+                      - /url: https://disneyprivacycenter.com/
+                  - listitem [ref=e408]:
+                    - link "Do Not Sell or Share My Personal Information" [ref=e409] [cursor=pointer]:
+                      - /url: "#oneTrustModal"
+                  - listitem [ref=e410]:
+                    - link "Children's Online Privacy Policy" [ref=e411] [cursor=pointer]:
+                      - /url: https://disneyprivacycenter.com/kids-privacy-policy/english/
+                  - listitem [ref=e412]:
+                    - link "Your US State Privacy Rights" [ref=e413] [cursor=pointer]:
+                      - /url: https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights
+                  - listitem [ref=e414]:
+                    - link "Interest-Based Ads" [ref=e415] [cursor=pointer]:
+                      - /url: https://privacy.thewaltdisneycompany.com/en/privacy-controls/online-tracking-and-advertising/
+                - paragraph [ref=e416]: © Disney, All Rights Reserved
+  - iframe [ref=e418]:
+    
+  - iframe [ref=e917]:
+    

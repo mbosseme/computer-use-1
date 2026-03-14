@@ -1,0 +1,99 @@
+- generic [ref=e1]:
+  - banner [ref=e7]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - link "Visit Disney.com" [ref=e13] [cursor=pointer]:
+          - /url: https://www.disney.com/
+        - button "Skip Navigation" [ref=e14] [cursor=pointer]
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - link "Log In or Create Account" [ref=e17] [cursor=pointer]:
+              - /url: /login/?appRedirect=%2Fprofile%2F&cancelUrl=%2Fprofile%2F
+            - text: "|"
+          - button "United States - English. Language selector, currently set to United States - English" [ref=e19] [cursor=pointer]:
+            - menuitem [ref=e20]
+            - generic [ref=e21]: United States (English)
+        - search [ref=e22]:
+          - generic [ref=e23]:
+            - button "Search" [ref=e24] [cursor=pointer]:
+              - generic: Search
+            - combobox "Search or ask a question" [ref=e25]
+      - generic [ref=e26]:
+        - link "Walt Disney World Logo" [ref=e27] [cursor=pointer]:
+          - /url: https://disneyworld.disney.go.com
+          - img "Walt Disney World Logo" [ref=e28]
+        - navigation "Navigation Links" [ref=e29]:
+          - menubar [ref=e30]:
+            - generic: Navigation Links
+            - group [ref=e31]:
+              - menuitem "Tickets & Parks" [ref=e33] [cursor=pointer]:
+                - generic [ref=e34]: Tickets & Parks
+            - group [ref=e35]:
+              - menuitem "Places to Stay" [ref=e37] [cursor=pointer]:
+                - generic [ref=e38]: Places to Stay
+            - group [ref=e39]:
+              - menuitem "Things to Do" [ref=e41] [cursor=pointer]:
+                - generic [ref=e42]: Things to Do
+            - group [ref=e43]:
+              - menuitem "Shop" [ref=e45] [cursor=pointer]:
+                - generic [ref=e46]: Shop
+            - group [ref=e47]:
+              - menuitem "Help & Rules" [ref=e49] [cursor=pointer]:
+                - generic [ref=e50]: Help & Rules
+              - text: • • • • •
+            - group [ref=e51]:
+              - menuitem "Cart" [ref=e53] [cursor=pointer]:
+                - menuitem [ref=e54]
+                - generic [ref=e55]: Cart
+            - group [ref=e56]:
+              - menuitem "My Disney Experience" [ref=e58] [cursor=pointer]:
+                - generic [ref=e59]: My Disney Experience
+  - iframe [active] [ref=e61]:
+    - generic [ref=f215e1]:
+      - button "Close account dialog" [ref=f215e3] [cursor=pointer]:
+        - img [ref=f215e4]
+      - dialog "Enter your email to continue":
+        - banner:
+          - img "Disney account" [ref=f215e6]
+        - generic [ref=f215e8]:
+          - generic [ref=f215e9]:
+            - generic [ref=f215e10]:
+              - img "My Disney Logo" [ref=f215e11]
+              - heading "Enter your email to continue" [active] [level=1] [ref=f215e21]
+              - paragraph [ref=f215e22]: Log in to Walt Disney World with your MyDisney account. If you don't have one, you will be prompted to create one.
+            - generic [ref=f215e24]:
+              - textbox "Email" [ref=f215e25]
+              - generic: Email
+            - button "Continue" [ref=f215e27] [cursor=pointer]
+            - paragraph
+            - paragraph [ref=f215e28]:
+              - link "Looking for username login?" [ref=f215e29] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f215e33]:
+              - heading "Walt Disney World is part of The Walt Disney Family of Companies." [level=3] [ref=f215e34]
+              - paragraph [ref=f215e35]:
+                - text: MyDisney lets you seamlessly log in to services and experiences across The Walt Disney Family of Companies, such as Disney+, ESPN, Walt Disney World,
+                - link "and more." [ref=f215e36] [cursor=pointer]:
+                  - /url: https://my.disney.com
+              - generic [ref=f215e37]:
+                - generic "Disney" [ref=f215e38]:
+                  - img [ref=f215e39]
+                - generic "ABC" [ref=f215e43]:
+                  - img [ref=f215e44]
+                - generic "ESPN" [ref=f215e47]:
+                  - img [ref=f215e48]
+                - generic "Marvel" [ref=f215e50]:
+                  - img [ref=f215e51]
+                - generic "Star Wars" [ref=f215e53]:
+                  - img [ref=f215e54]
+                - generic "Hulu" [ref=f215e56]:
+                  - img [ref=f215e57]
+                - generic "National Geographic" [ref=f215e59]:
+                  - img [ref=f215e60]
+                - generic "Star" [ref=f215e62]:
+                  - img [ref=f215e63]
+          - textbox "session-id" [ref=f215e67]
+          - alert
+  - button "Help" [ref=e62] [cursor=pointer]:
+    - menuitem [ref=e63]
+    - paragraph [ref=e64]: Help

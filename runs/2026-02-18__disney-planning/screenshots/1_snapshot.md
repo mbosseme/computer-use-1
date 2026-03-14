@@ -1,0 +1,611 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e8]:
+      - banner [ref=e11]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - link "Visit Disney.com" [ref=e17] [cursor=pointer]:
+              - /url: https://www.disney.com/
+            - button "Skip Navigation" [ref=e18] [cursor=pointer]
+            - generic [ref=e19]:
+              - generic [ref=e20]:
+                - link "Welcome, Matt!" [ref=e21] [cursor=pointer]:
+                  - /url: /profile#nav
+                - button "1" [ref=e22]:
+                  - generic [ref=e23] [cursor=pointer]: "1"
+                - text: "|"
+              - generic [ref=e24]:
+                - link "Sign Out" [ref=e25] [cursor=pointer]:
+                  - /url: /authentication/logout/
+                - text: "|"
+              - button "United States - English. Language selector, currently set to United States - English" [ref=e27] [cursor=pointer]:
+                - menuitem [ref=e28]
+                - generic [ref=e29]: United States (English)
+            - search [ref=e30]:
+              - generic [ref=e31]:
+                - button "Search" [ref=e32] [cursor=pointer]:
+                  - generic: Search
+                - combobox "Search or ask a question" [ref=e33]
+          - generic [ref=e34]:
+            - link "Walt Disney World Logo" [ref=e35] [cursor=pointer]:
+              - /url: https://disneyworld.disney.go.com
+              - img "Walt Disney World Logo" [ref=e36]
+            - navigation "Navigation Links" [ref=e37]:
+              - menubar [ref=e38]:
+                - generic: Navigation Links
+                - group [ref=e39]:
+                  - menuitem "Tickets & Parks" [ref=e41] [cursor=pointer]:
+                    - generic [ref=e42]: Tickets & Parks
+                - group [ref=e43]:
+                  - menuitem "Places to Stay" [ref=e45] [cursor=pointer]:
+                    - generic [ref=e46]: Places to Stay
+                - group [ref=e47]:
+                  - menuitem "Things to Do" [ref=e49] [cursor=pointer]:
+                    - generic [ref=e50]: Things to Do
+                - group [ref=e51]:
+                  - menuitem "Shop" [ref=e53] [cursor=pointer]:
+                    - generic [ref=e54]: Shop
+                - group [ref=e55]:
+                  - menuitem "Help & Rules" [ref=e57] [cursor=pointer]:
+                    - generic [ref=e58]: Help & Rules
+                  - text: • • • • •
+                - group [ref=e59]:
+                  - menuitem "Cart" [ref=e61] [cursor=pointer]:
+                    - menuitem [ref=e62]
+                    - generic [ref=e63]: Cart
+                - group [ref=e64]:
+                  - menuitem "My Disney Experience" [ref=e66] [cursor=pointer]:
+                    - generic [ref=e67]: My Disney Experience
+    - main [ref=e68]:
+      - main [ref=e69]:
+        - main [ref=e71]:
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - heading "Dining" [level=1] [ref=e76]
+              - generic [ref=e78]:
+                - button "select a location" [ref=e80]:
+                  - generic [ref=e81]: All Walt Disney World Locations
+                - text: 
+            - generic [ref=e86]:
+              - generic [ref=e88]:
+                - region "Press any button to filter results" [ref=e89]:
+                  - button "Reservations Accepted filter" [ref=e91] [cursor=pointer]:
+                    - generic [ref=e94]: Reservations Accepted
+                  - button "Table Service filter" [ref=e96] [cursor=pointer]:
+                    - generic [ref=e99]: Table Service
+                  - button "Quick Service filter" [ref=e101] [cursor=pointer]:
+                    - generic [ref=e104]: Quick Service
+                  - button "Character Dining filter" [ref=e106] [cursor=pointer]:
+                    - generic [ref=e109]: Character Dining
+                  - button "Fine/Signature Dining filter" [ref=e111] [cursor=pointer]:
+                    - generic [ref=e114]: Fine/Signature Dining
+                  - button "All Filters filter" [ref=e116] [cursor=pointer]:
+                    - generic [ref=e119]: All Filters (0)
+                - region "Press any pill to remove the related filter" [ref=e121]:
+                  - button "Clear All Filters" [ref=e123] [cursor=pointer]
+              - generic [ref=e124]:
+                - generic [ref=e126]:
+                  - text: 
+                  - combobox [ref=e128] [cursor=pointer]:
+                    - generic [ref=e130]:
+                      - text: Sort by Featured
+                      - generic [ref=e131]: 
+                - generic [ref=e132]: 411 dining options
+          - separator [ref=e133]
+          - generic [ref=e135]:
+            - generic [ref=e138]: Featured
+            - region "Press m to show on map" [ref=e139]:
+              - link "Cooking with Soul at Walt Disney World Resort A group of 6 people eating brunch together in a restaurant" [ref=e143] [cursor=pointer]:
+                - /url: /events-tours/celebrate-soulfully-cooking-with-soul/
+                - generic [ref=e144]:
+                  - generic [ref=e147]: Cooking with Soul at Walt Disney World Resort
+                  - img "A group of 6 people eating brunch together in a restaurant" [ref=e151]
+              - link "a la Carte, Fine/Signature Dining Jaleo® by José Andrés Table Service Disney Springs $$ ($15 to $34.99 per adult), Seafood, Spanish Check Availability Calendar A terrace at Jaleo by José Andrés with tables for 2 people near the lake at Disney Springs" [ref=e155] [cursor=pointer]:
+                - /url: /dining/disney-springs/jaleo/
+                - generic [ref=e156]:
+                  - generic [ref=e157]:
+                    - generic [ref=e158]:
+                      - generic [ref=e162]: a la Carte, Fine/Signature Dining
+                      - generic [ref=e163]: Jaleo® by José Andrés
+                      - generic [ref=e164]: Table Service
+                      - generic [ref=e165]: Disney Springs
+                      - generic [ref=e166]: $$ ($15 to $34.99 per adult), Seafood, Spanish
+                    - button "Check Availability Calendar" [ref=e171]
+                  - img "A terrace at Jaleo by José Andrés with tables for 2 people near the lake at Disney Springs" [ref=e175]
+              - link "a la Carte, African Tiffins Restaurant Table Service Disney's Animal Kingdom Theme Park $$$ ($35 to $59.99 per adult), African, Asian, Latin Check Availability Calendar A plated dish featuring grilled beef tenderloin with seared scallops, potatoes and vegetables" [ref=e182] [cursor=pointer]:
+                - /url: /dining/animal-kingdom/tiffins/
+                - generic [ref=e183]:
+                  - generic [ref=e184]:
+                    - generic [ref=e185]:
+                      - generic [ref=e189]: a la Carte, African
+                      - generic [ref=e190]: Tiffins Restaurant
+                      - generic [ref=e191]: Table Service
+                      - generic [ref=e192]: Disney's Animal Kingdom Theme Park
+                      - generic [ref=e193]: $$$ ($35 to $59.99 per adult), African, Asian, Latin
+                    - button "Check Availability Calendar" [ref=e198]
+                  - img "A plated dish featuring grilled beef tenderloin with seared scallops, potatoes and vegetables" [ref=e202]
+              - link "a la Carte, Casual Dining Toledo - Tapas, Steak & Seafood Table Service Disney's Coronado Springs Resort $$$ ($35 to $59.99 per adult), Seafood, Spanish, Steakhouse Check Availability Calendar A Smoked Pork Chop on a plate with sauce from Toledo Tapas, Steak & Seafood" [ref=e209] [cursor=pointer]:
+                - /url: /dining/coronado-springs-resort/toledo/
+                - generic [ref=e210]:
+                  - generic [ref=e211]:
+                    - generic [ref=e212]:
+                      - generic [ref=e216]: a la Carte, Casual Dining
+                      - generic [ref=e217]: Toledo - Tapas, Steak & Seafood
+                      - generic [ref=e218]: Table Service
+                      - generic [ref=e219]: Disney's Coronado Springs Resort
+                      - generic [ref=e220]: $$$ ($35 to $59.99 per adult), Seafood, Spanish, Steakhouse
+                    - button "Check Availability Calendar" [ref=e225]
+                  - img "A Smoked Pork Chop on a plate with sauce from Toledo Tapas, Steak & Seafood" [ref=e229]
+              - link "American, Buffet 1900 Park Fare Table Service Disney's Grand Floridian Resort & Spa $$$$ (over $60 per adult), American Check Availability Calendar A father and 2 children laughing with Princess Tiana at a dining table at the Nineteen Hundred Park Fare restaurant" [ref=e236] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/1900-park-fare/
+                - generic [ref=e237]:
+                  - generic [ref=e238]:
+                    - generic [ref=e239]:
+                      - generic [ref=e243]: American, Buffet
+                      - generic [ref=e244]: 1900 Park Fare
+                      - generic [ref=e245]: Table Service
+                      - generic [ref=e246]: Disney's Grand Floridian Resort & Spa
+                      - generic [ref=e247]: $$$$ (over $60 per adult), American
+                    - button "Check Availability Calendar" [ref=e252]
+                  - img "A father and 2 children laughing with Princess Tiana at a dining table at the Nineteen Hundred Park Fare restaurant" [ref=e256]
+              - link "Latin, Mexican 4 Rivers Cantina Barbacoa Food Truck Quick Service Disney Springs $ ($14.99 and under per adult), Latin, Mexican A beef mixture in a deep fried cone shaped tortilla shell garnished with onions, parsley and cilantro" [ref=e263] [cursor=pointer]:
+                - /url: /dining/disney-springs/4-rivers-cantina-food-truck/
+                - generic [ref=e264]:
+                  - generic [ref=e266]:
+                    - generic [ref=e270]: Latin, Mexican
+                    - generic [ref=e271]: 4 Rivers Cantina Barbacoa Food Truck
+                    - generic [ref=e272]: Quick Service
+                    - generic [ref=e273]: Disney Springs
+                    - generic [ref=e274]: $ ($14.99 and under per adult), Latin, Mexican
+                  - img "A beef mixture in a deep fried cone shaped tortilla shell garnished with onions, parsley and cilantro" [ref=e278]
+              - link "a la Carte, American 50's Prime Time Café Table Service Disney's Hollywood Studios $$ ($15 to $34.99 per adult), American Check Availability Calendar Fried chicken, corn and mashed potatoes with gravy" [ref=e285] [cursor=pointer]:
+                - /url: /dining/hollywood-studios/50s-prime-time-cafe/
+                - generic [ref=e286]:
+                  - generic [ref=e287]:
+                    - generic [ref=e288]:
+                      - generic [ref=e292]: a la Carte, American
+                      - generic [ref=e293]: 50's Prime Time Café
+                      - generic [ref=e294]: Table Service
+                      - generic [ref=e295]: Disney's Hollywood Studios
+                      - generic [ref=e296]: $$ ($15 to $34.99 per adult), American
+                    - button "Check Availability Calendar" [ref=e301]
+                  - img "Fried chicken, corn and mashed potatoes with gravy" [ref=e305]
+              - link "American, Quick Service Restaurant ABC Commissary Quick Service Disney's Hollywood Studios $ ($14.99 and under per adult), American Two rows of palm trees adorn the interior entryway to ABC Commissary at Disney's Hollywood Studios" [ref=e312] [cursor=pointer]:
+                - /url: /dining/hollywood-studios/abc-commissary/
+                - generic [ref=e313]:
+                  - generic [ref=e315]:
+                    - generic [ref=e319]: American, Quick Service Restaurant
+                    - generic [ref=e320]: ABC Commissary
+                    - generic [ref=e321]: Quick Service
+                    - generic [ref=e322]: Disney's Hollywood Studios
+                    - generic [ref=e323]: $ ($14.99 and under per adult), American
+                  - img "Two rows of palm trees adorn the interior entryway to ABC Commissary at Disney's Hollywood Studios" [ref=e327]
+              - link "American, Bar-Lounge AbracadaBar Table Service Disney's BoardWalk $$ ($15 to $34.99 per adult), American A vibrant cocktail ready to drink at AbracadaBAR at Disney’s BoardWalk" [ref=e334] [cursor=pointer]:
+                - /url: /dining/boardwalk/abracadabar/
+                - generic [ref=e335]:
+                  - generic [ref=e337]:
+                    - generic [ref=e341]: American, Bar-Lounge
+                    - generic [ref=e342]: AbracadaBar
+                    - generic [ref=e343]: Table Service
+                    - generic [ref=e344]: Disney's BoardWalk
+                    - generic [ref=e345]: $$ ($15 to $34.99 per adult), American
+                  - img "A vibrant cocktail ready to drink at AbracadaBAR at Disney’s BoardWalk" [ref=e349]
+              - link "American, Character Dining Akershus Royal Banquet Hall Table Service EPCOT $$$$ (over $60 per adult), American, Norwegian Check Availability Calendar Princess Belle dances with a girl dressed as a princess" [ref=e356] [cursor=pointer]:
+                - /url: /dining/epcot/akershus-royal-banquet-hall/
+                - generic [ref=e357]:
+                  - generic [ref=e358]:
+                    - generic [ref=e359]:
+                      - generic [ref=e363]: American, Character Dining
+                      - generic [ref=e364]: Akershus Royal Banquet Hall
+                      - generic [ref=e365]: Table Service
+                      - generic [ref=e366]: EPCOT
+                      - generic [ref=e367]: $$$$ (over $60 per adult), American, Norwegian
+                    - button "Check Availability Calendar" [ref=e372]
+                  - img "Princess Belle dances with a girl dressed as a princess" [ref=e376]
+              - link "American, Bar-Lounge Ale & Compass Lounge Table Service Disney's Yacht Club Resort $$ ($15 to $34.99 per adult), American A lounge area with a bar, tables and seats" [ref=e383] [cursor=pointer]:
+                - /url: /dining/yacht-club-resort/ale-and-compass-lounge/
+                - generic [ref=e384]:
+                  - generic [ref=e386]:
+                    - generic [ref=e390]: American, Bar-Lounge
+                    - generic [ref=e391]: Ale & Compass Lounge
+                    - generic [ref=e392]: Table Service
+                    - generic [ref=e393]: Disney's Yacht Club Resort
+                    - generic [ref=e394]: $$ ($15 to $34.99 per adult), American
+                  - img "A lounge area with a bar, tables and seats" [ref=e398]
+              - link "a la Carte, American Ale & Compass Restaurant Table Service Disney's Yacht Club Resort $$ ($15 to $34.99 per adult), American Check Availability Calendar A man kisses a child on a cheek while sitting at a table with orange juice and Mickey waffles" [ref=e405] [cursor=pointer]:
+                - /url: /dining/yacht-club-resort/ale-and-compass/
+                - generic [ref=e406]:
+                  - generic [ref=e407]:
+                    - generic [ref=e408]:
+                      - generic [ref=e412]: a la Carte, American
+                      - generic [ref=e413]: Ale & Compass Restaurant
+                      - generic [ref=e414]: Table Service
+                      - generic [ref=e415]: Disney's Yacht Club Resort
+                      - generic [ref=e416]: $$ ($15 to $34.99 per adult), American
+                    - button "Check Availability Calendar" [ref=e421]
+                  - img "A man kisses a child on a cheek while sitting at a table with orange juice and Mickey waffles" [ref=e425]
+              - link "American, Snack Aloha Isle Quick Service Magic Kingdom Park $ ($14.99 and under per adult), American Three cups filled with soft-serve Dole Whip at Aloha Isle in Magic Kingdom park" [ref=e432] [cursor=pointer]:
+                - /url: /dining/magic-kingdom/aloha-isle/
+                - generic [ref=e433]:
+                  - generic [ref=e435]:
+                    - generic [ref=e439]: American, Snack
+                    - generic [ref=e440]: Aloha Isle
+                    - generic [ref=e441]: Quick Service
+                    - generic [ref=e442]: Magic Kingdom Park
+                    - generic [ref=e443]: $ ($14.99 and under per adult), American
+                  - img "Three cups filled with soft-serve Dole Whip at Aloha Isle in Magic Kingdom park" [ref=e447]
+              - link "a la Carte, Fine/Signature Dining Amare Table Service Walt Disney World Swan Reserve $$$ ($35 to $59.99 per adult), Mediterranean Check Availability Calendar A dining area in Amare restaurant at Walt Disney World Swan Reserve with a glass wine display" [ref=e454] [cursor=pointer]:
+                - /url: /dining/swan-reserve/amare/
+                - generic [ref=e455]:
+                  - generic [ref=e456]:
+                    - generic [ref=e457]:
+                      - generic [ref=e461]: a la Carte, Fine/Signature Dining
+                      - generic [ref=e462]: Amare
+                      - generic [ref=e463]: Table Service
+                      - generic [ref=e464]: Walt Disney World Swan Reserve
+                      - generic [ref=e465]: $$$ ($35 to $59.99 per adult), Mediterranean
+                    - button "Check Availability Calendar" [ref=e470]
+                  - img "A dining area in Amare restaurant at Walt Disney World Swan Reserve with a glass wine display" [ref=e474]
+              - link "American, Casual Dining AMC® Disney Springs 24 Dine-In Theatres Table Service Disney Springs $ ($14.99 and under per adult), American, Seafood Guests enjoy plated food and drinks in an AMC Disney Springs 24 Dine In Theatre" [ref=e481] [cursor=pointer]:
+                - /url: /dining/disney-springs/fork-and-screen-dine-in-theatre/
+                - generic [ref=e482]:
+                  - generic [ref=e484]:
+                    - generic [ref=e488]: American, Casual Dining
+                    - generic [ref=e489]: AMC® Disney Springs 24 Dine-In Theatres
+                    - generic [ref=e490]: Table Service
+                    - generic [ref=e491]: Disney Springs
+                    - generic [ref=e492]: $ ($14.99 and under per adult), American, Seafood
+                  - img "Guests enjoy plated food and drinks in an AMC Disney Springs 24 Dine In Theatre" [ref=e496]
+              - link "Bakery, Mobile Orders Amorette's Patisserie Quick Service Disney Springs $ ($14.99 and under per adult), Bakery A young couple enjoys cake and sparkling wine outside Amorette’s Patisserie at Disney Springs" [ref=e503] [cursor=pointer]:
+                - /url: /dining/disney-springs/amorettes-patisserie/
+                - generic [ref=e504]:
+                  - generic [ref=e506]:
+                    - generic [ref=e510]: Bakery, Mobile Orders
+                    - generic [ref=e511]: Amorette's Patisserie
+                    - generic [ref=e512]: Quick Service
+                    - generic [ref=e513]: Disney Springs
+                    - generic [ref=e514]: $ ($14.99 and under per adult), Bakery
+                  - img "A young couple enjoys cake and sparkling wine outside Amorette’s Patisserie at Disney Springs" [ref=e518]
+              - link "American, Snack Anaheim Produce Quick Service Disney's Hollywood Studios $ ($14.99 and under per adult), American" [ref=e525] [cursor=pointer]:
+                - /url: /dining/hollywood-studios/anaheim-produce/
+                - generic [ref=e528]:
+                  - generic [ref=e532]: American, Snack
+                  - generic [ref=e533]: Anaheim Produce
+                  - generic [ref=e534]: Quick Service
+                  - generic [ref=e535]: Disney's Hollywood Studios
+                  - generic [ref=e536]: $ ($14.99 and under per adult), American
+              - link "American, Snack Anandapur Ice Cream Truck Quick Service Disney's Animal Kingdom Theme Park $ ($14.99 and under per adult), American" [ref=e546] [cursor=pointer]:
+                - /url: /dining/animal-kingdom/anandapur-ice-cream-truck/
+                - generic [ref=e549]:
+                  - generic [ref=e553]: American, Snack
+                  - generic [ref=e554]: Anandapur Ice Cream Truck
+                  - generic [ref=e555]: Quick Service
+                  - generic [ref=e556]: Disney's Animal Kingdom Theme Park
+                  - generic [ref=e557]: $ ($14.99 and under per adult), American
+              - link "American, Snack Arctic Expeditions Quick Service Disney's Blizzard Beach Water Park $ ($14.99 and under per adult), American The Blizzard Beach Arctic Expedition quick-service truck parked on the side of the road" [ref=e567] [cursor=pointer]:
+                - /url: /dining/blizzard-beach/arctic-expeditions/
+                - generic [ref=e568]:
+                  - generic [ref=e570]:
+                    - generic [ref=e574]: American, Snack
+                    - generic [ref=e575]: Arctic Expeditions
+                    - generic [ref=e576]: Quick Service
+                    - generic [ref=e577]: Disney's Blizzard Beach Water Park
+                    - generic [ref=e578]: $ ($14.99 and under per adult), American
+                  - img "The Blizzard Beach Arctic Expedition quick-service truck parked on the side of the road" [ref=e582]
+              - link "American, Quick Service Restaurant The Artist's Palette Quick Service Disney's Saratoga Springs Resort & Spa $ ($14.99 and under per adult), American Airy and colorful dining area with colorful mobiles hanging from a high ceiling at The Artist's Palette restaurant" [ref=e589] [cursor=pointer]:
+                - /url: /dining/saratoga-springs-resort-and-spa/artists-palette/
+                - generic [ref=e590]:
+                  - generic [ref=e592]:
+                    - generic [ref=e596]: American, Quick Service Restaurant
+                    - generic [ref=e597]: The Artist's Palette
+                    - generic [ref=e598]: Quick Service
+                    - generic [ref=e599]: Disney's Saratoga Springs Resort & Spa
+                    - generic [ref=e600]: $ ($14.99 and under per adult), American
+                  - img "Airy and colorful dining area with colorful mobiles hanging from a high ceiling at The Artist's Palette restaurant" [ref=e604]
+          - generic [ref=e608]:
+            - generic [ref=e614]:
+              - generic [ref=e615]: Reserve Your Delectable Dining Experience
+              - button "Check All Availability" [ref=e618] [cursor=pointer]
+            - generic [ref=e619]:
+              - generic:
+                - generic:
+                  - button "4" [ref=e621] [cursor=pointer]:
+                    - generic "4" [ref=e622]
+                  - button "4" [ref=e623] [cursor=pointer]:
+                    - generic "4" [ref=e624]
+                  - button "8" [ref=e625] [cursor=pointer]:
+                    - generic "8" [ref=e626]
+                  - button "20" [ref=e627] [cursor=pointer]:
+                    - generic "20" [ref=e628]
+                  - button "68" [ref=e629] [cursor=pointer]:
+                    - generic "68" [ref=e630]
+                  - button "18" [ref=e631] [cursor=pointer]:
+                    - generic "18" [ref=e632]
+                  - button "6" [ref=e633] [cursor=pointer]:
+                    - generic "6" [ref=e634]
+                  - button "79" [ref=e635] [cursor=pointer]:
+                    - generic "79" [ref=e636]
+                  - button "38" [ref=e637] [cursor=pointer]:
+                    - generic "38" [ref=e638]
+                  - button "85" [ref=e639] [cursor=pointer]:
+                    - generic "85" [ref=e640]
+                  - button "76" [ref=e641] [cursor=pointer]:
+                    - generic "76" [ref=e642]
+              - generic:
+                - generic:
+                  - link "Expand Map" [ref=e644] [cursor=pointer]:
+                    - /url: "#"
+                  - generic [ref=e645]:
+                    - button "Zoom in" [ref=e646] [cursor=pointer]: +
+                    - button "Zoom out" [disabled] [ref=e647]: −
+    - contentinfo [ref=e648]:
+      - contentinfo [ref=e652]:
+        - generic [ref=e653]:
+          - generic [ref=e654]:
+            - generic [ref=e655]:
+              - heading "Plan Your Walt Disney World Vacation" [level=5] [ref=e656]
+              - generic [ref=e657]:
+                - button "Buy Tickets & Passes" [ref=e658] [cursor=pointer]:
+                  - generic [ref=e660]: Buy Tickets & Passes
+                - button "Book a Resort Hotel" [ref=e661] [cursor=pointer]:
+                  - generic [ref=e663]: Book a Resort Hotel
+            - generic [ref=e666]:
+              - generic [ref=e667]:
+                - text: For assistance with your Walt Disney World vacation, including resort/package bookings and tickets, please call (407) 939-5277.
+                - text: For Walt Disney World dining, please book your reservation
+                - link "online" [ref=e668] [cursor=pointer]:
+                  - /url: /dine-res/availability
+                - text: .
+              - generic [ref=e669]: 7:00 AM to 11:00 PM Eastern Time. Guests under 18 years of age must have parent or guardian permission to call.
+            - navigation "Footer Links" [ref=e671]:
+              - generic [ref=e672]:
+                - generic: Footer Links
+                - generic [ref=e673]:
+                  - generic [ref=e675]:
+                    - heading "Help" [level=3] [ref=e676]
+                    - list "Help" [ref=e677]:
+                      - listitem [ref=e678]:
+                        - link "Contact Us" [ref=e679] [cursor=pointer]:
+                          - /url: /help/phone/
+                          - generic [ref=e680]: Contact Us
+                      - listitem [ref=e681]:
+                        - link "Help Center" [ref=e682] [cursor=pointer]:
+                          - /url: /help/
+                          - generic [ref=e683]: Help Center
+                      - listitem [ref=e684]:
+                        - link "planDisney" [ref=e685] [cursor=pointer]:
+                          - /url: https://plandisney.disney.go.com/destinations/walt-disney-world/
+                          - generic [ref=e686]: planDisney
+                      - listitem [ref=e687]:
+                        - link "CoBrowse" [ref=e688] [cursor=pointer]:
+                          - /url: "#interstitialCobrowseModal#/help"
+                          - generic [ref=e689]: CoBrowse
+                      - listitem [ref=e690]:
+                        - link "Park Security" [ref=e691] [cursor=pointer]:
+                          - /url: /guest-services/park-security/
+                          - generic [ref=e692]: Park Security
+                      - listitem [ref=e693]:
+                        - link "Property Rules" [ref=e694] [cursor=pointer]:
+                          - /url: /park-rules/
+                          - generic [ref=e695]: Property Rules
+                      - listitem [ref=e696]:
+                        - link "Privacy & Legal" [ref=e697] [cursor=pointer]:
+                          - /url: /help/privacy-legal/
+                          - generic [ref=e698]: Privacy & Legal
+                  - generic [ref=e700]:
+                    - heading "Guest Services" [level=3] [ref=e701]
+                    - list "Guest Services" [ref=e702]:
+                      - listitem [ref=e703]:
+                        - link "Services for Guests with Disabilities" [ref=e704] [cursor=pointer]:
+                          - /url: /guest-services/guests-with-disabilities/
+                          - generic [ref=e705]: Services for Guests with Disabilities
+                      - listitem [ref=e706]:
+                        - link "Disney PhotoPass" [ref=e707] [cursor=pointer]:
+                          - /url: /guest-services/photopass-service/
+                          - generic [ref=e708]: Disney PhotoPass
+                      - listitem [ref=e709]:
+                        - link "Custom Celebrations & Gatherings" [ref=e710] [cursor=pointer]:
+                          - /url: /events-tours/custom-gatherings
+                          - generic [ref=e711]: Custom Celebrations & Gatherings
+                      - listitem [ref=e712]:
+                        - link "All Guest Services" [ref=e713] [cursor=pointer]:
+                          - /url: /guest-services/
+                          - generic [ref=e714]: All Guest Services
+                  - generic [ref=e716]:
+                    - heading "Parks & Tickets" [level=3] [ref=e717]
+                    - list "Parks & Tickets" [ref=e718]:
+                      - listitem [ref=e719]:
+                        - link "Magic Kingdom Park" [ref=e720] [cursor=pointer]:
+                          - /url: /destinations/magic-kingdom/
+                          - generic [ref=e721]: Magic Kingdom Park
+                      - listitem [ref=e722]:
+                        - link "EPCOT" [ref=e723] [cursor=pointer]:
+                          - /url: /destinations/epcot/
+                          - generic [ref=e724]: EPCOT
+                      - listitem [ref=e725]:
+                        - link "Disney's Hollywood Studios" [ref=e726] [cursor=pointer]:
+                          - /url: /destinations/hollywood-studios/
+                          - generic [ref=e727]: Disney's Hollywood Studios
+                      - listitem [ref=e728]:
+                        - link "Disney's Animal Kingdom Park" [ref=e729] [cursor=pointer]:
+                          - /url: /destinations/animal-kingdom/
+                          - generic [ref=e730]: Disney's Animal Kingdom Park
+                      - listitem [ref=e731]:
+                        - link "Water Parks" [ref=e732] [cursor=pointer]:
+                          - /url: /destinations/water-parks/
+                          - generic [ref=e733]: Water Parks
+                      - listitem [ref=e734]:
+                        - link "Park Hours" [ref=e735] [cursor=pointer]:
+                          - /url: /calendars/park-hours/
+                          - generic [ref=e736]: Park Hours
+                  - generic [ref=e737]:
+                    - generic [ref=e738]:
+                      - heading "Dining" [level=3] [ref=e739]
+                      - list "Dining" [ref=e740]:
+                        - listitem [ref=e741]:
+                          - link "Make Dining Reservations" [ref=e742] [cursor=pointer]:
+                            - /url: /dine-res/
+                            - generic [ref=e743]: Make Dining Reservations
+                        - listitem [ref=e744]:
+                          - link "About Dining" [ref=e745] [cursor=pointer]:
+                            - /url: /dining/snack-dine-enjoy/
+                            - generic [ref=e746]: About Dining
+                        - listitem [ref=e747]:
+                          - link "All Restaurants" [ref=e748] [cursor=pointer]:
+                            - /url: /dining/
+                            - generic [ref=e749]: All Restaurants
+                        - listitem [ref=e750]:
+                          - link "Dining Plans" [ref=e751] [cursor=pointer]:
+                            - /url: /dining/plans/
+                            - generic [ref=e752]: Dining Plans
+                    - generic [ref=e753]:
+                      - heading "Get Ready" [level=3] [ref=e754]
+                      - list "Get Ready" [ref=e755]:
+                        - listitem [ref=e756]:
+                          - link "Mobile App" [ref=e757] [cursor=pointer]:
+                            - /url: /plan/my-disney-experience/mobile-apps/
+                            - generic [ref=e758]: Mobile App
+                        - listitem [ref=e759]:
+                          - link "Get Ready for Your Vacation" [ref=e760] [cursor=pointer]:
+                            - /url: /guest-services/manage-plans/
+                            - generic [ref=e761]: Get Ready for Your Vacation
+                        - listitem [ref=e762]:
+                          - link "Shop Online" [ref=e763] [cursor=pointer]:
+                            - /url: "https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer "
+                            - generic [ref=e764]: Shop Online
+                - list [ref=e766]:
+                  - listitem [ref=e767]:
+                    - region "Stay Connected" [ref=e768]:
+                      - heading "Stay Connected" [level=3] [ref=e769]
+                      - generic [ref=e770]:
+                        - link "Facebook" [ref=e772] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.facebook.com/WaltDisneyWorld/"
+                          - img "Facebook" [ref=e774]
+                        - link "Twitter" [ref=e776] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://twitter.com/waltdisneyworld/"
+                          - img "Twitter" [ref=e778]
+                        - link "Pinterest" [ref=e780] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.pinterest.com/waltdisneyworld/"
+                          - img "Pinterest" [ref=e782]
+                        - link "Instagram" [ref=e784] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.instagram.com/waltdisneyworld/"
+                          - img "Instagram" [ref=e786]
+                  - listitem [ref=e787]:
+                    - region "Disney Parks" [ref=e788]:
+                      - heading "Disney Parks" [level=3] [ref=e789]
+                      - generic [ref=e790]:
+                        - link "YouTube Channel YouTube Channel" [ref=e792] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.youtube.com/DisneyParks"
+                          - img "YouTube Channel" [ref=e794]
+                          - generic [ref=e795]: YouTube Channel
+                        - link "Blog Blog" [ref=e797] [cursor=pointer]:
+                          - /url: https://disneyparksblog.com/
+                          - img "Blog" [ref=e799]
+                          - generic [ref=e800]: Blog
+                  - listitem [ref=e801]:
+                    - region "Create Disney Account" [ref=e802]:
+                      - heading "Create Disney Account" [level=3] [ref=e803]
+                      - generic [ref=e805]:
+                        - generic [ref=e806]: Register to receive the latest Disney Parks news and special offers!
+                        - link "Create Account" [ref=e807] [cursor=pointer]:
+                          - /url: /registration/
+          - generic [ref=e808]:
+            - list "Related Disney Sites" [ref=e809]:
+              - listitem [ref=e810]:
+                - heading "Related Disney Sites" [level=3] [ref=e811]
+              - listitem [ref=e812]:
+                - list [ref=e814]:
+                  - listitem [ref=e815]:
+                    - link "Disney Springs" [ref=e816] [cursor=pointer]:
+                      - /url: https://www.disneysprings.com/
+                      - generic [ref=e817]: Disney Springs
+                  - listitem [ref=e818]:
+                    - link "Disney Parks" [ref=e819] [cursor=pointer]:
+                      - /url: http://disneyparks.disney.go.com/
+                      - generic [ref=e820]: Disney Parks
+                  - listitem [ref=e821]:
+                    - link "Disney Cruise Line" [ref=e822] [cursor=pointer]:
+                      - /url: http://disneycruise.disney.go.com/
+                      - generic [ref=e823]: Disney Cruise Line
+                  - listitem [ref=e824]:
+                    - link "Disney Gift Card" [ref=e825] [cursor=pointer]:
+                      - /url: http://www.disneygiftcard.com/home/
+                      - generic [ref=e826]: Disney Gift Card
+              - listitem [ref=e827]:
+                - list [ref=e829]:
+                  - listitem [ref=e830]:
+                    - link "Disney Vacation Club" [ref=e831] [cursor=pointer]:
+                      - /url: http://disneyvacationclub.disney.go.com/
+                      - generic [ref=e832]: Disney Vacation Club
+                  - listitem [ref=e833]:
+                    - link "Disney's Fairy Tale Weddings & Honeymoons" [ref=e834] [cursor=pointer]:
+                      - /url: https://www.disneyweddings.com/
+                      - generic [ref=e835]: Disney's Fairy Tale Weddings & Honeymoons
+                  - listitem [ref=e836]:
+                    - link "planDisney" [ref=e837] [cursor=pointer]:
+                      - /url: https://plandisney.disney.go.com/
+                      - generic [ref=e838]: planDisney
+              - listitem [ref=e839]:
+                - list [ref=e841]:
+                  - listitem [ref=e842]:
+                    - link "Disney+" [ref=e843] [cursor=pointer]:
+                      - /url: https://www.disneyplus.com/
+                      - generic [ref=e844]: Disney+
+                  - listitem [ref=e845]:
+                    - link "Disney® Inspire Visa® Card" [ref=e846] [cursor=pointer]:
+                      - /url: /visa-card/?trackcode=617R01&mobtrackcode=617R01&p=1
+                      - generic [ref=e847]: Disney® Inspire Visa® Card
+                  - listitem [ref=e848]:
+                    - link "Disney Merchandise Online" [ref=e849] [cursor=pointer]:
+                      - /url: https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer
+                      - generic [ref=e850]: Disney Merchandise Online
+                  - listitem [ref=e851]:
+                    - link "Disney Meetings & Events" [ref=e852] [cursor=pointer]:
+                      - /url: https://www.disneymeetingsandevents.com/
+                      - generic [ref=e853]: Disney Meetings & Events
+              - listitem [ref=e854]:
+                - list [ref=e856]:
+                  - listitem [ref=e857]:
+                    - link "Disney Imagination Campus" [ref=e858] [cursor=pointer]:
+                      - /url: http://www.disneycampus.com/
+                      - generic [ref=e859]: Disney Imagination Campus
+                  - listitem [ref=e860]:
+                    - link "run Disney" [ref=e861] [cursor=pointer]:
+                      - /url: http://www.rundisney.com/
+                      - generic [ref=e862]:
+                        - emphasis [ref=e863]: run
+                        - text: Disney
+                  - listitem [ref=e864]:
+                    - link "Disney Institute" [ref=e865] [cursor=pointer]:
+                      - /url: https://www.disneyinstitute.com/
+                      - generic [ref=e866]: Disney Institute
+                  - listitem [ref=e867]:
+                    - link "Disney Careers" [ref=e868] [cursor=pointer]:
+                      - /url: https://jobs.disneycareers.com/
+                      - generic [ref=e869]: Disney Careers
+            - generic [ref=e870]:
+              - list "legal-links" [ref=e871]:
+                - listitem [ref=e872]:
+                  - link "Terms of Use" [ref=e873] [cursor=pointer]:
+                    - /url: http://disneytermsofuse.com/
+                - listitem [ref=e874]:
+                  - link "Legal Notices" [ref=e875] [cursor=pointer]:
+                    - /url: https://help.disney.com/articles/en_US/FAQ/Legal-Notices
+                - listitem [ref=e876]:
+                  - link "Privacy Policy" [ref=e877] [cursor=pointer]:
+                    - /url: https://disneyprivacycenter.com/
+                - listitem [ref=e878]:
+                  - link "Do Not Sell or Share My Personal Information" [ref=e879] [cursor=pointer]:
+                    - /url: "#oneTrustModal"
+                - listitem [ref=e880]:
+                  - link "Children's Online Privacy Policy" [ref=e881] [cursor=pointer]:
+                    - /url: https://disneyprivacycenter.com/kids-privacy-policy/english/
+                - listitem [ref=e882]:
+                  - link "Your US State Privacy Rights" [ref=e883] [cursor=pointer]:
+                    - /url: https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights
+                - listitem [ref=e884]:
+                  - link "Interest-Based Ads" [ref=e885] [cursor=pointer]:
+                    - /url: https://privacy.thewaltdisneycompany.com/en/privacy-controls/online-tracking-and-advertising/
+              - paragraph [ref=e886]: © Disney, All Rights Reserved
+  - iframe [ref=e889]:
+    

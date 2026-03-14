@@ -1,0 +1,398 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - text:  
+    - generic [ref=e6]:
+      - banner [ref=e49]:
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - link "Visit Disney.com" [ref=e55] [cursor=pointer]:
+              - /url: https://www.disney.com/
+            - button "Skip Navigation" [ref=e56] [cursor=pointer]
+            - generic [ref=e57]:
+              - generic [ref=e58]:
+                - link "Welcome, Matt!" [ref=e59] [cursor=pointer]:
+                  - /url: /profile#nav
+                - button "1" [ref=e60]:
+                  - generic [ref=e61] [cursor=pointer]: "1"
+                - text: "|"
+              - generic [ref=e62]:
+                - link "Sign Out" [ref=e63] [cursor=pointer]:
+                  - /url: /authentication/logout/
+                - text: "|"
+              - button "United States - English. Language selector, currently set to United States - English" [ref=e65] [cursor=pointer]:
+                - menuitem [ref=e66]
+                - generic [ref=e67]: United States (English)
+            - search [ref=e68]:
+              - generic [ref=e69]:
+                - button "Search" [ref=e70] [cursor=pointer]:
+                  - generic: Search
+                - combobox "Search or ask a question" [ref=e71]
+          - generic [ref=e72]:
+            - link "Walt Disney World Logo" [ref=e73] [cursor=pointer]:
+              - /url: https://disneyworld.disney.go.com
+              - img "Walt Disney World Logo" [ref=e74]
+            - navigation "Navigation Links" [ref=e75]:
+              - menubar [ref=e76]:
+                - generic: Navigation Links
+                - group [ref=e77]:
+                  - menuitem "Tickets & Parks" [ref=e79] [cursor=pointer]:
+                    - generic [ref=e80]: Tickets & Parks
+                - group [ref=e81]:
+                  - menuitem "Places to Stay" [ref=e83] [cursor=pointer]:
+                    - generic [ref=e84]: Places to Stay
+                - group [ref=e85]:
+                  - menuitem "Things to Do" [ref=e87] [cursor=pointer]:
+                    - generic [ref=e88]: Things to Do
+                - group [ref=e89]:
+                  - menuitem "Shop" [ref=e91] [cursor=pointer]:
+                    - generic [ref=e92]: Shop
+                - group [ref=e93]:
+                  - menuitem "Help & Rules" [ref=e95] [cursor=pointer]:
+                    - generic [ref=e96]: Help & Rules
+                  - text: • • • • •
+                - group [ref=e97]:
+                  - menuitem "Cart" [ref=e99] [cursor=pointer]:
+                    - menuitem [ref=e100]
+                    - generic [ref=e101]: Cart
+                - group [ref=e102]:
+                  - menuitem "My Disney Experience" [ref=e104] [cursor=pointer]:
+                    - generic [ref=e105]: My Disney Experience
+      - generic [ref=e106]:
+        - generic [ref=e108]:
+          - generic:  
+          - generic [ref=e109]:
+            - generic: 
+            - generic [ref=e111]:
+              - navigation "Breadcrumb" [ref=e114]:
+                - list [ref=e115]:
+                  - listitem [ref=e116] [cursor=pointer]:
+                    - link "Home" [ref=e117]:
+                      - /url: /
+                    - generic [ref=e118]: 
+                  - listitem [ref=e119] [cursor=pointer]:
+                    - link "Dining" [ref=e120]:
+                      - /url: /dining
+                    - generic [ref=e121]: 
+                  - listitem [ref=e122] [cursor=pointer]:
+                    - link "Grand Floridian Cafe, current page" [ref=e123]:
+                      - /url: /dining/grand-floridian-resort-and-spa/grand-floridian-cafe
+                      - text: Grand Floridian Cafe
+              - generic [ref=e124]:
+                - img "A family shares a laugh, dining together in Grand Floridian Café at Walt Disney World Resort" [ref=e126]
+                - generic [ref=e127]:
+                  - region "Grand Floridian Cafe" [ref=e129]:
+                    - generic [ref=e130]:
+                      - heading "Grand Floridian Cafe" [level=1] [ref=e131]
+                      - generic [ref=e132]: For casual American dining at Disney’s Grand Floridian Resort & Spa, this elegant yet unpretentious eatery can’t be beat.
+                      - generic [ref=e133]:
+                        - generic [ref=e134]: Disney's Grand Floridian Resort & Spa
+                        - generic [ref=e135]: Disney's Grand Floridian Resort & Spa
+                        - generic [ref=e136]: American
+                  - generic [ref=e139]:
+                    - text: 
+                    - button "View Dining Plans" [ref=e140] [cursor=pointer]
+            - generic [ref=e142]:
+              - region "Party Size" [ref=e143]:
+                - heading "Select Party Size How many people (including infants) are in your party?" [level=2] [ref=e144]:
+                  - button "Select Party Size How many people (including infants) are in your party?" [expanded] [ref=e145] [cursor=pointer]:
+                    - generic [ref=e146]:
+                      - generic [ref=e147]: Select
+                      - generic [ref=e148]: 
+                      - text: Party Size
+                    - generic [ref=e150]: How many people (including infants) are in your party?
+                - radiogroup [ref=e154]:
+                  - button "previous" [disabled]:
+                    - generic: 
+                  - radio "counter item 1" [ref=e156] [cursor=pointer]: "1"
+                  - radio "counter item 2" [ref=e158] [cursor=pointer]: "2"
+                  - radio "counter item 3" [ref=e160] [cursor=pointer]: "3"
+                  - radio "counter item 4" [ref=e162] [cursor=pointer]: "4"
+                  - radio "counter item 5" [ref=e164] [cursor=pointer]: "5"
+                  - radio "counter item 6" [ref=e166] [cursor=pointer]: "6"
+                  - radio "counter item 7" [ref=e168] [cursor=pointer]: "7"
+                  - radio "counter item 8" [ref=e170] [cursor=pointer]: "8"
+                  - radio "counter item 9" [ref=e172] [cursor=pointer]: "9"
+                  - radio "counter item 10" [ref=e174] [cursor=pointer]: "10"
+                  - button "next" [ref=e175] [cursor=pointer]:
+                    - generic [ref=e176]: 
+              - region "Date" [ref=e177]:
+                - heading "Date Select between 1 to 10 days on the calendar to view dining availability." [level=2] [ref=e178]:
+                  - button "Date Select between 1 to 10 days on the calendar to view dining availability." [ref=e179] [cursor=pointer]:
+                    - generic [ref=e180]:
+                      - generic [ref=e181]: 
+                      - text: Date
+                    - generic [ref=e183]: Select between 1 to 10 days on the calendar to view dining availability.
+                - generic: Next
+              - region "Time" [ref=e184]:
+                - heading "Time" [level=2] [ref=e185]:
+                  - heading "Time":
+                    - generic:
+                      - generic: 
+                      - text: Time
+          - text:  
+        - generic:   
+      - generic [ref=e187]:
+        - separator [ref=e189]
+        - contentinfo [ref=e191]:
+          - generic [ref=e192]:
+            - generic [ref=e193]:
+              - generic [ref=e196]:
+                - generic [ref=e197]:
+                  - text: For assistance with your Walt Disney World vacation, including resort/package bookings and tickets, please call (407) 939-5277.
+                  - text: For Walt Disney World dining, please book your reservation
+                  - link "online" [ref=e198] [cursor=pointer]:
+                    - /url: /dine-res/availability
+                  - text: .
+                - generic [ref=e199]: 7:00 AM to 11:00 PM Eastern Time. Guests under 18 years of age must have parent or guardian permission to call.
+              - navigation "Footer Links" [ref=e201]:
+                - generic [ref=e202]:
+                  - generic: Footer Links
+                  - generic [ref=e203]:
+                    - generic [ref=e205]:
+                      - heading "Help" [level=3] [ref=e206]
+                      - list "Help" [ref=e207]:
+                        - listitem [ref=e208]:
+                          - link "Contact Us" [ref=e209] [cursor=pointer]:
+                            - /url: /help/phone/
+                            - generic [ref=e210]: Contact Us
+                        - listitem [ref=e211]:
+                          - link "Help Center" [ref=e212] [cursor=pointer]:
+                            - /url: /help/
+                            - generic [ref=e213]: Help Center
+                        - listitem [ref=e214]:
+                          - link "planDisney" [ref=e215] [cursor=pointer]:
+                            - /url: https://plandisney.disney.go.com/destinations/walt-disney-world/
+                            - generic [ref=e216]: planDisney
+                        - listitem [ref=e217]:
+                          - link "CoBrowse" [ref=e218] [cursor=pointer]:
+                            - /url: "#interstitialCobrowseModal#/help"
+                            - generic [ref=e219]: CoBrowse
+                        - listitem [ref=e220]:
+                          - link "Park Security" [ref=e221] [cursor=pointer]:
+                            - /url: /guest-services/park-security/
+                            - generic [ref=e222]: Park Security
+                        - listitem [ref=e223]:
+                          - link "Property Rules" [ref=e224] [cursor=pointer]:
+                            - /url: /park-rules/
+                            - generic [ref=e225]: Property Rules
+                        - listitem [ref=e226]:
+                          - link "Privacy & Legal" [ref=e227] [cursor=pointer]:
+                            - /url: /help/privacy-legal/
+                            - generic [ref=e228]: Privacy & Legal
+                    - generic [ref=e230]:
+                      - heading "Guest Services" [level=3] [ref=e231]
+                      - list "Guest Services" [ref=e232]:
+                        - listitem [ref=e233]:
+                          - link "Services for Guests with Disabilities" [ref=e234] [cursor=pointer]:
+                            - /url: /guest-services/guests-with-disabilities/
+                            - generic [ref=e235]: Services for Guests with Disabilities
+                        - listitem [ref=e236]:
+                          - link "Disney PhotoPass" [ref=e237] [cursor=pointer]:
+                            - /url: /guest-services/photopass-service/
+                            - generic [ref=e238]: Disney PhotoPass
+                        - listitem [ref=e239]:
+                          - link "Custom Celebrations & Gatherings" [ref=e240] [cursor=pointer]:
+                            - /url: /events-tours/custom-gatherings
+                            - generic [ref=e241]: Custom Celebrations & Gatherings
+                        - listitem [ref=e242]:
+                          - link "All Guest Services" [ref=e243] [cursor=pointer]:
+                            - /url: /guest-services/
+                            - generic [ref=e244]: All Guest Services
+                    - generic [ref=e246]:
+                      - heading "Parks & Tickets" [level=3] [ref=e247]
+                      - list "Parks & Tickets" [ref=e248]:
+                        - listitem [ref=e249]:
+                          - link "Magic Kingdom Park" [ref=e250] [cursor=pointer]:
+                            - /url: /destinations/magic-kingdom/
+                            - generic [ref=e251]: Magic Kingdom Park
+                        - listitem [ref=e252]:
+                          - link "EPCOT" [ref=e253] [cursor=pointer]:
+                            - /url: /destinations/epcot/
+                            - generic [ref=e254]: EPCOT
+                        - listitem [ref=e255]:
+                          - link "Disney's Hollywood Studios" [ref=e256] [cursor=pointer]:
+                            - /url: /destinations/hollywood-studios/
+                            - generic [ref=e257]: Disney's Hollywood Studios
+                        - listitem [ref=e258]:
+                          - link "Disney's Animal Kingdom Park" [ref=e259] [cursor=pointer]:
+                            - /url: /destinations/animal-kingdom/
+                            - generic [ref=e260]: Disney's Animal Kingdom Park
+                        - listitem [ref=e261]:
+                          - link "Water Parks" [ref=e262] [cursor=pointer]:
+                            - /url: /destinations/water-parks/
+                            - generic [ref=e263]: Water Parks
+                        - listitem [ref=e264]:
+                          - link "Park Hours" [ref=e265] [cursor=pointer]:
+                            - /url: /calendars/park-hours/
+                            - generic [ref=e266]: Park Hours
+                    - generic [ref=e267]:
+                      - generic [ref=e268]:
+                        - heading "Dining" [level=3] [ref=e269]
+                        - list "Dining" [ref=e270]:
+                          - listitem [ref=e271]:
+                            - link "Make Dining Reservations" [ref=e272] [cursor=pointer]:
+                              - /url: /dine-res/
+                              - generic [ref=e273]: Make Dining Reservations
+                          - listitem [ref=e274]:
+                            - link "About Dining" [ref=e275] [cursor=pointer]:
+                              - /url: /dining/snack-dine-enjoy/
+                              - generic [ref=e276]: About Dining
+                          - listitem [ref=e277]:
+                            - link "All Restaurants" [ref=e278] [cursor=pointer]:
+                              - /url: /dining/
+                              - generic [ref=e279]: All Restaurants
+                          - listitem [ref=e280]:
+                            - link "Dining Plans" [ref=e281] [cursor=pointer]:
+                              - /url: /dining/plans/
+                              - generic [ref=e282]: Dining Plans
+                      - generic [ref=e283]:
+                        - heading "Get Ready" [level=3] [ref=e284]
+                        - list "Get Ready" [ref=e285]:
+                          - listitem [ref=e286]:
+                            - link "Mobile App" [ref=e287] [cursor=pointer]:
+                              - /url: /plan/my-disney-experience/mobile-apps/
+                              - generic [ref=e288]: Mobile App
+                          - listitem [ref=e289]:
+                            - link "Get Ready for Your Vacation" [ref=e290] [cursor=pointer]:
+                              - /url: /guest-services/manage-plans/
+                              - generic [ref=e291]: Get Ready for Your Vacation
+                          - listitem [ref=e292]:
+                            - link "Shop Online" [ref=e293] [cursor=pointer]:
+                              - /url: "https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer "
+                              - generic [ref=e294]: Shop Online
+                  - list [ref=e296]:
+                    - listitem [ref=e297]:
+                      - region "Stay Connected" [ref=e298]:
+                        - heading "Stay Connected" [level=3] [ref=e299]
+                        - generic [ref=e300]:
+                          - link "Facebook" [ref=e302] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://www.facebook.com/WaltDisneyWorld/"
+                            - img "Facebook" [ref=e304]
+                          - link "Twitter" [ref=e306] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://twitter.com/waltdisneyworld/"
+                            - img "Twitter" [ref=e308]
+                          - link "Pinterest" [ref=e310] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://www.pinterest.com/waltdisneyworld/"
+                            - img "Pinterest" [ref=e312]
+                          - link "Instagram" [ref=e314] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://www.instagram.com/waltdisneyworld/"
+                            - img "Instagram" [ref=e316]
+                    - listitem [ref=e317]:
+                      - region "Disney Parks" [ref=e318]:
+                        - heading "Disney Parks" [level=3] [ref=e319]
+                        - generic [ref=e320]:
+                          - link "YouTube Channel YouTube Channel" [ref=e322] [cursor=pointer]:
+                            - /url: "#interstitialNewPageConfirmation#https://www.youtube.com/DisneyParks"
+                            - img "YouTube Channel" [ref=e324]
+                            - generic [ref=e325]: YouTube Channel
+                          - link "Blog Blog" [ref=e327] [cursor=pointer]:
+                            - /url: https://disneyparksblog.com/
+                            - img "Blog" [ref=e329]
+                            - generic [ref=e330]: Blog
+                    - listitem [ref=e331]:
+                      - region "Create Disney Account" [ref=e332]:
+                        - heading "Create Disney Account" [level=3] [ref=e333]
+                        - generic [ref=e335]:
+                          - generic [ref=e336]: Register to receive the latest Disney Parks news and special offers!
+                          - link "Create Account" [ref=e337] [cursor=pointer]:
+                            - /url: /registration/
+            - generic [ref=e338]:
+              - list "Related Disney Sites" [ref=e339]:
+                - listitem [ref=e340]:
+                  - heading "Related Disney Sites" [level=3] [ref=e341]
+                - listitem [ref=e342]:
+                  - list [ref=e344]:
+                    - listitem [ref=e345]:
+                      - link "Disney Springs" [ref=e346] [cursor=pointer]:
+                        - /url: https://www.disneysprings.com/
+                        - generic [ref=e347]: Disney Springs
+                    - listitem [ref=e348]:
+                      - link "Disney Parks" [ref=e349] [cursor=pointer]:
+                        - /url: http://disneyparks.disney.go.com/
+                        - generic [ref=e350]: Disney Parks
+                    - listitem [ref=e351]:
+                      - link "Disney Cruise Line" [ref=e352] [cursor=pointer]:
+                        - /url: http://disneycruise.disney.go.com/
+                        - generic [ref=e353]: Disney Cruise Line
+                    - listitem [ref=e354]:
+                      - link "Disney Gift Card" [ref=e355] [cursor=pointer]:
+                        - /url: http://www.disneygiftcard.com/home/
+                        - generic [ref=e356]: Disney Gift Card
+                - listitem [ref=e357]:
+                  - list [ref=e359]:
+                    - listitem [ref=e360]:
+                      - link "Disney Vacation Club" [ref=e361] [cursor=pointer]:
+                        - /url: http://disneyvacationclub.disney.go.com/
+                        - generic [ref=e362]: Disney Vacation Club
+                    - listitem [ref=e363]:
+                      - link "Disney's Fairy Tale Weddings & Honeymoons" [ref=e364] [cursor=pointer]:
+                        - /url: https://www.disneyweddings.com/
+                        - generic [ref=e365]: Disney's Fairy Tale Weddings & Honeymoons
+                    - listitem [ref=e366]:
+                      - link "planDisney" [ref=e367] [cursor=pointer]:
+                        - /url: https://plandisney.disney.go.com/
+                        - generic [ref=e368]: planDisney
+                - listitem [ref=e369]:
+                  - list [ref=e371]:
+                    - listitem [ref=e372]:
+                      - link "Disney+" [ref=e373] [cursor=pointer]:
+                        - /url: https://www.disneyplus.com/
+                        - generic [ref=e374]: Disney+
+                    - listitem [ref=e375]:
+                      - link "Disney® Inspire Visa® Card" [ref=e376] [cursor=pointer]:
+                        - /url: /visa-card/?trackcode=617R01&mobtrackcode=617R01&p=1
+                        - generic [ref=e377]: Disney® Inspire Visa® Card
+                    - listitem [ref=e378]:
+                      - link "Disney Merchandise Online" [ref=e379] [cursor=pointer]:
+                        - /url: https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer
+                        - generic [ref=e380]: Disney Merchandise Online
+                    - listitem [ref=e381]:
+                      - link "Disney Meetings & Events" [ref=e382] [cursor=pointer]:
+                        - /url: https://www.disneymeetingsandevents.com/
+                        - generic [ref=e383]: Disney Meetings & Events
+                - listitem [ref=e384]:
+                  - list [ref=e386]:
+                    - listitem [ref=e387]:
+                      - link "Disney Imagination Campus" [ref=e388] [cursor=pointer]:
+                        - /url: http://www.disneycampus.com/
+                        - generic [ref=e389]: Disney Imagination Campus
+                    - listitem [ref=e390]:
+                      - link "run Disney" [ref=e391] [cursor=pointer]:
+                        - /url: http://www.rundisney.com/
+                        - generic [ref=e392]:
+                          - emphasis [ref=e393]: run
+                          - text: Disney
+                    - listitem [ref=e394]:
+                      - link "Disney Institute" [ref=e395] [cursor=pointer]:
+                        - /url: https://www.disneyinstitute.com/
+                        - generic [ref=e396]: Disney Institute
+                    - listitem [ref=e397]:
+                      - link "Disney Careers" [ref=e398] [cursor=pointer]:
+                        - /url: https://jobs.disneycareers.com/
+                        - generic [ref=e399]: Disney Careers
+              - generic [ref=e400]:
+                - list "legal-links" [ref=e401]:
+                  - listitem [ref=e402]:
+                    - link "Terms of Use" [ref=e403] [cursor=pointer]:
+                      - /url: http://disneytermsofuse.com/
+                  - listitem [ref=e404]:
+                    - link "Legal Notices" [ref=e405] [cursor=pointer]:
+                      - /url: https://help.disney.com/articles/en_US/FAQ/Legal-Notices
+                  - listitem [ref=e406]:
+                    - link "Privacy Policy" [ref=e407] [cursor=pointer]:
+                      - /url: https://disneyprivacycenter.com/
+                  - listitem [ref=e408]:
+                    - link "Do Not Sell or Share My Personal Information" [ref=e409] [cursor=pointer]:
+                      - /url: "#oneTrustModal"
+                  - listitem [ref=e410]:
+                    - link "Children's Online Privacy Policy" [ref=e411] [cursor=pointer]:
+                      - /url: https://disneyprivacycenter.com/kids-privacy-policy/english/
+                  - listitem [ref=e412]:
+                    - link "Your US State Privacy Rights" [ref=e413] [cursor=pointer]:
+                      - /url: https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights
+                  - listitem [ref=e414]:
+                    - link "Interest-Based Ads" [ref=e415] [cursor=pointer]:
+                      - /url: https://privacy.thewaltdisneycompany.com/en/privacy-controls/online-tracking-and-advertising/
+                - paragraph [ref=e416]: © Disney, All Rights Reserved
+  - iframe [ref=e418]:
+    

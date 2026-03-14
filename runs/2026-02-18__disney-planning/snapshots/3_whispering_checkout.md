@@ -1,0 +1,139 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - link "Logo" [ref=e9]
+    - img [ref=e16]
+    - contentinfo [ref=e32]:
+      - generic [ref=e34]:
+        - list "Related Disney Sites" [ref=e35]:
+          - listitem [ref=e36]:
+            - heading "Related Disney Sites" [level=3] [ref=e37]
+          - listitem [ref=e38]:
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "Disney Springs" [ref=e42] [cursor=pointer]:
+                  - /url: https://www.disneysprings.com/
+                  - generic [ref=e43]: Disney Springs
+              - listitem [ref=e44]:
+                - link "Disney Parks" [ref=e45] [cursor=pointer]:
+                  - /url: http://disneyparks.disney.go.com/
+                  - generic [ref=e46]: Disney Parks
+              - listitem [ref=e47]:
+                - link "Disney Cruise Line" [ref=e48] [cursor=pointer]:
+                  - /url: http://disneycruise.disney.go.com/
+                  - generic [ref=e49]: Disney Cruise Line
+              - listitem [ref=e50]:
+                - link "Disney Gift Card" [ref=e51] [cursor=pointer]:
+                  - /url: http://www.disneygiftcard.com/home/
+                  - generic [ref=e52]: Disney Gift Card
+          - listitem [ref=e53]:
+            - list [ref=e55]:
+              - listitem [ref=e56]:
+                - link "Disney Vacation Club" [ref=e57] [cursor=pointer]:
+                  - /url: http://disneyvacationclub.disney.go.com/
+                  - generic [ref=e58]: Disney Vacation Club
+              - listitem [ref=e59]:
+                - link "Disney's Fairy Tale Weddings & Honeymoons" [ref=e60] [cursor=pointer]:
+                  - /url: https://www.disneyweddings.com/
+                  - generic [ref=e61]: Disney's Fairy Tale Weddings & Honeymoons
+              - listitem [ref=e62]:
+                - link "planDisney" [ref=e63] [cursor=pointer]:
+                  - /url: https://plandisney.disney.go.com/
+                  - generic [ref=e64]: planDisney
+          - listitem [ref=e65]:
+            - list [ref=e67]:
+              - listitem [ref=e68]:
+                - link "Disney+" [ref=e69] [cursor=pointer]:
+                  - /url: https://www.disneyplus.com/
+                  - generic [ref=e70]: Disney+
+              - listitem [ref=e71]:
+                - link "Disney® Inspire Visa® Card" [ref=e72] [cursor=pointer]:
+                  - /url: /visa-card/?trackcode=617R01&mobtrackcode=617R01&p=1
+                  - generic [ref=e73]: Disney® Inspire Visa® Card
+              - listitem [ref=e74]:
+                - link "Disney Merchandise Online" [ref=e75] [cursor=pointer]:
+                  - /url: https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer
+                  - generic [ref=e76]: Disney Merchandise Online
+              - listitem [ref=e77]:
+                - link "Disney Meetings & Events" [ref=e78] [cursor=pointer]:
+                  - /url: https://www.disneymeetingsandevents.com/
+                  - generic [ref=e79]: Disney Meetings & Events
+          - listitem [ref=e80]:
+            - list [ref=e82]:
+              - listitem [ref=e83]:
+                - link "Disney Imagination Campus" [ref=e84] [cursor=pointer]:
+                  - /url: http://www.disneycampus.com/
+                  - generic [ref=e85]: Disney Imagination Campus
+              - listitem [ref=e86]:
+                - link "run Disney" [ref=e87] [cursor=pointer]:
+                  - /url: http://www.rundisney.com/
+                  - generic [ref=e88]:
+                    - emphasis [ref=e89]: run
+                    - text: Disney
+              - listitem [ref=e90]:
+                - link "Disney Institute" [ref=e91] [cursor=pointer]:
+                  - /url: https://www.disneyinstitute.com/
+                  - generic [ref=e92]: Disney Institute
+              - listitem [ref=e93]:
+                - link "Disney Careers" [ref=e94] [cursor=pointer]:
+                  - /url: https://jobs.disneycareers.com/
+                  - generic [ref=e95]: Disney Careers
+        - generic [ref=e96]:
+          - list "legal-links" [ref=e97]:
+            - listitem [ref=e98]:
+              - link "Terms of Use" [ref=e99] [cursor=pointer]:
+                - /url: http://disneytermsofuse.com/
+            - listitem [ref=e100]:
+              - link "Legal Notices" [ref=e101] [cursor=pointer]:
+                - /url: https://help.disney.com/articles/en_US/FAQ/Legal-Notices
+            - listitem [ref=e102]:
+              - link "Privacy Policy" [ref=e103] [cursor=pointer]:
+                - /url: https://disneyprivacycenter.com/
+            - listitem [ref=e104]:
+              - link "Do Not Sell or Share My Personal Information" [ref=e105] [cursor=pointer]:
+                - /url: "#oneTrustModal"
+            - listitem [ref=e106]:
+              - link "Children's Online Privacy Policy" [ref=e107] [cursor=pointer]:
+                - /url: https://disneyprivacycenter.com/kids-privacy-policy/english/
+            - listitem [ref=e108]:
+              - link "Your US State Privacy Rights" [ref=e109] [cursor=pointer]:
+                - /url: https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights
+            - listitem [ref=e110]:
+              - link "Interest-Based Ads" [ref=e111] [cursor=pointer]:
+                - /url: https://privacy.thewaltdisneycompany.com/en/privacy-controls/online-tracking-and-advertising/
+          - paragraph [ref=e112]: © Disney, All Rights Reserved
+  - iframe [active] [ref=e114]:
+    - generic:
+      - generic [ref=f442e1]:
+        - dialog "Enter your password to continue":
+          - banner:
+            - img "Disney account" [ref=f442e3]
+          - generic [ref=f442e5]:
+            - generic [ref=f442e6]:
+              - button "Close account dialog" [ref=f442e7] [cursor=pointer]:
+                - img [ref=f442e8]
+              - img "My Disney Logo" [ref=f442e10]
+              - heading "Enter your password to continue" [active] [level=1] [ref=f442e20]
+              - paragraph [ref=f442e21]: Please re-enter the password you use to log in.
+              - generic [ref=f442e23]:
+                - textbox "Password" [ref=f442e24]
+                - generic: Password
+                - button "show password" [ref=f442e25] [cursor=pointer]:
+                  - img [ref=f442e26]
+              - button "Continue" [ref=f442e30] [cursor=pointer]
+              - link "Having trouble logging in? Send a one-time code" [ref=f442e32] [cursor=pointer]:
+                - /url: "#"
+            - textbox "session-id" [ref=f442e34]
+            - alert
+      - iframe [ref=f442e37]:
+        - generic [ref=f445e2]:
+          - generic [ref=f445e5]:
+            - link "Privacy" [ref=f445e6] [cursor=pointer]:
+              - /url: https://www.google.com/intl/en/policies/privacy/
+            - text: "-"
+            - link "Terms" [ref=f445e7] [cursor=pointer]:
+              - /url: https://www.google.com/intl/en/policies/terms/
+          - generic [ref=f445e8]:
+            - generic [ref=f445e9]:
+              - text: protected by
+              - strong [ref=f445e10]: reCAPTCHA
+            - generic [ref=f445e11]: "-"

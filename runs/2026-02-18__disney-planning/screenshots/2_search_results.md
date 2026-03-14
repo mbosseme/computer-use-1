@@ -1,0 +1,605 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e9]:
+      - banner [ref=e12]:
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - link "Visit Disney.com" [ref=e18] [cursor=pointer]:
+              - /url: https://www.disney.com/
+            - button "Skip Navigation" [ref=e19] [cursor=pointer]
+            - generic [ref=e20]:
+              - generic [ref=e21]:
+                - link "Welcome, Matt!" [ref=e22] [cursor=pointer]:
+                  - /url: /profile#nav
+                - button "1" [ref=e23]:
+                  - generic [ref=e24] [cursor=pointer]: "1"
+                - text: "|"
+              - generic [ref=e25]:
+                - link "Sign Out" [ref=e26] [cursor=pointer]:
+                  - /url: /authentication/logout/
+                - text: "|"
+              - button "United States - English. Language selector, currently set to United States - English" [ref=e28] [cursor=pointer]:
+                - menuitem [ref=e29]
+                - generic [ref=e30]: United States (English)
+            - search [ref=e31]:
+              - generic [ref=e32]:
+                - button "Search" [ref=e33] [cursor=pointer]:
+                  - generic: Search
+                - combobox "Search or ask a question" [ref=e34]: Grand Floridian Cafe
+                - button "Clear Search" [ref=e35] [cursor=pointer]:
+                  - generic: Clear Search
+          - generic [ref=e36]:
+            - link "Walt Disney World Logo" [ref=e37] [cursor=pointer]:
+              - /url: https://disneyworld.disney.go.com
+              - img "Walt Disney World Logo" [ref=e38]
+            - navigation "Navigation Links" [ref=e39]:
+              - menubar [ref=e40]:
+                - generic: Navigation Links
+                - group [ref=e41]:
+                  - menuitem "Tickets & Parks" [ref=e43] [cursor=pointer]:
+                    - generic [ref=e44]: Tickets & Parks
+                - group [ref=e45]:
+                  - menuitem "Places to Stay" [ref=e47] [cursor=pointer]:
+                    - generic [ref=e48]: Places to Stay
+                - group [ref=e49]:
+                  - menuitem "Things to Do" [ref=e51] [cursor=pointer]:
+                    - generic [ref=e52]: Things to Do
+                - group [ref=e53]:
+                  - menuitem "Shop" [ref=e55] [cursor=pointer]:
+                    - generic [ref=e56]: Shop
+                - group [ref=e57]:
+                  - menuitem "Help & Rules" [ref=e59] [cursor=pointer]:
+                    - generic [ref=e60]: Help & Rules
+                  - text: • • • • •
+                - group [ref=e61]:
+                  - menuitem "Cart" [ref=e63] [cursor=pointer]:
+                    - menuitem [ref=e64]
+                    - generic [ref=e65]: Cart
+                - group [ref=e66]:
+                  - menuitem "My Disney Experience" [ref=e68] [cursor=pointer]:
+                    - generic [ref=e69]: My Disney Experience
+    - main [ref=e70]:
+      - main [ref=e71]:
+        - main [ref=e73]:
+          - generic [ref=e74]:
+            - heading "Search Results" [level=1] [ref=e78]
+            - generic [ref=e80]: 3300 results for 'Grand Floridian Cafe'
+          - separator [ref=e81]
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - link "A group of 6 people eating brunch together in a restaurant Cooking with Soul at Walt Disney World Resort Delight in delicious dishes and simmering sips inspired by vibrant cultures from all around the world." [ref=e87] [cursor=pointer]:
+                - /url: /events-tours/celebrate-soulfully-cooking-with-soul/
+                - generic [ref=e91]:
+                  - img "A group of 6 people eating brunch together in a restaurant" [ref=e95]
+                  - generic [ref=e96]:
+                    - heading "Cooking with Soul at Walt Disney World Resort" [level=2] [ref=e98]
+                    - paragraph [ref=e100]: Delight in delicious dishes and simmering sips inspired by vibrant cultures from all around the world.
+              - separator [ref=e104]
+            - generic [ref=e105]:
+              - link "Plant-Based Cuisine Options at Walt Disney World Resort" [ref=e108] [cursor=pointer]:
+                - /url: /dining/plant-based/
+                - generic [ref=e116]:
+                  - heading "Plant-Based Cuisine Options at Walt Disney World Resort" [level=2] [ref=e118]
+                  - generic [ref=e119]:
+                    - paragraph
+              - separator [ref=e123]
+            - generic [ref=e124]:
+              - link "A family shares a laugh, dining together in Grand Floridian Café at Walt Disney World Resort Grand Floridian Cafe Disney's Grand Floridian Resort & Spa For casual American dining at Disney’s Grand Floridian Resort & Spa, this elegant yet unpretentious eatery can’t be beat. A la Carte" [ref=e127] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/grand-floridian-cafe/
+                - generic [ref=e131]:
+                  - img "A family shares a laugh, dining together in Grand Floridian Café at Walt Disney World Resort" [ref=e135]
+                  - generic [ref=e136]:
+                    - heading "Grand Floridian Cafe" [level=2] [ref=e140]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e142]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e143]: Disney's Grand Floridian Resort & Spa
+                    - generic [ref=e144]:
+                      - paragraph [ref=e145]: For casual American dining at Disney’s Grand Floridian Resort & Spa, this elegant yet unpretentious eatery can’t be beat.
+                      - paragraph [ref=e147]: A la Carte
+              - separator [ref=e151]
+            - generic [ref=e152]:
+              - link "Disney's Grand Floridian Resort & Spa seen from Seven Seas Lagoon Private Dining at Disney's Grand Floridian Resort & Spa Disney's Grand Floridian Resort & Spa Relax in the privacy of your room while you enjoy distinctive dining selections for breakfast or dinner––designed to please almost any palate." [ref=e155] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/private-dining/
+                - generic [ref=e159]:
+                  - img "Disney's Grand Floridian Resort & Spa seen from Seven Seas Lagoon" [ref=e163]
+                  - generic [ref=e164]:
+                    - heading "Private Dining at Disney's Grand Floridian Resort & Spa" [level=2] [ref=e168]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e170]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e171]: Disney's Grand Floridian Resort & Spa
+                    - paragraph [ref=e173]: Relax in the privacy of your room while you enjoy distinctive dining selections for breakfast or dinner––designed to please almost any palate.
+              - separator [ref=e177]
+            - generic [ref=e178]:
+              - link "The monorail entering the station at Disney's Grand Floridian Resort & Spa Disney's Grand Floridian Resort & Spa Victorian elegance meets modern sophistication at this lavish Disney Resort hotel. Unwind outdoors, indulge in a luxurious massage and watch evening fireworks light up the sky over Cinderella Castle. Just one stop to Magic Kingdom park on the complimentary Resort Monorail, this timeless Victorian-style marvel evokes Palm Beach’s golden era." [ref=e181] [cursor=pointer]:
+                - /url: /resorts/grand-floridian-resort-and-spa/
+                - generic [ref=e185]:
+                  - img "The monorail entering the station at Disney's Grand Floridian Resort & Spa" [ref=e189]
+                  - generic [ref=e190]:
+                    - heading "Disney's Grand Floridian Resort & Spa" [level=2] [ref=e194]
+                    - paragraph [ref=e196]: Victorian elegance meets modern sophistication at this lavish Disney Resort hotel. Unwind outdoors, indulge in a luxurious massage and watch evening fireworks light up the sky over Cinderella Castle. Just one stop to Magic Kingdom park on the complimentary Resort Monorail, this timeless Victorian-style marvel evokes Palm Beach’s golden era.
+              - separator [ref=e200]
+            - generic [ref=e201]:
+              - link "Cítricos Disney's Grand Floridian Resort & Spa Dine underneath the lovely London sky in this newly re-imagined restaurant inspired by Mary Poppins Returns. A la Carte" [ref=e204] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/citricos/
+                - generic [ref=e212]:
+                  - heading "Cítricos" [level=2] [ref=e216]
+                  - link "Disney's Grand Floridian Resort & Spa" [ref=e218]:
+                    - /url: resorts/grand-floridian-resort-and-spa
+                    - generic [ref=e219]: Disney's Grand Floridian Resort & Spa
+                  - generic [ref=e220]:
+                    - paragraph [ref=e221]:
+                      - text: Dine underneath the lovely London sky in this newly re-imagined restaurant inspired by
+                      - emphasis [ref=e222]: Mary Poppins Returns
+                      - text: .
+                    - paragraph [ref=e224]: A la Carte
+              - separator [ref=e228]
+            - generic [ref=e229]:
+              - link "planDisney See More Results Asked by Ellie from Angus on 2026-01-25 Hi, my sister is getting married this year outside of Disney. She is looking to come to a disney resort restuarant, maybe the grand floridian cafe, after the wedding for her meal. Will she be allowed in wearing her wedding dress at any of the resorts? Answered by Ashley from FL Hiya Ellie,Welcome to planDisney! How exciting for your sister! I'm sending her wishes for an incredible day as she begins this new chapter with her Happily Ever After. Thank you so much for bringing your question here today.I love the idea of bringi... Read the complete answer on planDisney" [ref=e232] [cursor=pointer]:
+                - /url: https://plandisney.disney.go.com/question/sister-getting-married-year-outside-disney-she-630588/
+                - generic [ref=e236]:
+                  - generic [ref=e237]:
+                    - img "planDisney" [ref=e240]
+                    - link "See More Results" [ref=e242]:
+                      - /url: https://plandisney.disney.go.com/search/?terms=Grand Floridian Cafe&tokens=1
+                  - generic [ref=e247]:
+                    - generic [ref=e248]: Asked by Ellie from Angus on 2026-01-25
+                    - generic [ref=e249]: Hi, my sister is getting married this year outside of Disney. She is looking to come to a disney resort restuarant, maybe the grand floridian cafe, after the wedding for her meal. Will she be allowed in wearing her wedding dress at any of the resorts?
+                  - generic [ref=e254]:
+                    - generic [ref=e255]: Answered by Ashley from FL
+                    - generic [ref=e256]:
+                      - text: Hiya Ellie,Welcome to planDisney! How exciting for your sister! I'm sending her wishes for an incredible day as she begins this new chapter with her Happily Ever After. Thank you so much for bringing your question here today.I love the idea of bringi...
+                      - link "Read the complete answer on planDisney" [ref=e258]:
+                        - /url: https://plandisney.disney.go.com/question/sister-getting-married-year-outside-disney-she-630588/
+              - separator [ref=e262]
+            - generic [ref=e263]:
+              - link "Mickey shaped soaps in boxes that say Disney’s Grand Floridian Resort and Spa arranged on a table The Grand Floridian Spa Disney's Grand Floridian Resort & Spa Renew your mind, body and spirit at this full-service spa, salon and health club reminiscent of a serene Florida garden. Open 9:00 AM - 6:00 PM" [ref=e266] [cursor=pointer]:
+                - /url: /spas/grand-floridian-resort-and-spa/the-grand-floridian-spa/
+                - generic [ref=e270]:
+                  - img "Mickey shaped soaps in boxes that say Disney’s Grand Floridian Resort and Spa arranged on a table" [ref=e274]
+                  - generic [ref=e275]:
+                    - heading "The Grand Floridian Spa" [level=2] [ref=e279]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e281]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e282]: Disney's Grand Floridian Resort & Spa
+                    - generic [ref=e283]:
+                      - paragraph [ref=e284]: Renew your mind, body and spirit at this full-service spa, salon and health club reminiscent of a serene Florida garden.
+                      - generic [ref=e285]:
+                        - paragraph [ref=e286]: Open
+                        - paragraph [ref=e288]: 9:00 AM - 6:00 PM
+              - separator [ref=e292]
+            - generic [ref=e293]:
+              - link "Mickey shaped soaps in boxes that say Disney’s Grand Floridian Resort and Spa arranged on a table The Grand Floridian Spa Disney's Grand Floridian Resort & Spa Renew your mind, body and spirit at a full-service spa, salon and health club reminiscent of a serene Florida garden." [ref=e296] [cursor=pointer]:
+                - /url: /recreation/the-grand-floridian-spa-eec/
+                - generic [ref=e300]:
+                  - img "Mickey shaped soaps in boxes that say Disney’s Grand Floridian Resort and Spa arranged on a table" [ref=e304]
+                  - generic [ref=e305]:
+                    - heading "The Grand Floridian Spa" [level=2] [ref=e307]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e309]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e310]: Disney's Grand Floridian Resort & Spa
+                    - paragraph [ref=e312]: Renew your mind, body and spirit at a full-service spa, salon and health club reminiscent of a serene Florida garden.
+              - separator [ref=e316]
+            - generic [ref=e317]:
+              - link "disneyParkBlog 5 Unique Disney Ideas to Celebrate Mother's Day Posted By Charis Booker on May 8, 2024 It’s almost Mother’s Day — and we have wonderful ways to celebrate mom at Disney Experiences. From soothing spas to DIY Mickey bouquets, here are five Disney ways to make mom feel extra special this weekend! 1. Spas at Walt Disney World Resort and Di... Read the complete post on Disney Parks Blog Look Behind the Scenes on the Disney Parks Blog" [ref=e320] [cursor=pointer]:
+                - /url: https://disneyparks.disney.go.com/blog/?p=339833
+                - generic [ref=e324]:
+                  - generic [ref=e325]:
+                    - img "disneyParkBlog" [ref=e329]
+                    - heading "5 Unique Disney Ideas to Celebrate Mother's Day" [level=3] [ref=e330]
+                  - paragraph [ref=e331]: Posted By Charis Booker on May 8, 2024
+                  - paragraph [ref=e332]: It’s almost Mother’s Day — and we have wonderful ways to celebrate mom at Disney Experiences. From soothing spas to DIY Mickey bouquets, here are five Disney ways to make mom feel extra special this weekend! 1. Spas at Walt Disney World Resort and Di...
+                  - link "Read the complete post on Disney Parks Blog" [ref=e334]:
+                    - /url: https://disneyparks.disney.go.com/blog/?p=339833
+                  - link "Look Behind the Scenes on the Disney Parks Blog" [ref=e336]:
+                    - /url: http://disneyparks.disney.go.com/blog/
+              - separator [ref=e340]
+            - generic [ref=e341]:
+              - link "A piece of fish served with corn and other veggies Narcoossee's Disney's Grand Floridian Resort & Spa Slip away to this waterfront setting for coastal cuisine with spectacular panoramic views. A la Carte" [ref=e344] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/narcoossees/
+                - generic [ref=e348]:
+                  - img "A piece of fish served with corn and other veggies" [ref=e352]
+                  - generic [ref=e353]:
+                    - heading "Narcoossee's" [level=2] [ref=e357]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e359]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e360]: Disney's Grand Floridian Resort & Spa
+                    - generic [ref=e361]:
+                      - paragraph [ref=e362]: Slip away to this waterfront setting for coastal cuisine with spectacular panoramic views.
+                      - paragraph [ref=e364]: A la Carte
+              - separator [ref=e368]
+            - generic [ref=e369]:
+              - link "A father and 2 children laughing with Princess Tiana at a dining table at the Nineteen Hundred Park Fare restaurant 1900 Park Fare Disney's Grand Floridian Resort & Spa Delight in breakfast and dinner buffets while celebrating the magical power of a wish alongside beloved Disney Characters. Buffet" [ref=e372] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/1900-park-fare/
+                - generic [ref=e376]:
+                  - img "A father and 2 children laughing with Princess Tiana at a dining table at the Nineteen Hundred Park Fare restaurant" [ref=e380]
+                  - generic [ref=e381]:
+                    - heading "1900 Park Fare" [level=2] [ref=e385]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e387]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e388]: Disney's Grand Floridian Resort & Spa
+                    - generic [ref=e389]:
+                      - paragraph [ref=e390]: Delight in breakfast and dinner buffets while celebrating the magical power of a wish alongside beloved Disney Characters.
+                      - paragraph [ref=e392]: Buffet
+              - separator [ref=e396]
+            - generic [ref=e397]:
+              - link "The Perch at Disney's Grand Floridian Resort & Spa Disney's Grand Floridian Resort & Spa Unwind in an elegant lobby and savor a selection of champagne and wine, or sip on a signature cocktail. Quick Service" [ref=e400] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/the-perch/
+                - generic [ref=e408]:
+                  - heading "The Perch at Disney's Grand Floridian Resort & Spa" [level=2] [ref=e412]
+                  - link "Disney's Grand Floridian Resort & Spa" [ref=e414]:
+                    - /url: resorts/grand-floridian-resort-and-spa
+                    - generic [ref=e415]: Disney's Grand Floridian Resort & Spa
+                  - generic [ref=e416]:
+                    - paragraph [ref=e417]: Unwind in an elegant lobby and savor a selection of champagne and wine, or sip on a signature cocktail.
+                    - paragraph [ref=e419]: Quick Service
+              - separator [ref=e423]
+            - generic [ref=e424]:
+              - link "Disney's Grand Floridian Resort and Spa from across Seven Seas Lagoon The Villas at Disney's Grand Floridian Resort & Spa Revel in Victorian-style splendor and enjoy the comforts of home at this elegant Disney Resort hotel. Stay in a stately deluxe studio or multi-bedroom villa. Indulge in a luxurious massage at the full-service spa or receive a grooming service in the salon. Unwind outdoors as evening fireworks light up the sky over Cinderella Castle. Just one stop from Magic Kingdom park on the complimentary Resort Monorail, this timeless marvel evokes Palm Beach’s golden era." [ref=e427] [cursor=pointer]:
+                - /url: /resorts/villas-at-grand-floridian-resort-and-spa/
+                - generic [ref=e431]:
+                  - img "Disney's Grand Floridian Resort and Spa from across Seven Seas Lagoon" [ref=e435]
+                  - generic [ref=e436]:
+                    - heading "The Villas at Disney's Grand Floridian Resort & Spa" [level=2] [ref=e440]
+                    - paragraph [ref=e442]: Revel in Victorian-style splendor and enjoy the comforts of home at this elegant Disney Resort hotel. Stay in a stately deluxe studio or multi-bedroom villa. Indulge in a luxurious massage at the full-service spa or receive a grooming service in the salon. Unwind outdoors as evening fireworks light up the sky over Cinderella Castle. Just one stop from Magic Kingdom park on the complimentary Resort Monorail, this timeless marvel evokes Palm Beach’s golden era.
+              - separator [ref=e446]
+            - generic [ref=e447]:
+              - link "Close-up of cocktail on the rocks with a slice of lime Courtyard Pool Bar Disney's Grand Floridian Resort & Spa Enjoy a refreshing dip then a refreshing sip by the largest pool at the Resort. A ping-pong table and 2 TVs provide added entertainment. Specialty cocktails, beer, wine, sangria, a Buffalo chicken wrap, all-beef gourmet hot dogs or pretzels with hummus are available through poolside service. Quick Service" [ref=e450] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/courtyard-pool-bar/
+                - generic [ref=e454]:
+                  - img "Close-up of cocktail on the rocks with a slice of lime" [ref=e458]
+                  - generic [ref=e459]:
+                    - heading "Courtyard Pool Bar" [level=2] [ref=e463]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e465]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e466]: Disney's Grand Floridian Resort & Spa
+                    - generic [ref=e467]:
+                      - paragraph [ref=e468]: Enjoy a refreshing dip then a refreshing sip by the largest pool at the Resort. A ping-pong table and 2 TVs provide added entertainment. Specialty cocktails, beer, wine, sangria, a Buffalo chicken wrap, all-beef gourmet hot dogs or pretzels with hummus are available through poolside service.
+                      - paragraph [ref=e470]: Quick Service
+              - separator [ref=e474]
+            - generic [ref=e475]:
+              - link "A man and a woman enjoying the pool at Disney's Grand Floridian Resort. Pools at Disney's Grand Floridian Resort & Spa Disney's Grand Floridian Resort & Spa Soak, splash or slide in the crystal-clear Beach Pool or enjoy a more tranquil swim at the Courtyard Pool." [ref=e478] [cursor=pointer]:
+                - /url: /recreation/grand-floridian-resort-and-spa/pools-grand-floridian-resort-and-spa/
+                - generic [ref=e482]:
+                  - img "A man and a woman enjoying the pool at Disney's Grand Floridian Resort." [ref=e486]
+                  - generic [ref=e487]:
+                    - heading "Pools at Disney's Grand Floridian Resort & Spa" [level=2] [ref=e489]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e491]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e492]: Disney's Grand Floridian Resort & Spa
+                    - paragraph [ref=e494]: Soak, splash or slide in the crystal-clear Beach Pool or enjoy a more tranquil swim at the Courtyard Pool.
+              - separator [ref=e498]
+            - generic [ref=e499]:
+              - link "A piece of seared salmon garnished with fresh herbs, edible flowers, slices of radish and sauce Queen Victoria’s Room at Victoria & Albert’s Disney's Grand Floridian Resort & Spa Savor a luxurious and intimate dining experience at the award-winning Victoria & Albert’s." [ref=e502] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/victoria-and-alberts-queen-victoria-room/
+                - generic [ref=e506]:
+                  - img "A piece of seared salmon garnished with fresh herbs, edible flowers, slices of radish and sauce" [ref=e510]
+                  - generic [ref=e511]:
+                    - heading "Queen Victoria’s Room at Victoria & Albert’s" [level=2] [ref=e515]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e517]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e518]: Disney's Grand Floridian Resort & Spa
+                    - paragraph [ref=e520]: Savor a luxurious and intimate dining experience at the award-winning Victoria & Albert’s.
+              - separator [ref=e524]
+            - generic [ref=e525]:
+              - link "A caprese sandwich served with an order of fries Gasparilla Island Grill Disney's Grand Floridian Resort & Spa Relax and refuel in this casual dining restaurant. Start your day with Mickey Waffles or a breakfast platter. Enjoy a variety of entrees available for lunch and dinner. Selections include an artisan burger, flatbreads and sandwiches featuring bread made fresh daily at the Grand Floridian Bakery. Beer and wine are available. Quick Service" [ref=e528] [cursor=pointer]:
+                - /url: /dining/grand-floridian-resort-and-spa/gasparilla-island-grill/
+                - generic [ref=e532]:
+                  - img "A caprese sandwich served with an order of fries" [ref=e536]
+                  - generic [ref=e537]:
+                    - heading "Gasparilla Island Grill" [level=2] [ref=e541]
+                    - link "Disney's Grand Floridian Resort & Spa" [ref=e543]:
+                      - /url: resorts/grand-floridian-resort-and-spa
+                      - generic [ref=e544]: Disney's Grand Floridian Resort & Spa
+                    - generic [ref=e545]:
+                      - paragraph [ref=e546]: Relax and refuel in this casual dining restaurant. Start your day with Mickey Waffles or a breakfast platter. Enjoy a variety of entrees available for lunch and dinner. Selections include an artisan burger, flatbreads and sandwiches featuring bread made fresh daily at the Grand Floridian Bakery. Beer and wine are available.
+                      - paragraph [ref=e548]: Quick Service
+              - separator [ref=e552]
+            - generic [ref=e553]:
+              - generic [ref=e558]:
+                - img "Young children on a path with their parents and grandfather walking behind them" [ref=e562]
+                - heading "Dry Cleaning / Valet Laundry Service at Grand Floridian" [level=2] [ref=e565]
+              - separator [ref=e566]
+            - generic [ref=e567]:
+              - link "A tray with Banana Bread, Raspberry Brioche, Hazelnut-Chocolate Bomboloni and Trois Chocolat pastries Le Petit Café Disney's Riviera Resort From morning coffee and pastry to late-night drinks and small plates, treat yourself to a sophisticated taste of Paris. Quick Service" [ref=e570] [cursor=pointer]:
+                - /url: /dining/riviera-resort/le-petit-cafe/
+                - generic [ref=e574]:
+                  - img "A tray with Banana Bread, Raspberry Brioche, Hazelnut-Chocolate Bomboloni and Trois Chocolat pastries" [ref=e578]
+                  - generic [ref=e579]:
+                    - heading "Le Petit Café" [level=2] [ref=e583]
+                    - link "Disney's Riviera Resort" [ref=e585]:
+                      - /url: resorts/riviera-resort
+                      - generic [ref=e586]: Disney's Riviera Resort
+                    - generic [ref=e587]:
+                      - paragraph [ref=e588]: From morning coffee and pastry to late-night drinks and small plates, treat yourself to a sophisticated taste of Paris.
+                      - paragraph [ref=e590]: Quick Service
+              - separator [ref=e594]
+            - generic [ref=e595]:
+              - link "Grand Floridian Lobby Pianist Disney's Grand Floridian Resort & Spa Enjoy enchanting melodies played live on a magnificent grand piano, surrounded by Victorian elegance. Performance Time 3:00 PM, 4:00 PM, 5:00 PM, 6:15 PM, 7:15 PM" [ref=e598] [cursor=pointer]:
+                - /url: /entertainment/grand-floridian-resort-and-spa/grand-floridian-lobby-pianist/
+                - generic [ref=e606]:
+                  - heading "Grand Floridian Lobby Pianist" [level=2] [ref=e610]
+                  - link "Disney's Grand Floridian Resort & Spa" [ref=e612]:
+                    - /url: resorts/grand-floridian-resort-and-spa
+                    - generic [ref=e613]: Disney's Grand Floridian Resort & Spa
+                  - generic [ref=e614]:
+                    - paragraph [ref=e615]: Enjoy enchanting melodies played live on a magnificent grand piano, surrounded by Victorian elegance.
+                    - generic [ref=e616]:
+                      - paragraph [ref=e617]: Performance Time
+                      - paragraph [ref=e619]: 3:00 PM, 4:00 PM, 5:00 PM, 6:15 PM, 7:15 PM
+              - separator [ref=e623]
+            - link "Bibbidi Bobbidi Boutique at Disney’s Grand Floridian Resort & Spa – Temporarily Unavailable Disney's Grand Floridian Resort & Spa Behold a royal transformation as children become elegant princesses and shining knights—right before your eyes! Closed 12:00 AM - 11:59 PM" [ref=e627] [cursor=pointer]:
+              - /url: /shops/grand-floridian-resort-and-spa/bibbidi-bobbidi-boutique/
+              - generic [ref=e635]:
+                - heading "Bibbidi Bobbidi Boutique at Disney’s Grand Floridian Resort & Spa – Temporarily Unavailable" [level=2] [ref=e639]
+                - link "Disney's Grand Floridian Resort & Spa" [ref=e641]:
+                  - /url: resorts/grand-floridian-resort-and-spa
+                  - generic [ref=e642]: Disney's Grand Floridian Resort & Spa
+                - generic [ref=e643]:
+                  - paragraph [ref=e644]: Behold a royal transformation as children become elegant princesses and shining knights—right before your eyes!
+                  - generic [ref=e645]:
+                    - paragraph [ref=e646]: Closed
+                    - paragraph [ref=e648]: 12:00 AM - 11:59 PM
+    - contentinfo [ref=e652]:
+      - contentinfo [ref=e656]:
+        - generic [ref=e657]:
+          - generic [ref=e658]:
+            - generic [ref=e661]:
+              - generic [ref=e662]:
+                - text: For assistance with your Walt Disney World vacation, including resort/package bookings and tickets, please call (407) 939-5277.
+                - text: For Walt Disney World dining, please book your reservation
+                - link "online" [ref=e663] [cursor=pointer]:
+                  - /url: /dine-res/availability
+                - text: .
+              - generic [ref=e664]: 7:00 AM to 11:00 PM Eastern Time. Guests under 18 years of age must have parent or guardian permission to call.
+            - navigation "Footer Links" [ref=e666]:
+              - generic [ref=e667]:
+                - generic: Footer Links
+                - generic [ref=e668]:
+                  - generic [ref=e670]:
+                    - heading "Help" [level=3] [ref=e671]
+                    - list "Help" [ref=e672]:
+                      - listitem [ref=e673]:
+                        - link "Contact Us" [ref=e674] [cursor=pointer]:
+                          - /url: /help/phone/
+                          - generic [ref=e675]: Contact Us
+                      - listitem [ref=e676]:
+                        - link "Help Center" [ref=e677] [cursor=pointer]:
+                          - /url: /help/
+                          - generic [ref=e678]: Help Center
+                      - listitem [ref=e679]:
+                        - link "planDisney" [ref=e680] [cursor=pointer]:
+                          - /url: https://plandisney.disney.go.com/destinations/walt-disney-world/
+                          - generic [ref=e681]: planDisney
+                      - listitem [ref=e682]:
+                        - link "CoBrowse" [ref=e683] [cursor=pointer]:
+                          - /url: "#interstitialCobrowseModal#/help"
+                          - generic [ref=e684]: CoBrowse
+                      - listitem [ref=e685]:
+                        - link "Park Security" [ref=e686] [cursor=pointer]:
+                          - /url: /guest-services/park-security/
+                          - generic [ref=e687]: Park Security
+                      - listitem [ref=e688]:
+                        - link "Property Rules" [ref=e689] [cursor=pointer]:
+                          - /url: /park-rules/
+                          - generic [ref=e690]: Property Rules
+                      - listitem [ref=e691]:
+                        - link "Privacy & Legal" [ref=e692] [cursor=pointer]:
+                          - /url: /help/privacy-legal/
+                          - generic [ref=e693]: Privacy & Legal
+                  - generic [ref=e695]:
+                    - heading "Guest Services" [level=3] [ref=e696]
+                    - list "Guest Services" [ref=e697]:
+                      - listitem [ref=e698]:
+                        - link "Services for Guests with Disabilities" [ref=e699] [cursor=pointer]:
+                          - /url: /guest-services/guests-with-disabilities/
+                          - generic [ref=e700]: Services for Guests with Disabilities
+                      - listitem [ref=e701]:
+                        - link "Disney PhotoPass" [ref=e702] [cursor=pointer]:
+                          - /url: /guest-services/photopass-service/
+                          - generic [ref=e703]: Disney PhotoPass
+                      - listitem [ref=e704]:
+                        - link "Custom Celebrations & Gatherings" [ref=e705] [cursor=pointer]:
+                          - /url: /events-tours/custom-gatherings
+                          - generic [ref=e706]: Custom Celebrations & Gatherings
+                      - listitem [ref=e707]:
+                        - link "All Guest Services" [ref=e708] [cursor=pointer]:
+                          - /url: /guest-services/
+                          - generic [ref=e709]: All Guest Services
+                  - generic [ref=e711]:
+                    - heading "Parks & Tickets" [level=3] [ref=e712]
+                    - list "Parks & Tickets" [ref=e713]:
+                      - listitem [ref=e714]:
+                        - link "Magic Kingdom Park" [ref=e715] [cursor=pointer]:
+                          - /url: /destinations/magic-kingdom/
+                          - generic [ref=e716]: Magic Kingdom Park
+                      - listitem [ref=e717]:
+                        - link "EPCOT" [ref=e718] [cursor=pointer]:
+                          - /url: /destinations/epcot/
+                          - generic [ref=e719]: EPCOT
+                      - listitem [ref=e720]:
+                        - link "Disney's Hollywood Studios" [ref=e721] [cursor=pointer]:
+                          - /url: /destinations/hollywood-studios/
+                          - generic [ref=e722]: Disney's Hollywood Studios
+                      - listitem [ref=e723]:
+                        - link "Disney's Animal Kingdom Park" [ref=e724] [cursor=pointer]:
+                          - /url: /destinations/animal-kingdom/
+                          - generic [ref=e725]: Disney's Animal Kingdom Park
+                      - listitem [ref=e726]:
+                        - link "Water Parks" [ref=e727] [cursor=pointer]:
+                          - /url: /destinations/water-parks/
+                          - generic [ref=e728]: Water Parks
+                      - listitem [ref=e729]:
+                        - link "Park Hours" [ref=e730] [cursor=pointer]:
+                          - /url: /calendars/park-hours/
+                          - generic [ref=e731]: Park Hours
+                  - generic [ref=e732]:
+                    - generic [ref=e733]:
+                      - heading "Dining" [level=3] [ref=e734]
+                      - list "Dining" [ref=e735]:
+                        - listitem [ref=e736]:
+                          - link "Make Dining Reservations" [ref=e737] [cursor=pointer]:
+                            - /url: /dine-res/
+                            - generic [ref=e738]: Make Dining Reservations
+                        - listitem [ref=e739]:
+                          - link "About Dining" [ref=e740] [cursor=pointer]:
+                            - /url: /dining/snack-dine-enjoy/
+                            - generic [ref=e741]: About Dining
+                        - listitem [ref=e742]:
+                          - link "All Restaurants" [ref=e743] [cursor=pointer]:
+                            - /url: /dining/
+                            - generic [ref=e744]: All Restaurants
+                        - listitem [ref=e745]:
+                          - link "Dining Plans" [ref=e746] [cursor=pointer]:
+                            - /url: /dining/plans/
+                            - generic [ref=e747]: Dining Plans
+                    - generic [ref=e748]:
+                      - heading "Get Ready" [level=3] [ref=e749]
+                      - list "Get Ready" [ref=e750]:
+                        - listitem [ref=e751]:
+                          - link "Mobile App" [ref=e752] [cursor=pointer]:
+                            - /url: /plan/my-disney-experience/mobile-apps/
+                            - generic [ref=e753]: Mobile App
+                        - listitem [ref=e754]:
+                          - link "Get Ready for Your Vacation" [ref=e755] [cursor=pointer]:
+                            - /url: /guest-services/manage-plans/
+                            - generic [ref=e756]: Get Ready for Your Vacation
+                        - listitem [ref=e757]:
+                          - link "Shop Online" [ref=e758] [cursor=pointer]:
+                            - /url: "https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer "
+                            - generic [ref=e759]: Shop Online
+                - list [ref=e761]:
+                  - listitem [ref=e762]:
+                    - region "Stay Connected" [ref=e763]:
+                      - heading "Stay Connected" [level=3] [ref=e764]
+                      - generic [ref=e765]:
+                        - link "Facebook" [ref=e767] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.facebook.com/WaltDisneyWorld/"
+                          - img "Facebook" [ref=e769]
+                        - link "Twitter" [ref=e771] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://twitter.com/waltdisneyworld/"
+                          - img "Twitter" [ref=e773]
+                        - link "Pinterest" [ref=e775] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.pinterest.com/waltdisneyworld/"
+                          - img "Pinterest" [ref=e777]
+                        - link "Instagram" [ref=e779] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.instagram.com/waltdisneyworld/"
+                          - img "Instagram" [ref=e781]
+                  - listitem [ref=e782]:
+                    - region "Disney Parks" [ref=e783]:
+                      - heading "Disney Parks" [level=3] [ref=e784]
+                      - generic [ref=e785]:
+                        - link "YouTube Channel YouTube Channel" [ref=e787] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.youtube.com/DisneyParks"
+                          - img "YouTube Channel" [ref=e789]
+                          - generic [ref=e790]: YouTube Channel
+                        - link "Blog Blog" [ref=e792] [cursor=pointer]:
+                          - /url: https://disneyparksblog.com/
+                          - img "Blog" [ref=e794]
+                          - generic [ref=e795]: Blog
+                  - listitem [ref=e796]:
+                    - region "Create Disney Account" [ref=e797]:
+                      - heading "Create Disney Account" [level=3] [ref=e798]
+                      - generic [ref=e800]:
+                        - generic [ref=e801]: Register to receive the latest Disney Parks news and special offers!
+                        - link "Create Account" [ref=e802] [cursor=pointer]:
+                          - /url: /registration/
+          - generic [ref=e803]:
+            - list "Related Disney Sites" [ref=e804]:
+              - listitem [ref=e805]:
+                - heading "Related Disney Sites" [level=3] [ref=e806]
+              - listitem [ref=e807]:
+                - list [ref=e809]:
+                  - listitem [ref=e810]:
+                    - link "Disney Springs" [ref=e811] [cursor=pointer]:
+                      - /url: https://www.disneysprings.com/
+                      - generic [ref=e812]: Disney Springs
+                  - listitem [ref=e813]:
+                    - link "Disney Parks" [ref=e814] [cursor=pointer]:
+                      - /url: http://disneyparks.disney.go.com/
+                      - generic [ref=e815]: Disney Parks
+                  - listitem [ref=e816]:
+                    - link "Disney Cruise Line" [ref=e817] [cursor=pointer]:
+                      - /url: http://disneycruise.disney.go.com/
+                      - generic [ref=e818]: Disney Cruise Line
+                  - listitem [ref=e819]:
+                    - link "Disney Gift Card" [ref=e820] [cursor=pointer]:
+                      - /url: http://www.disneygiftcard.com/home/
+                      - generic [ref=e821]: Disney Gift Card
+              - listitem [ref=e822]:
+                - list [ref=e824]:
+                  - listitem [ref=e825]:
+                    - link "Disney Vacation Club" [ref=e826] [cursor=pointer]:
+                      - /url: http://disneyvacationclub.disney.go.com/
+                      - generic [ref=e827]: Disney Vacation Club
+                  - listitem [ref=e828]:
+                    - link "Disney's Fairy Tale Weddings & Honeymoons" [ref=e829] [cursor=pointer]:
+                      - /url: https://www.disneyweddings.com/
+                      - generic [ref=e830]: Disney's Fairy Tale Weddings & Honeymoons
+                  - listitem [ref=e831]:
+                    - link "planDisney" [ref=e832] [cursor=pointer]:
+                      - /url: https://plandisney.disney.go.com/
+                      - generic [ref=e833]: planDisney
+              - listitem [ref=e834]:
+                - list [ref=e836]:
+                  - listitem [ref=e837]:
+                    - link "Disney+" [ref=e838] [cursor=pointer]:
+                      - /url: https://www.disneyplus.com/
+                      - generic [ref=e839]: Disney+
+                  - listitem [ref=e840]:
+                    - link "Disney® Inspire Visa® Card" [ref=e841] [cursor=pointer]:
+                      - /url: /visa-card/?trackcode=617R01&mobtrackcode=617R01&p=1
+                      - generic [ref=e842]: Disney® Inspire Visa® Card
+                  - listitem [ref=e843]:
+                    - link "Disney Merchandise Online" [ref=e844] [cursor=pointer]:
+                      - /url: https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer
+                      - generic [ref=e845]: Disney Merchandise Online
+                  - listitem [ref=e846]:
+                    - link "Disney Meetings & Events" [ref=e847] [cursor=pointer]:
+                      - /url: https://www.disneymeetingsandevents.com/
+                      - generic [ref=e848]: Disney Meetings & Events
+              - listitem [ref=e849]:
+                - list [ref=e851]:
+                  - listitem [ref=e852]:
+                    - link "Disney Imagination Campus" [ref=e853] [cursor=pointer]:
+                      - /url: http://www.disneycampus.com/
+                      - generic [ref=e854]: Disney Imagination Campus
+                  - listitem [ref=e855]:
+                    - link "run Disney" [ref=e856] [cursor=pointer]:
+                      - /url: http://www.rundisney.com/
+                      - generic [ref=e857]:
+                        - emphasis [ref=e858]: run
+                        - text: Disney
+                  - listitem [ref=e859]:
+                    - link "Disney Institute" [ref=e860] [cursor=pointer]:
+                      - /url: https://www.disneyinstitute.com/
+                      - generic [ref=e861]: Disney Institute
+                  - listitem [ref=e862]:
+                    - link "Disney Careers" [ref=e863] [cursor=pointer]:
+                      - /url: https://jobs.disneycareers.com/
+                      - generic [ref=e864]: Disney Careers
+            - generic [ref=e865]:
+              - list "legal-links" [ref=e866]:
+                - listitem [ref=e867]:
+                  - link "Terms of Use" [ref=e868] [cursor=pointer]:
+                    - /url: http://disneytermsofuse.com/
+                - listitem [ref=e869]:
+                  - link "Legal Notices" [ref=e870] [cursor=pointer]:
+                    - /url: https://help.disney.com/articles/en_US/FAQ/Legal-Notices
+                - listitem [ref=e871]:
+                  - link "Privacy Policy" [ref=e872] [cursor=pointer]:
+                    - /url: https://disneyprivacycenter.com/
+                - listitem [ref=e873]:
+                  - link "Do Not Sell or Share My Personal Information" [ref=e874] [cursor=pointer]:
+                    - /url: "#oneTrustModal"
+                - listitem [ref=e875]:
+                  - link "Children's Online Privacy Policy" [ref=e876] [cursor=pointer]:
+                    - /url: https://disneyprivacycenter.com/kids-privacy-policy/english/
+                - listitem [ref=e877]:
+                  - link "Your US State Privacy Rights" [ref=e878] [cursor=pointer]:
+                    - /url: https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights
+                - listitem [ref=e879]:
+                  - link "Interest-Based Ads" [ref=e880] [cursor=pointer]:
+                    - /url: https://privacy.thewaltdisneycompany.com/en/privacy-controls/online-tracking-and-advertising/
+              - paragraph [ref=e881]: © Disney, All Rights Reserved
+  - iframe [ref=e882]:
+    

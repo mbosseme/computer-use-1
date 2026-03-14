@@ -1,0 +1,52 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - main
+  - iframe [active] [ref=e2]:
+    - generic [ref=f19e1]:
+      - button "Close account dialog" [ref=f19e3] [cursor=pointer]:
+        - img [ref=f19e4]
+      - dialog "Enter your email to continue":
+        - banner:
+          - img "Disney account" [ref=f19e6]
+        - generic [ref=f19e8]:
+          - generic [ref=f19e9]:
+            - generic [ref=f19e10]:
+              - img "My Disney Logo" [ref=f19e11]
+              - heading "Enter your email to continue" [active] [level=1] [ref=f19e21]
+              - paragraph [ref=f19e22]: Log in to Walt Disney World with your MyDisney account. If you don't have one, you will be prompted to create one.
+            - generic [ref=f19e24]:
+              - textbox "Email" [ref=f19e25]
+              - generic: Email
+            - button "Continue" [ref=f19e27] [cursor=pointer]
+            - paragraph
+            - paragraph [ref=f19e28]:
+              - link "Looking for username login?" [ref=f19e29] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f19e33]:
+              - heading "Walt Disney World is part of The Walt Disney Family of Companies." [level=3] [ref=f19e34]
+              - paragraph [ref=f19e35]:
+                - text: MyDisney lets you seamlessly log in to services and experiences across The Walt Disney Family of Companies, such as Disney+, ESPN, Walt Disney World,
+                - link "and more." [ref=f19e36] [cursor=pointer]:
+                  - /url: https://my.disney.com
+              - generic [ref=f19e37]:
+                - generic "Disney" [ref=f19e38]:
+                  - img [ref=f19e39]
+                - generic "ABC" [ref=f19e43]:
+                  - img [ref=f19e44]
+                - generic "ESPN" [ref=f19e47]:
+                  - img [ref=f19e48]
+                - generic "Marvel" [ref=f19e50]:
+                  - img [ref=f19e51]
+                - generic "Star Wars" [ref=f19e53]:
+                  - img [ref=f19e54]
+                - generic "Hulu" [ref=f19e56]:
+                  - img [ref=f19e57]
+                - generic "National Geographic" [ref=f19e59]:
+                  - img [ref=f19e60]
+                - generic "Star" [ref=f19e62]:
+                  - img [ref=f19e63]
+          - textbox "session-id" [ref=f19e67]
+          - alert

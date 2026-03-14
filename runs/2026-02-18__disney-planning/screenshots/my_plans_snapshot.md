@@ -1,0 +1,773 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e5]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - link "Visit Disney.com" [ref=e11] [cursor=pointer]:
+            - /url: https://www.disney.com/
+          - button "Skip Navigation" [ref=e12] [cursor=pointer]
+          - generic [ref=e13]:
+            - generic [ref=e75]:
+              - link "Welcome, Matt!" [ref=e76] [cursor=pointer]:
+                - /url: /profile#nav
+              - button "1" [ref=e77]:
+                - generic [ref=e78] [cursor=pointer]: "1"
+              - text: "|"
+            - generic [ref=e79]:
+              - link "Sign Out" [ref=e80] [cursor=pointer]:
+                - /url: /authentication/logout/
+              - text: "|"
+            - button "United States - English. Language selector, currently set to United States - English" [ref=e15] [cursor=pointer]:
+              - menuitem [ref=e16]
+              - generic [ref=e17]: United States (English)
+          - search [ref=e18]:
+            - generic [ref=e19]:
+              - button "Search" [ref=e20] [cursor=pointer]:
+                - generic: Search
+              - combobox "Search or ask a question" [ref=e21]
+        - generic [ref=e22]:
+          - link "Walt Disney World Logo" [ref=e23] [cursor=pointer]:
+            - /url: https://disneyworld.disney.go.com
+            - img "Walt Disney World Logo" [ref=e24]
+          - navigation "Navigation Links" [ref=e25]:
+            - menubar [ref=e26]:
+              - generic: Navigation Links
+              - group [ref=e27]:
+                - menuitem "Tickets & Parks" [ref=e29] [cursor=pointer]:
+                  - generic [ref=e30]: Tickets & Parks
+              - group [ref=e31]:
+                - menuitem "Places to Stay" [ref=e33] [cursor=pointer]:
+                  - generic [ref=e34]: Places to Stay
+              - group [ref=e35]:
+                - menuitem "Things to Do" [ref=e37] [cursor=pointer]:
+                  - generic [ref=e38]: Things to Do
+              - group [ref=e39]:
+                - menuitem "Shop" [ref=e41] [cursor=pointer]:
+                  - generic [ref=e42]: Shop
+              - group [ref=e43]:
+                - menuitem "Help & Rules" [ref=e45] [cursor=pointer]:
+                  - generic [ref=e46]: Help & Rules
+                - text: • • • • •
+              - group [ref=e47]:
+                - menuitem "Cart" [ref=e49] [cursor=pointer]:
+                  - menuitem [ref=e50]
+                  - generic [ref=e51]: Cart
+              - group [ref=e52]:
+                - menuitem "My Disney Experience" [ref=e54] [cursor=pointer]:
+                  - generic [ref=e55]: My Disney Experience
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - img "My Disney Experience" [ref=e61]
+        - generic [ref=e62]:
+          - img [ref=e67]
+          - heading "Matt's Plans and Tickets" [level=1] [ref=e81]
+          - generic [ref=e82]:
+            - navigation [ref=e84]:
+              - generic [ref=e85]:
+                - generic [ref=e86]:
+                  - button "Family & Friends" [ref=e87] [cursor=pointer]:
+                    - generic [ref=e91]: 
+                    - generic [ref=e92]:
+                      - generic [ref=e93]: Family & Friends
+                      - generic [ref=e94]: Anyone else going?
+                  - generic:
+                    - link "View Family and Friends List" [ref=e96] [cursor=pointer]:
+                      - /url: /profile/family-friends
+                      - text: View List
+                    - link "Add a Guest to Family and Friends List" [ref=e98] [cursor=pointer]:
+                      - /url: /profile/family-friends/add
+                      - text: Add a Guest
+                - generic [ref=e99]:
+                  - button "Resort Hotel" [ref=e100] [cursor=pointer]:
+                    - generic [ref=e104]: 
+                    - generic [ref=e105]:
+                      - generic [ref=e106]: Resort Hotel
+                      - generic [ref=e107]: To enjoy a simplified arrival, use the Online Check-In service now.
+                  - generic:
+                    - link "Find Activities" [ref=e109] [cursor=pointer]:
+                      - /url: /activities/riviera-resort/#/sort=entityType
+                    - generic "Link a Reservation" [ref=e111] [cursor=pointer]
+                - generic [ref=e112]:
+                  - button "Park Tickets" [ref=e113] [cursor=pointer]:
+                    - generic [ref=e117]: 
+                    - generic [ref=e118]:
+                      - generic [ref=e119]: Park Tickets
+                      - generic [ref=e120]: Have tickets?
+                  - generic:
+                    - link "Select Park Tickets" [ref=e122] [cursor=pointer]:
+                      - /url: /tickets
+                      - text: Select Tickets
+                    - link "Link Park Tickets" [ref=e124] [cursor=pointer]:
+                      - /url: /link/tickets-passes
+                      - text: Link Tickets
+                - generic [ref=e125]:
+                  - button "Park Reservations" [ref=e126] [cursor=pointer]:
+                    - generic [ref=e130]: 
+                    - generic [ref=e131]:
+                      - generic [ref=e132]: Park Reservations
+                      - generic [ref=e133]: Everyone have park reservations?
+                  - link "Make a Theme Park Reservation" [ref=e135] [cursor=pointer]:
+                    - /url: /experience-updates/park-reservations
+                    - text: Make a Reservation
+                - generic [ref=e136]:
+                  - button "Dining" [ref=e137] [cursor=pointer]:
+                    - generic [ref=e141]: 
+                    - generic [ref=e142]:
+                      - generic [ref=e143]: Dining
+                      - generic [ref=e144]: Have all your reservations?
+                  - generic:
+                    - link "Make a Dining Reservation" [ref=e146] [cursor=pointer]:
+                      - /url: /dine-res/availability
+                      - text: Make a Reservation
+                    - generic "Link a Reservation" [ref=e148] [cursor=pointer]
+            - generic [ref=e149]:
+              - heading "Your upcoming reservation on April 5, 2026 Disney's Riviera Resort" [level=2] [ref=e151]:
+                - generic [ref=e155]:
+                  - generic [ref=e156]: Your upcoming reservation on April 5, 2026
+                  - generic [ref=e157]: Disney's Riviera Resort
+              - generic [ref=e158]:
+                - generic [ref=e160]:
+                  - 'heading "Highly Recommended: Save Time with Direct-to-Room Service" [level=3] [ref=e161]':
+                    - generic [ref=e162]: "Highly Recommended: Save Time with Direct-to-Room Service"
+                  - generic [ref=e163]:
+                    - generic [ref=e165]: 
+                    - link "Start Online Check-In Now" [ref=e166] [cursor=pointer]:
+                      - /url: /trip/online-check-in/
+                      - text: Start Check-In Now
+                  - generic [ref=e167]:
+                    - generic [ref=e169]: 
+                    - link "Go to the My Disney Experience App" [ref=e170] [cursor=pointer]:
+                      - /url: javascript:void(0)
+                    - paragraph [ref=e171]: Get real-time reservation updates, see your room number, unlock your door and more.
+                  - link "Learn More About Direct-to-Room" [ref=e173] [cursor=pointer]:
+                    - /url: /guest-services/direct-to-room-service/
+                  - link "Watch Video" [ref=e175] [cursor=pointer]:
+                    - /url: javascript:void(0)
+                  - link "How to Use the App as a Digital Key" [ref=e177] [cursor=pointer]:
+                    - /url: /guest-services/unlock-doors/
+                - generic [ref=e179]:
+                  - heading "Unlock the Magic with MagicBands" [level=3] [ref=e180]
+                  - generic [ref=e181]:
+                    - text: MagicBands come in many shapes, colors and sizes. And the next generation, MagicBand+, has added enhancements that allow you to engage with your park experience through color-changing lights, haptic vibrations and gesture recognition.
+                    - link "Please make your selection" [ref=e182] [cursor=pointer]:
+                      - /url: /plan/bands-cards/
+                    - text: today or continue to check back as we improve our selection.
+            - generic [ref=e183]:
+              - heading "My Planning Party Reservations Shared with My Family & Friends" [level=2] [ref=e185]:
+                - generic [ref=e189]:
+                  - generic [ref=e190]: My Planning Party
+                  - generic [ref=e191]: Reservations Shared with My Family & Friends
+              - generic [ref=e192]:
+                - generic [ref=e193]:
+                  - generic [ref=e195]:
+                    - generic [ref=e197]:
+                      - img [ref=e199]
+                      - generic [ref=e200]:
+                        - generic [ref=e201]: Mr. Matt Bossemeyer
+                        - text: Me
+                    - generic [ref=e202]:
+                      - generic [ref=e204]: 
+                      - generic [ref=e206]: 
+                      - generic [ref=e208]: 
+                  - generic [ref=e210]:
+                    - generic [ref=e212]:
+                      - img [ref=e214]
+                      - generic [ref=e215]:
+                        - generic [ref=e216]: Mr. Charlie Bossemeyer
+                        - text: Age 2
+                    - generic [ref=e217]:
+                      - generic [ref=e219]: 
+                      - generic [ref=e221]: 
+                      - generic [ref=e223]: 
+                  - generic [ref=e225]:
+                    - generic [ref=e227]:
+                      - img [ref=e229]
+                      - generic [ref=e230]:
+                        - generic [ref=e231]: Mrs. Jillian Bossemeyer
+                        - text: Age 18+
+                    - generic [ref=e232]:
+                      - generic [ref=e234]: 
+                      - generic [ref=e236]: 
+                      - generic [ref=e238]: 
+                  - generic [ref=e240]:
+                    - generic [ref=e242]:
+                      - img [ref=e244]
+                      - generic [ref=e245]:
+                        - generic [ref=e246]: Mr. William Bossemeyer
+                        - text: Age 8
+                    - generic [ref=e247]:
+                      - generic [ref=e249]: 
+                      - generic [ref=e251]: 
+                      - generic [ref=e253]: 
+                - generic [ref=e254]:
+                  - generic [ref=e256]: 
+                  - text: If anyone you're planning with is listed multiple times or is not on this list, please call (407) 939-4357.
+                - generic [ref=e257]: Guests under age 18 must have parent or guardian permission to call.
+            - generic [ref=e258]:
+              - heading "My Plans, Reservations and Tickets" [level=2] [ref=e260]:
+                - generic [ref=e262]: My Plans, Reservations and Tickets
+              - generic [ref=e266]:
+                - tablist [ref=e267]:
+                  - tab "Daily Itinerary" [selected] [ref=e268] [cursor=pointer]
+                  - tab "Tickets, Passes & Memory Maker" [ref=e269] [cursor=pointer]
+                - button "Add More Plans" [ref=e273] [cursor=pointer]:
+                  - generic [ref=e274]:
+                    - generic [ref=e276]: 
+                    - generic [ref=e277]: Add More Plans
+                    - generic "Select" [ref=e278]:
+                      - generic [ref=e279]: 
+              - generic:
+                - generic:     *
+              - generic [ref=e280]:
+                - text: 
+                - tabpanel "Daily Itinerary" [ref=e281]:
+                  - list [ref=e282]:
+                    - listitem [ref=e283]:
+                      - generic [ref=e285]:
+                        - generic [ref=e286]:
+                          - heading "Sunday, April 5" [level=3]:
+                            - button "Sunday, April 5" [expanded] [ref=e287] [cursor=pointer]:
+                              - generic "Select" [ref=e288]:
+                                - generic [ref=e289]: 
+                              - generic [ref=e290]: Sunday, April 5
+                        - region "Sunday, April 5" [ref=e291]:
+                          - generic [ref=e296]:
+                            - generic [ref=e299]: 
+                            - generic [ref=e301]:
+                              - text: "Check in after:"
+                              - generic [ref=e302]: 4:00 PM
+                            - generic [ref=e306]:
+                              - link "Disney's Riviera Resort" [ref=e308] [cursor=pointer]:
+                                - /url: http://disneyworld.disney.go.com/resorts/riviera-resort/
+                                - text: Disney's Riviera Resort 
+                              - generic [ref=e309]: EPCOT Resort Area
+                              - generic [ref=e310]: Sun, Apr 5, 2026 – Sat, Apr 11, 2026
+                              - generic [ref=e311]: "Confirmation Number: 617621022070"
+                              - link "Show Resort Hotel Reservation Details" [ref=e313] [cursor=pointer]:
+                                - /url: javascript:void(0);
+                                - generic [ref=e315]: 
+                                - text: Show Details
+                            - generic [ref=e317]:
+                              - link "Start Online Check-in" [ref=e319] [cursor=pointer]:
+                                - /url: /trip/online-check-in/resort-reservation/617621022070
+                                - text: Start Check-in
+                              - generic [ref=e321]:
+                                - text: For assistance,
+                                - text: call (407) 939-1936.
+                            - generic [ref=e324]:
+                              - generic [ref=e325]:
+                                - text: "4"
+                                - generic [ref=e326]: Guests
+                              - generic [ref=e327]:
+                                - generic [ref=e330]:
+                                  - img [ref=e332]
+                                  - generic [ref=e333]:
+                                    - generic [ref=e334]: Mr. Matt
+                                    - generic [ref=e335]: Bossemeyer
+                                    - strong [ref=e338]: Pending Merge
+                                    - generic [ref=e339]: Profile Managed By
+                                - generic [ref=e342]:
+                                  - img [ref=e344]
+                                  - generic [ref=e345]:
+                                    - generic [ref=e346]: Mr. Charlie
+                                    - generic [ref=e347]: Bossemeyer
+                                    - generic [ref=e348]: Age 2
+                                - generic [ref=e351]:
+                                  - img [ref=e353]
+                                  - generic [ref=e354]:
+                                    - generic [ref=e355]: Mrs. Jillian
+                                    - generic [ref=e356]: Bossemeyer
+                                    - generic [ref=e357]: Age 18+
+                                - generic [ref=e360]:
+                                  - img [ref=e362]
+                                  - generic [ref=e363]:
+                                    - generic [ref=e364]: Mr. William
+                                    - generic [ref=e365]: Bossemeyer
+                                    - generic [ref=e366]: Age 8
+                    - listitem [ref=e368]:
+                      - generic [ref=e370]:
+                        - generic [ref=e371]:
+                          - heading "Monday, April 6" [level=3]:
+                            - button "Monday, April 6" [expanded] [ref=e372] [cursor=pointer]:
+                              - generic "Select" [ref=e373]:
+                                - generic [ref=e374]: 
+                              - generic [ref=e375]: Monday, April 6
+                          - button "Hide EPCOT Hours" [ref=e376] [cursor=pointer]: Hide Park Hours
+                        - region "Monday, April 6" [ref=e377]:
+                          - region "Hide EPCOT Hours" [ref=e378]:
+                            - generic [ref=e383]:
+                              - generic [ref=e386]: 
+                              - generic [ref=e387]:
+                                - generic [ref=e388]: EPCOT
+                                - generic [ref=e389]:
+                                  - text: "Park Hours:"
+                                  - generic [ref=e391]: 9:00 AM – 9:00 PM
+                                - generic [ref=e392]:
+                                  - link "Early Theme Park Entry" [ref=e393] [cursor=pointer]:
+                                    - /url: /guest-services/early-entry
+                                  - generic [ref=e394]:
+                                    - img [ref=e395]: 
+                                    - generic: Guests of Disney Resort hotels and other select hotels can enjoy early theme park entry 30 minutes prior to opening each day
+                                  - generic [ref=e396]: 8:30 AM – 9:00 AM
+                                - generic [ref=e397]:
+                                  - link "Extended Evening Hours" [ref=e398] [cursor=pointer]:
+                                    - /url: /guest-services/extended-evening
+                                  - generic [ref=e399]:
+                                    - img [ref=e400]: 
+                                    - generic: Guests of Disney Deluxe Resorts and Other Select Hotels
+                                  - generic [ref=e401]: 9:00 PM – 11:00 PM
+                          - generic [ref=e406]:
+                            - generic [ref=e409]: 
+                            - generic [ref=e411]: Staying at Disney's Riviera Resort
+                          - generic [ref=e416]:
+                            - generic [ref=e419]: 
+                            - generic [ref=e420]:
+                              - text: "Reservation:"
+                              - generic [ref=e421]: 3:30 PM
+                            - generic [ref=e425]:
+                              - link "San Angel Inn Lunch" [ref=e427] [cursor=pointer]:
+                                - /url: http://disneyworld.disney.go.com/dining/epcot/san-angel-inn-restaurante/
+                                - text: San Angel Inn Lunch 
+                              - generic [ref=e428]: EPCOT, World Showcase, San Angel Inn Restaurante
+                              - generic [ref=e429]: "Confirmation Number: 356049932421"
+                              - link "Show San Angel Inn Lunch Reservation Details" [ref=e430] [cursor=pointer]:
+                                - /url: javascript:void(0);
+                                - generic [ref=e432]: 
+                                - text: Show Details
+                            - generic [ref=e434]:
+                              - link "Change San Angel Inn Lunch Dining Reservation" [ref=e436] [cursor=pointer]:
+                                - /url: /dine-res/modify/356049932421
+                                - text: Change Reservation
+                              - button "Cancel San Angel Inn Lunch Dining Reservation" [ref=e437] [cursor=pointer]:
+                                - generic: Cancel Reservation
+                            - generic [ref=e440]:
+                              - generic [ref=e441]:
+                                - text: "4"
+                                - generic [ref=e442]: Guests
+                              - generic [ref=e443]:
+                                - generic [ref=e446]:
+                                  - img [ref=e448]
+                                  - generic [ref=e449]:
+                                    - generic [ref=e450]: Mr. Matt
+                                    - generic [ref=e451]: Bossemeyer
+                                    - strong [ref=e454]: Pending Merge
+                                    - generic [ref=e455]: Profile Managed By
+                                - generic [ref=e458]:
+                                  - img [ref=e460]
+                                  - generic [ref=e462]: Guest 2
+                                - generic [ref=e465]:
+                                  - img [ref=e467]
+                                  - generic [ref=e469]: Guest 3
+                                - generic [ref=e472]:
+                                  - img [ref=e474]
+                                  - generic [ref=e476]: Guest 4
+                              - link "Update Dining Reservation Guests" [ref=e478] [cursor=pointer]:
+                                - /url: /plan/claim/dining/update-guests/id/356049932421
+                                - text: Update Guests
+                    - listitem [ref=e479]:
+                      - generic [ref=e482]:
+                        - heading "Tuesday, April 7" [level=3]:
+                          - button "Tuesday, April 7" [ref=e483] [cursor=pointer]:
+                            - generic "Select" [ref=e484]:
+                              - generic [ref=e485]: 
+                            - generic [ref=e486]: Tuesday, April 7
+                    - listitem [ref=e487]:
+                      - generic [ref=e489]:
+                        - generic [ref=e490]:
+                          - heading "Wednesday, April 8" [level=3]:
+                            - button "Wednesday, April 8" [expanded] [ref=e491] [cursor=pointer]:
+                              - generic "Select" [ref=e492]:
+                                - generic [ref=e493]: 
+                              - generic [ref=e494]: Wednesday, April 8
+                        - region "Wednesday, April 8" [ref=e495]:
+                          - generic [ref=e500]:
+                            - generic [ref=e503]: 
+                            - generic [ref=e505]: Staying at Disney's Riviera Resort
+                          - generic [ref=e510]:
+                            - generic [ref=e513]: 
+                            - generic [ref=e514]:
+                              - text: "Reservation:"
+                              - generic [ref=e515]: 11:00 AM
+                            - generic [ref=e519]:
+                              - link "Grand Floridian Cafe Brunch" [ref=e521] [cursor=pointer]:
+                                - /url: http://disneyworld.disney.go.com/dining/grand-floridian-resort-and-spa/grand-floridian-cafe/
+                                - text: Grand Floridian Cafe Brunch 
+                              - generic [ref=e522]: Disney's Grand Floridian Resort & Spa, Grand Floridian Cafe
+                              - generic [ref=e523]: "Confirmation Number: 356049937806"
+                              - link "Show Grand Floridian Cafe Brunch Reservation Details" [ref=e524] [cursor=pointer]:
+                                - /url: javascript:void(0);
+                                - generic [ref=e526]: 
+                                - text: Show Details
+                            - generic [ref=e528]:
+                              - link "Change Grand Floridian Cafe Brunch Dining Reservation" [ref=e530] [cursor=pointer]:
+                                - /url: /dine-res/modify/356049937806
+                                - text: Change Reservation
+                              - button "Cancel Grand Floridian Cafe Brunch Dining Reservation" [ref=e531] [cursor=pointer]:
+                                - generic: Cancel Reservation
+                            - generic [ref=e534]:
+                              - generic [ref=e535]:
+                                - text: "4"
+                                - generic [ref=e536]: Guests
+                              - generic [ref=e537]:
+                                - generic [ref=e540]:
+                                  - img [ref=e542]
+                                  - generic [ref=e543]:
+                                    - generic [ref=e544]: Mr. Matt
+                                    - generic [ref=e545]: Bossemeyer
+                                    - strong [ref=e548]: Pending Merge
+                                    - generic [ref=e549]: Profile Managed By
+                                - generic [ref=e552]:
+                                  - img [ref=e554]
+                                  - generic [ref=e556]: Guest 2
+                                - generic [ref=e559]:
+                                  - img [ref=e561]
+                                  - generic [ref=e563]: Guest 3
+                                - generic [ref=e566]:
+                                  - img [ref=e568]
+                                  - generic [ref=e570]: Guest 4
+                              - link "Update Dining Reservation Guests" [ref=e572] [cursor=pointer]:
+                                - /url: /plan/claim/dining/update-guests/id/356049937806
+                                - text: Update Guests
+                    - listitem [ref=e573]:
+                      - generic [ref=e576]:
+                        - heading "Thursday, April 9" [level=3]:
+                          - button "Thursday, April 9" [ref=e577] [cursor=pointer]:
+                            - generic "Select" [ref=e578]:
+                              - generic [ref=e579]: 
+                            - generic [ref=e580]: Thursday, April 9
+                    - listitem [ref=e581]:
+                      - generic [ref=e584]:
+                        - heading "Friday, April 10" [level=3]:
+                          - button "Friday, April 10" [ref=e585] [cursor=pointer]:
+                            - generic "Select" [ref=e586]:
+                              - generic [ref=e587]: 
+                            - generic [ref=e588]: Friday, April 10
+                    - listitem [ref=e589]:
+                      - generic [ref=e591]:
+                        - generic [ref=e592]:
+                          - heading "Saturday, April 11" [level=3]:
+                            - button "Saturday, April 11" [expanded] [ref=e593] [cursor=pointer]:
+                              - generic "Select" [ref=e594]:
+                                - generic [ref=e595]: 
+                              - generic [ref=e596]: Saturday, April 11
+                        - region "Saturday, April 11" [ref=e597]:
+                          - generic [ref=e602]:
+                            - generic [ref=e605]: 
+                            - generic [ref=e607]:
+                              - text: "Check out before:"
+                              - generic [ref=e608]: 11:00 AM
+                            - generic [ref=e612]:
+                              - link "Disney's Riviera Resort" [ref=e614] [cursor=pointer]:
+                                - /url: http://disneyworld.disney.go.com/resorts/riviera-resort/
+                                - text: Disney's Riviera Resort 
+                              - generic [ref=e615]: EPCOT Resort Area
+                              - generic [ref=e616]: Sun, Apr 5, 2026 – Sat, Apr 11, 2026
+                              - generic [ref=e617]: "Confirmation Number: 617621022070"
+                              - link "Show Resort Hotel Reservation Details" [ref=e619] [cursor=pointer]:
+                                - /url: javascript:void(0);
+                                - generic [ref=e621]: 
+                                - text: Show Details
+                            - generic [ref=e623]:
+                              - link "Start Online Check-in" [ref=e625] [cursor=pointer]:
+                                - /url: /trip/online-check-in/resort-reservation/617621022070
+                                - text: Start Check-in
+                              - generic [ref=e627]:
+                                - text: For assistance,
+                                - text: call (407) 939-1936.
+                            - generic [ref=e630]:
+                              - generic [ref=e631]:
+                                - text: "4"
+                                - generic [ref=e632]: Guests
+                              - generic [ref=e633]:
+                                - generic [ref=e636]:
+                                  - img [ref=e638]
+                                  - generic [ref=e639]:
+                                    - generic [ref=e640]: Mr. Matt
+                                    - generic [ref=e641]: Bossemeyer
+                                    - strong [ref=e644]: Pending Merge
+                                    - generic [ref=e645]: Profile Managed By
+                                - generic [ref=e648]:
+                                  - img [ref=e650]
+                                  - generic [ref=e651]:
+                                    - generic [ref=e652]: Mr. Charlie
+                                    - generic [ref=e653]: Bossemeyer
+                                    - generic [ref=e654]: Age 2
+                                - generic [ref=e657]:
+                                  - img [ref=e659]
+                                  - generic [ref=e660]:
+                                    - generic [ref=e661]: Mrs. Jillian
+                                    - generic [ref=e662]: Bossemeyer
+                                    - generic [ref=e663]: Age 18+
+                                - generic [ref=e666]:
+                                  - img [ref=e668]
+                                  - generic [ref=e669]:
+                                    - generic [ref=e670]: Mr. William
+                                    - generic [ref=e671]: Bossemeyer
+                                    - generic [ref=e672]: Age 8
+                  - generic [ref=e675]: Operating hours subject to change.
+      - contentinfo [ref=e678]:
+        - generic [ref=e679]:
+          - generic [ref=e680]:
+            - generic [ref=e683]:
+              - generic [ref=e684]:
+                - text: For assistance with your Walt Disney World vacation, including resort/package bookings and tickets, please call (407) 939-5277.
+                - text: For Walt Disney World dining, please book your reservation
+                - link "online" [ref=e685] [cursor=pointer]:
+                  - /url: /dine-res/availability
+                - text: .
+              - generic [ref=e686]: 7:00 AM to 11:00 PM Eastern Time. Guests under 18 years of age must have parent or guardian permission to call.
+            - navigation "Footer Links" [ref=e688]:
+              - generic [ref=e689]:
+                - generic: Footer Links
+                - generic [ref=e690]:
+                  - generic [ref=e692]:
+                    - heading "Help" [level=3] [ref=e693]
+                    - list "Help" [ref=e694]:
+                      - listitem [ref=e695]:
+                        - link "Contact Us" [ref=e696] [cursor=pointer]:
+                          - /url: /help/phone/
+                          - generic [ref=e697]: Contact Us
+                      - listitem [ref=e698]:
+                        - link "Help Center" [ref=e699] [cursor=pointer]:
+                          - /url: /help/
+                          - generic [ref=e700]: Help Center
+                      - listitem [ref=e701]:
+                        - link "planDisney" [ref=e702] [cursor=pointer]:
+                          - /url: https://plandisney.disney.go.com/destinations/walt-disney-world/
+                          - generic [ref=e703]: planDisney
+                      - listitem [ref=e704]:
+                        - link "CoBrowse" [ref=e705] [cursor=pointer]:
+                          - /url: "#interstitialCobrowseModal#/help"
+                          - generic [ref=e706]: CoBrowse
+                      - listitem [ref=e707]:
+                        - link "Park Security" [ref=e708] [cursor=pointer]:
+                          - /url: /guest-services/park-security/
+                          - generic [ref=e709]: Park Security
+                      - listitem [ref=e710]:
+                        - link "Property Rules" [ref=e711] [cursor=pointer]:
+                          - /url: /park-rules/
+                          - generic [ref=e712]: Property Rules
+                      - listitem [ref=e713]:
+                        - link "Privacy & Legal" [ref=e714] [cursor=pointer]:
+                          - /url: /help/privacy-legal/
+                          - generic [ref=e715]: Privacy & Legal
+                  - generic [ref=e717]:
+                    - heading "Guest Services" [level=3] [ref=e718]
+                    - list "Guest Services" [ref=e719]:
+                      - listitem [ref=e720]:
+                        - link "Services for Guests with Disabilities" [ref=e721] [cursor=pointer]:
+                          - /url: /guest-services/guests-with-disabilities/
+                          - generic [ref=e722]: Services for Guests with Disabilities
+                      - listitem [ref=e723]:
+                        - link "Disney PhotoPass" [ref=e724] [cursor=pointer]:
+                          - /url: /guest-services/photopass-service/
+                          - generic [ref=e725]: Disney PhotoPass
+                      - listitem [ref=e726]:
+                        - link "Custom Celebrations & Gatherings" [ref=e727] [cursor=pointer]:
+                          - /url: /events-tours/custom-gatherings
+                          - generic [ref=e728]: Custom Celebrations & Gatherings
+                      - listitem [ref=e729]:
+                        - link "All Guest Services" [ref=e730] [cursor=pointer]:
+                          - /url: /guest-services/
+                          - generic [ref=e731]: All Guest Services
+                  - generic [ref=e733]:
+                    - heading "Parks & Tickets" [level=3] [ref=e734]
+                    - list "Parks & Tickets" [ref=e735]:
+                      - listitem [ref=e736]:
+                        - link "Magic Kingdom Park" [ref=e737] [cursor=pointer]:
+                          - /url: /destinations/magic-kingdom/
+                          - generic [ref=e738]: Magic Kingdom Park
+                      - listitem [ref=e739]:
+                        - link "EPCOT" [ref=e740] [cursor=pointer]:
+                          - /url: /destinations/epcot/
+                          - generic [ref=e741]: EPCOT
+                      - listitem [ref=e742]:
+                        - link "Disney's Hollywood Studios" [ref=e743] [cursor=pointer]:
+                          - /url: /destinations/hollywood-studios/
+                          - generic [ref=e744]: Disney's Hollywood Studios
+                      - listitem [ref=e745]:
+                        - link "Disney's Animal Kingdom Park" [ref=e746] [cursor=pointer]:
+                          - /url: /destinations/animal-kingdom/
+                          - generic [ref=e747]: Disney's Animal Kingdom Park
+                      - listitem [ref=e748]:
+                        - link "Water Parks" [ref=e749] [cursor=pointer]:
+                          - /url: /destinations/water-parks/
+                          - generic [ref=e750]: Water Parks
+                      - listitem [ref=e751]:
+                        - link "Park Hours" [ref=e752] [cursor=pointer]:
+                          - /url: /calendars/park-hours/
+                          - generic [ref=e753]: Park Hours
+                  - generic [ref=e754]:
+                    - generic [ref=e755]:
+                      - heading "Dining" [level=3] [ref=e756]
+                      - list "Dining" [ref=e757]:
+                        - listitem [ref=e758]:
+                          - link "Make Dining Reservations" [ref=e759] [cursor=pointer]:
+                            - /url: /dine-res/
+                            - generic [ref=e760]: Make Dining Reservations
+                        - listitem [ref=e761]:
+                          - link "About Dining" [ref=e762] [cursor=pointer]:
+                            - /url: /dining/snack-dine-enjoy/
+                            - generic [ref=e763]: About Dining
+                        - listitem [ref=e764]:
+                          - link "All Restaurants" [ref=e765] [cursor=pointer]:
+                            - /url: /dining/
+                            - generic [ref=e766]: All Restaurants
+                        - listitem [ref=e767]:
+                          - link "Dining Plans" [ref=e768] [cursor=pointer]:
+                            - /url: /dining/plans/
+                            - generic [ref=e769]: Dining Plans
+                    - generic [ref=e770]:
+                      - heading "Get Ready" [level=3] [ref=e771]
+                      - list "Get Ready" [ref=e772]:
+                        - listitem [ref=e773]:
+                          - link "Mobile App" [ref=e774] [cursor=pointer]:
+                            - /url: /plan/my-disney-experience/mobile-apps/
+                            - generic [ref=e775]: Mobile App
+                        - listitem [ref=e776]:
+                          - link "Get Ready for Your Vacation" [ref=e777] [cursor=pointer]:
+                            - /url: /guest-services/manage-plans/
+                            - generic [ref=e778]: Get Ready for Your Vacation
+                        - listitem [ref=e779]:
+                          - link "Shop Online" [ref=e780] [cursor=pointer]:
+                            - /url: "https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer "
+                            - generic [ref=e781]: Shop Online
+                - list [ref=e783]:
+                  - listitem [ref=e784]:
+                    - region "Stay Connected" [ref=e785]:
+                      - heading "Stay Connected" [level=3] [ref=e786]
+                      - generic [ref=e787]:
+                        - link "Facebook" [ref=e789] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.facebook.com/WaltDisneyWorld/"
+                          - img "Facebook" [ref=e791]
+                        - link "Twitter" [ref=e793] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://twitter.com/waltdisneyworld/"
+                          - img "Twitter" [ref=e795]
+                        - link "Pinterest" [ref=e797] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.pinterest.com/waltdisneyworld/"
+                          - img "Pinterest" [ref=e799]
+                        - link "Instagram" [ref=e801] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.instagram.com/waltdisneyworld/"
+                          - img "Instagram" [ref=e803]
+                  - listitem [ref=e804]:
+                    - region "Disney Parks" [ref=e805]:
+                      - heading "Disney Parks" [level=3] [ref=e806]
+                      - generic [ref=e807]:
+                        - link "YouTube Channel YouTube Channel" [ref=e809] [cursor=pointer]:
+                          - /url: "#interstitialNewPageConfirmation#https://www.youtube.com/DisneyParks"
+                          - img "YouTube Channel" [ref=e811]
+                          - generic [ref=e812]: YouTube Channel
+                        - link "Blog Blog" [ref=e814] [cursor=pointer]:
+                          - /url: https://disneyparksblog.com/
+                          - img "Blog" [ref=e816]
+                          - generic [ref=e817]: Blog
+                  - listitem [ref=e818]:
+                    - region "Create Disney Account" [ref=e819]:
+                      - heading "Create Disney Account" [level=3] [ref=e820]
+                      - generic [ref=e822]:
+                        - generic [ref=e823]: Register to receive the latest Disney Parks news and special offers!
+                        - link "Create Account" [ref=e824] [cursor=pointer]:
+                          - /url: /registration/
+          - generic [ref=e825]:
+            - list "Related Disney Sites" [ref=e826]:
+              - listitem [ref=e827]:
+                - heading "Related Disney Sites" [level=3] [ref=e828]
+              - listitem [ref=e829]:
+                - list [ref=e831]:
+                  - listitem [ref=e832]:
+                    - link "Disney Springs" [ref=e833] [cursor=pointer]:
+                      - /url: https://www.disneysprings.com/
+                      - generic [ref=e834]: Disney Springs
+                  - listitem [ref=e835]:
+                    - link "Disney Parks" [ref=e836] [cursor=pointer]:
+                      - /url: http://disneyparks.disney.go.com/
+                      - generic [ref=e837]: Disney Parks
+                  - listitem [ref=e838]:
+                    - link "Disney Cruise Line" [ref=e839] [cursor=pointer]:
+                      - /url: http://disneycruise.disney.go.com/
+                      - generic [ref=e840]: Disney Cruise Line
+                  - listitem [ref=e841]:
+                    - link "Disney Gift Card" [ref=e842] [cursor=pointer]:
+                      - /url: http://www.disneygiftcard.com/home/
+                      - generic [ref=e843]: Disney Gift Card
+              - listitem [ref=e844]:
+                - list [ref=e846]:
+                  - listitem [ref=e847]:
+                    - link "Disney Vacation Club" [ref=e848] [cursor=pointer]:
+                      - /url: http://disneyvacationclub.disney.go.com/
+                      - generic [ref=e849]: Disney Vacation Club
+                  - listitem [ref=e850]:
+                    - link "Disney's Fairy Tale Weddings & Honeymoons" [ref=e851] [cursor=pointer]:
+                      - /url: https://www.disneyweddings.com/
+                      - generic [ref=e852]: Disney's Fairy Tale Weddings & Honeymoons
+                  - listitem [ref=e853]:
+                    - link "planDisney" [ref=e854] [cursor=pointer]:
+                      - /url: https://plandisney.disney.go.com/
+                      - generic [ref=e855]: planDisney
+              - listitem [ref=e856]:
+                - list [ref=e858]:
+                  - listitem [ref=e859]:
+                    - link "Disney+" [ref=e860] [cursor=pointer]:
+                      - /url: https://www.disneyplus.com/
+                      - generic [ref=e861]: Disney+
+                  - listitem [ref=e862]:
+                    - link "Disney® Inspire Visa® Card" [ref=e863] [cursor=pointer]:
+                      - /url: /visa-card/?trackcode=617R01&mobtrackcode=617R01&p=1
+                      - generic [ref=e864]: Disney® Inspire Visa® Card
+                  - listitem [ref=e865]:
+                    - link "Disney Merchandise Online" [ref=e866] [cursor=pointer]:
+                      - /url: https://www.disneystore.com/?cmp=SYN-WDW_OTHER_Site_NavLink_021424_DisneyStore_Footer
+                      - generic [ref=e867]: Disney Merchandise Online
+                  - listitem [ref=e868]:
+                    - link "Disney Meetings & Events" [ref=e869] [cursor=pointer]:
+                      - /url: https://www.disneymeetingsandevents.com/
+                      - generic [ref=e870]: Disney Meetings & Events
+              - listitem [ref=e871]:
+                - list [ref=e873]:
+                  - listitem [ref=e874]:
+                    - link "Disney Imagination Campus" [ref=e875] [cursor=pointer]:
+                      - /url: http://www.disneycampus.com/
+                      - generic [ref=e876]: Disney Imagination Campus
+                  - listitem [ref=e877]:
+                    - link "run Disney" [ref=e878] [cursor=pointer]:
+                      - /url: http://www.rundisney.com/
+                      - generic [ref=e879]:
+                        - emphasis [ref=e880]: run
+                        - text: Disney
+                  - listitem [ref=e881]:
+                    - link "Disney Institute" [ref=e882] [cursor=pointer]:
+                      - /url: https://www.disneyinstitute.com/
+                      - generic [ref=e883]: Disney Institute
+                  - listitem [ref=e884]:
+                    - link "Disney Careers" [ref=e885] [cursor=pointer]:
+                      - /url: https://jobs.disneycareers.com/
+                      - generic [ref=e886]: Disney Careers
+            - generic [ref=e887]:
+              - list "legal-links" [ref=e888]:
+                - listitem [ref=e889]:
+                  - link "Terms of Use" [ref=e890] [cursor=pointer]:
+                    - /url: http://disneytermsofuse.com/
+                - listitem [ref=e891]:
+                  - link "Legal Notices" [ref=e892] [cursor=pointer]:
+                    - /url: https://help.disney.com/articles/en_US/FAQ/Legal-Notices
+                - listitem [ref=e893]:
+                  - link "Privacy Policy" [ref=e894] [cursor=pointer]:
+                    - /url: https://disneyprivacycenter.com/
+                - listitem [ref=e895]:
+                  - link "Do Not Sell or Share My Personal Information" [ref=e896] [cursor=pointer]:
+                    - /url: "#oneTrustModal"
+                - listitem [ref=e897]:
+                  - link "Children's Online Privacy Policy" [ref=e898] [cursor=pointer]:
+                    - /url: https://disneyprivacycenter.com/kids-privacy-policy/english/
+                - listitem [ref=e899]:
+                  - link "Your US State Privacy Rights" [ref=e900] [cursor=pointer]:
+                    - /url: https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-state-privacy-rights
+                - listitem [ref=e901]:
+                  - link "Interest-Based Ads" [ref=e902] [cursor=pointer]:
+                    - /url: https://privacy.thewaltdisneycompany.com/en/privacy-controls/online-tracking-and-advertising/
+              - paragraph [ref=e903]: © Disney, All Rights Reserved
+  - button "Help" [ref=e72] [cursor=pointer]:
+    - menuitem [ref=e73]
+    - paragraph [ref=e74]: Help
+  - iframe [ref=e905]:
+    

@@ -8,9 +8,9 @@
         "@playwright/mcp@latest",
         "playwright-mcp",
         "--user-data-dir",
-        "runs/<RUN_ID>/playwright-profile",
+        "runs/2026-02-18__disney-planning/playwright-profile",
         "--output-dir",
-        "runs/<RUN_ID>/playwright-output"
+        "runs/2026-02-18__disney-planning/playwright-output"
       ]
     },
     "bigquery": {
